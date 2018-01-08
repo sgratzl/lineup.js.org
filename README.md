@@ -10,8 +10,14 @@ Usage
 
 **Installation**
 
+TODO: release
 ```bash
 npm install --save lineupjs
+```
+
+```html
+<link href="https://sgratzl.github.io/lineupjs_docs/develop/LineUpJS.css" rel="stylesheet">
+<script src="https://sgratzl.github.io/lineupjs_docs/develop/LineUpJS.min.js"></script>
 ```
 
 **Minimal Usage Example**
@@ -32,6 +38,8 @@ for (let i = 0; i < 100; ++i) {
 ```javascript
 const lineup = LineUpJS.asLineUp(document.body, arr);
 ```
+
+[CodePen](https://codepen.io/sgratzl/pen/Ozzbqp)
 
 ![Minimal Result](https://user-images.githubusercontent.com/4129778/34654173-32180ff8-f3f8-11e7-8469-229fa34a65dc.png)
 
@@ -63,6 +71,8 @@ builder
 
 const lineup = builder.build(document.body);
 ```
+
+[CodePen](https://codepen.io/sgratzl/pen/vppyML)
 
 ![Advanced Result](https://user-images.githubusercontent.com/4129778/34654174-3235f784-f3f8-11e7-9361-44f5fa068bb9.png)
 
@@ -134,7 +144,7 @@ npm run watch
 
 ***
 
-<a href="https://caleydo.org"><img src="http://caleydo.org/assets/images/logos/caleydo.svg" align="left" width="200px" hspace="10" vspace="6"></a>
+<a href="http://caleydo.org"><img src="https://user-images.githubusercontent.com/4129778/34663868-5455cb76-f459-11e7-95db-f80db24026dc.png" align="left" width="200px" hspace="10" vspace="6"></a>
 This repository is created as part of the **[The Caleydo Project](http://caleydo.org/)**.
 
 [npm-image]: https://badge.fury.io/js/lineupjs.svg
