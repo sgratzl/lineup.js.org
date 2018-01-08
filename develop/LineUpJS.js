@@ -19688,6 +19688,12 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 const version = "3.0.0-alpha2";
 /* harmony export (immutable) */ __webpack_exports__["version"] = version;
 
+const buildId = "20180108-214358";
+/* harmony export (immutable) */ __webpack_exports__["buildId"] = buildId;
+
+const license = "BSD-3-Clause";
+/* harmony export (immutable) */ __webpack_exports__["license"] = license;
+
 function createLocalDataProvider(data, columns, options = {}) {
     return new __WEBPACK_IMPORTED_MODULE_1__provider_LocalDataProvider__["a" /* default */](data, columns, options);
 }
