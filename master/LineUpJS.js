@@ -19688,7 +19688,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 const version = "3.0.0-alpha2";
 /* harmony export (immutable) */ __webpack_exports__["version"] = version;
 
-const buildId = "20180109-074016";
+const buildId = "20180109-074811";
 /* harmony export (immutable) */ __webpack_exports__["buildId"] = buildId;
 
 const license = "BSD-3-Clause";
