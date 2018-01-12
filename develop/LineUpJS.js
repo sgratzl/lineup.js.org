@@ -1119,14 +1119,17 @@ function isNumberIncluded(filter, value) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = attr;
-/* harmony export (immutable) */ __webpack_exports__["f"] = noop;
-/* harmony export (immutable) */ __webpack_exports__["g"] = setText;
-/* harmony export (immutable) */ __webpack_exports__["b"] = forEach;
-/* harmony export (immutable) */ __webpack_exports__["c"] = forEachChild;
-/* harmony export (immutable) */ __webpack_exports__["d"] = matchColumns;
-/* harmony export (immutable) */ __webpack_exports__["h"] = wideEnough;
+/* harmony export (immutable) */ __webpack_exports__["b"] = attr;
+/* harmony export (immutable) */ __webpack_exports__["g"] = noop;
+/* harmony export (immutable) */ __webpack_exports__["h"] = setText;
+/* harmony export (immutable) */ __webpack_exports__["c"] = forEach;
+/* harmony export (immutable) */ __webpack_exports__["d"] = forEachChild;
+/* harmony export (immutable) */ __webpack_exports__["e"] = matchColumns;
+/* harmony export (immutable) */ __webpack_exports__["i"] = wideEnough;
+/* harmony export (immutable) */ __webpack_exports__["a"] = adaptTextColorToBgColor;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_color__ = __webpack_require__(21);
+
 
 function attr(node, attrs = {}, styles = {}, text) {
     Object.keys(attrs).forEach((attr) => {
@@ -1150,7 +1153,7 @@ const noRenderer = {
     update: noop,
     render: noop
 };
-/* harmony export (immutable) */ __webpack_exports__["e"] = noRenderer;
+/* harmony export (immutable) */ __webpack_exports__["f"] = noRenderer;
 
 function setText(node, text) {
     if (text === undefined) {
@@ -1207,6 +1210,9 @@ function matchColumns(node, columns) {
 function wideEnough(col, length = col.labels.length) {
     const w = col.getWidth();
     return w / length > __WEBPACK_IMPORTED_MODULE_0__config__["c" /* MIN_LABEL_WIDTH */];
+}
+function adaptTextColorToBgColor(bgColor) {
+    return Object(__WEBPACK_IMPORTED_MODULE_1_d3_color__["d" /* hsl */])(bgColor).l > 0.5 ? 'black' : 'white';
 }
 
 
@@ -9922,7 +9928,7 @@ class BrightnessCellRenderer {
                 const missing = Object(__WEBPACK_IMPORTED_MODULE_7__missing__["b" /* renderMissingDOM */])(n, col, d);
                 n.title = col.getLabel(d);
                 n.firstElementChild.style.backgroundColor = missing ? null : toHeatMapColor(col.getNumber(d), d, col, imposer);
-                Object(__WEBPACK_IMPORTED_MODULE_8__utils__["g" /* setText */])(n.lastElementChild, n.title);
+                Object(__WEBPACK_IMPORTED_MODULE_8__utils__["h" /* setText */])(n.lastElementChild, n.title);
             },
             render: (ctx, d) => {
                 if (Object(__WEBPACK_IMPORTED_MODULE_7__missing__["a" /* renderMissingCanvas */])(ctx, col, d, width)) {
@@ -9934,10 +9940,10 @@ class BrightnessCellRenderer {
         };
     }
     createGroup() {
-        return __WEBPACK_IMPORTED_MODULE_8__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_8__utils__["f" /* noRenderer */];
     }
     createSummary() {
-        return __WEBPACK_IMPORTED_MODULE_8__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_8__utils__["f" /* noRenderer */];
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = BrightnessCellRenderer;
@@ -10326,7 +10332,7 @@ class MultiLevelCellRenderer extends __WEBPACK_IMPORTED_MODULE_5__AAggregatedGro
                 if (Object(__WEBPACK_IMPORTED_MODULE_7__missing__["b" /* renderMissingDOM */])(n, col, d)) {
                     return;
                 }
-                Object(__WEBPACK_IMPORTED_MODULE_8__utils__["d" /* matchColumns */])(n, cols);
+                Object(__WEBPACK_IMPORTED_MODULE_8__utils__["e" /* matchColumns */])(n, cols);
                 const children = Array.from(n.children);
                 const total = col.getWidth();
                 let missingWeight = 0;
@@ -10373,7 +10379,7 @@ class MultiLevelCellRenderer extends __WEBPACK_IMPORTED_MODULE_5__AAggregatedGro
         return {
             template: `<div class='${useGrid ? gridClass(col) : ''}${useGrid ? ' lu-grid-space' : ''}'>${cols.map((d) => d.template).join('')}</div>`,
             update: (n, group, rows) => {
-                Object(__WEBPACK_IMPORTED_MODULE_8__utils__["d" /* matchColumns */])(n, cols);
+                Object(__WEBPACK_IMPORTED_MODULE_8__utils__["e" /* matchColumns */])(n, cols);
                 const children = Array.from(n.children);
                 const total = col.getWidth();
                 cols.forEach((col, ci) => {
@@ -13511,13 +13517,13 @@ class StringCellRenderer {
             update: (n, d) => {
                 Object(__WEBPACK_IMPORTED_MODULE_2__missing__["b" /* renderMissingDOM */])(n, col, d);
                 if (col.escape) {
-                    Object(__WEBPACK_IMPORTED_MODULE_3__utils__["g" /* setText */])(n, col.getLabel(d));
+                    Object(__WEBPACK_IMPORTED_MODULE_3__utils__["h" /* setText */])(n, col.getLabel(d));
                 }
                 else {
                     n.innerHTML = col.getLabel(d);
                 }
             },
-            render: __WEBPACK_IMPORTED_MODULE_3__utils__["f" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_3__utils__["g" /* noop */]
         };
     }
     static exampleText(col, rows) {
@@ -13652,16 +13658,16 @@ class DefaultCellRenderer {
             template: `<div> </div>`,
             update: (n, d) => {
                 Object(__WEBPACK_IMPORTED_MODULE_0__missing__["b" /* renderMissingDOM */])(n, col, d);
-                Object(__WEBPACK_IMPORTED_MODULE_1__utils__["g" /* setText */])(n, col.getLabel(d));
+                Object(__WEBPACK_IMPORTED_MODULE_1__utils__["h" /* setText */])(n, col.getLabel(d));
             },
-            render: __WEBPACK_IMPORTED_MODULE_1__utils__["f" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_1__utils__["g" /* noop */]
         };
     }
     createGroup(_col) {
-        return __WEBPACK_IMPORTED_MODULE_1__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_1__utils__["f" /* noRenderer */];
     }
     createSummary() {
-        return __WEBPACK_IMPORTED_MODULE_1__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_1__utils__["f" /* noRenderer */];
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = DefaultCellRenderer;
@@ -13712,7 +13718,7 @@ class CategoricalCellRenderer {
                 Object(__WEBPACK_IMPORTED_MODULE_8__missing__["b" /* renderMissingDOM */])(n, col, d);
                 const v = col.getCategory(d);
                 n.firstElementChild.style.backgroundColor = v ? v.color : null;
-                Object(__WEBPACK_IMPORTED_MODULE_9__utils__["g" /* setText */])(n.lastElementChild, col.getLabel(d));
+                Object(__WEBPACK_IMPORTED_MODULE_9__utils__["h" /* setText */])(n.lastElementChild, col.getLabel(d));
             },
             render: (ctx, d) => {
                 if (Object(__WEBPACK_IMPORTED_MODULE_8__missing__["a" /* renderMissingCanvas */])(ctx, col, d, width)) {
@@ -13755,7 +13761,7 @@ function staticSummary(col, interactive) {
     };
 }
 function interactiveSummary(col, interactive) {
-    const { template, update } = hist(col, interactive || Object(__WEBPACK_IMPORTED_MODULE_9__utils__["h" /* wideEnough */])(col));
+    const { template, update } = hist(col, interactive || Object(__WEBPACK_IMPORTED_MODULE_9__utils__["i" /* wideEnough */])(col));
     let filterUpdate;
     return {
         template: `${template}${interactive ? Object(__WEBPACK_IMPORTED_MODULE_7__ui_missing__["b" /* filterMissingNumberMarkup */])(false, 0) : ''}</div>`,
@@ -13959,7 +13965,7 @@ class UpSetCellRenderer {
         };
     }
     createSummary() {
-        return __WEBPACK_IMPORTED_MODULE_4__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_4__utils__["f" /* noRenderer */];
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = UpSetCellRenderer;
@@ -14022,7 +14028,7 @@ class HistogramCellRenderer {
                 }
                 render(n, createHist(hist, guessedBins, [row], col));
             },
-            render: __WEBPACK_IMPORTED_MODULE_12__utils__["f" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_12__utils__["g" /* noop */]
         };
     }
     createGroup(col, context, hist, imposer) {
@@ -16984,7 +16990,7 @@ class TableCellRenderer {
                 }
                 node.innerHTML = col.getMapLabel(d).map(({ key, value }) => `<div>${key}</div><div>${value}</div>`).join('');
             },
-            render: __WEBPACK_IMPORTED_MODULE_3__utils__["f" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_3__utils__["g" /* noop */]
         };
     }
     static template(col) {
@@ -16999,11 +17005,11 @@ class TableCellRenderer {
                     return;
                 }
                 const value = col.getLabels(d);
-                Object(__WEBPACK_IMPORTED_MODULE_3__utils__["b" /* forEach */])(node, '[data-v]', (n, i) => {
+                Object(__WEBPACK_IMPORTED_MODULE_3__utils__["c" /* forEach */])(node, '[data-v]', (n, i) => {
                     n.innerHTML = value[i];
                 });
             },
-            render: __WEBPACK_IMPORTED_MODULE_3__utils__["f" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_3__utils__["g" /* noop */]
         };
     }
     static example(arr) {
@@ -17029,7 +17035,7 @@ class TableCellRenderer {
             update: (node, _group, rows) => {
                 const numExampleRows = 5;
                 const vs = rows.filter((d) => !col.isMissing(d)).map((d) => col.getLabels(d));
-                Object(__WEBPACK_IMPORTED_MODULE_3__utils__["b" /* forEach */])(node, '[data-v]', (n, i) => {
+                Object(__WEBPACK_IMPORTED_MODULE_3__utils__["c" /* forEach */])(node, '[data-v]', (n, i) => {
                     const values = [];
                     for (const v of vs) {
                         const vi = v[i];
@@ -17049,7 +17055,7 @@ class TableCellRenderer {
     createSummary() {
         return {
             template: `<div><div>Key</div><div>Value</div></div>`,
-            update: __WEBPACK_IMPORTED_MODULE_3__utils__["f" /* noop */]
+            update: __WEBPACK_IMPORTED_MODULE_3__utils__["g" /* noop */]
         };
     }
 }
@@ -19688,7 +19694,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 const version = "3.0.0-alpha2";
 /* harmony export (immutable) */ __webpack_exports__["version"] = version;
 
-const buildId = "20180109-073523";
+const buildId = "20180112-122548";
 /* harmony export (immutable) */ __webpack_exports__["buildId"] = buildId;
 
 const license = "BSD-3-Clause";
@@ -23563,7 +23569,7 @@ class ActionRenderer {
         return {
             template: `<div class='actions lu-hover-only'>${actions.map((a) => `<span title='${a.name}' class='fa'>${a.icon}</span>`).join('')}</div>`,
             update: (n, d) => {
-                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["c" /* forEachChild */])(n, (ni, i) => {
+                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["d" /* forEachChild */])(n, (ni, i) => {
                     ni.onclick = function (event) {
                         event.preventDefault();
                         event.stopPropagation();
@@ -23571,7 +23577,7 @@ class ActionRenderer {
                     };
                 });
             },
-            render: __WEBPACK_IMPORTED_MODULE_2__utils__["f" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_2__utils__["g" /* noop */]
         };
     }
     createGroup(col) {
@@ -23579,7 +23585,7 @@ class ActionRenderer {
         return {
             template: `<div class='actions lu-hover-only'>${actions.map((a) => `<span title='${a.name}' class='fa'>${a.icon}</span>`).join('')}</div>`,
             update: (n, group, rows) => {
-                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["c" /* forEachChild */])(n, (ni, i) => {
+                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["d" /* forEachChild */])(n, (ni, i) => {
                     ni.onclick = function (event) {
                         event.preventDefault();
                         event.stopPropagation();
@@ -23590,7 +23596,7 @@ class ActionRenderer {
         };
     }
     createSummary() {
-        return __WEBPACK_IMPORTED_MODULE_2__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_2__utils__["f" /* noRenderer */];
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = ActionRenderer;
@@ -23708,7 +23714,7 @@ class AnnotationRenderer extends __WEBPACK_IMPORTED_MODULE_1__StringCellRenderer
                 };
                 n.lastElementChild.textContent = input.value = col.getLabel(d);
             },
-            render: __WEBPACK_IMPORTED_MODULE_2__utils__["f" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_2__utils__["g" /* noop */]
         };
     }
 }
@@ -23762,7 +23768,7 @@ class BarCellRenderer {
                 const bar = n.firstElementChild;
                 bar.style.width = missing ? '100%' : `${w}%`;
                 bar.style.backgroundColor = missing ? null : Object(__WEBPACK_IMPORTED_MODULE_4__impose__["a" /* colorOf */])(col, d, imposer);
-                Object(__WEBPACK_IMPORTED_MODULE_7__utils__["g" /* setText */])(bar.firstElementChild, title);
+                Object(__WEBPACK_IMPORTED_MODULE_7__utils__["h" /* setText */])(bar.firstElementChild, title);
             },
             render: (ctx, d) => {
                 if (Object(__WEBPACK_IMPORTED_MODULE_6__missing__["a" /* renderMissingCanvas */])(ctx, col, d, width)) {
@@ -23775,10 +23781,10 @@ class BarCellRenderer {
         };
     }
     createGroup() {
-        return __WEBPACK_IMPORTED_MODULE_7__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_7__utils__["f" /* noRenderer */];
     }
     createSummary() {
-        return __WEBPACK_IMPORTED_MODULE_7__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_7__utils__["f" /* noRenderer */];
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = BarCellRenderer;
@@ -24102,14 +24108,14 @@ class CategoricalHeatmapCellRenderer {
     createSummary(col) {
         const categories = col.categories;
         let templateRows = '<div>';
-        const labels = Object(__WEBPACK_IMPORTED_MODULE_4__utils__["h" /* wideEnough */])(col);
+        const labels = Object(__WEBPACK_IMPORTED_MODULE_4__utils__["i" /* wideEnough */])(col);
         for (const cat of categories) {
             templateRows += `<div title="${cat.label}"${labels ? ` data-title="${cat.label}"` : ''} style="background-color: ${cat.color}"></div>`;
         }
         templateRows += '</div>';
         return {
             template: templateRows,
-            update: __WEBPACK_IMPORTED_MODULE_4__utils__["f" /* noop */]
+            update: __WEBPACK_IMPORTED_MODULE_4__utils__["g" /* noop */]
         };
     }
 }
@@ -24146,7 +24152,7 @@ class CategoricalStackedDistributionlCellRenderer {
         return Object(__WEBPACK_IMPORTED_MODULE_1__model__["_18" /* isCategoricalColumn */])(col) && mode !== __WEBPACK_IMPORTED_MODULE_6__interfaces__["a" /* ERenderMode */].CELL;
     }
     create() {
-        return __WEBPACK_IMPORTED_MODULE_7__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_7__utils__["f" /* noRenderer */];
     }
     createGroup(col) {
         const { template, update } = stackedBar(col);
@@ -24197,12 +24203,12 @@ function interactiveSummary(col, interactive) {
 }
 function stackedBar(col) {
     const cats = col.categories;
-    const bins = cats.map((c) => `<div style="background-color: ${c.color}" title="${c.label}: 0" data-cat="${c.name}">${c.label}</div>`).join('');
+    const bins = cats.map((c) => `<div style="background-color: ${c.color}; color: ${Object(__WEBPACK_IMPORTED_MODULE_7__utils__["a" /* adaptTextColorToBgColor */])(c.color)}" title="${c.label}: 0" data-cat="${c.name}"><span>${c.label}</span></div>`).join('');
     return {
         template: `<div>${bins}<div title="Missing Values"></div>`,
         update: (n, hist, missing) => {
             const total = hist.reduce((acc, { y }) => acc + y, missing);
-            Object(__WEBPACK_IMPORTED_MODULE_7__utils__["c" /* forEachChild */])(n, (d, i) => {
+            Object(__WEBPACK_IMPORTED_MODULE_7__utils__["d" /* forEachChild */])(n, (d, i) => {
                 let y;
                 let label;
                 if (i >= hist.length) {
@@ -24254,19 +24260,19 @@ class CircleCellRenderer {
                 const v = col.getNumber(d);
                 const p = Math.round(v * 100);
                 const missing = Object(__WEBPACK_IMPORTED_MODULE_4__missing__["b" /* renderMissingDOM */])(n, col, d);
-                Object(__WEBPACK_IMPORTED_MODULE_5__utils__["a" /* attr */])(n, {}, {
+                Object(__WEBPACK_IMPORTED_MODULE_5__utils__["b" /* attr */])(n, {}, {
                     background: missing ? null : `radial-gradient(circle closest-side, ${Object(__WEBPACK_IMPORTED_MODULE_2__impose__["a" /* colorOf */])(col, d, imposer)} ${p}%, transparent ${p}%)`
                 });
-                Object(__WEBPACK_IMPORTED_MODULE_5__utils__["g" /* setText */])(n.firstElementChild, col.getLabel(d));
+                Object(__WEBPACK_IMPORTED_MODULE_5__utils__["h" /* setText */])(n.firstElementChild, col.getLabel(d));
             },
-            render: __WEBPACK_IMPORTED_MODULE_5__utils__["f" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_5__utils__["g" /* noop */]
         };
     }
     createGroup() {
-        return __WEBPACK_IMPORTED_MODULE_5__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_5__utils__["f" /* noRenderer */];
     }
     createSummary() {
-        return __WEBPACK_IMPORTED_MODULE_5__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_5__utils__["f" /* noRenderer */];
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = CircleCellRenderer;
@@ -24314,9 +24320,9 @@ class DotCellRenderer {
                 }
                 n.innerHTML = tmp;
             }
-            Object(__WEBPACK_IMPORTED_MODULE_6__utils__["c" /* forEachChild */])(n, (d, i) => {
+            Object(__WEBPACK_IMPORTED_MODULE_6__utils__["d" /* forEachChild */])(n, (d, i) => {
                 const v = vs[i];
-                Object(__WEBPACK_IMPORTED_MODULE_6__utils__["a" /* attr */])(d, {
+                Object(__WEBPACK_IMPORTED_MODULE_6__utils__["b" /* attr */])(d, {
                     title: labels[i]
                 }, {
                     display: Object(__WEBPACK_IMPORTED_MODULE_0__model__["_26" /* isMissingValue */])(v) ? 'none' : null,
@@ -24384,7 +24390,7 @@ class DotCellRenderer {
         };
     }
     createSummary() {
-        return __WEBPACK_IMPORTED_MODULE_6__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_6__utils__["f" /* noRenderer */];
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = DotCellRenderer;
@@ -24413,7 +24419,7 @@ class GroupCellRenderer {
             update(node, _row, i, group) {
                 node.firstElementChild.innerText = i === 0 ? group.name : '';
             },
-            render: __WEBPACK_IMPORTED_MODULE_1__utils__["f" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_1__utils__["g" /* noop */]
         };
     }
     createGroup() {
@@ -24425,7 +24431,7 @@ class GroupCellRenderer {
         };
     }
     createSummary() {
-        return __WEBPACK_IMPORTED_MODULE_1__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_1__utils__["f" /* noRenderer */];
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = GroupCellRenderer;
@@ -24469,9 +24475,9 @@ class HeatmapCellRenderer extends __WEBPACK_IMPORTED_MODULE_3__ANumbersCellRende
         return {
             templateRow: templateRows,
             update: (row, data, item) => {
-                Object(__WEBPACK_IMPORTED_MODULE_6__utils__["c" /* forEachChild */])(row, (d, i) => {
+                Object(__WEBPACK_IMPORTED_MODULE_6__utils__["d" /* forEachChild */])(row, (d, i) => {
                     const v = data[i];
-                    Object(__WEBPACK_IMPORTED_MODULE_6__utils__["a" /* attr */])(d, {
+                    Object(__WEBPACK_IMPORTED_MODULE_6__utils__["b" /* attr */])(d, {
                         title: `${labels[i]}: ${Object(__WEBPACK_IMPORTED_MODULE_1__model_INumberColumn__["a" /* DEFAULT_FORMATTER */])(v)}`,
                         'class': Object(__WEBPACK_IMPORTED_MODULE_0__model__["_26" /* isMissingValue */])(v) ? 'lu-missing' : ''
                     }, {
@@ -24495,7 +24501,7 @@ class HeatmapCellRenderer extends __WEBPACK_IMPORTED_MODULE_3__ANumbersCellRende
     }
     createSummary(col) {
         let labels = col.labels.slice();
-        while (labels.length > 0 && !Object(__WEBPACK_IMPORTED_MODULE_6__utils__["h" /* wideEnough */])(col, labels.length)) {
+        while (labels.length > 0 && !Object(__WEBPACK_IMPORTED_MODULE_6__utils__["i" /* wideEnough */])(col, labels.length)) {
             labels = labels.filter((_, i) => i % 2 === 0);
         }
         let templateRows = '<div>';
@@ -24505,7 +24511,7 @@ class HeatmapCellRenderer extends __WEBPACK_IMPORTED_MODULE_3__ANumbersCellRende
         templateRows += '</div>';
         return {
             template: templateRows,
-            update: __WEBPACK_IMPORTED_MODULE_6__utils__["f" /* noop */]
+            update: __WEBPACK_IMPORTED_MODULE_6__utils__["g" /* noop */]
         };
     }
 }
@@ -25695,14 +25701,14 @@ class ImageCellRenderer {
                 n.title = col.getLabel(d);
                 n.style.backgroundImage = missing ? null : `url('${col.getValue(d)}')`;
             },
-            render: __WEBPACK_IMPORTED_MODULE_3__utils__["f" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_3__utils__["g" /* noop */]
         };
     }
     createGroup() {
-        return __WEBPACK_IMPORTED_MODULE_3__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_3__utils__["f" /* noRenderer */];
     }
     createSummary() {
-        return __WEBPACK_IMPORTED_MODULE_3__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_3__utils__["f" /* noRenderer */];
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = ImageCellRenderer;
@@ -25745,7 +25751,7 @@ class InterleavingCellRenderer {
                 if (missing) {
                     return;
                 }
-                Object(__WEBPACK_IMPORTED_MODULE_6__utils__["d" /* matchColumns */])(n, cols);
+                Object(__WEBPACK_IMPORTED_MODULE_6__utils__["e" /* matchColumns */])(n, cols);
                 Array.from(n.children).forEach((ni, j) => {
                     cols[j].renderer.update(ni, d, i, group);
                 });
@@ -25769,7 +25775,7 @@ class InterleavingCellRenderer {
         return {
             template: `<div>${cols.map((r) => r.template).join('')}</div>`,
             update: (n, group, rows) => {
-                Object(__WEBPACK_IMPORTED_MODULE_6__utils__["d" /* matchColumns */])(n, cols);
+                Object(__WEBPACK_IMPORTED_MODULE_6__utils__["e" /* matchColumns */])(n, cols);
                 Array.from(n.children).forEach((ni, j) => {
                     cols[j].groupRenderer.update(ni, group, rows);
                 });
@@ -25845,7 +25851,7 @@ class AAggregatedGroupRenderer {
         };
     }
     createSummary() {
-        return __WEBPACK_IMPORTED_MODULE_0__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_0__utils__["f" /* noRenderer */];
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = AAggregatedGroupRenderer;
@@ -25883,13 +25889,13 @@ class LinkCellRenderer {
                 }
                 n.href = col.getValue(d);
                 if (col.escape) {
-                    Object(__WEBPACK_IMPORTED_MODULE_3__utils__["g" /* setText */])(n, col.getLabel(d));
+                    Object(__WEBPACK_IMPORTED_MODULE_3__utils__["h" /* setText */])(n, col.getLabel(d));
                 }
                 else {
                     n.innerHTML = col.getLabel(d);
                 }
             },
-            render: __WEBPACK_IMPORTED_MODULE_3__utils__["f" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_3__utils__["g" /* noop */]
         };
     }
     static exampleText(col, rows) {
@@ -25915,7 +25921,7 @@ class LinkCellRenderer {
         };
     }
     createSummary() {
-        return __WEBPACK_IMPORTED_MODULE_3__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_3__utils__["f" /* noRenderer */];
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = LinkCellRenderer;
@@ -25955,7 +25961,7 @@ class LinkMapCellRenderer {
                 const values = col.getValue(d);
                 node.innerHTML = col.getLabels(d).map(({ key, value }, i) => `<div>${key}</div><div${align !== 'left' ? ` class="lu-${align}"` : ''}><a href="${values[i].value}" target="_blank">${value}</a></div>`).join('');
             },
-            render: __WEBPACK_IMPORTED_MODULE_4__utils__["f" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_4__utils__["g" /* noop */]
         };
     }
     static example(arr) {
@@ -25985,7 +25991,7 @@ class LinkMapCellRenderer {
         };
     }
     createSummary() {
-        return __WEBPACK_IMPORTED_MODULE_4__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_4__utils__["f" /* noRenderer */];
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = LinkMapCellRenderer;
@@ -26009,8 +26015,8 @@ class LoadingCellRenderer {
     create() {
         return {
             template: `<div>Loading…</div>`,
-            update: __WEBPACK_IMPORTED_MODULE_0__utils__["f" /* noop */],
-            render: __WEBPACK_IMPORTED_MODULE_0__utils__["f" /* noop */]
+            update: __WEBPACK_IMPORTED_MODULE_0__utils__["g" /* noop */],
+            render: __WEBPACK_IMPORTED_MODULE_0__utils__["g" /* noop */]
         };
     }
     createGroup() {
@@ -26067,11 +26073,11 @@ class MapBarCellRenderer {
                     return `<div>${key}</div><div title="${Object(__WEBPACK_IMPORTED_MODULE_2__model_INumberColumn__["a" /* DEFAULT_FORMATTER */])(value)}"><div style="width: ${w}%; background-color: ${Object(__WEBPACK_IMPORTED_MODULE_4__impose__["a" /* colorOf */])(col, d, imposer)}"><span class="lu-hover-only">${value}</span></div></div>`;
                 }).join('');
             },
-            render: __WEBPACK_IMPORTED_MODULE_7__utils__["f" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_7__utils__["g" /* noop */]
         };
     }
     createGroup() {
-        return __WEBPACK_IMPORTED_MODULE_7__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_7__utils__["f" /* noRenderer */];
     }
     createSummary(col) {
         return {
@@ -26112,9 +26118,9 @@ class RankCellRenderer {
             template: `<div class="lu-right"> </div>`,
             update: (n, d) => {
                 Object(__WEBPACK_IMPORTED_MODULE_1__missing__["b" /* renderMissingDOM */])(n, col, d);
-                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["g" /* setText */])(n, col.getLabel(d));
+                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["h" /* setText */])(n, col.getLabel(d));
             },
-            render: __WEBPACK_IMPORTED_MODULE_2__utils__["f" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_2__utils__["g" /* noop */]
         };
     }
     createGroup(col) {
@@ -26134,7 +26140,7 @@ class RankCellRenderer {
         };
     }
     createSummary() {
-        return __WEBPACK_IMPORTED_MODULE_2__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_2__utils__["f" /* noRenderer */];
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = RankCellRenderer;
@@ -26167,7 +26173,7 @@ class SelectionRenderer {
                     col.toggleValue(d);
                 };
             },
-            render: __WEBPACK_IMPORTED_MODULE_1__utils__["f" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_1__utils__["g" /* noop */]
         };
     }
     createGroup(col) {
@@ -26274,7 +26280,7 @@ class SparklineCellRenderer {
                 const data = col.getNumbers(d);
                 n.querySelector('path').setAttribute('d', line(data));
             },
-            render: __WEBPACK_IMPORTED_MODULE_6__utils__["f" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_6__utils__["g" /* noop */]
         };
     }
     createGroup(col) {
@@ -26284,7 +26290,7 @@ class SparklineCellRenderer {
             template: `<svg viewBox="0 0 ${dataLength} 1" preserveAspectRatio="none meet"><line x1="0" x2="${dataLength - 1}" y1="${yPos}" y2="${yPos}"></line><path></path></svg>`,
             update: (n, _group, rows) => {
                 Object(__WEBPACK_IMPORTED_MODULE_3__ANumbersCellRenderer__["b" /* matchRows */])(n, rows, `<path></path>`);
-                Object(__WEBPACK_IMPORTED_MODULE_6__utils__["c" /* forEachChild */])(n, ((row, i) => {
+                Object(__WEBPACK_IMPORTED_MODULE_6__utils__["d" /* forEachChild */])(n, ((row, i) => {
                     const d = rows[i];
                     row.setAttribute('d', line(col.getNumbers(d)));
                 }));
@@ -26292,7 +26298,7 @@ class SparklineCellRenderer {
         };
     }
     createSummary() {
-        return __WEBPACK_IMPORTED_MODULE_6__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_6__utils__["f" /* noRenderer */];
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = SparklineCellRenderer;
@@ -26345,10 +26351,10 @@ class VerticalBarCellRenderer extends __WEBPACK_IMPORTED_MODULE_3__ANumbersCellR
             update: (row, data, item) => {
                 const zero = Object(__WEBPACK_IMPORTED_MODULE_4__BrightnessCellRenderer__["b" /* toHeatMapColor */])(0, item, col, imposer);
                 const one = Object(__WEBPACK_IMPORTED_MODULE_4__BrightnessCellRenderer__["b" /* toHeatMapColor */])(1, item, col, imposer);
-                Object(__WEBPACK_IMPORTED_MODULE_6__utils__["c" /* forEachChild */])(row, (d, i) => {
+                Object(__WEBPACK_IMPORTED_MODULE_6__utils__["d" /* forEachChild */])(row, (d, i) => {
                     const v = data[i];
                     const { bottom, height } = VerticalBarCellRenderer.compute(v, threshold, [0, 1]);
-                    Object(__WEBPACK_IMPORTED_MODULE_6__utils__["a" /* attr */])(d, {
+                    Object(__WEBPACK_IMPORTED_MODULE_6__utils__["b" /* attr */])(d, {
                         title: Object(__WEBPACK_IMPORTED_MODULE_0__model_INumberColumn__["a" /* DEFAULT_FORMATTER */])(v)
                     }, {
                         'background-color': v < threshold ? zero : one,
@@ -26371,7 +26377,7 @@ class VerticalBarCellRenderer extends __WEBPACK_IMPORTED_MODULE_3__ANumbersCellR
         };
     }
     createSummary() {
-        return __WEBPACK_IMPORTED_MODULE_6__utils__["e" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_6__utils__["f" /* noRenderer */];
     }
 }
 /* harmony export (immutable) */ __webpack_exports__["a"] = VerticalBarCellRenderer;

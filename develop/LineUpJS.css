@@ -994,12 +994,18 @@ section.lu-header {
     display: flex; }
     .lu [data-renderer=catdistributionbar] > * {
       overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
       width: 0;
       display: flex;
       flex-direction: row;
-      align-items: center; }
+      align-items: center;
+      position: relative; }
+      .lu [data-renderer=catdistributionbar] > * > span {
+        position: absolute;
+        left: 5px;
+        right: 3px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
   .lu [data-agg=detail] [data-renderer=categorical],
   .lu [data-agg=detail] [data-renderer=brightness],
   .lu [data-agg=group] [data-renderer=brightness] > div {
