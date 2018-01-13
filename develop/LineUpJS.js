@@ -6475,6 +6475,13 @@ class LocalDataProvider extends __WEBPACK_IMPORTED_MODULE_2__ACommonDataProvider
             });
         };
     }
+    setFilter(filter) {
+        this.filter = filter;
+        this.reorderAll();
+    }
+    getFilter() {
+        return this.filter;
+    }
     getTotalNumberOfRows() {
         return this.data.length;
     }
@@ -6518,14 +6525,18 @@ class LocalDataProvider extends __WEBPACK_IMPORTED_MODULE_2__ACommonDataProvider
             return [];
         }
         let helper = this._data.map((r, i) => ({ v: r, i, group: null }));
+        let filter = null;
         if (this.options.filterGlobally) {
             const filtered = this.getRankings().filter((d) => d.isFiltered());
             if (filtered.length > 0) {
-                helper = helper.filter((d) => filtered.every((f) => f.filter(d)));
+                filter = (d) => filtered.every((f) => f.filter(d));
             }
         }
         else if (ranking.isFiltered()) {
-            helper = helper.filter((d) => ranking.filter(d));
+            filter = (d) => ranking.filter(d);
+        }
+        if (filter || this.filter) {
+            helper = helper.filter((d) => (!this.filter || this.filter(d)) && (!filter || filter(d)));
         }
         if (helper.length === 0) {
             return [];
@@ -19347,7 +19358,12 @@ class RankingBuilder {
         this.groups = [];
     }
     sortBy(column, asc = true) {
-        this.sort.push({ column, asc: asc === true || asc === 'asc' });
+        if (column.includes(':')) {
+            const index = column.indexOf(':');
+            asc = column.slice(index + 1);
+            column = column.slice(0, index);
+        }
+        this.sort.push({ column, asc: asc === true || String(asc)[0] === 'a' });
         return this;
     }
     groupBy(...columns) {
@@ -19355,20 +19371,68 @@ class RankingBuilder {
         return this;
     }
     column(column) {
-        this.columns.push(column);
+        if (typeof column === 'string') {
+            switch (column) {
+                case '_aggregate':
+                    return this.aggregate();
+                case '_selection':
+                    return this.selection();
+                case '_group':
+                    return this.group();
+                case '_rank':
+                    return this.rank();
+                case '_*':
+                    return this.supportTypes();
+                case '*':
+                    return this.allColumns();
+            }
+            this.columns.push(column);
+            return this;
+        }
+        const label = column.label || null;
+        switch (column.type) {
+            case 'impose':
+                return this.impose(label, 'number', column.column, column.categoricalColumn);
+            case 'imposedBoxPlot':
+                return this.impose(label, 'boxplot', column.column, column.categoricalColumn);
+            case 'imposes':
+                return this.impose(label, 'numbers', column.column, column.categoricalColumn);
+            case 'min':
+            case 'max':
+            case 'median':
+            case 'mean':
+                console.assert(column.columns.length >= 2);
+                return this.reduce(label, column.type, column.columns[0], column.columns[1], ...column.columns.slice(2));
+            case 'nested':
+                console.assert(column.columns.length >= 1);
+                return this.nested(label, column.columns[0], ...column.columns.slice(1));
+            case 'script':
+                console.assert(column.columns.length >= 2);
+                return this.scripted(label, column.code, column.columns[0], column.columns[1], ...column.columns.slice(2));
+            case 'weightedSum':
+                console.assert(column.columns.length >= 2);
+                console.assert(column.columns.length === column.weights.length);
+                const mixed = [];
+                column.columns.slice(2).forEach((c, i) => {
+                    mixed.push(c);
+                    mixed.push(column.weights[i + 2]);
+                });
+                return this.weightedSum(label, column.columns[0], column.weights[0], column.columns[1], column.weights[1], ...mixed);
+        }
+        console.error('invalid column type: ', column);
         return this;
     }
-    impose(type, numberColumn, categoricalColumn) {
+    impose(label, type, numberColumn, categoricalColumn) {
         let desc;
         switch (type) {
             case 'boxplot':
-                desc = Object(__WEBPACK_IMPORTED_MODULE_0__model__["_1" /* createImpositionBoxPlotDesc */])();
+                desc = Object(__WEBPACK_IMPORTED_MODULE_0__model__["_1" /* createImpositionBoxPlotDesc */])(label ? label : undefined);
                 break;
             case 'numbers':
-                desc = Object(__WEBPACK_IMPORTED_MODULE_0__model__["_3" /* createImpositionsDesc */])();
+                desc = Object(__WEBPACK_IMPORTED_MODULE_0__model__["_3" /* createImpositionsDesc */])(label ? label : undefined);
                 break;
             default:
-                desc = Object(__WEBPACK_IMPORTED_MODULE_0__model__["_2" /* createImpositionDesc */])();
+                desc = Object(__WEBPACK_IMPORTED_MODULE_0__model__["_2" /* createImpositionDesc */])(label ? label : undefined);
                 break;
         }
         this.columns.push({
@@ -19377,17 +19441,17 @@ class RankingBuilder {
         });
         return this;
     }
-    nested(column, ...columns) {
+    nested(label, column, ...columns) {
         this.columns.push({
-            desc: Object(__WEBPACK_IMPORTED_MODULE_0__model__["_5" /* createNestedDesc */])(),
+            desc: Object(__WEBPACK_IMPORTED_MODULE_0__model__["_5" /* createNestedDesc */])(label ? label : undefined),
             columns: [column].concat(columns)
         });
         return this;
     }
-    weightedSum(numberColumn1, weight1, numberColumn2, weight2, ...numberColumnAndWeights) {
+    weightedSum(label, numberColumn1, weight1, numberColumn2, weight2, ...numberColumnAndWeights) {
         const weights = [weight1, weight2].concat(numberColumnAndWeights.filter((_, i) => i % 2 === 1));
         this.columns.push({
-            desc: Object(__WEBPACK_IMPORTED_MODULE_0__model__["_10" /* createStackDesc */])(),
+            desc: Object(__WEBPACK_IMPORTED_MODULE_0__model__["_10" /* createStackDesc */])(label ? label : undefined),
             columns: [numberColumn1, numberColumn2].concat(numberColumnAndWeights.filter((_, i) => i % 2 === 0)),
             post: (col) => {
                 col.setWeights(weights);
@@ -19395,9 +19459,9 @@ class RankingBuilder {
         });
         return this;
     }
-    reduce(operation, numberColumn1, numberColumn2, ...numberColumns) {
+    reduce(label, operation, numberColumn1, numberColumn2, ...numberColumns) {
         this.columns.push({
-            desc: Object(__WEBPACK_IMPORTED_MODULE_0__model__["_7" /* createReduceDesc */])(),
+            desc: Object(__WEBPACK_IMPORTED_MODULE_0__model__["_7" /* createReduceDesc */])(label ? label : undefined),
             columns: [numberColumn1, numberColumn2].concat(numberColumns),
             post: (col) => {
                 col.setReduce(operation);
@@ -19405,9 +19469,9 @@ class RankingBuilder {
         });
         return this;
     }
-    scripted(code, numberColumn1, numberColumn2, ...numberColumns) {
+    scripted(label, code, numberColumn1, numberColumn2, ...numberColumns) {
         this.columns.push({
-            desc: Object(__WEBPACK_IMPORTED_MODULE_0__model__["_8" /* createScriptDesc */])(),
+            desc: Object(__WEBPACK_IMPORTED_MODULE_0__model__["_8" /* createScriptDesc */])(label ? label : undefined),
             columns: [numberColumn1, numberColumn2].concat(numberColumns),
             post: (col) => {
                 col.setScript(code);
@@ -19528,7 +19592,7 @@ class RankingBuilder {
 }
 /* harmony export (immutable) */ __webpack_exports__["b"] = RankingBuilder;
 
-RankingBuilder.ALL_MAGIC_FLAG = '__ALL__COLUMNS';
+RankingBuilder.ALL_MAGIC_FLAG = '*';
 function buildRanking() {
     return new RankingBuilder();
 }
@@ -19694,7 +19758,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 const version = "3.0.0-alpha2";
 /* harmony export (immutable) */ __webpack_exports__["version"] = version;
 
-const buildId = "20180112-122548";
+const buildId = "20180113-171829";
 /* harmony export (immutable) */ __webpack_exports__["buildId"] = buildId;
 
 const license = "BSD-3-Clause";
@@ -28172,14 +28236,17 @@ class ARowRenderer {
     init() {
         const scroller = this.bodyScroller;
         let oldTop = scroller.scrollTop;
+        let oldHeight = scroller.clientHeight;
         const handler = () => {
             const top = scroller.scrollTop;
-            if (Math.abs(oldTop - top) < this.options.minScrollDelta) {
+            const height = scroller.clientHeight;
+            if (Math.abs(oldTop - top) < this.options.minScrollDelta && Math.abs(oldHeight - height) < this.options.minScrollDelta) {
                 return;
             }
             const isGoingDown = top > oldTop;
             oldTop = top;
-            this.onScrolledVertically(top, scroller.clientHeight, isGoingDown);
+            oldHeight = height;
+            this.onScrolledVertically(top, height, isGoingDown);
             if (this.options.scrollingHint) {
                 scroller.classList.remove('le-scrolling');
             }

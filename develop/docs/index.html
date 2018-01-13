@@ -109,7 +109,7 @@ builder
   .allColumns() <span class="hljs-comment">// add all columns</span>
   .groupBy(<span class="hljs-string">'cat'</span>)
   .sortBy(<span class="hljs-string">'a'</span>, <span class="hljs-string">'desc'</span>)
-  .impose(<span class="hljs-string">'number'</span>, <span class="hljs-string">'a'</span>, <span class="hljs-string">'cat2'</span>); <span class="hljs-comment">// create composite column</span>
+  .impose(<span class="hljs-string">'a+cat'</span>, <span class="hljs-string">'number'</span>, <span class="hljs-string">'a'</span>, <span class="hljs-string">'cat2'</span>); <span class="hljs-comment">// create composite column</span>
 
 builder
   .defaultRanking()
