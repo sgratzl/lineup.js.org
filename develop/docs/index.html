@@ -79,6 +79,7 @@
 					<li>group aggregations (show a whole group as a single group row)</li>
 					<li>numerous visualizations for summaries, cells, and group aggregations</li>
 					<li>side panel for easy filtering and column management</li>
+					<li><a href="#rshiny">RShiny</a>, <a href="#jupyter">Juypter</a>, and <a href="#powerbi">Power BI</a> wrapper</li>
 				</ul>
 				<h2 id="usage">Usage</h2>
 				<p><strong>Installation</strong></p>
@@ -138,6 +139,7 @@ builder
 					<li>Firefox 57+</li>
 					<li>Edge 16+</li>
 				</ul>
+				<p><a id="rshiny"></a></p>
 				<h2 id="r-rshiny-and-r-markdown-support">R, RShiny, and R Markdown Support</h2>
 				<p>A <a href="http://www.htmlwidgets.org/">HTMLWidget</a> wrapper for R is located at <a href="https://github.com/sgratzl/lineup_htmlwidget">lineup_htmlwidget</a>.
 					It can be used within standalone <a href="https://shiny.rstudio.com/">R Shiny</a> apps or <a href="http://rmarkdown.rstudio.com/">R Markdown</a> files. Integrated plotting does not work due to an outdated integrated Webkit version in RStudio.
@@ -150,6 +152,26 @@ devtools::install_github(<span class="hljs-string">"sgratzl/lineup_htmlwidget"</
 				<p><strong>Examples</strong></p>
 				<pre><code class="lang-R">lineup(iris)
 </code></pre>
+				<p><a id="jupyter"></a></p>
+				<h2 id="jupyter-widget-under-development-">Jupyter Widget (under development)</h2>
+				<p>A <a href="https://jupyter.org/widgets.html">Jupyter Widget</a> wrapper for Python is located at <a href="https://github.com/sgratzl/lineup_widget">lineup_widget</a>.</p>
+				<p><strong>Installation</strong></p>
+				<pre><code class="lang-bash">pip install -e git+https://github.com/sgratzl/lineup_widget.git@develop<span class="hljs-comment">#egg=lineup_widget</span>
+jupyter nbextension <span class="hljs-built_in">enable</span> --py [--sys-prefix|--user|--system] lineup_widget
+</code></pre>
+				<p>Or, if you use jupyterlab:</p>
+				<pre><code class="lang-bash">pip install -e git+https://github.com/sgratzl/lineup_widget.git@develop<span class="hljs-comment">#egg=lineup_widget</span>
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
+</code></pre>
+				<p><strong>Examples</strong></p>
+				<p><a href="http://mybinder.org/repo/sgratzl/lineup_widget/examples"><img src="https://camo.githubusercontent.com/70c5b4d050d4019f4f20b170d75679a9316ac5e5/687474703a2f2f6d7962696e6465722e6f72672f62616467652e737667" alt="Launch Binder"></a></p>
+				<p><a id="powerbi"></a></p>
+				<h2 id="powerbi-custom-visual-under-development-">PowerBI Custom Visual (under development)</h2>
+				<p>A <a href="https://github.com/Microsoft/PowerBI-Visuals">PowerBI Visual</a> wrapper is located at <a href="https://github.com/sgratzl/lineup_powerbi">lineup_powerbi</a>.</p>
+				<p><strong>Installation</strong></p>
+				<p>TODO</p>
+				<p><strong>Examples</strong></p>
+				<p>TODO</p>
 				<h2 id="api-documentation">API Documentation</h2>
 				<p>See <a href="https://sgratzl.github.io/lineupjs_docs/master/docs">API documentation</a> and <a href="https://sgratzl.github.io/lineupjs_docs/develop/docs">Develop API documentation</a></p>
 				<h2 id="demos">Demos</h2>

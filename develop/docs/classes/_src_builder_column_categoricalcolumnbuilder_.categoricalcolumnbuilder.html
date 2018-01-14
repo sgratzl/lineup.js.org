@@ -105,7 +105,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_src_builder_column_categoricalcolumnbuilder_.categoricalcolumnbuilder.html#asmap" class="tsd-kind-icon">as<wbr>Map</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_src_builder_column_categoricalcolumnbuilder_.categoricalcolumnbuilder.html#asordinal" class="tsd-kind-icon">as<wbr>Ordinal</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_src_builder_column_categoricalcolumnbuilder_.categoricalcolumnbuilder.html#asset" class="tsd-kind-icon">as<wbr>Set</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_src_builder_column_categoricalcolumnbuilder_.categoricalcolumnbuilder.html#build" class="tsd-kind-icon">build</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_src_builder_column_categoricalcolumnbuilder_.categoricalcolumnbuilder.html#build" class="tsd-kind-icon">build</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_src_builder_column_categoricalcolumnbuilder_.categoricalcolumnbuilder.html#categories" class="tsd-kind-icon">categories</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_src_builder_column_categoricalcolumnbuilder_.categoricalcolumnbuilder.html#color" class="tsd-kind-icon">color</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_src_builder_column_categoricalcolumnbuilder_.categoricalcolumnbuilder.html#custom" class="tsd-kind-icon">custom</a></li>
@@ -133,7 +133,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_src_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_src_builder_column_columnbuilder_.columnbuilder.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3cfdfda/src/builder/column/CategoricalColumnBuilder.ts#L4">src/builder/column/CategoricalColumnBuilder.ts:4</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/82ed7e6/src/builder/column/CategoricalColumnBuilder.ts#L4">src/builder/column/CategoricalColumnBuilder.ts:4</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -156,7 +156,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_src_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_src_builder_column_columnbuilder_.columnbuilder.html#desc">desc</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3cfdfda/src/builder/column/ColumnBuilder.ts#L4">src/builder/column/ColumnBuilder.ts:4</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/82ed7e6/src/builder/column/ColumnBuilder.ts#L4">src/builder/column/ColumnBuilder.ts:4</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -174,13 +174,21 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_src_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_src_builder_column_columnbuilder_.columnbuilder.html#asarray">asArray</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3cfdfda/src/builder/column/ColumnBuilder.ts#L53">src/builder/column/ColumnBuilder.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/82ed7e6/src/builder/column/ColumnBuilder.ts#L71">src/builder/column/ColumnBuilder.ts:71</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>converts the column type to be an array type, supports only base types: boolean, categorical, date, number, and string</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> labels: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>labels to use for each array item or the expected length of an value</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -198,9 +206,14 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_src_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_src_builder_column_columnbuilder_.columnbuilder.html#asmap">asMap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3cfdfda/src/builder/column/ColumnBuilder.ts#L66">src/builder/column/ColumnBuilder.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/82ed7e6/src/builder/column/ColumnBuilder.ts#L87">src/builder/column/ColumnBuilder.ts:87</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>converts the column type to be a map type, supports only base types: categorical, date, number, and string</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 						</li>
 					</ul>
@@ -215,9 +228,14 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3cfdfda/src/builder/column/CategoricalColumnBuilder.ts#L10">src/builder/column/CategoricalColumnBuilder.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/82ed7e6/src/builder/column/CategoricalColumnBuilder.ts#L13">src/builder/column/CategoricalColumnBuilder.ts:13</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>converts this type to an ordinal column type, such that categories are mapped to numbers</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 						</li>
 					</ul>
@@ -232,33 +250,47 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3cfdfda/src/builder/column/CategoricalColumnBuilder.ts#L25">src/builder/column/CategoricalColumnBuilder.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/82ed7e6/src/builder/column/CategoricalColumnBuilder.ts#L40">src/builder/column/CategoricalColumnBuilder.ts:40</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>converts this type to a set column, i.e. multiple unique category in a value</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> separator: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>optional separator separating a string value</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 					<a name="build" class="tsd-anchor"></a>
 					<h3>build</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">build<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_src_model_icategoricalcolumn_.html#icategoricalcolumndesc" class="tsd-signature-type">ICategoricalColumnDesc</a></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">build<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_src_model_icategoricalcolumn_.html#icategoricalcolumndesc" class="tsd-signature-type">ICategoricalColumnDesc</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_src_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_src_builder_column_columnbuilder_.columnbuilder.html#build">build</a></p>
+								<p>Overrides <a href="_src_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_src_builder_column_columnbuilder_.columnbuilder.html#build">build</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3cfdfda/src/builder/column/ColumnBuilder.ts#L72">src/builder/column/ColumnBuilder.ts:72</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/82ed7e6/src/builder/column/CategoricalColumnBuilder.ts#L48">src/builder/column/CategoricalColumnBuilder.ts:48</a></li>
 								</ul>
 							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>data: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../modules/_src_model_icategoricalcolumn_.html#icategoricalcolumndesc" class="tsd-signature-type">ICategoricalColumnDesc</a></h4>
 						</li>
 					</ul>
@@ -273,13 +305,20 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3cfdfda/src/builder/column/CategoricalColumnBuilder.ts#L15">src/builder/column/CategoricalColumnBuilder.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/82ed7e6/src/builder/column/CategoricalColumnBuilder.ts#L22">src/builder/column/CategoricalColumnBuilder.ts:22</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>specify the categories of this categorical column</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>categories: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -297,7 +336,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_src_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_src_builder_column_columnbuilder_.columnbuilder.html#color">color</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3cfdfda/src/builder/column/ColumnBuilder.ts#L48">src/builder/column/ColumnBuilder.ts:48</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/82ed7e6/src/builder/column/ColumnBuilder.ts#L62">src/builder/column/ColumnBuilder.ts:62</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -321,16 +360,27 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_src_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_src_builder_column_columnbuilder_.columnbuilder.html#custom">custom</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3cfdfda/src/builder/column/ColumnBuilder.ts#L38">src/builder/column/ColumnBuilder.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/82ed7e6/src/builder/column/ColumnBuilder.ts#L52">src/builder/column/ColumnBuilder.ts:52</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>specify a custom additional attribute for the description</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>key: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the property key</p>
+									</div>
 								</li>
 								<li>
 									<h5>value: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>its value</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -348,7 +398,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_src_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_src_builder_column_columnbuilder_.columnbuilder.html#description">description</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3cfdfda/src/builder/column/ColumnBuilder.ts#L15">src/builder/column/ColumnBuilder.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/82ed7e6/src/builder/column/ColumnBuilder.ts#L15">src/builder/column/ColumnBuilder.ts:15</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -372,9 +422,14 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_src_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_src_builder_column_columnbuilder_.columnbuilder.html#frozen">frozen</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3cfdfda/src/builder/column/ColumnBuilder.ts#L20">src/builder/column/ColumnBuilder.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/82ed7e6/src/builder/column/ColumnBuilder.ts#L23">src/builder/column/ColumnBuilder.ts:23</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>sets the frozen state of this column, i.e is sticky to the left side when scrolling horizontally</p>
+								</div>
+							</div>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 						</li>
 					</ul>
@@ -390,7 +445,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_src_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_src_builder_column_columnbuilder_.columnbuilder.html#label">label</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3cfdfda/src/builder/column/ColumnBuilder.ts#L10">src/builder/column/ColumnBuilder.ts:10</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/82ed7e6/src/builder/column/ColumnBuilder.ts#L10">src/builder/column/ColumnBuilder.ts:10</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -413,13 +468,20 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3cfdfda/src/builder/column/CategoricalColumnBuilder.ts#L20">src/builder/column/CategoricalColumnBuilder.ts:20</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/82ed7e6/src/builder/column/CategoricalColumnBuilder.ts#L31">src/builder/column/CategoricalColumnBuilder.ts:31</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>define the category to use in case of missing or null values</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>missingCategory: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">object</span></h5>
+									<div class="tsd-comment tsd-typography">
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -437,19 +499,33 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_src_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_src_builder_column_columnbuilder_.columnbuilder.html#renderer">renderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3cfdfda/src/builder/column/ColumnBuilder.ts#L25">src/builder/column/ColumnBuilder.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/82ed7e6/src/builder/column/ColumnBuilder.ts#L34">src/builder/column/ColumnBuilder.ts:34</a></li>
 								</ul>
 							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>specify the renderer to used for this column</p>
+								</div>
+							</div>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> renderer: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>within a cell</p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> groupRenderer: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>within an aggregated cell</p>
+									</div>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> summaryRenderer: <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>within the summary in the header and side panel</p>
+									</div>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -467,7 +543,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_src_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_src_builder_column_columnbuilder_.columnbuilder.html#width">width</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3cfdfda/src/builder/column/ColumnBuilder.ts#L43">src/builder/column/ColumnBuilder.ts:43</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/82ed7e6/src/builder/column/ColumnBuilder.ts#L57">src/builder/column/ColumnBuilder.ts:57</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -518,7 +594,7 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_src_builder_column_categoricalcolumnbuilder_.categoricalcolumnbuilder.html#asset" class="tsd-kind-icon">as<wbr>Set</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="_src_builder_column_categoricalcolumnbuilder_.categoricalcolumnbuilder.html#build" class="tsd-kind-icon">build</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
