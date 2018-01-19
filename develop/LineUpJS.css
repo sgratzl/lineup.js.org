@@ -52,6 +52,15 @@
     .lu-dialog .lu-dragover *::after {
       pointer-events: none !important; }
 
+.lineup-engine .lu-gradient-text,
+.lu .lu-gradient-text,
+.lu-header .lu-gradient-text,
+.lu-side-panel .lu-gradient-text,
+.lu-dialog .lu-gradient-text {
+  color: transparent;
+  -webkit-background-clip: text;
+  background-clip: text; }
+
 @font-face {
   font-family: 'lu-font';
   src: url(70a3b453fb2b4527f50aeda8afb925cc.eot);
@@ -647,6 +656,9 @@
     flex: 0 0 auto;
     overflow-x: hidden;
     margin-bottom: 3px; }
+    @supports (-moz-appearance: meterbar) {
+      .lineup-engine > header {
+        overflow-y: hidden; } }
     .lineup-engine > header > :last-child {
       margin-right: 5px; }
   .lineup-engine > main {

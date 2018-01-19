@@ -295,7 +295,8 @@ var Column = (function (_super) {
         _this.renderer = _this.desc.renderer || _this.desc.type;
         _this.groupRenderer = _this.desc.groupRenderer || _this.desc.type;
         _this.summaryRenderer = _this.desc.summaryRenderer || _this.desc.type;
-        _this.width = _this.desc.width != null && _this.desc.width >= 0 ? _this.desc.width : 100;
+        _this.width = _this.desc.width != null && _this.desc.width > 0 ? _this.desc.width : 100;
+        _this.visible = Boolean(_this.desc.visible);
         _this.metadata = {
             label: desc.label || _this.id,
             description: desc.description || '',
@@ -357,18 +358,30 @@ var Column = (function (_super) {
     });
     Column.prototype.createEventList = function () {
         return _super.prototype.createEventList.call(this).concat([Column.EVENT_WIDTH_CHANGED, Column.EVENT_FILTER_CHANGED,
-            Column.EVENT_LABEL_CHANGED, Column.EVENT_METADATA_CHANGED, Column.EVENT_SUMMARY_RENDERER_TYPE_CHANGED,
+            Column.EVENT_LABEL_CHANGED, Column.EVENT_METADATA_CHANGED, Column.EVENT_VISIBILITY_CHANGED, Column.EVENT_SUMMARY_RENDERER_TYPE_CHANGED,
             Column.EVENT_ADD_COLUMN, Column.EVENT_REMOVE_COLUMN, Column.EVENT_RENDERER_TYPE_CHANGED, Column.EVENT_GROUP_RENDERER_TYPE_CHANGED, Column.EVENT_SORTMETHOD_CHANGED, Column.EVENT_MOVE_COLUMN,
             Column.EVENT_DIRTY, Column.EVENT_DIRTY_HEADER, Column.EVENT_DIRTY_VALUES, Column.EVENT_GROUPING_CHANGED, Column.EVENT_DATA_LOADED]);
     };
     Column.prototype.getWidth = function () {
         return this.width;
     };
-    Column.prototype.isHidden = function () {
-        return this.width <= 0;
-    };
     Column.prototype.hide = function () {
-        return this.setWidth(0);
+        this.setVisible(false);
+    };
+    Column.prototype.show = function () {
+        this.setVisible(true);
+    };
+    Column.prototype.isVisible = function () {
+        return this.visible;
+    };
+    Column.prototype.getVisible = function () {
+        return this.isVisible();
+    };
+    Column.prototype.setVisible = function (value) {
+        if (this.visible === value) {
+            return;
+        }
+        this.fire([Column.EVENT_VISIBILITY_CHANGED, Column.EVENT_DIRTY_HEADER, Column.EVENT_DIRTY_VALUES, Column.EVENT_DIRTY], this.visible, this.visible = value);
     };
     Column.prototype.flatten = function (r, offset, _levelsToGo, _padding) {
         if (_levelsToGo === void 0) { _levelsToGo = 0; }
@@ -450,7 +463,7 @@ var Column = (function (_super) {
         };
     };
     Column.prototype.isSortedByMe = function () {
-        return this.isSortedByMeImpl(function (r) { return r.getSortCriterias(); });
+        return this.isSortedByMeImpl(function (r) { return r.getSortCriteria(); });
     };
     Column.prototype.groupSortByMe = function (ascending) {
         if (ascending === void 0) { ascending = false; }
@@ -620,6 +633,7 @@ var Column = (function (_super) {
     Column.EVENT_SUMMARY_RENDERER_TYPE_CHANGED = 'summaryRendererChanged';
     Column.EVENT_SORTMETHOD_CHANGED = 'sortMethodChanged';
     Column.EVENT_GROUPING_CHANGED = 'groupingChanged';
+    Column.EVENT_VISIBILITY_CHANGED = 'visibilityChanged';
     Column.EVENT_DATA_LOADED = 'dataLoaded';
     return Column;
 }(__WEBPACK_IMPORTED_MODULE_1__internal_AEventDispatcher__["a" /* default */]));
@@ -770,7 +784,7 @@ function getAllToolbarActions(col) {
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "_31", function() { return __WEBPACK_IMPORTED_MODULE_37__ICategoricalColumn__["e"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "_40", function() { return __WEBPACK_IMPORTED_MODULE_37__ICategoricalColumn__["f"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "_41", function() { return __WEBPACK_IMPORTED_MODULE_37__ICategoricalColumn__["g"]; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_38__INumberColumn__ = __webpack_require__(5);
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "o", function() { return __WEBPACK_IMPORTED_MODULE_38__INumberColumn__["a"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "s", function() { return __WEBPACK_IMPORTED_MODULE_38__INumberColumn__["b"]; });
 /* harmony namespace reexport (by used) */ __webpack_require__.d(__webpack_exports__, "u", function() { return __WEBPACK_IMPORTED_MODULE_38__INumberColumn__["c"]; });
@@ -1062,6 +1076,119 @@ function models() {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+/* harmony export (immutable) */ __webpack_exports__["c"] = attr;
+/* harmony export (immutable) */ __webpack_exports__["h"] = noop;
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return noRenderer; });
+/* harmony export (immutable) */ __webpack_exports__["i"] = setText;
+/* harmony export (immutable) */ __webpack_exports__["d"] = forEach;
+/* harmony export (immutable) */ __webpack_exports__["e"] = forEachChild;
+/* harmony export (immutable) */ __webpack_exports__["f"] = matchColumns;
+/* harmony export (immutable) */ __webpack_exports__["j"] = wideEnough;
+/* harmony export (immutable) */ __webpack_exports__["b"] = adaptTextColorToBgColor;
+/* harmony export (immutable) */ __webpack_exports__["a"] = adaptDynamicColorToBgColor;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config__ = __webpack_require__(33);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_color__ = __webpack_require__(21);
+
+
+function attr(node, attrs, styles, text) {
+    if (attrs === void 0) { attrs = {}; }
+    if (styles === void 0) { styles = {}; }
+    Object.keys(attrs).forEach(function (attr) {
+        var v = String(attrs[attr]);
+        if (node.getAttribute(attr) !== v) {
+            node.setAttribute(attr, v);
+        }
+    });
+    Object.keys(styles).forEach(function (attr) {
+        var v = styles[attr];
+        if (node.style.getPropertyValue(attr) !== v) {
+            node.style.setProperty(attr, v);
+        }
+    });
+    return setText(node, text);
+}
+function noop() {
+}
+var noRenderer = {
+    template: "<div></div>",
+    update: noop,
+    render: noop
+};
+function setText(node, text) {
+    if (text === undefined) {
+        return node;
+    }
+    if (node.textContent !== text) {
+        node.textContent = text;
+    }
+    return node;
+}
+function forEach(node, selector, callback) {
+    Array.from(node.querySelectorAll(selector)).forEach(callback);
+}
+function forEachChild(node, callback) {
+    Array.from(node.children).forEach(callback);
+}
+function matchColumns(node, columns) {
+    if (node.childElementCount === 0) {
+        node.innerHTML = columns.map(function (c) { return c.template; }).join('');
+        columns.forEach(function (col, i) {
+            var cnode = node.childNodes[i];
+            cnode.setAttribute('data-column-id', col.column.id);
+            cnode.setAttribute('data-renderer', col.rendererId);
+        });
+        return;
+    }
+    function matches(c, i) {
+        var n = (node.childElementCount <= i ? null : node.childNodes[i]);
+        return n != null && n.getAttribute('data-column-id') === c.column.id && n.getAttribute('data-renderer') === c.rendererId;
+    }
+    if (columns.every(matches)) {
+        return;
+    }
+    var idsAndRenderer = new Set(columns.map(function (c) { return c.column.id + "@" + c.rendererId; }));
+    Array.from(node.childNodes).forEach(function (n) {
+        var id = n.dataset.columnId;
+        var renderer = n.dataset.rendere;
+        var idAndRenderer = id + "@" + renderer;
+        if (!idsAndRenderer.has(idAndRenderer)) {
+            node.removeChild(n);
+        }
+    });
+    columns.forEach(function (col) {
+        var cnode = node.querySelector("[data-column-id=\"" + col.column.id + "\"]");
+        if (!cnode) {
+            node.insertAdjacentHTML('beforeend', col.template);
+            cnode = node.lastElementChild;
+            cnode.dataset.columnId = col.column.id;
+            cnode.dataset.renderer = col.rendererId;
+        }
+        node.appendChild(cnode);
+    });
+}
+function wideEnough(col, length) {
+    if (length === void 0) { length = col.labels.length; }
+    var w = col.getWidth();
+    return w / length > __WEBPACK_IMPORTED_MODULE_0__config__["c" /* MIN_LABEL_WIDTH */];
+}
+function adaptTextColorToBgColor(bgColor) {
+    return Object(__WEBPACK_IMPORTED_MODULE_1_d3_color__["d" /* hsl */])(bgColor).l > 0.5 ? 'black' : 'white';
+}
+function adaptDynamicColorToBgColor(node, bgColor, width) {
+    var adapt = adaptTextColorToBgColor(bgColor);
+    if ((width <= 0.05 || adapt === 'black') || width > 0.9) {
+        node.style.color = adapt === 'black' || width <= 0.05 ? null : adapt;
+        return;
+    }
+    node.style.color = null;
+}
+
+
+/***/ }),
+/* 5 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DEFAULT_FORMATTER; });
 /* harmony export (immutable) */ __webpack_exports__["h"] = isNumberColumn;
 /* harmony export (immutable) */ __webpack_exports__["d"] = compareBoxPlot;
@@ -1155,110 +1282,6 @@ function isNumberIncluded(filter, value) {
         return !filter.filterMissing;
     }
     return !((isFinite(filter.min) && value < filter.min) || (isFinite(filter.max) && value > filter.max));
-}
-
-
-/***/ }),
-/* 5 */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony export (immutable) */ __webpack_exports__["b"] = attr;
-/* harmony export (immutable) */ __webpack_exports__["g"] = noop;
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "f", function() { return noRenderer; });
-/* harmony export (immutable) */ __webpack_exports__["h"] = setText;
-/* harmony export (immutable) */ __webpack_exports__["c"] = forEach;
-/* harmony export (immutable) */ __webpack_exports__["d"] = forEachChild;
-/* harmony export (immutable) */ __webpack_exports__["e"] = matchColumns;
-/* harmony export (immutable) */ __webpack_exports__["i"] = wideEnough;
-/* harmony export (immutable) */ __webpack_exports__["a"] = adaptTextColorToBgColor;
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config__ = __webpack_require__(33);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_color__ = __webpack_require__(21);
-
-
-function attr(node, attrs, styles, text) {
-    if (attrs === void 0) { attrs = {}; }
-    if (styles === void 0) { styles = {}; }
-    Object.keys(attrs).forEach(function (attr) {
-        var v = String(attrs[attr]);
-        if (node.getAttribute(attr) !== v) {
-            node.setAttribute(attr, v);
-        }
-    });
-    Object.keys(styles).forEach(function (attr) {
-        var v = styles[attr];
-        if (node.style.getPropertyValue(attr) !== v) {
-            node.style.setProperty(attr, v);
-        }
-    });
-    return setText(node, text);
-}
-function noop() {
-}
-var noRenderer = {
-    template: "<div></div>",
-    update: noop,
-    render: noop
-};
-function setText(node, text) {
-    if (text === undefined) {
-        return node;
-    }
-    if (node.textContent !== text) {
-        node.textContent = text;
-    }
-    return node;
-}
-function forEach(node, selector, callback) {
-    Array.from(node.querySelectorAll(selector)).forEach(callback);
-}
-function forEachChild(node, callback) {
-    Array.from(node.children).forEach(callback);
-}
-function matchColumns(node, columns) {
-    if (node.childElementCount === 0) {
-        node.innerHTML = columns.map(function (c) { return c.template; }).join('');
-        columns.forEach(function (col, i) {
-            var cnode = node.childNodes[i];
-            cnode.setAttribute('data-column-id', col.column.id);
-            cnode.setAttribute('data-renderer', col.rendererId);
-        });
-        return;
-    }
-    function matches(c, i) {
-        var n = (node.childElementCount <= i ? null : node.childNodes[i]);
-        return n != null && n.getAttribute('data-column-id') === c.column.id && n.getAttribute('data-renderer') === c.rendererId;
-    }
-    if (columns.every(matches)) {
-        return;
-    }
-    var idsAndRenderer = new Set(columns.map(function (c) { return c.column.id + "@" + c.rendererId; }));
-    Array.from(node.childNodes).forEach(function (n) {
-        var id = n.dataset.columnId;
-        var renderer = n.dataset.rendere;
-        var idAndRenderer = id + "@" + renderer;
-        if (!idsAndRenderer.has(idAndRenderer)) {
-            node.removeChild(n);
-        }
-    });
-    columns.forEach(function (col) {
-        var cnode = node.querySelector("[data-column-id=\"" + col.column.id + "\"]");
-        if (!cnode) {
-            node.insertAdjacentHTML('beforeend', col.template);
-            cnode = node.lastElementChild;
-            cnode.dataset.columnId = col.column.id;
-            cnode.dataset.renderer = col.rendererId;
-        }
-        node.appendChild(cnode);
-    });
-}
-function wideEnough(col, length) {
-    if (length === void 0) { length = col.labels.length; }
-    var w = col.getWidth();
-    return w / length > __WEBPACK_IMPORTED_MODULE_0__config__["c" /* MIN_LABEL_WIDTH */];
-}
-function adaptTextColorToBgColor(bgColor) {
-    return Object(__WEBPACK_IMPORTED_MODULE_1_d3_color__["d" /* hsl */])(bgColor).l > 0.5 ? 'black' : 'white';
 }
 
 
@@ -1975,7 +1998,7 @@ function isCategoryIncluded(filter, category) {
 /* harmony export (immutable) */ __webpack_exports__["b"] = groupCompare;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_scale__ = __webpack_require__(128);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__internal__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__INumberColumn__ = __webpack_require__(5);
 
 
 
@@ -1984,7 +2007,7 @@ function patternFunction(pattern) {
     for (var _i = 1; _i < arguments.length; _i++) {
         args[_i - 1] = arguments[_i];
     }
-    return new (Function.bind.apply(Function, [void 0, 'value'].concat(args, ["return `" + pattern + "`;"])))();
+    return new (Function.bind.apply(Function, [void 0, 'value'].concat(args, ["\n  const escapedValue = encodeURIComponent(String(value));\n  return `" + pattern + "`;\n "])))();
 }
 function isDummyNumberFilter(filter) {
     return !filter.filterMissing && !isFinite(filter.min) && !isFinite(filter.max);
@@ -2231,7 +2254,7 @@ var StringColumn = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__annotations__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Column__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__internal__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__MappingFunction__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__missing__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__ValueColumn__ = __webpack_require__(11);
@@ -2942,7 +2965,7 @@ function restoreMapping(desc) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__internal_AEventDispatcher__ = __webpack_require__(14);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__annotations__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Column__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ValueColumn__ = __webpack_require__(11);
 
 
@@ -2991,7 +3014,7 @@ var CompositeColumn = (function (_super) {
             }
         }
         this._children.forEach(function (c) {
-            if (!c.isHidden() || levelsToGo <= __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].FLAT_ALL_COLUMNS) {
+            if (c.isVisible() && levelsToGo <= __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].FLAT_ALL_COLUMNS) {
                 c.flatten(r, offset, levelsToGo - 1, padding);
             }
         });
@@ -3923,7 +3946,7 @@ var ArrayColumn = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ArrayColumn__ = __webpack_require__(29);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Column__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__internal__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__MappingFunction__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__missing__ = __webpack_require__(10);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__NumberColumn__ = __webpack_require__(19);
@@ -4167,12 +4190,12 @@ var CompositeNumberColumn = (function (_super) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__internal_AEventDispatcher__ = __webpack_require__(14);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__internal__ = __webpack_require__(8);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Column__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Group__ = __webpack_require__(58);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ICategoricalColumn__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__annotations__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__internal__ = __webpack_require__(8);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__internal_AEventDispatcher__ = __webpack_require__(14);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__annotations__ = __webpack_require__(2);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__Column__ = __webpack_require__(1);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__Group__ = __webpack_require__(58);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__ICategoricalColumn__ = __webpack_require__(16);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__internal__ = __webpack_require__(17);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__StringColumn__ = __webpack_require__(18);
 
@@ -4187,7 +4210,7 @@ var CompositeNumberColumn = (function (_super) {
 var Ranking = (function (_super) {
     __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](Ranking, _super);
     function Ranking(id, maxSortCriteria, maxGroupColumns) {
-        if (maxSortCriteria === void 0) { maxSortCriteria = 1; }
+        if (maxSortCriteria === void 0) { maxSortCriteria = 2; }
         if (maxGroupColumns === void 0) { maxGroupColumns = 1; }
         var _this = _super.call(this) || this;
         _this.id = id;
@@ -4227,7 +4250,7 @@ var Ranking = (function (_super) {
             var g = _this.groupColumns;
             switch (g.length) {
                 case 0:
-                    return __WEBPACK_IMPORTED_MODULE_4__Group__["a" /* defaultGroup */];
+                    return __WEBPACK_IMPORTED_MODULE_5__Group__["a" /* defaultGroup */];
                 case 1:
                     return g[0].group(row);
                 default:
@@ -4238,8 +4261,8 @@ var Ranking = (function (_super) {
         _this.dirtyOrder = function () {
             _this.fire([Ranking.EVENT_DIRTY_ORDER, Ranking.EVENT_DIRTY_VALUES, Ranking.EVENT_DIRTY], _this.getSortCriteria());
         };
-        _this.groups = [Object.assign({ order: [] }, __WEBPACK_IMPORTED_MODULE_4__Group__["a" /* defaultGroup */])];
-        _this.id = Object(__WEBPACK_IMPORTED_MODULE_2__internal__["f" /* fixCSS */])(id);
+        _this.groups = [Object.assign({ order: [] }, __WEBPACK_IMPORTED_MODULE_5__Group__["a" /* defaultGroup */])];
+        _this.id = Object(__WEBPACK_IMPORTED_MODULE_1__internal__["f" /* fixCSS */])(id);
         return _this;
     }
     Ranking.prototype.createEventList = function () {
@@ -4248,16 +4271,16 @@ var Ranking = (function (_super) {
             Ranking.EVENT_LABEL_CHANGED, Ranking.EVENT_GROUPS_CHANGED,
             Ranking.EVENT_ADD_COLUMN, Ranking.EVENT_REMOVE_COLUMN, Ranking.EVENT_GROUP_CRITERIA_CHANGED, Ranking.EVENT_MOVE_COLUMN,
             Ranking.EVENT_DIRTY, Ranking.EVENT_DIRTY_HEADER, Ranking.EVENT_DIRTY_VALUES,
-            Ranking.EVENT_GROUP_SORT_CRITERIA_CHANGED,
-            Ranking.EVENT_SORT_CRITERIA_CHANGED, Ranking.EVENT_SORT_CRITERIAS_CHANGED, Ranking.EVENT_DIRTY_ORDER, Ranking.EVENT_ORDER_CHANGED
+            Ranking.EVENT_GROUP_SORT_CRITERIA_CHANGED, Ranking.EVENT_COLUMN_VISIBILITY_CHANGED,
+            Ranking.EVENT_SORT_CRITERIA_CHANGED, Ranking.EVENT_DIRTY_ORDER, Ranking.EVENT_ORDER_CHANGED
         ]);
     };
     Ranking.prototype.assignNewId = function (idGenerator) {
-        this.id = Object(__WEBPACK_IMPORTED_MODULE_2__internal__["f" /* fixCSS */])(idGenerator());
+        this.id = Object(__WEBPACK_IMPORTED_MODULE_1__internal__["f" /* fixCSS */])(idGenerator());
         this.columns.forEach(function (c) { return c.assignNewId(idGenerator); });
     };
     Ranking.prototype.setOrder = function (order) {
-        this.setGroups([Object.assign({ order: order }, __WEBPACK_IMPORTED_MODULE_4__Group__["a" /* defaultGroup */])]);
+        this.setGroups([Object.assign({ order: order }, __WEBPACK_IMPORTED_MODULE_5__Group__["a" /* defaultGroup */])]);
     };
     Ranking.prototype.setGroups = function (groups) {
         var old = this.getOrder();
@@ -4322,39 +4345,31 @@ var Ranking = (function (_super) {
         if (levelsToGo === void 0) { levelsToGo = 0; }
         if (padding === void 0) { padding = 0; }
         var acc = offset;
-        if (levelsToGo > 0 || levelsToGo <= __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].FLAT_ALL_COLUMNS) {
+        if (levelsToGo > 0 || levelsToGo <= __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].FLAT_ALL_COLUMNS) {
             this.columns.forEach(function (c) {
-                if (!c.isHidden() || levelsToGo <= __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].FLAT_ALL_COLUMNS) {
+                if (c.getVisible() && levelsToGo <= __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].FLAT_ALL_COLUMNS) {
                     acc += c.flatten(r, acc, levelsToGo - 1, padding) + padding;
                 }
             });
         }
         return acc - offset;
     };
-    Object.defineProperty(Ranking.prototype, "primarySortCriteria", {
-        get: function () {
-            if (this.sortCriteria.length === 0) {
-                return null;
-            }
-            return this.sortCriteria[0];
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Ranking.prototype.getSortCriteria = function () {
-        var p = this.primarySortCriteria;
-        return p == null ? null : Object.assign({}, p);
+    Ranking.prototype.getPrimarySortCriteria = function () {
+        if (this.sortCriteria.length === 0) {
+            return null;
+        }
+        return this.sortCriteria[0];
     };
-    Ranking.prototype.getSortCriterias = function () {
+    Ranking.prototype.getSortCriteria = function () {
         return this.sortCriteria.map(function (d) { return Object.assign({}, d); });
     };
     Ranking.prototype.getGroupSortCriteria = function () {
         return this.groupSortCriteria.map(function (d) { return Object.assign({}, d); });
     };
     Ranking.prototype.toggleSorting = function (col) {
-        var categoricals = this.groupColumns.reduce(function (acc, d) { return acc + (Object(__WEBPACK_IMPORTED_MODULE_5__ICategoricalColumn__["b" /* isCategoricalColumn */])(d) ? 1 : 0); }, 0);
+        var categoricals = this.groupColumns.reduce(function (acc, d) { return acc + (Object(__WEBPACK_IMPORTED_MODULE_6__ICategoricalColumn__["b" /* isCategoricalColumn */])(d) ? 1 : 0); }, 0);
         if (categoricals <= 0) {
-            var primary = this.primarySortCriteria;
+            var primary = this.getPrimarySortCriteria();
             if (primary && primary.col === col) {
                 return this.sortBy(col, !primary.asc);
             }
@@ -4378,12 +4393,12 @@ var Ranking = (function (_super) {
         if (old >= 0) {
             var newGroupings = this.groupColumns.slice();
             newGroupings.splice(old, 1);
-            if (Object(__WEBPACK_IMPORTED_MODULE_5__ICategoricalColumn__["b" /* isCategoricalColumn */])(col) && this.sortCriteria[old] && this.sortCriteria[old].col === col) {
+            if (Object(__WEBPACK_IMPORTED_MODULE_6__ICategoricalColumn__["b" /* isCategoricalColumn */])(col) && this.sortCriteria[old] && this.sortCriteria[old].col === col) {
                 this.sortCriteria.splice(old, 1);
             }
             return this.groupBy(newGroupings);
         }
-        if (Object(__WEBPACK_IMPORTED_MODULE_5__ICategoricalColumn__["b" /* isCategoricalColumn */])(col)) {
+        if (Object(__WEBPACK_IMPORTED_MODULE_6__ICategoricalColumn__["b" /* isCategoricalColumn */])(col)) {
             var oldSort = this.sortCriteria.findIndex(function (d) { return d.col === col; });
             if (oldSort >= 0) {
                 this.sortCriteria.splice(oldSort, 1);
@@ -4403,7 +4418,7 @@ var Ranking = (function (_super) {
         if (col != null && col.findMyRanker() !== this) {
             return false;
         }
-        var primary = this.primarySortCriteria;
+        var primary = this.getPrimarySortCriteria();
         if ((col == null && primary == null) || (primary && primary.col === col && primary.asc === ascending)) {
             return true;
         }
@@ -4415,14 +4430,14 @@ var Ranking = (function (_super) {
             }
             else if (this.sortCriteria.length === this.maxSortCriteria) {
                 var last = this.sortCriteria.pop();
-                last.col.on(__WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_VALUES + ".order", null);
-                last.col.on(__WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_SORTMETHOD_CHANGED + ".order", null);
+                last.col.on(__WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_DIRTY_VALUES + ".order", null);
+                last.col.on(__WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_SORTMETHOD_CHANGED + ".order", null);
             }
         }
         else {
             this.sortCriteria.forEach(function (s) {
-                s.col.on(__WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_VALUES + ".order", null);
-                s.col.on(__WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_SORTMETHOD_CHANGED + ".order", null);
+                s.col.on(__WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_DIRTY_VALUES + ".order", null);
+                s.col.on(__WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_SORTMETHOD_CHANGED + ".order", null);
             });
             this.sortCriteria.splice(0, this.sortCriteria.length);
         }
@@ -4431,28 +4446,28 @@ var Ranking = (function (_super) {
                 col: col,
                 asc: ascending
             });
-            col.on(__WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_VALUES + ".order", this.dirtyOrder);
-            col.on(__WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_SORTMETHOD_CHANGED + ".order", this.dirtyOrder);
+            col.on(__WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_DIRTY_VALUES + ".order", this.dirtyOrder);
+            col.on(__WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_SORTMETHOD_CHANGED + ".order", this.dirtyOrder);
         }
         this.triggerResort(bak);
         return true;
     };
     Ranking.prototype.groupBy = function (col) {
         var _this = this;
-        var cols = Array.isArray(col) ? col : (col instanceof __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */] ? [col] : []);
+        var cols = Array.isArray(col) ? col : (col instanceof __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */] ? [col] : []);
         if (cols.length > this.maxGroupColumns) {
             cols = cols.slice(0, this.maxGroupColumns);
         }
-        if (Object(__WEBPACK_IMPORTED_MODULE_2__internal__["d" /* equalArrays */])(this.groupColumns, cols)) {
+        if (Object(__WEBPACK_IMPORTED_MODULE_1__internal__["d" /* equalArrays */])(this.groupColumns, cols)) {
             return true;
         }
         this.groupColumns.forEach(function (groupColumn) {
-            groupColumn.on(Object(__WEBPACK_IMPORTED_MODULE_1__internal_AEventDispatcher__["b" /* suffix */])('.group', __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_VALUES, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_SORTMETHOD_CHANGED, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_GROUPING_CHANGED), null);
+            groupColumn.on(Object(__WEBPACK_IMPORTED_MODULE_2__internal_AEventDispatcher__["b" /* suffix */])('.group', __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_DIRTY_VALUES, __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_SORTMETHOD_CHANGED, __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_GROUPING_CHANGED), null);
         });
         var bak = this.groupColumns.slice();
         (_a = this.groupColumns).splice.apply(_a, [0, this.groupColumns.length].concat(cols));
         this.groupColumns.forEach(function (groupColumn) {
-            groupColumn.on(Object(__WEBPACK_IMPORTED_MODULE_1__internal_AEventDispatcher__["b" /* suffix */])('.group', __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_VALUES, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_SORTMETHOD_CHANGED, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_GROUPING_CHANGED), _this.dirtyOrder);
+            groupColumn.on(Object(__WEBPACK_IMPORTED_MODULE_2__internal_AEventDispatcher__["b" /* suffix */])('.group', __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_DIRTY_VALUES, __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_SORTMETHOD_CHANGED, __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_GROUPING_CHANGED), _this.dirtyOrder);
         });
         this.fire([Ranking.EVENT_GROUP_CRITERIA_CHANGED, Ranking.EVENT_DIRTY_ORDER, Ranking.EVENT_DIRTY_HEADER,
             Ranking.EVENT_DIRTY_VALUES, Ranking.EVENT_DIRTY], bak, this.getGroupCriteria());
@@ -4473,12 +4488,12 @@ var Ranking = (function (_super) {
         }
         var bak = this.sortCriteria.slice();
         bak.forEach(function (d) {
-            d.col.on(__WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_VALUES + ".order", null);
-            d.col.on(__WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_SORTMETHOD_CHANGED + ".order", null);
+            d.col.on(__WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_DIRTY_VALUES + ".order", null);
+            d.col.on(__WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_SORTMETHOD_CHANGED + ".order", null);
         });
         values.forEach(function (d) {
-            d.col.on(__WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_VALUES + ".order", _this.dirtyOrder);
-            d.col.on(__WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_SORTMETHOD_CHANGED + ".order", _this.dirtyOrder);
+            d.col.on(__WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_DIRTY_VALUES + ".order", _this.dirtyOrder);
+            d.col.on(__WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_SORTMETHOD_CHANGED + ".order", _this.dirtyOrder);
         });
         (_a = this.sortCriteria).splice.apply(_a, [0, this.sortCriteria.length].concat(values.slice()));
         this.triggerResort(bak);
@@ -4528,10 +4543,10 @@ var Ranking = (function (_super) {
             values = values.slice(0, this.maxSortCriteria);
         }
         this.groupSortCriteria.forEach(function (d) {
-            d.col.on(__WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_SORTMETHOD_CHANGED + ".groupOrder", null);
+            d.col.on(__WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_SORTMETHOD_CHANGED + ".groupOrder", null);
         });
         values.forEach(function (d) {
-            d.col.on(__WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_SORTMETHOD_CHANGED + ".groupOrder", _this.dirtyOrder);
+            d.col.on(__WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_SORTMETHOD_CHANGED + ".groupOrder", _this.dirtyOrder);
         });
         (_a = this.groupSortCriteria).splice.apply(_a, [0, this.groupSortCriteria.length].concat(values.slice()));
         this.triggerResort(this.sortCriteria.slice());
@@ -4539,12 +4554,10 @@ var Ranking = (function (_super) {
         var _a;
     };
     Ranking.prototype.triggerResort = function (bak) {
-        var sortCriterias = this.getSortCriterias();
-        var bakSingle = Array.isArray(bak) ? bak[0] : bak;
+        var sortCriterias = this.getSortCriteria();
         var bakMulti = Array.isArray(bak) ? bak : sortCriterias;
         this.fire([Ranking.EVENT_SORT_CRITERIA_CHANGED, Ranking.EVENT_DIRTY_ORDER, Ranking.EVENT_DIRTY_HEADER,
-            Ranking.EVENT_DIRTY_VALUES, Ranking.EVENT_DIRTY], bakSingle, sortCriterias[0]);
-        this.fire(Ranking.EVENT_SORT_CRITERIAS_CHANGED, bakMulti, sortCriterias);
+            Ranking.EVENT_DIRTY_VALUES, Ranking.EVENT_DIRTY], bakMulti, sortCriterias);
     };
     Object.defineProperty(Ranking.prototype, "children", {
         get: function () {
@@ -4561,13 +4574,15 @@ var Ranking = (function (_super) {
         configurable: true
     });
     Ranking.prototype.insert = function (col, index) {
+        var _this = this;
         if (index === void 0) { index = this.columns.length; }
         this.columns.splice(index, 0, col);
         col.parent = this;
-        this.forward.apply(this, [col].concat(Object(__WEBPACK_IMPORTED_MODULE_1__internal_AEventDispatcher__["b" /* suffix */])('.ranking', __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_VALUES, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_HEADER, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_FILTER_CHANGED)));
+        this.forward.apply(this, [col].concat(Object(__WEBPACK_IMPORTED_MODULE_2__internal_AEventDispatcher__["b" /* suffix */])('.ranking', __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_DIRTY_VALUES, __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_DIRTY_HEADER, __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_DIRTY, __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_FILTER_CHANGED)));
         col.on(Ranking.EVENT_FILTER_CHANGED + ".order", this.dirtyOrder);
+        col.on(__WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_VISIBILITY_CHANGED + ".ranking", function (oldValue, newValue) { return _this.fire([Ranking.EVENT_COLUMN_VISIBILITY_CHANGED, Ranking.EVENT_DIRTY_HEADER, Ranking.EVENT_DIRTY_VALUES, Ranking.EVENT_DIRTY], col, oldValue, newValue); });
         this.fire([Ranking.EVENT_ADD_COLUMN, Ranking.EVENT_DIRTY_HEADER, Ranking.EVENT_DIRTY_VALUES, Ranking.EVENT_DIRTY], col, index);
-        if (this.sortCriteria.length === 0 && !Object(__WEBPACK_IMPORTED_MODULE_6__annotations__["f" /* isSupportType */])(col)) {
+        if (this.sortCriteria.length === 0 && !Object(__WEBPACK_IMPORTED_MODULE_3__annotations__["f" /* isSupportType */])(col)) {
             this.sortBy(col, col instanceof __WEBPACK_IMPORTED_MODULE_8__StringColumn__["b" /* default */]);
         }
         return col;
@@ -4631,7 +4646,7 @@ var Ranking = (function (_super) {
         if (i < 0) {
             return false;
         }
-        this.unforward.apply(this, [col].concat(Object(__WEBPACK_IMPORTED_MODULE_1__internal_AEventDispatcher__["b" /* suffix */])('.ranking', __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_VALUES, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_HEADER, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_FILTER_CHANGED)));
+        this.unforward.apply(this, [col].concat(Object(__WEBPACK_IMPORTED_MODULE_2__internal_AEventDispatcher__["b" /* suffix */])('.ranking', __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_VISIBILITY_CHANGED, __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_DIRTY_VALUES, __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_DIRTY_HEADER, __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_DIRTY, __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_FILTER_CHANGED)));
         var isSortCriteria = this.sortCriteria.findIndex(function (d) { return d.col === col; });
         if (isSortCriteria === 0) {
             this.sortCriteria.shift();
@@ -4639,7 +4654,7 @@ var Ranking = (function (_super) {
                 this.sortBy(this.sortCriteria[0].col);
             }
             else {
-                var next = this.columns.filter(function (d) { return d !== col && !Object(__WEBPACK_IMPORTED_MODULE_6__annotations__["f" /* isSupportType */])(d); })[0];
+                var next = this.columns.filter(function (d) { return d !== col && !Object(__WEBPACK_IMPORTED_MODULE_3__annotations__["f" /* isSupportType */])(d); })[0];
                 this.sortBy(next ? next : null);
             }
         }
@@ -4665,21 +4680,21 @@ var Ranking = (function (_super) {
         }
         this.sortCriteria.splice(0, this.sortCriteria.length);
         this.groupColumns.forEach(function (groupColumn) {
-            groupColumn.on(__WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_VALUES + ".group", null);
-            groupColumn.on(__WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_SORTMETHOD_CHANGED + ".group", null);
+            groupColumn.on(__WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_DIRTY_VALUES + ".group", null);
+            groupColumn.on(__WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_SORTMETHOD_CHANGED + ".group", null);
         });
         this.groupColumns.splice(0, this.groupColumns.length);
         this.columns.forEach(function (col) {
-            _this.unforward.apply(_this, [col].concat(Object(__WEBPACK_IMPORTED_MODULE_1__internal_AEventDispatcher__["b" /* suffix */])('.ranking', __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_VALUES, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_HEADER, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_FILTER_CHANGED)));
+            _this.unforward.apply(_this, [col].concat(Object(__WEBPACK_IMPORTED_MODULE_2__internal_AEventDispatcher__["b" /* suffix */])('.ranking', __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_DIRTY_VALUES, __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_DIRTY_HEADER, __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_DIRTY, __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_FILTER_CHANGED)));
             col.parent = null;
         });
-        this.columns.length = 0;
-        this.fire([Ranking.EVENT_REMOVE_COLUMN, Ranking.EVENT_DIRTY_HEADER, Ranking.EVENT_DIRTY_VALUES, Ranking.EVENT_DIRTY], null);
+        var removed = this.columns.splice(0, this.columns.length);
+        this.fire([Ranking.EVENT_REMOVE_COLUMN, Ranking.EVENT_DIRTY_HEADER, Ranking.EVENT_DIRTY_VALUES, Ranking.EVENT_DIRTY], removed);
     };
     Object.defineProperty(Ranking.prototype, "flatColumns", {
         get: function () {
             var r = [];
-            this.flatten(r, 0, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].FLAT_ALL_COLUMNS);
+            this.flatten(r, 0, __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].FLAT_ALL_COLUMNS);
             return r.map(function (d) { return d.col; });
         },
         enumerable: true,
@@ -4712,24 +4727,24 @@ var Ranking = (function (_super) {
         enumerable: true,
         configurable: true
     });
-    Ranking.EVENT_WIDTH_CHANGED = __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_WIDTH_CHANGED;
-    Ranking.EVENT_FILTER_CHANGED = __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_FILTER_CHANGED;
-    Ranking.EVENT_LABEL_CHANGED = __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_LABEL_CHANGED;
-    Ranking.EVENT_ADD_COLUMN = __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_ADD_COLUMN;
-    Ranking.EVENT_MOVE_COLUMN = __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_MOVE_COLUMN;
-    Ranking.EVENT_REMOVE_COLUMN = __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_REMOVE_COLUMN;
-    Ranking.EVENT_DIRTY = __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY;
-    Ranking.EVENT_DIRTY_HEADER = __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_HEADER;
-    Ranking.EVENT_DIRTY_VALUES = __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_VALUES;
+    Ranking.EVENT_WIDTH_CHANGED = __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_WIDTH_CHANGED;
+    Ranking.EVENT_FILTER_CHANGED = __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_FILTER_CHANGED;
+    Ranking.EVENT_LABEL_CHANGED = __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_LABEL_CHANGED;
+    Ranking.EVENT_ADD_COLUMN = __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_ADD_COLUMN;
+    Ranking.EVENT_MOVE_COLUMN = __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_MOVE_COLUMN;
+    Ranking.EVENT_REMOVE_COLUMN = __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_REMOVE_COLUMN;
+    Ranking.EVENT_DIRTY = __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_DIRTY;
+    Ranking.EVENT_DIRTY_HEADER = __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_DIRTY_HEADER;
+    Ranking.EVENT_DIRTY_VALUES = __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_DIRTY_VALUES;
+    Ranking.EVENT_COLUMN_VISIBILITY_CHANGED = __WEBPACK_IMPORTED_MODULE_4__Column__["a" /* default */].EVENT_VISIBILITY_CHANGED;
     Ranking.EVENT_SORT_CRITERIA_CHANGED = 'sortCriteriaChanged';
     Ranking.EVENT_GROUP_CRITERIA_CHANGED = 'groupCriteriaChanged';
     Ranking.EVENT_GROUP_SORT_CRITERIA_CHANGED = 'groupSortCriteriaChanged';
-    Ranking.EVENT_SORT_CRITERIAS_CHANGED = 'sortCriteriasChanged';
     Ranking.EVENT_DIRTY_ORDER = 'dirtyOrder';
     Ranking.EVENT_ORDER_CHANGED = 'orderChanged';
     Ranking.EVENT_GROUPS_CHANGED = 'groupsChanged';
     return Ranking;
-}(__WEBPACK_IMPORTED_MODULE_1__internal_AEventDispatcher__["a" /* default */]));
+}(__WEBPACK_IMPORTED_MODULE_2__internal_AEventDispatcher__["a" /* default */]));
 /* harmony default export */ __webpack_exports__["a"] = (Ranking);
 
 
@@ -4832,12 +4847,12 @@ function colorOf(col, row, imposer) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["d"] = uniformContext;
-/* harmony export (immutable) */ __webpack_exports__["b"] = nonUniformContext;
+/* harmony export (immutable) */ __webpack_exports__["c"] = uniformContext;
+/* harmony export (immutable) */ __webpack_exports__["a"] = nonUniformContext;
 /* unused harmony export randomContext */
-/* harmony export (immutable) */ __webpack_exports__["c"] = range;
-/* harmony export (immutable) */ __webpack_exports__["a"] = frozenDelta;
-/* harmony export (immutable) */ __webpack_exports__["e"] = updateFrozen;
+/* harmony export (immutable) */ __webpack_exports__["b"] = range;
+/* unused harmony export frozenDelta */
+/* harmony export (immutable) */ __webpack_exports__["d"] = updateFrozen;
 var RowHeightException = (function () {
     function RowHeightException(index, y, height) {
         this.index = index;
@@ -5180,7 +5195,7 @@ function buildColumn(type, column) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__annotations__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Column__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__internal__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__MappingFunction__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__NumberColumn__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ValueColumn__ = __webpack_require__(11);
@@ -5726,7 +5741,7 @@ function nogamma(a, b) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__annotations__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CompositeColumn__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ICategoricalColumn__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__NumberColumn__ = __webpack_require__(19);
 
 
@@ -5862,7 +5877,7 @@ var ImpositionCompositeColumn = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__annotations__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Column__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__CompositeNumberColumn__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__INumberColumn__ = __webpack_require__(5);
 
 
 
@@ -5930,7 +5945,7 @@ var StackColumn = (function (_super) {
         if (levelsToGo === void 0) { levelsToGo = 0; }
         if (padding === void 0) { padding = 0; }
         var self = null;
-        var children = levelsToGo <= __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].FLAT_ALL_COLUMNS ? this._children : this._children.filter(function (c) { return !c.isHidden(); });
+        var children = levelsToGo <= __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].FLAT_ALL_COLUMNS ? this._children : this._children.filter(function (c) { return c.isVisible(); });
         if (levelsToGo === 0 || levelsToGo <= __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].FLAT_ALL_COLUMNS) {
             var w = this.getWidth();
             if (!this.collapsed) {
@@ -6633,7 +6648,7 @@ function resortDropAble(node, column, ctx, where, autoGroup) {
         if (!col || col === column || !ranking) {
             return false;
         }
-        var criteria = ranking.getSortCriterias();
+        var criteria = ranking.getSortCriteria();
         var groups = ranking.getGroupCriteria();
         var removeFromSort = function (col) {
             var existing = criteria.findIndex(function (d) { return d.col === col; });
@@ -7748,7 +7763,7 @@ function deriveHierarchy(categories) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__annotations__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CompositeColumn__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ICategoricalColumn__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__MappingFunction__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__NumbersColumn__ = __webpack_require__(30);
 
@@ -8135,7 +8150,7 @@ var StringMapColumn = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__BoxPlotColumn__ = __webpack_require__(40);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__CompositeColumn__ = __webpack_require__(25);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__ICategoricalColumn__ = __webpack_require__(16);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__MappingFunction__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__NumbersColumn__ = __webpack_require__(30);
 
@@ -8390,7 +8405,7 @@ var LineUp = (function (_super) {
 /* harmony export (immutable) */ __webpack_exports__["c"] = sortOrder;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_BoxPlotColumn__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model_NumberColumn__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ADialog__ = __webpack_require__(7);
 
@@ -9579,7 +9594,7 @@ var NestedColumn = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__annotations__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Column__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__CompositeColumn__ = __webpack_require__(25);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__StackColumn__ = __webpack_require__(51);
 
 
@@ -9689,7 +9704,7 @@ var MultiLevelCompositeColumn = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__annotations__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Column__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__internal__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__MapColumn__ = __webpack_require__(41);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__MappingFunction__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__missing__ = __webpack_require__(10);
@@ -9844,7 +9859,7 @@ var NumberMapColumn = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__annotations__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__Column__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__CompositeNumberColumn__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__INumberColumn__ = __webpack_require__(5);
 
 
 
@@ -9954,7 +9969,7 @@ var ReduceColumn = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__annotations__ = __webpack_require__(2);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__Column__ = __webpack_require__(1);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__CompositeNumberColumn__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__INumberColumn__ = __webpack_require__(5);
 
 
 
@@ -10481,12 +10496,12 @@ function possibleSummaryRenderer(col, renderers) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_d3_color__ = __webpack_require__(21);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_Column__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model_INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model_INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__styles__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__impose__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__interfaces__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__missing__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__utils__ = __webpack_require__(4);
 
 
 
@@ -10519,7 +10534,7 @@ var BrightnessCellRenderer = (function () {
                 var missing = Object(__WEBPACK_IMPORTED_MODULE_7__missing__["b" /* renderMissingDOM */])(n, col, d);
                 n.title = col.getLabel(d);
                 n.firstElementChild.style.backgroundColor = missing ? null : toHeatMapColor(col.getNumber(d), d, col, imposer);
-                Object(__WEBPACK_IMPORTED_MODULE_8__utils__["h" /* setText */])(n.lastElementChild, n.title);
+                Object(__WEBPACK_IMPORTED_MODULE_8__utils__["i" /* setText */])(n.lastElementChild, n.title);
             },
             render: function (ctx, d) {
                 if (Object(__WEBPACK_IMPORTED_MODULE_7__missing__["a" /* renderMissingCanvas */])(ctx, col, d, width)) {
@@ -10531,10 +10546,10 @@ var BrightnessCellRenderer = (function () {
         };
     };
     BrightnessCellRenderer.prototype.createGroup = function () {
-        return __WEBPACK_IMPORTED_MODULE_8__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_8__utils__["g" /* noRenderer */];
     };
     BrightnessCellRenderer.prototype.createSummary = function () {
-        return __WEBPACK_IMPORTED_MODULE_8__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_8__utils__["g" /* noRenderer */];
     };
     return BrightnessCellRenderer;
 }());
@@ -10853,12 +10868,12 @@ function none() {}
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__internal__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model_internal__ = __webpack_require__(17);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__model_INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__model_INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__styles__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__AAggregatedGroupRenderer__ = __webpack_require__(319);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__interfaces__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__missing__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils__ = __webpack_require__(4);
 
 
 
@@ -10934,7 +10949,7 @@ var MultiLevelCellRenderer = (function (_super) {
                 if (Object(__WEBPACK_IMPORTED_MODULE_8__missing__["b" /* renderMissingDOM */])(n, col, d)) {
                     return;
                 }
-                Object(__WEBPACK_IMPORTED_MODULE_9__utils__["e" /* matchColumns */])(n, cols);
+                Object(__WEBPACK_IMPORTED_MODULE_9__utils__["f" /* matchColumns */])(n, cols);
                 var children = Array.from(n.children);
                 var total = col.getWidth();
                 var missingWeight = 0;
@@ -10981,7 +10996,7 @@ var MultiLevelCellRenderer = (function (_super) {
         return {
             template: "<div class='" + (useGrid ? gridClass(col) : '') + (useGrid ? ' lu-grid-space' : '') + "'>" + cols.map(function (d) { return d.template; }).join('') + "</div>",
             update: function (n, group, rows) {
-                Object(__WEBPACK_IMPORTED_MODULE_9__utils__["e" /* matchColumns */])(n, cols);
+                Object(__WEBPACK_IMPORTED_MODULE_9__utils__["f" /* matchColumns */])(n, cols);
                 var children = Array.from(n.children);
                 var total = col.getWidth();
                 cols.forEach(function (col, ci) {
@@ -11106,10 +11121,10 @@ var SidePanel = (function () {
                 }
             });
             if (!added) {
-                ranking.on(Object(__WEBPACK_IMPORTED_MODULE_0__internal_AEventDispatcher__["b" /* suffix */])('.panel', __WEBPACK_IMPORTED_MODULE_3__model_Ranking__["a" /* default */].EVENT_GROUP_CRITERIA_CHANGED, __WEBPACK_IMPORTED_MODULE_3__model_Ranking__["a" /* default */].EVENT_SORT_CRITERIAS_CHANGED, __WEBPACK_IMPORTED_MODULE_3__model_Ranking__["a" /* default */].EVENT_ADD_COLUMN, __WEBPACK_IMPORTED_MODULE_3__model_Ranking__["a" /* default */].EVENT_REMOVE_COLUMN), null);
+                ranking.on(Object(__WEBPACK_IMPORTED_MODULE_0__internal_AEventDispatcher__["b" /* suffix */])('.panel', __WEBPACK_IMPORTED_MODULE_3__model_Ranking__["a" /* default */].EVENT_GROUP_CRITERIA_CHANGED, __WEBPACK_IMPORTED_MODULE_3__model_Ranking__["a" /* default */].EVENT_SORT_CRITERIA_CHANGED, __WEBPACK_IMPORTED_MODULE_3__model_Ranking__["a" /* default */].EVENT_ADD_COLUMN, __WEBPACK_IMPORTED_MODULE_3__model_Ranking__["a" /* default */].EVENT_REMOVE_COLUMN), null);
                 return;
             }
-            ranking.on(Object(__WEBPACK_IMPORTED_MODULE_0__internal_AEventDispatcher__["b" /* suffix */])('.panel', __WEBPACK_IMPORTED_MODULE_3__model_Ranking__["a" /* default */].EVENT_GROUP_CRITERIA_CHANGED, __WEBPACK_IMPORTED_MODULE_3__model_Ranking__["a" /* default */].EVENT_SORT_CRITERIAS_CHANGED), function () {
+            ranking.on(Object(__WEBPACK_IMPORTED_MODULE_0__internal_AEventDispatcher__["b" /* suffix */])('.panel', __WEBPACK_IMPORTED_MODULE_3__model_Ranking__["a" /* default */].EVENT_GROUP_CRITERIA_CHANGED, __WEBPACK_IMPORTED_MODULE_3__model_Ranking__["a" /* default */].EVENT_SORT_CRITERIA_CHANGED), function () {
                 if (ranking === data.getRankings()[0]) {
                     _this.updateList();
                 }
@@ -11132,6 +11147,7 @@ var SidePanel = (function () {
             _this.updateChooser();
         });
         data.on(__WEBPACK_IMPORTED_MODULE_4__provider_ADataProvider__["a" /* default */].EVENT_CLEAR_DESC + ".panel", function () {
+            that.descs.forEach(function (v) { return v.destroyVis(); });
             that.descs.clear();
             _this.updateChooser();
         });
@@ -11139,7 +11155,13 @@ var SidePanel = (function () {
             _this.updateStats();
         });
         data.on(Object(__WEBPACK_IMPORTED_MODULE_0__internal_AEventDispatcher__["b" /* suffix */])('.panel', __WEBPACK_IMPORTED_MODULE_4__provider_ADataProvider__["a" /* default */].EVENT_ADD_RANKING, __WEBPACK_IMPORTED_MODULE_4__provider_ADataProvider__["a" /* default */].EVENT_REMOVE_RANKING), function (ranking) {
-            handleRanking(ranking, this.type === 'addRanking');
+            if (ranking) {
+                handleRanking(ranking, this.type === 'addRanking');
+            }
+            else {
+                that.descs.forEach(function (v) { return v.destroyVis(); });
+                that.descs.clear();
+            }
             that.updateList();
         });
         this.updateStats();
@@ -11186,7 +11208,7 @@ var SidePanel = (function () {
             return;
         }
         this.data.getRankings().forEach(function (ranking) {
-            ranking.on(Object(__WEBPACK_IMPORTED_MODULE_0__internal_AEventDispatcher__["b" /* suffix */])('.panel', __WEBPACK_IMPORTED_MODULE_3__model_Ranking__["a" /* default */].EVENT_GROUP_CRITERIA_CHANGED, __WEBPACK_IMPORTED_MODULE_3__model_Ranking__["a" /* default */].EVENT_SORT_CRITERIAS_CHANGED, __WEBPACK_IMPORTED_MODULE_3__model_Ranking__["a" /* default */].EVENT_ADD_COLUMN, __WEBPACK_IMPORTED_MODULE_3__model_Ranking__["a" /* default */].EVENT_REMOVE_COLUMN), null);
+            ranking.on(Object(__WEBPACK_IMPORTED_MODULE_0__internal_AEventDispatcher__["b" /* suffix */])('.panel', __WEBPACK_IMPORTED_MODULE_3__model_Ranking__["a" /* default */].EVENT_GROUP_CRITERIA_CHANGED, __WEBPACK_IMPORTED_MODULE_3__model_Ranking__["a" /* default */].EVENT_SORT_CRITERIA_CHANGED, __WEBPACK_IMPORTED_MODULE_3__model_Ranking__["a" /* default */].EVENT_ADD_COLUMN, __WEBPACK_IMPORTED_MODULE_3__model_Ranking__["a" /* default */].EVENT_REMOVE_COLUMN), null);
         });
         this.data.on(Object(__WEBPACK_IMPORTED_MODULE_0__internal_AEventDispatcher__["b" /* suffix */])('.panel', __WEBPACK_IMPORTED_MODULE_4__provider_ADataProvider__["a" /* default */].EVENT_ADD_RANKING, __WEBPACK_IMPORTED_MODULE_4__provider_ADataProvider__["a" /* default */].EVENT_REMOVE_RANKING, __WEBPACK_IMPORTED_MODULE_4__provider_ADataProvider__["a" /* default */].EVENT_ADD_DESC), null);
     };
@@ -11197,7 +11219,7 @@ var SidePanel = (function () {
         }
         var hierarchy = ranking.getGroupCriteria();
         var used = new Set(hierarchy.map(function (d) { return d.desc; }));
-        ranking.getSortCriterias().forEach(function (_a) {
+        ranking.getSortCriteria().forEach(function (_a) {
             var col = _a.col;
             if (used.has(col.desc)) {
                 return;
@@ -11383,7 +11405,7 @@ var EngineRenderer = (function (_super) {
                 group: Object(__WEBPACK_IMPORTED_MODULE_8__renderer__["d" /* possibleGroupRenderer */])(col, _this.options.renderers),
                 summary: Object(__WEBPACK_IMPORTED_MODULE_8__renderer__["f" /* possibleSummaryRenderer */])(col, _this.options.renderers)
             }); },
-            colWidth: function (col) { return col.isHidden() ? 0 : col.getWidth(); }
+            colWidth: function (col) { return !col.isVisible() ? 0 : col.getWidth(); }
         };
         _this.table = new __WEBPACK_IMPORTED_MODULE_2_lineupengine_src_table_MultiTableRowRenderer__["a" /* default */](_this.node, "#" + options.idPrefix);
         {
@@ -11468,13 +11490,18 @@ var EngineRenderer = (function (_super) {
             var order = ranking.getOrder();
             var cols = col ? [col] : ranking.flatColumns;
             var histo = order == null ? null : _this.data.stats(order);
-            cols.filter(function (d) { return Object(__WEBPACK_IMPORTED_MODULE_5__model__["_28" /* isNumberColumn */])(d) && !d.isHidden(); }).forEach(function (col) {
+            cols.filter(function (d) { return Object(__WEBPACK_IMPORTED_MODULE_5__model__["_28" /* isNumberColumn */])(d) && d.isVisible(); }).forEach(function (col) {
                 _this.histCache.set(col.id, histo == null ? null : histo.stats(col));
             });
-            cols.filter(function (d) { return Object(__WEBPACK_IMPORTED_MODULE_5__model__["_18" /* isCategoricalColumn */])(d) && !d.isHidden(); }).forEach(function (col) {
+            cols.filter(function (d) { return Object(__WEBPACK_IMPORTED_MODULE_5__model__["_18" /* isCategoricalColumn */])(d) && d.isVisible(); }).forEach(function (col) {
                 _this.histCache.set(col.id, histo == null ? null : histo.hist(col));
             });
-            r.updateHeaders();
+            if (col) {
+                r.updateHeaderOf(col);
+            }
+            else {
+                r.updateHeaders();
+            }
         });
         this.updateAbles.forEach(function (u) { return u(_this.ctx); });
     };
@@ -11499,6 +11526,12 @@ var EngineRenderer = (function (_super) {
         this.update([r]);
     };
     EngineRenderer.prototype.removeRanking = function (ranking) {
+        if (!ranking) {
+            this.rankings.splice(0, this.rankings.length);
+            this.slopeGraphs.splice(0, this.slopeGraphs.length);
+            this.table.clear();
+            return;
+        }
         var index = this.rankings.findIndex(function (r) { return r.ranking === ranking; });
         if (index < 0) {
             return;
@@ -11549,7 +11582,7 @@ var EngineRenderer = (function (_super) {
         rankings.forEach(function (r, i) {
             var grouped = r.groupData(localData[i]);
             var _a = heightsFor(r.ranking, grouped), height = _a.height, defaultHeight = _a.defaultHeight, padding = _a.padding;
-            var rowContext = Object(__WEBPACK_IMPORTED_MODULE_1_lineupengine_src_logic__["b" /* nonUniformContext */])(grouped.map(height), defaultHeight, function (index) {
+            var rowContext = Object(__WEBPACK_IMPORTED_MODULE_1_lineupengine_src_logic__["a" /* nonUniformContext */])(grouped.map(height), defaultHeight, function (index) {
                 var pad = (typeof padding === 'number' ? padding : padding(grouped[index] || null));
                 if (index >= 0 && grouped[index] && (Object(__WEBPACK_IMPORTED_MODULE_5__model__["_22" /* isGroup */])(grouped[index]) || grouped[index].meta === 'last' || grouped[index].meta === 'first last')) {
                     return groupPadding + pad;
@@ -14128,7 +14161,7 @@ function exportRanking(ranking, data, options) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model_StringColumn__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ui_missing__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__missing__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils__ = __webpack_require__(4);
 
 
 
@@ -14147,13 +14180,13 @@ var StringCellRenderer = (function () {
             update: function (n, d) {
                 Object(__WEBPACK_IMPORTED_MODULE_2__missing__["b" /* renderMissingDOM */])(n, col, d);
                 if (col.escape) {
-                    Object(__WEBPACK_IMPORTED_MODULE_3__utils__["h" /* setText */])(n, col.getLabel(d));
+                    Object(__WEBPACK_IMPORTED_MODULE_3__utils__["i" /* setText */])(n, col.getLabel(d));
                 }
                 else {
                     n.innerHTML = col.getLabel(d);
                 }
             },
-            render: __WEBPACK_IMPORTED_MODULE_3__utils__["g" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_3__utils__["h" /* noop */]
         };
     };
     StringCellRenderer.exampleText = function (col, rows) {
@@ -14271,7 +14304,7 @@ function toString(filter) {
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DefaultCellRenderer; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__missing__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(4);
 
 
 var DefaultCellRenderer = (function () {
@@ -14288,16 +14321,16 @@ var DefaultCellRenderer = (function () {
             template: "<div> </div>",
             update: function (n, d) {
                 Object(__WEBPACK_IMPORTED_MODULE_0__missing__["b" /* renderMissingDOM */])(n, col, d);
-                Object(__WEBPACK_IMPORTED_MODULE_1__utils__["h" /* setText */])(n, col.getLabel(d));
+                Object(__WEBPACK_IMPORTED_MODULE_1__utils__["i" /* setText */])(n, col.getLabel(d));
             },
-            render: __WEBPACK_IMPORTED_MODULE_1__utils__["g" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_1__utils__["h" /* noop */]
         };
     };
     DefaultCellRenderer.prototype.createGroup = function (_col) {
-        return __WEBPACK_IMPORTED_MODULE_1__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_1__utils__["g" /* noRenderer */];
     };
     DefaultCellRenderer.prototype.createSummary = function () {
-        return __WEBPACK_IMPORTED_MODULE_1__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_1__utils__["g" /* noRenderer */];
     };
     return DefaultCellRenderer;
 }());
@@ -14319,7 +14352,7 @@ var DefaultCellRenderer = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__styles__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ui_missing__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__missing__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__utils__ = __webpack_require__(4);
 
 
 
@@ -14346,7 +14379,7 @@ var CategoricalCellRenderer = (function () {
                 Object(__WEBPACK_IMPORTED_MODULE_8__missing__["b" /* renderMissingDOM */])(n, col, d);
                 var v = col.getCategory(d);
                 n.firstElementChild.style.backgroundColor = v ? v.color : null;
-                Object(__WEBPACK_IMPORTED_MODULE_9__utils__["h" /* setText */])(n.lastElementChild, col.getLabel(d));
+                Object(__WEBPACK_IMPORTED_MODULE_9__utils__["i" /* setText */])(n.lastElementChild, col.getLabel(d));
             },
             render: function (ctx, d) {
                 if (Object(__WEBPACK_IMPORTED_MODULE_8__missing__["a" /* renderMissingCanvas */])(ctx, col, d, width)) {
@@ -14389,7 +14422,7 @@ function staticSummary(col, interactive) {
     };
 }
 function interactiveSummary(col, interactive) {
-    var _a = hist(col, interactive || Object(__WEBPACK_IMPORTED_MODULE_9__utils__["i" /* wideEnough */])(col)), template = _a.template, update = _a.update;
+    var _a = hist(col, interactive || Object(__WEBPACK_IMPORTED_MODULE_9__utils__["j" /* wideEnough */])(col)), template = _a.template, update = _a.update;
     var filterUpdate;
     return {
         template: "" + template + (interactive ? Object(__WEBPACK_IMPORTED_MODULE_7__ui_missing__["b" /* filterMissingNumberMarkup */])(false, 0) : '') + "</div>",
@@ -14497,7 +14530,7 @@ function interactiveHist(col, node) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__interfaces__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__missing__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils__ = __webpack_require__(4);
 
 
 
@@ -14594,7 +14627,7 @@ var UpSetCellRenderer = (function () {
         };
     };
     UpSetCellRenderer.prototype.createSummary = function () {
-        return __WEBPACK_IMPORTED_MODULE_4__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_4__utils__["g" /* noRenderer */];
     };
     return UpSetCellRenderer;
 }());
@@ -14619,14 +14652,14 @@ function union(col, rows) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__config__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__internal_math__ = __webpack_require__(27);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__model__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__model_INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__model_INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__model_MappingFunction__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__ui_dialogs_InputNumberDialog__ = __webpack_require__(316);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_8__ui_missing__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__impose__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__interfaces__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__missing__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__utils__ = __webpack_require__(4);
 
 
 
@@ -14657,7 +14690,7 @@ var HistogramCellRenderer = (function () {
                 }
                 render(n, createHist(hist, guessedBins, [row], col));
             },
-            render: __WEBPACK_IMPORTED_MODULE_12__utils__["g" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_12__utils__["h" /* noop */]
         };
     };
     HistogramCellRenderer.prototype.createGroup = function (col, context, hist, imposer) {
@@ -17590,7 +17623,7 @@ function clickListener(evt) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_IArrayColumn__ = __webpack_require__(64);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__missing__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils__ = __webpack_require__(4);
 
 
 
@@ -17617,7 +17650,7 @@ var TableCellRenderer = (function () {
                     return "<div>" + key + "</div><div>" + value + "</div>";
                 }).join('');
             },
-            render: __WEBPACK_IMPORTED_MODULE_3__utils__["g" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_3__utils__["h" /* noop */]
         };
     };
     TableCellRenderer.template = function (col) {
@@ -17632,11 +17665,11 @@ var TableCellRenderer = (function () {
                     return;
                 }
                 var value = col.getLabels(d);
-                Object(__WEBPACK_IMPORTED_MODULE_3__utils__["c" /* forEach */])(node, '[data-v]', function (n, i) {
+                Object(__WEBPACK_IMPORTED_MODULE_3__utils__["d" /* forEach */])(node, '[data-v]', function (n, i) {
                     n.innerHTML = value[i];
                 });
             },
-            render: __WEBPACK_IMPORTED_MODULE_3__utils__["g" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_3__utils__["h" /* noop */]
         };
     };
     TableCellRenderer.example = function (arr) {
@@ -17665,7 +17698,7 @@ var TableCellRenderer = (function () {
             update: function (node, _group, rows) {
                 var numExampleRows = 5;
                 var vs = rows.filter(function (d) { return !col.isMissing(d); }).map(function (d) { return col.getLabels(d); });
-                Object(__WEBPACK_IMPORTED_MODULE_3__utils__["c" /* forEach */])(node, '[data-v]', function (n, i) {
+                Object(__WEBPACK_IMPORTED_MODULE_3__utils__["d" /* forEach */])(node, '[data-v]', function (n, i) {
                     var values = [];
                     for (var _i = 0, vs_1 = vs; _i < vs_1.length; _i++) {
                         var v = vs_1[_i];
@@ -17686,7 +17719,7 @@ var TableCellRenderer = (function () {
     TableCellRenderer.prototype.createSummary = function () {
         return {
             template: "<div><div>Key</div><div>Value</div></div>",
-            update: __WEBPACK_IMPORTED_MODULE_3__utils__["g" /* noop */]
+            update: __WEBPACK_IMPORTED_MODULE_3__utils__["h" /* noop */]
         };
     };
     return TableCellRenderer;
@@ -18505,7 +18538,7 @@ var PrefetchMixin = (function () {
         var scroller = this.adapter.scroller;
         var fakeOffset = Math.max(scroller.scrollTop - this.options.prefetchRows * context.defaultRowHeight, 0);
         var height = scroller.clientHeight;
-        var _a = Object(__WEBPACK_IMPORTED_MODULE_0__logic__["c" /* range */])(fakeOffset, height, context.defaultRowHeight, context.exceptions, context.numberOfRows), first = _a.first, firstRowPos = _a.firstRowPos;
+        var _a = Object(__WEBPACK_IMPORTED_MODULE_0__logic__["b" /* range */])(fakeOffset, height, context.defaultRowHeight, context.exceptions, context.numberOfRows), first = _a.first, firstRowPos = _a.firstRowPos;
         if (first === this.adapter.visible.first) {
             return;
         }
@@ -18669,7 +18702,6 @@ var StyleManager = (function () {
 
 
 
-
 var WEIRD_CANVAS_OFFSET = 0.6;
 var RankingEvents = (function (_super) {
     __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __extends */](RankingEvents, _super);
@@ -18746,24 +18778,38 @@ var EngineRanking = (function (_super) {
             var currentEvent = current.self.type;
             return currentEvent === __WEBPACK_IMPORTED_MODULE_10__model_Ranking__["a" /* default */].EVENT_ORDER_CHANGED ? current : next;
         });
-        var updateAll = Object(__WEBPACK_IMPORTED_MODULE_7__internal_debounce__["a" /* default */])(function () { return _this.updateAll(); }, 50);
+        _this.delayedUpdateAll = Object(__WEBPACK_IMPORTED_MODULE_7__internal_debounce__["a" /* default */])(function () { return _this.updateAll(); }, 50);
+        _this.delayedUpdateColumnWidths = Object(__WEBPACK_IMPORTED_MODULE_7__internal_debounce__["a" /* default */])(function () { return _this.updateColumnWidths(); }, 50);
         ranking.on(__WEBPACK_IMPORTED_MODULE_10__model_Ranking__["a" /* default */].EVENT_ADD_COLUMN + ".hist", function (col, index) {
             _this.columns.splice(index, 0, _this.createCol(col, index));
             _this.reindex();
-            updateAll();
+            _this.delayedUpdateAll();
         });
         ranking.on(__WEBPACK_IMPORTED_MODULE_10__model_Ranking__["a" /* default */].EVENT_REMOVE_COLUMN + ".body", function (col, index) {
             EngineRanking.disableListener(col);
             _this.columns.splice(index, 1);
             _this.reindex();
-            updateAll();
+            _this.delayedUpdateAll();
         });
         ranking.on(__WEBPACK_IMPORTED_MODULE_10__model_Ranking__["a" /* default */].EVENT_MOVE_COLUMN + ".body", function (col, index, old) {
             var c = _this.columns.splice(old, 1)[0];
             console.assert(c.c === col);
             _this.columns.splice(old < index ? index - 1 : index, 0, c);
             _this.reindex();
-            updateAll();
+            _this.delayedUpdateAll();
+        });
+        ranking.on(__WEBPACK_IMPORTED_MODULE_10__model_Ranking__["a" /* default */].EVENT_COLUMN_VISIBILITY_CHANGED + ".body", function (col, _oldValue, newValue) {
+            if (newValue) {
+                var index = ranking.children.indexOf(col);
+                _this.columns.splice(index, 0, _this.createCol(col, index));
+            }
+            else {
+                var index = _this.columns.findIndex(function (d) { return d.c === col; });
+                EngineRanking.disableListener(col);
+                _this.columns.splice(index, 1);
+            }
+            _this.reindex();
+            _this.delayedUpdateAll();
         });
         ranking.on(__WEBPACK_IMPORTED_MODULE_10__model_Ranking__["a" /* default */].EVENT_ORDER_CHANGED + ".body", _this.delayedUpdate);
         _this.selection = new __WEBPACK_IMPORTED_MODULE_16__SelectionManager__["a" /* default */](_this.ctx, body);
@@ -18775,12 +18821,12 @@ var EngineRanking = (function (_super) {
             getRow: function (index) { return _this.data[index]; },
             getGroup: function (index) { return _this.data[index]; }
         }, ctx);
-        _this.columns = ranking.children.filter(function (c) { return !c.isHidden(); }).map(function (c, i) { return _this.createCol(c, i); });
+        _this.columns = ranking.children.filter(function (c) { return c.isVisible(); }).map(function (c, i) { return _this.createCol(c, i); });
         _this.updateCanvasRule();
         _this._context = Object.assign({
             columns: _this.columns,
-            column: Object(__WEBPACK_IMPORTED_MODULE_1_lineupengine_src_logic__["b" /* nonUniformContext */])(_this.columns.map(function (w) { return w.width; }), 100, __WEBPACK_IMPORTED_MODULE_12__styles__["d" /* COLUMN_PADDING */])
-        }, Object(__WEBPACK_IMPORTED_MODULE_1_lineupengine_src_logic__["d" /* uniformContext */])(0, 20));
+            column: Object(__WEBPACK_IMPORTED_MODULE_1_lineupengine_src_logic__["a" /* nonUniformContext */])(_this.columns.map(function (w) { return w.width; }), 100, __WEBPACK_IMPORTED_MODULE_12__styles__["d" /* COLUMN_PADDING */])
+        }, Object(__WEBPACK_IMPORTED_MODULE_1_lineupengine_src_logic__["c" /* uniformContext */])(0, 20));
         _this.columns.forEach(function (column) {
             if (column instanceof __WEBPACK_IMPORTED_MODULE_14__MultiLevelRenderColumn__["a" /* default */]) {
                 column.updateWidthRule(_this.style);
@@ -18875,7 +18921,7 @@ var EngineRanking = (function (_super) {
         });
         this.updateCanvasRule();
         this._context = Object.assign({}, this._context, {
-            column: Object(__WEBPACK_IMPORTED_MODULE_1_lineupengine_src_logic__["b" /* nonUniformContext */])(this.columns.map(function (w) { return w.width; }), 100, __WEBPACK_IMPORTED_MODULE_12__styles__["d" /* COLUMN_PADDING */])
+            column: Object(__WEBPACK_IMPORTED_MODULE_1_lineupengine_src_logic__["a" /* nonUniformContext */])(this.columns.map(function (w) { return w.width; }), 100, __WEBPACK_IMPORTED_MODULE_12__styles__["d" /* COLUMN_PADDING */])
         });
         _super.prototype.recreate.call(this);
         this.events.fire(EngineRanking.EVENT_WIDTH_CHANGED);
@@ -18888,9 +18934,14 @@ var EngineRanking = (function (_super) {
         if (this.hidden) {
             return;
         }
+        this.events.fire(EngineRanking.EVENT_WIDTH_CHANGED);
         _super.prototype.forEachRow.call(this, function (row, rowIndex) { return _this.updateRow(row, rowIndex); });
     };
-    EngineRanking.prototype.updateHeaderOf = function (i) {
+    EngineRanking.prototype.updateHeaderOf = function (col) {
+        var i = this._context.columns.findIndex(function (d) { return d.c === col; });
+        if (i < 0) {
+            return false;
+        }
         var node = this.header.children[i];
         var column = this._context.columns[i];
         if (node && column) {
@@ -19018,7 +19069,7 @@ var EngineRanking = (function (_super) {
     };
     EngineRanking.prototype.updateColumnWidths = function () {
         var _this = this;
-        this._context.column = Object(__WEBPACK_IMPORTED_MODULE_1_lineupengine_src_logic__["b" /* nonUniformContext */])(this._context.columns.map(function (w) { return w.width; }), 100, __WEBPACK_IMPORTED_MODULE_12__styles__["d" /* COLUMN_PADDING */]);
+        this._context.column = Object(__WEBPACK_IMPORTED_MODULE_1_lineupengine_src_logic__["a" /* nonUniformContext */])(this._context.columns.map(function (w) { return w.width; }), 100, __WEBPACK_IMPORTED_MODULE_12__styles__["d" /* COLUMN_PADDING */]);
         _super.prototype.updateColumnWidths.call(this);
         var columns = this.context.columns;
         columns.forEach(function (column) {
@@ -19113,7 +19164,7 @@ var EngineRanking = (function (_super) {
         });
         this._context = Object.assign({
             columns: this.columns,
-            column: Object(__WEBPACK_IMPORTED_MODULE_1_lineupengine_src_logic__["b" /* nonUniformContext */])(this.columns.map(function (w) { return w.width; }), 100, __WEBPACK_IMPORTED_MODULE_12__styles__["d" /* COLUMN_PADDING */])
+            column: Object(__WEBPACK_IMPORTED_MODULE_1_lineupengine_src_logic__["a" /* nonUniformContext */])(this.columns.map(function (w) { return w.width; }), 100, __WEBPACK_IMPORTED_MODULE_12__styles__["d" /* COLUMN_PADDING */])
         }, rowContext);
         return _super.prototype.recreate.call(this, this.roptions.animation ? Object(__WEBPACK_IMPORTED_MODULE_13__animation__["a" /* lineupAnimation */])(previous, previousData, this.data) : undefined);
     };
@@ -19131,7 +19182,7 @@ var EngineRanking = (function (_super) {
         var _this = this;
         var col = (Object(__WEBPACK_IMPORTED_MODULE_8__model__["_27" /* isMultiLevelColumn */])(c) && !c.getCollapsed()) ? new __WEBPACK_IMPORTED_MODULE_14__MultiLevelRenderColumn__["a" /* default */](c, index, this.renderCtx) : new __WEBPACK_IMPORTED_MODULE_15__RenderColumn__["a" /* default */](c, index, this.renderCtx);
         c.on(__WEBPACK_IMPORTED_MODULE_9__model_Column__["a" /* default */].EVENT_WIDTH_CHANGED + ".body", function () {
-            _this.updateColumnWidths();
+            _this.delayedUpdateColumnWidths();
         });
         c.on(__WEBPACK_IMPORTED_MODULE_9__model_Column__["a" /* default */].EVENT_DATA_LOADED + ".hist", function () { return _this.updateHist(c); });
         var debounceUpdate = Object(__WEBPACK_IMPORTED_MODULE_7__internal_debounce__["a" /* default */])(function () {
@@ -19146,7 +19197,7 @@ var EngineRanking = (function (_super) {
         });
         var that = this;
         c.on(__WEBPACK_IMPORTED_MODULE_9__model_Column__["a" /* default */].EVENT_DIRTY_HEADER + ".body", function () {
-            var valid = that.updateHeaderOf(col.index);
+            var valid = that.updateHeaderOf(col.c);
             if (!valid) {
                 EngineRanking.disableListener(c);
             }
@@ -19157,7 +19208,7 @@ var EngineRanking = (function (_super) {
         });
         c.on(__WEBPACK_IMPORTED_MODULE_9__model_Column__["a" /* default */].EVENT_SUMMARY_RENDERER_TYPE_CHANGED + ".body", function () {
             col.renderers = _this.ctx.createRenderer(c);
-            var valid = _this.updateHeaderOf(col.index);
+            var valid = _this.updateHeaderOf(col.c);
             if (!valid) {
                 EngineRanking.disableListener(c);
             }
@@ -19789,8 +19840,8 @@ var SlopeGraph = (function () {
             return;
         }
         var _a = this.current, leftContext = _a.leftContext, rightContext = _a.rightContext;
-        var left = Object(__WEBPACK_IMPORTED_MODULE_0_lineupengine_src_logic__["c" /* range */])(scrollTop, clientHeight, leftContext.defaultRowHeight, leftContext.exceptions, leftContext.numberOfRows);
-        var right = Object(__WEBPACK_IMPORTED_MODULE_0_lineupengine_src_logic__["c" /* range */])(scrollTop, clientHeight, rightContext.defaultRowHeight, rightContext.exceptions, rightContext.numberOfRows);
+        var left = Object(__WEBPACK_IMPORTED_MODULE_0_lineupengine_src_logic__["b" /* range */])(scrollTop, clientHeight, leftContext.defaultRowHeight, leftContext.exceptions, leftContext.numberOfRows);
+        var right = Object(__WEBPACK_IMPORTED_MODULE_0_lineupengine_src_logic__["b" /* range */])(scrollTop, clientHeight, rightContext.defaultRowHeight, rightContext.exceptions, rightContext.numberOfRows);
         var start = Math.min(left.firstRowPos, right.firstRowPos);
         var end = Math.max(left.endPos, right.endPos);
         this.body.style.transform = "translate(0, " + start.toFixed(0) + "px)";
@@ -20535,7 +20586,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 var version = "3.0.0-alpha2";
-var buildId = "20180114-171656";
+var buildId = "20180119-153450";
 var license = "BSD-3-Clause";
 function createLocalDataProvider(data, columns, options) {
     if (options === void 0) { options = {}; }
@@ -24398,7 +24449,7 @@ function isGroup(item) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model_ActionColumn__ = __webpack_require__(57);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__interfaces__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__(4);
 
 
 
@@ -24414,7 +24465,7 @@ var ActionRenderer = (function () {
         return {
             template: "<div class='actions lu-hover-only'>" + actions.map(function (a) { return "<span title='" + a.name + "' class='fa'>" + a.icon + "</span>"; }).join('') + "</div>",
             update: function (n, d) {
-                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["d" /* forEachChild */])(n, function (ni, i) {
+                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["e" /* forEachChild */])(n, function (ni, i) {
                     ni.onclick = function (event) {
                         event.preventDefault();
                         event.stopPropagation();
@@ -24422,7 +24473,7 @@ var ActionRenderer = (function () {
                     };
                 });
             },
-            render: __WEBPACK_IMPORTED_MODULE_2__utils__["g" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_2__utils__["h" /* noop */]
         };
     };
     ActionRenderer.prototype.createGroup = function (col) {
@@ -24430,7 +24481,7 @@ var ActionRenderer = (function () {
         return {
             template: "<div class='actions lu-hover-only'>" + actions.map(function (a) { return "<span title='" + a.name + "' class='fa'>" + a.icon + "</span>"; }).join('') + "</div>",
             update: function (n, group, rows) {
-                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["d" /* forEachChild */])(n, function (ni, i) {
+                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["e" /* forEachChild */])(n, function (ni, i) {
                     ni.onclick = function (event) {
                         event.preventDefault();
                         event.stopPropagation();
@@ -24441,7 +24492,7 @@ var ActionRenderer = (function () {
         };
     };
     ActionRenderer.prototype.createSummary = function () {
-        return __WEBPACK_IMPORTED_MODULE_2__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_2__utils__["g" /* noRenderer */];
     };
     return ActionRenderer;
 }());
@@ -24532,7 +24583,7 @@ module.exports = "// removed by extract-text-webpack-plugin"
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_AnnotateColumn__ = __webpack_require__(59);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__StringCellRenderer__ = __webpack_require__(150);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils__ = __webpack_require__(4);
 
 
 
@@ -24560,7 +24611,7 @@ var AnnotationRenderer = (function (_super) {
                 };
                 n.lastElementChild.textContent = input.value = col.getLabel(d);
             },
-            render: __WEBPACK_IMPORTED_MODULE_3__utils__["g" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_3__utils__["h" /* noop */]
         };
     };
     return AnnotationRenderer;
@@ -24575,12 +24626,11 @@ var AnnotationRenderer = (function (_super) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_Column__ = __webpack_require__(1);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__(4);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__styles__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__impose__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__interfaces__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__missing__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils__ = __webpack_require__(5);
 
 
 
@@ -24596,7 +24646,7 @@ var BarCellRenderer = (function () {
         this.title = 'Bar';
     }
     BarCellRenderer.prototype.canRender = function (col, mode) {
-        return mode === __WEBPACK_IMPORTED_MODULE_5__interfaces__["a" /* ERenderMode */].CELL && Object(__WEBPACK_IMPORTED_MODULE_0__model__["_28" /* isNumberColumn */])(col) && !Object(__WEBPACK_IMPORTED_MODULE_2__model_INumberColumn__["j" /* isNumbersColumn */])(col);
+        return mode === __WEBPACK_IMPORTED_MODULE_5__interfaces__["a" /* ERenderMode */].CELL && Object(__WEBPACK_IMPORTED_MODULE_0__model__["_28" /* isNumberColumn */])(col) && !Object(__WEBPACK_IMPORTED_MODULE_0__model__["_30" /* isNumbersColumn */])(col);
     };
     BarCellRenderer.prototype.create = function (col, context, _hist, imposer) {
         var width = context.colWidth(col);
@@ -24610,8 +24660,12 @@ var BarCellRenderer = (function () {
                 n.title = title;
                 var bar = n.firstElementChild;
                 bar.style.width = missing ? '100%' : w + "%";
-                bar.style.backgroundColor = missing ? null : Object(__WEBPACK_IMPORTED_MODULE_4__impose__["a" /* colorOf */])(col, d, imposer);
-                Object(__WEBPACK_IMPORTED_MODULE_7__utils__["h" /* setText */])(bar.firstElementChild, title);
+                var color = Object(__WEBPACK_IMPORTED_MODULE_4__impose__["a" /* colorOf */])(col, d, imposer);
+                bar.style.backgroundColor = missing ? null : color;
+                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["i" /* setText */])(bar.firstElementChild, title);
+                var item = bar.firstElementChild;
+                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["i" /* setText */])(item, title);
+                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["a" /* adaptDynamicColorToBgColor */])(item, color || __WEBPACK_IMPORTED_MODULE_1__model_Column__["a" /* default */].DEFAULT_COLOR, w / 100);
             },
             render: function (ctx, d) {
                 if (Object(__WEBPACK_IMPORTED_MODULE_6__missing__["a" /* renderMissingCanvas */])(ctx, col, d, width)) {
@@ -24624,10 +24678,10 @@ var BarCellRenderer = (function () {
         };
     };
     BarCellRenderer.prototype.createGroup = function () {
-        return __WEBPACK_IMPORTED_MODULE_7__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_2__utils__["g" /* noRenderer */];
     };
     BarCellRenderer.prototype.createSummary = function () {
-        return __WEBPACK_IMPORTED_MODULE_7__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_2__utils__["g" /* noRenderer */];
     };
     return BarCellRenderer;
 }());
@@ -24676,7 +24730,7 @@ var BooleanCellRenderer = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__internal__ = __webpack_require__(8);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_BoxPlotColumn__ = __webpack_require__(40);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model_INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model_INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__model_NumberColumn__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__styles__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__impose__ = __webpack_require__(35);
@@ -24878,7 +24932,7 @@ function renderBoxPlot(ctx, box, sort, color, height, topPadding) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__styles__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__missing__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__UpSetCellRenderer__ = __webpack_require__(153);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils__ = __webpack_require__(4);
 
 
 
@@ -24952,7 +25006,7 @@ var CategoricalHeatmapCellRenderer = (function () {
     CategoricalHeatmapCellRenderer.prototype.createSummary = function (col) {
         var categories = col.categories;
         var templateRows = '<div>';
-        var labels = Object(__WEBPACK_IMPORTED_MODULE_4__utils__["i" /* wideEnough */])(col);
+        var labels = Object(__WEBPACK_IMPORTED_MODULE_4__utils__["j" /* wideEnough */])(col);
         for (var _i = 0, categories_2 = categories; _i < categories_2.length; _i++) {
             var cat = categories_2[_i];
             templateRows += "<div title=\"" + cat.label + "\"" + (labels ? " data-title=\"" + cat.label + "\"" : '') + " style=\"background-color: " + cat.color + "\"></div>";
@@ -24960,7 +25014,7 @@ var CategoricalHeatmapCellRenderer = (function () {
         templateRows += '</div>';
         return {
             template: templateRows,
-            update: __WEBPACK_IMPORTED_MODULE_4__utils__["g" /* noop */]
+            update: __WEBPACK_IMPORTED_MODULE_4__utils__["h" /* noop */]
         };
     };
     return CategoricalHeatmapCellRenderer;
@@ -24980,7 +25034,7 @@ var CategoricalHeatmapCellRenderer = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ui_missing__ = __webpack_require__(34);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__CategoricalCellRenderer__ = __webpack_require__(152);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__interfaces__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils__ = __webpack_require__(4);
 
 
 
@@ -24997,7 +25051,7 @@ var CategoricalStackedDistributionlCellRenderer = (function () {
         return Object(__WEBPACK_IMPORTED_MODULE_1__model__["_18" /* isCategoricalColumn */])(col) && mode !== __WEBPACK_IMPORTED_MODULE_6__interfaces__["a" /* ERenderMode */].CELL;
     };
     CategoricalStackedDistributionlCellRenderer.prototype.create = function () {
-        return __WEBPACK_IMPORTED_MODULE_7__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_7__utils__["g" /* noRenderer */];
     };
     CategoricalStackedDistributionlCellRenderer.prototype.createGroup = function (col) {
         var _a = stackedBar(col), template = _a.template, update = _a.update;
@@ -25048,7 +25102,7 @@ function interactiveSummary(col, interactive) {
 }
 function stackedBar(col) {
     var cats = col.categories;
-    var bins = cats.map(function (c) { return "<div style=\"background-color: " + c.color + "; color: " + Object(__WEBPACK_IMPORTED_MODULE_7__utils__["a" /* adaptTextColorToBgColor */])(c.color) + "\" title=\"" + c.label + ": 0\" data-cat=\"" + c.name + "\"><span>" + c.label + "</span></div>"; }).join('');
+    var bins = cats.map(function (c) { return "<div style=\"background-color: " + c.color + "; color: " + Object(__WEBPACK_IMPORTED_MODULE_7__utils__["b" /* adaptTextColorToBgColor */])(c.color) + "\" title=\"" + c.label + ": 0\" data-cat=\"" + c.name + "\"><span>" + c.label + "</span></div>"; }).join('');
     return {
         template: "<div>" + bins + "<div title=\"Missing Values\"></div>",
         update: function (n, hist, missing) {
@@ -25056,7 +25110,7 @@ function stackedBar(col) {
                 var y = _a.y;
                 return acc + y;
             }, missing);
-            Object(__WEBPACK_IMPORTED_MODULE_7__utils__["d" /* forEachChild */])(n, function (d, i) {
+            Object(__WEBPACK_IMPORTED_MODULE_7__utils__["e" /* forEachChild */])(n, function (d, i) {
                 var y;
                 var label;
                 if (i >= hist.length) {
@@ -25081,11 +25135,11 @@ function stackedBar(col) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__impose__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__interfaces__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__missing__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils__ = __webpack_require__(4);
 
 
 
@@ -25106,19 +25160,19 @@ var CircleCellRenderer = (function () {
                 var v = col.getNumber(d);
                 var p = Math.round(v * 100);
                 var missing = Object(__WEBPACK_IMPORTED_MODULE_4__missing__["b" /* renderMissingDOM */])(n, col, d);
-                Object(__WEBPACK_IMPORTED_MODULE_5__utils__["b" /* attr */])(n, {}, {
+                Object(__WEBPACK_IMPORTED_MODULE_5__utils__["c" /* attr */])(n, {}, {
                     background: missing ? null : "radial-gradient(circle closest-side, " + Object(__WEBPACK_IMPORTED_MODULE_2__impose__["a" /* colorOf */])(col, d, imposer) + " " + p + "%, transparent " + p + "%)"
                 });
-                Object(__WEBPACK_IMPORTED_MODULE_5__utils__["h" /* setText */])(n.firstElementChild, col.getLabel(d));
+                Object(__WEBPACK_IMPORTED_MODULE_5__utils__["i" /* setText */])(n.firstElementChild, col.getLabel(d));
             },
-            render: __WEBPACK_IMPORTED_MODULE_5__utils__["g" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_5__utils__["h" /* noop */]
         };
     };
     CircleCellRenderer.prototype.createGroup = function () {
-        return __WEBPACK_IMPORTED_MODULE_5__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_5__utils__["g" /* noRenderer */];
     };
     CircleCellRenderer.prototype.createSummary = function () {
-        return __WEBPACK_IMPORTED_MODULE_5__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_5__utils__["g" /* noRenderer */];
     };
     return CircleCellRenderer;
 }());
@@ -25131,12 +25185,12 @@ var CircleCellRenderer = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__styles__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__impose__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__interfaces__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__missing__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils__ = __webpack_require__(4);
 
 
 
@@ -25166,9 +25220,9 @@ var DotCellRenderer = (function () {
                 }
                 n.innerHTML = tmp_1;
             }
-            Object(__WEBPACK_IMPORTED_MODULE_6__utils__["d" /* forEachChild */])(n, function (d, i) {
+            Object(__WEBPACK_IMPORTED_MODULE_6__utils__["e" /* forEachChild */])(n, function (d, i) {
                 var v = vs[i];
-                Object(__WEBPACK_IMPORTED_MODULE_6__utils__["b" /* attr */])(d, {
+                Object(__WEBPACK_IMPORTED_MODULE_6__utils__["c" /* attr */])(d, {
                     title: labels[i]
                 }, {
                     display: Object(__WEBPACK_IMPORTED_MODULE_0__model__["_26" /* isMissingValue */])(v) ? 'none' : null,
@@ -25237,7 +25291,7 @@ var DotCellRenderer = (function () {
         };
     };
     DotCellRenderer.prototype.createSummary = function () {
-        return __WEBPACK_IMPORTED_MODULE_6__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_6__utils__["g" /* noRenderer */];
     };
     return DotCellRenderer;
 }());
@@ -25250,7 +25304,7 @@ var DotCellRenderer = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model_GroupColumn__ = __webpack_require__(65);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(4);
 
 
 var GroupCellRenderer = (function () {
@@ -25266,7 +25320,7 @@ var GroupCellRenderer = (function () {
             update: function (node, _row, i, group) {
                 node.firstElementChild.innerText = i === 0 ? group.name : '';
             },
-            render: __WEBPACK_IMPORTED_MODULE_1__utils__["g" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_1__utils__["h" /* noop */]
         };
     };
     GroupCellRenderer.prototype.createGroup = function () {
@@ -25278,7 +25332,7 @@ var GroupCellRenderer = (function () {
         };
     };
     GroupCellRenderer.prototype.createSummary = function () {
-        return __WEBPACK_IMPORTED_MODULE_1__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_1__utils__["g" /* noRenderer */];
     };
     return GroupCellRenderer;
 }());
@@ -25292,12 +25346,12 @@ var GroupCellRenderer = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__styles__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ANumbersCellRenderer__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__BrightnessCellRenderer__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__missing__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils__ = __webpack_require__(4);
 
 
 
@@ -25326,9 +25380,9 @@ var HeatmapCellRenderer = (function (_super) {
         return {
             templateRow: templateRows,
             update: function (row, data, item) {
-                Object(__WEBPACK_IMPORTED_MODULE_7__utils__["d" /* forEachChild */])(row, function (d, i) {
+                Object(__WEBPACK_IMPORTED_MODULE_7__utils__["e" /* forEachChild */])(row, function (d, i) {
                     var v = data[i];
-                    Object(__WEBPACK_IMPORTED_MODULE_7__utils__["b" /* attr */])(d, {
+                    Object(__WEBPACK_IMPORTED_MODULE_7__utils__["c" /* attr */])(d, {
                         title: labels[i] + ": " + Object(__WEBPACK_IMPORTED_MODULE_2__model_INumberColumn__["a" /* DEFAULT_FORMATTER */])(v),
                         'class': Object(__WEBPACK_IMPORTED_MODULE_1__model__["_26" /* isMissingValue */])(v) ? 'lu-missing' : ''
                     }, {
@@ -25352,7 +25406,7 @@ var HeatmapCellRenderer = (function (_super) {
     };
     HeatmapCellRenderer.prototype.createSummary = function (col) {
         var labels = col.labels.slice();
-        while (labels.length > 0 && !Object(__WEBPACK_IMPORTED_MODULE_7__utils__["i" /* wideEnough */])(col, labels.length)) {
+        while (labels.length > 0 && !Object(__WEBPACK_IMPORTED_MODULE_7__utils__["j" /* wideEnough */])(col, labels.length)) {
             labels = labels.filter(function (_, i) { return i % 2 === 0; });
         }
         var templateRows = '<div>';
@@ -25363,7 +25417,7 @@ var HeatmapCellRenderer = (function (_super) {
         templateRows += '</div>';
         return {
             template: templateRows,
-            update: __WEBPACK_IMPORTED_MODULE_7__utils__["g" /* noop */]
+            update: __WEBPACK_IMPORTED_MODULE_7__utils__["h" /* noop */]
         };
     };
     return HeatmapCellRenderer;
@@ -26536,7 +26590,7 @@ var InputNumberDialog = (function (_super) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model_StringColumn__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__interfaces__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__missing__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils__ = __webpack_require__(4);
 
 
 
@@ -26556,14 +26610,14 @@ var ImageCellRenderer = (function () {
                 n.title = col.getLabel(d);
                 n.style.backgroundImage = missing ? null : "url('" + col.getValue(d) + "')";
             },
-            render: __WEBPACK_IMPORTED_MODULE_3__utils__["g" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_3__utils__["h" /* noop */]
         };
     };
     ImageCellRenderer.prototype.createGroup = function () {
-        return __WEBPACK_IMPORTED_MODULE_3__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_3__utils__["g" /* noRenderer */];
     };
     ImageCellRenderer.prototype.createSummary = function () {
-        return __WEBPACK_IMPORTED_MODULE_3__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_3__utils__["g" /* noRenderer */];
     };
     return ImageCellRenderer;
 }());
@@ -26581,7 +26635,7 @@ var ImageCellRenderer = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__interfaces__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__missing__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__MultiLevelCellRenderer__ = __webpack_require__(109);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils__ = __webpack_require__(4);
 
 
 
@@ -26606,7 +26660,7 @@ var InterleavingCellRenderer = (function () {
                 if (missing) {
                     return;
                 }
-                Object(__WEBPACK_IMPORTED_MODULE_6__utils__["e" /* matchColumns */])(n, cols);
+                Object(__WEBPACK_IMPORTED_MODULE_6__utils__["f" /* matchColumns */])(n, cols);
                 Array.from(n.children).forEach(function (ni, j) {
                     cols[j].renderer.update(ni, d, i, group);
                 });
@@ -26630,7 +26684,7 @@ var InterleavingCellRenderer = (function () {
         return {
             template: "<div>" + cols.map(function (r) { return r.template; }).join('') + "</div>",
             update: function (n, group, rows) {
-                Object(__WEBPACK_IMPORTED_MODULE_6__utils__["e" /* matchColumns */])(n, cols);
+                Object(__WEBPACK_IMPORTED_MODULE_6__utils__["f" /* matchColumns */])(n, cols);
                 Array.from(n.children).forEach(function (ni, j) {
                     cols[j].groupRenderer.update(ni, group, rows);
                 });
@@ -26696,7 +26750,7 @@ function groupedHist(stats) {
 
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AAggregatedGroupRenderer; });
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(4);
 
 var AAggregatedGroupRenderer = (function () {
     function AAggregatedGroupRenderer() {
@@ -26713,7 +26767,7 @@ var AAggregatedGroupRenderer = (function () {
         };
     };
     AAggregatedGroupRenderer.prototype.createSummary = function () {
-        return __WEBPACK_IMPORTED_MODULE_0__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_0__utils__["g" /* noRenderer */];
     };
     return AAggregatedGroupRenderer;
 }());
@@ -26729,7 +26783,7 @@ var AAggregatedGroupRenderer = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model_StringColumn__ = __webpack_require__(18);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__interfaces__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__missing__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__utils__ = __webpack_require__(4);
 
 
 
@@ -26751,13 +26805,13 @@ var LinkCellRenderer = (function () {
                 }
                 n.href = col.getValue(d);
                 if (col.escape) {
-                    Object(__WEBPACK_IMPORTED_MODULE_3__utils__["h" /* setText */])(n, col.getLabel(d));
+                    Object(__WEBPACK_IMPORTED_MODULE_3__utils__["i" /* setText */])(n, col.getLabel(d));
                 }
                 else {
                     n.innerHTML = col.getLabel(d);
                 }
             },
-            render: __WEBPACK_IMPORTED_MODULE_3__utils__["g" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_3__utils__["h" /* noop */]
         };
     };
     LinkCellRenderer.exampleText = function (col, rows) {
@@ -26784,7 +26838,7 @@ var LinkCellRenderer = (function () {
         };
     };
     LinkCellRenderer.prototype.createSummary = function () {
-        return __WEBPACK_IMPORTED_MODULE_3__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_3__utils__["g" /* noRenderer */];
     };
     return LinkCellRenderer;
 }());
@@ -26800,7 +26854,7 @@ var LinkCellRenderer = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__interfaces__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__missing__ = __webpack_require__(6);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__TableCellRenderer__ = __webpack_require__(165);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__utils__ = __webpack_require__(4);
 
 
 
@@ -26827,7 +26881,7 @@ var LinkMapCellRenderer = (function () {
                     return "<div>" + key + "</div><div" + (align !== 'left' ? " class=\"lu-" + align + "\"" : '') + "><a href=\"" + values[i].value + "\" target=\"_blank\">" + value + "</a></div>";
                 }).join('');
             },
-            render: __WEBPACK_IMPORTED_MODULE_4__utils__["g" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_4__utils__["h" /* noop */]
         };
     };
     LinkMapCellRenderer.example = function (arr) {
@@ -26864,7 +26918,7 @@ var LinkMapCellRenderer = (function () {
         };
     };
     LinkMapCellRenderer.prototype.createSummary = function () {
-        return __WEBPACK_IMPORTED_MODULE_4__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_4__utils__["g" /* noRenderer */];
     };
     return LinkMapCellRenderer;
 }());
@@ -26876,7 +26930,7 @@ var LinkMapCellRenderer = (function () {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__utils__ = __webpack_require__(4);
 
 var LoadingCellRenderer = (function () {
     function LoadingCellRenderer() {
@@ -26888,8 +26942,8 @@ var LoadingCellRenderer = (function () {
     LoadingCellRenderer.prototype.create = function () {
         return {
             template: "<div>Loading\u2026</div>",
-            update: __WEBPACK_IMPORTED_MODULE_0__utils__["g" /* noop */],
-            render: __WEBPACK_IMPORTED_MODULE_0__utils__["g" /* noop */]
+            update: __WEBPACK_IMPORTED_MODULE_0__utils__["h" /* noop */],
+            render: __WEBPACK_IMPORTED_MODULE_0__utils__["h" /* noop */]
         };
     };
     LoadingCellRenderer.prototype.createGroup = function () {
@@ -26910,12 +26964,12 @@ var LoadingCellRenderer = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model__ = __webpack_require__(3);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_IArrayColumn__ = __webpack_require__(64);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model_MappingFunction__ = __webpack_require__(24);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__impose__ = __webpack_require__(35);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__interfaces__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__missing__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils__ = __webpack_require__(4);
 
 
 
@@ -26947,11 +27001,11 @@ var MapBarCellRenderer = (function () {
                     return "<div>" + key + "</div><div title=\"" + Object(__WEBPACK_IMPORTED_MODULE_2__model_INumberColumn__["a" /* DEFAULT_FORMATTER */])(value) + "\"><div style=\"width: " + w + "%; background-color: " + Object(__WEBPACK_IMPORTED_MODULE_4__impose__["a" /* colorOf */])(col, d, imposer) + "\"><span class=\"lu-hover-only\">" + value + "</span></div></div>";
                 }).join('');
             },
-            render: __WEBPACK_IMPORTED_MODULE_7__utils__["g" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_7__utils__["h" /* noop */]
         };
     };
     MapBarCellRenderer.prototype.createGroup = function () {
-        return __WEBPACK_IMPORTED_MODULE_7__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_7__utils__["g" /* noRenderer */];
     };
     MapBarCellRenderer.prototype.createSummary = function (col) {
         return {
@@ -26976,7 +27030,7 @@ var MapBarCellRenderer = (function () {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model_RankColumn__ = __webpack_require__(53);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__missing__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__(4);
 
 
 
@@ -26992,9 +27046,9 @@ var RankCellRenderer = (function () {
             template: "<div class=\"lu-right\"> </div>",
             update: function (n, d) {
                 Object(__WEBPACK_IMPORTED_MODULE_1__missing__["b" /* renderMissingDOM */])(n, col, d);
-                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["h" /* setText */])(n, col.getLabel(d));
+                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["i" /* setText */])(n, col.getLabel(d));
             },
-            render: __WEBPACK_IMPORTED_MODULE_2__utils__["g" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_2__utils__["h" /* noop */]
         };
     };
     RankCellRenderer.prototype.createGroup = function (col) {
@@ -27014,7 +27068,7 @@ var RankCellRenderer = (function () {
         };
     };
     RankCellRenderer.prototype.createSummary = function () {
-        return __WEBPACK_IMPORTED_MODULE_2__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_2__utils__["g" /* noRenderer */];
     };
     return RankCellRenderer;
 }());
@@ -27027,7 +27081,7 @@ var RankCellRenderer = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model_SelectionColumn__ = __webpack_require__(68);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__utils__ = __webpack_require__(4);
 
 
 var SelectionRenderer = (function () {
@@ -27047,7 +27101,7 @@ var SelectionRenderer = (function () {
                     col.toggleValue(d);
                 };
             },
-            render: __WEBPACK_IMPORTED_MODULE_1__utils__["g" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_1__utils__["h" /* noop */]
         };
     };
     SelectionRenderer.prototype.createGroup = function (col) {
@@ -27102,12 +27156,12 @@ var SelectionRenderer = (function () {
 "use strict";
 /* unused harmony export line */
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__model__ = __webpack_require__(3);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_NumbersColumn__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ANumbersCellRenderer__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__interfaces__ = __webpack_require__(9);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__missing__ = __webpack_require__(6);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__utils__ = __webpack_require__(4);
 
 
 
@@ -27154,7 +27208,7 @@ var SparklineCellRenderer = (function () {
                 var data = col.getNumbers(d);
                 n.querySelector('path').setAttribute('d', line(data));
             },
-            render: __WEBPACK_IMPORTED_MODULE_6__utils__["g" /* noop */]
+            render: __WEBPACK_IMPORTED_MODULE_6__utils__["h" /* noop */]
         };
     };
     SparklineCellRenderer.prototype.createGroup = function (col) {
@@ -27164,7 +27218,7 @@ var SparklineCellRenderer = (function () {
             template: "<svg viewBox=\"0 0 " + dataLength + " 1\" preserveAspectRatio=\"none meet\"><line x1=\"0\" x2=\"" + (dataLength - 1) + "\" y1=\"" + yPos + "\" y2=\"" + yPos + "\"></line><path></path></svg>",
             update: function (n, _group, rows) {
                 Object(__WEBPACK_IMPORTED_MODULE_3__ANumbersCellRenderer__["b" /* matchRows */])(n, rows, "<path></path>");
-                Object(__WEBPACK_IMPORTED_MODULE_6__utils__["d" /* forEachChild */])(n, (function (row, i) {
+                Object(__WEBPACK_IMPORTED_MODULE_6__utils__["e" /* forEachChild */])(n, (function (row, i) {
                     var d = rows[i];
                     row.setAttribute('d', line(col.getNumbers(d)));
                 }));
@@ -27172,7 +27226,7 @@ var SparklineCellRenderer = (function () {
         };
     };
     SparklineCellRenderer.prototype.createSummary = function () {
-        return __WEBPACK_IMPORTED_MODULE_6__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_6__utils__["g" /* noRenderer */];
     };
     return SparklineCellRenderer;
 }());
@@ -27185,13 +27239,13 @@ var SparklineCellRenderer = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_NumbersColumn__ = __webpack_require__(30);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__styles__ = __webpack_require__(13);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ANumbersCellRenderer__ = __webpack_require__(101);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__BrightnessCellRenderer__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__interfaces__ = __webpack_require__(9);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils__ = __webpack_require__(5);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__utils__ = __webpack_require__(4);
 
 
 
@@ -27229,10 +27283,10 @@ var VerticalBarCellRenderer = (function (_super) {
             update: function (row, data, item) {
                 var zero = Object(__WEBPACK_IMPORTED_MODULE_5__BrightnessCellRenderer__["b" /* toHeatMapColor */])(0, item, col, imposer);
                 var one = Object(__WEBPACK_IMPORTED_MODULE_5__BrightnessCellRenderer__["b" /* toHeatMapColor */])(1, item, col, imposer);
-                Object(__WEBPACK_IMPORTED_MODULE_7__utils__["d" /* forEachChild */])(row, function (d, i) {
+                Object(__WEBPACK_IMPORTED_MODULE_7__utils__["e" /* forEachChild */])(row, function (d, i) {
                     var v = data[i];
                     var _a = VerticalBarCellRenderer.compute(v, threshold, [0, 1]), bottom = _a.bottom, height = _a.height;
-                    Object(__WEBPACK_IMPORTED_MODULE_7__utils__["b" /* attr */])(d, {
+                    Object(__WEBPACK_IMPORTED_MODULE_7__utils__["c" /* attr */])(d, {
                         title: Object(__WEBPACK_IMPORTED_MODULE_1__model_INumberColumn__["a" /* DEFAULT_FORMATTER */])(v)
                     }, {
                         'background-color': v < threshold ? zero : one,
@@ -27255,7 +27309,7 @@ var VerticalBarCellRenderer = (function (_super) {
         };
     };
     VerticalBarCellRenderer.prototype.createSummary = function () {
-        return __WEBPACK_IMPORTED_MODULE_7__utils__["f" /* noRenderer */];
+        return __WEBPACK_IMPORTED_MODULE_7__utils__["g" /* noRenderer */];
     };
     return VerticalBarCellRenderer;
 }(__WEBPACK_IMPORTED_MODULE_4__ANumbersCellRenderer__["a" /* ANumbersCellRenderer */]));
@@ -28356,7 +28410,7 @@ var MappingLine = (function () {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_INumberColumn__ = __webpack_require__(4);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__model_INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ADialog__ = __webpack_require__(7);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__SortDialog__ = __webpack_require__(73);
 
@@ -28779,25 +28833,28 @@ var MultiTableRowRenderer = (function () {
         this.options = {
             columnPadding: 0
         };
-        this.context = Object(__WEBPACK_IMPORTED_MODULE_0__logic__["d" /* uniformContext */])(0, 500);
+        this.context = Object(__WEBPACK_IMPORTED_MODULE_0__logic__["c" /* uniformContext */])(0, 500);
         Object.assign(this.options, options);
         node.innerHTML = "<header></header><main></main>";
         node.classList.add('lineup-engine', 'lineup-multi-engine');
         this.style = new __WEBPACK_IMPORTED_MODULE_2__style_index__["a" /* GridStyleManager */](this.node, htmlId);
         var main = this.main;
         var oldLeft = main.scrollLeft;
+        var oldWidth = main.clientWidth;
         main.addEventListener('scroll', function () {
             var left = main.scrollLeft;
-            if (left === oldLeft) {
+            var width = main.clientWidth;
+            if (left === oldLeft && width === oldWidth) {
                 return;
             }
             var isGoingRight = left > oldLeft;
             oldLeft = left;
-            _this.onScrolledHorizontally(left, main.clientWidth, isGoingRight);
+            oldWidth = width;
+            _this.onScrolledHorizontally(left, width, isGoingRight);
         });
     }
     MultiTableRowRenderer.prototype.update = function () {
-        this.context = Object(__WEBPACK_IMPORTED_MODULE_0__logic__["b" /* nonUniformContext */])(this.sections.map(function (d) { return d.width; }), NaN, this.options.columnPadding);
+        this.context = Object(__WEBPACK_IMPORTED_MODULE_0__logic__["a" /* nonUniformContext */])(this.sections.map(function (d) { return d.width; }), NaN, this.options.columnPadding);
         this.updateGrid();
         this.onScrolledHorizontally(this.main.scrollLeft, this.main.clientWidth, false);
     };
@@ -28806,7 +28863,7 @@ var MultiTableRowRenderer = (function () {
         this.style.updateRule("multiTableRule", this.style.id + " > header, " + this.style.id + " > main { " + content + " }");
     };
     MultiTableRowRenderer.prototype.onScrolledHorizontally = function (scrollLeft, clientWidth, isGoingRight) {
-        var _a = Object(__WEBPACK_IMPORTED_MODULE_0__logic__["c" /* range */])(scrollLeft, clientWidth, this.context.defaultRowHeight, this.context.exceptions, this.context.numberOfRows), first = _a.first, last = _a.last;
+        var _a = Object(__WEBPACK_IMPORTED_MODULE_0__logic__["b" /* range */])(scrollLeft, clientWidth, this.context.defaultRowHeight, this.context.exceptions, this.context.numberOfRows), first = _a.first, last = _a.last;
         var visible = this.visible;
         visible.forcedFirst = first;
         visible.forcedLast = last;
@@ -28892,6 +28949,10 @@ var MultiTableRowRenderer = (function () {
         section.destroy();
         this.update();
         return true;
+    };
+    MultiTableRowRenderer.prototype.clear = function () {
+        this.sections.splice(0, this.sections.length).forEach(function (s) { return s.destroy(); });
+        this.update();
     };
     MultiTableRowRenderer.prototype.widthChanged = function () {
         this.update();
@@ -29382,7 +29443,7 @@ var ARowRenderer = (function () {
         this.updateOffset(0);
         this.removeAll();
         this.clearPool();
-        var _a = Object(__WEBPACK_IMPORTED_MODULE_3__logic__["c" /* range */])(scroller.scrollTop, scroller.clientHeight, context.defaultRowHeight, context.exceptions, context.numberOfRows), first = _a.first, last = _a.last, firstRowPos = _a.firstRowPos;
+        var _a = Object(__WEBPACK_IMPORTED_MODULE_3__logic__["b" /* range */])(scroller.scrollTop, scroller.clientHeight, context.defaultRowHeight, context.exceptions, context.numberOfRows), first = _a.first, last = _a.last, firstRowPos = _a.firstRowPos;
         this.visible.first = this.visible.forcedFirst = first;
         this.visible.last = this.visible.forcedLast = last;
         if (first < 0) {
@@ -29397,7 +29458,7 @@ var ARowRenderer = (function () {
         var lookup = new Map();
         var prev = new __WEBPACK_IMPORTED_MODULE_2__animation_KeyFinder__["a" /* default */](ctx.previous, ctx.previousKey);
         var cur = new __WEBPACK_IMPORTED_MODULE_2__animation_KeyFinder__["a" /* default */](this.context, ctx.currentKey);
-        var next = Object(__WEBPACK_IMPORTED_MODULE_3__logic__["c" /* range */])(this.bodyScroller.scrollTop, this.bodyScroller.clientHeight, cur.context.defaultRowHeight, cur.context.exceptions, cur.context.numberOfRows);
+        var next = Object(__WEBPACK_IMPORTED_MODULE_3__logic__["b" /* range */])(this.bodyScroller.scrollTop, this.bodyScroller.clientHeight, cur.context.defaultRowHeight, cur.context.exceptions, cur.context.numberOfRows);
         {
             var rows_1 = Array.from(this.body.children);
             var old = Object.assign({}, this.visible);
@@ -29574,7 +29635,7 @@ var ARowRenderer = (function () {
     };
     ARowRenderer.prototype.onScrolledImpl = function (scrollTop, clientHeight) {
         var context = this.context;
-        var _a = Object(__WEBPACK_IMPORTED_MODULE_3__logic__["c" /* range */])(scrollTop, clientHeight, context.defaultRowHeight, context.exceptions, context.numberOfRows), first = _a.first, last = _a.last, firstRowPos = _a.firstRowPos;
+        var _a = Object(__WEBPACK_IMPORTED_MODULE_3__logic__["b" /* range */])(scrollTop, clientHeight, context.defaultRowHeight, context.exceptions, context.numberOfRows), first = _a.first, last = _a.last, firstRowPos = _a.firstRowPos;
         var visible = this.visible;
         visible.forcedFirst = first;
         visible.forcedLast = last;
@@ -30172,9 +30233,6 @@ var ACellAdapter = (function () {
     ACellAdapter.prototype.recreate = function (left, width) {
         var _this = this;
         var context = this.context;
-        if (context.hasFrozenColumns === undefined) {
-            context.hasFrozenColumns = context.columns.some(function (c) { return c.frozen; });
-        }
         this.style.update(context.defaultRowHeight - context.padding(-1), context.columns, context.column.padding, this.tableId);
         this.clearPool();
         for (var i = this.cellPool.length; i < context.columns.length; ++i) {
@@ -30191,12 +30249,15 @@ var ACellAdapter = (function () {
             });
             this.header.appendChild(fragment_1);
         }
-        var _a = Object(__WEBPACK_IMPORTED_MODULE_0__logic__["c" /* range */])(left, width, context.column.defaultRowHeight, context.column.exceptions, context.column.numberOfRows), first = _a.first, last = _a.last, firstRowPos = _a.firstRowPos;
+        var _a = Object(__WEBPACK_IMPORTED_MODULE_0__logic__["b" /* range */])(left, width, context.column.defaultRowHeight, context.column.exceptions, context.column.numberOfRows), first = _a.first, last = _a.last, firstRowPos = _a.firstRowPos;
         this.visibleColumns.first = this.visibleColumns.forcedFirst = first;
         this.visibleColumns.last = this.visibleColumns.forcedLast = last;
-        if (context.hasFrozenColumns) {
-            var target = Object(__WEBPACK_IMPORTED_MODULE_0__logic__["e" /* updateFrozen */])([], context.columns, first).target;
+        if (context.columns.some(function (c) { return c.frozen; })) {
+            var target = Object(__WEBPACK_IMPORTED_MODULE_0__logic__["d" /* updateFrozen */])([], context.columns, first).target;
             this.visibleColumns.frozen = target;
+        }
+        else {
+            this.visibleColumns.frozen = [];
         }
         this.updateColumnOffset(firstRowPos);
     };
@@ -30207,11 +30268,11 @@ var ACellAdapter = (function () {
         this.visibleFirstColumnPos = firstColumnPos;
     };
     ACellAdapter.prototype.createRow = function (node, rowIndex) {
-        var _a = this.context, columns = _a.columns, hasFrozenColumns = _a.hasFrozenColumns;
+        var columns = this.context.columns;
         var visible = this.visibleColumns;
-        if (hasFrozenColumns) {
-            for (var _i = 0, _b = visible.frozen; _i < _b.length; _i++) {
-                var i = _b[_i];
+        if (visible.frozen.length > 0) {
+            for (var _i = 0, _a = visible.frozen; _i < _a.length; _i++) {
+                var i = _a[_i];
                 var cell = this.selectCell(rowIndex, i, columns);
                 node.appendChild(cell);
             }
@@ -30222,13 +30283,12 @@ var ACellAdapter = (function () {
         }
     };
     ACellAdapter.prototype.updateRow = function (node, rowIndex) {
-        var _this = this;
-        var _a = this.context, columns = _a.columns, hasFrozenColumns = _a.hasFrozenColumns;
+        var columns = this.context.columns;
         var visible = this.visibleColumns;
         var existing = Array.from(node.children);
         switch (existing.length) {
             case 0:
-                if (hasFrozenColumns) {
+                if (visible.frozen.length > 0) {
                     this.insertFrozenCells(node, rowIndex, visible.frozen, 0, columns);
                 }
                 this.addCellAtEnd(node, rowIndex, visible.first, visible.last, columns);
@@ -30238,80 +30298,48 @@ var ACellAdapter = (function () {
                 var id_1 = old.dataset.id;
                 var columnIndex = columns.findIndex(function (c) { return c.id === id_1; });
                 node.removeChild(old);
-                this.recycleCell(old, columnIndex);
-                if (hasFrozenColumns) {
+                if (columnIndex >= 0) {
+                    this.recycleCell(old, columnIndex);
+                }
+                if (visible.frozen.length > 0) {
                     this.insertFrozenCells(node, rowIndex, visible.frozen, 0, columns);
                 }
                 this.addCellAtEnd(node, rowIndex, visible.first, visible.last, columns);
                 break;
             default:
-                if (hasFrozenColumns) {
-                    var currentFrozen_1 = [];
-                    var _loop_1 = function (node_1) {
-                        var id_2 = node_1.dataset.id;
-                        var col = columns.findIndex(function (c) { return c.id === id_2; });
-                        if (columns[col].frozen) {
-                            currentFrozen_1.push(col);
-                        }
-                        else {
-                            return "break";
-                        }
-                    };
-                    for (var _i = 0, existing_1 = existing; _i < existing_1.length; _i++) {
-                        var node_1 = existing_1[_i];
-                        var state_1 = _loop_1(node_1);
-                        if (state_1 === "break")
-                            break;
-                    }
-                    var _b = Object(__WEBPACK_IMPORTED_MODULE_0__logic__["a" /* frozenDelta */])(currentFrozen_1, visible.frozen), common = _b.common, removed = _b.removed, added = _b.added;
-                    existing.slice(0, common).forEach(function (child, i) {
-                        var col = columns[currentFrozen_1[i]];
-                        var cell = _this.updateCell(child, rowIndex, col);
-                        if (cell && cell !== child) {
-                            Object(__WEBPACK_IMPORTED_MODULE_2__style_GridStyleManager__["b" /* setColumn */])(cell, col);
-                            node.replaceChild(cell, child);
-                        }
-                    });
-                    this.removeFrozenCells(node, removed, common);
-                    this.insertFrozenCells(node, rowIndex, added, common, columns);
-                    existing.splice(0, currentFrozen_1.length);
-                }
-                if (existing.length === 0) {
-                    break;
-                }
-                var firstId_1 = existing[0].dataset.id;
-                var lastId_1 = existing[existing.length - 1].dataset.id;
-                var firstIndex = columns.findIndex(function (c) { return c.id === firstId_1; });
-                var lastIndex = columns.findIndex(function (c) { return c.id === lastId_1; });
-                var frozenShift = visible.frozen.length;
-                if (firstIndex === visible.first && lastIndex === visible.last) {
-                    existing.forEach(function (child, i) {
-                        var col = columns[i + visible.first];
-                        var cell = _this.updateCell(child, rowIndex, col);
-                        if (cell && cell !== child) {
-                            Object(__WEBPACK_IMPORTED_MODULE_2__style_GridStyleManager__["b" /* setColumn */])(cell, col);
-                            node.replaceChild(cell, child);
-                        }
-                    });
-                }
-                else if (visible.last > firstIndex || visible.first < lastIndex) {
-                    this.removeAllCells(node, false, firstIndex);
-                    this.addCellAtStart(node, rowIndex, visible.first, visible.last, frozenShift, columns);
-                }
-                else if (visible.first < firstIndex) {
-                    this.removeCellFromEnd(node, visible.last + 1, firstIndex);
-                    this.addCellAtStart(node, rowIndex, visible.first, firstIndex - 1, frozenShift, columns);
-                }
-                else {
-                    this.removeCellFromStart(node, firstIndex, visible.first - 1, frozenShift);
-                    this.addCellAtEnd(node, rowIndex, lastIndex + 1, visible.last, columns);
-                }
+                this.mergeColumns(node, rowIndex, existing);
+                break;
+        }
+    };
+    ACellAdapter.prototype.mergeColumns = function (node, rowIndex, existing) {
+        var _this = this;
+        var columns = this.context.columns;
+        var visible = this.visibleColumns;
+        node.innerHTML = '';
+        var ids = new Map(existing.map(function (e) { return [e.dataset.id, e]; }));
+        var updateImpl = function (i) {
+            var col = columns[i];
+            var existing = ids.get(col.id);
+            if (!existing) {
+                var cell_1 = _this.selectCell(rowIndex, i, columns);
+                node.appendChild(cell_1);
+                return;
+            }
+            var cell = _this.updateCell(existing, rowIndex, col);
+            if (cell && cell !== existing) {
+                Object(__WEBPACK_IMPORTED_MODULE_2__style_GridStyleManager__["b" /* setColumn */])(cell, col);
+            }
+            node.appendChild(cell || existing);
+        };
+        visible.frozen.forEach(updateImpl);
+        for (var i = visible.first; i <= visible.last; ++i) {
+            updateImpl(i);
         }
     };
     ACellAdapter.prototype.syncFrozen = function (first) {
-        var _a = this.context, columns = _a.columns, hasFrozenColumns = _a.hasFrozenColumns;
+        var columns = this.context.columns;
         var visible = this.visibleColumns;
-        if (!hasFrozenColumns) {
+        if (!columns.some(function (d) { return d.frozen; })) {
             return 0;
         }
         if (first === 0) {
@@ -30322,7 +30350,7 @@ var ACellAdapter = (function () {
             return 0;
         }
         var old = visible.frozen.length;
-        var _b = Object(__WEBPACK_IMPORTED_MODULE_0__logic__["e" /* updateFrozen */])(visible.frozen, columns, first), target = _b.target, added = _b.added, removed = _b.removed;
+        var _a = Object(__WEBPACK_IMPORTED_MODULE_0__logic__["d" /* updateFrozen */])(visible.frozen, columns, first), target = _a.target, added = _a.added, removed = _a.removed;
         if (removed.length > 0) {
             this.removeFrozenColumns(removed, old - removed.length);
         }
@@ -30334,7 +30362,7 @@ var ACellAdapter = (function () {
     };
     ACellAdapter.prototype.onScrolledHorizontallyImpl = function (scrollLeft, clientWidth) {
         var column = this.context.column;
-        var _a = Object(__WEBPACK_IMPORTED_MODULE_0__logic__["c" /* range */])(scrollLeft, clientWidth, column.defaultRowHeight, column.exceptions, column.numberOfRows), first = _a.first, last = _a.last, firstRowPos = _a.firstRowPos;
+        var _a = Object(__WEBPACK_IMPORTED_MODULE_0__logic__["b" /* range */])(scrollLeft, clientWidth, column.defaultRowHeight, column.exceptions, column.numberOfRows), first = _a.first, last = _a.last, firstRowPos = _a.firstRowPos;
         var visible = this.visibleColumns;
         visible.forcedFirst = first;
         visible.forcedLast = last;
