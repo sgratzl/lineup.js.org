@@ -853,23 +853,21 @@ section.lu-header {
 
 .lu {
   /**
- * Creates a background that displays an opening square bracket using multiple linear gradients.
- */
-  /**
  see also animation/index.ts MAX_ANIMATION_TIME
  */ }
   .lu .lu-row-body [data-renderer=aggregate] {
-    text-align: center;
-    background-image: linear-gradient(to left, transparent 3px, #000 3px, #000 4px, transparent 4px);
-    background-size: 4px 100%;
-    background-repeat: no-repeat;
-    background-position: center right; }
+    text-align: center; }
+    .lu .lu-row-body [data-renderer=aggregate]::after {
+      content: '';
+      position: absolute;
+      pointer-events: none;
+      top: 0;
+      width: 4px;
+      right: 0;
+      bottom: 0;
+      border-left: 1px solid #000; }
   .lu .lu-row-body [data-meta~=first] [data-renderer=aggregate] {
-    cursor: pointer;
-    background-image: linear-gradient(to left, transparent 3px, #000 3px, #000 4px, transparent 4px), linear-gradient(to bottom, #000 1px, transparent 1px);
-    background-size: 4px 100%;
-    background-repeat: no-repeat;
-    background-position: center right; }
+    cursor: pointer; }
     .lu .lu-row-body [data-meta~=first] [data-renderer=aggregate]::before {
       display: inline-block;
       font: normal normal normal 14px/1 lu-font, serif;
@@ -879,19 +877,18 @@ section.lu-header {
       -moz-osx-font-smoothing: grayscale;
       content: "\E801";
       padding-right: 4px; }
-  .lu .lu-row-body [data-meta=last] [data-renderer=aggregate] {
-    background-image: linear-gradient(to left, transparent 3px, #000 3px, #000 4px, transparent 4px), linear-gradient(to top, #000 1px, transparent 1px);
-    background-size: 4px 100%;
-    background-repeat: no-repeat;
-    background-position: center right; }
+    .lu .lu-row-body [data-meta~=first] [data-renderer=aggregate]::after {
+      border-top: 1px solid #000; }
+  .lu .lu-row-body [data-meta=last] [data-renderer=aggregate]::after {
+    border-bottom: 1px solid #000; }
   .lu .lu-row-body [data-meta='first last'] [data-renderer=aggregate],
   .lu .lu-row-body [data-agg=group] [data-renderer=aggregate] {
     padding-right: 4px;
-    cursor: pointer;
-    background-image: linear-gradient(to left, transparent 3px, #000 3px, #000 4px, transparent 4px), linear-gradient(to bottom, #000 1px, transparent 1px), linear-gradient(to top, #000 1px, transparent 1px);
-    background-size: 4px 100%;
-    background-repeat: no-repeat;
-    background-position: center right; }
+    cursor: pointer; }
+    .lu .lu-row-body [data-meta='first last'] [data-renderer=aggregate]::after,
+    .lu .lu-row-body [data-agg=group] [data-renderer=aggregate]::after {
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000; }
   .lu .lu-row-body [data-agg=group] [data-renderer=aggregate]::before {
     display: inline-block;
     font: normal normal normal 14px/1 lu-font, serif;
