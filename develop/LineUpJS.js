@@ -4785,13 +4785,13 @@ function defaultOptions() {
         idPrefix: idPrefix,
         toolbar: Object.assign({}, __WEBPACK_IMPORTED_MODULE_1__ui__["k" /* toolbarActions */]),
         renderers: Object.assign({}, __WEBPACK_IMPORTED_MODULE_0__renderer__["g" /* renderers */]),
-        summary: true,
-        animation: true,
-        wholeHover: false,
-        panel: true,
-        panelCollapsed: false,
+        summaryHeader: true,
+        animated: true,
+        expandLineOnHover: false,
+        sidePanel: true,
+        sidePanelCollapsed: false,
         defaultSlopeGraphMode: 'item',
-        overviewEnabled: false,
+        overviewMode: false,
         rowHeight: 18,
         groupHeight: 40,
         groupPadding: 5,
@@ -6858,8 +6858,8 @@ var LocalDataProvider = (function (_super) {
         _this.options = {
             filterGlobally: false,
             jumpToSearchResult: false,
-            maxNestedSortingCriteria: 1,
-            maxGroupColumns: 1
+            maxNestedSortingCriteria: Infinity,
+            maxGroupColumns: Infinity
         };
         Object.assign(_this.options, options);
         _this._dataRows = toRows(_data);
@@ -8361,9 +8361,9 @@ var LineUp = (function (_super) {
         Object(__WEBPACK_IMPORTED_MODULE_2__internal_merge__["a" /* default */])(_this.options, options);
         _this.node.classList.add('lu');
         _this.renderer = new __WEBPACK_IMPORTED_MODULE_5__EngineRenderer__["a" /* default */](data, _this.node, _this.options);
-        if (_this.options.panel) {
+        if (_this.options.sidePanel) {
             _this.panel = new __WEBPACK_IMPORTED_MODULE_6__panel_SidePanel__["a" /* default */](_this.renderer.ctx, _this.node.ownerDocument, {
-                collapseable: _this.options.panelCollapsed ? 'collapsed' : true
+                collapseable: _this.options.sidePanelCollapsed ? 'collapsed' : true
             });
             _this.renderer.pushUpdateAble(function (ctx) { return _this.panel.update(ctx); });
             _this.node.insertBefore(_this.panel.node, _this.node.firstChild);
@@ -11393,7 +11393,7 @@ var EngineRenderer = (function (_super) {
         _this.options = options;
         _this.node = parent.ownerDocument.createElement('main');
         _this.node.id = _this.options.idPrefix;
-        _this.node.classList.toggle('lu-whole-hover', options.wholeHover);
+        _this.node.classList.toggle('lu-whole-hover', options.expandLineOnHover);
         parent.appendChild(_this.node);
         var statsOf = function (col) {
             var r = _this.histCache.get(col.id);
@@ -11425,7 +11425,7 @@ var EngineRenderer = (function (_super) {
             createRenderer: function (col, imposer) {
                 var single = this.renderer(col, imposer);
                 var group = this.groupRenderer(col, imposer);
-                var summary = options.summary ? this.summaryRenderer(col, false, imposer) : null;
+                var summary = options.summaryHeader ? this.summaryRenderer(col, false, imposer) : null;
                 return { single: single, group: group, summary: summary, singleId: col.getRenderer(), groupId: col.getGroupRenderer(), summaryId: col.getSummaryRenderer() };
             },
             getPossibleRenderer: function (col) { return ({
@@ -11509,7 +11509,7 @@ var EngineRenderer = (function (_super) {
     };
     EngineRenderer.prototype.updateHist = function (ranking, col) {
         var _this = this;
-        if (!this.options.summary) {
+        if (!this.options.summaryHeader) {
             return;
         }
         var rankings = ranking ? [ranking] : this.rankings;
@@ -11542,7 +11542,7 @@ var EngineRenderer = (function (_super) {
             this.slopeGraphs.push(s);
         }
         var r = this.table.pushTable(function (header, body, tableId, style) { return new __WEBPACK_IMPORTED_MODULE_9__EngineRanking__["a" /* default */](ranking, header, body, tableId, style, _this.ctx, {
-            animation: _this.options.animation,
+            animation: _this.options.animated,
             customRowUpdate: _this.options.customRowUpdate || (function () { return undefined; }),
             levelOfDetail: _this.options.levelOfDetail || (function () { return 'high'; })
         }); });
@@ -17848,7 +17848,7 @@ var Taggle = (function (_super) {
         _this.node.classList.add('lu-taggle', 'lu');
         _this.renderer = new __WEBPACK_IMPORTED_MODULE_6__TaggleRenderer__["a" /* default */](_this.node, data, _this.options);
         _this.panel = new __WEBPACK_IMPORTED_MODULE_4__panel_SidePanel__["a" /* default */](_this.renderer.ctx, _this.node.ownerDocument, {
-            collapseable: _this.options.panelCollapsed ? 'collapsed' : true
+            collapseable: _this.options.sidePanelCollapsed ? 'collapsed' : true
         });
         _this.renderer.pushUpdateAble(function (ctx) { return _this.panel.update(ctx); });
         _this.node.insertBefore(_this.panel.node, _this.node.firstChild);
@@ -17860,7 +17860,7 @@ var Taggle = (function (_super) {
                 var selected = _this.spaceFilling.classList.toggle('chosen');
                 _this.renderer.switchRule(selected ? spaceFilling_1 : null);
             });
-            if (_this.options.overviewEnabled) {
+            if (_this.options.overviewMode) {
                 _this.spaceFilling.classList.toggle('chosen');
                 _this.renderer.switchRule(spaceFilling_1);
             }
@@ -20125,6 +20125,11 @@ var DataBuilder = (function (_super) {
         this.providerOptions.maxNestedSortingCriteria = Infinity;
         return this;
     };
+    DataBuilder.prototype.limitCriteria = function (sortingCritera, groupingCriteria) {
+        this.providerOptions.maxGroupColumns = sortingCritera;
+        this.providerOptions.maxNestedSortingCriteria = groupingCriteria;
+        return this;
+    };
     DataBuilder.prototype.deriveColumns = function () {
         var columns = [];
         for (var _i = 0; _i < arguments.length; _i++) {
@@ -20614,7 +20619,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 var version = "3.0.0-alpha2";
-var buildId = "20180124-212718";
+var buildId = "20180124-215329";
 var license = "BSD-3-Clause";
 function createLocalDataProvider(data, columns, options) {
     if (options === void 0) { options = {}; }
@@ -30859,13 +30864,13 @@ var LineUpBuilder = (function () {
         };
     }
     LineUpBuilder.prototype.animated = function (enable) {
-        this.options.animation = enable;
+        this.options.animated = enable;
         return this;
     };
     LineUpBuilder.prototype.sidePanel = function (enable, collapsed) {
         if (collapsed === void 0) { collapsed = false; }
-        this.options.panel = enable;
-        this.options.panelCollapsed = collapsed;
+        this.options.sidePanel = enable;
+        this.options.sidePanelCollapsed = collapsed;
         return this;
     };
     LineUpBuilder.prototype.defaultSlopeGraphMode = function (mode) {
@@ -30873,15 +30878,15 @@ var LineUpBuilder = (function () {
         return this;
     };
     LineUpBuilder.prototype.summaryHeader = function (enable) {
-        this.options.summary = enable;
+        this.options.summaryHeader = enable;
         return this;
     };
     LineUpBuilder.prototype.expandLineOnHover = function (enable) {
-        this.options.wholeHover = enable;
+        this.options.expandLineOnHover = enable;
         return this;
     };
     LineUpBuilder.prototype.overviewMode = function () {
-        this.options.overviewEnabled = true;
+        this.options.overviewMode = true;
         return this;
     };
     LineUpBuilder.prototype.registerRenderer = function (id, factory) {
