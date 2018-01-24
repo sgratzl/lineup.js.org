@@ -1,4 +1,4 @@
-/*! lineupjs - v3.0.0-alpha2.0 - 2018
+/*! lineupjs - v3.0.0-alpha.3 - 2018
 * https://github.com/sgratzl/lineupjs
 * Copyright (c) 2018 Samuel Gratzl; Licensed BSD-3-Clause*/
 
@@ -20618,8 +20618,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-var version = "3.0.0-alpha2.0";
-var buildId = "20180124-220007";
+var version = "3.0.0-alpha.3";
+var buildId = "20180124-220912";
 var license = "BSD-3-Clause";
 function createLocalDataProvider(data, columns, options) {
     if (options === void 0) { options = {}; }
