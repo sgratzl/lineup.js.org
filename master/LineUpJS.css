@@ -1,4 +1,4 @@
-/*! lineupjs - v3.0.0-alpha2 - 2018
+/*! lineupjs - v3.0.0-beta.1 - 2018
 * https://github.com/sgratzl/lineupjs
 * Copyright (c) 2018 Samuel Gratzl; Licensed BSD-3-Clause*/
 
@@ -51,6 +51,24 @@
     .lu-dialog .lu-dragover *::before,
     .lu-dialog .lu-dragover *::after {
       pointer-events: none !important; }
+
+.lineup-engine .lu-gradient-text,
+.lu .lu-gradient-text,
+.lu-header .lu-gradient-text,
+.lu-side-panel .lu-gradient-text,
+.lu-dialog .lu-gradient-text {
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 1; }
 
 @font-face {
   font-family: 'lu-font';
@@ -296,8 +314,11 @@
 
 .lu-header,
 .lu-side-panel-entry {
-  position: relative;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   user-select: none;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -312,6 +333,10 @@
     opacity: 0.5; }
   .lu-header.lu-dragover::after,
   .lu-side-panel-entry.lu-dragover::after {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     content: attr(data-draginfo);
     position: absolute;
     top: 0;
@@ -322,7 +347,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    user-select: none;
     pointer-events: none;
     background: rgba(240, 240, 240, 0.8);
     border: 2px dashed rgba(151, 151, 151, 0.8); }
@@ -341,8 +365,11 @@
     font-size: x-small; }
 
 .lu-summary label.lu-disabled {
-  color: gray;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   user-select: none;
+  color: gray;
   cursor: not-allowed; }
 
 .lu-summary input[type=text],
@@ -647,6 +674,9 @@
     flex: 0 0 auto;
     overflow-x: hidden;
     margin-bottom: 3px; }
+    @supports (-moz-appearance: meterbar) {
+      .lineup-engine > header {
+        overflow-y: hidden; } }
     .lineup-engine > header > :last-child {
       margin-right: 5px; }
   .lineup-engine > main {
@@ -752,8 +782,11 @@ section.lu-header {
     text-align: center;
     bottom: -1px; }
     section.lu-header > .lu-handle.lu-dragover {
-      transition: width 0.2s ease, right 0.2s ease;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
       user-select: none;
+      transition: width 0.2s ease, right 0.2s ease;
       color: black;
       display: flex;
       align-items: center;
@@ -799,6 +832,8 @@ section.lu-header {
   display: none;
   pointer-events: none;
   -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   user-select: none; }
   .lineup-engine > hr.lu-selection-active {
     display: block;
@@ -806,6 +841,8 @@ section.lu-header {
 
 .lineup-engine article.lu-selection-active * {
   -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   user-select: none; }
 
 .lu-row {
@@ -820,6 +857,8 @@ section.lu-header {
   .lu-row:hover .lu-hover-only, .lu-row.lu-selected .lu-hover-only, .lu-row.lu-hovered .lu-hover-only {
     display: block;
     padding-left: 4px; }
+    .lu-row:hover .lu-hover-only > .lu-gradient-text, .lu-row.lu-selected .lu-hover-only > .lu-gradient-text, .lu-row.lu-hovered .lu-hover-only > .lu-gradient-text {
+      left: 4px; }
   .lu-row.lu-selected {
     z-index: 10;
     position: relative;
@@ -841,23 +880,21 @@ section.lu-header {
 
 .lu {
   /**
- * Creates a background that displays an opening square bracket using multiple linear gradients.
- */
-  /**
  see also animation/index.ts MAX_ANIMATION_TIME
  */ }
   .lu .lu-row-body [data-renderer=aggregate] {
-    text-align: center;
-    background-image: linear-gradient(to left, transparent 3px, #000 3px, #000 4px, transparent 4px);
-    background-size: 4px 100%;
-    background-repeat: no-repeat;
-    background-position: center right; }
+    text-align: center; }
+    .lu .lu-row-body [data-renderer=aggregate]::after {
+      content: '';
+      position: absolute;
+      pointer-events: none;
+      top: 0;
+      width: 4px;
+      right: 0;
+      bottom: 0;
+      border-left: 1px solid #000; }
   .lu .lu-row-body [data-meta~=first] [data-renderer=aggregate] {
-    cursor: pointer;
-    background-image: linear-gradient(to left, transparent 3px, #000 3px, #000 4px, transparent 4px), linear-gradient(to bottom, #000 1px, transparent 1px);
-    background-size: 4px 100%;
-    background-repeat: no-repeat;
-    background-position: center right; }
+    cursor: pointer; }
     .lu .lu-row-body [data-meta~=first] [data-renderer=aggregate]::before {
       display: inline-block;
       font: normal normal normal 14px/1 lu-font, serif;
@@ -867,19 +904,18 @@ section.lu-header {
       -moz-osx-font-smoothing: grayscale;
       content: "\E801";
       padding-right: 4px; }
-  .lu .lu-row-body [data-meta=last] [data-renderer=aggregate] {
-    background-image: linear-gradient(to left, transparent 3px, #000 3px, #000 4px, transparent 4px), linear-gradient(to top, #000 1px, transparent 1px);
-    background-size: 4px 100%;
-    background-repeat: no-repeat;
-    background-position: center right; }
+    .lu .lu-row-body [data-meta~=first] [data-renderer=aggregate]::after {
+      border-top: 1px solid #000; }
+  .lu .lu-row-body [data-meta=last] [data-renderer=aggregate]::after {
+    border-bottom: 1px solid #000; }
   .lu .lu-row-body [data-meta='first last'] [data-renderer=aggregate],
   .lu .lu-row-body [data-agg=group] [data-renderer=aggregate] {
     padding-right: 4px;
-    cursor: pointer;
-    background-image: linear-gradient(to left, transparent 3px, #000 3px, #000 4px, transparent 4px), linear-gradient(to bottom, #000 1px, transparent 1px), linear-gradient(to top, #000 1px, transparent 1px);
-    background-size: 4px 100%;
-    background-repeat: no-repeat;
-    background-position: center right; }
+    cursor: pointer; }
+    .lu .lu-row-body [data-meta='first last'] [data-renderer=aggregate]::after,
+    .lu .lu-row-body [data-agg=group] [data-renderer=aggregate]::after {
+      border-top: 1px solid #000;
+      border-bottom: 1px solid #000; }
   .lu .lu-row-body [data-agg=group] [data-renderer=aggregate]::before {
     display: inline-block;
     font: normal normal normal 14px/1 lu-font, serif;
@@ -994,12 +1030,18 @@ section.lu-header {
     display: flex; }
     .lu [data-renderer=catdistributionbar] > * {
       overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
       width: 0;
       display: flex;
       flex-direction: row;
-      align-items: center; }
+      align-items: center;
+      position: relative; }
+      .lu [data-renderer=catdistributionbar] > * > span {
+        position: absolute;
+        left: 5px;
+        right: 3px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap; }
   .lu [data-agg=detail] [data-renderer=categorical],
   .lu [data-agg=detail] [data-renderer=brightness],
   .lu [data-agg=group] [data-renderer=brightness] > div {
@@ -1113,10 +1155,13 @@ section.lu-header {
     .lu .lu-summary[data-renderer=categorical] > span,
     .lu .lu-summary[data-renderer=interleaving] > span,
     .lu [data-renderer=histogram] > span {
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
       position: absolute;
       bottom: -15px;
       pointer-events: none;
-      user-select: none;
       line-height: 100%;
       /*
      * create axis tick as background image and position it left or right

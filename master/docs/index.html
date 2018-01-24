@@ -66,8 +66,21 @@
 			<div class="tsd-panel tsd-typography">
 				<h1 id="lineup-js-visual-analysis-of-multi-attribute-rankings">LineUp.js: Visual Analysis of Multi-Attribute Rankings</h1>
 				<p><a href="https://opensource.org/licenses/BSD-3-Clause"><img src="https://img.shields.io/badge/License-BSD%203--Clause-blue.svg" alt="License"></a> <a href="https://npmjs.org/package/lineupjs"><img src="https://badge.fury.io/js/lineupjs.svg" alt="NPM version"></a> <a href="https://circleci.com/gh/sgratzl/lineupjs"><img src="https://circleci.com/gh/sgratzl/lineupjs.svg?style=shield" alt="CircleCI"></a> <a href="https://circleci.com/gh/sgratzl/lineupjs/tree/develop"><img src="https://circleci.com/gh/sgratzl/lineupjs/tree/develop.svg?style=shield" alt="CircleCI"></a> <sup>(dev)</sup></p>
-				<p>LineUp is an interactive technique designed to create, visualize and explore rankings of items based on a set of heterogeneous attributes.
-				This is a web and generalized version of the published LineUp visualization technique by <a href="http://caleydo.org/publications/2013_infovis_lineup/">Gratzl et.al. 2013</a></p>
+				<p>LineUp is an interactive technique designed to create, visualize and explore rankings of items based on a set of heterogeneous attributes.</p>
+				<h2 id="key-features">Key Features</h2>
+				<ul>
+					<li>scalable (~100k rows)</li>
+					<li>heterogenous attribute types (string, numerical, categorical, boolean, date)</li>
+					<li>composite column types (weighted sum, min, max, mean, median, impose, nested, ...)</li>
+					<li>array (multi value) and map column types (strings, stringMap, numbers, numberMap, ...)</li>
+					<li>filtering capabilities</li>
+					<li>hierarchical sorting (sort by more than one sorting criteria)</li>
+					<li>hierarchical grouping (split rows in multiple separate groups)</li>
+					<li>group aggregations (show a whole group as a single group row)</li>
+					<li>numerous visualizations for summaries, cells, and group aggregations</li>
+					<li>side panel for easy filtering and column management</li>
+					<li><a href="#rshiny">RShiny</a>, <a href="#jupyter">Juypter</a>, and <a href="#powerbi">Power BI</a> wrapper</li>
+				</ul>
 				<h2 id="usage">Usage</h2>
 				<p><strong>Installation</strong></p>
 				<pre><code class="lang-bash">npm install --save lineupjs@next
@@ -107,9 +120,10 @@ builder
 <span class="hljs-keyword">const</span> ranking = LineUpJS.buildRanking()
   .supportTypes()
   .allColumns() <span class="hljs-comment">// add all columns</span>
+  .impose(<span class="hljs-string">'a+cat'</span>, <span class="hljs-string">'a'</span>, <span class="hljs-string">'cat2'</span>); <span class="hljs-comment">// create composite column</span>
   .groupBy(<span class="hljs-string">'cat'</span>)
   .sortBy(<span class="hljs-string">'a'</span>, <span class="hljs-string">'desc'</span>)
-  .impose(<span class="hljs-string">'number'</span>, <span class="hljs-string">'a'</span>, <span class="hljs-string">'cat2'</span>); <span class="hljs-comment">// create composite column</span>
+
 
 builder
   .defaultRanking()
@@ -125,10 +139,72 @@ builder
 					<li>Firefox 57+</li>
 					<li>Edge 16+</li>
 				</ul>
+				<p><a id="rshiny"></a></p>
+				<h2 id="r-rshiny-and-r-markdown-support">R, RShiny, and R Markdown Support</h2>
+				<p>A <a href="http://www.htmlwidgets.org/">HTMLWidget</a> wrapper for R is located at <a href="https://github.com/sgratzl/lineup_htmlwidget">lineup_htmlwidget</a>.
+					It can be used within standalone <a href="https://shiny.rstudio.com/">R Shiny</a> apps or <a href="http://rmarkdown.rstudio.com/">R Markdown</a> files. Integrated plotting does not work due to an outdated integrated Webkit version in RStudio.
+				<a href="https://rstudio.github.io/crosstalk/">Crosstalk</a> is supported for synching selections and filtering among widgets. </p>
+				<p><strong>Installation</strong></p>
+				<pre><code class="lang-R">devtools::install_github(<span class="hljs-string">"rstudio/crosstalk"</span>)
+devtools::install_github(<span class="hljs-string">"sgratzl/lineup_htmlwidget"</span>)
+<span class="hljs-keyword">library</span>(lineup)
+</code></pre>
+				<p><strong>Examples</strong></p>
+				<pre><code class="lang-R">lineup(iris)
+</code></pre>
+				<p><img src="https://user-images.githubusercontent.com/4129778/34919941-fec50232-f96a-11e7-95be-9eefb213e3d6.png" alt="iris output"></p>
+				<p><a id="jupyter"></a></p>
+				<h2 id="jupyter-widget-to-be-released-">Jupyter Widget (to be released)</h2>
+				<p>A <a href="https://jupyter.org/widgets.html">Jupyter Widget</a> wrapper for Python is located at <a href="https://github.com/sgratzl/lineup_widget">lineup_widget</a>.</p>
+				<p><strong>Installation</strong></p>
+				<pre><code class="lang-bash">pip install -e git+https://github.com/sgratzl/lineup_widget.git<span class="hljs-comment">#egg=lineup_widget</span>
+jupyter nbextension <span class="hljs-built_in">enable</span> --py [--sys-prefix|--user|--system] lineup_widget
+</code></pre>
+				<p>Or, if you use jupyterlab:</p>
+				<pre><code class="lang-bash">pip install -e git+https://github.com/sgratzl/lineup_widget.git<span class="hljs-comment">#egg=lineup_widget</span>
+jupyter labextension install @jupyter-widgets/jupyterlab-manager
+</code></pre>
+				<p><strong>Examples</strong></p>
+				<p><a href="http://mybinder.org/repo/sgratzl/lineup_widget/examples"><img src="https://camo.githubusercontent.com/70c5b4d050d4019f4f20b170d75679a9316ac5e5/687474703a2f2f6d7962696e6465722e6f72672f62616467652e737667" alt="Launch Binder"></a></p>
+				<pre><code class="lang-python"><span class="hljs-keyword">import</span> lineup_widget
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+df = pd.DataFrame(np.random.randint(<span class="hljs-number">0</span>,<span class="hljs-number">100</span>,size=(<span class="hljs-number">100</span>, <span class="hljs-number">4</span>)), columns=list(<span class="hljs-string">'ABCD'</span>))
+
+w = lineup_widget.LineUpWidget(df)
+w.on_selection_changed(<span class="hljs-keyword">lambda</span> selection: print(selection))
+w
+</code></pre>
+				<p><img src="https://user-images.githubusercontent.com/4129778/35321859-7925d3a6-00e8-11e8-9884-bcbc76ae51c9.png" alt="simple usage"></p>
+				<pre><code class="lang-python"><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> print_function
+<span class="hljs-keyword">from</span> ipywidgets <span class="hljs-keyword">import</span> interact, interactive, interact_manual
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">selection_changed</span><span class="hljs-params">(selection)</span>:</span>
+    <span class="hljs-keyword">return</span> df.iloc[selection]
+
+interact(selection_changed, selection=lineup_widget.LineUpWidget(df));
+</code></pre>
+				<p><img src="https://user-images.githubusercontent.com/4129778/35321846-6c5b07cc-00e8-11e8-9388-0acb65cbb509.png" alt="interact example"></p>
+				<p><a id="powerbi"></a></p>
+				<h2 id="powerbi-custom-visual-under-development-">PowerBI Custom Visual (under development)</h2>
+				<p>A <a href="https://github.com/Microsoft/PowerBI-Visuals">PowerBI Visual</a> wrapper is located at <a href="https://github.com/sgratzl/lineup_powerbi">lineup_powerbi</a>.</p>
+				<p><strong>Installation</strong></p>
+				<p>TODO</p>
+				<p><strong>Examples</strong></p>
+				<p>TODO</p>
 				<h2 id="api-documentation">API Documentation</h2>
 				<p>See <a href="https://sgratzl.github.io/lineupjs_docs/master/docs">API documentation</a> and <a href="https://sgratzl.github.io/lineupjs_docs/develop/docs">Develop API documentation</a></p>
 				<h2 id="demos">Demos</h2>
-				<p>See <a href="https://sgratzl.github.io/lineupjs_docs/master">Latest Demos</a> and <a href="https://sgratzl.github.io/lineupjs_docs/develop">Develop Demos</a></p>
+				<p>See <a href="https://sgratzl.github.io/lineupjs_docs/master">Demos</a>, <a href="https://sgratzl.github.io/lineupjs_docs/develop">Develop Demos</a>, and <a href="https://sgratzl.github.io/lineupjs_docs/R">R Demos</a></p>
+				<h2 id="related-publications">Related Publications</h2>
+				<p><strong>LineUp: Visual Analysis of Multi-Attribute Rankings</strong> <a href="http://data.caleydo.org/papers/2013_infovis_lineup.pdf">Paper</a> <a href="http://caleydo.org/publications/2013_infovis_lineup/">Paper Website</a></p>
+				<p>Samuel Gratzl, Alexander Lex, Nils Gehlenborg, Hanspeter Pfister, and Marc Streit <br>
+				IEEE Transactions on Visualization and Computer Graphics (InfoVis &#39;13), 19(12), pp. 2277–2286, doi:10.1109/TVCG.2013.173, 2013.</p>
+				<p>:trophy: <a href="http://ieeevis.org">IEEE VIS</a> InfoVis 2013 Best Paper Award </p>
+				<p><strong>Taggle: Scalable Visualization of Tabular Data through Aggregation</strong> <a href="http://sci.utah.edu/~vdl/papers/2017_preprint_taggle.pdf">Paper Preprint</a> <a href="http://vdl.sci.utah.edu/publications/2017_preprint_taggle/">Paper Website</a></p>
+				<p>Katarina Furmanova, Samuel Gratzl, Holger Stitz, Thomas Zichner, Miroslava Jaresova, Martin Ennemoser, Alexander Lex, and Marc Streit <br>
+				arXiv preprint, 2017.</p>
 				<h2 id="dependencies">Dependencies</h2>
 				<p>LineUp.js depends on </p>
 				<ul>
@@ -136,7 +212,7 @@ builder
 					<li><a href="http://d3js.org">D3</a> utilities: scales, format, dragging</li>
 					<li><a href="https://popper.js.org">Popper.js</a> dialogs</li>
 				</ul>
-				<h2 id="development-dependencies">Development Dependencies</h2>
+				<p><strong>Development Dependencies</strong></p>
 				<p><a href="https://webpack.github.io">Webpack</a> is used as build tool. LineUp itself is written in <a href="https://www.typescriptlang.org">TypeScript</a> and <a href="https://sass-lang.com">SASS</a>. </p>
 				<h2 id="development-environment">Development Environment</h2>
 				<p><strong>Installation</strong></p>
@@ -150,9 +226,16 @@ npm install
 				<p><strong>Run Linting</strong></p>
 				<pre><code class="lang-bash">npm run lint
 </code></pre>
-				<p><strong>Watch file changes</strong></p>
-				<pre><code class="lang-bash">npm run watch
+				<p><strong>Serve integrated webserver</strong></p>
+				<pre><code class="lang-bash">npm run start
 </code></pre>
+				<h2 id="authors">Authors</h2>
+				<ul>
+					<li>Samuel Gratzl (@sgratzl)</li>
+					<li>Holger Stitz (@thinkh)</li>
+					<li>The Caleydo Team (@caleydo)</li>
+					<li>Datavisyn GmbH (@datavisyn)</li>
+				</ul>
 				<hr>
 				<p><a href="http://caleydo.org"><img src="https://user-images.githubusercontent.com/4129778/34663868-5455cb76-f459-11e7-95db-f80db24026dc.png" align="left" width="200px" hspace="10" vspace="6"></a>
 				This repository was created as part of the <strong><a href="http://caleydo.org/">The Caleydo Project</a></strong>.</p>
