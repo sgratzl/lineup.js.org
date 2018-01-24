@@ -69,7 +69,7 @@
 				<p>LineUp is an interactive technique designed to create, visualize and explore rankings of items based on a set of heterogeneous attributes.</p>
 				<h2 id="key-features">Key Features</h2>
 				<ul>
-					<li>scalale (~100k rows)</li>
+					<li>scalable (~100k rows)</li>
 					<li>heterogenous attribute types (string, numerical, categorical, boolean, date)</li>
 					<li>composite column types (weighted sum, min, max, mean, median, impose, nested, ...)</li>
 					<li>array (multi value) and map column types (strings, stringMap, numbers, numberMap, ...)</li>
@@ -157,11 +157,11 @@ devtools::install_github(<span class="hljs-string">"sgratzl/lineup_htmlwidget"</
 				<h2 id="jupyter-widget-to-be-released-">Jupyter Widget (to be released)</h2>
 				<p>A <a href="https://jupyter.org/widgets.html">Jupyter Widget</a> wrapper for Python is located at <a href="https://github.com/sgratzl/lineup_widget">lineup_widget</a>.</p>
 				<p><strong>Installation</strong></p>
-				<pre><code class="lang-bash">pip install -e git+https://github.com/sgratzl/lineup_widget.git@develop<span class="hljs-comment">#egg=lineup_widget</span>
+				<pre><code class="lang-bash">pip install -e git+https://github.com/sgratzl/lineup_widget.git<span class="hljs-comment">#egg=lineup_widget</span>
 jupyter nbextension <span class="hljs-built_in">enable</span> --py [--sys-prefix|--user|--system] lineup_widget
 </code></pre>
 				<p>Or, if you use jupyterlab:</p>
-				<pre><code class="lang-bash">pip install -e git+https://github.com/sgratzl/lineup_widget.git@develop<span class="hljs-comment">#egg=lineup_widget</span>
+				<pre><code class="lang-bash">pip install -e git+https://github.com/sgratzl/lineup_widget.git<span class="hljs-comment">#egg=lineup_widget</span>
 jupyter labextension install @jupyter-widgets/jupyterlab-manager
 </code></pre>
 				<p><strong>Examples</strong></p>
