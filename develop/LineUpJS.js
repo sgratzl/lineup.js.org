@@ -310,7 +310,7 @@ var Column = (function (_super) {
         _this.groupRenderer = _this.desc.groupRenderer || _this.desc.type;
         _this.summaryRenderer = _this.desc.summaryRenderer || _this.desc.type;
         _this.width = _this.desc.width != null && _this.desc.width > 0 ? _this.desc.width : 100;
-        _this.visible = Boolean(_this.desc.visible);
+        _this.visible = _this.desc.visible !== false;
         _this.metadata = {
             label: desc.label || _this.id,
             description: desc.description || '',
@@ -1188,13 +1188,14 @@ function wideEnough(col, length) {
 function adaptTextColorToBgColor(bgColor) {
     return Object(__WEBPACK_IMPORTED_MODULE_1_d3_color__["d" /* hsl */])(bgColor).l > 0.5 ? 'black' : 'white';
 }
-function adaptDynamicColorToBgColor(node, bgColor, width) {
+function adaptDynamicColorToBgColor(node, bgColor, title, width) {
     var adapt = adaptTextColorToBgColor(bgColor);
     if ((width <= 0.05 || adapt === 'black') || width > 0.9) {
         node.style.color = adapt === 'black' || width <= 0.05 ? null : adapt;
         return;
     }
     node.style.color = null;
+    node.innerHTML = title + "<span class=\"lu-gradient-text\" style=\"color: " + adapt + "\">" + title + "</span>";
 }
 
 
@@ -20600,7 +20601,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 var version = "3.0.0-alpha2";
-var buildId = "20180124-092158";
+var buildId = "20180124-210723";
 var license = "BSD-3-Clause";
 function createLocalDataProvider(data, columns, options) {
     if (options === void 0) { options = {}; }
@@ -24686,7 +24687,7 @@ var BarCellRenderer = (function () {
                 Object(__WEBPACK_IMPORTED_MODULE_2__utils__["i" /* setText */])(bar.firstElementChild, title);
                 var item = bar.firstElementChild;
                 Object(__WEBPACK_IMPORTED_MODULE_2__utils__["i" /* setText */])(item, title);
-                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["a" /* adaptDynamicColorToBgColor */])(item, color || __WEBPACK_IMPORTED_MODULE_1__model_Column__["a" /* default */].DEFAULT_COLOR, w / 100);
+                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["a" /* adaptDynamicColorToBgColor */])(item, color || __WEBPACK_IMPORTED_MODULE_1__model_Column__["a" /* default */].DEFAULT_COLOR, title, w / 100);
             },
             render: function (ctx, d) {
                 if (Object(__WEBPACK_IMPORTED_MODULE_6__missing__["a" /* renderMissingCanvas */])(ctx, col, d, width)) {
@@ -30650,8 +30651,6 @@ var SelectionManager = (function (_super) {
         _this.ctx = ctx;
         _this.body = body;
         _this.start = null;
-        _this.startNode = null;
-        _this.endNode = null;
         var root = body.parentElement.parentElement;
         var hr = root.querySelector('hr');
         if (!hr) {
@@ -30660,26 +30659,26 @@ var SelectionManager = (function (_super) {
         }
         _this.hr = hr;
         var mouseMove = function (evt) {
-            _this.showHint(_this.start, evt);
+            _this.showHint(evt);
         };
-        var enabled = false;
         var mouseUp = function (evt) {
-            if (!enabled) {
-                return;
-            }
-            _this.select(evt.ctrlKey);
-            _this.start = _this.startNode = _this.endNode = null;
-            enabled = false;
-            _this.body.classList.remove('lu-selection-active');
-            _this.hr.classList.remove('lu-selection-active');
             _this.body.removeEventListener('mousemove', mouseMove);
             _this.body.removeEventListener('mouseup', mouseUp);
             _this.body.removeEventListener('mouseleave', mouseUp);
+            if (!_this.start) {
+                return;
+            }
+            var startNode = _this.start.node.classList.contains('lu-row') ? _this.start.node : _this.start.node.closest('.lu-row');
+            var end = _this.body.ownerDocument.elementFromPoint(evt.x, evt.y);
+            var endNode = end.classList.contains('lu-row') ? end : (end.closest('.lu-row'));
+            _this.start = null;
+            _this.body.classList.remove('lu-selection-active');
+            _this.hr.classList.remove('lu-selection-active');
+            _this.select(evt.ctrlKey, startNode, endNode);
         };
         body.addEventListener('mousedown', function (evt) {
             var r = root.getBoundingClientRect();
-            _this.start = { x: evt.x, y: evt.y, xShift: r.left, yShift: r.top };
-            enabled = true;
+            _this.start = { x: evt.x, y: evt.y, xShift: r.left, yShift: r.top, node: evt.target };
             body.addEventListener('mousemove', mouseMove);
             body.addEventListener('mouseup', mouseUp);
             body.addEventListener('mouseleave', mouseUp);
@@ -30689,24 +30688,22 @@ var SelectionManager = (function (_super) {
     SelectionManager.prototype.createEventList = function () {
         return _super.prototype.createEventList.call(this).concat([SelectionManager.EVENT_SELECT_RANGE]);
     };
-    SelectionManager.prototype.select = function (additional) {
-        if (!this.start || !this.startNode || !this.endNode) {
+    SelectionManager.prototype.select = function (additional, startNode, endNode) {
+        var _this = this;
+        if (!startNode || !endNode || startNode === endNode) {
             return;
         }
-        if (this.startNode === this.endNode) {
-            return;
-        }
-        var startIndex = parseInt(this.startNode.dataset.index, 10);
-        var endIndex = parseInt(this.endNode.dataset.index, 10);
+        var startIndex = parseInt(startNode.dataset.index, 10);
+        var endIndex = parseInt(endNode.dataset.index, 10);
         var from = Math.min(startIndex, endIndex);
         var end = Math.max(startIndex, endIndex);
         if (from === end) {
             return;
         }
-        this.fire(SelectionManager.EVENT_SELECT_RANGE, from, end, additional);
+        requestAnimationFrame(function () { return _this.fire(SelectionManager.EVENT_SELECT_RANGE, from, end, additional); });
     };
-    SelectionManager.prototype.showHint = function (start, end) {
-        this.start = start;
+    SelectionManager.prototype.showHint = function (end) {
+        var start = this.start;
         var sy = start.y;
         var ey = end.y;
         var visible = Math.abs(sy - ey) > SelectionManager.MIN_DISTANCE;
@@ -30715,21 +30712,13 @@ var SelectionManager = (function (_super) {
         this.hr.style.transform = "translate(" + (start.x - start.xShift) + "px," + (sy - start.yShift) + "px)scale(1," + Math.abs(ey - sy) + ")rotate(" + (ey > sy ? 90 : -90) + "deg)";
     };
     SelectionManager.prototype.remove = function (node) {
-        node.onclick = node.onmousedown = node.onmouseup = undefined;
+        node.onclick = undefined;
     };
     SelectionManager.prototype.add = function (node) {
         var _this = this;
         node.onclick = function (evt) {
             var i = parseInt(node.dataset.i, 10);
             _this.ctx.provider.toggleSelection(i, evt.ctrlKey);
-        };
-        node.onmousedown = function () {
-            _this.startNode = node;
-        };
-        node.onmouseup = function () {
-            if (_this.start) {
-                _this.endNode = node;
-            }
         };
     };
     SelectionManager.prototype.selectRange = function (rows, additional) {

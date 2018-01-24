@@ -57,9 +57,18 @@
 .lu-header .lu-gradient-text,
 .lu-side-panel .lu-gradient-text,
 .lu-dialog .lu-gradient-text {
-  color: transparent;
-  -webkit-background-clip: text;
-  background-clip: text; }
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: absolute;
+  overflow: hidden;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  pointer-events: none;
+  z-index: 1; }
 
 @font-face {
   font-family: 'lu-font';
@@ -305,8 +314,11 @@
 
 .lu-header,
 .lu-side-panel-entry {
-  position: relative;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   user-select: none;
+  position: relative;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -321,6 +333,10 @@
     opacity: 0.5; }
   .lu-header.lu-dragover::after,
   .lu-side-panel-entry.lu-dragover::after {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
     content: attr(data-draginfo);
     position: absolute;
     top: 0;
@@ -331,7 +347,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    user-select: none;
     pointer-events: none;
     background: rgba(240, 240, 240, 0.8);
     border: 2px dashed rgba(151, 151, 151, 0.8); }
@@ -350,8 +365,11 @@
     font-size: x-small; }
 
 .lu-summary label.lu-disabled {
-  color: gray;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   user-select: none;
+  color: gray;
   cursor: not-allowed; }
 
 .lu-summary input[type=text],
@@ -764,8 +782,11 @@ section.lu-header {
     text-align: center;
     bottom: -1px; }
     section.lu-header > .lu-handle.lu-dragover {
-      transition: width 0.2s ease, right 0.2s ease;
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
       user-select: none;
+      transition: width 0.2s ease, right 0.2s ease;
       color: black;
       display: flex;
       align-items: center;
@@ -811,6 +832,8 @@ section.lu-header {
   display: none;
   pointer-events: none;
   -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   user-select: none; }
   .lineup-engine > hr.lu-selection-active {
     display: block;
@@ -818,6 +841,8 @@ section.lu-header {
 
 .lineup-engine article.lu-selection-active * {
   -moz-user-select: none;
+  -webkit-user-select: none;
+  -ms-user-select: none;
   user-select: none; }
 
 .lu-row {
@@ -832,6 +857,8 @@ section.lu-header {
   .lu-row:hover .lu-hover-only, .lu-row.lu-selected .lu-hover-only, .lu-row.lu-hovered .lu-hover-only {
     display: block;
     padding-left: 4px; }
+    .lu-row:hover .lu-hover-only > .lu-gradient-text, .lu-row.lu-selected .lu-hover-only > .lu-gradient-text, .lu-row.lu-hovered .lu-hover-only > .lu-gradient-text {
+      left: 4px; }
   .lu-row.lu-selected {
     z-index: 10;
     position: relative;
@@ -1128,10 +1155,13 @@ section.lu-header {
     .lu .lu-summary[data-renderer=categorical] > span,
     .lu .lu-summary[data-renderer=interleaving] > span,
     .lu [data-renderer=histogram] > span {
+      -moz-user-select: none;
+      -webkit-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
       position: absolute;
       bottom: -15px;
       pointer-events: none;
-      user-select: none;
       line-height: 100%;
       /*
      * create axis tick as background image and position it left or right
