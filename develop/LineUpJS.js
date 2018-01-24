@@ -20600,7 +20600,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 var version = "3.0.0-alpha2";
-var buildId = "20180123-233703";
+var buildId = "20180124-083058";
 var license = "BSD-3-Clause";
 function createLocalDataProvider(data, columns, options) {
     if (options === void 0) { options = {}; }

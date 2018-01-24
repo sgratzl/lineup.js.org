@@ -152,8 +152,9 @@ devtools::install_github(<span class="hljs-string">"sgratzl/lineup_htmlwidget"</
 				<p><strong>Examples</strong></p>
 				<pre><code class="lang-R">lineup(iris)
 </code></pre>
+				<p><img src="https://user-images.githubusercontent.com/4129778/34919941-fec50232-f96a-11e7-95be-9eefb213e3d6.png" alt="iris output"></p>
 				<p><a id="jupyter"></a></p>
-				<h2 id="jupyter-widget-under-development-">Jupyter Widget (under development)</h2>
+				<h2 id="jupyter-widget-to-be-released-">Jupyter Widget (to be released)</h2>
 				<p>A <a href="https://jupyter.org/widgets.html">Jupyter Widget</a> wrapper for Python is located at <a href="https://github.com/sgratzl/lineup_widget">lineup_widget</a>.</p>
 				<p><strong>Installation</strong></p>
 				<pre><code class="lang-bash">pip install -e git+https://github.com/sgratzl/lineup_widget.git@develop<span class="hljs-comment">#egg=lineup_widget</span>
@@ -165,6 +166,26 @@ jupyter labextension install @jupyter-widgets/jupyterlab-manager
 </code></pre>
 				<p><strong>Examples</strong></p>
 				<p><a href="http://mybinder.org/repo/sgratzl/lineup_widget/examples"><img src="https://camo.githubusercontent.com/70c5b4d050d4019f4f20b170d75679a9316ac5e5/687474703a2f2f6d7962696e6465722e6f72672f62616467652e737667" alt="Launch Binder"></a></p>
+				<pre><code class="lang-python"><span class="hljs-keyword">import</span> lineup_widget
+<span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd
+<span class="hljs-keyword">import</span> numpy <span class="hljs-keyword">as</span> np
+
+df = pd.DataFrame(np.random.randint(<span class="hljs-number">0</span>,<span class="hljs-number">100</span>,size=(<span class="hljs-number">100</span>, <span class="hljs-number">4</span>)), columns=list(<span class="hljs-string">'ABCD'</span>))
+
+w = lineup_widget.LineUpWidget(df)
+w.on_selection_changed(<span class="hljs-keyword">lambda</span> selection: print(selection))
+w
+</code></pre>
+				<p><img src="https://user-images.githubusercontent.com/4129778/35321859-7925d3a6-00e8-11e8-9884-bcbc76ae51c9.png" alt="simple usage"></p>
+				<pre><code class="lang-python"><span class="hljs-keyword">from</span> __future__ <span class="hljs-keyword">import</span> print_function
+<span class="hljs-keyword">from</span> ipywidgets <span class="hljs-keyword">import</span> interact, interactive, interact_manual
+
+<span class="hljs-function"><span class="hljs-keyword">def</span> <span class="hljs-title">selection_changed</span><span class="hljs-params">(selection)</span>:</span>
+    <span class="hljs-keyword">return</span> df.iloc[selection]
+
+interact(selection_changed, selection=lineup_widget.LineUpWidget(df));
+</code></pre>
+				<p><img src="https://user-images.githubusercontent.com/4129778/35321846-6c5b07cc-00e8-11e8-9388-0acb65cbb509.png" alt="interact example"></p>
 				<p><a id="powerbi"></a></p>
 				<h2 id="powerbi-custom-visual-under-development-">PowerBI Custom Visual (under development)</h2>
 				<p>A <a href="https://github.com/Microsoft/PowerBI-Visuals">PowerBI Visual</a> wrapper is located at <a href="https://github.com/sgratzl/lineup_powerbi">lineup_powerbi</a>.</p>
