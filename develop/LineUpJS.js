@@ -2040,26 +2040,20 @@ function joinGroups(groups) {
         return groups[0];
     }
     var parents = groups.map(function (g) { return Object.assign({ subGroups: [] }, g); });
-    groups.slice(1).forEach(function (g, i) {
+    parents.slice(1).forEach(function (g, i) {
         g.parent = parents[i];
         parents[i].subGroups.push(g);
     });
     var g = {
-        name: groups.map(function (d) { return d.name; }).join(' ∩ '),
-        color: groups[0].color,
+        name: parents.map(function (d) { return d.name; }).join(' ∩ '),
+        color: parents[0].color,
         parent: parents[parents.length - 1]
     };
     g.parent.subGroups.push(g);
     return g;
 }
 function toGroupID(group) {
-    var id = group.name;
-    var g = group.parent;
-    while (g) {
-        id = g.name + "." + id;
-        g = g.parent;
-    }
-    return id;
+    return group.name;
 }
 function unifyParents(groups) {
     if (groups.length <= 1) {
@@ -20619,7 +20613,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 var version = "3.0.0-beta.1";
-var buildId = "20180126-135952";
+var buildId = "20180126-143141";
 var license = "BSD-3-Clause";
 function createLocalDataProvider(data, columns, options) {
     if (options === void 0) { options = {}; }
