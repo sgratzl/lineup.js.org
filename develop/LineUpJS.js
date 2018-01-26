@@ -20619,7 +20619,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 var version = "3.0.0-beta.1";
-var buildId = "20180124-222247";
+var buildId = "20180126-135952";
 var license = "BSD-3-Clause";
 function createLocalDataProvider(data, columns, options) {
     if (options === void 0) { options = {}; }
@@ -24849,6 +24849,7 @@ var BoxplotCellRenderer = (function () {
                     Object(__WEBPACK_IMPORTED_MODULE_8__missing__["b" /* renderMissingDOM */])(n, col, rows[0]);
                     return;
                 }
+                n.classList.remove('lu-missing');
                 var box, label;
                 if (Object(__WEBPACK_IMPORTED_MODULE_3__model_INumberColumn__["j" /* isNumbersColumn */])(col)) {
                     box = BoxplotCellRenderer.createAggregatedBoxPlot(col, rows);
