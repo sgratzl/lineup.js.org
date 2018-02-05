@@ -104,41 +104,41 @@
 				<h2>Variables</h2>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 					<a name="cache" class="tsd-anchor"></a>
-					<h3>cache</h3>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> cache</h3>
 					<div class="tsd-signature tsd-kind-icon">cache<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Map&lt;string, string[]&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/99872af/src/model/annotations.ts#L34">src/model/annotations.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/59ddcba/src/model/annotations.ts#L34">src/model/annotations.ts:34</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module">
 					<a name="categories-1" class="tsd-anchor"></a>
-					<h3>categories</h3>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> categories</h3>
 					<div class="tsd-signature tsd-kind-icon">categories<span class="tsd-signature-symbol">:</span> <a href="../classes/_src_model_annotations_.categories.html" class="tsd-signature-type">Categories</a><span class="tsd-signature-symbol"> =&nbsp;new Categories()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/99872af/src/model/annotations.ts#L24">src/model/annotations.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/59ddcba/src/model/annotations.ts#L24">src/model/annotations.ts:24</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 					<a name="category" class="tsd-anchor"></a>
-					<h3>category</h3>
-					<div class="tsd-signature tsd-kind-icon">category<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol.for(&#x27;Category&#x27;)</span></div>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> category</h3>
+					<div class="tsd-signature tsd-kind-icon">category<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">unique symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol.for(&#x27;Category&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/99872af/src/model/annotations.ts#L6">src/model/annotations.ts:6</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/59ddcba/src/model/annotations.ts#L6">src/model/annotations.ts:6</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 					<a name="supporttype" class="tsd-anchor"></a>
-					<h3>support<wbr>Type</h3>
-					<div class="tsd-signature tsd-kind-icon">support<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol.for(&#x27;SupportType&#x27;)</span></div>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> support<wbr>Type</h3>
+					<div class="tsd-signature tsd-kind-icon">support<wbr>Type<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">unique symbol</span><span class="tsd-signature-symbol"> =&nbsp;Symbol.for(&#x27;SupportType&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/99872af/src/model/annotations.ts#L5">src/model/annotations.ts:5</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/59ddcba/src/model/annotations.ts#L5">src/model/annotations.ts:5</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -149,19 +149,19 @@
 					<a name="category-1" class="tsd-anchor"></a>
 					<h3>Category</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">Category<span class="tsd-signature-symbol">(</span>cat<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"string"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"number"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"categorical"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"date"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"array"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"map"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"composite"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"support"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"other"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
+						<li class="tsd-signature tsd-kind-icon">Category<span class="tsd-signature-symbol">(</span>cat<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">keyof Categories</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/99872af/src/model/annotations.ts#L26">src/model/annotations.ts:26</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/59ddcba/src/model/annotations.ts#L26">src/model/annotations.ts:26</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>cat: <span class="tsd-signature-type">"string"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"number"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"categorical"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"date"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"array"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"map"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"composite"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"support"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"other"</span></h5>
+									<h5>cat: <span class="tsd-signature-type">keyof Categories</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
@@ -209,7 +209,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/99872af/src/model/annotations.ts#L8">src/model/annotations.ts:8</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/59ddcba/src/model/annotations.ts#L8">src/model/annotations.ts:8</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">function</span></h4>
@@ -257,7 +257,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/99872af/src/model/annotations.ts#L41">src/model/annotations.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/59ddcba/src/model/annotations.ts#L41">src/model/annotations.ts:41</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -297,7 +297,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/99872af/src/model/annotations.ts#L46">src/model/annotations.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/59ddcba/src/model/annotations.ts#L46">src/model/annotations.ts:46</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -339,7 +339,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/99872af/src/model/annotations.ts#L52">src/model/annotations.ts:52</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/59ddcba/src/model/annotations.ts#L52">src/model/annotations.ts:52</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -362,7 +362,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/99872af/src/model/annotations.ts#L36">src/model/annotations.ts:36</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/59ddcba/src/model/annotations.ts#L36">src/model/annotations.ts:36</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -385,7 +385,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/99872af/src/model/annotations.ts#L30">src/model/annotations.ts:30</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/59ddcba/src/model/annotations.ts#L30">src/model/annotations.ts:30</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
