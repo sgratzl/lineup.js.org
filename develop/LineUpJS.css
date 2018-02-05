@@ -713,7 +713,7 @@
   .lineup-engine > main:not(.scrolling) > article > div {
     /* @include collapsing-row-border($engine_row_hover_width, #eee); */
     background: white; }
-    .lineup-engine > main:not(.scrolling) > article > div:hover {
+    .lineup-engine > main:not(.scrolling) > article > div.le-highlighted, .lineup-engine > main:not(.scrolling) > article > div:hover {
       position: relative;
       z-index: 2;
       /* use box-shadow to create collapsing border (@see https://stackoverflow.com/a/28807765) */
@@ -853,12 +853,12 @@ section.lu-header {
   .lu-row .lu-hover-only,
   .lu-row .lu-selection-only {
     display: none; }
-  .lu-row:hover .lu-not-hover, .lu-row.lu-selected .lu-not-hover, .lu-row.lu-hovered .lu-not-hover {
+  .lu-row:hover .lu-not-hover, .lu-row.lu-selected .lu-not-hover, .lu-row.le-highlighted .lu-not-hover {
     display: none; }
-  .lu-row:hover .lu-hover-only, .lu-row.lu-selected .lu-hover-only, .lu-row.lu-hovered .lu-hover-only {
+  .lu-row:hover .lu-hover-only, .lu-row.lu-selected .lu-hover-only, .lu-row.le-highlighted .lu-hover-only {
     display: block;
     padding-left: 4px; }
-    .lu-row:hover .lu-hover-only > .lu-gradient-text, .lu-row.lu-selected .lu-hover-only > .lu-gradient-text, .lu-row.lu-hovered .lu-hover-only > .lu-gradient-text {
+    .lu-row:hover .lu-hover-only > .lu-gradient-text, .lu-row.lu-selected .lu-hover-only > .lu-gradient-text, .lu-row.le-highlighted .lu-hover-only > .lu-gradient-text {
       left: 4px; }
   .lu-row.lu-selected {
     z-index: 10;
@@ -1377,14 +1377,14 @@ section.lu-slopegraph svg {
     stroke: darkgray;
     stroke-width: 1;
     stroke-linecap: round; }
-    section.lu-slopegraph svg path.lu-slope:hover, section.lu-slopegraph svg path.lu-slope.lu-selected {
+    section.lu-slopegraph svg path.lu-slope:hover, section.lu-slopegraph svg path.lu-slope.lu-selected, section.lu-slopegraph svg path.lu-slope.le-highlighted {
       z-index: 10;
       stroke: #ffa500; }
   section.lu-slopegraph svg path.lu-group-slope {
     fill: rgba(169, 169, 169, 0.5);
     stroke: darkgray;
     stroke-linejoin: round; }
-    section.lu-slopegraph svg path.lu-group-slope:hover, section.lu-slopegraph svg path.lu-group-slope.lu-selected {
+    section.lu-slopegraph svg path.lu-group-slope:hover, section.lu-slopegraph svg path.lu-group-slope.lu-selected, section.lu-slopegraph svg path.lu-group-slope.le-highlighted {
       z-index: 10;
       stroke: #ffa500;
       fill: rgba(255, 165, 0, 0.5); }
