@@ -1,4 +1,4 @@
-/*! lineupjsx - v1.0.0-20180205-214310 - 2018
+/*! lineupjsx - v1.0.0-20180206-082403 - 2018
 * https://sgratzl.github.io/lineupjsx/
 * Copyright (c) 2018 Samuel Gratzl; Licensed MIT*/
 
@@ -32450,8 +32450,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-var version = "1.0.0-20180205-214310";
-var buildId = "20180205-214310";
+var version = "1.0.0-20180206-082403";
+var buildId = "20180206-082403";
 var license = "MIT";
 
 
