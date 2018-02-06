@@ -1,4 +1,4 @@
-/*! lineupjsx - v1.0.0-20180206-082403 - 2018
+/*! lineupjsx - v1.0.0-20180206-165841 - 2018
 * https://sgratzl.github.io/lineupjsx/
 * Copyright (c) 2018 Samuel Gratzl; Licensed MIT*/
 
@@ -31821,6 +31821,7 @@ var LineUp = (function (_super) {
             }
         };
         _this.onHighlightChanged = function (highlight) {
+            _this.prevHighlight = highlight;
             if (_this.props.onHighlightChanged) {
                 _this.props.onHighlightChanged(highlight);
             }
@@ -31833,6 +31834,7 @@ var LineUp = (function (_super) {
     LineUp.prototype.componentDidMount = function () {
         this.data = this.buildProvider();
         this.instance = this.createInstance(this.node, this.data, Object(__WEBPACK_IMPORTED_MODULE_4__utils__["c" /* pick */])(this.props, lineupOptions));
+        this.instance.on(__WEBPACK_IMPORTED_MODULE_2_lineupjs__["LineUp"].EVENT_HIGHLIGHT_CHANGED, this.onHighlightChanged);
     };
     LineUp.prototype.resolveColumnDescs = function (data) {
         var columns = Object(__WEBPACK_IMPORTED_MODULE_4__utils__["a" /* filterChildrenProps */])(this.props.children, __WEBPACK_IMPORTED_MODULE_5__column_LineUpColumnDesc__["a" /* default */]).map(function (d) { return d.type.build(d.props, data); });
@@ -31894,6 +31896,12 @@ var LineUp = (function (_super) {
             if (providerChanged) {
                 this.instance.setDataProvider(this.data);
             }
+            if (providerChanged || (this.props.highlight != null && this.prevHighlight !== this.props.highlight)) {
+                this.prevHighlight = this.props.highlight == null ? -1 : this.props.highlight;
+                this.instance.on(__WEBPACK_IMPORTED_MODULE_2_lineupjs__["LineUp"].EVENT_HIGHLIGHT_CHANGED, null);
+                this.instance.setHighlight(this.prevHighlight);
+                this.instance.on(__WEBPACK_IMPORTED_MODULE_2_lineupjs__["LineUp"].EVENT_HIGHLIGHT_CHANGED, this.onHighlightChanged);
+            }
             return;
         }
         if (this.instance) {
@@ -31901,6 +31909,8 @@ var LineUp = (function (_super) {
         }
         console.log('build lineup instance');
         this.instance = this.createInstance(this.node, this.data, changedLineUpOptions);
+        this.prevHighlight = this.props.highlight == null ? -1 : this.props.highlight;
+        this.instance.setHighlight(this.prevHighlight);
         this.instance.on(__WEBPACK_IMPORTED_MODULE_2_lineupjs__["LineUp"].EVENT_HIGHLIGHT_CHANGED, this.onHighlightChanged);
     };
     LineUp.prototype.updateProvider = function (prevProps) {
@@ -31924,11 +31934,6 @@ var LineUp = (function (_super) {
         this.data.on(__WEBPACK_IMPORTED_MODULE_2_lineupjs__["LocalDataProvider"].EVENT_SELECTION_CHANGED, null);
         this.data.setSelection(this.props.selection || []);
         this.data.on(__WEBPACK_IMPORTED_MODULE_2_lineupjs__["LocalDataProvider"].EVENT_SELECTION_CHANGED, this.onSelectionChanged);
-        if (this.props.highlight != null) {
-            this.instance.on(__WEBPACK_IMPORTED_MODULE_2_lineupjs__["LineUp"].EVENT_HIGHLIGHT_CHANGED, null);
-            this.instance.setHighlight(this.props.highlight);
-            this.instance.on(__WEBPACK_IMPORTED_MODULE_2_lineupjs__["LineUp"].EVENT_HIGHLIGHT_CHANGED, this.onHighlightChanged);
-        }
         return false;
     };
     LineUp.prototype.componentDidUpdate = function (prevProps) {
@@ -32450,8 +32455,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-var version = "1.0.0-20180206-082403";
-var buildId = "20180206-082403";
+var version = "1.0.0-20180206-165841";
+var buildId = "20180206-165841";
 var license = "MIT";
 
 
