@@ -163,6 +163,25 @@ builder
 </code></pre>
 				<pre><code class="lang-jsx">&lt;LineUp data={arr}/&gt;
 </code></pre>
+				<p><a href="https://codepen.io/sgratzl/pen/mXEpMP">CodePen</a></p>
+				<p>Result is same as the builder minimal example</p>
+				<p><strong>Advanced Usage Example</strong></p>
+				<pre><code class="lang-jsx"><span class="hljs-comment">// arr from before</span>
+&lt;LineUp data={arr} defaultRanking&gt;
+  &lt;LineUpStringColumnDesc column="d" label="Label" width={100} /&gt;
+  &lt;LineUpCategoricalColumnDesc column="cat" categories={cats} color="green" /&gt;
+  &lt;LineUpCategoricalColumnDesc column="cat2" categories={cats} color="blue" /&gt;
+  &lt;LineUpNumberColumnDesc column="a" domain={[0, 10]} color="blue" /&gt;
+
+  &lt;LineUpRanking groupBy="cat" sortBy="a:desc"&gt;
+    &lt;LineUpSupportColumn type="*" /&gt;
+    &lt;LineUpColumn column="*" /&gt;
+    &lt;LineUpImposeColumn label="a+cat" column="a" categeoricalColumn="cat2" /&gt;
+  &lt;/LineUpRanking&gt;
+&lt;/LineUp&gt;;
+</code></pre>
+				<p><a href="https://codepen.io/sgratzl/pen/yvJpWQ">CodePen</a></p>
+				<p>Result is same as the builder advanced example</p>
 				<p><a id="rshiny"></a></p>
 				<h2 id="r-rshiny-and-r-markdown-support">R, RShiny, and R Markdown Support</h2>
 				<p>A <a href="http://www.htmlwidgets.org/">HTMLWidget</a> wrapper for R is located at <a href="https://github.com/sgratzl/lineup_htmlwidget">lineup_htmlwidget</a>.
