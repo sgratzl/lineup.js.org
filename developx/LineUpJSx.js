@@ -1,14 +1,14 @@
-/*! lineupjsx - v1.0.0-beta.1 - 2018
+/*! lineupjsx - v1.0.0-beta.3 - 2018
 * https://github.com/sgratzl/lineupjsx
 * Copyright (c) 2018 Samuel Gratzl; Licensed MIT*/
 
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("React"));
+		module.exports = factory(require("react"));
 	else if(typeof define === 'function' && define.amd)
-		define(["React"], factory);
+		define(["react"], factory);
 	else if(typeof exports === 'object')
-		exports["LineUpJS"] = factory(require("React"));
+		exports["LineUpJS"] = factory(require("react"));
 	else
 		root["LineUpJS"] = factory(root["React"]);
 })(typeof self !== 'undefined' ? self : this, function(__WEBPACK_EXTERNAL_MODULE_4__) {
@@ -32781,8 +32781,8 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 
-var version = "1.0.0-beta.1";
-var buildId = "20180208-141419";
+var version = "1.0.0-beta.3";
+var buildId = "20180208-162201";
 var license = "MIT";
 
 
