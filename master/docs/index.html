@@ -79,7 +79,7 @@
 					<li>group aggregations (show a whole group as a single group row)</li>
 					<li>numerous visualizations for summaries, cells, and group aggregations</li>
 					<li>side panel for easy filtering and column management</li>
-					<li><a href="#rshiny">RShiny</a>, <a href="#jupyter">Juypter</a>, and <a href="#powerbi">Power BI</a> wrapper</li>
+					<li><a href="#react">React</a>, <a href="#rshiny">RShiny</a>, <a href="#jupyter">Juypter</a>, and <a href="#powerbi">Power BI</a> wrapper</li>
 				</ul>
 				<h2 id="usage">Usage</h2>
 				<p><strong>Installation</strong></p>
@@ -139,6 +139,49 @@ builder
 					<li>Firefox 57+</li>
 					<li>Edge 16+</li>
 				</ul>
+				<p><a id="react"></a></p>
+				<h2 id="react-support-lineup-jsx-">React Support (LineUp.jsx)</h2>
+				<p>A <a href="https://reactjs.org/">React</a> wrapper is located at <a href="https://github.com/sgratzl/lineupjsx">lineupjsx</a>. </p>
+				<p><strong>Installation</strong></p>
+				<pre><code class="lang-bash">npm install --save lineupjsx
+</code></pre>
+				<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://sgratzl.github.io/lineupjs_docs/masterx/LineUpJSx.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://sgratzl.github.io/lineupjs_docs/masterx/LineUpJSx.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+</code></pre>
+				<p><strong>Minimal Usage Example</strong></p>
+				<pre><code class="lang-javascript"><span class="hljs-comment">// generate some data</span>
+<span class="hljs-keyword">const</span> arr = [];
+<span class="hljs-keyword">const</span> cats = [<span class="hljs-string">'c1'</span>, <span class="hljs-string">'c2'</span>, <span class="hljs-string">'c3'</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span>; ++i) {
+  arr.push({
+    <span class="hljs-attr">a</span>: <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>,
+    <span class="hljs-attr">d</span>: <span class="hljs-string">'Row '</span> + i,
+    <span class="hljs-attr">cat</span>: cats[<span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">3</span>)],
+    <span class="hljs-attr">cat2</span>: cats[<span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">3</span>)]
+  })
+}
+</code></pre>
+				<pre><code class="lang-jsx">&lt;LineUp data={arr}/&gt;
+</code></pre>
+				<p><a href="https://codepen.io/sgratzl/pen/mXEpMP">CodePen</a></p>
+				<p>Result is same as the builder minimal example</p>
+				<p><strong>Advanced Usage Example</strong></p>
+				<pre><code class="lang-jsx"><span class="hljs-comment">// arr from before</span>
+&lt;LineUp data={arr} defaultRanking&gt;
+  &lt;LineUpStringColumnDesc column="d" label="Label" width={100} /&gt;
+  &lt;LineUpCategoricalColumnDesc column="cat" categories={cats} color="green" /&gt;
+  &lt;LineUpCategoricalColumnDesc column="cat2" categories={cats} color="blue" /&gt;
+  &lt;LineUpNumberColumnDesc column="a" domain={[0, 10]} color="blue" /&gt;
+
+  &lt;LineUpRanking groupBy="cat" sortBy="a:desc"&gt;
+    &lt;LineUpSupportColumn type="*" /&gt;
+    &lt;LineUpColumn column="*" /&gt;
+    &lt;LineUpImposeColumn label="a+cat" column="a" categeoricalColumn="cat2" /&gt;
+  &lt;/LineUpRanking&gt;
+&lt;/LineUp&gt;;
+</code></pre>
+				<p><a href="https://codepen.io/sgratzl/pen/yvJpWQ">CodePen</a></p>
+				<p>Result is same as the builder advanced example</p>
 				<p><a id="rshiny"></a></p>
 				<h2 id="r-rshiny-and-r-markdown-support">R, RShiny, and R Markdown Support</h2>
 				<p>A <a href="http://www.htmlwidgets.org/">HTMLWidget</a> wrapper for R is located at <a href="https://github.com/sgratzl/lineup_htmlwidget">lineup_htmlwidget</a>.
@@ -647,6 +690,9 @@ npm install
 						<a href="modules/_src_ui_dialogs_cutoffhierarchydialog_.html">"src/ui/dialogs/<wbr>Cut<wbr>Off<wbr>Hierarchy<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_ui_dialogs_dialogmanager_.html">"src/ui/dialogs/<wbr>Dialog<wbr>Manager"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_src_ui_dialogs_editpatterndialog_.html">"src/ui/dialogs/<wbr>Edit<wbr>Pattern<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -695,7 +741,7 @@ npm install
 						<a href="modules/_src_ui_dialogs_index_.html">"src/ui/dialogs/index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_manager_.html">"src/ui/dialogs/manager"</a>
+						<a href="modules/_src_ui_dialogs_utils_.html">"src/ui/dialogs/utils"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_src_ui_header_.html">"src/ui/header"</a>

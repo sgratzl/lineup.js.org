@@ -90,6 +90,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_ui_toolbar_.html#dialogcontext" class="tsd-kind-icon">dialog<wbr>Context</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_src_ui_toolbar_.html#gettoolbar" class="tsd-kind-icon">get<wbr>Toolbar</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_ui_toolbar_.html#ui" class="tsd-kind-icon">ui</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported"><a href="_src_ui_toolbar_.html#uidialog" class="tsd-kind-icon">ui<wbr>Dialog</a></li>
@@ -114,37 +115,71 @@
 				<h2>Variables</h2>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 					<a name="cache" class="tsd-anchor"></a>
-					<h3>cache</h3>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> cache</h3>
 					<div class="tsd-signature tsd-kind-icon">cache<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Map&lt;string, IToolbarAction[]&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L174">src/ui/toolbar.ts:174</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L193">src/ui/toolbar.ts:193</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 					<a name="collapse" class="tsd-anchor"></a>
-					<h3>collapse</h3>
-					<div class="tsd-signature tsd-kind-icon">collapse<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;ui(&#x27;Compress&#x27;, (col, evt) &#x3D;&gt; {const mcol &#x3D; &lt;IMultiLevelColumn&gt;col;mcol.setCollapsed(!mcol.getCollapsed());const i &#x3D; &lt;HTMLElement&gt;evt.currentTarget;i.title &#x3D; mcol.getCollapsed() ? &#x27;Expand&#x27; : &#x27;Compress&#x27;;})</span></div>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> collapse</h3>
+					<div class="tsd-signature tsd-kind-icon">collapse<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;ui(&#x27;Compress&#x27;, (col, evt, ctx, level) &#x3D;&gt; {ctx.dialogManager.removeAboveLevel(level);const mcol &#x3D; &lt;IMultiLevelColumn&gt;col;mcol.setCollapsed(!mcol.getCollapsed());const i &#x3D; &lt;HTMLElement&gt;evt.currentTarget;i.title &#x3D; mcol.getCollapsed() ? &#x27;Expand&#x27; : &#x27;Compress&#x27;;})</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L131">src/ui/toolbar.ts:131</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L148">src/ui/toolbar.ts:148</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 					<a name="stratify" class="tsd-anchor"></a>
-					<h3>stratify</h3>
-					<div class="tsd-signature tsd-kind-icon">stratify<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;ui(&#x27;Stratify&#x27;, (col) &#x3D;&gt; col.groupByMe(), { shortcut: true, order: 2})</span></div>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> stratify</h3>
+					<div class="tsd-signature tsd-kind-icon">stratify<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;ui(&#x27;Stratify&#x27;, (col, _evt, ctx, level) &#x3D;&gt; {ctx.dialogManager.removeAboveLevel(level);col.groupByMe();}, {shortcut: true, order: 2})</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L129">src/ui/toolbar.ts:129</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L143">src/ui/toolbar.ts:143</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="dialogcontext" class="tsd-anchor"></a>
+					<h3>dialog<wbr>Context</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<li class="tsd-signature tsd-kind-icon">dialog<wbr>Context<span class="tsd-signature-symbol">(</span>ctx<span class="tsd-signature-symbol">: </span><a href="_src_ui_interfaces_.html#irankingheadercontext" class="tsd-signature-type">IRankingHeaderContext</a>, level<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, evt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_src_ui_dialogs_adialog_.idialogcontext.html" class="tsd-signature-type">IDialogContext</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L51">src/ui/toolbar.ts:51</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>ctx: <a href="_src_ui_interfaces_.html#irankingheadercontext" class="tsd-signature-type">IRankingHeaderContext</a></h5>
+								</li>
+								<li>
+									<h5>level: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>evt: <span class="tsd-signature-type">object</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter">
+											<h5>current<wbr>Target<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></h5>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_src_ui_dialogs_adialog_.idialogcontext.html" class="tsd-signature-type">IDialogContext</a></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
 					<a name="gettoolbar" class="tsd-anchor"></a>
 					<h3>get<wbr>Toolbar</h3>
@@ -155,7 +190,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L176">src/ui/toolbar.ts:176</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L195">src/ui/toolbar.ts:195</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -181,7 +216,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L47">src/ui/toolbar.ts:47</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L47">src/ui/toolbar.ts:47</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -210,7 +245,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L51">src/ui/toolbar.ts:51</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L59">src/ui/toolbar.ts:59</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -255,11 +290,11 @@
 				<h2>Object literals</h2>
 				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-external-module tsd-is-not-exported">
 					<a name="clone" class="tsd-anchor"></a>
-					<h3>clone</h3>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> clone</h3>
 					<div class="tsd-signature tsd-kind-icon">clone<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L92">src/ui/toolbar.ts:92</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L101">src/ui/toolbar.ts:101</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -268,7 +303,7 @@
 						<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Clone&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L93">src/ui/toolbar.ts:93</a></li>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L102">src/ui/toolbar.ts:102</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -282,7 +317,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L94">src/ui/toolbar.ts:94</a></li>
+										<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L103">src/ui/toolbar.ts:103</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -332,7 +367,7 @@
 						<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L97">src/ui/toolbar.ts:97</a></li>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L107">src/ui/toolbar.ts:107</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -341,7 +376,7 @@
 							<div class="tsd-signature tsd-kind-icon">order<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;80</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L98">src/ui/toolbar.ts:98</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L108">src/ui/toolbar.ts:108</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -349,11 +384,11 @@
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-external-module tsd-is-not-exported">
 					<a name="more" class="tsd-anchor"></a>
-					<h3>more</h3>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> more</h3>
 					<div class="tsd-signature tsd-kind-icon">more<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L102">src/ui/toolbar.ts:102</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L112">src/ui/toolbar.ts:112</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -362,7 +397,7 @@
 						<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;More &amp;hellip;&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L103">src/ui/toolbar.ts:103</a></li>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L113">src/ui/toolbar.ts:113</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -370,13 +405,13 @@
 						<a name="more.onclick-1" class="tsd-anchor"></a>
 						<h3>on<wbr>Click</h3>
 						<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-object-literal tsd-is-not-exported">
-							<li class="tsd-signature tsd-kind-icon">on<wbr>Click<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="../classes/_src_model_column_.column.html" class="tsd-signature-type">Column</a>, evt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, ctx<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+							<li class="tsd-signature tsd-kind-icon">on<wbr>Click<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="../classes/_src_model_column_.column.html" class="tsd-signature-type">Column</a>, evt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, ctx<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, level<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						</ul>
 						<ul class="tsd-descriptions">
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L104">src/ui/toolbar.ts:104</a></li>
+										<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L114">src/ui/toolbar.ts:114</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -415,6 +450,9 @@
 										<ul class="tsd-parameters">
 										</ul>
 									</li>
+									<li>
+										<h5>level: <span class="tsd-signature-type">number</span></h5>
+									</li>
 								</ul>
 								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 							</li>
@@ -426,16 +464,16 @@
 						<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L108">src/ui/toolbar.ts:108</a></li>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L118">src/ui/toolbar.ts:118</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
 							<a name="more.options-1.order-1" class="tsd-anchor"></a>
 							<h3>order</h3>
-							<div class="tsd-signature tsd-kind-icon">order<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;3</span></div>
+							<div class="tsd-signature tsd-kind-icon">order<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;100</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L110">src/ui/toolbar.ts:110</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L120">src/ui/toolbar.ts:120</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -445,7 +483,7 @@
 							<div class="tsd-signature tsd-kind-icon">shortcut<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L109">src/ui/toolbar.ts:109</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L119">src/ui/toolbar.ts:119</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -453,11 +491,11 @@
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-external-module tsd-is-not-exported">
 					<a name="remove" class="tsd-anchor"></a>
-					<h3>remove</h3>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> remove</h3>
 					<div class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L114">src/ui/toolbar.ts:114</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L124">src/ui/toolbar.ts:124</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -466,7 +504,7 @@
 						<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Remove&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L115">src/ui/toolbar.ts:115</a></li>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L125">src/ui/toolbar.ts:125</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -480,7 +518,7 @@
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L116">src/ui/toolbar.ts:116</a></li>
+										<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L126">src/ui/toolbar.ts:126</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -530,7 +568,7 @@
 						<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L124">src/ui/toolbar.ts:124</a></li>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L138">src/ui/toolbar.ts:138</a></li>
 							</ul>
 						</aside>
 						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -539,7 +577,7 @@
 							<div class="tsd-signature tsd-kind-icon">order<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;90</span></div>
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L125">src/ui/toolbar.ts:125</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L139">src/ui/toolbar.ts:139</a></li>
 								</ul>
 							</aside>
 						</section>
@@ -547,11 +585,11 @@
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-external-module tsd-is-not-exported">
 					<a name="rename" class="tsd-anchor"></a>
-					<h3>rename</h3>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> rename</h3>
 					<div class="tsd-signature tsd-kind-icon">rename<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L72">src/ui/toolbar.ts:72</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L81">src/ui/toolbar.ts:81</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
@@ -560,7 +598,7 @@
 						<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Rename + Color &amp;hellip;&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L73">src/ui/toolbar.ts:73</a></li>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L82">src/ui/toolbar.ts:82</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -568,460 +606,13 @@
 						<a name="rename.onclick-3" class="tsd-anchor"></a>
 						<h3>on<wbr>Click</h3>
 						<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-object-literal tsd-is-not-exported">
-							<li class="tsd-signature tsd-kind-icon">on<wbr>Click<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="../classes/_src_model_column_.column.html" class="tsd-signature-type">Column</a>, evt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+							<li class="tsd-signature tsd-kind-icon">on<wbr>Click<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="../classes/_src_model_column_.column.html" class="tsd-signature-type">Column</a>, evt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, ctx<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, level<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 						</ul>
 						<ul class="tsd-descriptions">
 							<li class="tsd-description">
 								<aside class="tsd-sources">
 									<ul>
-										<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L74">src/ui/toolbar.ts:74</a></li>
-									</ul>
-								</aside>
-								<h4 class="tsd-parameters-title">Parameters</h4>
-								<ul class="tsd-parameters">
-									<li>
-										<h5>col: <a href="../classes/_src_model_column_.column.html" class="tsd-signature-type">Column</a></h5>
-									</li>
-									<li>
-										<h5>evt: <span class="tsd-signature-type">object</span></h5>
-										<ul class="tsd-parameters">
-											<li class="tsd-parameter-index-signature">
-												<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></h5>
-											</li>
-											<li class="tsd-parameter">
-												<h5>current<wbr>Target<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></h5>
-											</li>
-											<li class="tsd-parameter">
-												<h5>stop<wbr>Propagation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></h5>
-												<ul class="tsd-parameters">
-													<li class="tsd-parameter-siganture">
-														<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
-															<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-														</ul>
-														<ul class="tsd-descriptions">
-															<li class="tsd-description">
-																<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-															</li>
-														</ul>
-													</li>
-												</ul>
-											</li>
-										</ul>
-									</li>
-								</ul>
-								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-							</li>
-						</ul>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="rename.options-3" class="tsd-anchor"></a>
-						<h3>options</h3>
-						<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L78">src/ui/toolbar.ts:78</a></li>
-							</ul>
-						</aside>
-						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-							<a name="rename.options-3.order-3" class="tsd-anchor"></a>
-							<h3>order</h3>
-							<div class="tsd-signature tsd-kind-icon">order<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;3</span></div>
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L79">src/ui/toolbar.ts:79</a></li>
-								</ul>
-							</aside>
-						</section>
-					</section>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="sort" class="tsd-anchor"></a>
-					<h3>sort</h3>
-					<div class="tsd-signature tsd-kind-icon">sort<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L61">src/ui/toolbar.ts:61</a></li>
-						</ul>
-					</aside>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="sort.title-4" class="tsd-anchor"></a>
-						<h3>title</h3>
-						<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Sort&quot;</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L62">src/ui/toolbar.ts:62</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="sort.onclick-4" class="tsd-anchor"></a>
-						<h3>on<wbr>Click</h3>
-						<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-object-literal tsd-is-not-exported">
-							<li class="tsd-signature tsd-kind-icon">on<wbr>Click<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="../classes/_src_model_column_.column.html" class="tsd-signature-type">Column</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						</ul>
-						<ul class="tsd-descriptions">
-							<li class="tsd-description">
-								<aside class="tsd-sources">
-									<ul>
-										<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L63">src/ui/toolbar.ts:63</a></li>
-									</ul>
-								</aside>
-								<h4 class="tsd-parameters-title">Parameters</h4>
-								<ul class="tsd-parameters">
-									<li>
-										<h5>col: <a href="../classes/_src_model_column_.column.html" class="tsd-signature-type">Column</a></h5>
-									</li>
-								</ul>
-								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-							</li>
-						</ul>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="sort.options-4" class="tsd-anchor"></a>
-						<h3>options</h3>
-						<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L66">src/ui/toolbar.ts:66</a></li>
-							</ul>
-						</aside>
-						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-							<a name="sort.options-4.order-4" class="tsd-anchor"></a>
-							<h3>order</h3>
-							<div class="tsd-signature tsd-kind-icon">order<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1</span></div>
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L68">src/ui/toolbar.ts:68</a></li>
-								</ul>
-							</aside>
-						</section>
-						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-							<a name="sort.options-4.shortcut-1" class="tsd-anchor"></a>
-							<h3>shortcut</h3>
-							<div class="tsd-signature tsd-kind-icon">shortcut<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L67">src/ui/toolbar.ts:67</a></li>
-								</ul>
-							</aside>
-						</section>
-					</section>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-external-module">
-					<a name="toolbaractions" class="tsd-anchor"></a>
-					<h3>toolbar<wbr>Actions</h3>
-					<div class="tsd-signature tsd-kind-icon">toolbar<wbr>Actions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L138">src/ui/toolbar.ts:138</a></li>
-						</ul>
-					</aside>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.clone-1" class="tsd-anchor"></a>
-						<h3>clone</h3>
-						<div class="tsd-signature tsd-kind-icon">clone<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L143">src/ui/toolbar.ts:143</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.collapse-1" class="tsd-anchor"></a>
-						<h3>collapse</h3>
-						<div class="tsd-signature tsd-kind-icon">collapse<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L140">src/ui/toolbar.ts:140</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.compositecontained" class="tsd-anchor"></a>
-						<h3>composite<wbr>Contained</h3>
-						<div class="tsd-signature tsd-kind-icon">composite<wbr>Contained<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Contained Columns &amp;hellip;&#x27;, CompositeChildrenDialog, (ctx) &#x3D;&gt; [ctx])</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L166">src/ui/toolbar.ts:166</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.cutoff" class="tsd-anchor"></a>
-						<h3>cutoff</h3>
-						<div class="tsd-signature tsd-kind-icon">cutoff<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Set Cut Off &amp;hellip;&#x27;, CutOffHierarchyDialog, (ctx) &#x3D;&gt; [ctx.idPrefix])</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L163">src/ui/toolbar.ts:163</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.editpattern" class="tsd-anchor"></a>
-						<h3>edit<wbr>Pattern</h3>
-						<div class="tsd-signature tsd-kind-icon">edit<wbr>Pattern<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Edit Pattern &amp;hellip;&#x27;, EditPatternDialog, (ctx) &#x3D;&gt; [ctx.idPrefix])</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L164">src/ui/toolbar.ts:164</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.editweights" class="tsd-anchor"></a>
-						<h3>edit<wbr>Weights</h3>
-						<div class="tsd-signature tsd-kind-icon">edit<wbr>Weights<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Edit Weights &amp;hellip;&#x27;, WeightsEditDialog)</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L165">src/ui/toolbar.ts:165</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.filterboolean" class="tsd-anchor"></a>
-						<h3>filter<wbr>Boolean</h3>
-						<div class="tsd-signature tsd-kind-icon">filter<wbr>Boolean<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Filter &amp;hellip;&#x27;, BooleanFilterDialog)</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L160">src/ui/toolbar.ts:160</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.filtercategorical" class="tsd-anchor"></a>
-						<h3>filter<wbr>Categorical</h3>
-						<div class="tsd-signature tsd-kind-icon">filter<wbr>Categorical<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Filter &amp;hellip;&#x27;, CategoricalFilterDialog)</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L158">src/ui/toolbar.ts:158</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.filtermapped" class="tsd-anchor"></a>
-						<h3>filter<wbr>Mapped</h3>
-						<div class="tsd-signature tsd-kind-icon">filter<wbr>Mapped<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Filter &amp;hellip;&#x27;, MappingsFilterDialog, (ctx) &#x3D;&gt; [ctx])</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L156">src/ui/toolbar.ts:156</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.filterordinal" class="tsd-anchor"></a>
-						<h3>filter<wbr>Ordinal</h3>
-						<div class="tsd-signature tsd-kind-icon">filter<wbr>Ordinal<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Filter &amp;hellip;&#x27;, CategoricalMappingFilterDialog)</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L159">src/ui/toolbar.ts:159</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.filterstring" class="tsd-anchor"></a>
-						<h3>filter<wbr>String</h3>
-						<div class="tsd-signature tsd-kind-icon">filter<wbr>String<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Filter &amp;hellip;&#x27;, StringFilterDialog)</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L157">src/ui/toolbar.ts:157</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.more-1" class="tsd-anchor"></a>
-						<h3>more</h3>
-						<div class="tsd-signature tsd-kind-icon">more<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L142">src/ui/toolbar.ts:142</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.reduce" class="tsd-anchor"></a>
-						<h3>reduce</h3>
-						<div class="tsd-signature tsd-kind-icon">reduce<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Reduce by &amp;hellip;&#x27;, ReduceDialog)</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L162">src/ui/toolbar.ts:162</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.remove-1" class="tsd-anchor"></a>
-						<h3>remove</h3>
-						<div class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L144">src/ui/toolbar.ts:144</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.rename-1" class="tsd-anchor"></a>
-						<h3>rename</h3>
-						<div class="tsd-signature tsd-kind-icon">rename<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L145">src/ui/toolbar.ts:145</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.script" class="tsd-anchor"></a>
-						<h3>script</h3>
-						<div class="tsd-signature tsd-kind-icon">script<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Edit Combine Script &amp;hellip;&#x27;, ScriptEditDialog)</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L161">src/ui/toolbar.ts:161</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.search" class="tsd-anchor"></a>
-						<h3>search</h3>
-						<div class="tsd-signature tsd-kind-icon">search<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Search &amp;hellip;&#x27;, SearchDialog, (ctx) &#x3D;&gt; [ctx.provider])</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L147">src/ui/toolbar.ts:147</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.sort-1" class="tsd-anchor"></a>
-						<h3>sort</h3>
-						<div class="tsd-signature tsd-kind-icon">sort<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L141">src/ui/toolbar.ts:141</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.sortdates" class="tsd-anchor"></a>
-						<h3>sort<wbr>Dates</h3>
-						<div class="tsd-signature tsd-kind-icon">sort<wbr>Dates<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Sort by &amp;hellip;&#x27;, SortDateDialog)</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L149">src/ui/toolbar.ts:149</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.sortgroup" class="tsd-anchor"></a>
-						<h3>sort<wbr>Group</h3>
-						<div class="tsd-signature tsd-kind-icon">sort<wbr>Group<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Sort Group by &amp;hellip;&#x27;, SortGroupDialog, () &#x3D;&gt; [], {shortcut: true, order: 1})</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L151">src/ui/toolbar.ts:151</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.sortnumbers" class="tsd-anchor"></a>
-						<h3>sort<wbr>Numbers</h3>
-						<div class="tsd-signature tsd-kind-icon">sort<wbr>Numbers<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Sort by &amp;hellip;&#x27;, SortDialog)</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L148">src/ui/toolbar.ts:148</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.sortnumbersgroup" class="tsd-anchor"></a>
-						<h3>sort<wbr>Numbers<wbr>Group</h3>
-						<div class="tsd-signature tsd-kind-icon">sort<wbr>Numbers<wbr>Group<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Sort Group by &amp;hellip;&#x27;, SortDialog)</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L150">src/ui/toolbar.ts:150</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.splitcombined" class="tsd-anchor"></a>
-						<h3>split<wbr>Combined</h3>
-						<div class="tsd-signature tsd-kind-icon">split<wbr>Combined<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;ui(&#x27;Split Combined Column&#x27;, (col) &#x3D;&gt; {// split the combined column into its children(&lt;CompositeColumn&gt;col).children.reverse().forEach((c) &#x3D;&gt; col.insertAfterMe(c));col.removeMe();})</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L167">src/ui/toolbar.ts:167</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.stratify-1" class="tsd-anchor"></a>
-						<h3>stratify</h3>
-						<div class="tsd-signature tsd-kind-icon">stratify<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L139">src/ui/toolbar.ts:139</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.stratifythreshold" class="tsd-anchor"></a>
-						<h3>stratify<wbr>Threshold</h3>
-						<div class="tsd-signature tsd-kind-icon">stratify<wbr>Threshold<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Stratify by Threshold &amp;hellip;&#x27;, StratifyThresholdDialog, () &#x3D;&gt; [], {shortcut: true,order: 2})</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L152">src/ui/toolbar.ts:152</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="toolbaractions.vis" class="tsd-anchor"></a>
-						<h3>vis</h3>
-						<div class="tsd-signature tsd-kind-icon">vis<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L146">src/ui/toolbar.ts:146</a></li>
-							</ul>
-						</aside>
-					</section>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-external-module tsd-is-not-exported">
-					<a name="vis-1" class="tsd-anchor"></a>
-					<h3>vis</h3>
-					<div class="tsd-signature tsd-kind-icon">vis<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L83">src/ui/toolbar.ts:83</a></li>
-						</ul>
-					</aside>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="vis-1.options-5" class="tsd-anchor"></a>
-						<h3>options</h3>
-						<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L89">src/ui/toolbar.ts:89</a></li>
-							</ul>
-						</aside>
-						<div class="tsd-type-declaration">
-							<h4>Type declaration</h4>
-							<ul class="tsd-parameters">
-							</ul>
-						</div>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="vis-1.title-5" class="tsd-anchor"></a>
-						<h3>title</h3>
-						<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Visualization &amp;hellip;&quot;</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L84">src/ui/toolbar.ts:84</a></li>
-							</ul>
-						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal tsd-is-not-exported">
-						<a name="vis-1.onclick-5" class="tsd-anchor"></a>
-						<h3>on<wbr>Click</h3>
-						<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-object-literal tsd-is-not-exported">
-							<li class="tsd-signature tsd-kind-icon">on<wbr>Click<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="../classes/_src_model_column_.column.html" class="tsd-signature-type">Column</a>, evt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, ctx<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-						</ul>
-						<ul class="tsd-descriptions">
-							<li class="tsd-description">
-								<aside class="tsd-sources">
-									<ul>
-										<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/toolbar.ts#L85">src/ui/toolbar.ts:85</a></li>
+										<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L83">src/ui/toolbar.ts:83</a></li>
 									</ul>
 								</aside>
 								<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1059,6 +650,498 @@
 										<h5>ctx: <span class="tsd-signature-type">object</span></h5>
 										<ul class="tsd-parameters">
 										</ul>
+									</li>
+									<li>
+										<h5>level: <span class="tsd-signature-type">number</span></h5>
+									</li>
+								</ul>
+								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							</li>
+						</ul>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal tsd-is-not-exported">
+						<a name="rename.options-3" class="tsd-anchor"></a>
+						<h3>options</h3>
+						<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L87">src/ui/toolbar.ts:87</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
+							<a name="rename.options-3.order-3" class="tsd-anchor"></a>
+							<h3>order</h3>
+							<div class="tsd-signature tsd-kind-icon">order<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;3</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L88">src/ui/toolbar.ts:88</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="sort" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> sort</h3>
+					<div class="tsd-signature tsd-kind-icon">sort<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L69">src/ui/toolbar.ts:69</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
+						<a name="sort.title-4" class="tsd-anchor"></a>
+						<h3>title</h3>
+						<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Sort&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L70">src/ui/toolbar.ts:70</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal tsd-is-not-exported">
+						<a name="sort.onclick-4" class="tsd-anchor"></a>
+						<h3>on<wbr>Click</h3>
+						<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-object-literal tsd-is-not-exported">
+							<li class="tsd-signature tsd-kind-icon">on<wbr>Click<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="../classes/_src_model_column_.column.html" class="tsd-signature-type">Column</a>, _evt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, ctx<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, level<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						</ul>
+						<ul class="tsd-descriptions">
+							<li class="tsd-description">
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L71">src/ui/toolbar.ts:71</a></li>
+									</ul>
+								</aside>
+								<h4 class="tsd-parameters-title">Parameters</h4>
+								<ul class="tsd-parameters">
+									<li>
+										<h5>col: <a href="../classes/_src_model_column_.column.html" class="tsd-signature-type">Column</a></h5>
+									</li>
+									<li>
+										<h5>_evt: <span class="tsd-signature-type">object</span></h5>
+										<ul class="tsd-parameters">
+											<li class="tsd-parameter-index-signature">
+												<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>current<wbr>Target<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>stop<wbr>Propagation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter-siganture">
+														<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
+															<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+														</ul>
+														<ul class="tsd-descriptions">
+															<li class="tsd-description">
+																<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<h5>ctx: <span class="tsd-signature-type">object</span></h5>
+										<ul class="tsd-parameters">
+										</ul>
+									</li>
+									<li>
+										<h5>level: <span class="tsd-signature-type">number</span></h5>
+									</li>
+								</ul>
+								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+							</li>
+						</ul>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-object-literal tsd-is-not-exported">
+						<a name="sort.options-4" class="tsd-anchor"></a>
+						<h3>options</h3>
+						<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L75">src/ui/toolbar.ts:75</a></li>
+							</ul>
+						</aside>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
+							<a name="sort.options-4.order-4" class="tsd-anchor"></a>
+							<h3>order</h3>
+							<div class="tsd-signature tsd-kind-icon">order<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L77">src/ui/toolbar.ts:77</a></li>
+								</ul>
+							</aside>
+						</section>
+						<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
+							<a name="sort.options-4.shortcut-1" class="tsd-anchor"></a>
+							<h3>shortcut</h3>
+							<div class="tsd-signature tsd-kind-icon">shortcut<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L76">src/ui/toolbar.ts:76</a></li>
+								</ul>
+							</aside>
+						</section>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-external-module">
+					<a name="toolbaractions" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> toolbar<wbr>Actions</h3>
+					<div class="tsd-signature tsd-kind-icon">toolbar<wbr>Actions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L156">src/ui/toolbar.ts:156</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.clone-1" class="tsd-anchor"></a>
+						<h3>clone</h3>
+						<div class="tsd-signature tsd-kind-icon">clone<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L161">src/ui/toolbar.ts:161</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.collapse-1" class="tsd-anchor"></a>
+						<h3>collapse</h3>
+						<div class="tsd-signature tsd-kind-icon">collapse<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L158">src/ui/toolbar.ts:158</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.compositecontained" class="tsd-anchor"></a>
+						<h3>composite<wbr>Contained</h3>
+						<div class="tsd-signature tsd-kind-icon">composite<wbr>Contained<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Contained Columns &amp;hellip;&#x27;, CompositeChildrenDialog, (ctx) &#x3D;&gt; [ctx])</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L184">src/ui/toolbar.ts:184</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.cutoff" class="tsd-anchor"></a>
+						<h3>cutoff</h3>
+						<div class="tsd-signature tsd-kind-icon">cutoff<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Set Cut Off &amp;hellip;&#x27;, CutOffHierarchyDialog, (ctx) &#x3D;&gt; [ctx.idPrefix])</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L181">src/ui/toolbar.ts:181</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.editpattern" class="tsd-anchor"></a>
+						<h3>edit<wbr>Pattern</h3>
+						<div class="tsd-signature tsd-kind-icon">edit<wbr>Pattern<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Edit Pattern &amp;hellip;&#x27;, EditPatternDialog, (ctx) &#x3D;&gt; [ctx.idPrefix])</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L182">src/ui/toolbar.ts:182</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.editweights" class="tsd-anchor"></a>
+						<h3>edit<wbr>Weights</h3>
+						<div class="tsd-signature tsd-kind-icon">edit<wbr>Weights<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Edit Weights &amp;hellip;&#x27;, WeightsEditDialog, () &#x3D;&gt; [], {shortcut: true})</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L183">src/ui/toolbar.ts:183</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.filterboolean" class="tsd-anchor"></a>
+						<h3>filter<wbr>Boolean</h3>
+						<div class="tsd-signature tsd-kind-icon">filter<wbr>Boolean<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Filter &amp;hellip;&#x27;, BooleanFilterDialog, () &#x3D;&gt; [], {shortcut: true})</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L178">src/ui/toolbar.ts:178</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.filtercategorical" class="tsd-anchor"></a>
+						<h3>filter<wbr>Categorical</h3>
+						<div class="tsd-signature tsd-kind-icon">filter<wbr>Categorical<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Filter &amp;hellip;&#x27;, CategoricalFilterDialog, () &#x3D;&gt; [], {shortcut: true})</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L176">src/ui/toolbar.ts:176</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.filtermapped" class="tsd-anchor"></a>
+						<h3>filter<wbr>Mapped</h3>
+						<div class="tsd-signature tsd-kind-icon">filter<wbr>Mapped<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Filter &amp;hellip;&#x27;, MappingsFilterDialog, (ctx) &#x3D;&gt; [ctx], {shortcut: true})</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L174">src/ui/toolbar.ts:174</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.filterordinal" class="tsd-anchor"></a>
+						<h3>filter<wbr>Ordinal</h3>
+						<div class="tsd-signature tsd-kind-icon">filter<wbr>Ordinal<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Filter &amp;hellip;&#x27;, CategoricalMappingFilterDialog, () &#x3D;&gt; [], {shortcut: true})</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L177">src/ui/toolbar.ts:177</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.filterstring" class="tsd-anchor"></a>
+						<h3>filter<wbr>String</h3>
+						<div class="tsd-signature tsd-kind-icon">filter<wbr>String<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Filter &amp;hellip;&#x27;, StringFilterDialog, () &#x3D;&gt; [], {shortcut: true})</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L175">src/ui/toolbar.ts:175</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.more-1" class="tsd-anchor"></a>
+						<h3>more</h3>
+						<div class="tsd-signature tsd-kind-icon">more<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L160">src/ui/toolbar.ts:160</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.reduce" class="tsd-anchor"></a>
+						<h3>reduce</h3>
+						<div class="tsd-signature tsd-kind-icon">reduce<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Reduce by &amp;hellip;&#x27;, ReduceDialog)</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L180">src/ui/toolbar.ts:180</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.remove-1" class="tsd-anchor"></a>
+						<h3>remove</h3>
+						<div class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L162">src/ui/toolbar.ts:162</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.rename-1" class="tsd-anchor"></a>
+						<h3>rename</h3>
+						<div class="tsd-signature tsd-kind-icon">rename<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L163">src/ui/toolbar.ts:163</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.script" class="tsd-anchor"></a>
+						<h3>script</h3>
+						<div class="tsd-signature tsd-kind-icon">script<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Edit Combine Script &amp;hellip;&#x27;, ScriptEditDialog, () &#x3D;&gt; [], {shortcut: true})</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L179">src/ui/toolbar.ts:179</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.search" class="tsd-anchor"></a>
+						<h3>search</h3>
+						<div class="tsd-signature tsd-kind-icon">search<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Search &amp;hellip;&#x27;, SearchDialog, (ctx) &#x3D;&gt; [ctx.provider], {shortcut: true, order: 3})</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L165">src/ui/toolbar.ts:165</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.sort-1" class="tsd-anchor"></a>
+						<h3>sort</h3>
+						<div class="tsd-signature tsd-kind-icon">sort<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L159">src/ui/toolbar.ts:159</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.sortdates" class="tsd-anchor"></a>
+						<h3>sort<wbr>Dates</h3>
+						<div class="tsd-signature tsd-kind-icon">sort<wbr>Dates<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Sort by &amp;hellip;&#x27;, SortDateDialog)</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L167">src/ui/toolbar.ts:167</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.sortgroup" class="tsd-anchor"></a>
+						<h3>sort<wbr>Group</h3>
+						<div class="tsd-signature tsd-kind-icon">sort<wbr>Group<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Sort Group by &amp;hellip;&#x27;, SortGroupDialog, () &#x3D;&gt; [], {shortcut: true, order: 1})</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L169">src/ui/toolbar.ts:169</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.sortnumbers" class="tsd-anchor"></a>
+						<h3>sort<wbr>Numbers</h3>
+						<div class="tsd-signature tsd-kind-icon">sort<wbr>Numbers<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Sort by &amp;hellip;&#x27;, SortDialog)</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L166">src/ui/toolbar.ts:166</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.sortnumbersgroup" class="tsd-anchor"></a>
+						<h3>sort<wbr>Numbers<wbr>Group</h3>
+						<div class="tsd-signature tsd-kind-icon">sort<wbr>Numbers<wbr>Group<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Sort Group by &amp;hellip;&#x27;, SortDialog)</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L168">src/ui/toolbar.ts:168</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.splitcombined" class="tsd-anchor"></a>
+						<h3>split<wbr>Combined</h3>
+						<div class="tsd-signature tsd-kind-icon">split<wbr>Combined<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;ui(&#x27;Split Combined Column&#x27;, (col, _evt, ctx, level) &#x3D;&gt; {ctx.dialogManager.removeAboveLevel(level);// split the combined column into its children(&lt;CompositeColumn&gt;col).children.reverse().forEach((c) &#x3D;&gt; col.insertAfterMe(c));col.removeMe();})</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L185">src/ui/toolbar.ts:185</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.stratify-1" class="tsd-anchor"></a>
+						<h3>stratify</h3>
+						<div class="tsd-signature tsd-kind-icon">stratify<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L157">src/ui/toolbar.ts:157</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.stratifythreshold" class="tsd-anchor"></a>
+						<h3>stratify<wbr>Threshold</h3>
+						<div class="tsd-signature tsd-kind-icon">stratify<wbr>Threshold<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol"> =&nbsp;uiDialog(&#x27;Stratify by Threshold &amp;hellip;&#x27;, StratifyThresholdDialog, () &#x3D;&gt; [], {shortcut: true,order: 2})</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L170">src/ui/toolbar.ts:170</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="toolbaractions.vis" class="tsd-anchor"></a>
+						<h3>vis</h3>
+						<div class="tsd-signature tsd-kind-icon">vis<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L164">src/ui/toolbar.ts:164</a></li>
+							</ul>
+						</aside>
+					</section>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-object-literal tsd-parent-kind-external-module tsd-is-not-exported">
+					<a name="vis-1" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagConst">Const</span> vis</h3>
+					<div class="tsd-signature tsd-kind-icon">vis<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L92">src/ui/toolbar.ts:92</a></li>
+						</ul>
+					</aside>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
+						<a name="vis-1.options-5" class="tsd-anchor"></a>
+						<h3>options</h3>
+						<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L98">src/ui/toolbar.ts:98</a></li>
+							</ul>
+						</aside>
+						<div class="tsd-type-declaration">
+							<h4>Type declaration</h4>
+							<ul class="tsd-parameters">
+							</ul>
+						</div>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal tsd-is-not-exported">
+						<a name="vis-1.title-5" class="tsd-anchor"></a>
+						<h3>title</h3>
+						<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Visualization &amp;hellip;&quot;</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L93">src/ui/toolbar.ts:93</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-object-literal tsd-is-not-exported">
+						<a name="vis-1.onclick-5" class="tsd-anchor"></a>
+						<h3>on<wbr>Click</h3>
+						<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-object-literal tsd-is-not-exported">
+							<li class="tsd-signature tsd-kind-icon">on<wbr>Click<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="../classes/_src_model_column_.column.html" class="tsd-signature-type">Column</a>, evt<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, ctx<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span>, level<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						</ul>
+						<ul class="tsd-descriptions">
+							<li class="tsd-description">
+								<aside class="tsd-sources">
+									<ul>
+										<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/toolbar.ts#L94">src/ui/toolbar.ts:94</a></li>
+									</ul>
+								</aside>
+								<h4 class="tsd-parameters-title">Parameters</h4>
+								<ul class="tsd-parameters">
+									<li>
+										<h5>col: <a href="../classes/_src_model_column_.column.html" class="tsd-signature-type">Column</a></h5>
+									</li>
+									<li>
+										<h5>evt: <span class="tsd-signature-type">object</span></h5>
+										<ul class="tsd-parameters">
+											<li class="tsd-parameter-index-signature">
+												<h5><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>current<wbr>Target<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></h5>
+											</li>
+											<li class="tsd-parameter">
+												<h5>stop<wbr>Propagation<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span></h5>
+												<ul class="tsd-parameters">
+													<li class="tsd-parameter-siganture">
+														<ul class="tsd-signatures tsd-kind-type-literal tsd-parent-kind-variable tsd-is-not-exported">
+															<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+														</ul>
+														<ul class="tsd-descriptions">
+															<li class="tsd-description">
+																<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+															</li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+									<li>
+										<h5>ctx: <span class="tsd-signature-type">object</span></h5>
+										<ul class="tsd-parameters">
+										</ul>
+									</li>
+									<li>
+										<h5>level: <span class="tsd-signature-type">number</span></h5>
 									</li>
 								</ul>
 								<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1101,6 +1184,9 @@
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
 						<a href="_src_ui_toolbar_.html#stratify" class="tsd-kind-icon">stratify</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="_src_ui_toolbar_.html#dialogcontext" class="tsd-kind-icon">dialog<wbr>Context</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="_src_ui_toolbar_.html#gettoolbar" class="tsd-kind-icon">get<wbr>Toolbar</a>

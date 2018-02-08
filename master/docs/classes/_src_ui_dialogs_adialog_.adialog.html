@@ -155,9 +155,16 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_ui_dialogs_adialog_.adialog.html#attachment" class="tsd-kind-icon">attachment</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><a href="_src_ui_dialogs_adialog_.adialog.html#dialog" class="tsd-kind-icon">dialog</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_src_ui_dialogs_adialog_.adialog.html#node" class="tsd-kind-icon">node</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_src_ui_dialogs_adialog_.adialog.html#popper" class="tsd-kind-icon">popper</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_src_ui_dialogs_adialog_.adialog.html#attachment" class="tsd-kind-icon">attachment</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_src_ui_dialogs_adialog_.adialog.html#level" class="tsd-kind-icon">level</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -165,6 +172,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="_src_ui_dialogs_adialog_.adialog.html#build" class="tsd-kind-icon">build</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_src_ui_dialogs_adialog_.adialog.html#destroy" class="tsd-kind-icon">destroy</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_src_ui_dialogs_adialog_.adialog.html#equals" class="tsd-kind-icon">equals</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-protected"><a href="_src_ui_dialogs_adialog_.adialog.html#find" class="tsd-kind-icon">find</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="_src_ui_dialogs_adialog_.adialog.html#findinput" class="tsd-kind-icon">find<wbr>Input</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-protected"><a href="_src_ui_dialogs_adialog_.adialog.html#foreach" class="tsd-kind-icon">for<wbr>Each</a></li>
@@ -188,19 +196,19 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new ADialog<span class="tsd-signature-symbol">(</span>attachment<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_src_ui_dialogs_adialog_.idialogoptions.html" class="tsd-signature-type">IDialogOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_src_ui_dialogs_adialog_.adialog.html" class="tsd-signature-type">ADialog</a></li>
+						<li class="tsd-signature tsd-kind-icon">new ADialog<span class="tsd-signature-symbol">(</span>dialog<span class="tsd-signature-symbol">: </span><a href="../interfaces/_src_ui_dialogs_adialog_.idialogcontext.html" class="tsd-signature-type">IDialogContext</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_src_ui_dialogs_adialog_.idialogoptions.html" class="tsd-signature-type">IDialogOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_src_ui_dialogs_adialog_.adialog.html" class="tsd-signature-type">ADialog</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/dialogs/ADialog.ts#L27">src/ui/dialogs/ADialog.ts:27</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/dialogs/ADialog.ts#L34">src/ui/dialogs/ADialog.ts:34</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>attachment: <span class="tsd-signature-type">HTMLElement</span></h5>
+									<h5>dialog: <a href="../interfaces/_src_ui_dialogs_adialog_.idialogcontext.html" class="tsd-signature-type">IDialogContext</a></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_src_ui_dialogs_adialog_.idialogoptions.html" class="tsd-signature-type">IDialogOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
@@ -213,13 +221,13 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
-					<a name="attachment" class="tsd-anchor"></a>
-					<h3>attachment</h3>
-					<div class="tsd-signature tsd-kind-icon">attachment<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HTMLElement</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+					<a name="dialog" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> dialog</h3>
+					<div class="tsd-signature tsd-kind-icon">dialog<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_dialogs_adialog_.idialogcontext.html" class="tsd-signature-type">IDialogContext</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/dialogs/ADialog.ts#L29">src/ui/dialogs/ADialog.ts:29</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/dialogs/ADialog.ts#L36">src/ui/dialogs/ADialog.ts:36</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -229,7 +237,7 @@
 					<div class="tsd-signature tsd-kind-icon">node<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HTMLFormElement</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/dialogs/ADialog.ts#L26">src/ui/dialogs/ADialog.ts:26</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/dialogs/ADialog.ts#L33">src/ui/dialogs/ADialog.ts:33</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -239,16 +247,53 @@
 					<div class="tsd-signature tsd-kind-icon">popper<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Popper</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/dialogs/ADialog.ts#L27">src/ui/dialogs/ADialog.ts:27</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/dialogs/ADialog.ts#L34">src/ui/dialogs/ADialog.ts:34</a></li>
 						</ul>
 					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="attachment" class="tsd-anchor"></a>
+					<h3>attachment</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> attachment<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/dialogs/ADialog.ts#L42">src/ui/dialogs/ADialog.ts:42</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">HTMLElement</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="level" class="tsd-anchor"></a>
+					<h3>level</h3>
+					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> level<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/dialogs/ADialog.ts#L46">src/ui/dialogs/ADialog.ts:46</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 					<a name="build" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagProtected">Protected</span> build</h3>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> <span class="tsd-flag ts-flagAbstract">Abstract</span> build</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 						<li class="tsd-signature tsd-kind-icon">build<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">void</span></li>
 					</ul>
@@ -256,7 +301,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/dialogs/ADialog.ts#L35">src/ui/dialogs/ADialog.ts:35</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/dialogs/ADialog.ts#L50">src/ui/dialogs/ADialog.ts:50</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -282,10 +327,33 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/dialogs/ADialog.ts#L115">src/ui/dialogs/ADialog.ts:115</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/dialogs/ADialog.ts#L143">src/ui/dialogs/ADialog.ts:143</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="equals" class="tsd-anchor"></a>
+					<h3>equals</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">equals<span class="tsd-signature-symbol">(</span>that<span class="tsd-signature-symbol">: </span><a href="_src_ui_dialogs_adialog_.adialog.html" class="tsd-signature-type">ADialog</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/dialogs/ADialog.ts#L52">src/ui/dialogs/ADialog.ts:52</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>that: <a href="_src_ui_dialogs_adialog_.adialog.html" class="tsd-signature-type">ADialog</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -299,7 +367,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/dialogs/ADialog.ts#L94">src/ui/dialogs/ADialog.ts:94</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/dialogs/ADialog.ts#L122">src/ui/dialogs/ADialog.ts:122</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -328,7 +396,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/dialogs/ADialog.ts#L98">src/ui/dialogs/ADialog.ts:98</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/dialogs/ADialog.ts#L126">src/ui/dialogs/ADialog.ts:126</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -351,7 +419,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/dialogs/ADialog.ts#L102">src/ui/dialogs/ADialog.ts:102</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/dialogs/ADialog.ts#L130">src/ui/dialogs/ADialog.ts:130</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -404,7 +472,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/dialogs/ADialog.ts#L37">src/ui/dialogs/ADialog.ts:37</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/dialogs/ADialog.ts#L56">src/ui/dialogs/ADialog.ts:56</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -421,7 +489,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/dialogs/ADialog.ts#L106">src/ui/dialogs/ADialog.ts:106</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/dialogs/ADialog.ts#L134">src/ui/dialogs/ADialog.ts:134</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -438,7 +506,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/dialogs/ADialog.ts#L110">src/ui/dialogs/ADialog.ts:110</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/dialogs/ADialog.ts#L138">src/ui/dialogs/ADialog.ts:138</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -454,7 +522,7 @@
 					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/dialogs/ADialog.ts#L18">src/ui/dialogs/ADialog.ts:18</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/dialogs/ADialog.ts#L24">src/ui/dialogs/ADialog.ts:24</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -463,37 +531,32 @@
 						<div class="tsd-signature tsd-kind-icon">full<wbr>Dialog<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/dialogs/ADialog.ts#L22">src/ui/dialogs/ADialog.ts:22</a></li>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/dialogs/ADialog.ts#L26">src/ui/dialogs/ADialog.ts:26</a></li>
 							</ul>
 						</aside>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="options.hideonclickoutside" class="tsd-anchor"></a>
-						<h3>hide<wbr>OnClick<wbr>Outside</h3>
-						<div class="tsd-signature tsd-kind-icon">hide<wbr>OnClick<wbr>Outside<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+						<a name="options.modifiers" class="tsd-anchor"></a>
+						<h3>modifiers</h3>
+						<div class="tsd-signature tsd-kind-icon">modifiers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/dialogs/ADialog.ts#L20">src/ui/dialogs/ADialog.ts:20</a></li>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/dialogs/ADialog.ts#L29">src/ui/dialogs/ADialog.ts:29</a></li>
 							</ul>
 						</aside>
-					</section>
-					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
-						<a name="options.hideonmoveoutside" class="tsd-anchor"></a>
-						<h3>hide<wbr>OnMove<wbr>Outside</h3>
-						<div class="tsd-signature tsd-kind-icon">hide<wbr>OnMove<wbr>Outside<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
-						<aside class="tsd-sources">
-							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/dialogs/ADialog.ts#L21">src/ui/dialogs/ADialog.ts:21</a></li>
+						<div class="tsd-type-declaration">
+							<h4>Type declaration</h4>
+							<ul class="tsd-parameters">
 							</ul>
-						</aside>
+						</div>
 					</section>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
 						<a name="options.placement" class="tsd-anchor"></a>
 						<h3>placement</h3>
-						<div class="tsd-signature tsd-kind-icon">placement<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;bottom-start&quot;</span></div>
+						<div class="tsd-signature tsd-kind-icon">placement<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"bottom-start"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;bottom-start&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/dialogs/ADialog.ts#L23">src/ui/dialogs/ADialog.ts:23</a></li>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/dialogs/ADialog.ts#L27">src/ui/dialogs/ADialog.ts:27</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -503,7 +566,17 @@
 						<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/dialogs/ADialog.ts#L19">src/ui/dialogs/ADialog.ts:19</a></li>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/dialogs/ADialog.ts#L25">src/ui/dialogs/ADialog.ts:25</a></li>
+							</ul>
+						</aside>
+					</section>
+					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
+						<a name="options.toggledialog" class="tsd-anchor"></a>
+						<h3>toggle<wbr>Dialog</h3>
+						<div class="tsd-signature tsd-kind-icon">toggle<wbr>Dialog<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
+						<aside class="tsd-sources">
+							<ul>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/dialogs/ADialog.ts#L28">src/ui/dialogs/ADialog.ts:28</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -531,8 +604,8 @@
 							<li class=" tsd-kind-constructor tsd-parent-kind-class">
 								<a href="_src_ui_dialogs_adialog_.adialog.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_src_ui_dialogs_adialog_.adialog.html#attachment" class="tsd-kind-icon">attachment</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-protected">
+								<a href="_src_ui_dialogs_adialog_.adialog.html#dialog" class="tsd-kind-icon">dialog</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_src_ui_dialogs_adialog_.adialog.html#node" class="tsd-kind-icon">node</a>
@@ -540,11 +613,20 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
 								<a href="_src_ui_dialogs_adialog_.adialog.html#popper" class="tsd-kind-icon">popper</a>
 							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="_src_ui_dialogs_adialog_.adialog.html#attachment" class="tsd-kind-icon">attachment</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="_src_ui_dialogs_adialog_.adialog.html#level" class="tsd-kind-icon">level</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
 								<a href="_src_ui_dialogs_adialog_.adialog.html#build" class="tsd-kind-icon">build</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_src_ui_dialogs_adialog_.adialog.html#destroy" class="tsd-kind-icon">destroy</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_src_ui_dialogs_adialog_.adialog.html#equals" class="tsd-kind-icon">equals</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-protected">
 								<a href="_src_ui_dialogs_adialog_.adialog.html#find" class="tsd-kind-icon">find</a>
@@ -571,6 +653,9 @@
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_src_ui_dialogs_adialog_.idialogcontext.html" class="tsd-kind-icon">IDialog<wbr>Context</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="../interfaces/_src_ui_dialogs_adialog_.idialogoptions.html" class="tsd-kind-icon">IDialog<wbr>Options</a>
 					</li>

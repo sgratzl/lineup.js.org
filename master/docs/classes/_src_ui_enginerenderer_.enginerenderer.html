@@ -82,6 +82,12 @@
 					</li>
 				</ul>
 			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/_src_internal_aeventdispatcher_.ieventhandler.html" class="tsd-signature-type">IEventHandler</a></li>
+				</ul>
+			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
@@ -105,7 +111,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_src_ui_enginerenderer_.enginerenderer.html#table" class="tsd-kind-icon">table</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_src_ui_enginerenderer_.enginerenderer.html#updateables" class="tsd-kind-icon">update<wbr>Ables</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_src_ui_enginerenderer_.enginerenderer.html#zoomfactor" class="tsd-kind-icon">zoom<wbr>Factor</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_src_ui_enginerenderer_.enginerenderer.html#event_hover_changed" class="tsd-kind-icon">EVENT_<wbr>HOVER_<wbr>CHANGED</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_src_ui_enginerenderer_.enginerenderer.html#event_highlight_changed" class="tsd-kind-icon">EVENT_<wbr>HIGHLIGHT_<wbr>CHANGED</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -120,14 +126,16 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_src_ui_enginerenderer_.enginerenderer.html#addranking" class="tsd-kind-icon">add<wbr>Ranking</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="_src_ui_enginerenderer_.enginerenderer.html#createeventlist" class="tsd-kind-icon">create<wbr>Event<wbr>List</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_src_ui_enginerenderer_.enginerenderer.html#destroy" class="tsd-kind-icon">destroy</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_src_ui_enginerenderer_.enginerenderer.html#fakehover" class="tsd-kind-icon">fake<wbr>Hover</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_src_ui_enginerenderer_.enginerenderer.html#fire" class="tsd-kind-icon">fire</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_src_ui_enginerenderer_.enginerenderer.html#forward" class="tsd-kind-icon">forward</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_src_ui_enginerenderer_.enginerenderer.html#gethighlight" class="tsd-kind-icon">get<wbr>Highlight</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_src_ui_enginerenderer_.enginerenderer.html#initprovider" class="tsd-kind-icon">init<wbr>Provider</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_src_ui_enginerenderer_.enginerenderer.html#on" class="tsd-kind-icon">on</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_src_ui_enginerenderer_.enginerenderer.html#pushupdateable" class="tsd-kind-icon">push<wbr>Update<wbr>Able</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_src_ui_enginerenderer_.enginerenderer.html#removeranking" class="tsd-kind-icon">remove<wbr>Ranking</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_src_ui_enginerenderer_.enginerenderer.html#setdataprovider" class="tsd-kind-icon">set<wbr>Data<wbr>Provider</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_src_ui_enginerenderer_.enginerenderer.html#sethighlight" class="tsd-kind-icon">set<wbr>Highlight</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_src_ui_enginerenderer_.enginerenderer.html#sethighlighttonearest" class="tsd-kind-icon">set<wbr>Highlight<wbr>ToNearest</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><a href="_src_ui_enginerenderer_.enginerenderer.html#takedownprovider" class="tsd-kind-icon">take<wbr>Down<wbr>Provider</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_src_ui_enginerenderer_.enginerenderer.html#unforward" class="tsd-kind-icon">unforward</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_src_ui_enginerenderer_.enginerenderer.html#update" class="tsd-kind-icon">update</a></li>
@@ -148,20 +156,20 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Engine<wbr>Renderer<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DataProvider</span>, parent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span>, options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_src_interfaces_.ilineupoptions.html" class="tsd-signature-type">ILineUpOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_src_ui_enginerenderer_.enginerenderer.html" class="tsd-signature-type">EngineRenderer</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Engine<wbr>Renderer<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><a href="_src_provider_adataprovider_.adataprovider.html" class="tsd-signature-type">ADataProvider</a>, parent<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span>, options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_src_interfaces_.ilineupoptions.html" class="tsd-signature-type">ILineUpOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_src_ui_enginerenderer_.enginerenderer.html" class="tsd-signature-type">EngineRenderer</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_src_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_src_internal_aeventdispatcher_.aeventdispatcher.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L38">src/ui/EngineRenderer.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L39">src/ui/EngineRenderer.ts:39</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>data: <span class="tsd-signature-type">DataProvider</span></h5>
+									<h5>data: <a href="_src_provider_adataprovider_.adataprovider.html" class="tsd-signature-type">ADataProvider</a></h5>
 								</li>
 								<li>
 									<h5>parent: <span class="tsd-signature-type">HTMLElement</span></h5>
@@ -183,17 +191,17 @@
 					<div class="tsd-signature tsd-kind-icon">ctx<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_src_ui_interfaces_.irankingheadercontextcontainer.html" class="tsd-signature-type">IRankingHeaderContextContainer</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_src_renderer_interfaces_.irendercontext.html" class="tsd-signature-type">IRenderContext</a><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_src_ui_engineranking_.ienginerankingcontext.html" class="tsd-signature-type">IEngineRankingContext</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L35">src/ui/EngineRenderer.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L36">src/ui/EngineRenderer.ts:36</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
 					<a name="data" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> data</h3>
-					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">DataProvider</span></div>
+					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <a href="_src_provider_adataprovider_.adataprovider.html" class="tsd-signature-type">ADataProvider</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L40">src/ui/EngineRenderer.ts:40</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L41">src/ui/EngineRenderer.ts:41</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -203,7 +211,7 @@
 					<div class="tsd-signature tsd-kind-icon">hist<wbr>Cache<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Map</span><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_src_internal_math_.istatistics.html" class="tsd-signature-type">IStatistics</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_src_internal_math_.icategoricalstatistics.html" class="tsd-signature-type">ICategoricalStatistics</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">Promise</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_src_internal_math_.istatistics.html" class="tsd-signature-type">IStatistics</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_src_internal_math_.icategoricalstatistics.html" class="tsd-signature-type">ICategoricalStatistics</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;new Map&lt;string, IStatistics | ICategoricalStatistics | null | Promise&lt;IStatistics | ICategoricalStatistics&gt;&gt;()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L28">src/ui/EngineRenderer.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L29">src/ui/EngineRenderer.ts:29</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -213,7 +221,7 @@
 					<div class="tsd-signature tsd-kind-icon">node<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HTMLElement</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L30">src/ui/EngineRenderer.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L31">src/ui/EngineRenderer.ts:31</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -223,7 +231,7 @@
 					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_src_interfaces_.ilineupoptions.html" class="tsd-signature-type">ILineUpOptions</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L26">src/ui/EngineRenderer.ts:26</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L27">src/ui/EngineRenderer.ts:27</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -233,7 +241,7 @@
 					<div class="tsd-signature tsd-kind-icon">rankings<span class="tsd-signature-symbol">:</span> <a href="_src_ui_engineranking_.engineranking.html" class="tsd-signature-type">EngineRanking</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L32">src/ui/EngineRenderer.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L33">src/ui/EngineRenderer.ts:33</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -243,7 +251,7 @@
 					<div class="tsd-signature tsd-kind-icon">slope<wbr>Graphs<span class="tsd-signature-symbol">:</span> <a href="_src_ui_slopegraph_.slopegraph.html" class="tsd-signature-type">SlopeGraph</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L33">src/ui/EngineRenderer.ts:33</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L34">src/ui/EngineRenderer.ts:34</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -253,7 +261,7 @@
 					<div class="tsd-signature tsd-kind-icon">table<span class="tsd-signature-symbol">:</span> <a href="_node_modules_lineupengine_src_table_multitablerowrenderer_.multitablerowrenderer.html" class="tsd-signature-type">MultiTableRowRenderer</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L31">src/ui/EngineRenderer.ts:31</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L32">src/ui/EngineRenderer.ts:32</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -263,7 +271,7 @@
 					<div class="tsd-signature tsd-kind-icon">update<wbr>Ables<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[]</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L37">src/ui/EngineRenderer.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L38">src/ui/EngineRenderer.ts:38</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -273,17 +281,17 @@
 					<div class="tsd-signature tsd-kind-icon">zoom<wbr>Factor<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;1</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L38">src/ui/EngineRenderer.ts:38</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L39">src/ui/EngineRenderer.ts:39</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
-					<a name="event_hover_changed" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>HOVER_<wbr>CHANGED</h3>
-					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>HOVER_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"hoverChanged"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;hoverChanged&quot;</span></div>
+					<a name="event_highlight_changed" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>HIGHLIGHT_<wbr>CHANGED</h3>
+					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>HIGHLIGHT_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"highlightChanged"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;highlightChanged&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L24">src/ui/EngineRenderer.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L25">src/ui/EngineRenderer.ts:25</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -300,7 +308,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L113">src/ui/EngineRenderer.ts:113</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L124">src/ui/EngineRenderer.ts:124</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="_node_modules_lineupengine_src_style_gridstylemanager_.gridstylemanager.html" class="tsd-signature-type">GridStyleManager</a></h4>
@@ -320,7 +328,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L212">src/ui/EngineRenderer.ts:212</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L227">src/ui/EngineRenderer.ts:227</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -344,7 +352,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_src_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_src_internal_aeventdispatcher_.aeventdispatcher.html#createeventlist">createEventList</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L138">src/ui/EngineRenderer.ts:138</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L149">src/ui/EngineRenderer.ts:149</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
@@ -361,32 +369,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L338">src/ui/EngineRenderer.ts:338</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L383">src/ui/EngineRenderer.ts:383</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="fakehover" class="tsd-anchor"></a>
-					<h3>fake<wbr>Hover</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">fake<wbr>Hover<span class="tsd-signature-symbol">(</span>dataIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L334">src/ui/EngineRenderer.ts:334</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>dataIndex: <span class="tsd-signature-type">number</span></h5>
-								</li>
-							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -402,7 +387,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_src_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_src_internal_aeventdispatcher_.aeventdispatcher.html#fire">fire</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/internal/AEventDispatcher.ts#L67">src/internal/AEventDispatcher.ts:67</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/internal/AEventDispatcher.ts#L75">src/internal/AEventDispatcher.ts:75</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -422,14 +407,14 @@
 					<a name="forward" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> forward</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">forward<span class="tsd-signature-symbol">(</span>from<span class="tsd-signature-symbol">: </span><a href="_src_internal_aeventdispatcher_.aeventdispatcher.html" class="tsd-signature-type">AEventDispatcher</a>, <span class="tsd-signature-symbol">...</span>types<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">forward<span class="tsd-signature-symbol">(</span>from<span class="tsd-signature-symbol">: </span><a href="../interfaces/_src_internal_aeventdispatcher_.ieventhandler.html" class="tsd-signature-type">IEventHandler</a>, <span class="tsd-signature-symbol">...</span>types<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_src_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_src_internal_aeventdispatcher_.aeventdispatcher.html#forward">forward</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/internal/AEventDispatcher.ts#L97">src/internal/AEventDispatcher.ts:97</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/internal/AEventDispatcher.ts#L105">src/internal/AEventDispatcher.ts:105</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -441,7 +426,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>from: <a href="_src_internal_aeventdispatcher_.aeventdispatcher.html" class="tsd-signature-type">AEventDispatcher</a></h5>
+									<h5>from: <a href="../interfaces/_src_internal_aeventdispatcher_.ieventhandler.html" class="tsd-signature-type">IEventHandler</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the event dispatcher to forward from</p>
 									</div>
@@ -457,23 +442,40 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
-					<a name="initprovider" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagPrivate">Private</span> init<wbr>Provider</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
-						<li class="tsd-signature tsd-kind-icon">init<wbr>Provider<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DataProvider</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="gethighlight" class="tsd-anchor"></a>
+					<h3>get<wbr>Highlight</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Highlight<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L163">src/ui/EngineRenderer.ts:163</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L373">src/ui/EngineRenderer.ts:373</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-private">
+					<a name="initprovider" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> init<wbr>Provider</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-private">
+						<li class="tsd-signature tsd-kind-icon">init<wbr>Provider<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><a href="_src_provider_adataprovider_.adataprovider.html" class="tsd-signature-type">ADataProvider</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L175">src/ui/EngineRenderer.ts:175</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>data: <span class="tsd-signature-type">DataProvider</span></h5>
+									<h5>data: <a href="_src_provider_adataprovider_.adataprovider.html" class="tsd-signature-type">ADataProvider</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -490,9 +492,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_src_internal_aeventdispatcher_.ieventhandler.html">IEventHandler</a>.<a href="../interfaces/_src_internal_aeventdispatcher_.ieventhandler.html#on">on</a></p>
 								<p>Inherited from <a href="_src_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_src_internal_aeventdispatcher_.aeventdispatcher.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/internal/AEventDispatcher.ts#L45">src/internal/AEventDispatcher.ts:45</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/internal/AEventDispatcher.ts#L53">src/internal/AEventDispatcher.ts:53</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -525,7 +528,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_src_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_src_internal_aeventdispatcher_.aeventdispatcher.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/internal/AEventDispatcher.ts#L46">src/internal/AEventDispatcher.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/internal/AEventDispatcher.ts#L54">src/internal/AEventDispatcher.ts:54</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -551,7 +554,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L134">src/ui/EngineRenderer.ts:134</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L145">src/ui/EngineRenderer.ts:145</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -592,7 +595,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L236">src/ui/EngineRenderer.ts:236</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L252">src/ui/EngineRenderer.ts:252</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -609,22 +612,74 @@
 					<a name="setdataprovider" class="tsd-anchor"></a>
 					<h3>set<wbr>Data<wbr>Provider</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Data<wbr>Provider<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DataProvider</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Data<wbr>Provider<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><a href="_src_provider_adataprovider_.adataprovider.html" class="tsd-signature-type">ADataProvider</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L142">src/ui/EngineRenderer.ts:142</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L153">src/ui/EngineRenderer.ts:153</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>data: <span class="tsd-signature-type">DataProvider</span></h5>
+									<h5>data: <a href="_src_provider_adataprovider_.adataprovider.html" class="tsd-signature-type">ADataProvider</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="sethighlight" class="tsd-anchor"></a>
+					<h3>set<wbr>Highlight</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Highlight<span class="tsd-signature-symbol">(</span>dataIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, scrollIntoView<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L350">src/ui/EngineRenderer.ts:350</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dataIndex: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>scrollIntoView: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="sethighlighttonearest" class="tsd-anchor"></a>
+					<h3>set<wbr>Highlight<wbr>ToNearest</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Highlight<wbr>ToNearest<span class="tsd-signature-symbol">(</span>dataIndices<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>, scrollIntoView<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L362">src/ui/EngineRenderer.ts:362</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dataIndices: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>scrollIntoView: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -638,7 +693,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L151">src/ui/EngineRenderer.ts:151</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L162">src/ui/EngineRenderer.ts:162</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -649,14 +704,14 @@
 					<a name="unforward" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> unforward</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">unforward<span class="tsd-signature-symbol">(</span>from<span class="tsd-signature-symbol">: </span><a href="_src_internal_aeventdispatcher_.aeventdispatcher.html" class="tsd-signature-type">AEventDispatcher</a>, <span class="tsd-signature-symbol">...</span>types<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">unforward<span class="tsd-signature-symbol">(</span>from<span class="tsd-signature-symbol">: </span><a href="../interfaces/_src_internal_aeventdispatcher_.ieventhandler.html" class="tsd-signature-type">IEventHandler</a>, <span class="tsd-signature-symbol">...</span>types<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_src_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_src_internal_aeventdispatcher_.aeventdispatcher.html#unforward">unforward</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/internal/AEventDispatcher.ts#L106">src/internal/AEventDispatcher.ts:106</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/internal/AEventDispatcher.ts#L114">src/internal/AEventDispatcher.ts:114</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -667,7 +722,7 @@
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>from: <a href="_src_internal_aeventdispatcher_.aeventdispatcher.html" class="tsd-signature-type">AEventDispatcher</a></h5>
+									<h5>from: <a href="../interfaces/_src_internal_aeventdispatcher_.ieventhandler.html" class="tsd-signature-type">IEventHandler</a></h5>
 									<div class="tsd-comment tsd-typography">
 										<p>the originated dispatcher</p>
 									</div>
@@ -693,7 +748,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L256">src/ui/EngineRenderer.ts:256</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L272">src/ui/EngineRenderer.ts:272</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -716,7 +771,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L185">src/ui/EngineRenderer.ts:185</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L200">src/ui/EngineRenderer.ts:200</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -742,7 +797,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L178">src/ui/EngineRenderer.ts:178</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L193">src/ui/EngineRenderer.ts:193</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -765,7 +820,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L317">src/ui/EngineRenderer.ts:317</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L333">src/ui/EngineRenderer.ts:333</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -788,7 +843,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L129">src/ui/EngineRenderer.ts:129</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L140">src/ui/EngineRenderer.ts:140</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -805,7 +860,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L123">src/ui/EngineRenderer.ts:123</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L134">src/ui/EngineRenderer.ts:134</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -822,7 +877,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/bdc239c/src/ui/EngineRenderer.ts#L117">src/ui/EngineRenderer.ts:117</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/3d36294/src/ui/EngineRenderer.ts#L128">src/ui/EngineRenderer.ts:128</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -883,7 +938,7 @@
 								<a href="_src_ui_enginerenderer_.enginerenderer.html#zoomfactor" class="tsd-kind-icon">zoom<wbr>Factor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
-								<a href="_src_ui_enginerenderer_.enginerenderer.html#event_hover_changed" class="tsd-kind-icon">EVENT_<wbr>HOVER_<wbr>CHANGED</a>
+								<a href="_src_ui_enginerenderer_.enginerenderer.html#event_highlight_changed" class="tsd-kind-icon">EVENT_<wbr>HIGHLIGHT_<wbr>CHANGED</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="_src_ui_enginerenderer_.enginerenderer.html#style" class="tsd-kind-icon">style</a>
@@ -897,14 +952,14 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_src_ui_enginerenderer_.enginerenderer.html#destroy" class="tsd-kind-icon">destroy</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_src_ui_enginerenderer_.enginerenderer.html#fakehover" class="tsd-kind-icon">fake<wbr>Hover</a>
-							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 								<a href="_src_ui_enginerenderer_.enginerenderer.html#fire" class="tsd-kind-icon">fire</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 								<a href="_src_ui_enginerenderer_.enginerenderer.html#forward" class="tsd-kind-icon">forward</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_src_ui_enginerenderer_.enginerenderer.html#gethighlight" class="tsd-kind-icon">get<wbr>Highlight</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 								<a href="_src_ui_enginerenderer_.enginerenderer.html#initprovider" class="tsd-kind-icon">init<wbr>Provider</a>
@@ -920,6 +975,12 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_src_ui_enginerenderer_.enginerenderer.html#setdataprovider" class="tsd-kind-icon">set<wbr>Data<wbr>Provider</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_src_ui_enginerenderer_.enginerenderer.html#sethighlight" class="tsd-kind-icon">set<wbr>Highlight</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_src_ui_enginerenderer_.enginerenderer.html#sethighlighttonearest" class="tsd-kind-icon">set<wbr>Highlight<wbr>ToNearest</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-private">
 								<a href="_src_ui_enginerenderer_.enginerenderer.html#takedownprovider" class="tsd-kind-icon">take<wbr>Down<wbr>Provider</a>
