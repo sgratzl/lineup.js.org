@@ -52,6 +52,13 @@
     .lu-dialog .lu-dragover *::after {
       pointer-events: none !important; }
 
+.lineup-engine .lu-filter-missing,
+.lu .lu-filter-missing,
+.lu-header .lu-filter-missing,
+.lu-side-panel .lu-filter-missing,
+.lu-dialog .lu-filter-missing {
+  font-size: 13px; }
+
 .lineup-engine .lu-gradient-text,
 .lu .lu-gradient-text,
 .lu-header .lu-gradient-text,
@@ -121,6 +128,29 @@
 /**
   popups, e.g., rename dialogs,...
  */
+@keyframes lu-dialogs-fade-in {
+  from {
+    opacity: 0; }
+  to {
+    opacity: 1; } }
+
+.lu-backdrop {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 8;
+  right: 0;
+  bottom: 0; }
+  .lu-backdrop > * {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.1);
+    animation: lu-dialogs-fade-in 0.2s; }
+
 .lu-dialog, .lu-tooltip {
   background-color: white;
   border: 1px solid black;
@@ -130,19 +160,11 @@
   padding: 5px;
   z-index: 9;
   font-size: 11pt;
-  clear: right; }
+  clear: right;
+  animation: lu-dialogs-fade-in 0.4s; }
   .lu-dialog h4, .lu-tooltip h4 {
     margin: 0.2em;
     display: inline-block; }
-
-.lu-dialog::before {
-  content: '';
-  top: -40px;
-  left: -40px;
-  right: -40px;
-  bottom: -40px;
-  position: absolute;
-  z-index: -1; }
 
 .lu-dialog label {
   font-weight: normal; }
@@ -172,7 +194,7 @@
 .lu-dialog button[type=submit]::before {
   content: "\E804"; }
 
-.lu-dialog button[title=cancel]::before {
+.lu-dialog button[title=Cancel]::before {
   content: "\E80C"; }
 
 .lu-dialog button[type=reset]::before {
@@ -353,9 +375,6 @@
   .lu-header .lu-spacing,
   .lu-side-panel-entry .lu-spacing {
     flex: 1; }
-  .lu-header.lu-filtered i[title='Filter'],
-  .lu-side-panel-entry.lu-filtered i[title='Filter'] {
-    color: #c1c1c1; }
   .lu-header .lu-nested,
   .lu-side-panel-entry .lu-nested {
     position: relative; }
@@ -467,6 +486,10 @@
 .lu-toolbar i[title^='Filter']::before,
 .lu-more-options i[title^='Filter']::before {
   content: "\F0B0"; }
+
+.lu-toolbar i[title^='Filter'][data-active]::before,
+.lu-more-options i[title^='Filter'][data-active]::before {
+  color: #ffa500; }
 
 .lu-toolbar i[title^='Stratify']::before,
 .lu-more-options i[title^='Stratify']::before {
@@ -1058,6 +1081,7 @@ section.lu-header {
     .lu [data-agg=detail] [data-renderer=categorical] :last-child,
     .lu [data-agg=detail] [data-renderer=brightness] :last-child,
     .lu [data-agg=group] [data-renderer=brightness] > div :last-child {
+      width: 0;
       flex: 1 1 auto;
       overflow: hidden;
       text-overflow: ellipsis; }
@@ -1103,7 +1127,6 @@ section.lu-header {
   .lu .lu-summary[data-renderer=interleaving],
   .lu [data-renderer=histogram] {
     display: flex;
-    font-size: x-small;
     flex-direction: row; }
     .lu [data-agg=group] [data-renderer=categorical] > div,
     .lu .lu-summary[data-renderer=categorical] > div,
@@ -1111,7 +1134,8 @@ section.lu-header {
     .lu [data-renderer=histogram] > div {
       flex: 1 1 auto;
       position: relative;
-      margin: 0 1px; }
+      margin: 0 1px;
+      font-size: x-small; }
       .lu [data-agg=group] [data-renderer=categorical] > div[data-filtered=filtered],
       .lu .lu-summary[data-renderer=categorical] > div[data-filtered=filtered],
       .lu .lu-summary[data-renderer=interleaving] > div[data-filtered=filtered],
@@ -1602,11 +1626,9 @@ article.lu-side-panel-entry {
 .lu [data-type='array'] .lu-label::before {
   content: "\E80D"; }
 
-.lu span[data-type-cat='support']::before,
 .lu [data-type-cat='support'] .lu-label::before {
   display: none; }
 
-.lu span[data-type-cat='other']::before,
 .lu [data-type-cat='other'] .lu-label::before {
   display: none; }
 
@@ -1775,6 +1797,7 @@ div.lu-rule-button-chooser {
     color: #ffd700; }
 
 .lu {
+  position: relative;
   display: flex;
   flex-direction: row-reverse; }
   .lu > aside {
