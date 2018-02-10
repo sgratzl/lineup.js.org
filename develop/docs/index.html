@@ -79,7 +79,7 @@
 					<li>group aggregations (show a whole group as a single group row)</li>
 					<li>numerous visualizations for summaries, cells, and group aggregations</li>
 					<li>side panel for easy filtering and column management</li>
-					<li><a href="#react">React</a>, <a href="#rshiny">RShiny</a>, <a href="#jupyter">Juypter</a>, and <a href="#powerbi">Power BI</a> wrapper</li>
+					<li><a href="#react">React</a>, <a href="#polymer">Polymer</a>, <a href="#rshiny">RShiny</a>, <a href="#jupyter">Juypter</a>, and <a href="#powerbi">Power BI</a> wrapper</li>
 				</ul>
 				<h2 id="usage">Usage</h2>
 				<p><strong>Installation</strong></p>
@@ -181,6 +181,49 @@ builder
 &lt;/LineUp&gt;;
 </code></pre>
 				<p><a href="https://codepen.io/sgratzl/pen/yvJpWQ">CodePen</a></p>
+				<p>Result is same as the builder advanced example</p>
+				<p><a id="polymer"></a></p>
+				<h2 id="polymer-support-lineup-element-">Polymer Support (LineUp-Element)</h2>
+				<p>A <a href="https://www.polymer-project.org/">Polymer 2.0</a> web component wrapper is located at <a href="https://github.com/sgratzl/lineup-element">lineup-element</a>. </p>
+				<p><strong>Installation</strong></p>
+				<pre><code class="lang-bash">bower install https://github.com/sgratzl/lineup-element
+</code></pre>
+				<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"import"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"bower_components/lineup-element/lineup-element.html"</span>&gt;</span>
+</code></pre>
+				<p><strong>Minimal Usage Example</strong></p>
+				<pre><code class="lang-javascript"><span class="hljs-comment">// generate some data</span>
+<span class="hljs-keyword">const</span> arr = [];
+<span class="hljs-keyword">const</span> cats = [<span class="hljs-string">'c1'</span>, <span class="hljs-string">'c2'</span>, <span class="hljs-string">'c3'</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span>; ++i) {
+  arr.push({
+    <span class="hljs-attr">a</span>: <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>,
+    <span class="hljs-attr">d</span>: <span class="hljs-string">'Row '</span> + i,
+    <span class="hljs-attr">cat</span>: cats[<span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">3</span>)],
+    <span class="hljs-attr">cat2</span>: cats[<span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">3</span>)]
+  })
+}
+conat data = { arr, cats };
+</code></pre>
+				<pre><code class="lang-jsx">&lt;lineup-element data=<span class="hljs-string">"[[data.arr]]"</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">lineup-element</span>&gt;</span></span>
+</code></pre>
+				<p>TODO
+				<a href="">CodePen</a></p>
+				<p>Result is same as the builder minimal example</p>
+				<p><strong>Advanced Usage Example</strong></p>
+				<pre><code class="lang-jsx"><span class="hljs-comment">// arr from before</span>
+&lt;lineup-element data=<span class="hljs-string">"[[data.arr]]"</span> side-panel side-panel-collapsed <span class="hljs-keyword">default</span>-ranking=<span class="hljs-string">"true"</span>&gt;
+  &lt;lineup-string-desc column="d" label="Label" width="100" &gt;&lt;/lineup-string-desc&gt;
+  &lt;lineup-categorical-desc column="cat" categories="[[cats]]" color="green" &gt;&lt;/lineup-categorical-desc&gt;
+  &lt;lineup-categorical-desc column="cat2" categories="[[cats]]" color="blue" &gt;&lt;/lineup-categorical-desc&gt;
+  &lt;lineup-number-desc column="a" domain="[0, 10]" color="blue" &gt;&lt;/lineup-number-desc&gt;
+  &lt;lineup-ranking group-by="cat" sort-by="a:desc"&gt;
+    &lt;lineup-support-column type="*" &gt;&lt;/lineup-support-column&gt;
+    &lt;lineup-column column="*" &gt;&lt;/lineup-column&gt;
+  &lt;/lineup-ranking&gt;
+&lt;/lineup-element&gt;
+</code></pre>
+				<p>TODO
+				<a href="">CodePen</a></p>
 				<p>Result is same as the builder advanced example</p>
 				<p><a id="rshiny"></a></p>
 				<h2 id="r-rshiny-and-r-markdown-support">R, RShiny, and R Markdown Support</h2>
@@ -301,6 +344,21 @@ npm install
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_src_builder_rankingbuilder_.html">"src/builder/<wbr>Ranking<wbr>Builder"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_builder_adapter_column_.html">"src/builder/adapter/column"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_builder_adapter_index_.html">"src/builder/adapter/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_builder_adapter_lineup_.html">"src/builder/adapter/lineup"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_builder_adapter_ranking_.html">"src/builder/adapter/ranking"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_src_builder_adapter_utils_.html">"src/builder/adapter/utils"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_src_builder_column_categoricalcolumnbuilder_.html">"src/builder/column/<wbr>Categorical<wbr>Column<wbr>Builder"</a>
