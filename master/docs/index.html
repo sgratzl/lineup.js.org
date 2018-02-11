@@ -79,7 +79,7 @@
 					<li>group aggregations (show a whole group as a single group row)</li>
 					<li>numerous visualizations for summaries, cells, and group aggregations</li>
 					<li>side panel for easy filtering and column management</li>
-					<li><a href="#react">React</a>, <a href="#rshiny">RShiny</a>, <a href="#jupyter">Juypter</a>, and <a href="#powerbi">Power BI</a> wrapper</li>
+					<li><a href="#react">React</a>, <a href="#polymer">Polymer</a>, <a href="#rshiny">RShiny</a>, <a href="#jupyter">Juypter</a>, and <a href="#powerbi">Power BI</a> wrapper</li>
 				</ul>
 				<h2 id="usage">Usage</h2>
 				<p><strong>Installation</strong></p>
@@ -181,6 +181,49 @@ builder
 &lt;/LineUp&gt;;
 </code></pre>
 				<p><a href="https://codepen.io/sgratzl/pen/yvJpWQ">CodePen</a></p>
+				<p>Result is same as the builder advanced example</p>
+				<p><a id="polymer"></a></p>
+				<h2 id="polymer-support-lineup-element-">Polymer Support (LineUp-Element)</h2>
+				<p>A <a href="https://www.polymer-project.org/">Polymer 2.0</a> web component wrapper is located at <a href="https://github.com/sgratzl/lineup-element">lineup-element</a>. </p>
+				<p><strong>Installation</strong></p>
+				<pre><code class="lang-bash">bower install https://github.com/sgratzl/lineup-element
+</code></pre>
+				<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"import"</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"bower_components/lineup-element/lineup-element.html"</span>&gt;</span>
+</code></pre>
+				<p><strong>Minimal Usage Example</strong></p>
+				<pre><code class="lang-javascript"><span class="hljs-comment">// generate some data</span>
+<span class="hljs-keyword">const</span> arr = [];
+<span class="hljs-keyword">const</span> cats = [<span class="hljs-string">'c1'</span>, <span class="hljs-string">'c2'</span>, <span class="hljs-string">'c3'</span>];
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span>; ++i) {
+  arr.push({
+    <span class="hljs-attr">a</span>: <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>,
+    <span class="hljs-attr">d</span>: <span class="hljs-string">'Row '</span> + i,
+    <span class="hljs-attr">cat</span>: cats[<span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">3</span>)],
+    <span class="hljs-attr">cat2</span>: cats[<span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">3</span>)]
+  })
+}
+conat data = { arr, cats };
+</code></pre>
+				<pre><code class="lang-jsx">&lt;lineup-element data=<span class="hljs-string">"[[data.arr]]"</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">lineup-element</span>&gt;</span></span>
+</code></pre>
+				<p>TODO
+				<a href="">CodePen</a></p>
+				<p>Result is same as the builder minimal example</p>
+				<p><strong>Advanced Usage Example</strong></p>
+				<pre><code class="lang-jsx"><span class="hljs-comment">// arr from before</span>
+&lt;lineup-element data=<span class="hljs-string">"[[data.arr]]"</span> side-panel side-panel-collapsed <span class="hljs-keyword">default</span>-ranking=<span class="hljs-string">"true"</span>&gt;
+  &lt;lineup-string-desc column="d" label="Label" width="100" &gt;&lt;/lineup-string-desc&gt;
+  &lt;lineup-categorical-desc column="cat" categories="[[cats]]" color="green" &gt;&lt;/lineup-categorical-desc&gt;
+  &lt;lineup-categorical-desc column="cat2" categories="[[cats]]" color="blue" &gt;&lt;/lineup-categorical-desc&gt;
+  &lt;lineup-number-desc column="a" domain="[0, 10]" color="blue" &gt;&lt;/lineup-number-desc&gt;
+  &lt;lineup-ranking group-by="cat" sort-by="a:desc"&gt;
+    &lt;lineup-support-column type="*" &gt;&lt;/lineup-support-column&gt;
+    &lt;lineup-column column="*" &gt;&lt;/lineup-column&gt;
+  &lt;/lineup-ranking&gt;
+&lt;/lineup-element&gt;
+</code></pre>
+				<p>TODO
+				<a href="">CodePen</a></p>
 				<p>Result is same as the builder advanced example</p>
 				<p><a id="rshiny"></a></p>
 				<h2 id="r-rshiny-and-r-markdown-support">R, RShiny, and R Markdown Support</h2>
@@ -290,560 +333,515 @@ npm install
 					<li class="globals  ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
-					<li class="label tsd-is-external">
-						<span>Internals</span>
-					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_builder_databuilder_.html">"src/builder/<wbr>Data<wbr>Builder"</a>
+						<a href="modules/_builder_databuilder_.html">"builder/<wbr>Data<wbr>Builder"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_builder_lineupbuilder_.html">"src/builder/<wbr>Line<wbr>UpBuilder"</a>
+						<a href="modules/_builder_lineupbuilder_.html">"builder/<wbr>Line<wbr>UpBuilder"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_builder_rankingbuilder_.html">"src/builder/<wbr>Ranking<wbr>Builder"</a>
+						<a href="modules/_builder_rankingbuilder_.html">"builder/<wbr>Ranking<wbr>Builder"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_builder_column_categoricalcolumnbuilder_.html">"src/builder/column/<wbr>Categorical<wbr>Column<wbr>Builder"</a>
+						<a href="modules/_builder_adapter_column_.html">"builder/adapter/column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_builder_column_columnbuilder_.html">"src/builder/column/<wbr>Column<wbr>Builder"</a>
+						<a href="modules/_builder_adapter_index_.html">"builder/adapter/index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_builder_column_datecolumnbuilder_.html">"src/builder/column/<wbr>Date<wbr>Column<wbr>Builder"</a>
+						<a href="modules/_builder_adapter_lineup_.html">"builder/adapter/lineup"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_builder_column_hierarchycolumnbuilder_.html">"src/builder/column/<wbr>Hierarchy<wbr>Column<wbr>Builder"</a>
+						<a href="modules/_builder_adapter_ranking_.html">"builder/adapter/ranking"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_builder_column_numbercolumnbuilder_.html">"src/builder/column/<wbr>Number<wbr>Column<wbr>Builder"</a>
+						<a href="modules/_builder_adapter_utils_.html">"builder/adapter/utils"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_builder_column_stringcolumnbuilder_.html">"src/builder/column/<wbr>String<wbr>Column<wbr>Builder"</a>
+						<a href="modules/_builder_column_categoricalcolumnbuilder_.html">"builder/column/<wbr>Categorical<wbr>Column<wbr>Builder"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_builder_column_index_.html">"src/builder/column/index"</a>
+						<a href="modules/_builder_column_columnbuilder_.html">"builder/column/<wbr>Column<wbr>Builder"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_builder_index_.html">"src/builder/index"</a>
+						<a href="modules/_builder_column_datecolumnbuilder_.html">"builder/column/<wbr>Date<wbr>Column<wbr>Builder"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_config_.html">"src/config"</a>
+						<a href="modules/_builder_column_hierarchycolumnbuilder_.html">"builder/column/<wbr>Hierarchy<wbr>Column<wbr>Builder"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_index_.html">"src/index"</a>
+						<a href="modules/_builder_column_numbercolumnbuilder_.html">"builder/column/<wbr>Number<wbr>Column<wbr>Builder"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_interfaces_.html">"src/interfaces"</a>
+						<a href="modules/_builder_column_stringcolumnbuilder_.html">"builder/column/<wbr>String<wbr>Column<wbr>Builder"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_internal_aeventdispatcher_.html">"src/internal/AEvent<wbr>Dispatcher"</a>
+						<a href="modules/_builder_column_index_.html">"builder/column/index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_internal_orderedset_.html">"src/internal/<wbr>Ordered<wbr>Set"</a>
+						<a href="modules/_builder_index_.html">"builder/index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_internal_debounce_.html">"src/internal/debounce"</a>
+						<a href="modules/_config_.html">"config"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_internal_dnd_.html">"src/internal/dnd"</a>
+						<a href="modules/_index_.html">"index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_internal_index_.html">"src/internal/index"</a>
+						<a href="modules/_interfaces_.html">"interfaces"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_internal_math_.html">"src/internal/math"</a>
+						<a href="modules/_internal_aeventdispatcher_.html">"internal/AEvent<wbr>Dispatcher"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_internal_merge_.html">"src/internal/merge"</a>
+						<a href="modules/_internal_orderedset_.html">"internal/<wbr>Ordered<wbr>Set"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_internal_utils_.html">"src/internal/utils"</a>
+						<a href="modules/_internal_debounce_.html">"internal/debounce"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_actioncolumn_.html">"src/model/<wbr>Action<wbr>Column"</a>
+						<a href="modules/_internal_dnd_.html">"internal/dnd"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_aggregategroupcolumn_.html">"src/model/<wbr>Aggregate<wbr>Group<wbr>Column"</a>
+						<a href="modules/_internal_index_.html">"internal/index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_annotatecolumn_.html">"src/model/<wbr>Annotate<wbr>Column"</a>
+						<a href="modules/_internal_math_.html">"internal/math"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_arraycolumn_.html">"src/model/<wbr>Array<wbr>Column"</a>
+						<a href="modules/_internal_merge_.html">"internal/merge"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_booleancolumn_.html">"src/model/<wbr>Boolean<wbr>Column"</a>
+						<a href="modules/_internal_utils_.html">"internal/utils"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_booleanscolumn_.html">"src/model/<wbr>Booleans<wbr>Column"</a>
+						<a href="modules/_model_actioncolumn_.html">"model/<wbr>Action<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_boxplotcolumn_.html">"src/model/<wbr>Box<wbr>Plot<wbr>Column"</a>
+						<a href="modules/_model_aggregategroupcolumn_.html">"model/<wbr>Aggregate<wbr>Group<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_categoricalcolumn_.html">"src/model/<wbr>Categorical<wbr>Column"</a>
+						<a href="modules/_model_annotatecolumn_.html">"model/<wbr>Annotate<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_categoricalmapcolumn_.html">"src/model/<wbr>Categorical<wbr>Map<wbr>Column"</a>
+						<a href="modules/_model_arraycolumn_.html">"model/<wbr>Array<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_categoricalscolumn_.html">"src/model/<wbr>Categoricals<wbr>Column"</a>
+						<a href="modules/_model_booleancolumn_.html">"model/<wbr>Boolean<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_column_.html">"src/model/<wbr>Column"</a>
+						<a href="modules/_model_booleanscolumn_.html">"model/<wbr>Booleans<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_compositecolumn_.html">"src/model/<wbr>Composite<wbr>Column"</a>
+						<a href="modules/_model_boxplotcolumn_.html">"model/<wbr>Box<wbr>Plot<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_compositenumbercolumn_.html">"src/model/<wbr>Composite<wbr>Number<wbr>Column"</a>
+						<a href="modules/_model_categoricalcolumn_.html">"model/<wbr>Categorical<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_datecolumn_.html">"src/model/<wbr>Date<wbr>Column"</a>
+						<a href="modules/_model_categoricalmapcolumn_.html">"model/<wbr>Categorical<wbr>Map<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_datescolumn_.html">"src/model/<wbr>Dates<wbr>Column"</a>
+						<a href="modules/_model_categoricalscolumn_.html">"model/<wbr>Categoricals<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_datesmapcolumn_.html">"src/model/<wbr>Dates<wbr>Map<wbr>Column"</a>
+						<a href="modules/_model_column_.html">"model/<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_dummycolumn_.html">"src/model/<wbr>Dummy<wbr>Column"</a>
+						<a href="modules/_model_compositecolumn_.html">"model/<wbr>Composite<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_group_.html">"src/model/<wbr>Group"</a>
+						<a href="modules/_model_compositenumbercolumn_.html">"model/<wbr>Composite<wbr>Number<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_groupcolumn_.html">"src/model/<wbr>Group<wbr>Column"</a>
+						<a href="modules/_model_datecolumn_.html">"model/<wbr>Date<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_hierarchycolumn_.html">"src/model/<wbr>Hierarchy<wbr>Column"</a>
+						<a href="modules/_model_datescolumn_.html">"model/<wbr>Dates<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_iarraycolumn_.html">"src/model/IArray<wbr>Column"</a>
+						<a href="modules/_model_datesmapcolumn_.html">"model/<wbr>Dates<wbr>Map<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_icategoricalcolumn_.html">"src/model/ICategorical<wbr>Column"</a>
+						<a href="modules/_model_dummycolumn_.html">"model/<wbr>Dummy<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_inumbercolumn_.html">"src/model/INumber<wbr>Column"</a>
+						<a href="modules/_model_group_.html">"model/<wbr>Group"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_impositionboxplotcolumn_.html">"src/model/<wbr>Imposition<wbr>Box<wbr>Plot<wbr>Column"</a>
+						<a href="modules/_model_groupcolumn_.html">"model/<wbr>Group<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_impositioncompositecolumn_.html">"src/model/<wbr>Imposition<wbr>Composite<wbr>Column"</a>
+						<a href="modules/_model_hierarchycolumn_.html">"model/<wbr>Hierarchy<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_impositioncompositescolumn_.html">"src/model/<wbr>Imposition<wbr>Composites<wbr>Column"</a>
+						<a href="modules/_model_iarraycolumn_.html">"model/IArray<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_mapcolumn_.html">"src/model/<wbr>Map<wbr>Column"</a>
+						<a href="modules/_model_icategoricalcolumn_.html">"model/ICategorical<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_mappingfunction_.html">"src/model/<wbr>Mapping<wbr>Function"</a>
+						<a href="modules/_model_inumbercolumn_.html">"model/INumber<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_multilevelcompositecolumn_.html">"src/model/<wbr>Multi<wbr>Level<wbr>Composite<wbr>Column"</a>
+						<a href="modules/_model_impositionboxplotcolumn_.html">"model/<wbr>Imposition<wbr>Box<wbr>Plot<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_nestedcolumn_.html">"src/model/<wbr>Nested<wbr>Column"</a>
+						<a href="modules/_model_impositioncompositecolumn_.html">"model/<wbr>Imposition<wbr>Composite<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_numbercolumn_.html">"src/model/<wbr>Number<wbr>Column"</a>
+						<a href="modules/_model_impositioncompositescolumn_.html">"model/<wbr>Imposition<wbr>Composites<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_numbermapcolumn_.html">"src/model/<wbr>Number<wbr>Map<wbr>Column"</a>
+						<a href="modules/_model_mapcolumn_.html">"model/<wbr>Map<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_numberscolumn_.html">"src/model/<wbr>Numbers<wbr>Column"</a>
+						<a href="modules/_model_mappingfunction_.html">"model/<wbr>Mapping<wbr>Function"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_ordinalcolumn_.html">"src/model/<wbr>Ordinal<wbr>Column"</a>
+						<a href="modules/_model_multilevelcompositecolumn_.html">"model/<wbr>Multi<wbr>Level<wbr>Composite<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_rankcolumn_.html">"src/model/<wbr>Rank<wbr>Column"</a>
+						<a href="modules/_model_nestedcolumn_.html">"model/<wbr>Nested<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_ranking_.html">"src/model/<wbr>Ranking"</a>
+						<a href="modules/_model_numbercolumn_.html">"model/<wbr>Number<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_reducecolumn_.html">"src/model/<wbr>Reduce<wbr>Column"</a>
+						<a href="modules/_model_numbermapcolumn_.html">"model/<wbr>Number<wbr>Map<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_scriptcolumn_.html">"src/model/<wbr>Script<wbr>Column"</a>
+						<a href="modules/_model_numberscolumn_.html">"model/<wbr>Numbers<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_selectioncolumn_.html">"src/model/<wbr>Selection<wbr>Column"</a>
+						<a href="modules/_model_ordinalcolumn_.html">"model/<wbr>Ordinal<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_setcolumn_.html">"src/model/<wbr>Set<wbr>Column"</a>
+						<a href="modules/_model_rankcolumn_.html">"model/<wbr>Rank<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_stackcolumn_.html">"src/model/<wbr>Stack<wbr>Column"</a>
+						<a href="modules/_model_ranking_.html">"model/<wbr>Ranking"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_stringcolumn_.html">"src/model/<wbr>String<wbr>Column"</a>
+						<a href="modules/_model_reducecolumn_.html">"model/<wbr>Reduce<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_stringmapcolumn_.html">"src/model/<wbr>String<wbr>Map<wbr>Column"</a>
+						<a href="modules/_model_scriptcolumn_.html">"model/<wbr>Script<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_stringscolumn_.html">"src/model/<wbr>Strings<wbr>Column"</a>
+						<a href="modules/_model_selectioncolumn_.html">"model/<wbr>Selection<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_valuecolumn_.html">"src/model/<wbr>Value<wbr>Column"</a>
+						<a href="modules/_model_setcolumn_.html">"model/<wbr>Set<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_annotations_.html">"src/model/annotations"</a>
+						<a href="modules/_model_stackcolumn_.html">"model/<wbr>Stack<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_index_.html">"src/model/index"</a>
+						<a href="modules/_model_stringcolumn_.html">"model/<wbr>String<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_interfaces_.html">"src/model/interfaces"</a>
+						<a href="modules/_model_stringmapcolumn_.html">"model/<wbr>String<wbr>Map<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_internal_.html">"src/model/internal"</a>
+						<a href="modules/_model_stringscolumn_.html">"model/<wbr>Strings<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_model_missing_.html">"src/model/missing"</a>
+						<a href="modules/_model_valuecolumn_.html">"model/<wbr>Value<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_provider_acommondataprovider_.html">"src/provider/ACommon<wbr>Data<wbr>Provider"</a>
+						<a href="modules/_model_annotations_.html">"model/annotations"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_provider_adataprovider_.html">"src/provider/AData<wbr>Provider"</a>
+						<a href="modules/_model_index_.html">"model/index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_provider_localdataprovider_.html">"src/provider/<wbr>Local<wbr>Data<wbr>Provider"</a>
+						<a href="modules/_model_interfaces_.html">"model/interfaces"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_provider_remotedataprovider_.html">"src/provider/<wbr>Remote<wbr>Data<wbr>Provider"</a>
+						<a href="modules/_model_internal_.html">"model/internal"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_provider_index_.html">"src/provider/index"</a>
+						<a href="modules/_model_missing_.html">"model/missing"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_provider_utils_.html">"src/provider/utils"</a>
+						<a href="modules/_provider_acommondataprovider_.html">"provider/ACommon<wbr>Data<wbr>Provider"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_aaggregatedgrouprenderer_.html">"src/renderer/AAggregated<wbr>Group<wbr>Renderer"</a>
+						<a href="modules/_provider_adataprovider_.html">"provider/AData<wbr>Provider"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_anumberscellrenderer_.html">"src/renderer/ANumbers<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_provider_localdataprovider_.html">"provider/<wbr>Local<wbr>Data<wbr>Provider"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_actionrenderer_.html">"src/renderer/<wbr>Action<wbr>Renderer"</a>
+						<a href="modules/_provider_remotedataprovider_.html">"provider/<wbr>Remote<wbr>Data<wbr>Provider"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_aggregategrouprenderer_.html">"src/renderer/<wbr>Aggregate<wbr>Group<wbr>Renderer"</a>
+						<a href="modules/_provider_index_.html">"provider/index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_annotationrenderer_.html">"src/renderer/<wbr>Annotation<wbr>Renderer"</a>
+						<a href="modules/_provider_utils_.html">"provider/utils"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_barcellrenderer_.html">"src/renderer/<wbr>Bar<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_aaggregatedgrouprenderer_.html">"renderer/AAggregated<wbr>Group<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_booleancellrenderer_.html">"src/renderer/<wbr>Boolean<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_anumberscellrenderer_.html">"renderer/ANumbers<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_boxplotcellrenderer_.html">"src/renderer/<wbr>Boxplot<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_actionrenderer_.html">"renderer/<wbr>Action<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_brightnesscellrenderer_.html">"src/renderer/<wbr>Brightness<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_aggregategrouprenderer_.html">"renderer/<wbr>Aggregate<wbr>Group<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_categoricalcellrenderer_.html">"src/renderer/<wbr>Categorical<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_annotationrenderer_.html">"renderer/<wbr>Annotation<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_categoricalheatmapcellrenderer_.html">"src/renderer/<wbr>Categorical<wbr>Heatmap<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_barcellrenderer_.html">"renderer/<wbr>Bar<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_categoricalstackeddistributionlcellrenderer_.html">"src/renderer/<wbr>Categorical<wbr>Stacked<wbr>Distributionl<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_booleancellrenderer_.html">"renderer/<wbr>Boolean<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_circlecellrenderer_.html">"src/renderer/<wbr>Circle<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_boxplotcellrenderer_.html">"renderer/<wbr>Boxplot<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_defaultcellrenderer_.html">"src/renderer/<wbr>Default<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_brightnesscellrenderer_.html">"renderer/<wbr>Brightness<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_dotcellrenderer_.html">"src/renderer/<wbr>Dot<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_categoricalcellrenderer_.html">"renderer/<wbr>Categorical<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_groupcellrenderer_.html">"src/renderer/<wbr>Group<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_categoricalheatmapcellrenderer_.html">"renderer/<wbr>Categorical<wbr>Heatmap<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_heatmapcellrenderer_.html">"src/renderer/<wbr>Heatmap<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_categoricalstackeddistributionlcellrenderer_.html">"renderer/<wbr>Categorical<wbr>Stacked<wbr>Distributionl<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_histogramcellrenderer_.html">"src/renderer/<wbr>Histogram<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_circlecellrenderer_.html">"renderer/<wbr>Circle<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_imagecellrenderer_.html">"src/renderer/<wbr>Image<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_defaultcellrenderer_.html">"renderer/<wbr>Default<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_interleavingcellrenderer_.html">"src/renderer/<wbr>Interleaving<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_dotcellrenderer_.html">"renderer/<wbr>Dot<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_linkcellrenderer_.html">"src/renderer/<wbr>Link<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_groupcellrenderer_.html">"renderer/<wbr>Group<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_linkmapcellrenderer_.html">"src/renderer/<wbr>Link<wbr>Map<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_heatmapcellrenderer_.html">"renderer/<wbr>Heatmap<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_loadingcellrenderer_.html">"src/renderer/<wbr>Loading<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_histogramcellrenderer_.html">"renderer/<wbr>Histogram<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_mapbarcellrenderer_.html">"src/renderer/<wbr>Map<wbr>Bar<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_imagecellrenderer_.html">"renderer/<wbr>Image<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_multilevelcellrenderer_.html">"src/renderer/<wbr>Multi<wbr>Level<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_interleavingcellrenderer_.html">"renderer/<wbr>Interleaving<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_rankcellrenderer_.html">"src/renderer/<wbr>Rank<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_linkcellrenderer_.html">"renderer/<wbr>Link<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_selectionrenderer_.html">"src/renderer/<wbr>Selection<wbr>Renderer"</a>
+						<a href="modules/_renderer_linkmapcellrenderer_.html">"renderer/<wbr>Link<wbr>Map<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_sparklinecellrenderer_.html">"src/renderer/<wbr>Sparkline<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_loadingcellrenderer_.html">"renderer/<wbr>Loading<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_stringcellrenderer_.html">"src/renderer/<wbr>String<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_mapbarcellrenderer_.html">"renderer/<wbr>Map<wbr>Bar<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_tablecellrenderer_.html">"src/renderer/<wbr>Table<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_multilevelcellrenderer_.html">"renderer/<wbr>Multi<wbr>Level<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_upsetcellrenderer_.html">"src/renderer/<wbr>UpSet<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_rankcellrenderer_.html">"renderer/<wbr>Rank<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_verticalbarcellrenderer_.html">"src/renderer/<wbr>Vertical<wbr>Bar<wbr>Cell<wbr>Renderer"</a>
+						<a href="modules/_renderer_selectionrenderer_.html">"renderer/<wbr>Selection<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_impose_.html">"src/renderer/impose"</a>
+						<a href="modules/_renderer_sparklinecellrenderer_.html">"renderer/<wbr>Sparkline<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_index_.html">"src/renderer/index"</a>
+						<a href="modules/_renderer_stringcellrenderer_.html">"renderer/<wbr>String<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_interfaces_.html">"src/renderer/interfaces"</a>
+						<a href="modules/_renderer_tablecellrenderer_.html">"renderer/<wbr>Table<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_missing_.html">"src/renderer/missing"</a>
+						<a href="modules/_renderer_upsetcellrenderer_.html">"renderer/<wbr>UpSet<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_renderer_utils_.html">"src/renderer/utils"</a>
+						<a href="modules/_renderer_verticalbarcellrenderer_.html">"renderer/<wbr>Vertical<wbr>Bar<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_styles_index_.html">"src/styles/index"</a>
+						<a href="modules/_renderer_impose_.html">"renderer/impose"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_alineup_.html">"src/ui/ALine<wbr>Up"</a>
+						<a href="modules/_renderer_index_.html">"renderer/index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_engineranking_.html">"src/ui/<wbr>Engine<wbr>Ranking"</a>
+						<a href="modules/_renderer_interfaces_.html">"renderer/interfaces"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_enginerenderer_.html">"src/ui/<wbr>Engine<wbr>Renderer"</a>
+						<a href="modules/_renderer_missing_.html">"renderer/missing"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_lineup_.html">"src/ui/<wbr>Line<wbr>Up"</a>
+						<a href="modules/_renderer_utils_.html">"renderer/utils"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_multilevelrendercolumn_.html">"src/ui/<wbr>Multi<wbr>Level<wbr>Render<wbr>Column"</a>
+						<a href="modules/_styles_index_.html">"styles/index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_rendercolumn_.html">"src/ui/<wbr>Render<wbr>Column"</a>
+						<a href="modules/_ui_alineup_.html">"ui/ALine<wbr>Up"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_selectionmanager_.html">"src/ui/<wbr>Selection<wbr>Manager"</a>
+						<a href="modules/_ui_engineranking_.html">"ui/<wbr>Engine<wbr>Ranking"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_slopegraph_.html">"src/ui/<wbr>Slope<wbr>Graph"</a>
+						<a href="modules/_ui_enginerenderer_.html">"ui/<wbr>Engine<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_animation_.html">"src/ui/animation"</a>
+						<a href="modules/_ui_lineup_.html">"ui/<wbr>Line<wbr>Up"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_adialog_.html">"src/ui/dialogs/ADialog"</a>
+						<a href="modules/_ui_multilevelrendercolumn_.html">"ui/<wbr>Multi<wbr>Level<wbr>Render<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_booleanfilterdialog_.html">"src/ui/dialogs/<wbr>Boolean<wbr>Filter<wbr>Dialog"</a>
+						<a href="modules/_ui_rendercolumn_.html">"ui/<wbr>Render<wbr>Column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_categoricalfilterdialog_.html">"src/ui/dialogs/<wbr>Categorical<wbr>Filter<wbr>Dialog"</a>
+						<a href="modules/_ui_selectionmanager_.html">"ui/<wbr>Selection<wbr>Manager"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_categoricalmappingfilterdialog_.html">"src/ui/dialogs/<wbr>Categorical<wbr>Mapping<wbr>Filter<wbr>Dialog"</a>
+						<a href="modules/_ui_slopegraph_.html">"ui/<wbr>Slope<wbr>Graph"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_changerendererdialog_.html">"src/ui/dialogs/<wbr>Change<wbr>Renderer<wbr>Dialog"</a>
+						<a href="modules/_ui_animation_.html">"ui/animation"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_compositechildrendialog_.html">"src/ui/dialogs/<wbr>Composite<wbr>Children<wbr>Dialog"</a>
+						<a href="modules/_ui_dialogs_adialog_.html">"ui/dialogs/ADialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_cutoffhierarchydialog_.html">"src/ui/dialogs/<wbr>Cut<wbr>Off<wbr>Hierarchy<wbr>Dialog"</a>
+						<a href="modules/_ui_dialogs_booleanfilterdialog_.html">"ui/dialogs/<wbr>Boolean<wbr>Filter<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_dialogmanager_.html">"src/ui/dialogs/<wbr>Dialog<wbr>Manager"</a>
+						<a href="modules/_ui_dialogs_categoricalfilterdialog_.html">"ui/dialogs/<wbr>Categorical<wbr>Filter<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_editpatterndialog_.html">"src/ui/dialogs/<wbr>Edit<wbr>Pattern<wbr>Dialog"</a>
+						<a href="modules/_ui_dialogs_categoricalmappingfilterdialog_.html">"ui/dialogs/<wbr>Categorical<wbr>Mapping<wbr>Filter<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_inputnumberdialog_.html">"src/ui/dialogs/<wbr>Input<wbr>Number<wbr>Dialog"</a>
+						<a href="modules/_ui_dialogs_changerendererdialog_.html">"ui/dialogs/<wbr>Change<wbr>Renderer<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_mappinglinedialog_.html">"src/ui/dialogs/<wbr>Mapping<wbr>Line<wbr>Dialog"</a>
+						<a href="modules/_ui_dialogs_compositechildrendialog_.html">"ui/dialogs/<wbr>Composite<wbr>Children<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_mappingsfilterdialog_.html">"src/ui/dialogs/<wbr>Mappings<wbr>Filter<wbr>Dialog"</a>
+						<a href="modules/_ui_dialogs_cutoffhierarchydialog_.html">"ui/dialogs/<wbr>Cut<wbr>Off<wbr>Hierarchy<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_morecolumnoptionsdialog_.html">"src/ui/dialogs/<wbr>More<wbr>Column<wbr>Options<wbr>Dialog"</a>
+						<a href="modules/_ui_dialogs_dialogmanager_.html">"ui/dialogs/<wbr>Dialog<wbr>Manager"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_reducedialog_.html">"src/ui/dialogs/<wbr>Reduce<wbr>Dialog"</a>
+						<a href="modules/_ui_dialogs_editpatterndialog_.html">"ui/dialogs/<wbr>Edit<wbr>Pattern<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_renamedialog_.html">"src/ui/dialogs/<wbr>Rename<wbr>Dialog"</a>
+						<a href="modules/_ui_dialogs_inputnumberdialog_.html">"ui/dialogs/<wbr>Input<wbr>Number<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_scripteditdialog_.html">"src/ui/dialogs/<wbr>Script<wbr>Edit<wbr>Dialog"</a>
+						<a href="modules/_ui_dialogs_mappinglinedialog_.html">"ui/dialogs/<wbr>Mapping<wbr>Line<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_searchdialog_.html">"src/ui/dialogs/<wbr>Search<wbr>Dialog"</a>
+						<a href="modules/_ui_dialogs_mappingsfilterdialog_.html">"ui/dialogs/<wbr>Mappings<wbr>Filter<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_sortdatedialog_.html">"src/ui/dialogs/<wbr>Sort<wbr>Date<wbr>Dialog"</a>
+						<a href="modules/_ui_dialogs_morecolumnoptionsdialog_.html">"ui/dialogs/<wbr>More<wbr>Column<wbr>Options<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_sortdialog_.html">"src/ui/dialogs/<wbr>Sort<wbr>Dialog"</a>
+						<a href="modules/_ui_dialogs_reducedialog_.html">"ui/dialogs/<wbr>Reduce<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_sortgroupdialog_.html">"src/ui/dialogs/<wbr>Sort<wbr>Group<wbr>Dialog"</a>
+						<a href="modules/_ui_dialogs_renamedialog_.html">"ui/dialogs/<wbr>Rename<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_stratifythresholddialog_.html">"src/ui/dialogs/<wbr>Stratify<wbr>Threshold<wbr>Dialog"</a>
+						<a href="modules/_ui_dialogs_scripteditdialog_.html">"ui/dialogs/<wbr>Script<wbr>Edit<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_stringfilterdialog_.html">"src/ui/dialogs/<wbr>String<wbr>Filter<wbr>Dialog"</a>
+						<a href="modules/_ui_dialogs_searchdialog_.html">"ui/dialogs/<wbr>Search<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_weightseditdialog_.html">"src/ui/dialogs/<wbr>Weights<wbr>Edit<wbr>Dialog"</a>
+						<a href="modules/_ui_dialogs_sortdatedialog_.html">"ui/dialogs/<wbr>Sort<wbr>Date<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_index_.html">"src/ui/dialogs/index"</a>
+						<a href="modules/_ui_dialogs_sortdialog_.html">"ui/dialogs/<wbr>Sort<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_dialogs_utils_.html">"src/ui/dialogs/utils"</a>
+						<a href="modules/_ui_dialogs_sortgroupdialog_.html">"ui/dialogs/<wbr>Sort<wbr>Group<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_header_.html">"src/ui/header"</a>
+						<a href="modules/_ui_dialogs_stratifythresholddialog_.html">"ui/dialogs/<wbr>Stratify<wbr>Threshold<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_index_.html">"src/ui/index"</a>
+						<a href="modules/_ui_dialogs_stringfilterdialog_.html">"ui/dialogs/<wbr>String<wbr>Filter<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_interfaces_.html">"src/ui/interfaces"</a>
+						<a href="modules/_ui_dialogs_weightseditdialog_.html">"ui/dialogs/<wbr>Weights<wbr>Edit<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_missing_.html">"src/ui/missing"</a>
+						<a href="modules/_ui_dialogs_index_.html">"ui/dialogs/index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_panel_searchbox_.html">"src/ui/panel/<wbr>Search<wbr>Box"</a>
+						<a href="modules/_ui_dialogs_utils_.html">"ui/dialogs/utils"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_panel_sidepanel_.html">"src/ui/panel/<wbr>Side<wbr>Panel"</a>
+						<a href="modules/_ui_header_.html">"ui/header"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_panel_sidepanelentry_.html">"src/ui/panel/<wbr>Side<wbr>Panel<wbr>Entry"</a>
+						<a href="modules/_ui_index_.html">"ui/index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_panel_sidepanelentryvis_.html">"src/ui/panel/<wbr>Side<wbr>Panel<wbr>Entry<wbr>Vis"</a>
+						<a href="modules/_ui_interfaces_.html">"ui/interfaces"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_panel_index_.html">"src/ui/panel/index"</a>
+						<a href="modules/_ui_missing_.html">"ui/missing"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_taggle_taggle_.html">"src/ui/taggle/<wbr>Taggle"</a>
+						<a href="modules/_ui_panel_searchbox_.html">"ui/panel/<wbr>Search<wbr>Box"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_taggle_tagglerenderer_.html">"src/ui/taggle/<wbr>Taggle<wbr>Renderer"</a>
+						<a href="modules/_ui_panel_sidepanel_.html">"ui/panel/<wbr>Side<wbr>Panel"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_taggle_index_.html">"src/ui/taggle/index"</a>
+						<a href="modules/_ui_panel_sidepanelentry_.html">"ui/panel/<wbr>Side<wbr>Panel<wbr>Entry"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_taggle_interfaces_.html">"src/ui/taggle/interfaces"</a>
+						<a href="modules/_ui_panel_sidepanelentryvis_.html">"ui/panel/<wbr>Side<wbr>Panel<wbr>Entry<wbr>Vis"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_taggle_spacefillingrule_.html">"src/ui/taggle/space<wbr>Filling<wbr>Rule"</a>
+						<a href="modules/_ui_panel_index_.html">"ui/panel/index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_src_ui_toolbar_.html">"src/ui/toolbar"</a>
-					</li>
-					<li class="label tsd-is-external">
-						<span>Externals</span>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_node_modules_lineupengine_src_acellrenderer_.html">"node_<wbr>modules/lineupengine/src/ACell<wbr>Renderer"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_node_modules_lineupengine_src_arowrenderer_.html">"node_<wbr>modules/lineupengine/src/ARow<wbr>Renderer"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_node_modules_lineupengine_src_abortable_.html">"node_<wbr>modules/lineupengine/src/abort<wbr>Able"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_node_modules_lineupengine_src_animation_keyfinder_.html">"node_<wbr>modules/lineupengine/src/animation/<wbr>Key<wbr>Finder"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_node_modules_lineupengine_src_animation_index_.html">"node_<wbr>modules/lineupengine/src/animation/index"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_node_modules_lineupengine_src_index_.html">"node_<wbr>modules/lineupengine/src/index"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_node_modules_lineupengine_src_logic_.html">"node_<wbr>modules/lineupengine/src/logic"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_node_modules_lineupengine_src_mixin_imixin_.html">"node_<wbr>modules/lineupengine/src/mixin/IMixin"</a>
+						<a href="modules/_ui_taggle_taggle_.html">"ui/taggle/<wbr>Taggle"</a>
 					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_node_modules_lineupengine_src_mixin_prefetchmixin_.html">"node_<wbr>modules/lineupengine/src/mixin/<wbr>Prefetch<wbr>Mixin"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_node_modules_lineupengine_src_mixin_index_.html">"node_<wbr>modules/lineupengine/src/mixin/index"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_node_modules_lineupengine_src_style_gridstylemanager_.html">"node_<wbr>modules/lineupengine/src/style/<wbr>Grid<wbr>Style<wbr>Manager"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_node_modules_lineupengine_src_style_icolumn_.html">"node_<wbr>modules/lineupengine/src/style/IColumn"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_node_modules_lineupengine_src_style_stylemanager_.html">"node_<wbr>modules/lineupengine/src/style/<wbr>Style<wbr>Manager"</a>
-					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_node_modules_lineupengine_src_style_index_.html">"node_<wbr>modules/lineupengine/src/style/index"</a>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_ui_taggle_tagglerenderer_.html">"ui/taggle/<wbr>Taggle<wbr>Renderer"</a>
 					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_node_modules_lineupengine_src_table_acelltablesection_.html">"node_<wbr>modules/lineupengine/src/table/ACell<wbr>Table<wbr>Section"</a>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_ui_taggle_index_.html">"ui/taggle/index"</a>
 					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_node_modules_lineupengine_src_table_multitablerowrenderer_.html">"node_<wbr>modules/lineupengine/src/table/<wbr>Multi<wbr>Table<wbr>Row<wbr>Renderer"</a>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_ui_taggle_interfaces_.html">"ui/taggle/interfaces"</a>
 					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_node_modules_lineupengine_src_table_index_.html">"node_<wbr>modules/lineupengine/src/table/index"</a>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_ui_taggle_spacefillingrule_.html">"ui/taggle/space<wbr>Filling<wbr>Rule"</a>
 					</li>
-					<li class=" tsd-kind-external-module tsd-is-external">
-						<a href="modules/_node_modules_lineupengine_src_table_internal_acelladapter_.html">"node_<wbr>modules/lineupengine/src/table/internal/ACell<wbr>Adapter"</a>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_ui_toolbar_.html">"ui/toolbar"</a>
 					</li>
 				</ul>
 			</nav>
