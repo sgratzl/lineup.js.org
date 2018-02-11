@@ -3,17 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>lineupjsx</title>
+	<title>&quot;utils&quot; | lineupjsx</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
 <header>
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">lineupjsx</a>
+					<a href="../index.html" class="title">lineupjsx</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -53,117 +53,111 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="globals.html">Globals</a>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="_utils_.html">&quot;utils&quot;</a>
 				</li>
 			</ul>
-			<h1> lineupjsx</h1>
+			<h1>External module &quot;utils&quot;</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<h1 id="lineup-js-react-wrapper-lineup-jsx-">LineUp.js React Wrapper (LineUp.jsx)</h1>
-				<p><a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-yellow.svg" alt="License: MIT"></a> <a href="https://npmjs.org/package/lineupjsx"><img src="https://badge.fury.io/js/lineupjsx.svg" alt="NPM version"></a>  <a href="https://circleci.com/gh/sgratzl/lineupjsx"><img src="https://circleci.com/gh/sgratzl/lineupjsx.svg?style=shield" alt="CircleCI"></a> </p>
-				<p>LineUp is an interactive technique designed to create, visualize and explore rankings of items based on a set of heterogeneous attributes.
-				This is a <a href="https://reactjs.org/">React</a> wrapper around the JavaScript library <a href="https://github.com/sgratzl/lineupjs">LineUp.js</a>. Details about the LineUp visualization technique can be found at <a href="http://lineup.caleydo.org">http://lineup.caleydo.org</a>. </p>
-				<h2 id="usage">Usage</h2>
-				<p><strong>Installation</strong></p>
-				<pre><code class="lang-bash">npm install --save lineupjsx
-</code></pre>
-				<pre><code class="lang-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://sgratzl.github.io/lineupjs_docs/masterx/LineUpJSx.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"https://sgratzl.github.io/lineupjs_docs/masterx/LineUpJSx.min.js"</span>&gt;</span><span class="undefined"></span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
-</code></pre>
-				<p><strong>Minimal Usage Example</strong></p>
-				<pre><code class="lang-javascript"><span class="hljs-comment">// generate some data</span>
-<span class="hljs-keyword">const</span> arr = [];
-<span class="hljs-keyword">const</span> cats = [<span class="hljs-string">'c1'</span>, <span class="hljs-string">'c2'</span>, <span class="hljs-string">'c3'</span>];
-<span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span>; ++i) {
-  arr.push({
-    <span class="hljs-attr">a</span>: <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>,
-    <span class="hljs-attr">d</span>: <span class="hljs-string">'Row '</span> + i,
-    <span class="hljs-attr">cat</span>: cats[<span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">3</span>)],
-    <span class="hljs-attr">cat2</span>: cats[<span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">3</span>)]
-  })
-}
-</code></pre>
-				<pre><code class="lang-jsx">&lt;LineUp data={arr}/&gt;
-</code></pre>
-				<p><a href="https://codepen.io/sgratzl/pen/mXEpMP">CodePen</a></p>
-				<p><img src="https://user-images.githubusercontent.com/4129778/34654173-32180ff8-f3f8-11e7-8469-229fa34a65dc.png" alt="Minimal Result"></p>
-				<p><strong>Advanced Usage Example</strong></p>
-				<pre><code class="lang-jsx"><span class="hljs-comment">// arr from before</span>
-&lt;LineUp data={arr} defaultRanking&gt;
-  &lt;LineUpStringColumnDesc column="d" label="Label" width={100} /&gt;
-  &lt;LineUpCategoricalColumnDesc column="cat" categories={cats} color="green" /&gt;
-  &lt;LineUpCategoricalColumnDesc column="cat2" categories={cats} color="blue" /&gt;
-  &lt;LineUpNumberColumnDesc column="a" domain={[0, 10]} color="blue" /&gt;
-
-  &lt;LineUpRanking groupBy="cat" sortBy="a:desc"&gt;
-    &lt;LineUpSupportColumn type="*" /&gt;
-    &lt;LineUpColumn column="*" /&gt;
-    &lt;LineUpImposeColumn label="a+cat" column="a" categeoricalColumn="cat2" /&gt;
-  &lt;/LineUpRanking&gt;
-&lt;/LineUp&gt;;
-</code></pre>
-				<p><a href="https://codepen.io/sgratzl/pen/yvJpWQ">CodePen</a></p>
-				<p><img src="https://user-images.githubusercontent.com/4129778/34654174-3235f784-f3f8-11e7-9361-44f5fa068bb9.png" alt="Advanced Result"></p>
-				<h2 id="supported-browsers">Supported Browsers</h2>
-				<ul>
-					<li>Chrome 64+ (best performance)</li>
-					<li>Firefox 57+</li>
-					<li>Edge 16+</li>
-				</ul>
-				<h2 id="development-environment">Development Environment</h2>
-				<p><strong>Installation</strong></p>
-				<pre><code class="lang-bash">git <span class="hljs-built_in">clone</span> https://github.com/sgratzl/lineupjsx.git
-<span class="hljs-built_in">cd</span> lineupjsx
-npm install
-</code></pre>
-				<p><strong>Build distribution packages</strong></p>
-				<pre><code class="lang-bash">npm run build
-</code></pre>
-				<p><strong>Run Linting</strong></p>
-				<pre><code class="lang-bash">npm run lint
-</code></pre>
-				<p><strong>Serve integrated webserver</strong></p>
-				<pre><code class="lang-bash">npm start
-</code></pre>
-				<h2 id="authors">Authors</h2>
-				<ul>
-					<li>Samuel Gratzl (@sgratzl)</li>
-				</ul>
-			</div>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Classes</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter"><a href="../classes/_utils_.childwrapper.html" class="tsd-kind-icon">Child<wbr>Wrapper</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter"><a href="_utils_.html#filterchildrenprops" class="tsd-kind-icon">filter<wbr>Children<wbr>Props</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+					<a name="filterchildrenprops" class="tsd-anchor"></a>
+					<h3>filter<wbr>Children<wbr>Props</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">filter<wbr>Children<wbr>Props&lt;T, P&gt;<span class="tsd-signature-symbol">(</span>children<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">React.ReactNode</span>, clazz<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../classes/_utils_.childwrapper.html" class="tsd-signature-type">ChildWrapper</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjsx/blob/db9dd81/src/utils.ts#L14">utils.ts:14</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+								<li>
+									<h4>P</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>children: <span class="tsd-signature-type">React.ReactNode</span></h5>
+								</li>
+								<li>
+									<h5>clazz: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../classes/_utils_.childwrapper.html" class="tsd-signature-type">ChildWrapper</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">P</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
+						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_lineup_.html">"<wbr>Line<wbr>Up"</a>
+						<a href="_lineup_.html">"<wbr>Line<wbr>Up"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_lineupranking_.html">"<wbr>Line<wbr>UpRanking"</a>
+						<a href="_lineupranking_.html">"<wbr>Line<wbr>UpRanking"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_taggle_.html">"<wbr>Taggle"</a>
+						<a href="_taggle_.html">"<wbr>Taggle"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_column_.html">"column"</a>
+						<a href="_column_.html">"column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_index_.html">"index"</a>
+						<a href="_index_.html">"index"</a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_utils_.html">"utils"</a>
+					<li class="current tsd-kind-external-module">
+						<a href="_utils_.html">"utils"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../classes/_utils_.childwrapper.html" class="tsd-kind-icon">Child<wbr>Wrapper</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="_utils_.html#filterchildrenprops" class="tsd-kind-icon">filter<wbr>Children<wbr>Props</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -232,7 +226,7 @@ npm install
 	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>
