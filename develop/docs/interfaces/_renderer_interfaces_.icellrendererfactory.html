@@ -1,0 +1,432 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>ICellRendererFactory | lineupjs</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">lineupjs</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-externals" checked />
+							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_renderer_interfaces_.html">&quot;renderer/interfaces&quot;</a>
+				</li>
+				<li>
+					<a href="_renderer_interfaces_.icellrendererfactory.html">ICellRendererFactory</a>
+				</li>
+			</ul>
+			<h1>Interface ICellRendererFactory</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">ICellRendererFactory</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implemented by</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../classes/_renderer_aaggregatedgrouprenderer_.aaggregatedgrouprenderer.html" class="tsd-signature-type">AAggregatedGroupRenderer</a></li>
+					<li><a href="../classes/_renderer_actionrenderer_.actionrenderer.html" class="tsd-signature-type">ActionRenderer</a></li>
+					<li><a href="../classes/_renderer_aggregategrouprenderer_.aggregategrouprenderer.html" class="tsd-signature-type">AggregateGroupRenderer</a></li>
+					<li><a href="../classes/_renderer_annotationrenderer_.annotationrenderer.html" class="tsd-signature-type">AnnotationRenderer</a></li>
+					<li><a href="../classes/_renderer_barcellrenderer_.barcellrenderer.html" class="tsd-signature-type">BarCellRenderer</a></li>
+					<li><a href="../classes/_renderer_booleancellrenderer_.booleancellrenderer.html" class="tsd-signature-type">BooleanCellRenderer</a></li>
+					<li><a href="../classes/_renderer_boxplotcellrenderer_.boxplotcellrenderer.html" class="tsd-signature-type">BoxplotCellRenderer</a></li>
+					<li><a href="../classes/_renderer_brightnesscellrenderer_.brightnesscellrenderer.html" class="tsd-signature-type">BrightnessCellRenderer</a></li>
+					<li><a href="../classes/_renderer_categoricalcellrenderer_.categoricalcellrenderer.html" class="tsd-signature-type">CategoricalCellRenderer</a></li>
+					<li><a href="../classes/_renderer_categoricalheatmapcellrenderer_.categoricalheatmapcellrenderer.html" class="tsd-signature-type">CategoricalHeatmapCellRenderer</a></li>
+					<li><a href="../classes/_renderer_categoricalstackeddistributionlcellrenderer_.categoricalstackeddistributionlcellrenderer.html" class="tsd-signature-type">CategoricalStackedDistributionlCellRenderer</a></li>
+					<li><a href="../classes/_renderer_circlecellrenderer_.circlecellrenderer.html" class="tsd-signature-type">CircleCellRenderer</a></li>
+					<li><a href="../classes/_renderer_defaultcellrenderer_.defaultcellrenderer.html" class="tsd-signature-type">DefaultCellRenderer</a></li>
+					<li><a href="../classes/_renderer_dotcellrenderer_.dotcellrenderer.html" class="tsd-signature-type">DotCellRenderer</a></li>
+					<li><a href="../classes/_renderer_groupcellrenderer_.groupcellrenderer.html" class="tsd-signature-type">GroupCellRenderer</a></li>
+					<li><a href="../classes/_renderer_heatmapcellrenderer_.heatmapcellrenderer.html" class="tsd-signature-type">HeatmapCellRenderer</a></li>
+					<li><a href="../classes/_renderer_histogramcellrenderer_.histogramcellrenderer.html" class="tsd-signature-type">HistogramCellRenderer</a></li>
+					<li><a href="../classes/_renderer_imagecellrenderer_.imagecellrenderer.html" class="tsd-signature-type">ImageCellRenderer</a></li>
+					<li><a href="../classes/_renderer_interleavingcellrenderer_.interleavingcellrenderer.html" class="tsd-signature-type">InterleavingCellRenderer</a></li>
+					<li><a href="../classes/_renderer_linkcellrenderer_.linkcellrenderer.html" class="tsd-signature-type">LinkCellRenderer</a></li>
+					<li><a href="../classes/_renderer_linkmapcellrenderer_.linkmapcellrenderer.html" class="tsd-signature-type">LinkMapCellRenderer</a></li>
+					<li><a href="../classes/_renderer_loadingcellrenderer_.loadingcellrenderer.html" class="tsd-signature-type">LoadingCellRenderer</a></li>
+					<li><a href="../classes/_renderer_mapbarcellrenderer_.mapbarcellrenderer.html" class="tsd-signature-type">MapBarCellRenderer</a></li>
+					<li><a href="../classes/_renderer_multilevelcellrenderer_.multilevelcellrenderer.html" class="tsd-signature-type">MultiLevelCellRenderer</a></li>
+					<li><a href="../classes/_renderer_multilevelcellrenderer_.multilevelcellrenderer.html" class="tsd-signature-type">MultiLevelCellRenderer</a></li>
+					<li><a href="../classes/_renderer_rankcellrenderer_.rankcellrenderer.html" class="tsd-signature-type">RankCellRenderer</a></li>
+					<li><a href="../classes/_renderer_selectionrenderer_.selectionrenderer.html" class="tsd-signature-type">SelectionRenderer</a></li>
+					<li><a href="../classes/_renderer_sparklinecellrenderer_.sparklinecellrenderer.html" class="tsd-signature-type">SparklineCellRenderer</a></li>
+					<li><a href="../classes/_renderer_stringcellrenderer_.stringcellrenderer.html" class="tsd-signature-type">StringCellRenderer</a></li>
+					<li><a href="../classes/_renderer_tablecellrenderer_.tablecellrenderer.html" class="tsd-signature-type">TableCellRenderer</a></li>
+					<li><a href="../classes/_renderer_upsetcellrenderer_.upsetcellrenderer.html" class="tsd-signature-type">UpSetCellRenderer</a></li>
+					<li><a href="../classes/_renderer_verticalbarcellrenderer_.verticalbarcellrenderer.html" class="tsd-signature-type">VerticalBarCellRenderer</a></li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_renderer_interfaces_.icellrendererfactory.html#grouptitle" class="tsd-kind-icon">group<wbr>Title</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_renderer_interfaces_.icellrendererfactory.html#summarytitle" class="tsd-kind-icon">summary<wbr>Title</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_renderer_interfaces_.icellrendererfactory.html#title" class="tsd-kind-icon">title</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_renderer_interfaces_.icellrendererfactory.html#canrender" class="tsd-kind-icon">can<wbr>Render</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_renderer_interfaces_.icellrendererfactory.html#create" class="tsd-kind-icon">create</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_renderer_interfaces_.icellrendererfactory.html#creategroup" class="tsd-kind-icon">create<wbr>Group</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_renderer_interfaces_.icellrendererfactory.html#createsummary" class="tsd-kind-icon">create<wbr>Summary</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="grouptitle" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> group<wbr>Title</h3>
+					<div class="tsd-signature tsd-kind-icon">group<wbr>Title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/cf503db/src/renderer/interfaces.ts#L108">renderer/interfaces.ts:108</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="summarytitle" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> summary<wbr>Title</h3>
+					<div class="tsd-signature tsd-kind-icon">summary<wbr>Title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/cf503db/src/renderer/interfaces.ts#L109">renderer/interfaces.ts:109</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="title" class="tsd-anchor"></a>
+					<h3>title</h3>
+					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/cf503db/src/renderer/interfaces.ts#L107">renderer/interfaces.ts:107</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="canrender" class="tsd-anchor"></a>
+					<h3>can<wbr>Render</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">can<wbr>Render<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="../classes/_model_column_.column.html" class="tsd-signature-type">Column</a>, mode<span class="tsd-signature-symbol">: </span><a href="../enums/_renderer_interfaces_.erendermode.html" class="tsd-signature-type">ERenderMode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/cf503db/src/renderer/interfaces.ts#L111">renderer/interfaces.ts:111</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>col: <a href="../classes/_model_column_.column.html" class="tsd-signature-type">Column</a></h5>
+								</li>
+								<li>
+									<h5>mode: <a href="../enums/_renderer_interfaces_.erendermode.html" class="tsd-signature-type">ERenderMode</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="create" class="tsd-anchor"></a>
+					<h3>create</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="../classes/_model_column_.column.html" class="tsd-signature-type">Column</a>, context<span class="tsd-signature-symbol">: </span><a href="_renderer_interfaces_.irendercontext.html" class="tsd-signature-type">IRenderContext</a>, hist<span class="tsd-signature-symbol">: </span><a href="_internal_math_.istatistics.html" class="tsd-signature-type">IStatistics</a><span class="tsd-signature-symbol"> | </span><a href="_internal_math_.icategoricalstatistics.html" class="tsd-signature-type">ICategoricalStatistics</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, imposer<span class="tsd-signature-symbol">?: </span><a href="_renderer_interfaces_.iimposer.html" class="tsd-signature-type">IImposer</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_renderer_interfaces_.icellrenderer.html" class="tsd-signature-type">ICellRenderer</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/cf503db/src/renderer/interfaces.ts#L113">renderer/interfaces.ts:113</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>col: <a href="../classes/_model_column_.column.html" class="tsd-signature-type">Column</a></h5>
+								</li>
+								<li>
+									<h5>context: <a href="_renderer_interfaces_.irendercontext.html" class="tsd-signature-type">IRenderContext</a></h5>
+								</li>
+								<li>
+									<h5>hist: <a href="_internal_math_.istatistics.html" class="tsd-signature-type">IStatistics</a><span class="tsd-signature-symbol"> | </span><a href="_internal_math_.icategoricalstatistics.html" class="tsd-signature-type">ICategoricalStatistics</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> imposer: <a href="_renderer_interfaces_.iimposer.html" class="tsd-signature-type">IImposer</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_renderer_interfaces_.icellrenderer.html" class="tsd-signature-type">ICellRenderer</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="creategroup" class="tsd-anchor"></a>
+					<h3>create<wbr>Group</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Group<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="../classes/_model_column_.column.html" class="tsd-signature-type">Column</a>, context<span class="tsd-signature-symbol">: </span><a href="_renderer_interfaces_.irendercontext.html" class="tsd-signature-type">IRenderContext</a>, hist<span class="tsd-signature-symbol">: </span><a href="_internal_math_.istatistics.html" class="tsd-signature-type">IStatistics</a><span class="tsd-signature-symbol"> | </span><a href="_internal_math_.icategoricalstatistics.html" class="tsd-signature-type">ICategoricalStatistics</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, imposer<span class="tsd-signature-symbol">?: </span><a href="_renderer_interfaces_.iimposer.html" class="tsd-signature-type">IImposer</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_renderer_interfaces_.igroupcellrenderer.html" class="tsd-signature-type">IGroupCellRenderer</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/cf503db/src/renderer/interfaces.ts#L115">renderer/interfaces.ts:115</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>col: <a href="../classes/_model_column_.column.html" class="tsd-signature-type">Column</a></h5>
+								</li>
+								<li>
+									<h5>context: <a href="_renderer_interfaces_.irendercontext.html" class="tsd-signature-type">IRenderContext</a></h5>
+								</li>
+								<li>
+									<h5>hist: <a href="_internal_math_.istatistics.html" class="tsd-signature-type">IStatistics</a><span class="tsd-signature-symbol"> | </span><a href="_internal_math_.icategoricalstatistics.html" class="tsd-signature-type">ICategoricalStatistics</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> imposer: <a href="_renderer_interfaces_.iimposer.html" class="tsd-signature-type">IImposer</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_renderer_interfaces_.igroupcellrenderer.html" class="tsd-signature-type">IGroupCellRenderer</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="createsummary" class="tsd-anchor"></a>
+					<h3>create<wbr>Summary</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Summary<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="../classes/_model_column_.column.html" class="tsd-signature-type">Column</a>, context<span class="tsd-signature-symbol">: </span><a href="_renderer_interfaces_.irendercontext.html" class="tsd-signature-type">IRenderContext</a>, interactive<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span>, imposer<span class="tsd-signature-symbol">?: </span><a href="_renderer_interfaces_.iimposer.html" class="tsd-signature-type">IImposer</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_renderer_interfaces_.isummaryrenderer.html" class="tsd-signature-type">ISummaryRenderer</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/cf503db/src/renderer/interfaces.ts#L117">renderer/interfaces.ts:117</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>col: <a href="../classes/_model_column_.column.html" class="tsd-signature-type">Column</a></h5>
+								</li>
+								<li>
+									<h5>context: <a href="_renderer_interfaces_.irendercontext.html" class="tsd-signature-type">IRenderContext</a></h5>
+								</li>
+								<li>
+									<h5>interactive: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> imposer: <a href="_renderer_interfaces_.iimposer.html" class="tsd-signature-type">IImposer</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_renderer_interfaces_.isummaryrenderer.html" class="tsd-signature-type">ISummaryRenderer</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="../globals.html"><em>Globals</em></a>
+					</li>
+					<li class="current tsd-kind-external-module">
+						<a href="../modules/_renderer_interfaces_.html">"renderer/interfaces"</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-enum tsd-parent-kind-external-module">
+						<a href="../enums/_renderer_interfaces_.erendermode.html" class="tsd-kind-icon">ERender<wbr>Mode</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_renderer_interfaces_.icellrenderer.html" class="tsd-kind-icon">ICell<wbr>Renderer</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_renderer_interfaces_.icellrendererfactory.html" class="tsd-kind-icon">ICell<wbr>Renderer<wbr>Factory</a>
+						<ul>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_renderer_interfaces_.icellrendererfactory.html#grouptitle" class="tsd-kind-icon">group<wbr>Title</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_renderer_interfaces_.icellrendererfactory.html#summarytitle" class="tsd-kind-icon">summary<wbr>Title</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_renderer_interfaces_.icellrendererfactory.html#title" class="tsd-kind-icon">title</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_renderer_interfaces_.icellrendererfactory.html#canrender" class="tsd-kind-icon">can<wbr>Render</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_renderer_interfaces_.icellrendererfactory.html#create" class="tsd-kind-icon">create</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_renderer_interfaces_.icellrendererfactory.html#creategroup" class="tsd-kind-icon">create<wbr>Group</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_renderer_interfaces_.icellrendererfactory.html#createsummary" class="tsd-kind-icon">create<wbr>Summary</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_renderer_interfaces_.igroupcellrenderer.html" class="tsd-kind-icon">IGroup<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_renderer_interfaces_.iimposer.html" class="tsd-kind-icon">IImposer</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_renderer_interfaces_.irendercontext.html" class="tsd-kind-icon">IRender<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_renderer_interfaces_.isummaryrenderer.html" class="tsd-kind-icon">ISummary<wbr>Renderer</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-module"><span class="tsd-kind-icon">Module</span></li>
+				<li class="tsd-kind-object-literal"><span class="tsd-kind-icon">Object literal</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+				<li class="tsd-kind-enum-member"><span class="tsd-kind-icon">Enumeration member</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-enum"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-enum"><span class="tsd-kind-icon">Method</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-interface"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-interface"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-interface"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-interface"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+				<li class="tsd-kind-constructor tsd-parent-kind-class"><span class="tsd-kind-icon">Constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class"><span class="tsd-kind-icon">Property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class"><span class="tsd-kind-icon">Method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class"><span class="tsd-kind-icon">Accessor</span></li>
+				<li class="tsd-kind-index-signature tsd-parent-kind-class"><span class="tsd-kind-icon">Index signature</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited constructor</span></li>
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-inherited"><span class="tsd-kind-icon">Inherited accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-protected"><span class="tsd-kind-icon">Protected accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private property</span></li>
+				<li class="tsd-kind-method tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private method</span></li>
+				<li class="tsd-kind-accessor tsd-parent-kind-class tsd-is-private"><span class="tsd-kind-icon">Private accessor</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static property</span></li>
+				<li class="tsd-kind-call-signature tsd-parent-kind-class tsd-is-static"><span class="tsd-kind-icon">Static method</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
+</body>
+</html>
