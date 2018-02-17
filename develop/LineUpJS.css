@@ -162,7 +162,7 @@
   font-size: 11pt;
   clear: right;
   animation: lu-dialogs-fade-in 0.4s; }
-  .lu-dialog h4, .lu-tooltip h4 {
+  .lu-dialog strong, .lu-tooltip strong {
     margin: 0.2em;
     display: inline-block; }
 
@@ -267,7 +267,7 @@
     bottom: -5px; }
 
 .lu-dialog-mapper {
-  width: 20em; }
+  width: 25em; }
   .lu-dialog-mapper > .lu-summary {
     height: 5em;
     margin: 0.5em 3px 0; }
@@ -277,16 +277,16 @@
     margin-top: 1em;
     display: none; }
     .lu-dialog-mapper div.lu-script textarea {
-      height: 4em;
+      height: 5em;
       width: 98%;
-      font-size: 8pt;
+      font-size: 9pt;
       display: block; }
   .lu-dialog-mapper[data-scale=script] div.lu-script {
     display: block; }
-  .lu-dialog-mapper h4[data-toggle] {
+  .lu-dialog-mapper strong[data-toggle] {
     margin-top: 1em;
     cursor: pointer; }
-    .lu-dialog-mapper h4[data-toggle]::before {
+    .lu-dialog-mapper strong[data-toggle]::before {
       display: inline-block;
       font: normal normal normal 14px/1 lu-font, serif;
       font-size: inherit;
@@ -295,7 +295,7 @@
       -moz-osx-font-smoothing: grayscale;
       content: "\E802";
       width: 0.8em; }
-    .lu-dialog-mapper h4[data-toggle][data-toggle=open]::before {
+    .lu-dialog-mapper strong[data-toggle][data-toggle=open]::before {
       content: "\E801"; }
   .lu-dialog-mapper .lu-details {
     display: none; }
@@ -303,7 +303,7 @@
     display: block; }
   .lu-dialog-mapper svg {
     shape-rendering: geometricprecision;
-    height: 12em; }
+    height: 15em; }
     .lu-dialog-mapper svg rect {
       fill: transparent;
       stroke: none; }
@@ -395,7 +395,8 @@
 .lu-summary select {
   border: 1px solid #999;
   border-radius: 3px;
-  padding: 3px 5px; }
+  padding: 3px 5px;
+  box-sizing: border-box; }
 
 .lu-summary select {
   outline: none;
@@ -405,9 +406,8 @@
   font-weight: normal;
   display: flex;
   align-items: center;
-  margin: 5px 0; }
-  .lu-summary label input[type=checkbox] {
-    margin: 0 5px 0 0; }
+  margin: 5px 0;
+  font-size: 13px; }
 
 .lu-toolbar {
   position: relative;
@@ -1502,6 +1502,7 @@ section.lu-slopegraph-header {
   .lu-search > input {
     width: 100%;
     border: 1px solid #999;
+    box-sizing: border-box;
     border-radius: 4px;
     padding: 3px 5px;
     outline: none; }
