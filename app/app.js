@@ -24974,10 +24974,6 @@ var __WEBPACK_AMD_DEFINE_FACTORY__, __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_
 /* 9 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/*! lineupjs - v3.0.1-beta.3 - 2018
-* https://github.com/sgratzl/lineupjs
-* Copyright (c) 2018 Samuel Gratzl; Licensed BSD-3-Clause*/
-
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(true)
 		module.exports = factory();
@@ -26079,13 +26075,14 @@ function models() {
 /* harmony export (immutable) */ __webpack_exports__["c"] = attr;
 /* harmony export (immutable) */ __webpack_exports__["h"] = noop;
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "g", function() { return noRenderer; });
-/* harmony export (immutable) */ __webpack_exports__["i"] = setText;
+/* harmony export (immutable) */ __webpack_exports__["j"] = setText;
 /* harmony export (immutable) */ __webpack_exports__["d"] = forEach;
 /* harmony export (immutable) */ __webpack_exports__["e"] = forEachChild;
 /* harmony export (immutable) */ __webpack_exports__["f"] = matchColumns;
-/* harmony export (immutable) */ __webpack_exports__["j"] = wideEnough;
+/* harmony export (immutable) */ __webpack_exports__["k"] = wideEnough;
 /* harmony export (immutable) */ __webpack_exports__["b"] = adaptTextColorToBgColor;
 /* harmony export (immutable) */ __webpack_exports__["a"] = adaptDynamicColorToBgColor;
+/* harmony export (immutable) */ __webpack_exports__["i"] = randomId;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__config__ = __webpack_require__(33);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_d3_color__ = __webpack_require__(25);
 
@@ -26182,6 +26179,9 @@ function adaptDynamicColorToBgColor(node, bgColor, title, width) {
     }
     node.style.color = null;
     node.innerHTML = title + "<span class=\"lu-gradient-text\" style=\"color: " + adapt + "\">" + title + "</span>";
+}
+function randomId(prefix) {
+    return "" + prefix + Math.floor(Math.random() * 1000).toString(36);
 }
 
 
@@ -26371,7 +26371,7 @@ var ADialog = (function () {
         }
         var parent = this.attachment.closest('.lu');
         if (this.options.title) {
-            this.node.insertAdjacentHTML('afterbegin', "<h4>" + this.options.title + "</h4>");
+            this.node.insertAdjacentHTML('afterbegin', "<strong>" + this.options.title + "</strong>");
         }
         if (this.options.fullDialog) {
             this.node.insertAdjacentHTML('beforeend', "<div>\n        <button type=\"submit\" title=\"Apply\"></button>\n        <button type=\"button\" title=\"Cancel\"></button>\n        <button type=\"reset\" title=\"Reset to default values\"></button>\n      </div>");
@@ -29854,15 +29854,23 @@ function defaultOptions() {
 
 "use strict";
 /* unused harmony export filterMissingText */
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return filterMissingMarkup; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "b", function() { return filterMissingNumberMarkup; });
+/* harmony export (immutable) */ __webpack_exports__["a"] = filterMissingMarkup;
+/* harmony export (immutable) */ __webpack_exports__["b"] = filterMissingNumberMarkup;
 /* harmony export (immutable) */ __webpack_exports__["c"] = findFilterMissing;
 /* harmony export (immutable) */ __webpack_exports__["d"] = updateFilterMissingNumberMarkup;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__dialogs_utils__ = __webpack_require__(53);
+
 var filterMissingText = 'Filter out rows containing missing values';
-var filterMissingMarkup = function (bakMissing) { return "<label class=\"lu-filter-missing\"><input type=\"checkbox\" " + (bakMissing ? 'checked="checked"' : '') + ">" + filterMissingText + "</label>"; };
-var filterMissingNumberMarkup = function (bakMissing, count) { return "<label class=\"lu-filter-missing\" " + (count === 0 ? 'class="lu-disabled"' : '') + "><input type=\"checkbox\" " + (bakMissing ? 'checked="checked"' : '') + " " + (count === 0 ? 'disabled' : '') + ">Filter out " + count + " missing value rows</label>"; };
+function filterMissingMarkup(bakMissing, idPrefix) {
+    var id = Object(__WEBPACK_IMPORTED_MODULE_0__dialogs_utils__["a" /* randomId */])(idPrefix);
+    return "<input type=\"checkbox\" " + (bakMissing ? 'checked="checked"' : '') + " id=\"" + id + "\"><label for=\"" + id + "\" class=\"lu-filter-missing\">" + filterMissingText + "</label>";
+}
+function filterMissingNumberMarkup(bakMissing, count, idPrefix) {
+    var id = Object(__WEBPACK_IMPORTED_MODULE_0__dialogs_utils__["a" /* randomId */])(idPrefix);
+    return "<input type=\"checkbox\" " + (bakMissing ? 'checked="checked"' : '') + " " + (count === 0 ? 'disabled' : '') + " id=\"" + id + "\"><label for=\"" + id + "\" class=\"lu-filter-missing\" " + (count === 0 ? 'class="lu-disabled"' : '') + ">Filter out " + count + " missing value rows</label>";
+}
 function findFilterMissing(node) {
-    return node.querySelector('.lu-filter-missing input');
+    return node.querySelector('.lu-filter-missing').previousElementSibling;
 }
 function updateFilterMissingNumberMarkup(element, count) {
     var checked = element.querySelector('input');
@@ -29871,7 +29879,7 @@ function updateFilterMissingNumberMarkup(element, count) {
         checked.disabled = false;
     }
     if (!checked.checked) {
-        element.lastChild.textContent = "Filter out " + count + " remaining missing value rows";
+        element.lastElementChild.textContent = "Filter out " + count + " remaining missing value rows";
     }
 }
 
@@ -31260,7 +31268,7 @@ function addTooltip(node, col) {
             return;
         }
         var parent = node.closest('.lu');
-        parent.insertAdjacentHTML('beforeend', "<div class=\"lu-tooltip\" data-type=\"" + col.desc.type + "\" data-type-cat=\"" + Object(__WEBPACK_IMPORTED_MODULE_5__model_annotations__["c" /* categoryOf */])(col).name + "\">\n        <div x-arrow></div>\n        <h4 class=\"lu-label\">" + col.label + "</h4>\n        <p>" + col.description.replace('\n', "<br/>") + "</p>\n    </div>");
+        parent.insertAdjacentHTML('beforeend', "<div class=\"lu-tooltip\" data-type=\"" + col.desc.type + "\" data-type-cat=\"" + Object(__WEBPACK_IMPORTED_MODULE_5__model_annotations__["c" /* categoryOf */])(col).name + "\">\n        <div x-arrow></div>\n        <strong class=\"lu-label\">" + col.label + "</strong>\n        <p>" + col.description.replace('\n', "<br/>") + "</p>\n    </div>");
         popper = new __WEBPACK_IMPORTED_MODULE_0_popper_js__["a" /* default */](node, parent.lastElementChild, {
             removeOnDestroy: true,
             placement: 'auto',
@@ -31605,7 +31613,9 @@ function mergeDropAble(node, column, ctx) {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony export (immutable) */ __webpack_exports__["a"] = updateFilterState;
+/* harmony export (immutable) */ __webpack_exports__["b"] = updateFilterState;
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__renderer_utils__ = __webpack_require__(4);
+/* harmony reexport (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return __WEBPACK_IMPORTED_MODULE_0__renderer_utils__["i"]; });
 function updateFilterState(attachment, column, filtered) {
     var toggle = function (n) {
         if (filtered) {
@@ -31622,6 +31632,7 @@ function updateFilterState(attachment, column, filtered) {
     }
     Array.from(root.querySelectorAll("[data-col-id=\"" + column.id + "\"] i[title^=Filter]")).forEach(toggle);
 }
+
 
 
 /***/ }),
@@ -33298,6 +33309,8 @@ function creatorFixed(fullname) {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__model_INumberColumn__ = __webpack_require__(5);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__model_NumberColumn__ = __webpack_require__(19);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__ADialog__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__utils__ = __webpack_require__(53);
+
 
 
 
@@ -33311,23 +33324,25 @@ var SortDialog = (function (_super) {
         return _this;
     }
     SortDialog.prototype.build = function (node) {
-        sortMethods(node, this.column, Object.keys(this.column instanceof __WEBPACK_IMPORTED_MODULE_1__model_BoxPlotColumn__["a" /* default */] ? __WEBPACK_IMPORTED_MODULE_2__model_INumberColumn__["c" /* ESortMethod */] : __WEBPACK_IMPORTED_MODULE_2__model_INumberColumn__["b" /* EAdvancedSortMethod */]));
-        sortOrder(node, this.column, this.column instanceof __WEBPACK_IMPORTED_MODULE_3__model_NumberColumn__["a" /* default */]);
+        sortMethods(node, this.column, Object.keys(this.column instanceof __WEBPACK_IMPORTED_MODULE_1__model_BoxPlotColumn__["a" /* default */] ? __WEBPACK_IMPORTED_MODULE_2__model_INumberColumn__["c" /* ESortMethod */] : __WEBPACK_IMPORTED_MODULE_2__model_INumberColumn__["b" /* EAdvancedSortMethod */]), this.dialog.idPrefix);
+        sortOrder(node, this.column, this.dialog.idPrefix, this.column instanceof __WEBPACK_IMPORTED_MODULE_3__model_NumberColumn__["a" /* default */]);
     };
     return SortDialog;
 }(__WEBPACK_IMPORTED_MODULE_4__ADialog__["a" /* default */]));
 /* harmony default export */ __webpack_exports__["a"] = (SortDialog);
-function sortMethods(node, column, methods) {
+function sortMethods(node, column, methods, idPrefix) {
+    var id = Object(__WEBPACK_IMPORTED_MODULE_5__utils__["a" /* randomId */])(idPrefix);
     var bak = column.getSortMethod();
-    methods.forEach(function (d) { return node.insertAdjacentHTML('beforeend', "<label><input type=\"radio\" name=\"multivaluesort\" value=\"" + d + "\"  " + ((bak === d) ? 'checked' : '') + " > " + (d.slice(0, 1).toUpperCase() + d.slice(1)) + "</label>"); });
+    methods.forEach(function (d) { return node.insertAdjacentHTML('beforeend', "<input id=\"" + id + d + "\" type=\"radio\" name=\"multivaluesort\" value=\"" + d + "\"  " + ((bak === d) ? 'checked' : '') + " ><label for=\"" + id + d + "\">" + (d.slice(0, 1).toUpperCase() + d.slice(1)) + "</label>"); });
     Array.from(node.querySelectorAll('input[name=multivaluesort]')).forEach(function (n) {
         n.addEventListener('change', function () { return column.setSortMethod(n.value); });
     });
 }
-function sortOrder(node, column, groupSortBy) {
+function sortOrder(node, column, idPrefix, groupSortBy) {
     if (groupSortBy === void 0) { groupSortBy = false; }
     var order = groupSortBy ? column.isGroupSortedByMe().asc : column.isSortedByMe().asc;
-    node.insertAdjacentHTML('beforeend', "\n        <h4>Sort Order</h4>\n        <label><input type=\"radio\" name=\"sortorder\" value=\"asc\"  " + ((order === 'asc') ? 'checked' : '') + " > Ascending</label>\n        <label><input type=\"radio\" name=\"sortorder\" value=\"desc\"  " + ((order === 'desc') ? 'checked' : '') + " > Decending</label>\n    ");
+    var id = Object(__WEBPACK_IMPORTED_MODULE_5__utils__["a" /* randomId */])(idPrefix);
+    node.insertAdjacentHTML('beforeend', "\n        <strong>Sort Order</strong>\n        <input id=\"" + id + "A\" type=\"radio\" name=\"sortorder\" value=\"asc\"  " + ((order === 'asc') ? 'checked' : '') + " ><label for=\"" + id + "A\">Ascending</label>\n        <input id=\"" + id + "A\" type=\"radio\" name=\"sortorder\" value=\"desc\"  " + ((order === 'desc') ? 'checked' : '') + " ><label for=\"" + id + "B\">Decending</label>\n    ");
     Array.from(node.querySelectorAll('input[name=sortorder]')).forEach(function (n) {
         n.addEventListener('change', function () {
             if (groupSortBy) {
@@ -38000,7 +38015,7 @@ var BrightnessCellRenderer = (function () {
                 var missing = Object(__WEBPACK_IMPORTED_MODULE_7__missing__["b" /* renderMissingDOM */])(n, col, d);
                 n.title = col.getLabel(d);
                 n.firstElementChild.style.backgroundColor = missing ? null : toHeatMapColor(col.getNumber(d), d, col, imposer);
-                Object(__WEBPACK_IMPORTED_MODULE_8__utils__["i" /* setText */])(n.lastElementChild, n.title);
+                Object(__WEBPACK_IMPORTED_MODULE_8__utils__["j" /* setText */])(n.lastElementChild, n.title);
             },
             render: function (ctx, d) {
                 if (Object(__WEBPACK_IMPORTED_MODULE_7__missing__["a" /* renderMissingCanvas */])(ctx, col, d, width)) {
@@ -41555,7 +41570,7 @@ var StringCellRenderer = (function () {
             update: function (n, d) {
                 Object(__WEBPACK_IMPORTED_MODULE_2__missing__["b" /* renderMissingDOM */])(n, col, d);
                 if (col.escape) {
-                    Object(__WEBPACK_IMPORTED_MODULE_3__utils__["i" /* setText */])(n, col.getLabel(d));
+                    Object(__WEBPACK_IMPORTED_MODULE_3__utils__["j" /* setText */])(n, col.getLabel(d));
                 }
                 else {
                     n.innerHTML = col.getLabel(d);
@@ -41592,7 +41607,7 @@ var StringCellRenderer = (function () {
         var form = node;
         var filterMissing = Object(__WEBPACK_IMPORTED_MODULE_1__ui_missing__["c" /* findFilterMissing */])(node);
         var input = node.querySelector('input[type="text"]');
-        var isRegex = node.querySelector('input[type="checkbox"]:first-of-type');
+        var isRegex = node.querySelector('input[type="checkbox"]');
         var update = function () {
             input.disabled = filterMissing.checked;
             isRegex.disabled = filterMissing.checked;
@@ -41632,7 +41647,7 @@ var StringCellRenderer = (function () {
             isRegex.disabled = filterMissing.checked;
         };
     };
-    StringCellRenderer.prototype.createSummary = function (col, _context, interactive) {
+    StringCellRenderer.prototype.createSummary = function (col, context, interactive) {
         if (!interactive) {
             return {
                 template: "<div></div>",
@@ -41648,8 +41663,9 @@ var StringCellRenderer = (function () {
             bak = '';
         }
         var update;
+        var id = Object(__WEBPACK_IMPORTED_MODULE_3__utils__["i" /* randomId */])(context.idPrefix);
         return {
-            template: "<form><input type=\"text\" placeholder=\"containing...\" autofocus value=\"" + ((bak instanceof RegExp) ? bak.source : bak) + "\">\n          <label><input type=\"checkbox\" " + ((bak instanceof RegExp) ? 'checked="checked"' : '') + ">RegExp</label>\n          " + Object(__WEBPACK_IMPORTED_MODULE_1__ui_missing__["a" /* filterMissingMarkup */])(bakMissing) + "</form>",
+            template: "<form><input type=\"text\" placeholder=\"containing...\" autofocus value=\"" + ((bak instanceof RegExp) ? bak.source : bak) + "\">\n          <input id=\"" + id + "\" type=\"checkbox\" " + ((bak instanceof RegExp) ? 'checked="checked"' : '') + "><label for=\"" + id + "\">RegExp</label>\n          " + Object(__WEBPACK_IMPORTED_MODULE_1__ui_missing__["a" /* filterMissingMarkup */])(bakMissing, context.idPrefix) + "</form>",
             update: function (node) {
                 if (!update) {
                     update = StringCellRenderer.interactiveSummary(col, node);
@@ -41696,7 +41712,7 @@ var DefaultCellRenderer = (function () {
             template: "<div> </div>",
             update: function (n, d) {
                 Object(__WEBPACK_IMPORTED_MODULE_0__missing__["b" /* renderMissingDOM */])(n, col, d);
-                Object(__WEBPACK_IMPORTED_MODULE_1__utils__["i" /* setText */])(n, col.getLabel(d));
+                Object(__WEBPACK_IMPORTED_MODULE_1__utils__["j" /* setText */])(n, col.getLabel(d));
             },
             render: __WEBPACK_IMPORTED_MODULE_1__utils__["h" /* noop */]
         };
@@ -41754,7 +41770,7 @@ var CategoricalCellRenderer = (function () {
                 Object(__WEBPACK_IMPORTED_MODULE_8__missing__["b" /* renderMissingDOM */])(n, col, d);
                 var v = col.getCategory(d);
                 n.firstElementChild.style.backgroundColor = v ? v.color : null;
-                Object(__WEBPACK_IMPORTED_MODULE_9__utils__["i" /* setText */])(n.lastElementChild, col.getLabel(d));
+                Object(__WEBPACK_IMPORTED_MODULE_9__utils__["j" /* setText */])(n.lastElementChild, col.getLabel(d));
             },
             render: function (ctx, d) {
                 if (Object(__WEBPACK_IMPORTED_MODULE_8__missing__["a" /* renderMissingCanvas */])(ctx, col, d, width)) {
@@ -41777,8 +41793,8 @@ var CategoricalCellRenderer = (function () {
             }
         };
     };
-    CategoricalCellRenderer.prototype.createSummary = function (col, _context, interactive) {
-        return (col instanceof __WEBPACK_IMPORTED_MODULE_3__model_CategoricalColumn__["a" /* default */] || col instanceof __WEBPACK_IMPORTED_MODULE_5__model_OrdinalColumn__["a" /* default */]) ? interactiveSummary(col, interactive) : staticSummary(col, interactive);
+    CategoricalCellRenderer.prototype.createSummary = function (col, ctx, interactive) {
+        return (col instanceof __WEBPACK_IMPORTED_MODULE_3__model_CategoricalColumn__["a" /* default */] || col instanceof __WEBPACK_IMPORTED_MODULE_5__model_OrdinalColumn__["a" /* default */]) ? interactiveSummary(col, interactive, ctx.idPrefix) : staticSummary(col, interactive);
     };
     return CategoricalCellRenderer;
 }());
@@ -41796,11 +41812,11 @@ function staticSummary(col, interactive) {
         }
     };
 }
-function interactiveSummary(col, interactive) {
-    var _a = hist(col, interactive || Object(__WEBPACK_IMPORTED_MODULE_9__utils__["j" /* wideEnough */])(col)), template = _a.template, update = _a.update;
+function interactiveSummary(col, interactive, idPrefix) {
+    var _a = hist(col, interactive || Object(__WEBPACK_IMPORTED_MODULE_9__utils__["k" /* wideEnough */])(col)), template = _a.template, update = _a.update;
     var filterUpdate;
     return {
-        template: "" + template + (interactive ? Object(__WEBPACK_IMPORTED_MODULE_7__ui_missing__["b" /* filterMissingNumberMarkup */])(false, 0) : '') + "</div>",
+        template: "" + template + (interactive ? Object(__WEBPACK_IMPORTED_MODULE_7__ui_missing__["b" /* filterMissingNumberMarkup */])(false, 0, idPrefix) : '') + "</div>",
         update: function (n, hist) {
             if (!filterUpdate) {
                 filterUpdate = interactiveHist(col, n);
@@ -42107,7 +42123,7 @@ function staticSummary(col, template, render) {
 }
 function interactiveSummary(col, context, template, render) {
     var f = filter(col);
-    template += "\n      <div data-handle=\"min-hint\" style=\"width: " + f.percent(f.filterMin) + "%\"></div>\n      <div data-handle=\"max-hint\" style=\"width: " + (100 - f.percent(f.filterMax)) + "%\"></div>\n      <div data-handle=\"min\" data-value=\"" + Object(__WEBPACK_IMPORTED_MODULE_3__internal_math__["e" /* round */])(f.filterMin, 2) + "\" style=\"left: " + f.percent(f.filterMin) + "%\" title=\"min filter, drag or shift click to change\"></div>\n      <div data-handle='max' data-value=\"" + Object(__WEBPACK_IMPORTED_MODULE_3__internal_math__["e" /* round */])(f.filterMax, 2) + "\" style=\"right: " + (100 - f.percent(f.filterMax)) + "%\" title=\"max filter, drag or shift click to change\"></div>\n      " + Object(__WEBPACK_IMPORTED_MODULE_8__ui_missing__["b" /* filterMissingNumberMarkup */])(f.filterMissing, 0) + "\n    ";
+    template += "\n      <div data-handle=\"min-hint\" style=\"width: " + f.percent(f.filterMin) + "%\"></div>\n      <div data-handle=\"max-hint\" style=\"width: " + (100 - f.percent(f.filterMax)) + "%\"></div>\n      <div data-handle=\"min\" data-value=\"" + Object(__WEBPACK_IMPORTED_MODULE_3__internal_math__["e" /* round */])(f.filterMin, 2) + "\" style=\"left: " + f.percent(f.filterMin) + "%\" title=\"min filter, drag or shift click to change\"></div>\n      <div data-handle='max' data-value=\"" + Object(__WEBPACK_IMPORTED_MODULE_3__internal_math__["e" /* round */])(f.filterMax, 2) + "\" style=\"right: " + (100 - f.percent(f.filterMax)) + "%\" title=\"max filter, drag or shift click to change\"></div>\n      " + Object(__WEBPACK_IMPORTED_MODULE_8__ui_missing__["b" /* filterMissingNumberMarkup */])(f.filterMissing, 0, context.idPrefix) + "\n    ";
     var updateFilter;
     return {
         template: template + "</div>",
@@ -42151,7 +42167,8 @@ function initFilter(node, col, context) {
         var dialogCtx = {
             attachment: min,
             manager: context.dialogManager,
-            level: 1
+            level: 1,
+            idPrefix: context.idPrefix
         };
         var dialog = new __WEBPACK_IMPORTED_MODULE_7__ui_dialogs_InputNumberDialog__["a" /* default */](dialogCtx, function (newValue) {
             minHint.style.width = f.percent(newValue) + "%";
@@ -42174,7 +42191,8 @@ function initFilter(node, col, context) {
         var dialogCtx = {
             attachment: max,
             manager: context.dialogManager,
-            level: 1
+            level: 1,
+            idPrefix: context.idPrefix
         };
         var dialog = new __WEBPACK_IMPORTED_MODULE_7__ui_dialogs_InputNumberDialog__["a" /* default */](dialogCtx, function (newValue) {
             maxHint.style.width = 100 - f.percent(newValue) + "%";
@@ -45474,7 +45492,8 @@ function dialogContext(ctx, level, evt) {
     return {
         attachment: evt.currentTarget,
         level: level,
-        manager: ctx.dialogManager
+        manager: ctx.dialogManager,
+        idPrefix: ctx.idPrefix
     };
 }
 function uiDialog(title, dialogClass, extraArgs, options) {
@@ -47845,7 +47864,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 var version = "3.0.1-beta.3";
-var buildId = "20180211-170059";
+var buildId = "20180212-184950";
 var license = "BSD-3-Clause";
 function createLocalDataProvider(data, columns, options) {
     if (options === void 0) { options = {}; }
@@ -51878,9 +51897,9 @@ var BarCellRenderer = (function () {
                 bar.style.width = missing ? '100%' : w + "%";
                 var color = Object(__WEBPACK_IMPORTED_MODULE_4__impose__["a" /* colorOf */])(col, d, imposer);
                 bar.style.backgroundColor = missing ? null : color;
-                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["i" /* setText */])(bar.firstElementChild, title);
+                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["j" /* setText */])(bar.firstElementChild, title);
                 var item = bar.firstElementChild;
-                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["i" /* setText */])(item, title);
+                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["j" /* setText */])(item, title);
                 Object(__WEBPACK_IMPORTED_MODULE_2__utils__["a" /* adaptDynamicColorToBgColor */])(item, color || __WEBPACK_IMPORTED_MODULE_1__model_Column__["a" /* default */].DEFAULT_COLOR, title, w / 100);
             },
             render: function (ctx, d) {
@@ -52223,7 +52242,7 @@ var CategoricalHeatmapCellRenderer = (function () {
     CategoricalHeatmapCellRenderer.prototype.createSummary = function (col) {
         var categories = col.categories;
         var templateRows = '<div>';
-        var labels = Object(__WEBPACK_IMPORTED_MODULE_4__utils__["j" /* wideEnough */])(col);
+        var labels = Object(__WEBPACK_IMPORTED_MODULE_4__utils__["k" /* wideEnough */])(col);
         for (var _i = 0, categories_2 = categories; _i < categories_2.length; _i++) {
             var cat = categories_2[_i];
             templateRows += "<div title=\"" + cat.label + "\"" + (labels ? " data-title=\"" + cat.label + "\"" : '') + " style=\"background-color: " + cat.color + "\"></div>";
@@ -52280,8 +52299,8 @@ var CategoricalStackedDistributionlCellRenderer = (function () {
             }
         };
     };
-    CategoricalStackedDistributionlCellRenderer.prototype.createSummary = function (col, _context, interactive) {
-        return (col instanceof __WEBPACK_IMPORTED_MODULE_2__model_CategoricalColumn__["a" /* default */] || col instanceof __WEBPACK_IMPORTED_MODULE_3__model_OrdinalColumn__["a" /* default */]) ? interactiveSummary(col, interactive) : staticSummary(col);
+    CategoricalStackedDistributionlCellRenderer.prototype.createSummary = function (col, ctx, interactive) {
+        return (col instanceof __WEBPACK_IMPORTED_MODULE_2__model_CategoricalColumn__["a" /* default */] || col instanceof __WEBPACK_IMPORTED_MODULE_3__model_OrdinalColumn__["a" /* default */]) ? interactiveSummary(col, interactive, ctx.idPrefix) : staticSummary(col);
     };
     return CategoricalStackedDistributionlCellRenderer;
 }());
@@ -52299,11 +52318,11 @@ function staticSummary(col) {
         }
     };
 }
-function interactiveSummary(col, interactive) {
+function interactiveSummary(col, interactive, idPrefix) {
     var _a = stackedBar(col), template = _a.template, update = _a.update;
     var filterUpdate;
     return {
-        template: "" + template + (interactive ? Object(__WEBPACK_IMPORTED_MODULE_4__ui_missing__["b" /* filterMissingNumberMarkup */])(false, 0) : '') + "</div>",
+        template: "" + template + (interactive ? Object(__WEBPACK_IMPORTED_MODULE_4__ui_missing__["b" /* filterMissingNumberMarkup */])(false, 0, idPrefix) : '') + "</div>",
         update: function (n, hist) {
             if (!filterUpdate) {
                 filterUpdate = Object(__WEBPACK_IMPORTED_MODULE_5__CategoricalCellRenderer__["b" /* interactiveHist */])(col, n);
@@ -52380,7 +52399,7 @@ var CircleCellRenderer = (function () {
                 Object(__WEBPACK_IMPORTED_MODULE_5__utils__["c" /* attr */])(n, {}, {
                     background: missing ? null : "radial-gradient(circle closest-side, " + Object(__WEBPACK_IMPORTED_MODULE_2__impose__["a" /* colorOf */])(col, d, imposer) + " " + p + "%, transparent " + p + "%)"
                 });
-                Object(__WEBPACK_IMPORTED_MODULE_5__utils__["i" /* setText */])(n.firstElementChild, col.getLabel(d));
+                Object(__WEBPACK_IMPORTED_MODULE_5__utils__["j" /* setText */])(n.firstElementChild, col.getLabel(d));
             },
             render: __WEBPACK_IMPORTED_MODULE_5__utils__["h" /* noop */]
         };
@@ -52623,7 +52642,7 @@ var HeatmapCellRenderer = (function (_super) {
     };
     HeatmapCellRenderer.prototype.createSummary = function (col) {
         var labels = col.labels.slice();
-        while (labels.length > 0 && !Object(__WEBPACK_IMPORTED_MODULE_7__utils__["j" /* wideEnough */])(col, labels.length)) {
+        while (labels.length > 0 && !Object(__WEBPACK_IMPORTED_MODULE_7__utils__["k" /* wideEnough */])(col, labels.length)) {
             labels = labels.filter(function (_, i) { return i % 2 === 0; });
         }
         var templateRows = '<div>';
@@ -54038,7 +54057,7 @@ var LinkCellRenderer = (function () {
                 }
                 n.href = col.getValue(d);
                 if (col.escape) {
-                    Object(__WEBPACK_IMPORTED_MODULE_3__utils__["i" /* setText */])(n, col.getLabel(d));
+                    Object(__WEBPACK_IMPORTED_MODULE_3__utils__["j" /* setText */])(n, col.getLabel(d));
                 }
                 else {
                     n.innerHTML = col.getLabel(d);
@@ -54279,7 +54298,7 @@ var RankCellRenderer = (function () {
             template: "<div class=\"lu-right\"> </div>",
             update: function (n, d) {
                 Object(__WEBPACK_IMPORTED_MODULE_1__missing__["b" /* renderMissingDOM */])(n, col, d);
-                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["i" /* setText */])(n, col.getLabel(d));
+                Object(__WEBPACK_IMPORTED_MODULE_2__utils__["j" /* setText */])(n, col.getLabel(d));
             },
             render: __WEBPACK_IMPORTED_MODULE_2__utils__["h" /* noop */]
         };
@@ -54813,6 +54832,8 @@ function dropAble(node, mimeTypes, onDrop, onDragOver, stopPropagation) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ADialog__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__(53);
+
 
 
 var ChangeRendererDialog = (function (_super) {
@@ -54830,7 +54851,8 @@ var ChangeRendererDialog = (function (_super) {
         var currentSummary = this.column.getSummaryRenderer();
         var _a = this.ctx.getPossibleRenderer(this.column), item = _a.item, group = _a.group, summary = _a.summary;
         console.assert(item.length > 1 || group.length > 1 || summary.length > 1);
-        node.insertAdjacentHTML('beforeend', "\n      " + item.map(function (d) { return "<label><input type=\"radio\" name=\"renderer\" value=" + d.type + "  " + ((current === d.type) ? 'checked' : '') + "> " + d.label + "</label>"; }).join('') + "\n      <h4>Group Visualization</h4>\n      " + group.map(function (d) { return "<label><input type=\"radio\" name=\"group\" value=" + d.type + "  " + ((currentGroup === d.type) ? 'checked' : '') + "> " + d.label + "</label>"; }).join('') + "\n      <h4>Summary Visualization</h4>\n      " + summary.map(function (d) { return "<label><input type=\"radio\" name=\"summary\" value=" + d.type + "  " + ((currentSummary === d.type) ? 'checked' : '') + "> " + d.label + "</label>"; }).join('') + "\n    ");
+        var id = Object(__WEBPACK_IMPORTED_MODULE_2__utils__["a" /* randomId */])(this.dialog.idPrefix);
+        node.insertAdjacentHTML('beforeend', "\n      " + item.map(function (d) { return "<input id=\"" + id + "0" + d.type + "\" type=\"radio\" name=\"renderer\" value=\"" + d.type + "\" " + ((current === d.type) ? 'checked' : '') + "><label for=\"" + id + "0" + d.type + "\">" + d.label + "</label>"; }).join('') + "\n      <strong>Group Visualization</strong>\n      " + group.map(function (d) { return "<input id=\"" + id + "1" + d.type + "\" type=\"radio\" name=\"group\" value=\"" + d.type + "\" " + ((currentGroup === d.type) ? 'checked' : '') + "><label for=\"" + id + "1" + d.type + "\">" + d.label + "</label>"; }).join('') + "\n      <strong>Summary Visualization</strong>\n      " + summary.map(function (d) { return "<input id=\"" + id + "2" + d.type + "\" type=\"radio\" name=\"summary\" value=\"" + d.type + "\" " + ((currentSummary === d.type) ? 'checked' : '') + "><label for=\"" + id + "2" + d.type + "\">" + d.label + "</label>"; }).join('') + "\n    ");
         Array.from(node.querySelectorAll('input[name="renderer"]')).forEach(function (n) {
             n.addEventListener('change', function () { return _this.column.setRenderer(n.value); });
         });
@@ -54940,10 +54962,11 @@ var BooleanFilterDialog = (function (_super) {
         return _this;
     }
     BooleanFilterDialog.prototype.build = function (node) {
-        node.insertAdjacentHTML('beforeend', "\n     <label><input type=\"radio\" name=\"boolean_check\" value=\"null\" " + (this.before == null ? 'checked="checked"' : '') + ">No Filter</label>\n     <label><input type=\"radio\" name=\"boolean_check\" value=\"true\" " + (this.before === true ? 'checked="checked"' : '') + ">True</label>\n     <label><input type=\"radio\" name=\"boolean_check\" value=\"false\" " + (this.before === false ? 'checked="checked"' : '') + ">False</label>\n    ");
+        var id = Object(__WEBPACK_IMPORTED_MODULE_2__utils__["a" /* randomId */])(this.dialog.idPrefix);
+        node.insertAdjacentHTML('beforeend', "\n     <input id=\"" + id + "0\" type=\"radio\" name=\"boolean_check\" value=\"null\" " + (this.before == null ? 'checked="checked"' : '') + "><label id=\"" + id + "0\">No Filter</label>\n     <input id=\"" + id + "1\" type=\"radio\" name=\"boolean_check\" value=\"true\" " + (this.before === true ? 'checked="checked"' : '') + "><label id=\"" + id + "1\">True</label>\n     <input id=\"" + id + "2\" type=\"radio\" name=\"boolean_check\" value=\"false\" " + (this.before === false ? 'checked="checked"' : '') + "><label id=\"" + id + "2\">False</label>\n    ");
     };
     BooleanFilterDialog.prototype.updateFilter = function (filter) {
-        Object(__WEBPACK_IMPORTED_MODULE_2__utils__["a" /* updateFilterState */])(this.attachment, this.column, filter != null);
+        Object(__WEBPACK_IMPORTED_MODULE_2__utils__["b" /* updateFilterState */])(this.attachment, this.column, filter != null);
         this.column.setFilter(filter);
     };
     BooleanFilterDialog.prototype.reset = function () {
@@ -54990,16 +55013,17 @@ var CategoricalFilterDialog = (function (_super) {
     CategoricalFilterDialog.prototype.build = function (node) {
         var _this = this;
         node.classList.add('lu-filter-table');
-        node.insertAdjacentHTML('beforeend', "<div>\n        <label><input type=\"checkbox\" checked><span></span><div>Un/Select All</div></label>\n        " + this.column.categories.map(function (c) { return "<label><input data-cat=\"" + c.name + "\" type=\"checkbox\"" + (Object(__WEBPACK_IMPORTED_MODULE_1__model_ICategoricalColumn__["c" /* isCategoryIncluded */])(_this.before, c) ? 'checked' : '') + "><span style=\"background-color: " + c.color + "\"></span><div>" + c.label + "</div></label>"; }).join('') + "\n    </div>");
+        var id = Object(__WEBPACK_IMPORTED_MODULE_4__utils__["a" /* randomId */])(this.dialog.idPrefix);
+        node.insertAdjacentHTML('beforeend', "<div>\n        <input id=\"" + id + "\" type=\"checkbox\" checked><label for=\"" + id + "\"><span></span><div>Un/Select All</div></label>\n        " + this.column.categories.map(function (c) { return "<input for=\"" + id + c.name + "\" data-cat=\"" + c.name + "\" type=\"checkbox\"" + (Object(__WEBPACK_IMPORTED_MODULE_1__model_ICategoricalColumn__["c" /* isCategoryIncluded */])(_this.before, c) ? 'checked' : '') + "><label for=\"" + id + c.name + "\"><span style=\"background-color: " + c.color + "\"></span><div>" + c.label + "</div></label>"; }).join('') + "\n    </div>");
         this.findInput('input:not([data-cat])').onchange = function () {
             var _this = this;
             Array.from(node.querySelectorAll('input[data-cat]')).forEach(function (n) { return n.checked = _this.checked; });
         };
-        node.insertAdjacentHTML('beforeend', Object(__WEBPACK_IMPORTED_MODULE_2__missing__["a" /* filterMissingMarkup */])(this.before.filterMissing));
+        node.insertAdjacentHTML('beforeend', Object(__WEBPACK_IMPORTED_MODULE_2__missing__["a" /* filterMissingMarkup */])(this.before.filterMissing, this.dialog.idPrefix));
     };
     CategoricalFilterDialog.prototype.updateFilter = function (filter, filterMissing) {
         var noFilter = filter == null && filterMissing === false;
-        Object(__WEBPACK_IMPORTED_MODULE_4__utils__["a" /* updateFilterState */])(this.attachment, this.column, !noFilter);
+        Object(__WEBPACK_IMPORTED_MODULE_4__utils__["b" /* updateFilterState */])(this.attachment, this.column, !noFilter);
         this.column.setFilter(noFilter ? null : { filter: filter, filterMissing: filterMissing });
     };
     CategoricalFilterDialog.prototype.reset = function () {
@@ -55054,9 +55078,10 @@ var CategoricalMappingFilterDialog = (function (_super) {
             range: Object(__WEBPACK_IMPORTED_MODULE_1__internal__["g" /* round */])(d.value * 100, 2)
         }); });
         joint.sort(function (a, b) { return a.label.localeCompare(b.label); });
-        node.insertAdjacentHTML('beforeend', "<div>\n        <label><input type=\"checkbox\" checked><div>Un/Select All</div></label>\n        " + joint.map(function (_a) {
+        var id = Object(__WEBPACK_IMPORTED_MODULE_5__utils__["a" /* randomId */])(this.dialog.idPrefix);
+        node.insertAdjacentHTML('beforeend', "<div>\n        <input id=\"" + id + "\" type=\"checkbox\" checked><label for=\"" + id + "\"><div>Un/Select All</div></label>\n        " + joint.map(function (_a) {
             var name = _a.name, color = _a.color, label = _a.label, range = _a.range;
-            return "<label><input data-cat=\"" + name + "\" type=\"checkbox\"" + (Object(__WEBPACK_IMPORTED_MODULE_2__model_ICategoricalColumn__["c" /* isCategoryIncluded */])(_this.before, name) ? 'checked' : '') + ">\n        <input type=\"number\" value=\"" + range + "\" min=\"0\" max=\"100\" size=\"5\"><div><div style=\"background-color: " + color + "; width: " + range + "%\"></div></div><div>" + label + "</div></label>";
+            return "<input id=\"" + id + name + "\" data-cat=\"" + name + "\" type=\"checkbox\"" + (Object(__WEBPACK_IMPORTED_MODULE_2__model_ICategoricalColumn__["c" /* isCategoryIncluded */])(_this.before, name) ? 'checked' : '') + ">\n        <input type=\"number\" value=\"" + range + "\" min=\"0\" max=\"100\" size=\"5\"><label for=\"" + id + name + "\"><div><div style=\"background-color: " + color + "; width: " + range + "%\"></div></div><div>" + label + "</div></label>";
         }).join('') + "\n    </div>");
         this.findInput('input[type=checkbox]:not([data-cat])').onchange = function () {
             var _this = this;
@@ -55067,11 +55092,11 @@ var CategoricalMappingFilterDialog = (function (_super) {
                 d.nextElementSibling.firstElementChild.style.width = d.value + "%";
             };
         });
-        node.insertAdjacentHTML('beforeend', Object(__WEBPACK_IMPORTED_MODULE_3__missing__["a" /* filterMissingMarkup */])(this.before.filterMissing));
+        node.insertAdjacentHTML('beforeend', Object(__WEBPACK_IMPORTED_MODULE_3__missing__["a" /* filterMissingMarkup */])(this.before.filterMissing, this.dialog.idPrefix));
     };
     CategoricalMappingFilterDialog.prototype.updateFilter = function (filter, filterMissing) {
         var noFilter = filter == null && filterMissing === false;
-        Object(__WEBPACK_IMPORTED_MODULE_5__utils__["a" /* updateFilterState */])(this.attachment, this.column, !noFilter);
+        Object(__WEBPACK_IMPORTED_MODULE_5__utils__["b" /* updateFilterState */])(this.attachment, this.column, !noFilter);
         this.column.setFilter(noFilter ? null : { filter: filter, filterMissing: filterMissing });
     };
     CategoricalMappingFilterDialog.prototype.reset = function () {
@@ -55245,7 +55270,7 @@ var EditPatternDialog = (function (_super) {
     }
     EditPatternDialog.prototype.build = function (node) {
         var templates = this.column.patternTemplates;
-        node.insertAdjacentHTML('beforeend', "<h4>Edit Pattern (access via ${value}, ${item})</h4><input\n        type=\"text\"\n        size=\"30\"\n        value=\"" + this.column.getPattern() + "\"\n        required\n        autofocus\n        placeholder=\"pattern (access via ${value}, ${item})\"\n        " + (templates.length > 0 ? "list=\"ui" + this.idPrefix + "lineupPatternList\"" : '') + "\n      >");
+        node.insertAdjacentHTML('beforeend', "<strong>Edit Pattern (access via ${value}, ${item})</strong><input\n        type=\"text\"\n        size=\"30\"\n        value=\"" + this.column.getPattern() + "\"\n        required\n        autofocus\n        placeholder=\"pattern (access via ${value}, ${item})\"\n        " + (templates.length > 0 ? "list=\"ui" + this.idPrefix + "lineupPatternList\"" : '') + "\n      >");
         if (templates.length > 0) {
             node.insertAdjacentHTML('beforeend', "<datalist id=\"ui" + this.idPrefix + "lineupPatternList\">" + templates.map(function (t) { return "<option value=\"" + t + "\">"; }) + "</datalist>");
         }
@@ -55333,7 +55358,7 @@ var MappingsFilterDialog = (function (_super) {
     MappingsFilterDialog.prototype.build = function (node) {
         var _this = this;
         node.classList.add('lu-dialog-mapper');
-        node.insertAdjacentHTML('beforeend', "\n        <div><label for=\"" + this.idPrefix + "mapping_type\"><h4>Mapping / Scaling Type:</h4> <select id=\"" + this.idPrefix + "mapping_type\">\n        <option value=\"linear\">Linear</option>\n        <option value=\"linear_invert\">Invert</option>\n        <option value=\"linear_abs\">Absolute</option>\n        <option value=\"log\">Log</option>\n        <option value=\"pow1.1\">Pow 1.1</option>\n        <option value=\"pow2\">Pow 2</option>\n        <option value=\"pow3\">Pow 3</option>\n        <option value=\"sqrt\">Sqrt</option>\n        <option value=\"script\">Custom Script</option>\n      </select>\n      </label></div>\n        " + this.summary.template + "\n        <h4 data-toggle>Mapping Details</h4>\n        <div class=\"lu-details\"><h4>Domain (min - max): </h4><input id=\"" + this.idPrefix + "min\" required type=\"number\" value=\"" + Object(__WEBPACK_IMPORTED_MODULE_1__internal__["g" /* round */])(this.rawDomain[0], 3) + "\" step=\"any\"> - <input id=\"" + this.idPrefix + "max\" required type=\"number\" value=\"" + Object(__WEBPACK_IMPORTED_MODULE_1__internal__["g" /* round */])(this.rawDomain[1], 3) + "\" step=\"any\"></div>\n        <h4 class=\"lu-details\" style=\"text-align: center\">Input Domain (min - max)</h4>\n        <svg class=\"lu-details\" viewBox=\"0 0 106 66\">\n           <g transform=\"translate(3,3)\">\n              <line x2=\"100\"></line>\n              <rect y=\"-3\" width=\"100\" height=\"10\"></rect>\n              <line y1=\"60\" x2=\"100\" y2=\"60\"></line>\n              <rect y=\"36\" width=\"100\" height=\"10\"></rect>\n           </g>\n        </svg>\n        <h4 class=\"lu-details\" style=\"text-align: center; margin-top: 0\">Output Normalized Domain (0 - 1)</h4>\n        <div class=\"lu-script\">\n          <h4>Custom Mapping Script</h4>\n          <textarea></textarea>\n        </div>");
+        node.insertAdjacentHTML('beforeend', "\n        <div><label for=\"" + this.idPrefix + "mapping_type\"><strong>Mapping / Scaling Type:</strong></label><select id=\"" + this.idPrefix + "mapping_type\" class=\"browser-default\">\n        <option value=\"linear\">Linear</option>\n        <option value=\"linear_invert\">Invert</option>\n        <option value=\"linear_abs\">Absolute</option>\n        <option value=\"log\">Log</option>\n        <option value=\"pow1.1\">Pow 1.1</option>\n        <option value=\"pow2\">Pow 2</option>\n        <option value=\"pow3\">Pow 3</option>\n        <option value=\"sqrt\">Sqrt</option>\n        <option value=\"script\">Custom Script</option>\n      </select>\n      </div>\n        " + this.summary.template + "\n        <strong data-toggle>Mapping Details</strong>\n        <div class=\"lu-details\"><strong>Domain (min - max): </strong><input id=\"" + this.idPrefix + "min\" required type=\"number\" value=\"" + Object(__WEBPACK_IMPORTED_MODULE_1__internal__["g" /* round */])(this.rawDomain[0], 3) + "\" step=\"any\"> - <input id=\"" + this.idPrefix + "max\" required type=\"number\" value=\"" + Object(__WEBPACK_IMPORTED_MODULE_1__internal__["g" /* round */])(this.rawDomain[1], 3) + "\" step=\"any\"></div>\n        <strong class=\"lu-details\" style=\"text-align: center\">Input Domain (min - max)</strong>\n        <svg class=\"lu-details\" viewBox=\"0 0 106 66\">\n           <g transform=\"translate(3,3)\">\n              <line x2=\"100\"></line>\n              <rect y=\"-3\" width=\"100\" height=\"10\"></rect>\n              <line y1=\"60\" x2=\"100\" y2=\"60\"></line>\n              <rect y=\"36\" width=\"100\" height=\"10\"></rect>\n           </g>\n        </svg>\n        <strong class=\"lu-details\" style=\"text-align: center; margin-top: 0\">Output Normalized Domain (0 - 1)</strong>\n        <div class=\"lu-script\">\n          <strong>Custom Mapping Script</strong>\n          <textarea></textarea>\n        </div>");
         var summary = node.children[1];
         summary.classList.add('lu-summary');
         summary.dataset.interactive = '';
@@ -55448,7 +55473,7 @@ var MappingsFilterDialog = (function (_super) {
         });
     };
     MappingsFilterDialog.prototype.applyMapping = function (newScale, filter) {
-        Object(__WEBPACK_IMPORTED_MODULE_6__utils__["a" /* updateFilterState */])(this.attachment, this.column, !Object(__WEBPACK_IMPORTED_MODULE_3__model_internal__["c" /* isDummyNumberFilter */])(filter));
+        Object(__WEBPACK_IMPORTED_MODULE_6__utils__["b" /* updateFilterState */])(this.attachment, this.column, !Object(__WEBPACK_IMPORTED_MODULE_3__model_internal__["c" /* isDummyNumberFilter */])(filter));
         this.column.setMapping(newScale);
         this.column.setFilter(filter);
     };
@@ -55533,7 +55558,7 @@ var MappingLineDialog = (function (_super) {
     MappingLineDialog.prototype.build = function (node) {
         var _this = this;
         var domain = this.adapter.domain();
-        node.insertAdjacentHTML('beforeend', "\n        <h4>Input Domain Value (min ... max)</h4>\n        <input type=\"number\" value=\"" + Object(__WEBPACK_IMPORTED_MODULE_3__internal_math__["e" /* round */])(this.adapter.unnormalizeRaw(this.line.domain), 3) + "\" " + (this.line.frozen ? 'readonly' : '') + " autofocus required min=\"" + domain[0] + "\" max=\"" + domain[1] + "\" step=\"any\">\n        <h4>Output Normalized Value (0 ... 1)</h4>\n        <input type=\"number\" value=\"" + Object(__WEBPACK_IMPORTED_MODULE_3__internal_math__["e" /* round */])(this.line.range / 100, 3) + "\" required min=\"0\" max=\"1\" step=\"any\">\n        <button type=\"button\" " + (this.line.frozen ? 'disabled' : '') + " >Remove Mapping Line</button>\n      ");
+        node.insertAdjacentHTML('beforeend', "\n        <strong>Input Domain Value (min ... max)</strong>\n        <input type=\"number\" value=\"" + Object(__WEBPACK_IMPORTED_MODULE_3__internal_math__["e" /* round */])(this.adapter.unnormalizeRaw(this.line.domain), 3) + "\" " + (this.line.frozen ? 'readonly' : '') + " autofocus required min=\"" + domain[0] + "\" max=\"" + domain[1] + "\" step=\"any\">\n        <strong>Output Normalized Value (0 ... 1)</strong>\n        <input type=\"number\" value=\"" + Object(__WEBPACK_IMPORTED_MODULE_3__internal_math__["e" /* round */])(this.line.range / 100, 3) + "\" required min=\"0\" max=\"1\" step=\"any\">\n        <button type=\"button\" " + (this.line.frozen ? 'disabled' : '') + " >Remove Mapping Line</button>\n      ");
         this.forEach('input', function (d) { return d.onchange = function () { return _this.submit(); }; });
         this.find('button').addEventListener('click', function () {
             _this.destroy();
@@ -55603,7 +55628,8 @@ var MappingLine = (function () {
             var ctx = {
                 manager: _this.adapter.dialog.manager,
                 level: _this.adapter.dialog.level + 1,
-                attachment: _this.node
+                attachment: _this.node,
+                idPrefix: _this.adapter.dialog.idPrefix
             };
             var dialog = new MappingLineDialog(_this, ctx, _this.adapter);
             dialog.open();
@@ -55665,7 +55691,7 @@ var ReduceDialog = (function (_super) {
             getSortMethod: function () { return _this.column.getReduce(); },
             setSortMethod: function (s) { return _this.column.setReduce(s); }
         };
-        Object(__WEBPACK_IMPORTED_MODULE_3__SortDialog__["b" /* sortMethods */])(node, wrapper, Object.keys(__WEBPACK_IMPORTED_MODULE_1__model_INumberColumn__["b" /* EAdvancedSortMethod */]));
+        Object(__WEBPACK_IMPORTED_MODULE_3__SortDialog__["b" /* sortMethods */])(node, wrapper, Object.keys(__WEBPACK_IMPORTED_MODULE_1__model_INumberColumn__["b" /* EAdvancedSortMethod */]), this.dialog.idPrefix);
     };
     return ReduceDialog;
 }(__WEBPACK_IMPORTED_MODULE_2__ADialog__["a" /* default */]));
@@ -55714,6 +55740,8 @@ var ScriptEditDialog = (function (_super) {
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_tslib__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__ADialog__ = __webpack_require__(7);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__utils__ = __webpack_require__(53);
+
 
 
 var SearchDialog = (function (_super) {
@@ -55726,7 +55754,8 @@ var SearchDialog = (function (_super) {
     }
     SearchDialog.prototype.build = function (node) {
         var _this = this;
-        node.insertAdjacentHTML('beforeend', "<input type=\"text\" size=\"20\" value=\"\" required autofocus placeholder=\"search... (>= 3 chars)\"><label><input type=\"checkbox\">RegExp</label>");
+        var id = Object(__WEBPACK_IMPORTED_MODULE_2__utils__["a" /* randomId */])(this.dialog.idPrefix);
+        node.insertAdjacentHTML('beforeend', "<input type=\"text\" size=\"20\" value=\"\" required autofocus placeholder=\"search... (>= 3 chars)\"><input id=\"" + id + "\" type=\"checkbox\"><label for=\"" + id + "\">RegExp</label>");
         var input = node.querySelector('input[type="text"]');
         var checkbox = node.querySelector('input[type="checkbox"]');
         var update = function () {
@@ -55769,8 +55798,8 @@ var SortDateDialog = (function (_super) {
         return _this;
     }
     SortDateDialog.prototype.build = function (node) {
-        Object(__WEBPACK_IMPORTED_MODULE_2__SortDialog__["b" /* sortMethods */])(node, this.column, ['min', 'max', 'median']);
-        Object(__WEBPACK_IMPORTED_MODULE_2__SortDialog__["c" /* sortOrder */])(node, this.column);
+        Object(__WEBPACK_IMPORTED_MODULE_2__SortDialog__["b" /* sortMethods */])(node, this.column, ['min', 'max', 'median'], this.dialog.idPrefix);
+        Object(__WEBPACK_IMPORTED_MODULE_2__SortDialog__["c" /* sortOrder */])(node, this.column, this.dialog.idPrefix);
     };
     return SortDateDialog;
 }(__WEBPACK_IMPORTED_MODULE_1__ADialog__["a" /* default */]));
@@ -55796,8 +55825,8 @@ var SortDialog = (function (_super) {
         return _this;
     }
     SortDialog.prototype.build = function (node) {
-        Object(__WEBPACK_IMPORTED_MODULE_2__SortDialog__["b" /* sortMethods */])(node, this.column, ['name', 'count']);
-        Object(__WEBPACK_IMPORTED_MODULE_2__SortDialog__["c" /* sortOrder */])(node, this.column, true);
+        Object(__WEBPACK_IMPORTED_MODULE_2__SortDialog__["b" /* sortMethods */])(node, this.column, ['name', 'count'], this.dialog.idPrefix);
+        Object(__WEBPACK_IMPORTED_MODULE_2__SortDialog__["c" /* sortOrder */])(node, this.column, this.dialog.idPrefix, true);
     };
     return SortDialog;
 }(__WEBPACK_IMPORTED_MODULE_1__ADialog__["a" /* default */]));
@@ -55831,7 +55860,7 @@ var StratifyThresholdDialog = (function (_super) {
             return false;
         }
         var domain = this.column.getOriginalMapping().domain;
-        node.insertAdjacentHTML('beforeend', "<h4>Threshold: </h4><input\n        type=\"number\"\n        size=\"15\"\n        value=\"" + (this.before.length > 0 ? this.before[0] : Object(__WEBPACK_IMPORTED_MODULE_2__internal_math__["e" /* round */])((domain[1] - domain[0]) / 2, 2)) + "\"\n        required\n        autofocus\n        min=\"" + domain[0] + "\"\n        max=\"" + domain[1] + "\"\n        step=\"any\"\n      >");
+        node.insertAdjacentHTML('beforeend', "<strong>Threshold: </strong><input\n        type=\"number\"\n        size=\"15\"\n        value=\"" + (this.before.length > 0 ? this.before[0] : Object(__WEBPACK_IMPORTED_MODULE_2__internal_math__["e" /* round */])((domain[1] - domain[0]) / 2, 2)) + "\"\n        required\n        autofocus\n        min=\"" + domain[0] + "\"\n        max=\"" + domain[1] + "\"\n        step=\"any\"\n      >");
         return true;
     };
     StratifyThresholdDialog.prototype.reset = function () {
@@ -55875,7 +55904,7 @@ var StringFilterDialog = (function (_super) {
         return _this;
     }
     StringFilterDialog.prototype.updateFilter = function (filter) {
-        Object(__WEBPACK_IMPORTED_MODULE_4__utils__["a" /* updateFilterState */])(this.attachment, this.column, filter != null && filter !== '');
+        Object(__WEBPACK_IMPORTED_MODULE_4__utils__["b" /* updateFilterState */])(this.attachment, this.column, filter != null && filter !== '');
         this.column.setFilter(filter);
     };
     StringFilterDialog.prototype.reset = function () {
@@ -55890,7 +55919,7 @@ var StringFilterDialog = (function (_super) {
             return true;
         }
         var input = this.findInput('input[type="text"]').value;
-        var isRegex = this.findInput('input[type="checkbox"]:first-of-type').checked;
+        var isRegex = this.findInput('input[type="checkbox"]').checked;
         this.updateFilter(isRegex ? new RegExp(input) : input);
         return true;
     };
@@ -55901,10 +55930,11 @@ var StringFilterDialog = (function (_super) {
         if (bakMissing) {
             bak = '';
         }
-        node.insertAdjacentHTML('beforeend', "<input type=\"text\" placeholder=\"containing...\" autofocus value=\"" + ((bak instanceof RegExp) ? bak.source : bak) + "\" style=\"width: 100%\">\n    <label><input type=\"checkbox\" " + ((bak instanceof RegExp) ? 'checked="checked"' : '') + ">RegExp</label>\n    " + Object(__WEBPACK_IMPORTED_MODULE_2__missing__["a" /* filterMissingMarkup */])(bakMissing));
+        var id = Object(__WEBPACK_IMPORTED_MODULE_4__utils__["a" /* randomId */])(this.dialog.idPrefix);
+        node.insertAdjacentHTML('beforeend', "<input type=\"text\" placeholder=\"containing...\" autofocus value=\"" + ((bak instanceof RegExp) ? bak.source : bak) + "\" style=\"width: 100%\">\n    <input id=\"" + id + "\" type=\"checkbox\" " + ((bak instanceof RegExp) ? 'checked="checked"' : '') + "><label for=\"" + id + "\">RegExp</label>\n    " + Object(__WEBPACK_IMPORTED_MODULE_2__missing__["a" /* filterMissingMarkup */])(bakMissing, this.dialog.idPrefix));
         var filterMissing = Object(__WEBPACK_IMPORTED_MODULE_2__missing__["c" /* findFilterMissing */])(node);
         var input = node.querySelector('input[type="text"]');
-        var isRegex = node.querySelector('input[type="checkbox"]:first-of-type');
+        var isRegex = node.querySelector('input[type="checkbox"]');
         var update = function () {
             input.disabled = filterMissing.checked;
             isRegex.disabled = filterMissing.checked;
@@ -57471,6 +57501,7 @@ module.exports = function equal(a, b) {
 /***/ })
 /******/ ]);
 });
+//# sourceMappingURL=LineUpJS.js.map
 
 /***/ }),
 /* 10 */
