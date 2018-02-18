@@ -14134,7 +14134,7 @@ var EngineRenderer = (function (_super) {
             this.updateHist();
         }
         var round2 = function (v) { return Object(__WEBPACK_IMPORTED_MODULE_2__internal__["g" /* round */])(v, 2); };
-        var rowPadding = round2(this.zoomFactor * this.options.rowPadding);
+        var rowPadding = 0;
         var groupPadding = round2(this.zoomFactor * this.options.groupPadding);
         var heightsFor = function (ranking, data) {
             if (_this.options.dynamicHeight) {
@@ -16296,6 +16296,9 @@ function isComplexAccessor(column) {
     return typeof column === 'string' && column.indexOf('.') >= 0;
 }
 function resolveComplex(column, row) {
+    if (row.hasOwnProperty(column)) {
+        return row[column];
+    }
     var resolve = function (obj, col) {
         if (obj === undefined) {
             return obj;
@@ -20773,17 +20776,10 @@ var TaggleRenderer = (function (_super) {
             var item = data[rowIndex];
             return _this.rule ? _this.rule.levelOfDetail(item, height(item)) : 'high';
         };
-        var padding = function (item) {
-            if (!item) {
-                item = data[0];
-            }
-            var lod = _this.rule ? _this.rule.levelOfDetail(item, height(item)) : 'high';
-            return lod === 'high' ? _this.options.rowPadding : 0;
-        };
         return {
             defaultHeight: typeof instance.item === 'number' ? instance.item : NaN,
             height: height,
-            padding: padding
+            padding: 0
         };
     };
     TaggleRenderer.prototype.createEventList = function () {
@@ -22243,6 +22239,7 @@ var DataBuilder = (function (_super) {
             columnTypes: {}
         };
         _this.rankBuilders = [];
+        _this._deriveColors = false;
         return _this;
     }
     DataBuilder.prototype.singleSelection = function () {
@@ -22273,7 +22270,7 @@ var DataBuilder = (function (_super) {
         var _a;
     };
     DataBuilder.prototype.deriveColors = function () {
-        Object(__WEBPACK_IMPORTED_MODULE_1__provider__["d" /* deriveColors */])(this.columns.filter(function (d) { return typeof d !== 'function'; }));
+        this._deriveColors = true;
         return this;
     };
     DataBuilder.prototype.registerColumnType = function (type, clazz) {
@@ -22298,7 +22295,11 @@ var DataBuilder = (function (_super) {
     };
     DataBuilder.prototype.buildData = function () {
         var _this = this;
-        var r = new __WEBPACK_IMPORTED_MODULE_2__provider_LocalDataProvider__["a" /* default */](this.data, this.columns.map(function (d) { return typeof d === 'function' ? d(_this.data) : d; }), this.providerOptions);
+        var columns = this.columns.map(function (d) { return typeof d === 'function' ? d(_this.data) : d; });
+        if (this._deriveColors) {
+            Object(__WEBPACK_IMPORTED_MODULE_1__provider__["d" /* deriveColors */])(columns);
+        }
+        var r = new __WEBPACK_IMPORTED_MODULE_2__provider_LocalDataProvider__["a" /* default */](this.data, columns, this.providerOptions);
         if (this.rankBuilders.length === 0) {
             this.defaultRanking();
         }
@@ -22892,7 +22893,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 var version = "3.0.1-beta.3";
-var buildId = "20180217-201240";
+var buildId = "20180218-032700";
 var license = "BSD-3-Clause";
 function createLocalDataProvider(data, columns, options) {
     if (options === void 0) { options = {}; }
