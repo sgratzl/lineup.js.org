@@ -52,14 +52,15 @@
   </nav>
 
   <main data-state="initial">
-    <div class="lu"></div>
+    <div class="lu-c"></div>
     <div class="container valign-wrapper">
       <div class="row" style="flex: 1 1 auto">
         <div class="center-align col s12" id="dropper">
+          <div class="carousel">
+          </div>
           <a class="btn btn-floating btn-large pulse tooltipped" data-position="bottom" data-delay="50" data-tooltip="Drop file here or Click to select file">
             <i class="material-icons">file_upload</i>
           </a>
-          <input type="file">
         </div>
         <div class="center-align col s12" id="uploader">
           <i class="material-icons medium">build</i>
@@ -69,6 +70,7 @@
         </div>
       </div>
     </div>
+    </div>
   </main>
 
   <footer class="page-footer">
@@ -76,7 +78,7 @@
       <div class="container">
         © 2017
         <a class="grey-text text-lighten-4" href="https://github.com/sgratzl" target="_blank">Samuel Gratzl</a>
-        <a class="grey-text text-lighten-4 right" href="https://github.com/sgratzl/lineupjs">LineUp.js</a>
+        <a class="grey-text text-lighten-4 right" href="https://lineup.js.org" target="_blank">LineUp.js</a>
       </div>
     </div>
   </footer>
@@ -86,6 +88,8 @@
     <form id="createCodePenHelper" method="post" action="https://codepen.io/pen/define" target="_blank">
       <input type="hidden" name="data">
     </form>
+
+    <input type="file">
   </div>
 
   <div style="display: none" id="export-helper">

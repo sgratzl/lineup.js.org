@@ -8531,16 +8531,6 @@ body {
       z-index: 100;
       opacity: 1;
       transition: opacity 0.5s ease; }
-    body > main .lu {
-      position: absolute;
-      left: 5px;
-      right: 5px;
-      top: 5px;
-      bottom: 5px;
-      visibility: hidden;
-      opacity: 0;
-      transition: opacity 0.5s ease;
-      pointer-events: none; }
     body > main[data-state=initial] #uploader {
       display: none; }
     body > main[data-state=uploading] #dropper {
@@ -8554,11 +8544,6 @@ body {
       pointer-events: all;
       opacity: 1; }
 
-input[type=file] {
-  position: absolute;
-  left: -10000px;
-  visibility: hidden; }
-
 .brand-logo {
   margin-left: 1em; }
 
@@ -8567,6 +8552,30 @@ nav .fixed-action-btn li {
   text-align: right; }
   nav .fixed-action-btn li > a {
     margin: 0; }
+
+.carousel {
+  height: 600px; }
+  .carousel .card-image {
+    height: 250px; }
+  .carousel .carousel-item {
+    width: 500px;
+    height: 400px; }
+  .carousel .card-reveal p {
+    text-align: justify; }
+
+.lu-c {
+  position: absolute !important;
+  left: 5px;
+  right: 5px;
+  top: 5px;
+  bottom: 5px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none; }
+/*! lineupjs - v3.0.1-beta.3 - 2018
+* https://lineup.js.org
+* Copyright (c) 2018 Samuel Gratzl; Licensed BSD-3-Clause*/
 .lineup-engine [aria-hidden=true],
 .lu [aria-hidden=true],
 .lu-header [aria-hidden=true],
