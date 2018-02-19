@@ -33161,7 +33161,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 var version = "1.0.0-beta.4";
-var buildId = "20180219-210009";
+var buildId = "20180219-221321";
 var license = "MIT";
 
 
