@@ -3406,12 +3406,12 @@ var CompositeColumn = (function (_super) {
             return false;
         }
         this._children.splice(i, 1);
-        return this.removeImpl(child);
+        return this.removeImpl(child, i);
     };
-    CompositeColumn.prototype.removeImpl = function (child) {
+    CompositeColumn.prototype.removeImpl = function (child, index) {
         child.parent = null;
         this.unforward.apply(this, [child].concat(Object(__WEBPACK_IMPORTED_MODULE_1__internal_AEventDispatcher__["b" /* suffix */])('.combine', __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_HEADER, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_VALUES, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_FILTER_CHANGED)));
-        this.fire([__WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_REMOVE_COLUMN, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_HEADER, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_VALUES, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY], child);
+        this.fire([__WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_REMOVE_COLUMN, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_HEADER, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_VALUES, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY], child, index);
         return true;
     };
     CompositeColumn.prototype.getColor = function (_row) {
@@ -5670,11 +5670,11 @@ var ImpositionCompositeColumn = (function (_super) {
         }
         return _super.prototype.insertImpl.call(this, col, index);
     };
-    ImpositionCompositeColumn.prototype.removeImpl = function (child) {
+    ImpositionCompositeColumn.prototype.removeImpl = function (child, index) {
         if (Object(__WEBPACK_IMPORTED_MODULE_5__INumberColumn__["h" /* isNumberColumn */])(child)) {
             this.unforward.apply(this, [child].concat(Object(__WEBPACK_IMPORTED_MODULE_1__internal_AEventDispatcher__["b" /* suffix */])('.impose', __WEBPACK_IMPORTED_MODULE_6__NumberColumn__["a" /* default */].EVENT_MAPPING_CHANGED)));
         }
-        return _super.prototype.removeImpl.call(this, child);
+        return _super.prototype.removeImpl.call(this, child, index);
     };
     ImpositionCompositeColumn.EVENT_MAPPING_CHANGED = __WEBPACK_IMPORTED_MODULE_6__NumberColumn__["a" /* default */].EVENT_MAPPING_CHANGED;
     ImpositionCompositeColumn = ImpositionCompositeColumn_1 = __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __decorate */]([
@@ -5864,10 +5864,10 @@ var StackColumn = (function (_super) {
         });
         this.fire([StackColumn_1.EVENT_WEIGHTS_CHANGED, StackColumn_1.EVENT_MULTI_LEVEL_CHANGED, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_HEADER, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_VALUES, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY], bak, weights);
     };
-    StackColumn.prototype.removeImpl = function (child) {
+    StackColumn.prototype.removeImpl = function (child, index) {
         child.on(__WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_WIDTH_CHANGED + ".stack", null);
         _super.prototype.setWidth.call(this, this.length === 0 ? 100 : this.getWidth() - child.getWidth());
-        return _super.prototype.removeImpl.call(this, child);
+        return _super.prototype.removeImpl.call(this, child, index);
     };
     StackColumn.prototype.setWidth = function (value) {
         var factor = value / this.getWidth();
@@ -7840,11 +7840,11 @@ var ImpositionCompositesColumn = (function (_super) {
         }
         return _super.prototype.insertImpl.call(this, col, index);
     };
-    ImpositionCompositesColumn.prototype.removeImpl = function (child) {
+    ImpositionCompositesColumn.prototype.removeImpl = function (child, index) {
         if (Object(__WEBPACK_IMPORTED_MODULE_5__INumberColumn__["j" /* isNumbersColumn */])(child)) {
             this.unforward.apply(this, [child].concat(Object(__WEBPACK_IMPORTED_MODULE_1__internal_AEventDispatcher__["b" /* suffix */])('.impose', __WEBPACK_IMPORTED_MODULE_7__NumbersColumn__["a" /* default */].EVENT_MAPPING_CHANGED)));
         }
-        return _super.prototype.removeImpl.call(this, child);
+        return _super.prototype.removeImpl.call(this, child, index);
     };
     ImpositionCompositesColumn.EVENT_MAPPING_CHANGED = __WEBPACK_IMPORTED_MODULE_7__NumbersColumn__["a" /* default */].EVENT_MAPPING_CHANGED;
     ImpositionCompositesColumn = ImpositionCompositesColumn_1 = __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __decorate */]([
@@ -8188,11 +8188,11 @@ var ImpositionBoxPlotColumn = (function (_super) {
         }
         return _super.prototype.insertImpl.call(this, col, index);
     };
-    ImpositionBoxPlotColumn.prototype.removeImpl = function (child) {
+    ImpositionBoxPlotColumn.prototype.removeImpl = function (child, index) {
         if (Object(__WEBPACK_IMPORTED_MODULE_6__INumberColumn__["f" /* isBoxPlotColumn */])(child)) {
             this.unforward.apply(this, [child].concat(Object(__WEBPACK_IMPORTED_MODULE_1__internal_AEventDispatcher__["b" /* suffix */])('.impose', __WEBPACK_IMPORTED_MODULE_3__BoxPlotColumn__["a" /* default */].EVENT_MAPPING_CHANGED)));
         }
-        return _super.prototype.removeImpl.call(this, child);
+        return _super.prototype.removeImpl.call(this, child, index);
     };
     ImpositionBoxPlotColumn.EVENT_MAPPING_CHANGED = __WEBPACK_IMPORTED_MODULE_8__NumbersColumn__["a" /* default */].EVENT_MAPPING_CHANGED;
     ImpositionBoxPlotColumn = ImpositionBoxPlotColumn_1 = __WEBPACK_IMPORTED_MODULE_0_tslib__["b" /* __decorate */]([
@@ -12164,10 +12164,10 @@ var MultiLevelCompositeColumn = (function (_super) {
         this.fire([MultiLevelCompositeColumn_1.EVENT_MULTI_LEVEL_CHANGED, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY_HEADER, __WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_DIRTY], act, next);
         _super.prototype.setWidth.call(this, next);
     };
-    MultiLevelCompositeColumn.prototype.removeImpl = function (child) {
+    MultiLevelCompositeColumn.prototype.removeImpl = function (child, index) {
         child.on(__WEBPACK_IMPORTED_MODULE_3__Column__["a" /* default */].EVENT_WIDTH_CHANGED + ".stack", null);
         _super.prototype.setWidth.call(this, this.length === 0 ? 100 : this.getWidth() - child.getWidth());
-        return _super.prototype.removeImpl.call(this, child);
+        return _super.prototype.removeImpl.call(this, child, index);
     };
     MultiLevelCompositeColumn.prototype.setWidth = function (value) {
         var act = this.getWidth();
@@ -22893,7 +22893,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 var version = "3.0.1-beta.3";
-var buildId = "20180218-032700";
+var buildId = "20180219-205657";
 var license = "BSD-3-Clause";
 function createLocalDataProvider(data, columns, options) {
     if (options === void 0) { options = {}; }
@@ -32382,7 +32382,6 @@ var Adapter = (function () {
         };
     };
     Adapter.prototype.buildColumns = function (data, ctx) {
-        console.log('build columns');
         this.prevColumns = ctx;
         var columns = ctx.columns.slice();
         if (ctx.deriveColumns) {
@@ -32394,7 +32393,6 @@ var Adapter = (function () {
         return columns;
     };
     Adapter.prototype.buildRankings = function (data, rankings) {
-        console.log('build rankings');
         data.clearRankings();
         this.prevRankings = rankings;
         if (rankings.derive) {
@@ -32406,7 +32404,6 @@ var Adapter = (function () {
         rankings.builders.forEach(function (b) { return Object(__WEBPACK_IMPORTED_MODULE_1__ranking__["e" /* buildRanking */])(b, data); });
     };
     Adapter.prototype.buildProvider = function () {
-        console.log('build provider');
         var columns = this.buildColumns(this.props.data, this.resolveColumnDescs(this.props.data));
         var data = new __WEBPACK_IMPORTED_MODULE_3__provider__["b" /* LocalDataProvider */](this.props.data, columns, Object(__WEBPACK_IMPORTED_MODULE_2__utils__["d" /* pick */])(this.props, providerOptions));
         this.buildRankings(data, this.resolveRankings());
@@ -32431,7 +32428,6 @@ var Adapter = (function () {
         if (this.instance) {
             this.instance.destroy();
         }
-        console.log('build lineup instance');
         this.instance = this.adapter.createInstance(this.data, changedLineUpOptions);
         this.prevHighlight = this.props.highlight == null ? -1 : this.props.highlight;
         this.instance.setHighlight(this.prevHighlight);
