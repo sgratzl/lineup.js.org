@@ -22893,7 +22893,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 var version = "3.0.1-beta.3";
-var buildId = "20180219-205657";
+var buildId = "20180220-082931";
 var license = "BSD-3-Clause";
 function createLocalDataProvider(data, columns, options) {
     if (options === void 0) { options = {}; }
@@ -32337,11 +32337,15 @@ var Adapter = (function () {
         this.data = null;
         this.instance = null;
         this.onSelectionChanged = function (indices) {
-            if (_this.props.onSelectionChanged) {
+            if (_this.props.onSelectionChanged && !Object(__WEBPACK_IMPORTED_MODULE_2__utils__["a" /* equal */])(_this.props.selection, indices)) {
                 _this.props.onSelectionChanged(indices);
             }
         };
         this.onHighlightChanged = function (highlight) {
+            var prev = _this.prevHighlight != null ? _this.prevHighlight : -1;
+            if (prev === highlight) {
+                return;
+            }
             _this.prevHighlight = highlight;
             if (_this.props.onHighlightChanged) {
                 _this.props.onHighlightChanged(highlight);
@@ -32422,8 +32426,9 @@ var Adapter = (function () {
                 this.instance.on(__WEBPACK_IMPORTED_MODULE_0__ui__["e" /* LineUp */].EVENT_HIGHLIGHT_CHANGED, null);
                 this.instance.setHighlight(this.prevHighlight);
                 this.instance.on(__WEBPACK_IMPORTED_MODULE_0__ui__["e" /* LineUp */].EVENT_HIGHLIGHT_CHANGED, this.onHighlightChanged);
+                return true;
             }
-            return;
+            return false;
         }
         if (this.instance) {
             this.instance.destroy();
@@ -32432,6 +32437,7 @@ var Adapter = (function () {
         this.prevHighlight = this.props.highlight == null ? -1 : this.props.highlight;
         this.instance.setHighlight(this.prevHighlight);
         this.instance.on(__WEBPACK_IMPORTED_MODULE_0__ui__["e" /* LineUp */].EVENT_HIGHLIGHT_CHANGED, this.onHighlightChanged);
+        return true;
     };
     Adapter.prototype.updateProvider = function (changeDetector) {
         var _this = this;
@@ -32459,7 +32465,6 @@ var Adapter = (function () {
     Adapter.prototype.componentDidUpdate = function (changeDetector) {
         var providerChanged = this.updateProvider(changeDetector);
         this.updateLineUp(changeDetector, providerChanged);
-        this.instance.update();
     };
     Adapter.prototype.componentWillUnmount = function () {
         if (this.instance) {
