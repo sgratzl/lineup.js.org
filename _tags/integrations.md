@@ -4,4 +4,4 @@ icon: extension
 order: 3
 ---
 
-integrations exists for [React]({{ my_page.url | relative_url }}/integrations/react), [R Shiny]({{ my_page.url | relative_url }}/integrations/rshiny), [Jupyter]({{ my_page.url | relative_url }}/integrations/jupyter), [Polymer]({{ my_page.url | relative_url }}/integrations/polymer), and [PowerBI]({{ my_page.url | relative_url }}/integrations/powerbi)
+integrations exists for [React]({{ "/integrations/react" | relative_url }}), [R Shiny]({{ "/integrations/rshiny" | relative_url }}), [Jupyter]({{ "/integrations/jupyter" | relative_url }}), [Polymer]({{ "/integrations/polymer" | relative_url }}), and [PowerBI]({{ "/integrations/powerbi" | relative_url }})
