@@ -21,7 +21,8 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://lineup.js.org" # the base hostname & protocol for your site, e.g. http://example.com
 github_username:  sgratzl
 
-theme: jekyll-theme-cayman
+sass:
+    style: compressed
 
 plugins:
   - jekyll-sitemap
