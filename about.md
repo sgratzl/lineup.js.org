@@ -9,26 +9,25 @@ LineUp is an interactive technique designed to create, visualize and explore ran
 Key Features
 ------------
 
- * scalable (~100k rows)
- * heterogenous attribute types (string, numerical, categorical, boolean, date)
- * composite column types (weighted sum, min, max, mean, median, impose, nested, ...)
- * array (multi value) and map column types (strings, stringMap, numbers, numberMap, ...)
- * filtering capabilities
- * hierarchical sorting (sort by more than one sorting criteria)
- * hierarchical grouping (split rows in multiple separate groups)
- * group aggregations (show a whole group as a single group row)
- * numerous visualizations for summaries, cells, and group aggregations
- * side panel for easy filtering and column management
- * [React](#react), [Polymer](#polymer), [RShiny](#rshiny), [Juypter](#jupyter), and [Power BI](#powerbi) wrapper
- * [Demo Application](#demo) with CSV Import and Export Capabilities
-
+<ul class="browser-default">
+  <li>scalable (~100k rows)</li>
+  <li>heterogenous attribute types (string, numerical, categorical, boolean, date)</li>
+  <li>composite column types (weighted sum, min, max, mean, median, impose, nested, ...)</li>
+  <li>array (multi value) and map column types (strings, stringMap, numbers, numberMap, ...)</li>
+  <li>filtering capabilities</li>
+  <li>hierarchical sorting (sort by more than one sorting criteria)</li>
+  <li>hierarchical grouping (split rows in multiple separate groups)</li>
+  <li>group aggregations (show a whole group as a single group row)</li>
+  <li>numerous visualizations for summaries, cells, and group aggregations</li>
+  <li>side panel for easy filtering and column management</li>
+</ul>
 
 Supported Browsers
 ------------------
 
- * Chrome 64+ (best performance)
- * Firefox 57+
- * Edge 16+
+ - Chrome 64+ (best performance)
+ - Firefox 57+
+ - Edge 16+
 
 
 Related Publications
@@ -50,10 +49,36 @@ arXiv preprint, 2017.
 Authors
 -------
 
- * Samuel Gratzl (@sgratzl)
- * Holger Stitz (@thinkh)
- * The Caleydo Team (@caleydo)
- * Datavisyn GmbH (@datavisyn)
+<ul class="collection">
+  <li class="collection-item avatar">
+    <img src="https://avatars1.githubusercontent.com/u/4129778?s=400&v=4" alt="Samuel Gratzl" class="circle">
+    <span class="title">Samuel Gratzl</span>
+    <p>
+      <a href="https://github.com/sgratzl">https://github.com/sgratzl</a>
+    </p>
+  </li>
+  <li class="collection-item avatar">
+    <img src="https://avatars0.githubusercontent.com/u/5851088?s=400&v=4" alt="Holger Stitz" class="circle">
+    <span class="title">Holger Stitz</span>
+    <p>
+      <a href="http://holgerstitz.de">http://holgerstitz.de</a>
+    </p>
+  </li>
+  <li class="collection-item avatar">
+    <img src="https://avatars3.githubusercontent.com/u/4052176?s=400&v=4" alt="The Caleydo Team" class="circle">
+    <span class="title">The Caleydo Team</span>
+    <p>
+      <a href="http://caleydo.org">http://caleydo.org"</a>
+    </p>
+  </li>
+  <li class="collection-item avatar">
+    <img src="https://avatars2.githubusercontent.com/u/22729401?s=400&v=4" alt="Datavisyn GmbH" class="circle">
+    <span class="title">Datavisyn GmbH</span>
+    <p>
+      <a href="http://datavisyn.io">http://datavisyn.io</a>
+    </p>
+  </li>
+</ul>
 
 ***
 

@@ -1,1 +1,1 @@
-docker run --rm --volume="${pwd}:/srv/jekyll" -it jekyll/jekyll jekyll build
+docker run --rm --volume="${pwd}:/srv/jekyll" -p "4000:4000" -it jekyll/jekyll jekyll serve --watch --force_polling
