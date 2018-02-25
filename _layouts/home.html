@@ -22,125 +22,27 @@ layout: default
 
 <div class="container">
   <div class="section">
-
-    <!--   Icon Section   -->
     <div class="row">
+    {% assign sorted_tags = site.tags | sort: 'order' %}
+    {% for tag in sorted_tags %}
+     {% assign loopindex = forloop.index0 | modulo: 3 %}
       <div class="col s12 m4">
         <div class="icon-block">
           <h2 class="center">
-            <i class="material-icons">flash_on</i>
+            <i class="material-icons">{{tag.icon}}</i>
           </h2>
-          <h5 class="center">Easy to start with</h5>
+          <h5 class="center">{{tag.title}}</h5>
 
           <p class="light">
-            TODO
+            {{tag.content}}
           </p>
         </div>
       </div>
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center">
-            <i class="material-icons">settings</i>
-          </h2>
-          <h5 class="center">Flexible data model</h5>
-
-          <p class="light">
-            TODO
-          </p>
-        </div>
-      </div>
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center">
-            <i class="material-icons">sort</i>
-          </h2>
-          <h5 class="center">Hierarchical sorting and grouping</h5>
-
-          <p class="light">
-            TODO
-          </p>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center">
-              <i class="material-icons">build</i>
-            </h2>
-            <h5 class="center">Written in TypeScript and SASS</h5>
-
-            <p class="light">
-              TODO
-            </p>
-          </div>
-        </div>
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center">
-              <i class="material-icons">favorite</i>
-            </h2>
-            <h5 class="center">Based on award winning publication</h5>
-
-            <p class="light">
-              TODO
-            </p>
-          </div>
-        </div>
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center">
-              <i class="material-icons">filter_list</i>
-            </h2>
-            <h5 class="center">Flexible interactive filtering</h5>
-
-            <p class="light">
-              TODO
-            </p>
-          </div>
-        </div>
-      </div>
-
-    <div class="row">
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center">
-            <i class="material-icons">show_chart</i>
-          </h2>
-          <h5 class="center">Various visual encodings for cells</h5>
-
-          <p class="light">
-            TODO
-          </p>
-        </div>
-      </div>
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center">
-            <i class="material-icons">list</i>
-          </h2>
-          <h5 class="center">Overview mode/h5>
-
-          <p class="light">
-            TODO
-          </p>
-        </div>
-      </div>
-      <div class="col s12 m4">
-        <div class="icon-block">
-          <h2 class="center">
-            <i class="material-icons">extension</i>
-          </h2>
-          <h5 class="center">Integratations to popular systemss</h5>
-
-          <p class="light">
-            React.js, R Shiny, Jupyter, Polymer
-          </p>
-        </div>
-      </div>
-    </div>
+      {% if loopindex == 2 %}
+       </div><div class="row">
+      {% endif %}
+    {% endfor %}
   </div>
-
 </div>
 
 </div>
