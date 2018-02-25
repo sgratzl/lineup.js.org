@@ -28,7 +28,10 @@ var Builder3 = (function (_super) {
     Builder3.prototype.render = function () {
         var _this = this;
         return React.createElement("div", null,
-            React.createElement(LineUp, { data: this.state.arr, sidePanel: true, highlight: this.state.highlight >= 0 ? this.state.highlight : null, sidePanelCollapsed: this.state.sidePanelCollapsed, selection: this.state.selection, onSelectionChanged: function (s) { return _this.setState({ selection: s }); }, onHighlightChanged: function (h) { return console.log(h); } },
+            React.createElement(LineUp, { data: this.state.arr, sidePanel: true, highlight: this.state.highlight >= 0 ? this.state.highlight : null, sidePanelCollapsed: this.state.sidePanelCollapsed, selection: this.state.selection, onSelectionChanged: function (s) { return _this.setState({ selection: s }); }, onHighlightChanged: function (h) {
+                    console.log(h);
+                    _this.setState({ highlight: h });
+                } },
                 React.createElement(LineUpRanking, { groupBy: this.state.groupBy, sortBy: "a:desc" },
                     React.createElement(LineUpSupportColumn, { type: "*" }),
                     React.createElement(LineUpColumn, { column: "*" }))),

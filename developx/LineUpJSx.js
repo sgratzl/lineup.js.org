@@ -32994,7 +32994,7 @@ var LineUp = (function (_super) {
             __WEBPACK_IMPORTED_MODULE_2_react__["createElement"]("div", { ref: function (d) { return _this.node = d; } }));
     };
     return LineUp;
-}(__WEBPACK_IMPORTED_MODULE_2_react__["Component"]));
+}(__WEBPACK_IMPORTED_MODULE_2_react__["PureComponent"]));
 /* harmony default export */ __webpack_exports__["a"] = (LineUp);
 
 
@@ -33161,7 +33161,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 var version = "1.0.0-beta.4";
-var buildId = "20180211-172239";
+var buildId = "20180219-221321";
 var license = "MIT";
 
 
