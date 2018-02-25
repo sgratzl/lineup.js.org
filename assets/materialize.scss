@@ -2,9 +2,5 @@
 # Only the main Sass file needs front matter (the dashes are enough)
 ---
 
-@import 'materialize/components/color';
-
-$primary-color: color("blue", "lighten-1");
-$secondary-color: color("deep-purple", "lighten-1");
-
+@import 'vars';
 @import "materialize/materialize";

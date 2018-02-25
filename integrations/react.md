@@ -3,8 +3,6 @@ title: React
 layout: page
 ---
 
-React
-=====
 
 A [React](https://reactjs.org/) wrapper is located at [lineupjsx](https://github.com/sgratzl/lineupjsx). 
 

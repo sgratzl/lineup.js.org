@@ -4,9 +4,6 @@ layout: page
 menu: bar
 ---
 
-About
-=====
-
 LineUp is an interactive technique designed to create, visualize and explore rankings of items based on a set of heterogeneous attributes.
 
 Key Features

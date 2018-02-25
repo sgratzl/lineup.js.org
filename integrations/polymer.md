@@ -3,8 +3,6 @@ title: Polymer
 layout: page
 ---
 
-Polymer Web Component
-=====================
 
 A [Polymer 2.0](https://www.polymer-project.org/) web component wrapper is located at [lineup-element](https://github.com/sgratzl/lineup-element). 
 

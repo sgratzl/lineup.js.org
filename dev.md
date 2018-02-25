@@ -4,9 +4,6 @@ layout: page
 menu: bar
 ---
 
-Development Environment
-=======================
-
 Dependencies
 ------------
 

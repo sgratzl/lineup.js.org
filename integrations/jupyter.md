@@ -3,10 +3,6 @@ title: Jupyter Widget
 layout: page
 ---
 
-
-Jupyter Widget (to be released)
-===============================
-
 A [Jupyter Widget](https://jupyter.org/widgets.html) wrapper for Python is located at [lineup_widget](https://github.com/sgratzl/lineup_widget).
 
 Installation

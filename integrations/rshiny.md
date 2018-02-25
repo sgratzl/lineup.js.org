@@ -3,8 +3,6 @@ title: R Shiny
 layout: page
 ---
 
-R, RShiny, and R Markdown Support
-=================================
 
 A [HTMLWidget](http://www.htmlwidgets.org/) wrapper for R is located at [lineup_htmlwidget](https://github.com/sgratzl/lineup_htmlwidget). 
 It can be used within standalone [R Shiny](https://shiny.rstudio.com/) apps or [R Markdown](http://rmarkdown.rstudio.com/) files. Integrated plotting does not work due to an outdated integrated Webkit version in RStudio.
