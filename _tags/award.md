@@ -4,4 +4,4 @@ icon: favorite
 order: 2
 ---
 
-TODO
+LineUp.js is based on the award winning paper <a href="http://lineup.caleydo.org">LineUp: Visual Analysis of Multi-Attribute Rankings</a> by Gratzl et. all.

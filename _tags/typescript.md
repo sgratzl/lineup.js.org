@@ -1,7 +1,7 @@
 ---
 title: Written in TypeScript and SASS
 icon: code
-order: 6
+order: 9
 ---
 
-TODO
+Developed using latest web technologies and written in clean TypeScript.

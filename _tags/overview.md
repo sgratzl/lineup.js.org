@@ -1,7 +1,7 @@
 ---
 title: Overview mode
 icon: list
-order: 4
+order: 7
 ---
 
-TODO
+Switching to the Taggle overview allows to quicky identify overall patterns. 

@@ -1,7 +1,7 @@
 ---
 title: Hierarchical sorting and grouping
 icon: sort
-order: 7
+order: 4
 ---
 
-TODO
+Sort by multiple sorting criteria hierarchically or split rows in multiple groups. 

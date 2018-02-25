@@ -4,4 +4,6 @@ icon: extension
 order: 3
 ---
 
-React.js, R Shiny, Jupyter, Polymer, Power BI
+A [React](https://reactjs.org/) wrapper is located at [lineupjsx](https://github.com/sgratzl/lineupjsx). 
+
+The LineUp.js library is wrapped React.js, R Shiny, Jupyter, Polymer, Power BI
