@@ -1,5 +1,5 @@
 ---
-title: Various proven visual encodings for cells
+title: Various proven visual encodings
 icon: show_chart
 order: 6
 ---
