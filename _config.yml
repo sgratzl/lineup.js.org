@@ -33,6 +33,11 @@ plugins:
 collections:
   - tags
 
+header_pages:
+  - /getting-started
+  - /about
+  - /api
+
 include:
    - "*.html"
 

@@ -1,5 +1,6 @@
 ---
 title: Getting Started
+menu: bar
 layout: page
 ---
 

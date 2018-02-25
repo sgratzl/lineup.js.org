@@ -1,5 +1,6 @@
 ---
 title: R Shiny
+layout: page
 ---
 
 R, RShiny, and R Markdown Support
