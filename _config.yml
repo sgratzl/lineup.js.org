@@ -33,6 +33,15 @@ plugins:
 collections:
   - tags
 
+# Conversion
+markdown: kramdown
+highlighter: rouge
+kramdown:
+  input: GFM
+  hard_wrap: false
+  syntax_highlighter: rouge
+  extensions: fenced_code_blocks
+
 include:
    - "*.html"
 
