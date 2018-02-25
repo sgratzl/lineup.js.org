@@ -1,6 +1,7 @@
 (function($){
   $(function(){
 
+    $(".dropdown-trigger").dropdown();
     $('.button-collapse').sideNav();
     $('.carousel').carousel();
 
