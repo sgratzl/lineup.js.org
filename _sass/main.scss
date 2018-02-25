@@ -6,13 +6,6 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-font-smoothing: antialiased;
 }
 
-.icon-block {
-  padding: 0 15px;
-}
-
-.icon-block .material-icons {
-	font-size: inherit;
-}
 
 img {
   width: 100%;
@@ -31,6 +24,22 @@ h2 {
   font-size: 2.0em;
   color: $secondary-color;
 }
+
+.icon-block {
+  padding: 0 15px;
+
+  h2 {
+    font-weight: 500;
+    font-size: 4em;
+    text-align: center;
+    color: $primary-color;
+  }
+
+  .material-icons {
+    font-size: inherit;
+  }
+}
+
 
 p.rss-subscribe {
     margin: 0;
