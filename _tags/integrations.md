@@ -1,5 +1,5 @@
 ---
-title: Integrations in popular systems
+title: Integrations for popular systems
 icon: extension
 order: 3
 ---
