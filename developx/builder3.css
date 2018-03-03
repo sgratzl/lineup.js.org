@@ -2,6 +2,15 @@
 * https://github.com/sgratzl/lineupjsx
 * Copyright (c) 2018 Samuel Gratzl; Licensed MIT*/
 
+.lu-wrapper {
+  position: relative; }
+  .lu-wrapper > .lu {
+    clear: both;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 1px;
+    bottom: 0; }
 /*! lineupjs - v3.0.1-beta.3 - 2018
 * https://github.com/sgratzl/lineupjs
 * Copyright (c) 2018 Samuel Gratzl; Licensed BSD-3-Clause*/
@@ -2093,12 +2102,3 @@ div.lu-rule-button-chooser.violated::after {
 
 .lu > main {
   flex: 1 1 auto; }
-.lu-wrapper {
-  position: relative; }
-  .lu-wrapper > .lu {
-    clear: both;
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 1px;
-    bottom: 0; }
