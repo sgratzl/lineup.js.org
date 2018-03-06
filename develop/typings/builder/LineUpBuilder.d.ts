@@ -6,6 +6,7 @@ import { IToolbarAction } from '../ui';
 export default class LineUpBuilder {
     protected readonly options: Partial<ITaggleOptions>;
     animated(enable: boolean): this;
+    labelRotation(rotation: number): this;
     sidePanel(enable: boolean, collapsed?: boolean): this;
     defaultSlopeGraphMode(mode: 'item' | 'band'): this;
     summaryHeader(enable: boolean): this;

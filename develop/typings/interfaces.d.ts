@@ -12,13 +12,13 @@ export interface IDynamicHeight {
     padding(item: IGroupItem | IGroupData | null): number;
 }
 export interface ILineUpOptions {
-    idPrefix: string;
     summaryHeader: boolean;
     animated: boolean;
     expandLineOnHover: boolean;
     sidePanel: boolean;
     sidePanelCollapsed: boolean;
     defaultSlopeGraphMode: 'item' | 'band';
+    labelRotation: number;
     rowHeight: number;
     rowPadding: number;
     groupHeight: number;
