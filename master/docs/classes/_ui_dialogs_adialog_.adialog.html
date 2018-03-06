@@ -196,19 +196,19 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new ADialog<span class="tsd-signature-symbol">(</span>dialog<span class="tsd-signature-symbol">: </span><a href="../interfaces/_ui_dialogs_adialog_.idialogcontext.html" class="tsd-signature-type">IDialogContext</a>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_ui_dialogs_adialog_.idialogoptions.html" class="tsd-signature-type">IDialogOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_ui_dialogs_adialog_.adialog.html" class="tsd-signature-type">ADialog</a></li>
+						<li class="tsd-signature tsd-kind-icon">new ADialog<span class="tsd-signature-symbol">(</span>dialog<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_ui_dialogs_adialog_.idialogcontext.html" class="tsd-signature-type">IDialogContext</a><span class="tsd-signature-symbol">&gt;</span>, options<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_ui_dialogs_adialog_.idialogoptions.html" class="tsd-signature-type">IDialogOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_ui_dialogs_adialog_.adialog.html" class="tsd-signature-type">ADialog</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/1a47084/src/ui/dialogs/ADialog.ts#L34">ui/dialogs/ADialog.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/073471c/src/ui/dialogs/ADialog.ts#L35">ui/dialogs/ADialog.ts:35</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>dialog: <a href="../interfaces/_ui_dialogs_adialog_.idialogcontext.html" class="tsd-signature-type">IDialogContext</a></h5>
+									<h5>dialog: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_ui_dialogs_adialog_.idialogcontext.html" class="tsd-signature-type">IDialogContext</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_ui_dialogs_adialog_.idialogoptions.html" class="tsd-signature-type">IDialogOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> =&nbsp;{}</span></h5>
@@ -224,10 +224,10 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-protected">
 					<a name="dialog" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> dialog</h3>
-					<div class="tsd-signature tsd-kind-icon">dialog<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_ui_dialogs_adialog_.idialogcontext.html" class="tsd-signature-type">IDialogContext</a></div>
+					<div class="tsd-signature tsd-kind-icon">dialog<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_ui_dialogs_adialog_.idialogcontext.html" class="tsd-signature-type">IDialogContext</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/1a47084/src/ui/dialogs/ADialog.ts#L36">ui/dialogs/ADialog.ts:36</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/073471c/src/ui/dialogs/ADialog.ts#L37">ui/dialogs/ADialog.ts:37</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -237,17 +237,17 @@
 					<div class="tsd-signature tsd-kind-icon">node<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HTMLFormElement</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/1a47084/src/ui/dialogs/ADialog.ts#L33">ui/dialogs/ADialog.ts:33</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/073471c/src/ui/dialogs/ADialog.ts#L34">ui/dialogs/ADialog.ts:34</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
 					<a name="popper" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagPrivate">Private</span> popper</h3>
-					<div class="tsd-signature tsd-kind-icon">popper<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Popper</span></div>
+					<div class="tsd-signature tsd-kind-icon">popper<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Popper</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/1a47084/src/ui/dialogs/ADialog.ts#L34">ui/dialogs/ADialog.ts:34</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/073471c/src/ui/dialogs/ADialog.ts#L35">ui/dialogs/ADialog.ts:35</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -264,7 +264,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/1a47084/src/ui/dialogs/ADialog.ts#L42">ui/dialogs/ADialog.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/073471c/src/ui/dialogs/ADialog.ts#L43">ui/dialogs/ADialog.ts:43</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">HTMLElement</span></h4>
@@ -281,7 +281,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/1a47084/src/ui/dialogs/ADialog.ts#L46">ui/dialogs/ADialog.ts:46</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/073471c/src/ui/dialogs/ADialog.ts#L47">ui/dialogs/ADialog.ts:47</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -301,7 +301,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/1a47084/src/ui/dialogs/ADialog.ts#L50">ui/dialogs/ADialog.ts:50</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/073471c/src/ui/dialogs/ADialog.ts#L51">ui/dialogs/ADialog.ts:51</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -327,7 +327,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/1a47084/src/ui/dialogs/ADialog.ts#L143">ui/dialogs/ADialog.ts:143</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/073471c/src/ui/dialogs/ADialog.ts#L144">ui/dialogs/ADialog.ts:144</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -344,7 +344,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/1a47084/src/ui/dialogs/ADialog.ts#L52">ui/dialogs/ADialog.ts:52</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/073471c/src/ui/dialogs/ADialog.ts#L53">ui/dialogs/ADialog.ts:53</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -367,7 +367,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/1a47084/src/ui/dialogs/ADialog.ts#L122">ui/dialogs/ADialog.ts:122</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/073471c/src/ui/dialogs/ADialog.ts#L123">ui/dialogs/ADialog.ts:123</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
@@ -396,7 +396,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/1a47084/src/ui/dialogs/ADialog.ts#L126">ui/dialogs/ADialog.ts:126</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/073471c/src/ui/dialogs/ADialog.ts#L127">ui/dialogs/ADialog.ts:127</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -413,17 +413,20 @@
 					<a name="foreach" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagProtected">Protected</span> for<wbr>Each</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter tsd-is-protected">
-						<li class="tsd-signature tsd-kind-icon">for<wbr>Each&lt;T&gt;<span class="tsd-signature-symbol">(</span>selector<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">for<wbr>Each&lt;M, T&gt;<span class="tsd-signature-symbol">(</span>selector<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">[]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/1a47084/src/ui/dialogs/ADialog.ts#L130">ui/dialogs/ADialog.ts:130</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/073471c/src/ui/dialogs/ADialog.ts#L131">ui/dialogs/ADialog.ts:131</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-type-parameters-title">Type parameters</h4>
 							<ul class="tsd-type-parameters">
+								<li>
+									<h4>M<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Element</span></h4>
+								</li>
 								<li>
 									<h4>T</h4>
 								</li>
@@ -438,14 +441,14 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>d<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span>, i<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>d<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">M</span>, i<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>d: <span class="tsd-signature-type">HTMLElement</span></h5>
+															<h5>d: <span class="tsd-signature-type">M</span></h5>
 														</li>
 														<li>
 															<h5>i: <span class="tsd-signature-type">number</span></h5>
@@ -472,7 +475,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/1a47084/src/ui/dialogs/ADialog.ts#L56">ui/dialogs/ADialog.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/073471c/src/ui/dialogs/ADialog.ts#L57">ui/dialogs/ADialog.ts:57</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -489,7 +492,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/1a47084/src/ui/dialogs/ADialog.ts#L134">ui/dialogs/ADialog.ts:134</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/073471c/src/ui/dialogs/ADialog.ts#L135">ui/dialogs/ADialog.ts:135</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -506,7 +509,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/1a47084/src/ui/dialogs/ADialog.ts#L138">ui/dialogs/ADialog.ts:138</a></li>
+									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/073471c/src/ui/dialogs/ADialog.ts#L139">ui/dialogs/ADialog.ts:139</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -522,7 +525,7 @@
 					<div class="tsd-signature tsd-kind-icon">options<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/1a47084/src/ui/dialogs/ADialog.ts#L24">ui/dialogs/ADialog.ts:24</a></li>
+							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/073471c/src/ui/dialogs/ADialog.ts#L25">ui/dialogs/ADialog.ts:25</a></li>
 						</ul>
 					</aside>
 					<section class="tsd-panel tsd-member tsd-kind-variable tsd-parent-kind-object-literal">
@@ -531,7 +534,7 @@
 						<div class="tsd-signature tsd-kind-icon">full<wbr>Dialog<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/1a47084/src/ui/dialogs/ADialog.ts#L26">ui/dialogs/ADialog.ts:26</a></li>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/073471c/src/ui/dialogs/ADialog.ts#L27">ui/dialogs/ADialog.ts:27</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -541,7 +544,7 @@
 						<div class="tsd-signature tsd-kind-icon">modifiers<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/1a47084/src/ui/dialogs/ADialog.ts#L29">ui/dialogs/ADialog.ts:29</a></li>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/073471c/src/ui/dialogs/ADialog.ts#L30">ui/dialogs/ADialog.ts:30</a></li>
 							</ul>
 						</aside>
 						<div class="tsd-type-declaration">
@@ -556,7 +559,7 @@
 						<div class="tsd-signature tsd-kind-icon">placement<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"bottom-start"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;bottom-start&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/1a47084/src/ui/dialogs/ADialog.ts#L27">ui/dialogs/ADialog.ts:27</a></li>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/073471c/src/ui/dialogs/ADialog.ts#L28">ui/dialogs/ADialog.ts:28</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -566,7 +569,7 @@
 						<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;&quot;</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/1a47084/src/ui/dialogs/ADialog.ts#L25">ui/dialogs/ADialog.ts:25</a></li>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/073471c/src/ui/dialogs/ADialog.ts#L26">ui/dialogs/ADialog.ts:26</a></li>
 							</ul>
 						</aside>
 					</section>
@@ -576,7 +579,7 @@
 						<div class="tsd-signature tsd-kind-icon">toggle<wbr>Dialog<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></div>
 						<aside class="tsd-sources">
 							<ul>
-								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/1a47084/src/ui/dialogs/ADialog.ts#L28">ui/dialogs/ADialog.ts:28</a></li>
+								<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/073471c/src/ui/dialogs/ADialog.ts#L29">ui/dialogs/ADialog.ts:29</a></li>
 							</ul>
 						</aside>
 					</section>
