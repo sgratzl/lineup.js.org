@@ -22,7 +22,7 @@ export interface IBuilderAdapterDataProps {
     restore?: any;
     defaultRanking?: boolean | 'noSupportTypes';
 }
-export declare type IBuilderAdapterProps = ITaggleOptions & IBuilderAdapterDataProps;
+export declare type IBuilderAdapterProps = Partial<ITaggleOptions> & IBuilderAdapterDataProps;
 export interface IChangeDetecter {
     (prop: (keyof IBuilderAdapterProps)): boolean;
 }
