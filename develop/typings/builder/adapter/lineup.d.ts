@@ -1,7 +1,6 @@
-import { ICellRendererFactory } from '../../renderer';
-import { Column, IGroupData, IGroupItem, Ranking, IColumnDesc } from '../../model';
-import { IToolbarAction, Taggle, LineUp } from '../../ui';
-import { IDynamicHeight, ILineUpOptions } from '../../interfaces';
+import { Column, IColumnDesc } from '../../model';
+import { Taggle, LineUp } from '../../ui';
+import { ILineUpOptions, ITaggleOptions } from '../../interfaces';
 import { IBuilderAdapterRankingProps } from './ranking';
 import { LocalDataProvider } from '../../provider';
 export interface IBuilderAdapterDataProps {
@@ -23,26 +22,7 @@ export interface IBuilderAdapterDataProps {
     restore?: any;
     defaultRanking?: boolean | 'noSupportTypes';
 }
-export interface IBuilderAdapterProps extends IBuilderAdapterDataProps {
-    animated?: boolean;
-    sidePanel?: boolean;
-    sidePanelCollapsed?: boolean;
-    defaultSlopeGraphMode?: 'item' | 'band';
-    summaryHeader?: boolean;
-    expandLineOnHover?: boolean;
-    overviewMode?: boolean;
-    renderer?: {
-        [id: string]: ICellRendererFactory;
-    };
-    toolbar?: {
-        [id: string]: IToolbarAction;
-    };
-    rowHeight?: number;
-    rowPadding?: number;
-    groupHeight?: number;
-    groupPadding?: number;
-    dynamicHeight?: (data: (IGroupItem | IGroupData)[], ranking: Ranking) => (IDynamicHeight | null);
-}
+export declare type IBuilderAdapterProps = ITaggleOptions & IBuilderAdapterDataProps;
 export interface IChangeDetecter {
     (prop: (keyof IBuilderAdapterProps)): boolean;
 }

@@ -1,15 +1,17 @@
-export interface IColumnDesc {
+export interface IStyleColumn {
+    description: string;
+    color: string;
+    frozen: boolean;
+    fixed: boolean;
+    renderer: string;
+    groupRenderer: string;
+    summaryRenderer: string;
+    width: number;
+    visible: boolean;
+}
+export interface IColumnDesc extends Partial<IStyleColumn> {
     label: string;
     type: string;
-    description?: string;
-    color?: string;
-    frozen?: boolean;
-    fixed?: boolean;
-    renderer?: string;
-    groupRenderer?: string;
-    summaryRenderer?: string;
-    width?: number;
-    visible?: boolean;
 }
 export interface IDataRow {
     readonly v: any;

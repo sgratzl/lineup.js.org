@@ -17,6 +17,7 @@ export default class EngineRenderer extends AEventDispatcher {
     readonly ctx: IRankingHeaderContextContainer & IRenderContext & IEngineRankingContext;
     private readonly updateAbles;
     private zoomFactor;
+    readonly idPrefix: string;
     constructor(data: ADataProvider, parent: HTMLElement, options: Readonly<ILineUpOptions>);
     readonly style: GridStyleManager;
     zoomOut(): void;
@@ -30,6 +31,7 @@ export default class EngineRenderer extends AEventDispatcher {
     private updateSelection(dataIndices);
     private updateHist(ranking?, col?);
     private addRanking(ranking);
+    private updateRotatedHeaderState();
     private removeRanking(ranking);
     update(rankings?: EngineRanking[]): void;
     private updateSlopeGraphs(rankings?);
