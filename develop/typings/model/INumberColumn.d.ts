@@ -1,3 +1,4 @@
+/// <reference types="d3-format" />
 import { IAdvancedBoxPlotData, IBoxPlotData } from '../internal';
 import Column from './Column';
 import { IArrayColumn } from './IArrayColumn';
@@ -8,7 +9,9 @@ export interface INumberColumn extends Column {
     getNumber(row: IDataRow): number;
     getRawNumber(row: IDataRow): number;
 }
-export declare const DEFAULT_FORMATTER: (n: number) => string;
+export declare const DEFAULT_FORMATTER: (n: number | {
+    valueOf(): number;
+}) => string;
 export default INumberColumn;
 export interface INumberDesc {
     map?: any;
