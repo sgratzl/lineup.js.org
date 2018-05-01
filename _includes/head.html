@@ -2,9 +2,31 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
 
-  <title>{% if page.title %}{{ page.title | escape }}{% else %}{{ site.title | escape }}{% endif %}</title>
-  <meta name="description" content="{{ page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape }}"
-  />
+  {% assign title = page.title | default: site.title | escape %}
+  {% assign desc = page.excerpt | default: site.description | strip_html | normalize_whitespace | truncate: 160 | escape %}
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ desc }}" />
+  <meta property="og:image:height" content="247"/>
+  <meta property="og:image:width" content="500"/>
+  <meta property="og:title" content="{{ title }}"/>
+  <meta property="og:site_name" content="{{ title }}" />
+  <meta property="og:description" content="{{ desc }}"/>
+  <meta property="og:url" content="https://lineup.js.org"/>
+  <meta property="og:image" content="https://lineup.js.org/assets/preview.png"/>
+
+  <!-- Schema.org markup for Google+ -->
+  <meta itemprop="name" content="{{ title }}"/>
+  <meta itemprop="description" content="{{ desc }}"/>
+  <meta itemprop="image" content="https://lineup.js.org/app/preview.png"/>
+
+  <!-- Twitter Card data -->
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:site" content="@caleydo_org"/>
+  <meta name="twitter:title" content="{{ title }}"/>
+  <meta name="twitter:description" content="{{ desc }}"/>
+  <meta name="twitter:creator" content="@caleydo_org"/>
+  <meta name="twitter:image:src" content="https://lineup.js.org/app/preview.png"/>
+
 
 
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -12,4 +34,14 @@
   <link rel="stylesheet" type="text/css" media="screen,projection" href="{{ "/assets/main.css" | relative_url }}">
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | absolute_url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title | escape }}" href="{{ "/feed.xml" | relative_url }}">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="{{ "/assets/favicon/apple-touch-icon.png" | relative_url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ "/assets/favicon/favicon-32x32.png" | relative_url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ "/assets/favicon/favicon-16x16.png" | relative_url }}">
+  <link rel="manifest" href="{{ "/assets/favicon/site.webmanifest" | relative_url }}">
+  <link rel="mask-icon" href="{{ "/assets/favicon/safari-pinned-tab.svg" | relative_url }}" color="#5bbad5">
+  <meta name="apple-mobile-web-app-title" content="{{ title }}">
+  <meta name="application-name" content="{{ title }}">
+  <meta name="msapplication-TileColor" content="#da532c">
+  <meta name="theme-color" content="#ffffff">
 </head>
