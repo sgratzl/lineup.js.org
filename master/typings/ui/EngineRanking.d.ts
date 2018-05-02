@@ -12,6 +12,9 @@ export interface IEngineRankingOptions {
     animation: boolean;
     levelOfDetail: (rowIndex: number) => 'high' | 'low';
     customRowUpdate: (row: HTMLElement, rowIndex: number) => void;
+    flags: {
+        disableFrozenColumns: boolean;
+    };
 }
 export default class EngineRanking extends ACellTableSection<RenderColumn> implements ITableSection {
     readonly ranking: Ranking;

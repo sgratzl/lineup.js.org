@@ -1,3 +1,4 @@
+/// <reference types="d3-format" />
 import { IBoxPlotData } from '../internal';
 import Column from './Column';
 import { IDataRow } from './interfaces';
@@ -10,7 +11,9 @@ export interface IBoxPlotDesc extends IMapAbleDesc {
 export declare type IBoxPlotColumnDesc = IBoxPlotDesc & IValueColumnDesc<IBoxPlotData>;
 export default class BoxPlotColumn extends ValueColumn<IBoxPlotData> implements IBoxPlotColumn {
     static readonly EVENT_MAPPING_CHANGED: string;
-    static readonly DEFAULT_FORMATTER: (n: number) => string;
+    static readonly DEFAULT_FORMATTER: (n: number | {
+        valueOf(): number;
+    }) => string;
     private sort;
     private mapping;
     private original;
