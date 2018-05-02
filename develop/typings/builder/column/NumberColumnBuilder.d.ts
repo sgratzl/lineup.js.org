@@ -7,6 +7,7 @@ export default class NumberColumnBuilder extends ColumnBuilder<INumberColumnDesc
     asArray(labels?: string[] | number, sort?: EAdvancedSortMethod): this;
     asMap(sort?: EAdvancedSortMethod): this;
     asBoxPlot(sort?: ESortMethod): this;
+    private derive(data);
     build(data: any[]): INumberColumnDesc;
 }
 export declare function buildNumberColumn(column: string, domain?: [number, number]): NumberColumnBuilder;

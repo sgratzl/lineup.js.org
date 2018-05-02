@@ -24,6 +24,7 @@ export default class SidePanel {
     destroy(): void;
     private columnOrder();
     private prepareListData();
+    private getDescLike(desc);
     private updateList();
     private static groupByType(entries);
     private updateChooser();

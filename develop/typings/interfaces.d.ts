@@ -11,6 +11,9 @@ export interface IDynamicHeight {
     height(item: IGroupItem | IGroupData): number;
     padding(item: IGroupItem | IGroupData | null): number;
 }
+export interface ILineUpFlags {
+    disableFrozenColumns: boolean;
+}
 export interface ILineUpOptions {
     summaryHeader: boolean;
     animated: boolean;
@@ -32,6 +35,7 @@ export interface ILineUpOptions {
     renderers: {
         [type: string]: ICellRendererFactory;
     };
+    flags: ILineUpFlags;
 }
 export interface ITaggleOptions extends ILineUpOptions {
     overviewMode: boolean;
