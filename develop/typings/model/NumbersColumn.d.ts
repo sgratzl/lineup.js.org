@@ -1,9 +1,9 @@
-import { LazyBoxPlotData } from '../internal';
 import ArrayColumn, { IArrayColumnDesc, IArrayDesc } from './ArrayColumn';
 import Column from './Column';
 import { IDataRow } from './interfaces';
 import { EAdvancedSortMethod, INumberFilter, INumbersColumn } from './INumberColumn';
 import { IMapAbleDesc, IMappingFunction } from './MappingFunction';
+import { IAdvancedBoxPlotData } from '../internal/math';
 export interface INumbersDesc extends IArrayDesc, IMapAbleDesc {
     readonly sort?: EAdvancedSortMethod;
 }
@@ -18,9 +18,9 @@ export default class NumbersColumn extends ArrayColumn<number> implements INumbe
     constructor(id: string, desc: Readonly<INumbersColumnDesc>);
     compare(a: IDataRow, b: IDataRow): number;
     getRawNumbers(row: IDataRow): number[];
-    getBoxPlotData(row: IDataRow): LazyBoxPlotData | null;
+    getBoxPlotData(row: IDataRow): IAdvancedBoxPlotData | null;
     getRange(): [string, string];
-    getRawBoxPlotData(row: IDataRow): LazyBoxPlotData | null;
+    getRawBoxPlotData(row: IDataRow): IAdvancedBoxPlotData | null;
     getNumbers(row: IDataRow): number[];
     getNumber(row: IDataRow): number;
     getRawNumber(row: IDataRow): number;
