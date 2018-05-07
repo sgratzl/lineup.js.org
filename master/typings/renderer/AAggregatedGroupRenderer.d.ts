@@ -1,1 +1,1 @@
-export default AAggregatedGroupRenderer;
+export {};

@@ -1,6 +1,10 @@
 import { IExceptionContext, ITableSection } from 'lineupengine';
 import { IGroupData, IGroupItem } from '../model';
 import { IRankingHeaderContextContainer } from './interfaces';
+export declare enum EMode {
+    ITEM = "item",
+    BAND = "band",
+}
 export interface ISlopeGraphOptions {
     mode: EMode;
 }

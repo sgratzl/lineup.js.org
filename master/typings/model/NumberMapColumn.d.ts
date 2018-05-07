@@ -1,10 +1,10 @@
-import { LazyBoxPlotData } from '../internal';
 import Column from './Column';
 import { IKeyValue } from './IArrayColumn';
 import { IDataRow } from './interfaces';
 import { EAdvancedSortMethod, IAdvancedBoxPlotColumn, INumberDesc, INumberFilter } from './INumberColumn';
 import { default as MapColumn, IMapColumnDesc } from './MapColumn';
 import { IMappingFunction } from './MappingFunction';
+import { IAdvancedBoxPlotData } from '../internal/math';
 export interface INumberMapDesc extends INumberDesc {
     readonly sort?: EAdvancedSortMethod;
 }
@@ -17,9 +17,9 @@ export default class NumberMapColumn extends MapColumn<number> implements IAdvan
     private currentFilter;
     constructor(id: string, desc: Readonly<INumberMapColumnDesc>);
     compare(a: IDataRow, b: IDataRow): number;
-    getBoxPlotData(row: IDataRow): LazyBoxPlotData | null;
+    getBoxPlotData(row: IDataRow): IAdvancedBoxPlotData | null;
     getRange(): [string, string];
-    getRawBoxPlotData(row: IDataRow): LazyBoxPlotData | null;
+    getRawBoxPlotData(row: IDataRow): IAdvancedBoxPlotData | null;
     getNumber(row: IDataRow): number;
     getRawNumber(row: IDataRow): number;
     getValue(row: IDataRow): {
