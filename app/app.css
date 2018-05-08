@@ -1,5 +1,5 @@
 /*! lineup_app - v1.0.0-beta.1 - 2018
-* https://github.com/sgratzl/lineup_app
+* https://github.com/datavisyn/lineup_app
 * Copyright (c) 2018 Samuel Gratzl; Licensed MIT*/
 
 /*!
@@ -12881,6 +12881,34 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   stroke-linecap: round;
   /*shape-rendering: crispEdges;*/ }
 
+/* Material Design Icons - Setup Method 2. Self hosting
+ * http://google.github.io/material-design-icons/ */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(e79bfd88537def476913f3ed52f4f4b3.eot);
+  /* For IE6-8 */
+  src: local("Material Icons"), local("MaterialIcons-Regular"), url(570eb83859dc23dd0eec423a49e147fe.woff2) format("woff2"), url(012cf6a10129e2275d79d6adac7f3b02.woff) format("woff"), url(a37b0c01c0baf1888ca812cc0508f6e2.ttf) format("truetype"); }
+
+.material-icons {
+  font-family: 'Material Icons', sans-serif;
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  /* Preferred icon size */
+  display: inline-block;
+  line-height: 1;
+  text-transform: none;
+  letter-spacing: normal;
+  word-wrap: normal;
+  white-space: nowrap;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  -moz-osx-font-smoothing: grayscale;
+  font-feature-settings: 'liga'; }
+
 /*!
  *  Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
  *  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
@@ -15209,34 +15237,6 @@ button.picker__today:focus, button.picker__clear:focus, button.picker__close:foc
   margin: 0;
   overflow: visible;
   clip: auto; }
-
-/* Material Design Icons - Setup Method 2. Self hosting
- * http://google.github.io/material-design-icons/ */
-@font-face {
-  font-family: 'Material Icons';
-  font-style: normal;
-  font-weight: 400;
-  src: url(e79bfd88537def476913f3ed52f4f4b3.eot);
-  /* For IE6-8 */
-  src: local("Material Icons"), local("MaterialIcons-Regular"), url(570eb83859dc23dd0eec423a49e147fe.woff2) format("woff2"), url(012cf6a10129e2275d79d6adac7f3b02.woff) format("woff"), url(a37b0c01c0baf1888ca812cc0508f6e2.ttf) format("truetype"); }
-
-.material-icons {
-  font-family: 'Material Icons', sans-serif;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 24px;
-  /* Preferred icon size */
-  display: inline-block;
-  line-height: 1;
-  text-transform: none;
-  letter-spacing: normal;
-  word-wrap: normal;
-  white-space: nowrap;
-  direction: ltr;
-  -webkit-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -moz-osx-font-smoothing: grayscale;
-  font-feature-settings: 'liga'; }
 
 body {
   display: flex;
