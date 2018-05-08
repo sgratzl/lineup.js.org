@@ -15314,6 +15314,8 @@ nav .fixed-action-btn li {
 
 .lu-side-panel {
   padding-top: 2em; }
+  .lu-side-panel.lu-collapsed {
+    transform: unset; }
 
 section.lu-header > .lu-label {
   line-height: 1.5; }
