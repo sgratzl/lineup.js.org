@@ -707,9 +707,7 @@
   grid-column-gap: 5px; }
 
 section.lu-header {
-  text-align: center;
   color: black;
-  overflow: unset !important;
   margin-right: -5px;
   margin-bottom: 15px;
   border-bottom: 1px solid black; }
@@ -726,12 +724,13 @@ section.lu-header {
     background: white;
     pointer-events: none; }
   section.lu-header:hover {
-    background-color: rgba(186, 186, 186, 0.5) !important; }
+    background-color: #d2d2d2; }
     section.lu-header:hover > .lu-toolbar {
       color: #999; }
   section.lu-header > .lu-toolbar {
     color: #c1c1c1; }
   section.lu-header > .lu-label {
+    text-align: center;
     padding-left: 0.8em;
     margin-right: 5px;
     font-weight: 500; }
@@ -1427,7 +1426,8 @@ section.lu-slopegraph-header {
       width: 0.8em;
       text-align: center; }
   .lu-side-panel.lu-collapsed {
-    min-width: 0; }
+    min-width: 0;
+    transform: unset; }
     .lu-side-panel.lu-collapsed > :not(.lu-collapser) {
       display: none; }
     .lu-side-panel.lu-collapsed .lu-collapser::before {
