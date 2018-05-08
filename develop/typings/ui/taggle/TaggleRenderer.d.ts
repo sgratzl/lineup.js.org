@@ -18,7 +18,7 @@ export default class TaggleRenderer extends AEventDispatcher {
     private readonly resizeListener;
     private readonly renderer;
     private readonly options;
-    constructor(parent: HTMLElement, data: DataProvider, options: (Partial<ITaggleOptions> & Readonly<ILineUpOptions>));
+    constructor(data: DataProvider, parent: HTMLElement, options: (Partial<ITaggleOptions> & Readonly<ILineUpOptions>));
     readonly ctx: IRankingHeaderContextContainer & IRenderContext & IEngineRankingContext;
     pushUpdateAble(updateAble: (ctx: IRankingHeaderContext) => void): void;
     private dynamicHeight(data);
