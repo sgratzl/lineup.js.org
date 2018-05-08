@@ -4,7 +4,7 @@ layout: page
 ---
 
 
-A [HTMLWidget](http://www.htmlwidgets.org/) wrapper for R is located at [lineup_htmlwidget](https://github.com/sgratzl/lineup_htmlwidget). 
+A [HTMLWidget](http://www.htmlwidgets.org/) wrapper for R is located at [lineup_htmlwidget](https://github.com/datavisyn/lineup_htmlwidget). 
 It can be used within standalone [R Shiny](https://shiny.rstudio.com/) apps or [R Markdown](http://rmarkdown.rstudio.com/) files. Integrated plotting does not work due to an outdated integrated Webkit version in RStudio.
 [Crosstalk](https://rstudio.github.io/crosstalk/) is supported for synching selections and filtering among widgets. 
 
@@ -13,7 +13,7 @@ Installation
 
 ```R
 devtools::install_github("rstudio/crosstalk")
-devtools::install_github("sgratzl/lineup_htmlwidget")
+devtools::install_github("datavisyn/lineup_htmlwidget")
 library(lineup)
 ```
 

@@ -4,7 +4,7 @@ layout: page
 ---
 
 
-A [React](https://reactjs.org/) wrapper is located at [lineupjsx](https://github.com/sgratzl/lineupjsx). 
+A [React](https://reactjs.org/) wrapper is located at [lineupjsx](https://github.com/datavisyn/lineupjsx). 
 
 
 Installation

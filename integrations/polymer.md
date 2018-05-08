@@ -4,13 +4,13 @@ layout: page
 ---
 
 
-A [Polymer 2.0](https://www.polymer-project.org/) web component wrapper is located at [lineup-element](https://github.com/sgratzl/lineup-element). 
+A [Polymer 2.0](https://www.polymer-project.org/) web component wrapper is located at [lineup-element](https://github.com/datavisyn/lineup-element). 
 
 Installation
 ------------
 
 ```bash
-bower install https://github.com/sgratzl/lineup-element
+bower install https://github.com/datavisyn/lineup-element
 ```
 
 ```html
