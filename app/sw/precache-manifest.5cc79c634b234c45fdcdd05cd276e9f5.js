@@ -3,7 +3,7 @@ self.__precacheManifest = [
     "url": "5136cbe62a63604402f2fedb97f246f8.woff2"
   },
   {
-    "revision": "ba0241ab34b02e15bb0de1bea55c5a23",
+    "revision": "bb533bf364012100531278d7a8aec98d",
     "url": "index.html"
   },
   {
