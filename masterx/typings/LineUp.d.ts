@@ -1,7 +1,10 @@
 /// <reference types="react" />
 import { IBuilderAdapterProps, ITaggleOptions, LineUp as LineUpImpl, LocalDataProvider, Taggle } from 'lineupjs';
 import * as React from 'react';
-export declare type ILineUpProps = IBuilderAdapterProps;
+export declare type ILineUpProps = IBuilderAdapterProps & {
+    style?: React.CSSProperties;
+    className?: string;
+};
 export default class LineUp extends React.PureComponent<Readonly<ILineUpProps>, {}> {
     private node;
     private readonly adapter;
