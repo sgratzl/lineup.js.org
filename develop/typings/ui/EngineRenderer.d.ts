@@ -18,6 +18,7 @@ export default class EngineRenderer extends AEventDispatcher {
     private readonly updateAbles;
     private zoomFactor;
     readonly idPrefix: string;
+    private enabledHighlightListening;
     constructor(data: ADataProvider, parent: HTMLElement, options: Readonly<ILineUpOptions>);
     readonly style: GridStyleManager;
     zoomOut(): void;
@@ -38,5 +39,6 @@ export default class EngineRenderer extends AEventDispatcher {
     setHighlight(dataIndex: number, scrollIntoView: boolean): boolean;
     setHighlightToNearest(dataIndices: number[], scrollIntoView: boolean): boolean;
     getHighlight(): number;
+    enableHighlightListening(enable: boolean): void;
     destroy(): void;
 }

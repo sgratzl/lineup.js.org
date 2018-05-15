@@ -26,5 +26,5 @@ export declare const AGGREGATE: {
     strokeWidth: number;
     color: string;
 };
-export declare const SLOPEGRAPH_WIDTH = 200;
+export declare const SLOPEGRAPH_WIDTH: number;
 export declare const CANVAS_HEIGHT = 4;

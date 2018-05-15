@@ -31,4 +31,5 @@ export default class TaggleRenderer extends AEventDispatcher {
     setDataProvider(data: DataProvider): void;
     setHighlight(dataIndex: number, scrollIntoView: boolean): boolean;
     getHighlight(): number;
+    enableHighlightListening(enable: boolean): void;
 }

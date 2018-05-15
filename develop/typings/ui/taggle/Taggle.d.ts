@@ -13,5 +13,6 @@ export default class Taggle extends ALineUp {
     update(): void;
     setHighlight(dataIndex: number, scrollIntoView?: boolean): boolean;
     getHighlight(): number;
+    protected enableHighlightListening(enable: boolean): void;
     setDataProvider(data: DataProvider, dump?: any): void;
 }

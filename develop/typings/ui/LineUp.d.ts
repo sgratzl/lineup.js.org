@@ -12,4 +12,5 @@ export default class LineUp extends ALineUp {
     setDataProvider(data: DataProvider, dump?: any): void;
     setHighlight(dataIndex: number, scrollIntoView?: boolean): boolean;
     getHighlight(): number;
+    protected enableHighlightListening(enable: boolean): void;
 }
