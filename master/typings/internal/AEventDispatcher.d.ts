@@ -16,6 +16,7 @@ export default class AEventDispatcher implements IEventHandler {
     constructor();
     on(type: string): (...args: any[]) => void;
     on(type: string | string[], listener: ((...args: any[]) => any) | null): AEventDispatcher;
+    protected listenersChanged(_type: string, _active: boolean): void;
     protected createEventList(): string[];
     protected fire(type: string | string[], ...args: any[]): void;
     private fireImpl(type, primaryType, origin, ...args);

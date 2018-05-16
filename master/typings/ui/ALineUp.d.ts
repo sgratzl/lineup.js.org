@@ -7,6 +7,7 @@ export declare abstract class ALineUp extends AEventDispatcher implements ILineU
     data: DataProvider;
     static readonly EVENT_SELECTION_CHANGED: string;
     static readonly EVENT_HIGHLIGHT_CHANGED: string;
+    private highlightListeners;
     constructor(node: HTMLElement, data: DataProvider);
     protected createEventList(): string[];
     destroy(): void;
@@ -18,5 +19,7 @@ export declare abstract class ALineUp extends AEventDispatcher implements ILineU
     sortBy(column: string | ((col: Column) => boolean), ascending?: boolean): boolean;
     abstract setHighlight(dataIndex: number, scrollIntoView: boolean): boolean;
     abstract getHighlight(): number;
+    protected listenersChanged(type: string, enabled: boolean): void;
+    protected enableHighlightListening(_enable: boolean): void;
 }
 export default ALineUp;

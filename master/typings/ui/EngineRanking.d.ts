@@ -49,15 +49,16 @@ export default class EngineRanking extends ACellTableSection<RenderColumn> imple
     protected createCell(_document: Document, index: number, column: RenderColumn): HTMLElement;
     protected updateCell(node: HTMLElement, index: number, column: RenderColumn): void | HTMLElement;
     private selectCanvas();
+    private rowFlags(row);
     private renderRow(canvas, index);
     protected updateCanvasCell(canvas: HTMLCanvasElement, index: number, column: RenderColumn, x: number): void;
     private reindex();
     updateAll(): void;
-    private updateCanvasRule();
     updateBody(): void;
     updateHeaderOf(col: Column): false | RenderColumn;
     protected createRow(node: HTMLElement, rowIndex: number): void;
     protected updateRow(node: HTMLElement, rowIndex: number, forcedLod?: 'high' | 'low'): void;
+    enableHighlightListening(enable: boolean): void;
     private updateHoveredRow(row, hover);
     protected forEachRow(callback: (row: HTMLElement, rowIndex: number) => void, inplace?: boolean): void;
     updateSelection(selectedDataIndices: {

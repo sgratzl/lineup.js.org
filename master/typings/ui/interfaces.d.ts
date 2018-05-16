@@ -5,8 +5,6 @@ import { IImposer, IRenderContext } from '../renderer';
 import { ISummaryRenderer } from '../renderer/interfaces';
 import { IToolbarAction } from './toolbar';
 import DialogManager from './dialogs/DialogManager';
-export declare const WEIRD_CANVAS_COLUMN_OFFSET: number;
-export declare const WEIRD_CANVAS_ROW_OFFSET = 0;
 export interface IRenderInfo {
     type: string;
     label: string;

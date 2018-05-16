@@ -9,8 +9,8 @@ export interface ISlopeGraphOptions {
     mode: EMode;
 }
 export default class SlopeGraph implements ITableSection {
-    private readonly header;
-    private readonly body;
+    readonly header: HTMLElement;
+    readonly body: HTMLElement;
     readonly id: string;
     private readonly ctx;
     readonly node: SVGSVGElement;
@@ -19,6 +19,7 @@ export default class SlopeGraph implements ITableSection {
     private readonly pool;
     private scrollListener;
     readonly width: number;
+    readonly height: number;
     private current;
     private _mode;
     constructor(header: HTMLElement, body: HTMLElement, id: string, ctx: IRankingHeaderContextContainer, options?: Partial<ISlopeGraphOptions>);

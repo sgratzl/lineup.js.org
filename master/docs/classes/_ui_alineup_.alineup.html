@@ -111,6 +111,7 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_ui_alineup_.alineup.html#data" class="tsd-kind-icon">data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-private"><a href="_ui_alineup_.alineup.html#highlightlisteners" class="tsd-kind-icon">highlight<wbr>Listeners</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_ui_alineup_.alineup.html#node" class="tsd-kind-icon">node</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_ui_alineup_.alineup.html#event_highlight_changed" class="tsd-kind-icon">EVENT_<wbr>HIGHLIGHT_<wbr>CHANGED</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_ui_alineup_.alineup.html#event_selection_changed" class="tsd-kind-icon">EVENT_<wbr>SELECTION_<wbr>CHANGED</a></li>
@@ -122,10 +123,12 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="_ui_alineup_.alineup.html#createeventlist" class="tsd-kind-icon">create<wbr>Event<wbr>List</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ui_alineup_.alineup.html#destroy" class="tsd-kind-icon">destroy</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ui_alineup_.alineup.html#dump" class="tsd-kind-icon">dump</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="_ui_alineup_.alineup.html#enablehighlightlistening" class="tsd-kind-icon">enable<wbr>Highlight<wbr>Listening</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_ui_alineup_.alineup.html#fire" class="tsd-kind-icon">fire</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="_ui_alineup_.alineup.html#forward" class="tsd-kind-icon">forward</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ui_alineup_.alineup.html#gethighlight" class="tsd-kind-icon">get<wbr>Highlight</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ui_alineup_.alineup.html#getselection" class="tsd-kind-icon">get<wbr>Selection</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected"><a href="_ui_alineup_.alineup.html#listenerschanged" class="tsd-kind-icon">listeners<wbr>Changed</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_ui_alineup_.alineup.html#on" class="tsd-kind-icon">on</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ui_alineup_.alineup.html#setdataprovider" class="tsd-kind-icon">set<wbr>Data<wbr>Provider</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ui_alineup_.alineup.html#sethighlight" class="tsd-kind-icon">set<wbr>Highlight</a></li>
@@ -151,7 +154,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_internal_aeventdispatcher_.aeventdispatcher.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/2dcdfba/src/ui/ALineUp.ts#L17">ui/ALineUp.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/ui/ALineUp.ts#L19">ui/ALineUp.ts:19</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -177,7 +180,17 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/_interfaces_.ilineuplike.html">ILineUpLike</a>.<a href="../interfaces/_interfaces_.ilineuplike.html#data">data</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/2dcdfba/src/ui/ALineUp.ts#L19">ui/ALineUp.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/ui/ALineUp.ts#L21">ui/ALineUp.ts:21</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-private">
+					<a name="highlightlisteners" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagPrivate">Private</span> highlight<wbr>Listeners</h3>
+					<div class="tsd-signature tsd-kind-icon">highlight<wbr>Listeners<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/ui/ALineUp.ts#L19">ui/ALineUp.ts:19</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -188,7 +201,7 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/_interfaces_.ilineuplike.html">ILineUpLike</a>.<a href="../interfaces/_interfaces_.ilineuplike.html#node">node</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/2dcdfba/src/ui/ALineUp.ts#L19">ui/ALineUp.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/ui/ALineUp.ts#L21">ui/ALineUp.ts:21</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -198,7 +211,7 @@
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>HIGHLIGHT_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"highlightChanged"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;highlightChanged&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/2dcdfba/src/ui/ALineUp.ts#L17">ui/ALineUp.ts:17</a></li>
+							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/ui/ALineUp.ts#L17">ui/ALineUp.ts:17</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -218,7 +231,7 @@
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>SELECTION_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"selectionChanged"</span><span class="tsd-signature-symbol"> =&nbsp;DataProvider.EVENT_SELECTION_CHANGED</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/2dcdfba/src/ui/ALineUp.ts#L11">ui/ALineUp.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/ui/ALineUp.ts#L11">ui/ALineUp.ts:11</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -246,7 +259,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_internal_aeventdispatcher_.aeventdispatcher.html#createeventlist">createEventList</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/2dcdfba/src/ui/ALineUp.ts#L25">ui/ALineUp.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/ui/ALineUp.ts#L27">ui/ALineUp.ts:27</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
@@ -264,7 +277,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_interfaces_.ilineuplike.html">ILineUpLike</a>.<a href="../interfaces/_interfaces_.ilineuplike.html#destroy">destroy</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/2dcdfba/src/ui/ALineUp.ts#L29">ui/ALineUp.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/ui/ALineUp.ts#L31">ui/ALineUp.ts:31</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -282,10 +295,33 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_interfaces_.ilineuplike.html">ILineUpLike</a>.<a href="../interfaces/_interfaces_.ilineuplike.html#dump">dump</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/2dcdfba/src/ui/ALineUp.ts#L34">ui/ALineUp.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/ui/ALineUp.ts#L36">ui/ALineUp.ts:36</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="enablehighlightlistening" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> enable<wbr>Highlight<wbr>Listening</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">enable<wbr>Highlight<wbr>Listening<span class="tsd-signature-symbol">(</span>_enable<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/ui/ALineUp.ts#L97">ui/ALineUp.ts:97</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>_enable: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -300,7 +336,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_internal_aeventdispatcher_.aeventdispatcher.html#fire">fire</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/2dcdfba/src/internal/AEventDispatcher.ts#L75">internal/AEventDispatcher.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/internal/AEventDispatcher.ts#L83">internal/AEventDispatcher.ts:83</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -327,7 +363,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_internal_aeventdispatcher_.aeventdispatcher.html#forward">forward</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/2dcdfba/src/internal/AEventDispatcher.ts#L105">internal/AEventDispatcher.ts:105</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/internal/AEventDispatcher.ts#L113">internal/AEventDispatcher.ts:113</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -365,7 +401,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/2dcdfba/src/ui/ALineUp.ts#L75">ui/ALineUp.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/ui/ALineUp.ts#L77">ui/ALineUp.ts:77</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -382,10 +418,37 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/2dcdfba/src/ui/ALineUp.ts#L51">ui/ALineUp.ts:51</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/ui/ALineUp.ts#L53">ui/ALineUp.ts:53</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+					<a name="listenerschanged" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> listeners<wbr>Changed</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">listeners<wbr>Changed<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, enabled<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_internal_aeventdispatcher_.aeventdispatcher.html#listenerschanged">listenersChanged</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/ui/ALineUp.ts#L79">ui/ALineUp.ts:79</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5>enabled: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -402,7 +465,7 @@
 								<p>Implementation of <a href="../interfaces/_internal_aeventdispatcher_.ieventhandler.html">IEventHandler</a>.<a href="../interfaces/_internal_aeventdispatcher_.ieventhandler.html#on">on</a></p>
 								<p>Inherited from <a href="_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_internal_aeventdispatcher_.aeventdispatcher.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/2dcdfba/src/internal/AEventDispatcher.ts#L53">internal/AEventDispatcher.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/internal/AEventDispatcher.ts#L53">internal/AEventDispatcher.ts:53</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -435,7 +498,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_internal_aeventdispatcher_.aeventdispatcher.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/2dcdfba/src/internal/AEventDispatcher.ts#L54">internal/AEventDispatcher.ts:54</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/internal/AEventDispatcher.ts#L54">internal/AEventDispatcher.ts:54</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -461,7 +524,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/2dcdfba/src/ui/ALineUp.ts#L40">ui/ALineUp.ts:40</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/ui/ALineUp.ts#L42">ui/ALineUp.ts:42</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -487,7 +550,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/2dcdfba/src/ui/ALineUp.ts#L73">ui/ALineUp.ts:73</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/ui/ALineUp.ts#L75">ui/ALineUp.ts:75</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -513,7 +576,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/2dcdfba/src/ui/ALineUp.ts#L55">ui/ALineUp.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/ui/ALineUp.ts#L57">ui/ALineUp.ts:57</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -536,7 +599,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/2dcdfba/src/ui/ALineUp.ts#L65">ui/ALineUp.ts:65</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/ui/ALineUp.ts#L67">ui/ALineUp.ts:67</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -571,7 +634,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_internal_aeventdispatcher_.aeventdispatcher.html#unforward">unforward</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/2dcdfba/src/internal/AEventDispatcher.ts#L114">internal/AEventDispatcher.ts:114</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/internal/AEventDispatcher.ts#L122">internal/AEventDispatcher.ts:122</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -608,7 +671,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/sgratzl/lineupjs/blob/2dcdfba/src/ui/ALineUp.ts#L38">ui/ALineUp.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/5af1c2b/src/ui/ALineUp.ts#L40">ui/ALineUp.ts:40</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -641,6 +704,9 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_ui_alineup_.alineup.html#data" class="tsd-kind-icon">data</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-private">
+								<a href="_ui_alineup_.alineup.html#highlightlisteners" class="tsd-kind-icon">highlight<wbr>Listeners</a>
+							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_ui_alineup_.alineup.html#node" class="tsd-kind-icon">node</a>
 							</li>
@@ -659,6 +725,9 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_ui_alineup_.alineup.html#dump" class="tsd-kind-icon">dump</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="_ui_alineup_.alineup.html#enablehighlightlistening" class="tsd-kind-icon">enable<wbr>Highlight<wbr>Listening</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
 								<a href="_ui_alineup_.alineup.html#fire" class="tsd-kind-icon">fire</a>
 							</li>
@@ -670,6 +739,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_ui_alineup_.alineup.html#getselection" class="tsd-kind-icon">get<wbr>Selection</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-protected">
+								<a href="_ui_alineup_.alineup.html#listenerschanged" class="tsd-kind-icon">listeners<wbr>Changed</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_ui_alineup_.alineup.html#on" class="tsd-kind-icon">on</a>
