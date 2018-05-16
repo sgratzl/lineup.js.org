@@ -13,8 +13,8 @@ npm install --save lineupjs@next
 ```
 
 ```html
-<link href="https://unpkg.com/lineupjs/build/LineUpJS.css" rel="stylesheet">
-<script src="https://unpkg.com/lineupjs/build/LineUpJS.js"></script>
+<link href="https://unpkg.com/lineupjs@next/build/LineUpJS.css" rel="stylesheet">
+<script src="https://unpkg.com/lineupjs@next/build/LineUpJS.js"></script>
 ```
 
 Minimal Usage Example

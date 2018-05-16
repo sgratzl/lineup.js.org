@@ -11,12 +11,12 @@ Installation
 ------------
 
 ```bash
-npm install --save lineupjsx
+npm install --save lineupjsx@next
 ```
 
 ```html
-<link href="https://unpkg.com/lineupjsx/build/LineUpJSx.css" rel="stylesheet">
-<script src="https://unpkg.com/lineupjsx/build/LineUpJSx.js"></script>
+<link href="https://unpkg.com/lineupjsx@next/build/LineUpJSx.css" rel="stylesheet">
+<script src="https://unpkg.com/lineupjsx@next/build/LineUpJSx.js"></script>
 ```
 
 Minimal Usage Example
