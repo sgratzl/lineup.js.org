@@ -14,7 +14,7 @@ Installation
 ```R
 devtools::install_github("rstudio/crosstalk")
 devtools::install_github("datavisyn/lineup_htmlwidget")
-library(lineup)
+library(lineupjs)
 ```
 
 Examples
