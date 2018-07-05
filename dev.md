@@ -20,8 +20,16 @@ LineUp.js depends on
 
 **Tools & Services**
 
-[![Browserstack](./assets/services/Browserstack-logo.svg)](https://www.browserstack.com)
-[![CircleCI](./assets/services/circleci.svg)](https://circleci.com/)
+<div class="row">
+  <div class="col s3">
+    [![Browserstack](./assets/services/Browserstack-logo.svg)](https://www.browserstack.com)
+  </div>
+  <div class="col s3">
+    <a href="https://circleci.com/"><img src="/assets/services/circleci.svg" alt="CircleCI" style="max-height: 4em;"></a>
+  </div>
+</div>
+
+
 
 Development Environment
 -----------------------
