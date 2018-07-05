@@ -22,10 +22,10 @@ LineUp.js depends on
 
 <div class="row">
   <div class="col s3">
-    [![Browserstack](./assets/services/Browserstack-logo.svg)](https://www.browserstack.com)
+    <a href="https://www.browserstack.com"><img src="./assets/services/Browserstack-logo.svg" alt="Browserstack"></a>
   </div>
   <div class="col s3">
-    <a href="https://circleci.com/"><img src="/assets/services/circleci.svg" alt="CircleCI" style="max-height: 4em;"></a>
+    <a href="https://circleci.com/"><img src="./assets/services/circleci.svg" alt="CircleCI" style="max-height: 4em;"></a>
   </div>
 </div>
 
