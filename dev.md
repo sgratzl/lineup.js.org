@@ -18,6 +18,11 @@ LineUp.js depends on
 [Webpack](https://webpack.github.io) is used as build tool. LineUp itself is written in [TypeScript](https://www.typescriptlang.org) and [SASS](https://sass-lang.com). 
 
 
+**Tools & Services**
+
+[![Browserstack](./assets/services/Browserstack-logo.svg)](https://www.browserstack.com)
+[![CircleCI](./assets/services/circleci.svg)](https://circleci.com/)
+
 Development Environment
 -----------------------
 
