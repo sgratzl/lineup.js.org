@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>ISlope | lineupjs</title>
+	<title>Hierarchy | LineUpJS</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">lineupjs</a>
+					<a href="../index.html" class="title">LineUpJS</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -38,10 +38,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -56,135 +52,143 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_ui_slopegraph_.html">&quot;ui/SlopeGraph&quot;</a>
+					<a href="../modules/_ui_panel_hierarchy_.html">&quot;ui/panel/Hierarchy&quot;</a>
 				</li>
 				<li>
-					<a href="_ui_slopegraph_.islope.html">ISlope</a>
+					<a href="_ui_panel_hierarchy_.hierarchy.html">Hierarchy</a>
 				</li>
 			</ul>
-			<h1>Interface ISlope</h1>
+			<h1>Class Hierarchy</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<dl class="tsd-comment-tags">
+						<dt>internal</dt>
+						<dd></dd>
+					</dl>
+				</div>
+			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">ISlope</span>
+						<span class="target">Hierarchy</span>
 					</li>
-				</ul>
-			</section>
-			<section class="tsd-panel">
-				<h3>Implemented by</h3>
-				<ul class="tsd-hierarchy">
-					<li><a href="../classes/_ui_slopegraph_.groupslope.html" class="tsd-signature-type">GroupSlope</a></li>
-					<li><a href="../classes/_ui_slopegraph_.itemslope.html" class="tsd-signature-type">ItemSlope</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-not-exported">
-							<h3>Properties</h3>
+						<section class="tsd-index-section ">
+							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_ui_slopegraph_.islope.html#dataindices" class="tsd-kind-icon">data<wbr>Indices</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_ui_panel_hierarchy_.hierarchy.html#constructor" class="tsd-kind-icon">constructor</a></li>
 							</ul>
 						</section>
-						<section class="tsd-index-section tsd-is-not-exported">
+						<section class="tsd-index-section ">
+							<h3>Properties</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_ui_panel_hierarchy_.hierarchy.html#groupadder" class="tsd-kind-icon">group<wbr>Adder</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_ui_panel_hierarchy_.hierarchy.html#node" class="tsd-kind-icon">node</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_ui_panel_hierarchy_.hierarchy.html#sortadder" class="tsd-kind-icon">sort<wbr>Adder</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported"><a href="_ui_slopegraph_.islope.html#isselected" class="tsd-kind-icon">is<wbr>Selected</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported"><a href="_ui_slopegraph_.islope.html#update" class="tsd-kind-icon">update</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ui_panel_hierarchy_.hierarchy.html#update" class="tsd-kind-icon">update</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Constructors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+					<a name="constructor" class="tsd-anchor"></a>
+					<h3>constructor</h3>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Hierarchy<span class="tsd-signature-symbol">(</span>ctx<span class="tsd-signature-symbol">: </span><a href="../modules/_ui_interfaces_.html#irankingheadercontext" class="tsd-signature-type">IRankingHeaderContext</a>, document<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Document</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_ui_panel_hierarchy_.hierarchy.html" class="tsd-signature-type">Hierarchy</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/4036fe0/src/ui/panel/Hierarchy.ts#L22">ui/panel/Hierarchy.ts:22</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>ctx: <a href="../modules/_ui_interfaces_.html#irankingheadercontext" class="tsd-signature-type">IRankingHeaderContext</a></h5>
+								</li>
+								<li>
+									<h5>document: <span class="tsd-signature-type">Document</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_ui_panel_hierarchy_.hierarchy.html" class="tsd-signature-type">Hierarchy</a></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="dataindices" class="tsd-anchor"></a>
-					<h3>data<wbr>Indices</h3>
-					<div class="tsd-signature tsd-kind-icon">data<wbr>Indices<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="groupadder" class="tsd-anchor"></a>
+					<h3>group<wbr>Adder</h3>
+					<div class="tsd-signature tsd-kind-icon">group<wbr>Adder<span class="tsd-signature-symbol">:</span> <a href="_ui_panel_searchbox_.searchbox.html" class="tsd-signature-type">SearchBox</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IColumnItem</span><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/f7198ce/src/ui/SlopeGraph.ts#L11">ui/SlopeGraph.ts:11</a></li>
+							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/4036fe0/src/ui/panel/Hierarchy.ts#L21">ui/panel/Hierarchy.ts:21</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="node" class="tsd-anchor"></a>
+					<h3>node</h3>
+					<div class="tsd-signature tsd-kind-icon">node<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HTMLElement</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/4036fe0/src/ui/panel/Hierarchy.ts#L20">ui/panel/Hierarchy.ts:20</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="sortadder" class="tsd-anchor"></a>
+					<h3>sort<wbr>Adder</h3>
+					<div class="tsd-signature tsd-kind-icon">sort<wbr>Adder<span class="tsd-signature-symbol">:</span> <a href="_ui_panel_searchbox_.searchbox.html" class="tsd-signature-type">SearchBox</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">IColumnItem</span><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/4036fe0/src/ui/panel/Hierarchy.ts#L22">ui/panel/Hierarchy.ts:22</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="isselected" class="tsd-anchor"></a>
-					<h3>is<wbr>Selected</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Selected<span class="tsd-signature-symbol">(</span>selection<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/f7198ce/src/ui/SlopeGraph.ts#L7">ui/SlopeGraph.ts:7</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>selection: <span class="tsd-signature-type">object</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter">
-											<h5>has<span class="tsd-signature-symbol">: </span>function</h5>
-											<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon">has<span class="tsd-signature-symbol">(</span>dataIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<aside class="tsd-sources">
-														<ul>
-															<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/f7198ce/src/ui/SlopeGraph.ts#L7">ui/SlopeGraph.ts:7</a></li>
-														</ul>
-													</aside>
-													<h4 class="tsd-parameters-title">Parameters</h4>
-													<ul class="tsd-parameters">
-														<li>
-															<h5>dataIndex: <span class="tsd-signature-type">number</span></h5>
-														</li>
-													</ul>
-													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-												</li>
-										</ul>        </li>
-									</ul>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="update" class="tsd-anchor"></a>
 					<h3>update</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported">
-						<li class="tsd-signature tsd-kind-icon">update<span class="tsd-signature-symbol">(</span>path<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">SVGPathElement</span>, width<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">update<span class="tsd-signature-symbol">(</span>ranking<span class="tsd-signature-symbol">: </span><a href="_model_ranking_.ranking.html" class="tsd-signature-type">Ranking</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/f7198ce/src/ui/SlopeGraph.ts#L9">ui/SlopeGraph.ts:9</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/4036fe0/src/ui/panel/Hierarchy.ts#L49">ui/panel/Hierarchy.ts:49</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>path: <span class="tsd-signature-type">SVGPathElement</span></h5>
-								</li>
-								<li>
-									<h5>width: <span class="tsd-signature-type">number</span></h5>
+									<h5>ranking: <a href="_model_ranking_.ranking.html" class="tsd-signature-type">Ranking</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -200,54 +204,42 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_ui_slopegraph_.html">"ui/<wbr>Slope<wbr>Graph"</a>
+						<a href="../modules/_ui_panel_hierarchy_.html">"ui/panel/<wbr>Hierarchy"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum tsd-parent-kind-external-module">
-						<a href="../enums/_ui_slopegraph_.emode.html" class="tsd-kind-icon">EMode</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../classes/_ui_slopegraph_.groupslope.html" class="tsd-kind-icon">Group<wbr>Slope</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../classes/_ui_slopegraph_.itemslope.html" class="tsd-kind-icon">Item<wbr>Slope</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_ui_slopegraph_.slopegraph.html" class="tsd-kind-icon">Slope<wbr>Graph</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_ui_slopegraph_.ipos.html" class="tsd-kind-icon">IPos</a>
-					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_ui_slopegraph_.islope.html" class="tsd-kind-icon">ISlope</a>
+					<li class="current tsd-kind-class tsd-parent-kind-external-module">
+						<a href="_ui_panel_hierarchy_.hierarchy.html" class="tsd-kind-icon">Hierarchy</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_ui_slopegraph_.islope.html#dataindices" class="tsd-kind-icon">data<wbr>Indices</a>
+							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+								<a href="_ui_panel_hierarchy_.hierarchy.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_ui_slopegraph_.islope.html#isselected" class="tsd-kind-icon">is<wbr>Selected</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_ui_panel_hierarchy_.hierarchy.html#groupadder" class="tsd-kind-icon">group<wbr>Adder</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_ui_slopegraph_.islope.html#update" class="tsd-kind-icon">update</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_ui_panel_hierarchy_.hierarchy.html#node" class="tsd-kind-icon">node</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_ui_panel_hierarchy_.hierarchy.html#sortadder" class="tsd-kind-icon">sort<wbr>Adder</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_ui_panel_hierarchy_.hierarchy.html#update" class="tsd-kind-icon">update</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_ui_slopegraph_.islopegraphoptions.html" class="tsd-kind-icon">ISlope<wbr>Graph<wbr>Options</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
 	</div>
 </div>
-<footer class="with-border-bottom">
+<footer>
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
@@ -306,9 +298,6 @@
 		</div>
 	</div>
 </footer>
-<div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
-</div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
 <script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>

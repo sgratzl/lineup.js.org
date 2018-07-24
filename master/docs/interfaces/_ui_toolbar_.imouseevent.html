@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>IPos | lineupjs</title>
+	<title>IMouseEvent | LineUpJS</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">lineupjs</a>
+					<a href="../index.html" class="title">LineUpJS</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -38,10 +38,6 @@
 							</div>
 							<input type="checkbox" id="tsd-filter-inherited" checked />
 							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
-							<input type="checkbox" id="tsd-filter-externals" checked />
-							<label class="tsd-widget" for="tsd-filter-externals">Externals</label>
-							<input type="checkbox" id="tsd-filter-only-exported" />
-							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
 						</div>
 					</div>
 					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
@@ -56,13 +52,13 @@
 					<a href="../globals.html">Globals</a>
 				</li>
 				<li>
-					<a href="../modules/_ui_slopegraph_.html">&quot;ui/SlopeGraph&quot;</a>
+					<a href="../modules/_ui_toolbar_.html">&quot;ui/toolbar&quot;</a>
 				</li>
 				<li>
-					<a href="_ui_slopegraph_.ipos.html">IPos</a>
+					<a href="_ui_toolbar_.imouseevent.html">IMouseEvent</a>
 				</li>
 			</ul>
-			<h1>Interface IPos</h1>
+			<h1>Interface IMouseEvent</h1>
 		</div>
 	</div>
 </header>
@@ -73,89 +69,97 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">IPos</span>
+						<span class="target">IMouseEvent</span>
 					</li>
 				</ul>
+			</section>
+			<section class="tsd-panel tsd-kind-interface tsd-parent-kind-external-module">
+				<h3 class="tsd-before-signature">Indexable</h3>
+				<div class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">[</span>key: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]: </span><span class="tsd-signature-type">any</span></div>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
 				<h2>Index</h2>
 				<section class="tsd-panel tsd-index-panel">
 					<div class="tsd-index-content">
-						<section class="tsd-index-section tsd-is-not-exported">
+						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_ui_slopegraph_.ipos.html#group" class="tsd-kind-icon">group</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_ui_slopegraph_.ipos.html#heightperrow" class="tsd-kind-icon">height<wbr>Per<wbr>Row</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_ui_slopegraph_.ipos.html#offset" class="tsd-kind-icon">offset</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_ui_slopegraph_.ipos.html#ref" class="tsd-kind-icon">ref</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_ui_slopegraph_.ipos.html#rows" class="tsd-kind-icon">rows</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported"><a href="_ui_slopegraph_.ipos.html#start" class="tsd-kind-icon">start</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_ui_toolbar_.imouseevent.html#altkey" class="tsd-kind-icon">alt<wbr>Key</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_ui_toolbar_.imouseevent.html#ctrlkey" class="tsd-kind-icon">ctrl<wbr>Key</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_ui_toolbar_.imouseevent.html#currenttarget" class="tsd-kind-icon">current<wbr>Target</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_ui_toolbar_.imouseevent.html#shiftkey" class="tsd-kind-icon">shift<wbr>Key</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_ui_toolbar_.imouseevent.html#stoppropagation" class="tsd-kind-icon">stop<wbr>Propagation</a></li>
 							</ul>
 						</section>
 					</div>
 				</section>
 			</section>
-			<section class="tsd-panel-group tsd-member-group tsd-is-not-exported">
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="group" class="tsd-anchor"></a>
-					<h3>group</h3>
-					<div class="tsd-signature tsd-kind-icon">group<span class="tsd-signature-symbol">:</span> <a href="_model_interfaces_.igroup.html" class="tsd-signature-type">IGroup</a></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="altkey" class="tsd-anchor"></a>
+					<h3>alt<wbr>Key</h3>
+					<div class="tsd-signature tsd-kind-icon">alt<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/f7198ce/src/ui/SlopeGraph.ts#L51">ui/SlopeGraph.ts:51</a></li>
+							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/4036fe0/src/ui/toolbar.ts#L37">ui/toolbar.ts:37</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="heightperrow" class="tsd-anchor"></a>
-					<h3>height<wbr>Per<wbr>Row</h3>
-					<div class="tsd-signature tsd-kind-icon">height<wbr>Per<wbr>Row<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="ctrlkey" class="tsd-anchor"></a>
+					<h3>ctrl<wbr>Key</h3>
+					<div class="tsd-signature tsd-kind-icon">ctrl<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/f7198ce/src/ui/SlopeGraph.ts#L47">ui/SlopeGraph.ts:47</a></li>
+							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/4036fe0/src/ui/toolbar.ts#L38">ui/toolbar.ts:38</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="offset" class="tsd-anchor"></a>
-					<h3>offset</h3>
-					<div class="tsd-signature tsd-kind-icon">offset<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="currenttarget" class="tsd-anchor"></a>
+					<h3>current<wbr>Target</h3>
+					<div class="tsd-signature tsd-kind-icon">current<wbr>Target<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Element</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/f7198ce/src/ui/SlopeGraph.ts#L49">ui/SlopeGraph.ts:49</a></li>
+							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/4036fe0/src/ui/toolbar.ts#L35">ui/toolbar.ts:35</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="ref" class="tsd-anchor"></a>
-					<h3>ref</h3>
-					<div class="tsd-signature tsd-kind-icon">ref<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
+					<a name="shiftkey" class="tsd-anchor"></a>
+					<h3>shift<wbr>Key</h3>
+					<div class="tsd-signature tsd-kind-icon">shift<wbr>Key<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">boolean</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/f7198ce/src/ui/SlopeGraph.ts#L50">ui/SlopeGraph.ts:50</a></li>
+							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/4036fe0/src/ui/toolbar.ts#L36">ui/toolbar.ts:36</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="rows" class="tsd-anchor"></a>
-					<h3>rows</h3>
-					<div class="tsd-signature tsd-kind-icon">rows<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/f7198ce/src/ui/SlopeGraph.ts#L48">ui/SlopeGraph.ts:48</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-					<a name="start" class="tsd-anchor"></a>
-					<h3>start</h3>
-					<div class="tsd-signature tsd-kind-icon">start<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/f7198ce/src/ui/SlopeGraph.ts#L46">ui/SlopeGraph.ts:46</a></li>
-						</ul>
-					</aside>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="stoppropagation" class="tsd-anchor"></a>
+					<h3>stop<wbr>Propagation</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">stop<wbr>Propagation<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/4036fe0/src/ui/toolbar.ts#L34">ui/toolbar.ts:34</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
 				</section>
 			</section>
 		</div>
@@ -166,63 +170,75 @@
 						<a href="../globals.html"><em>Globals</em></a>
 					</li>
 					<li class="current tsd-kind-external-module">
-						<a href="../modules/_ui_slopegraph_.html">"ui/<wbr>Slope<wbr>Graph"</a>
+						<a href="../modules/_ui_toolbar_.html">"ui/toolbar"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
-					<li class=" tsd-kind-enum tsd-parent-kind-external-module">
-						<a href="../enums/_ui_slopegraph_.emode.html" class="tsd-kind-icon">EMode</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../classes/_ui_slopegraph_.groupslope.html" class="tsd-kind-icon">Group<wbr>Slope</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="../classes/_ui_slopegraph_.itemslope.html" class="tsd-kind-icon">Item<wbr>Slope</a>
-					</li>
-					<li class=" tsd-kind-class tsd-parent-kind-external-module">
-						<a href="../classes/_ui_slopegraph_.slopegraph.html" class="tsd-kind-icon">Slope<wbr>Graph</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_ui_toolbar_.idialogclass.html" class="tsd-kind-icon">IDialog<wbr>Class</a>
 					</li>
 				</ul>
 				<ul class="current">
-					<li class="current tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_ui_slopegraph_.ipos.html" class="tsd-kind-icon">IPos</a>
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_ui_toolbar_.imouseevent.html" class="tsd-kind-icon">IMouse<wbr>Event</a>
 						<ul>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_ui_slopegraph_.ipos.html#group" class="tsd-kind-icon">group</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_ui_toolbar_.imouseevent.html#altkey" class="tsd-kind-icon">alt<wbr>Key</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_ui_slopegraph_.ipos.html#heightperrow" class="tsd-kind-icon">height<wbr>Per<wbr>Row</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_ui_toolbar_.imouseevent.html#ctrlkey" class="tsd-kind-icon">ctrl<wbr>Key</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_ui_slopegraph_.ipos.html#offset" class="tsd-kind-icon">offset</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_ui_toolbar_.imouseevent.html#currenttarget" class="tsd-kind-icon">current<wbr>Target</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_ui_slopegraph_.ipos.html#ref" class="tsd-kind-icon">ref</a>
+							<li class=" tsd-kind-property tsd-parent-kind-interface">
+								<a href="_ui_toolbar_.imouseevent.html#shiftkey" class="tsd-kind-icon">shift<wbr>Key</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_ui_slopegraph_.ipos.html#rows" class="tsd-kind-icon">rows</a>
-							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-not-exported">
-								<a href="_ui_slopegraph_.ipos.html#start" class="tsd-kind-icon">start</a>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_ui_toolbar_.imouseevent.html#stoppropagation" class="tsd-kind-icon">stop<wbr>Propagation</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-is-not-exported">
-						<a href="_ui_slopegraph_.islope.html" class="tsd-kind-icon">ISlope</a>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_ui_toolbar_.ionclickhandler.html" class="tsd-kind-icon">IOn<wbr>Click<wbr>Handler</a>
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="_ui_slopegraph_.islopegraphoptions.html" class="tsd-kind-icon">ISlope<wbr>Graph<wbr>Options</a>
+						<a href="_ui_toolbar_.itoolbaraction.html" class="tsd-kind-icon">IToolbar<wbr>Action</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_ui_toolbar_.itoolbardialogaddon.html" class="tsd-kind-icon">IToolbar<wbr>Dialog<wbr>Addon</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_ui_toolbar_.iuioptions.html" class="tsd-kind-icon">IUIOptions</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
+						<a href="../modules/_ui_toolbar_.html#toolbaractions" class="tsd-kind-icon">toolbar<wbr>Actions</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_ui_toolbar_.html#dialogcontext" class="tsd-kind-icon">dialog<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_ui_toolbar_.html#gettoolbar" class="tsd-kind-icon">get<wbr>Toolbar</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_ui_toolbar_.html#gettoolbardialogaddons" class="tsd-kind-icon">get<wbr>Toolbar<wbr>Dialog<wbr>Addons</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_ui_toolbar_.html#isgroupable" class="tsd-kind-icon">is<wbr>Group<wbr>Able</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="../modules/_ui_toolbar_.html#issortable" class="tsd-kind-icon">is<wbr>Sort<wbr>Able</a>
 					</li>
 				</ul>
 			</nav>
 		</div>
 	</div>
 </div>
-<footer class="with-border-bottom">
+<footer>
 	<div class="container">
 		<h2>Legend</h2>
 		<div class="tsd-legend-group">
@@ -281,9 +297,6 @@
 		</div>
 	</div>
 </footer>
-<div class="container tsd-generator">
-	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
-</div>
 <div class="overlay"></div>
 <script src="../assets/js/main.js"></script>
 <script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
