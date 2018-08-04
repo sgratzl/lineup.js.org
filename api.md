@@ -4,7 +4,7 @@ layout: page
 menu: bar
 ---
 
-LineUp is implemented in clean TypeScript in an object oriented manner. A fully generated API documentation based on [TypeDoc](http://typedoc.org) is available at [[https://lineup.js.org/master/docs](https://lineup.js.org/master/docs].
+LineUp is implemented in clean TypeScript in an object oriented manner. A fully generated API documentation based on [TypeDoc](http://typedoc.org) is available at [https://lineup.js.org/master/docs](https://lineup.js.org/master/docs).
 
 LineUp can be build manually or using via the builder design pattern (see [Advanced Usage Example](./getting-started)). The builder design pattern in the more common way. 
 
