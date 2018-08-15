@@ -8,26 +8,34 @@ A [Jupyter Widget](https://jupyter.org/widgets.html) wrapper for Python is locat
 Installation
 ------------
 
-```bash
-pip install -e git+https://github.com/datavisyn/lineup_widget.git#egg=lineup_widget
-jupyter nbextension enable --py [--sys-prefix|--user|--system] lineup_widget
-```
+1. install Jupyter Widgets
+   ```bash
+   pip install ipywidgets
+   jupyter nbextension enable --py widgetsnbextension
+   ```
 
-Or, if you use jupyterlab:
+1. install library
+   ```bash
+   pip install lineup_widget
+   jupyter nbextension enable --py --sys-prefix lineup_widget
+   ```
 
-```bash
-pip install -e git+https://github.com/datavisyn/lineup_widget.git#egg=lineup_widget
-jupyter labextension install @jupyter-widgets/jupyterlab-manager
-```
+1. OR directly via repository (requires node and npm to be installed):
+   ```bash
+   pip install -e git+https://github.com/datavisyn/lineup_widget.git#egg=lineup_widget
+   jupyter nbextension enable --py --sys-prefix lineup_widget
+   ```
+
+1. Jupyterlab
+   ```bash
+   jupyter labextension install @jupyter-widgets/jupyterlab-manager
+   jupyter labextension install lineup_widget
+   ```
 
 Examples
 --------
 
 [![Launch Binder][binder-image]][binder-url]
-
-[binder-image]: https://camo.githubusercontent.com/70c5b4d050d4019f4f20b170d75679a9316ac5e5/687474703a2f2f6d7962696e6465722e6f72672f62616467652e737667
-[binder-url]: http://mybinder.org/repo/datavisyn/lineup_widget/examples
-
 
 ```python
 import lineup_widget
@@ -44,7 +52,8 @@ w
 ![simple usage](https://user-images.githubusercontent.com/4129778/35321859-7925d3a6-00e8-11e8-9884-bcbc76ae51c9.png)
 
 ```python
-from ipywidgets import interact
+from __future__ import print_function
+from ipywidgets import interact, interactive, interact_manual
 
 def selection_changed(selection):
     return df.iloc[selection]
@@ -54,3 +63,9 @@ interact(selection_changed, selection=lineup_widget.LineUpWidget(df));
 
 ![interact example](https://user-images.githubusercontent.com/4129778/35321846-6c5b07cc-00e8-11e8-9388-0acb65cbb509.png)
 
+**Hint**: 
+
+In case you see scrollbars in each cell it is because of the font the cells are too narrow, you can specify a larger row height using
+```python
+w = lineup_widget.LineUpWidget(df, options=dict(rowHeight=20))
+```
