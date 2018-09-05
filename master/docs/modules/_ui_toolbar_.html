@@ -90,6 +90,7 @@
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_ui_toolbar_.html#gettoolbar" class="tsd-kind-icon">get<wbr>Toolbar</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_ui_toolbar_.html#gettoolbardialogaddons" class="tsd-kind-icon">get<wbr>Toolbar<wbr>Dialog<wbr>Addons</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_ui_toolbar_.html#isgroupable" class="tsd-kind-icon">is<wbr>Group<wbr>Able</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_ui_toolbar_.html#isgroupsortable" class="tsd-kind-icon">is<wbr>Group<wbr>Sort<wbr>Able</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_ui_toolbar_.html#issortable" class="tsd-kind-icon">is<wbr>Sort<wbr>Able</a></li>
 							</ul>
 						</section>
@@ -104,7 +105,7 @@
 					<div class="tsd-signature tsd-kind-icon">toolbar<wbr>Actions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> =&nbsp;Object.assign({group,groupBy,collapse,sort,sortBy,sortGroupBy,more,clone,remove,rename,search: uiDialog(&#x27;Search &amp;hellip;&#x27;, SearchDialog, (ctx) &#x3D;&gt; [ctx.provider], { shortcut: true, order: 3 }),filterMapped: uiDialog(&#x27;Filter &amp;hellip;&#x27;, MappingsFilterDialog, (ctx) &#x3D;&gt; [ctx], { shortcut: true }),filterString: uiDialog(&#x27;Filter &amp;hellip;&#x27;, StringFilterDialog, () &#x3D;&gt; [], { shortcut: true }),filterCategorical: uiDialog(&#x27;Filter &amp;hellip;&#x27;, CategoricalFilterDialog, () &#x3D;&gt; [], { shortcut: true }),filterOrdinal: uiDialog(&#x27;Filter &amp;hellip;&#x27;, CategoricalMappingFilterDialog, () &#x3D;&gt; [], { shortcut: true }),filterBoolean: uiDialog(&#x27;Filter &amp;hellip;&#x27;, BooleanFilterDialog, () &#x3D;&gt; [], { shortcut: true }),colorMapped: uiDialog(&#x27;Color Mapping &amp;hellip;&#x27;, ColorMappingDialog, () &#x3D;&gt; [], { shortcut: false }),script: uiDialog(&#x27;Edit Combine Script &amp;hellip;&#x27;, ScriptEditDialog, () &#x3D;&gt; [], { shortcut: true }),reduce: uiDialog(&#x27;Reduce by &amp;hellip;&#x27;, ReduceDialog),cutoff: uiDialog(&#x27;Set Cut Off &amp;hellip;&#x27;, CutOffHierarchyDialog, (ctx) &#x3D;&gt; [ctx.idPrefix]),editPattern: uiDialog(&#x27;Edit Pattern &amp;hellip;&#x27;, EditPatternDialog, (ctx) &#x3D;&gt; [ctx.idPrefix]),editWeights: uiDialog(&#x27;Edit Weights &amp;hellip;&#x27;, WeightsEditDialog, () &#x3D;&gt; [], { shortcut: true }),compositeContained: uiDialog(&#x27;Contained Columns &amp;hellip;&#x27;, CompositeChildrenDialog, (ctx) &#x3D;&gt; [ctx]),splitCombined: ui(&#x27;Split Combined Column&#x27;, (col, _evt, ctx, level) &#x3D;&gt; {ctx.dialogManager.removeAboveLevel(level);// split the combined column into its children(&lt;CompositeColumn&gt;col).children.reverse().forEach((c) &#x3D;&gt; col.insertAfterMe(c));col.removeMe();}),invertSelection: ui(&#x27;Invert Selection&#x27;, (col, _evt, ctx, level) &#x3D;&gt; {ctx.dialogManager.removeAboveLevel(level - 1); // close itselfconst s &#x3D; ctx.provider.getSelection();const order &#x3D; col.findMyRanker()!.getOrder();if (s.length &#x3D;&#x3D;&#x3D; 0) {ctx.provider.setSelection(order);return;}const ss &#x3D; new Set(s);const others &#x3D; order.filter((d) &#x3D;&gt; !ss.has(d));ctx.provider.setSelection(others);})}, toolbarAddons)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/9dea88d/src/ui/toolbar.ts#L259">ui/toolbar.ts:259</a></li>
+							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/dca763f/src/ui/toolbar.ts#L259">ui/toolbar.ts:259</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -129,7 +130,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/9dea88d/src/ui/toolbar.ts#L71">ui/toolbar.ts:71</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/dca763f/src/ui/toolbar.ts#L71">ui/toolbar.ts:71</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -160,7 +161,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/9dea88d/src/ui/toolbar.ts#L306">ui/toolbar.ts:306</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/dca763f/src/ui/toolbar.ts#L306">ui/toolbar.ts:306</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -186,7 +187,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/9dea88d/src/ui/toolbar.ts#L353">ui/toolbar.ts:353</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/dca763f/src/ui/toolbar.ts#L353">ui/toolbar.ts:353</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -215,7 +216,33 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/9dea88d/src/ui/toolbar.ts#L386">ui/toolbar.ts:386</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/dca763f/src/ui/toolbar.ts#L386">ui/toolbar.ts:386</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>col: <a href="../classes/_model_column_.column.html" class="tsd-signature-type">Column</a></h5>
+								</li>
+								<li>
+									<h5>ctx: <a href="_ui_interfaces_.html#irankingheadercontext" class="tsd-signature-type">IRankingHeaderContext</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="isgroupsortable" class="tsd-anchor"></a>
+					<h3>is<wbr>Group<wbr>Sort<wbr>Able</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Group<wbr>Sort<wbr>Able<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="../classes/_model_column_.column.html" class="tsd-signature-type">Column</a>, ctx<span class="tsd-signature-symbol">: </span><a href="_ui_interfaces_.html#irankingheadercontext" class="tsd-signature-type">IRankingHeaderContext</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/dca763f/src/ui/toolbar.ts#L391">ui/toolbar.ts:391</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -241,7 +268,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/9dea88d/src/ui/toolbar.ts#L381">ui/toolbar.ts:381</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/dca763f/src/ui/toolbar.ts#L381">ui/toolbar.ts:381</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -304,6 +331,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="_ui_toolbar_.html#isgroupable" class="tsd-kind-icon">is<wbr>Group<wbr>Able</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_ui_toolbar_.html#isgroupsortable" class="tsd-kind-icon">is<wbr>Group<wbr>Sort<wbr>Able</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="_ui_toolbar_.html#issortable" class="tsd-kind-icon">is<wbr>Sort<wbr>Able</a>
