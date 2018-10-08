@@ -2,20 +2,11 @@
 * https://github.com/datavisyn/lineup_app
 * Copyright (c) 2018 Samuel Gratzl; Licensed MIT*/
 
-/*! lineupjs - v4.0.0-alpha.2 - 2018
+/*! lineupjs - v4.0.0-alpha.3 - 2018
 * https://lineup.js.org
 * Copyright (c) 2018 Samuel Gratzl; Licensed BSD-3-Clause*/
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 @charset "UTF-8";
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-aria,
 .lu-hidden {
   display: none !important; }
@@ -90,15 +81,6 @@
   .lu-missing > * {
     display: none; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 @font-face {
   font-family: 'lu-font';
   src: url(29334f20971b9251d88c2b7c1a082917.eot);
@@ -148,12 +130,6 @@
 
 /**
   popups, e.g., rename dialogs,...
- */
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
  */
 @keyframes lu-dialogs-fade-in {
   from {
@@ -315,12 +291,6 @@
     border-top: 5px solid black;
     bottom: -5px; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-dialog-mapper {
   width: 25em; }
   .lu-dialog-mapper > .lu-summary {
@@ -330,10 +300,6 @@
     width: 5em; }
   .lu-dialog-mapper[data-scale=script] .lu-dialog-mapper-script {
     display: block; }
-  .lu-dialog-mapper [data-toggle=open] ~ .lu-dialog-details {
-    display: block; }
-  .lu-dialog-mapper > .lu-dialog-mapper-details {
-    display: none; }
 
 div.lu-dialog-mapper-script {
   margin-top: 1em;
@@ -343,21 +309,6 @@ div.lu-dialog-mapper-script {
     width: 98%;
     font-size: 9pt;
     display: block; }
-
-.lu-dialog-mapper-toggle {
-  margin-top: 1em;
-  cursor: pointer; }
-  .lu-dialog-mapper-toggle::before {
-    display: inline-block;
-    font: normal normal normal 14px/1 lu-font, serif;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    content: "\E802";
-    width: 0.8em; }
-  .lu-dialog-mapper-toggle[data-toggle=open]::before {
-    content: "\E801"; }
 
 svg.lu-dialog-mapper-details {
   shape-rendering: geometricprecision;
@@ -396,12 +347,6 @@ g.lu-dialog-mapper-mapping {
 .lu-dialog-mapper[data-scale=script] div.lu-dialog-mapper-script {
   display: block; }
 
-.lu-dialog-mapper [data-toggle=open] ~ .lu-dialog-mapper-details {
-  display: block; }
-
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-header,
 .lu-side-panel-entry {
   -moz-user-select: none;
@@ -448,9 +393,6 @@ g.lu-dialog-mapper-mapping {
   position: relative;
   font-size: x-small; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-summary label.lu-disabled {
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -477,12 +419,6 @@ g.lu-dialog-mapper-mapping {
   margin: 5px 0;
   font-size: 13px; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-toolbar {
   position: relative;
   font-size: 11pt;
@@ -523,6 +459,9 @@ g.lu-dialog-mapper-mapping {
 
 .lu-action-color-mapping::before {
   content: "\F1FC"; }
+
+.lu-action-data-mapping::before {
+  content: "\F1DE"; }
 
 .lu-action-reduce-by::before,
 .lu-action-edit-combine-script::before,
@@ -656,42 +595,10 @@ g.lu-dialog-mapper-mapping {
     .lu-more-options > .lu-action-group::after {
       display: none; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
-/**
- * https://github.com/wilsonpage/sass-import-once/blob/master/_sass-import-once.scss
- */
-/* Module export mixin
- * This mixin helps making sure a module is imported once and only once.
- * @access public
- * @param {String} $name - Name of exported module
- * @param {Bool} $warn [true] - Warn when module has been already imported
- * @require $imported-modules
- */
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
-/**
- * https://github.com/wilsonpage/sass-import-once/blob/master/_sass-import-once.scss
- */
-/* Module export mixin
- * This mixin helps making sure a module is imported once and only once.
- * @access public
- * @param {String} $name - Name of exported module
- * @param {Bool} $warn [true] - Warn when module has been already imported
- * @require $imported-modules
- */
-.leloading {
+.le-loading {
   background: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEyNCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDEyNCAzMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQogIDxzdHlsZT4vKiA8IVtDREFUQVsgKi8NCiAgICByZWN0IHsNCiAgICAgIGZpbGw6ICNjMWMxYzE7DQogICAgfS8qIF1dPiAqLw0KICA8L3N0eWxlPg0KICA8cmVjdCB4PSI1MCIgeT0iMTMiIHdpZHRoPSI0IiBoZWlnaHQ9IjUiIC8+DQogIDxyZWN0IHg9IjYwIiB5PSI1IiB3aWR0aD0iNCIgaGVpZ2h0PSIyMSIgLz4NCiAgPHJlY3QgeD0iNzAiIHk9IjkiIHdpZHRoPSI0IiBoZWlnaHQ9IjEzIiAvPg0KPC9zdmc+DQo=) center contain repeat no-repeat;
   background-blend-mode: overlay; }
-  .leloading > * {
+  .le-loading > * {
     opacity: 0; }
 
 .le.le-animated .le-th,
@@ -699,7 +606,7 @@ g.lu-dialog-mapper-mapping {
   transition: opacity 0.5s;
   opacity: 1; }
 
-.le.le-animated .leloading {
+.le.le-animated .le-loading {
   background-image: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEyNCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDEyNCAzMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQogIDxzdHlsZT4vKiA8IVtDREFUQVsgKi8NCiAgICBAa2V5ZnJhbWVzIGxvYWQgew0KICAgICAgMCUgICB7IHRyYW5zZm9ybTogdHJhbnNsYXRlKDAsMjFweClzY2FsZSgxLDUpOyB9DQogICAgICAxMDAlIHsgdHJhbnNmb3JtOiB0cmFuc2xhdGUoMCwxM3B4KXNjYWxlKDEsMjEpOyB9DQogICAgfQ0KICAgIHJlY3Qgew0KICAgICAgZmlsbDogI2MxYzFjMTsNCiAgICAgIGFuaW1hdGlvbjogbG9hZCAwLjZzIGxpbmVhciBhbHRlcm5hdGUgaW5maW5pdGU7DQogICAgfS8qIF1dPiAqLw0KICA8L3N0eWxlPg0KICA8cmVjdCB4PSI1MCIgd2lkdGg9IjQiIGhlaWdodD0iMSIvPg0KICA8cmVjdCB4PSI2MCIgd2lkdGg9IjQiIGhlaWdodD0iMSIgc3R5bGU9ImFuaW1hdGlvbi1kZWxheTogMC4xNXMiLz4NCiAgPHJlY3QgeD0iNzAiIHdpZHRoPSI0IiBoZWlnaHQ9IjEiIHN0eWxlPSJhbmltYXRpb24tZGVsYXk6IDAuM3MiLz4NCjwvc3ZnPg0K); }
 
 .le > main.le-scrolling {
@@ -709,9 +616,6 @@ g.lu-dialog-mapper-mapping {
   position: relative; }
 
 article.le-row-animation > .le-tr {
-  /**
-      defaults
-      */
   overflow: hidden !important;
   transition: all 0.5s linear;
   will-change: transform, opacity, height; }
@@ -723,9 +627,6 @@ article.le-row-animation > .le-tr {
     overflow: hidden !important; }
 
 article.le-row-animation.le-hide-animation > .le-tr {
-  /**
-      in case of hiding shift update and show
-      */
   transition: all 0.5s linear 0.3s; }
   article.le-row-animation.le-hide-animation > .le-tr[data-animation=hide] {
     transition: all 0.25s linear; }
@@ -733,15 +634,9 @@ article.le-row-animation.le-hide-animation > .le-tr {
     transition: all 0.25s linear 0.3s; }
 
 article.le-row-animation.le-update-animation > .le-tr[data-animation=show] {
-  /**
-        in case of update shift show
-        */
   transition: all 0.25s linear 0.55s; }
 
 article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-animation=show] {
-  /**
-        in case of both update and hide shift show twice
-        */
   transition: all 0.25s linear 0.85s; }
 
 .le {
@@ -784,7 +679,6 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
   box-sizing: border-box;
   transform: translateZ(0); }
   .le-tr:hover, .le-tr.le-highlighted {
-    /* use box-shadow to create collapsing border (@see https://stackoverflow.com/a/28807765) */
     box-shadow: 0 0 0 2px #ffa500; }
   .le-tr.le-even {
     background-clip: content-box;
@@ -838,9 +732,6 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
 .le-td {
   box-sizing: border-box; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .le-th {
   color: black;
   margin-bottom: 15px;
@@ -934,9 +825,6 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
     text-align: left;
     transform-origin: top left; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-hr {
   position: absolute;
   left: 0;
@@ -963,9 +851,6 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
   -ms-user-select: none;
   user-select: none; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-hover-only {
   visibility: hidden;
   padding-left: 4px; }
@@ -986,7 +871,6 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
     /**
     selected state extends hover state
     */
-    /* use box-shadow to create collapsing border (@see https://stackoverflow.com/a/28807765) */
     box-shadow: 0 0 0 2px #ffa500; }
   .le-tr > canvas {
     height: 100%;
@@ -1001,12 +885,6 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
   height: auto !important;
   white-space: unset; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .le-td.lu-renderer-aggregate {
   text-align: center;
   overflow-x: unset; }
@@ -1066,9 +944,6 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
   cursor: pointer;
   font-size: medium; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-bar-label {
   position: absolute;
   width: 100%;
@@ -1089,9 +964,6 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
   justify-content: center;
   flex-direction: column; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-renderer-boxplot {
   display: flex;
   flex-direction: row;
@@ -1157,9 +1029,6 @@ outlier
   .lu-boxplot-outlier[data-sort] {
     background: #ffa500; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-renderer-catdistributionbar {
   display: flex; }
 
@@ -1178,9 +1047,6 @@ outlier
     text-overflow: ellipsis;
     white-space: nowrap; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-renderer-categorical,
 .lu-renderer-brightness {
   display: flex;
@@ -1204,9 +1070,6 @@ outlier
   text-overflow: ellipsis;
   align-self: center; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-renderer-dot > div {
   background: gray;
   opacity: 0.7;
@@ -1218,9 +1081,6 @@ outlier
   top: 50%;
   position: absolute; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-heatmap {
   display: flex;
   flex-direction: row;
@@ -1239,9 +1099,6 @@ outlier
 .lu-heatmap:not(.lu-dense) > div[data-title]:last-of-type::before {
   text-align: right; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-histogram {
   display: flex;
   flex-direction: row; }
@@ -1349,9 +1206,6 @@ outlier
   .lu-histogram[data-interactive]:hover > .lu-histogram-max {
     border-left-width: 5px; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-renderer-image {
   background-size: contain;
   background-position: center;
@@ -1367,9 +1221,6 @@ outlier
     background-blend-mode: overlay;
     z-index: -1; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-renderer-interleaving {
   display: flex;
   flex-direction: column; }
@@ -1377,9 +1228,6 @@ outlier
     flex: 1 1 0;
     overflow-y: hidden; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-renderer-rank {
   text-align: right;
   display: flex;
@@ -1389,12 +1237,6 @@ outlier
   flex-direction: column;
   justify-content: space-between; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .le-td.lu-renderer-selection {
   display: flex;
   align-items: center;
@@ -1418,9 +1260,6 @@ outlier
   content: "\E800";
   padding-left: 2px; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-renderer-sparkline > path {
   stroke: black;
   fill: none;
@@ -1431,15 +1270,9 @@ outlier
   stroke-width: 1;
   vector-effect: non-scaling-stroke; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-stack-sub {
   height: 100%; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .le-td.lu-renderer-string {
   display: flex;
   align-items: center; }
@@ -1460,9 +1293,6 @@ outlier
   margin: 0;
   box-sizing: border-box; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-rtable {
   font-size: 60%;
   padding: 0;
@@ -1484,9 +1314,6 @@ outlier
     top: 0;
     bottom: 0; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-renderer-threshold {
   align-items: flex-start; }
   .lu-renderer-threshold > div {
@@ -1494,9 +1321,6 @@ outlier
     .lu-renderer-threshold > div.down {
       align-self: flex-end; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-renderer-upset {
   display: flex;
   align-items: center;
@@ -1517,20 +1341,11 @@ outlier
   .lu-upset-dot.lu-enabled {
     opacity: 1; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-renderer-verticalbar {
   align-items: flex-end; }
   .lu-renderer-verticalbar > div {
     position: relative; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 section.lu-slopegraph {
   width: 200px;
   position: relative; }
@@ -1587,12 +1402,6 @@ section.lu-slopegraph-header {
     section.lu-slopegraph-header i[title=Band]::before {
       content: "\E816"; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-side-panel {
   display: flex;
   flex-direction: column;
@@ -1640,9 +1449,6 @@ section.lu-slopegraph-header {
     .lu-side-panel.lu-collapsed .lu-collapser::before {
       transform: scale(-1, 1); }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-search {
   position: relative; }
 
@@ -1703,9 +1509,6 @@ section.lu-slopegraph-header {
   display: block;
   max-height: 70vh; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-side-panel-entry {
   background-color: #fff; }
 
@@ -1741,9 +1544,6 @@ section.lu-slopegraph-header {
     flex-direction: column;
     height: auto; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-hierarchy {
   position: relative;
   order: 2; }
@@ -1823,12 +1623,6 @@ section.lu-slopegraph-header {
     color: black;
     background: white; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-side-panel-rankings {
   border-bottom: 2px solid #f0f0f0;
   display: flex;
@@ -1904,12 +1698,6 @@ section.lu-slopegraph-header {
     .lu-side-panel-ranking-label > i:hover {
       color: black; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-typed-icon[data-type-cat]::before {
   display: inline-block;
   font: normal normal normal 14px/1 lu-font, serif;
@@ -1946,22 +1734,6 @@ section.lu-slopegraph-header {
 .lu-header > .lu-typed-icon[data-type-cat='other']::before {
   display: none; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
-/**
- * https://github.com/wilsonpage/sass-import-once/blob/master/_sass-import-once.scss
- */
-/* Module export mixin
- * This mixin helps making sure a module is imported once and only once.
- * @access public
- * @param {String} $name - Name of exported module
- * @param {Bool} $warn [true] - Warn when module has been already imported
- * @require $imported-modules
- */
 .lu-rule-button-chooser {
   padding: 0.5em 0.5em 0 1em;
   flex: 0 0 auto;
@@ -2016,12 +1788,6 @@ section.lu-slopegraph-header {
     top: -6px;
     left: 29.4%; }
 
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
-/**
- see also animation/index.ts MAX_ANIMATION_TIME
- */
 .lu-unsupported-browser {
   display: flex;
   flex-direction: column;
