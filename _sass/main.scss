@@ -55,4 +55,15 @@ body {
   }
 }
 
+
+.page-footer {
+  padding-top: 0;
+
+  .footer-copyright {
+    min-height: 30px;
+    padding: 0 1em;
+  }
+}
+
+
 @import './rouge-github';
