@@ -1,4 +1,4 @@
-/*! lineupjs - v3.1.5 - 2018
+/*! lineupjs - v3.1.6 - 2018
 * https://lineup.js.org
 * Copyright (c) 2018 Samuel Gratzl; Licensed BSD-3-Clause*/
 
@@ -342,7 +342,7 @@
       stroke-linejoin: round;
       stroke-linecap: round; }
     .lu-dialog-mapper svg line:not([x1]) {
-      stroke-width: 1.25; }
+      stroke-width: 1.5; }
     .lu-dialog-mapper svg line[data-v] {
       stroke-opacity: 0.5;
       stroke-width: 0.5;
@@ -1180,38 +1180,41 @@ section.lu-header {
     .lu .lu-summary[data-renderer=interleaving].lu-dense > div,
     .lu [data-renderer=histogram].lu-dense > div {
       margin: 0; }
-    .lu [data-agg=group] [data-renderer=categorical] > span,
-    .lu .lu-summary[data-renderer=categorical] > span,
-    .lu .lu-summary[data-renderer=interleaving] > span,
-    .lu [data-renderer=histogram] > span {
-      -moz-user-select: none;
-      -webkit-user-select: none;
-      -ms-user-select: none;
-      user-select: none;
-      position: absolute;
-      bottom: -15px;
-      pointer-events: none;
-      line-height: 100%;
-      /*
+  .lu [data-agg=group] [data-renderer=categorical] > span,
+  .lu .lu-summary[data-renderer=categorical] > span,
+  .lu .lu-summary[data-renderer=interleaving] > span,
+  .lu .lu-summary[data-renderer=boxplot] > span,
+  .lu [data-renderer=histogram] > span {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    position: absolute;
+    bottom: -15px;
+    pointer-events: none;
+    line-height: 100%;
+    /*
      * create axis tick as background image and position it left or right
      */
-      background-image: linear-gradient(to bottom, #000 3px, transparent);
-      background-repeat: no-repeat;
-      background-size: 1px 3px;
-      padding-top: 5px; }
-      .lu [data-agg=group] [data-renderer=categorical] > span:first-of-type,
-      .lu .lu-summary[data-renderer=categorical] > span:first-of-type,
-      .lu .lu-summary[data-renderer=interleaving] > span:first-of-type,
-      .lu [data-renderer=histogram] > span:first-of-type {
-        left: 0;
-        background-position: left top; }
-      .lu [data-agg=group] [data-renderer=categorical] > span:last-of-type,
-      .lu .lu-summary[data-renderer=categorical] > span:last-of-type,
-      .lu .lu-summary[data-renderer=interleaving] > span:last-of-type,
-      .lu [data-renderer=histogram] > span:last-of-type {
-        right: 0;
-        text-align: right;
-        background-position: right top; }
+    background-image: linear-gradient(to bottom, #000 3px, transparent);
+    background-repeat: no-repeat;
+    background-size: 1px 3px;
+    padding-top: 5px; }
+    .lu [data-agg=group] [data-renderer=categorical] > span:first-of-type,
+    .lu .lu-summary[data-renderer=categorical] > span:first-of-type,
+    .lu .lu-summary[data-renderer=interleaving] > span:first-of-type,
+    .lu .lu-summary[data-renderer=boxplot] > span:first-of-type,
+    .lu [data-renderer=histogram] > span:first-of-type {
+      left: 0;
+      background-position: left top; }
+    .lu [data-agg=group] [data-renderer=categorical] > span:last-of-type,
+    .lu .lu-summary[data-renderer=categorical] > span:last-of-type,
+    .lu .lu-summary[data-renderer=interleaving] > span:last-of-type,
+    .lu .lu-summary[data-renderer=boxplot] > span:last-of-type,
+    .lu [data-renderer=histogram] > span:last-of-type {
+      right: 0;
+      text-align: right;
+      background-position: right top; }
   .lu [data-renderer=categorical]:not(.lu-dense) > div[data-title]::before,
   .lu [data-renderer=histogram]:not(.lu-dense) > div[data-title]::before,
   .lu [data-renderer=interleaving]:not(.lu-dense) > div[data-title]::before,
