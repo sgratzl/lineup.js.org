@@ -97,7 +97,7 @@ self.__precacheManifest = [
     "url": "570eb83859dc23dd0eec423a49e147fe.woff2"
   },
   {
-    "revision": "937c4283e222effc9d17",
+    "revision": "d1c78c43d9a0c846305d",
     "url": "app.css"
   },
   {
@@ -129,7 +129,7 @@ self.__precacheManifest = [
     "url": "android-chrome-192x192.png"
   },
   {
-    "revision": "937c4283e222effc9d17",
+    "revision": "d1c78c43d9a0c846305d",
     "url": "app.js"
   },
   {
