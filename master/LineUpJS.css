@@ -1,4 +1,4 @@
-/*! lineupjs - v3.1.6 - 2018
+/*! lineupjs - v3.1.7 - 2018
 * https://lineup.js.org
 * Copyright (c) 2018 Samuel Gratzl; Licensed BSD-3-Clause*/
 
@@ -1349,6 +1349,12 @@ section.lu-header {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: normal; }
+  .lu .lu-right {
+    justify-content: flex-end;
+    text-align: right; }
+  .lu .lu-center {
+    justify-content: center;
+    text-align: left; }
   .lu [data-renderer=table],
   .lu [data-renderer=map],
   .lu [data-renderer=mapbars] {
@@ -1502,12 +1508,22 @@ section.lu-slopegraph-header {
         transform: scale(-1, 1); }
 
 .lu-search {
-  position: relative; }
-  .lu-search > input {
-    width: 100%;
+  position: relative;
+  display: flex; }
+  .lu-search::before {
+    content: '+';
+    border-radius: 4px 0 0 4px;
+    width: 1.2em;
+    text-align: center;
     border: 1px solid #999;
     box-sizing: border-box;
-    border-radius: 4px;
+    border-right: none; }
+  .lu-search > input {
+    flex: 1 1 0;
+    height: 22px;
+    border: 1px solid #999;
+    box-sizing: border-box;
+    border-radius: 0 4px 4px 0;
     padding: 3px 5px;
     outline: none; }
   .lu-search > ul {
@@ -1515,6 +1531,8 @@ section.lu-slopegraph-header {
     position: absolute;
     overflow: auto;
     z-index: 1000;
+    left: 1.2em;
+    top: 22px;
     max-height: 0;
     background: white;
     text-align: left;
@@ -1522,6 +1540,7 @@ section.lu-slopegraph-header {
     margin-top: -1px;
     transition: all linear 0.5s;
     list-style: none;
+    box-sizing: border-box;
     border: 1px solid #999;
     border-radius: 0 0 3px 3px; }
     .lu-search > ul.lu-search-empty::before {
@@ -1645,8 +1664,11 @@ article.lu-side-panel-entry {
     content: 'Sorting hierarchy'; }
   .lu-hierarchy > section.lu-hierarchy-sortgroup::before {
     content: 'Group Sorting hierarchy'; }
-  .lu-hierarchy .lu-search input {
+  .lu-hierarchy .lu-search > input {
+    height: 19px;
     font-size: x-small; }
+  .lu-hierarchy .lu-search > ul {
+    top: 19px; }
   .lu-hierarchy ul {
     color: black;
     background: white; }

@@ -69,7 +69,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<a href="_builder_column_columnbuilder_.columnbuilder.html" class="tsd-signature-type">ColumnBuilder</a><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_model_stringcolumn_.html#istringcolumndesc" class="tsd-signature-type">IStringColumnDesc</a><span class="tsd-signature-symbol">&gt;</span>
+						<a href="_builder_column_columnbuilder_.columnbuilder.html" class="tsd-signature-type">ColumnBuilder</a><span class="tsd-signature-symbol">&lt;</span><a href="../modules/_model_linkcolumn_.html#ilinkcolumndesc" class="tsd-signature-type">ILinkColumnDesc</a><span class="tsd-signature-symbol">&gt;</span>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">StringColumnBuilder</span>
@@ -91,6 +91,7 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_column_stringcolumnbuilder_.stringcolumnbuilder.html#alignment" class="tsd-kind-icon">alignment</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_builder_column_stringcolumnbuilder_.stringcolumnbuilder.html#asarray" class="tsd-kind-icon">as<wbr>Array</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_builder_column_stringcolumnbuilder_.stringcolumnbuilder.html#asmap" class="tsd-kind-icon">as<wbr>Map</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_builder_column_stringcolumnbuilder_.stringcolumnbuilder.html#build" class="tsd-kind-icon">build</a></li>
@@ -122,7 +123,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_builder_column_columnbuilder_.columnbuilder.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/33bb490/src/builder/column/StringColumnBuilder.ts#L4">builder/column/StringColumnBuilder.ts:4</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7dcf47b/src/builder/column/StringColumnBuilder.ts#L4">builder/column/StringColumnBuilder.ts:4</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -138,6 +139,34 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="alignment" class="tsd-anchor"></a>
+					<h3>alignment</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">alignment<span class="tsd-signature-symbol">(</span>align<span class="tsd-signature-symbol">: </span><a href="../enums/_model_stringcolumn_.ealignment.html" class="tsd-signature-type">EAlignment</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7dcf47b/src/builder/column/StringColumnBuilder.ts#L21">builder/column/StringColumnBuilder.ts:21</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>changes the alignment of the column</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>align: <a href="../enums/_model_stringcolumn_.ealignment.html" class="tsd-signature-type">EAlignment</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="asarray" class="tsd-anchor"></a>
 					<h3>as<wbr>Array</h3>
@@ -149,7 +178,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_builder_column_columnbuilder_.columnbuilder.html#asarray">asArray</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/33bb490/src/builder/column/ColumnBuilder.ts#L83">builder/column/ColumnBuilder.ts:83</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7dcf47b/src/builder/column/ColumnBuilder.ts#L83">builder/column/ColumnBuilder.ts:83</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -181,7 +210,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_builder_column_columnbuilder_.columnbuilder.html#asmap">asMap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/33bb490/src/builder/column/ColumnBuilder.ts#L99">builder/column/ColumnBuilder.ts:99</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7dcf47b/src/builder/column/ColumnBuilder.ts#L99">builder/column/ColumnBuilder.ts:99</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -197,14 +226,14 @@
 					<a name="build" class="tsd-anchor"></a>
 					<h3>build</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">build<span class="tsd-signature-symbol">(</span>_data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_model_stringcolumn_.html#istringcolumndesc" class="tsd-signature-type">IStringColumnDesc</a></li>
+						<li class="tsd-signature tsd-kind-icon">build<span class="tsd-signature-symbol">(</span>_data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_model_linkcolumn_.html#ilinkcolumndesc" class="tsd-signature-type">ILinkColumnDesc</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_builder_column_columnbuilder_.columnbuilder.html#build">build</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/33bb490/src/builder/column/ColumnBuilder.ts#L108">builder/column/ColumnBuilder.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7dcf47b/src/builder/column/ColumnBuilder.ts#L108">builder/column/ColumnBuilder.ts:108</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -218,7 +247,7 @@
 									<h5>_data: <span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="../modules/_model_stringcolumn_.html#istringcolumndesc" class="tsd-signature-type">IStringColumnDesc</a></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_model_linkcolumn_.html#ilinkcolumndesc" class="tsd-signature-type">ILinkColumnDesc</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -233,7 +262,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_builder_column_columnbuilder_.columnbuilder.html#color">color</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/33bb490/src/builder/column/ColumnBuilder.ts#L74">builder/column/ColumnBuilder.ts:74</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7dcf47b/src/builder/column/ColumnBuilder.ts#L74">builder/column/ColumnBuilder.ts:74</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -262,7 +291,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_builder_column_columnbuilder_.columnbuilder.html#custom">custom</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/33bb490/src/builder/column/ColumnBuilder.ts#L58">builder/column/ColumnBuilder.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7dcf47b/src/builder/column/ColumnBuilder.ts#L58">builder/column/ColumnBuilder.ts:58</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -300,7 +329,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_builder_column_columnbuilder_.columnbuilder.html#description">description</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/33bb490/src/builder/column/ColumnBuilder.ts#L21">builder/column/ColumnBuilder.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7dcf47b/src/builder/column/ColumnBuilder.ts#L21">builder/column/ColumnBuilder.ts:21</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -328,7 +357,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/33bb490/src/builder/column/StringColumnBuilder.ts#L13">builder/column/StringColumnBuilder.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7dcf47b/src/builder/column/StringColumnBuilder.ts#L13">builder/column/StringColumnBuilder.ts:13</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -351,7 +380,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_builder_column_columnbuilder_.columnbuilder.html#frozen">frozen</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/33bb490/src/builder/column/ColumnBuilder.ts#L29">builder/column/ColumnBuilder.ts:29</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7dcf47b/src/builder/column/ColumnBuilder.ts#L29">builder/column/ColumnBuilder.ts:29</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -373,7 +402,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/33bb490/src/builder/column/StringColumnBuilder.ts#L21">builder/column/StringColumnBuilder.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7dcf47b/src/builder/column/StringColumnBuilder.ts#L29">builder/column/StringColumnBuilder.ts:29</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -396,7 +425,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_builder_column_columnbuilder_.columnbuilder.html#label">label</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/33bb490/src/builder/column/ColumnBuilder.ts#L13">builder/column/ColumnBuilder.ts:13</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7dcf47b/src/builder/column/ColumnBuilder.ts#L13">builder/column/ColumnBuilder.ts:13</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -424,7 +453,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/33bb490/src/builder/column/StringColumnBuilder.ts#L31">builder/column/StringColumnBuilder.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7dcf47b/src/builder/column/StringColumnBuilder.ts#L39">builder/column/StringColumnBuilder.ts:39</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -462,7 +491,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_builder_column_columnbuilder_.columnbuilder.html#renderer">renderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/33bb490/src/builder/column/ColumnBuilder.ts#L40">builder/column/ColumnBuilder.ts:40</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7dcf47b/src/builder/column/ColumnBuilder.ts#L40">builder/column/ColumnBuilder.ts:40</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -506,7 +535,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_builder_column_columnbuilder_.columnbuilder.html">ColumnBuilder</a>.<a href="_builder_column_columnbuilder_.columnbuilder.html#width">width</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/33bb490/src/builder/column/ColumnBuilder.ts#L66">builder/column/ColumnBuilder.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7dcf47b/src/builder/column/ColumnBuilder.ts#L66">builder/column/ColumnBuilder.ts:66</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -546,6 +575,9 @@
 						<ul>
 							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="_builder_column_stringcolumnbuilder_.stringcolumnbuilder.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_builder_column_stringcolumnbuilder_.stringcolumnbuilder.html#alignment" class="tsd-kind-icon">alignment</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_builder_column_stringcolumnbuilder_.stringcolumnbuilder.html#asarray" class="tsd-kind-icon">as<wbr>Array</a>
