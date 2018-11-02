@@ -105,7 +105,7 @@
 					<div class="tsd-signature tsd-kind-icon">toolbar<wbr>Actions<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> =&nbsp;Object.assign({group,groupBy,collapse,sort,sortBy,sortGroupBy,more,clone,remove,rename,search: uiDialog(&#x27;Search &amp;hellip;&#x27;, SearchDialog, (ctx) &#x3D;&gt; [ctx.provider], { shortcut: true, order: 3 }),filterNumber: uiDialog(&#x27;Filter &amp;hellip;&#x27;, NumberFilterDialog, (ctx) &#x3D;&gt; [ctx], { shortcut: true }),filterString: uiDialog(&#x27;Filter &amp;hellip;&#x27;, StringFilterDialog, () &#x3D;&gt; [], { shortcut: true }),filterCategorical: uiDialog(&#x27;Filter &amp;hellip;&#x27;, CategoricalFilterDialog, () &#x3D;&gt; [], { shortcut: true }),filterOrdinal: uiDialog(&#x27;Filter &amp;hellip;&#x27;, CategoricalMappingFilterDialog, () &#x3D;&gt; [], { shortcut: true }),filterBoolean: uiDialog(&#x27;Filter &amp;hellip;&#x27;, BooleanFilterDialog, () &#x3D;&gt; [], { shortcut: true }),colorMapped: uiDialog(&#x27;Color Mapping &amp;hellip;&#x27;, ColorMappingDialog, () &#x3D;&gt; [], { shortcut: false }),script: uiDialog(&#x27;Edit Combine Script &amp;hellip;&#x27;, ScriptEditDialog, () &#x3D;&gt; [], { shortcut: true }),reduce: uiDialog(&#x27;Reduce by &amp;hellip;&#x27;, ReduceDialog),cutoff: uiDialog(&#x27;Set Cut Off &amp;hellip;&#x27;, CutOffHierarchyDialog, (ctx) &#x3D;&gt; [ctx.idPrefix]),editMapping: uiDialog(&#x27;Data Mapping &amp;hellip;&#x27;, MappingDialog, (ctx) &#x3D;&gt; [ctx]),editPattern: uiDialog(&#x27;Edit Pattern &amp;hellip;&#x27;, EditPatternDialog, (ctx) &#x3D;&gt; [ctx.idPrefix]),editWeights: uiDialog(&#x27;Edit Weights &amp;hellip;&#x27;, WeightsEditDialog, () &#x3D;&gt; [], { shortcut: true }),compositeContained: uiDialog(&#x27;Contained Columns &amp;hellip;&#x27;, CompositeChildrenDialog, (ctx) &#x3D;&gt; [ctx]),splitCombined: ui(&#x27;Split Combined Column&#x27;, (col, _evt, ctx, level) &#x3D;&gt; {ctx.dialogManager.removeAboveLevel(level);// split the combined column into its children(&lt;CompositeColumn&gt;col).children.reverse().forEach((c) &#x3D;&gt; col.insertAfterMe(c));col.removeMe();}),invertSelection: ui(&#x27;Invert Selection&#x27;, (col, _evt, ctx, level) &#x3D;&gt; {ctx.dialogManager.removeAboveLevel(level - 1); // close itselfconst s &#x3D; ctx.provider.getSelection();const order &#x3D; col.findMyRanker()!.getOrder();if (s.length &#x3D;&#x3D;&#x3D; 0) {ctx.provider.setSelection(order);return;}const ss &#x3D; new Set(s);const others &#x3D; order.filter((d) &#x3D;&gt; !ss.has(d));ctx.provider.setSelection(others);})}, toolbarAddons)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/03e7765/src/ui/toolbar.ts#L266">ui/toolbar.ts:266</a></li>
+							<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7b98b6e/src/ui/toolbar.ts#L266">ui/toolbar.ts:266</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -130,7 +130,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/03e7765/src/ui/toolbar.ts#L73">ui/toolbar.ts:73</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7b98b6e/src/ui/toolbar.ts#L73">ui/toolbar.ts:73</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -161,7 +161,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/03e7765/src/ui/toolbar.ts#L314">ui/toolbar.ts:314</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7b98b6e/src/ui/toolbar.ts#L314">ui/toolbar.ts:314</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -187,7 +187,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/03e7765/src/ui/toolbar.ts#L361">ui/toolbar.ts:361</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7b98b6e/src/ui/toolbar.ts#L361">ui/toolbar.ts:361</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -216,7 +216,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/03e7765/src/ui/toolbar.ts#L394">ui/toolbar.ts:394</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7b98b6e/src/ui/toolbar.ts#L394">ui/toolbar.ts:394</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -242,7 +242,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/03e7765/src/ui/toolbar.ts#L399">ui/toolbar.ts:399</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7b98b6e/src/ui/toolbar.ts#L399">ui/toolbar.ts:399</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -268,7 +268,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/03e7765/src/ui/toolbar.ts#L389">ui/toolbar.ts:389</a></li>
+									<li>Defined in <a href="https://github.com/datavisyn/lineupjs/blob/7b98b6e/src/ui/toolbar.ts#L389">ui/toolbar.ts:389</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
