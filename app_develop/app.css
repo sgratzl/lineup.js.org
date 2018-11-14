@@ -2,7 +2,7 @@
 * https://github.com/datavisyn/lineup_app
 * Copyright (c) 2018 Samuel Gratzl; Licensed MIT*/
 
-/*! lineupjs - v4.0.0-alpha.4 - 2018
+/*! lineupjs - v4.0.0-alpha.6 - 2018
 * https://lineup.js.org
 * Copyright (c) 2018 Samuel Gratzl; Licensed BSD-3-Clause*/
 
@@ -647,6 +647,9 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
   align-content: stretch;
   box-sizing: border-box; }
 
+.le-hidden {
+  display: none; }
+
 .le-header {
   flex: 0 0 auto;
   overflow-x: hidden;
@@ -1052,7 +1055,7 @@ outlier
   display: flex;
   white-space: nowrap; }
 
-.le-group.lu-renderer-brightness > div {
+.lu-group.lu-renderer-brightness > div {
   display: flex;
   white-space: nowrap;
   width: 100%; }
@@ -1069,6 +1072,10 @@ outlier
   overflow: hidden;
   text-overflow: ellipsis;
   align-self: center; }
+
+.lu-td.lu-renderer-date {
+  display: flex;
+  align-items: center; }
 
 .lu-renderer-dot > div {
   background: gray;
@@ -1139,7 +1146,7 @@ span.lu-mapping-hint {
   position: relative;
   margin: 0 1px 0 0;
   font-size: x-small; }
-  .lu-histogram-bin[data-filtered=filtered] {
+  .lu-histogram-bin[data-filtered] {
     opacity: 0.2; }
   .lu-histogram-bin > div {
     position: absolute;
@@ -1185,9 +1192,11 @@ span.lu-mapping-hint {
   right: 0;
   border-right: none;
   border-left: 1px solid black; }
-  .lu-histogram-max::before {
-    left: -5em;
-    text-align: right; }
+
+.lu-histogram-min.lu-swap-hint::before,
+.lu-histogram-max:not(.lu-swap-hint)::before {
+  left: -5em;
+  text-align: right; }
 
 .lu-histogram-min-hint,
 .lu-histogram-max-hint {
@@ -1278,7 +1287,8 @@ span.lu-mapping-hint {
   display: flex;
   align-items: center; }
 
-.lu-group.lu-renderer-string {
+.lu-group.lu-renderer-string,
+.lu-group.lu-renderer-date {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1754,9 +1764,12 @@ section.lu-slopegraph-header {
 .lu-typed-icon[data-type-cat='array']::before {
   content: "\E80D"; }
 
-.lu-header > .lu-typed-icon[data-type-cat='support']::before,
-.lu-header > .lu-typed-icon[data-type-cat='other']::before {
-  display: none; }
+.lu-header > .lu-typed-icon[data-type-cat='support'],
+.lu-header > .lu-typed-icon[data-type-cat='other'] {
+  padding: 0; }
+  .lu-header > .lu-typed-icon[data-type-cat='support']::before,
+  .lu-header > .lu-typed-icon[data-type-cat='other']::before {
+    display: none; }
 
 .lu-rule-button-chooser {
   padding: 0.5em 0.5em 0 1em;
