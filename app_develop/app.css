@@ -2,7 +2,7 @@
 * https://github.com/datavisyn/lineup_app
 * Copyright (c) 2018 Samuel Gratzl; Licensed MIT*/
 
-/*! lineupjs - v4.0.0-alpha.6 - 2018
+/*! lineupjs - v4.0.0-alpha.7 - 2018
 * https://lineup.js.org
 * Copyright (c) 2018 Samuel Gratzl; Licensed BSD-3-Clause*/
 
@@ -200,6 +200,8 @@
     content: "\E80C"; }
   .lu-dialog-button[type=reset]::before {
     content: "\E80B"; }
+  .lu-dialog-button.lu-dialog-weights-distribute-button::before {
+    content: "\F1DE"; }
   .lu-dialog-button[type=submit] {
     float: right;
     color: #8e8e8e; }
@@ -233,6 +235,9 @@
     position: absolute;
     margin: 0;
     transition: background-color 0.25s linear; }
+
+.lu-dialog-weights-table-entry {
+  display: flex; }
 
 .lu-dialog-color {
   width: 15em; }
@@ -728,7 +733,8 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
     height: 200px;
     overflow: auto; }
 
-.le-th {
+.le-th,
+.lu-nested-th {
   box-sizing: border-box;
   margin-right: 5px; }
 
@@ -1109,7 +1115,7 @@ outlier
 .lu-histogram {
   display: flex;
   flex-direction: row; }
-  .lu-histogram[data-interactive] > .lu-histogram-bin {
+  .lu-histogram.lu-histogram-i > .lu-histogram-bin {
     cursor: pointer; }
   .lu-histogram .lu-checkbox {
     position: absolute;
@@ -1209,11 +1215,11 @@ span.lu-mapping-hint {
 .lu-histogram-max-hint {
   right: 0; }
 
-.lu-histogram[data-interactive] {
+.lu-histogram.lu-histogram-i {
   margin-bottom: 3.75em; }
-  .lu-histogram[data-interactive]:hover > .lu-histogram-min {
+  .lu-histogram.lu-histogram-i:hover > .lu-histogram-min {
     border-right-width: 5px; }
-  .lu-histogram[data-interactive]:hover > .lu-histogram-max {
+  .lu-histogram.lu-histogram-i:hover > .lu-histogram-max {
     border-left-width: 5px; }
 
 .lu-renderer-image {
@@ -1234,6 +1240,8 @@ span.lu-mapping-hint {
 .lu-renderer-interleaving {
   display: flex;
   flex-direction: column; }
+  .lu-renderer-interleaving.lu-histogram {
+    flex-direction: row; }
   .lu-renderer-interleaving > div {
     flex: 1 1 0;
     overflow-y: hidden; }
