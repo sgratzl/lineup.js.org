@@ -7650,6 +7650,94 @@ input[type=range]::-ms-thumb {
     box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1);
     background-color: rgba(0, 0, 0, 0.1); }
 
+[type="radio"]:not(:checked) + label,
+[type="radio"]:checked + label {
+  position: relative;
+  padding-left: 35px;
+  cursor: pointer;
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  font-size: 1rem;
+  transition: 0.28s ease;
+  user-select: none; }
+
+[type="radio"] + label::before,
+[type="radio"] + label::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  margin: 4px;
+  width: 16px;
+  height: 16px;
+  z-index: 0;
+  transition: 0.28s ease; }
+
+/* Unchecked styles */
+[type="radio"]:not(:checked) + label::before,
+[type="radio"]:not(:checked) + label::after,
+[type="radio"]:checked + label::before,
+[type="radio"]:checked + label::after,
+[type="radio"].with-gap:checked + label::before,
+[type="radio"].with-gap:checked + label::after {
+  border-radius: 50%; }
+
+[type="radio"]:not(:checked) + label::before,
+[type="radio"]:not(:checked) + label::after {
+  border: 2px solid #5a5a5a; }
+
+[type="radio"]:not(:checked) + label::after {
+  transform: scale(0); }
+
+/* Checked styles */
+[type="radio"]:checked + label::before {
+  border: 2px solid transparent; }
+
+[type="radio"]:checked + label::after,
+[type="radio"].with-gap:checked + label::before,
+[type="radio"].with-gap:checked + label::after {
+  border: 2px solid #424242; }
+
+[type="radio"]:checked + label::after,
+[type="radio"].with-gap:checked + label::after {
+  background-color: #9e9e9e; }
+
+[type="radio"]:checked + label::after {
+  transform: scale(1.02); }
+
+/* Radio With gap */
+[type="radio"].with-gap:checked + label::after {
+  transform: scale(0.5); }
+
+/* Focused styles */
+[type="radio"].tabbed:focus + label::before {
+  box-shadow: 0 0 0 10px rgba(0, 0, 0, 0.1); }
+
+/* Disabled Radio With gap */
+[type="radio"].with-gap:disabled:checked + label::before {
+  border: 2px solid rgba(0, 0, 0, 0.42); }
+
+[type="radio"].with-gap:disabled:checked + label::after {
+  border: none;
+  background-color: rgba(0, 0, 0, 0.42); }
+
+/* Disabled style */
+[type="radio"]:disabled:not(:checked) + label::before,
+[type="radio"]:disabled:checked + label::before {
+  background-color: transparent;
+  border-color: rgba(0, 0, 0, 0.42); }
+
+[type="radio"]:disabled + label {
+  color: rgba(0, 0, 0, 0.42); }
+
+[type="radio"]:disabled:not(:checked) + label::before {
+  border-color: rgba(0, 0, 0, 0.42); }
+
+[type="radio"]:disabled:checked + label::after {
+  background-color: rgba(0, 0, 0, 0.42);
+  border-color: #949494; }
+
 html {
   font-size: 14px; }
 
@@ -7657,27 +7745,28 @@ body {
   display: flex;
   min-height: 100vh;
   flex-direction: column; }
-  body > main {
-    flex: 1 0 auto;
-    position: relative;
-    display: flex;
-    flex-direction: column; }
-    body > main > div {
-      flex: 1 1 auto;
-      opacity: 1;
-      transition: opacity 0.5s ease; }
-    body > main[data-state=initial] #uploader {
-      display: none; }
-    body > main[data-state=uploading] #dropper {
-      display: none; }
-    body > main[data-state=uploading] .lu {
-      visibility: visible; }
-    body > main[data-state=ready] > *:not(.lu) {
-      display: none; }
-    body > main[data-state=ready] .lu {
-      visibility: visible;
-      pointer-events: all;
-      opacity: 1; }
+
+.main-wrapper {
+  flex: 1 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column; }
+  .main-wrapper > div {
+    flex: 1 1 auto;
+    opacity: 1;
+    transition: opacity 0.5s ease; }
+  .main-wrapper[data-state=initial] #uploader {
+    display: none; }
+  .main-wrapper[data-state=uploading] #dropper {
+    display: none; }
+  .main-wrapper[data-state=uploading] .lu {
+    visibility: visible; }
+  .main-wrapper[data-state=ready] > *:not(.lu) {
+    display: none; }
+  .main-wrapper[data-state=ready] .lu {
+    visibility: visible;
+    pointer-events: all;
+    opacity: 1; }
 
 .brand-logo {
   margin-left: 1em; }
@@ -7721,9 +7810,10 @@ label {
 
 .page-footer {
   padding-top: 0; }
-  .page-footer .footer-copyright {
-    min-height: 30px;
-    padding: 0 1em; }
+
+.footer-copyright {
+  min-height: 30px;
+  padding: 0 1em; }
 
 /* FONT PATH
  * -------------------------- */
