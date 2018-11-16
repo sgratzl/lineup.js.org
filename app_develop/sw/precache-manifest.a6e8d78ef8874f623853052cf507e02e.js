@@ -94,7 +94,7 @@ self.__precacheManifest = [
     "url": "6dbea47babde65521717314b0f38d514.ttf"
   },
   {
-    "revision": "b44a562284dae657644f",
+    "revision": "1ccd5cf4e7343c99bf4d",
     "url": "app.css"
   },
   {
@@ -102,15 +102,15 @@ self.__precacheManifest = [
     "url": "browserconfig.xml"
   },
   {
-    "revision": "b44a562284dae657644f",
+    "revision": "1ccd5cf4e7343c99bf4d",
     "url": "app.js"
-  },
-  {
-    "url": "bc833e725c137257c2c42a789845d82f.woff"
   },
   {
     "revision": "f46ece5ee98bcfb5fb6ffa8f15fa5f62",
     "url": "apple-touch-icon.png"
+  },
+  {
+    "url": "bc833e725c137257c2c42a789845d82f.woff"
   },
   {
     "url": "b06871f281fee6b241d60582ae9369b9.ttf"
