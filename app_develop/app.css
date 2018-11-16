@@ -2,7 +2,7 @@
 * https://github.com/datavisyn/lineup_app
 * Copyright (c) 2018 Samuel Gratzl; Licensed MIT*/
 
-/*! lineupjs - v4.0.0-alpha.7 - 2018
+/*! lineupjs - v4.0.0-alpha.8 - 2018
 * https://lineup.js.org
 * Copyright (c) 2018 Samuel Gratzl; Licensed BSD-3-Clause*/
 
@@ -3935,7 +3935,7 @@ a {
   box-shadow: 0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -7px rgba(0, 0, 0, 0.2); }
 
 /* 24dp elevation */
-.z-depth-5 {
+.z-depth-5, .modal {
   box-shadow: 0 24px 38px 3px rgba(0, 0, 0, 0.14), 0 9px 46px 8px rgba(0, 0, 0, 0.12), 0 11px 15px -7px rgba(0, 0, 0, 0.2); }
 
 .hoverable {
@@ -7606,6 +7606,76 @@ input[type=range]::-ms-thumb {
     opacity: 0;
     transform: scale(1.5); } }
 
+.modal {
+  display: none;
+  position: fixed;
+  left: 0;
+  right: 0;
+  background-color: #fafafa;
+  padding: 0;
+  max-height: 70%;
+  width: 55%;
+  margin: auto;
+  overflow-y: auto;
+  border-radius: 2px;
+  will-change: top, opacity; }
+  .modal:focus {
+    outline: none; }
+  @media only screen and (max-width: 992px) {
+    .modal {
+      width: 80%; } }
+  .modal h1, .modal h2, .modal h3, .modal h4 {
+    margin-top: 0; }
+  .modal .modal-content {
+    padding: 24px; }
+  .modal .modal-close {
+    cursor: pointer; }
+  .modal .modal-footer {
+    border-radius: 0 0 2px 2px;
+    background-color: #fafafa;
+    padding: 4px 6px;
+    height: 56px;
+    width: 100%;
+    text-align: right; }
+    .modal .modal-footer .btn, .modal .modal-footer .btn-large, .modal .modal-footer .btn-small, .modal .modal-footer .btn-flat {
+      margin: 6px 0; }
+
+.modal-overlay {
+  position: fixed;
+  z-index: 999;
+  top: -25%;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 125%;
+  width: 100%;
+  background: #000;
+  display: none;
+  will-change: opacity; }
+
+.modal.modal-fixed-footer {
+  padding: 0;
+  height: 70%; }
+  .modal.modal-fixed-footer .modal-content {
+    position: absolute;
+    height: calc(100% - 56px);
+    max-height: 100%;
+    width: 100%;
+    overflow-y: auto; }
+  .modal.modal-fixed-footer .modal-footer {
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    position: absolute;
+    bottom: 0; }
+
+.modal.bottom-sheet {
+  top: auto;
+  bottom: -100%;
+  margin: 0;
+  width: 100%;
+  max-height: 45%;
+  border-radius: 0;
+  will-change: bottom, opacity; }
+
 [type="checkbox"] {
   /* checkbox aspect */ }
   [type="checkbox"] + label:not(.lever) {
@@ -7754,6 +7824,14 @@ body {
   min-height: 100vh;
   flex-direction: column; }
 
+.nav-wrapper {
+  z-index: 200;
+  display: flex; }
+  .nav-wrapper > .brand-logo {
+    margin-left: 1em;
+    position: unset;
+    margin-right: 1em; }
+
 .main-wrapper {
   flex: 1 0 auto;
   position: relative;
@@ -7762,13 +7840,28 @@ body {
   .main-wrapper > div {
     flex: 1 1 auto;
     opacity: 1;
-    transition: opacity 0.5s ease; }
+    transition: opacity 0.5s ease, background 0.5s ease; }
+  .main-wrapper .lu-blocker {
+    opacity: 0;
+    z-index: 100;
+    visibility: hidden;
+    background: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    top: 3px;
+    left: 0;
+    right: 0;
+    bottom: 3px; }
+  .main-wrapper .chooser {
+    z-index: 101; }
   .main-wrapper[data-state=initial] #uploader {
     display: none; }
   .main-wrapper[data-state=uploading] #dropper {
     display: none; }
   .main-wrapper[data-state=uploading] .lu {
     visibility: visible; }
+  .main-wrapper[data-state=uploading] .lu-blocker {
+    visibility: visible;
+    opacity: 1; }
   .main-wrapper[data-state=ready] > *:not(.lu) {
     display: none; }
   .main-wrapper[data-state=ready] .lu {
@@ -7776,10 +7869,16 @@ body {
     pointer-events: all;
     opacity: 1; }
 
-.brand-logo {
-  margin-left: 1em; }
-
 .btn-floating.halfway-fab {
+  bottom: -11px;
+  right: 70px; }
+
+.fixed-action-btn.direction-left ul {
+  right: 110px; }
+
+.btn-floating.save-session {
+  position: absolute;
+  right: 24px;
   bottom: -11px; }
 
 .export-option {
@@ -7801,8 +7900,23 @@ label {
   .carousel > .carousel-item > .card-image {
     height: 250px; }
 
-.card-reveal > p {
+.card .card-title {
+  font-size: 20px; }
+
+.card-reveal p {
   text-align: justify; }
+
+.card-reveal .card-sessions {
+  display: none; }
+
+.card-sessions .collection {
+  text-align: left; }
+
+.card-reveal.sessions .card-sessions {
+  display: block; }
+
+.card-reveal.sessions .card-desc {
+  display: none; }
 
 .lu-c {
   position: absolute !important;
@@ -7823,6 +7937,13 @@ label {
   min-height: 30px;
   padding: 0 1em; }
 
+.material-icons.local-image {
+  font-size: 240px; }
+
+#modalAreYouSure,
+#modalSave {
+  max-width: 30em; }
+
 /* FONT PATH
  * -------------------------- */
 @font-face {
@@ -7834,7 +7955,8 @@ label {
 
 .fa-codepen::before,
 .fa-file-code-o::before,
-.fa-file-excel-o::before {
+.fa-file-excel-o::before,
+.fa-file-archive-o::before {
   display: inline-block;
   font: normal normal normal 14px/1 FontAwesome;
   font-size: inherit;
@@ -7850,6 +7972,9 @@ label {
 
 .fa-file-excel-o::before {
   content: "\F1C3"; }
+
+.fa-file-archive-o::before {
+  content: "\F1C6"; }
 
 .lu-rule-button-chooser.switch {
   overflow: inherit;
