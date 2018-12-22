@@ -8,10 +8,12 @@ Dependencies
 ------------
 
 LineUp.js depends on 
- * [LineUpEngine](https://github.com/lineupjs/lineupengine) table rendering engine
- * [D3](http://d3js.org) utilities: scales, format
- * [Popper.js](https://popper.js.org) dialogs
 
+<div class="collection">
+  <a href="https://github.com/lineupjs/lineupengine" target="_blank" rel="noopener" class="collection-item">LineUpEngine - table rendering engine</a>
+  <a href="https://d3js.org" target="_blank" rel="noopener" class="collection-item">D3 - utilities: scales, format</a>
+  <a href="https://popper.js.org"  target="_blank" rel="noopener" class="collection-item">Popper.js - dialogs</a>
+</div>
 
 **Development Dependencies**
 
