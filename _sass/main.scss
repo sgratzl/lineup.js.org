@@ -65,5 +65,14 @@ body {
   }
 }
 
+main ul:not(.browser-default):not(.collection) {
+  padding-left: 40px;
+  list-style-type: unset;
+
+  > li {
+    list-style-type: unset;
+  }
+}
+
 
 @import './rouge-github';

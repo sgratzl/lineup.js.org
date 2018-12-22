@@ -9,26 +9,25 @@ LineUp is an interactive technique designed to create, visualize and explore ran
 Key Features
 ------------
 
-<ul class="browser-default">
-  <li>scalable (~100k rows)</li>
-  <li>heterogenous attribute types (string, numerical, categorical, boolean, date)</li>
-  <li>composite column types (weighted sum, min, max, mean, median, impose, nested, ...)</li>
-  <li>array (multi value) and map column types (strings, stringMap, numbers, numberMap, ...)</li>
-  <li>filtering capabilities</li>
-  <li>hierarchical sorting (sort by more than one sorting criteria)</li>
-  <li>hierarchical grouping (split rows in multiple separate groups)</li>
-  <li>group aggregations (show a whole group as a single group row)</li>
-  <li>numerous visualizations for summaries, cells, and group aggregations</li>
-  <li>side panel for easy filtering and column management</li>
-</ul>
+ - scalable (~1M rows)
+ - heterogenous attribute types (string, numerical, categorical, boolean, date)
+ - composite column types (weighted sum, min, max, mean, median, impose, nested, ...)
+ - array (multi value) and map column types (strings, stringMap, numbers, numberMap, ...)
+ - filtering capabilities
+ - hierarchical sorting (sort by more than one sorting criteria)
+ - hierarchical grouping (split rows in multiple separate groups)
+ - group aggregations (show a whole group as a single group row)
+ - numerous visualizations for summaries, cells, and group aggregations
+ - side panel for easy filtering and column management
 
 Supported Browsers
 ------------------
 
- - Chrome 64+ (best performance)
- - Firefox 57+
- - Edge 16+
-
+<ul class="collection">
+  <li class="collection-item">Chrome 64+ (best performance)</li>
+  <li class="collection-item">Firefox 57+</li>
+  <li class="collection-item">Edge 16+</li>
+</ul>
 
 Related Publications
 ---------------------

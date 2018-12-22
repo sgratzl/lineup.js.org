@@ -1,5 +1,5 @@
 ---
-title: Dev Env
+title: Development Environment
 layout: page
 menu: bar
 ---
@@ -15,12 +15,14 @@ LineUp.js depends on
   <a href="https://popper.js.org"  target="_blank" rel="noopener" class="collection-item">Popper.js - dialogs</a>
 </div>
 
-**Development Dependencies**
+Development Dependencies
+------------
 
 [Webpack](https://webpack.github.io) is used as build tool. LineUp itself is written in [TypeScript](https://www.typescriptlang.org) and [SASS](https://sass-lang.com). 
 
 
-**Tools & Services**
+Tools & Services
+------------
 
 <div class="row">
   <div class="col s3">

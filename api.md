@@ -52,6 +52,7 @@ Builder factory functions for creating column descriptions include:
    buildActionsColumn(): ActionsColumnBuilder
    ```
 
+
 In order to build custom rankings within the `DataBuilder` the [buildRanking]( ./master/docs/modules/_builder_rankingbuilder_.html#buildranking) returning a new [RankingBuilder](./master/docs/classes/_builder_rankingbuilder_.rankingbuilder.html) is used. 
 ```typescript
 buildRanking(): RankingBuilder
