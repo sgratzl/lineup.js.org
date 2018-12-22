@@ -4183,7 +4183,7 @@ td, th {
     position: relative;
     /* sort out borders */ }
     table.responsive-table td:empty:before {
-      content: '\A0'; }
+      content: '\00a0'; }
     table.responsive-table th,
     table.responsive-table td {
       margin: 0;
@@ -4197,7 +4197,7 @@ td, th {
         display: block;
         padding: 0 10px 0 0; }
         table.responsive-table thead tr th::before {
-          content: "\A0"; }
+          content: "\00a0"; }
     table.responsive-table tbody {
       display: block;
       width: auto;
@@ -7945,7 +7945,9 @@ label {
   font-style: normal; }
 
 .fa-codepen::before,
+.fa-jsfiddle::before,
 .fa-file-code-o::before,
+.fa-code::before,
 .fa-file-excel-o::before,
 .fa-file-archive-o::before {
   display: inline-block;
@@ -7953,19 +7955,27 @@ label {
   font-size: inherit;
   text-rendering: auto;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 20px;
+  transform: translateY(-4px); }
 
 .fa-codepen::before {
-  content: "\F1CB"; }
+  content: ""; }
+
+.fa-jsfiddle::before {
+  content: ""; }
+
+.fa-code::before {
+  content: ""; }
 
 .fa-file-code-o::before {
-  content: "\F1C9"; }
+  content: ""; }
 
 .fa-file-excel-o::before {
-  content: "\F1C3"; }
+  content: ""; }
 
 .fa-file-archive-o::before {
-  content: "\F1C6"; }
+  content: ""; }
 
 .lu-rule-button-chooser.switch {
   overflow: inherit;
