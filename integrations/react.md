@@ -43,6 +43,8 @@ for (let i = 0; i < 100; ++i) {
 
 [![Minimal Result](https://user-images.githubusercontent.com/4129778/34654173-32180ff8-f3f8-11e7-8469-229fa34a65dc.png)](https://codepen.io/sgratzl/pen/Ozzbqp)
 
+<p data-height="800" data-theme-id="light" data-slug-hash="Ozzbqp" data-default-tab="result" data-user="sgratzl" data-pen-title="lineupjs simple example" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/sgratzl/pen/Ozzbqp/">lineupjs simple example</a> by Samuel Gratzl (<a href="https://codepen.io/sgratzl">@sgratzl</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
 
 Advanced Usage Example
 ----------------------
@@ -66,3 +68,5 @@ Advanced Usage Example
 [CodePen](https://codepen.io/sgratzl/pen/yvJpWQ)
 
 [![Advanced Result](https://user-images.githubusercontent.com/4129778/34654174-3235f784-f3f8-11e7-9361-44f5fa068bb9.png)](https://codepen.io/sgratzl/pen/vppyML)
+
+<p data-height="800" data-theme-id="light" data-slug-hash="vppyML" data-default-tab="result" data-user="sgratzl" data-pen-title="lineupjs advanced example" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/sgratzl/pen/vppyML/">lineupjs advanced example</a> by Samuel Gratzl (<a href="https://codepen.io/sgratzl">@sgratzl</a>) on <a href="https://codepen.io">CodePen</a>.</p>

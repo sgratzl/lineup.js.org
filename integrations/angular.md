@@ -12,7 +12,7 @@ Installation
 
 
 ```bash
-npm install --save nglineup@next
+npm install --save nglineup
 ```
 
 **Minimal Usage Example**
@@ -76,6 +76,8 @@ export class AppComponent {
 
 ![Minimal Result](https://user-images.githubusercontent.com/4129778/34654173-32180ff8-f3f8-11e7-8469-229fa34a65dc.png)
 
+<p data-height="800" data-theme-id="light" data-slug-hash="QxYgzN" data-default-tab="result" data-user="sgratzl" data-pen-title="lineupjs simple example" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/sgratzl/pen/QxYgzN/">lineupjs simple example</a> by Samuel Gratzl (<a href="https://codepen.io/sgratzl">@sgratzl</a>) on <a href="https://codepen.io">CodePen</a>.</p>
+
 
 **Advanced Usage Example**
 
@@ -99,3 +101,5 @@ export class AppComponent {
 [CodePen](https://codepen.io/sgratzl/pen/BVMdZL)
 
 ![Advanced Result](https://user-images.githubusercontent.com/4129778/34654174-3235f784-f3f8-11e7-9361-44f5fa068bb9.png)
+
+<p data-height="800" data-theme-id="light" data-slug-hash="BVMdZL" data-default-tab="result" data-user="sgratzl" data-pen-title="lineupjs advanced example" data-preview="true" class="codepen">See the Pen <a href="https://codepen.io/sgratzl/pen/BVMdZL/">lineupjs advanced example</a> by Samuel Gratzl (<a href="https://codepen.io/sgratzl">@sgratzl</a>) on <a href="https://codepen.io">CodePen</a>.</p>
