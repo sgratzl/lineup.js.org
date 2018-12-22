@@ -4,7 +4,7 @@ layout: page
 ---
 
 
-A [PowerBI Visual](https://github.com/Microsoft/PowerBI-Visuals) wrapper is located at [lineup_powerbi](https://github.com/datavisyn/lineup_powerbi).
+A [PowerBI Visual](https://github.com/Microsoft/PowerBI-Visuals) wrapper is located at [lineup_powerbi](https://github.com/lineupjs/lineup_powerbi).
 
 Installation
 ------------

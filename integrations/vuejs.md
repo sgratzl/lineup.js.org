@@ -4,7 +4,7 @@ layout: page
 ---
 
 
-A [Vue.js](https://vuejs.org/) wrapper is located at [vue-lineup](https://github.com/datavisyn/vue-lineup). 
+A [Vue.js](https://vuejs.org/) wrapper is located at [vue-lineup](https://github.com/lineupjs/vue-lineup). 
 
 
 Installation

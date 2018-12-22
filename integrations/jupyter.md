@@ -3,7 +3,7 @@ title: Jupyter Widget
 layout: page
 ---
 
-A [Jupyter Widget](https://jupyter.org/widgets.html) wrapper for Python is located at [lineup_widget](https://github.com/datavisyn/lineup_widget).
+A [Jupyter Widget](https://jupyter.org/widgets.html) wrapper for Python is located at [lineup_widget](https://github.com/lineupjs/lineup_widget).
 
 Installation
 ------------
@@ -22,7 +22,7 @@ Installation
 
 1. OR directly via repository (requires node and npm to be installed):
    ```bash
-   pip install -e git+https://github.com/datavisyn/lineup_widget.git#egg=lineup_widget
+   pip install -e git+https://github.com/lineupjs/lineup_widget.git#egg=lineup_widget
    jupyter nbextension enable --py --sys-prefix lineup_widget
    ```
 

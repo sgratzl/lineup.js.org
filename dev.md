@@ -37,7 +37,7 @@ Development Environment
 **Installation**
 
 ```bash
-git clone https://github.com/datavisyn/lineupjs.git -b develop
+git clone https://github.com/lineupjs/lineupjs.git -b develop
 cd lineupjs
 npm install
 ```

@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: LineUp.js
-email: samuel_gratzl@gmx.at
+email: sam@sgratzl.com
 description: > # this means to ignore newlines until "baseurl:"
   LineUp is an interactive technique designed to create, visualize and explore rankings of items based on a set of heterogeneous attributes.
 baseurl: "" # the subpath of your site, e.g. /blog

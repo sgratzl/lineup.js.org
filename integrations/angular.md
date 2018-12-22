@@ -4,7 +4,7 @@ layout: page
 ---
 
 
-A [Angular](https://angular.io/) wrapper is located at [nglineup](https://github.com/datavisyn/nglineup). 
+A [Angular](https://angular.io/) wrapper is located at [nglineup](https://github.com/lineupjs/nglineup). 
 
 
 Installation
