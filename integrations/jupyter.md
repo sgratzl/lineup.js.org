@@ -35,7 +35,7 @@ Installation
 Examples
 --------
 
-[![Launch Binder][binder-image]][binder-url]
+[![Launch Binder]https://camo.githubusercontent.com/70c5b4d050d4019f4f20b170d75679a9316ac5e5/687474703a2f2f6d7962696e6465722e6f72672f62616467652e737667](http://mybinder.org/repo/datavisyn/lineup_widget/examples)
 
 ```python
 import lineup_widget

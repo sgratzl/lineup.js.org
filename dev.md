@@ -8,8 +8,8 @@ Dependencies
 ------------
 
 LineUp.js depends on 
- * [LineUpEngine](https://github.com/sgratzl/lineupengine) table rendering engine
- * [D3](http://d3js.org) utilities: scales, format, dragging
+ * [LineUpEngine](https://github.com/lineupjs/lineupengine) table rendering engine
+ * [D3](http://d3js.org) utilities: scales, format
  * [Popper.js](https://popper.js.org) dialogs
 
 
@@ -48,6 +48,13 @@ npm install
 npm run build
 ```
 
+**Run tests**
+
+```bash
+npm test
+```
+
+
 **Run Linting**
 
 ```bash
@@ -58,5 +65,5 @@ npm run lint
 **Serve integrated webserver**
 
 ```bash
-npm run start
+npm start
 ```
