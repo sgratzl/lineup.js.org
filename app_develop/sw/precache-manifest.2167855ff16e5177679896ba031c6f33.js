@@ -26,7 +26,7 @@ self.__precacheManifest = [
     "url": "a0a82705499fd49103af.js"
   },
   {
-    "revision": "b769dece19c9cf2a3c95",
+    "revision": "9eeb55bb16e8d970e989",
     "url": "app.js"
   },
   {
@@ -91,7 +91,7 @@ self.__precacheManifest = [
     "url": "mstile-144x144.png"
   },
   {
-    "revision": "b769dece19c9cf2a3c95",
+    "revision": "9eeb55bb16e8d970e989",
     "url": "app.css"
   },
   {
