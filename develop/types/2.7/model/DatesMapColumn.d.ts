@@ -27,6 +27,7 @@ export default class DatesMapColumn extends MapColumn<Date | null> implements ID
     private sort;
     private currentFilter;
     constructor(id: string, desc: Readonly<IDateMapColumnDesc>);
+    getFormatter(): (date: Date | null) => string;
     protected createEventList(): string[];
     on(type: typeof DatesMapColumn.EVENT_SORTMETHOD_CHANGED, listener: typeof sortMethodChanged_DMC | null): this;
     on(type: typeof DatesMapColumn.EVENT_FILTER_CHANGED, listener: typeof filterChanged_DMC | null): this;

@@ -2,9 +2,16 @@ import { IForEachAble } from '../internal';
 import Column from './Column';
 import { IColumnDesc, IDataRow } from './interfaces';
 import { INumberFilter } from './INumberColumn';
+import { IArrayColumn } from './IArrayColumn';
 export interface IDateColumn extends Column {
+    getFormatter(): (v: Date | null) => string;
     getDate(row: IDataRow): Date | null;
     iterDate(row: IDataRow): IForEachAble<Date | null>;
+    getFilter(): IDateFilter;
+    setFilter(value: IDateFilter | null): void;
+}
+export interface IDatesColumn extends IDateColumn, IArrayColumn<Date | null> {
+    getDates(row: IDataRow): (Date | null)[];
 }
 export interface IDateDesc {
     /**
@@ -25,6 +32,7 @@ export interface IDateDesc {
  */
 export declare function isDateColumn(col: Column): col is IDateColumn;
 export declare function isDateColumn(col: IColumnDesc): col is IDateDesc & IColumnDesc;
+export declare function isDatesColumn(col: Column): col is IDatesColumn;
 export declare type IDateFilter = INumberFilter;
 export declare type IDateGranularity = 'century' | 'decade' | 'year' | 'month' | 'week' | 'day_of_week' | 'day_of_month' | 'day_of_year' | 'hour' | 'minute' | 'second';
 export interface IDateGrouper {

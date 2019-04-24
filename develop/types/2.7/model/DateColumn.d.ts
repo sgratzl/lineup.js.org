@@ -19,6 +19,7 @@ export declare function groupingChanged_DC(previous: IDateGrouper | null, curren
 export default class DateColumn extends ValueColumn<Date> implements IDateColumn {
     static readonly EVENT_FILTER_CHANGED: string;
     static readonly EVENT_GROUPING_CHANGED: string;
+    static readonly DEFAULT_DATE_FORMAT: string;
     private readonly format;
     private readonly parse;
     /**
@@ -29,6 +30,7 @@ export default class DateColumn extends ValueColumn<Date> implements IDateColumn
     private currentFilter;
     private currentGrouper;
     constructor(id: string, desc: Readonly<IDateColumnDesc>);
+    getFormatter(): (date: Date | null) => string;
     dump(toDescRef: (desc: any) => any): any;
     restore(dump: any, factory: (dump: any) => Column | null): void;
     protected createEventList(): string[];

@@ -2,7 +2,7 @@ import { IEventListener } from '../internal';
 import ArrayColumn, { IArrayColumnDesc } from './ArrayColumn';
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
 import ValueColumn, { dataLoaded } from './ValueColumn';
-import { IDateDesc, IDateColumn, IDateFilter } from './IDateColumn';
+import { IDateDesc, IDatesColumn, IDateFilter } from './IDateColumn';
 import { IDataRow, ECompareValueType } from './interfaces';
 export declare enum EDateSort {
     min = "min",
@@ -25,7 +25,7 @@ export declare function sortMethodChanged_DCS(previous: EDateSort, current: EDat
  * @event
  */
 export declare function filterChanged_DCS(previous: IDateFilter | null, current: IDateFilter | null): void;
-export default class DatesColumn extends ArrayColumn<Date | null> implements IDateColumn {
+export default class DatesColumn extends ArrayColumn<Date | null> implements IDatesColumn {
     static readonly EVENT_SORTMETHOD_CHANGED: string;
     static readonly EVENT_FILTER_CHANGED: string;
     private readonly format;
@@ -33,6 +33,7 @@ export default class DatesColumn extends ArrayColumn<Date | null> implements IDa
     private sort;
     private currentFilter;
     constructor(id: string, desc: Readonly<IDatesColumnDesc>);
+    getFormatter(): (date: Date | null) => string;
     protected createEventList(): string[];
     on(type: typeof DatesColumn.EVENT_SORTMETHOD_CHANGED, listener: typeof sortMethodChanged_DCS | null): this;
     on(type: typeof DatesColumn.EVENT_FILTER_CHANGED, listener: typeof filterChanged_DCS | null): this;
