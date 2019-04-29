@@ -1,6 +1,6 @@
 import { IEventListener } from '../internal';
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
-import { IDataRow, IColumnParent, IFlatColumn } from './interfaces';
+import { IDataRow, IColumnParent, IFlatColumn, ITypeFactory } from './interfaces';
 /**
  * emitted when the filter property changes
  * @asMemberOf CompositeColumn
@@ -56,7 +56,7 @@ export default class CompositeColumn extends Column implements IColumnParent {
     readonly length: number;
     flatten(r: IFlatColumn[], offset: number, levelsToGo?: number, padding?: number): number;
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
     /**
      * inserts a column at a the given position
      * @param col

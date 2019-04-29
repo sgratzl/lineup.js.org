@@ -1,16 +1,19 @@
 import { IForEachAble } from '../internal';
 import Column from './Column';
 import { IArrayColumn } from './IArrayColumn';
-import { IValueColumnDesc, IColumnDesc, IDataRow } from './interfaces';
+import { IValueColumnDesc, IColumnDesc, IDataRow, ITypedDump } from './interfaces';
 export interface ICategoricalDesc {
     categories: (string | Partial<ICategory>)[];
 }
 export declare type ICategoricalColumnDesc = IValueColumnDesc<string> & ICategoricalDesc;
 export interface ICategoricalColorMappingFunction {
     apply(v: ICategory): string;
-    dump(): any;
+    toJSON(): ITypedDump | null;
     clone(): ICategoricalColorMappingFunction;
     eq(other: ICategoricalColorMappingFunction): boolean;
+}
+export interface ICategoricalColorMappingFunctionConstructor {
+    new (dump: ITypedDump): ICategoricalColorMappingFunction;
 }
 export interface ICategoricalLikeColumn extends Column {
     readonly categories: ICategory[];

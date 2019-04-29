@@ -1,5 +1,5 @@
 import { ICategoricalDesc, ICategory, ICategoricalLikeColumn, ICategoricalColorMappingFunction } from './ICategoricalColumn';
-import { IDataRow } from './interfaces';
+import { IDataRow, ITypeFactory } from './interfaces';
 import MapColumn, { IMapColumnDesc } from './MapColumn';
 import ValueColumn, { dataLoaded } from './ValueColumn';
 import Column, { labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, widthChanged, dirtyCaches } from './Column';
@@ -53,6 +53,6 @@ export default class CategoricalMapColumn extends MapColumn<string | null> imple
     getColorMapping(): ICategoricalColorMappingFunction;
     setColorMapping(mapping: ICategoricalColorMappingFunction): any;
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
     iterCategory(row: IDataRow): (Readonly<ICategory> | null)[];
 }

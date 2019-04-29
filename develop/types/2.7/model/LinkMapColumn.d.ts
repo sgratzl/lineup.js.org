@@ -1,6 +1,6 @@
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
 import ValueColumn, { dataLoaded } from './ValueColumn';
-import { IDataRow } from './interfaces';
+import { IDataRow, ITypeFactory } from './interfaces';
 import MapColumn, { IMapColumnDesc } from './MapColumn';
 import LinkColumn, { ILinkDesc } from './LinkColumn';
 import { IEventListener } from '../internal';
@@ -53,5 +53,5 @@ export default class LinkMapColumn extends MapColumn<string> {
     getLinkMap(row: IDataRow): IKeyValue<ILink>[];
     private transformValue(v, row, key);
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
 }

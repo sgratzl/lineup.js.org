@@ -2,7 +2,7 @@ import { IEventListener } from '../internal';
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
 import CompositeColumn, { addColumn, filterChanged, moveColumn, removeColumn } from './CompositeColumn';
 import CompositeNumberColumn, { ICompositeNumberDesc } from './CompositeNumberColumn';
-import { IDataRow, IFlatColumn, IMultiLevelColumn } from './interfaces';
+import { IDataRow, IFlatColumn, IMultiLevelColumn, ITypeFactory } from './interfaces';
 /**
  * factory for creating a description creating a stacked column
  * @param label
@@ -72,7 +72,7 @@ export default class StackColumn extends CompositeNumberColumn implements IMulti
     readonly canJustAddNumbers: boolean;
     flatten(r: IFlatColumn[], offset: number, levelsToGo?: number, padding?: number): number;
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
     /**
      * inserts a column at a the given position
      */

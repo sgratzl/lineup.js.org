@@ -1,6 +1,6 @@
 import ArrayColumn, { IArrayColumnDesc } from './ArrayColumn';
 import { ISetColumn, ICategoricalColorMappingFunction } from './ICategoricalColumn';
-import { IDataRow, ECompareValueType } from './interfaces';
+import { IDataRow, ITypeFactory, ECompareValueType } from './interfaces';
 import ValueColumn, { dataLoaded } from './ValueColumn';
 import Column, { labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, widthChanged, dirtyCaches } from './Column';
 import { IEventListener } from '../internal';
@@ -60,5 +60,5 @@ export default class BooleansColumn extends ArrayColumn<boolean> implements ISet
     getColorMapping(): ICategoricalColorMappingFunction;
     setColorMapping(mapping: ICategoricalColorMappingFunction): any;
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
 }

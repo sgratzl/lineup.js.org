@@ -24,7 +24,7 @@ export interface ILocalDataProviderOptions {
  */
 export default class LocalDataProvider extends ACommonDataProvider {
     private _data;
-    private readonly options;
+    private readonly ooptions;
     private readonly reorderAll;
     private _dataRows;
     private filter;

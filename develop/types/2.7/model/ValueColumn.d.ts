@@ -1,5 +1,5 @@
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, dirtyCaches, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged } from './Column';
-import { IValueColumnDesc, IDataRow } from './interfaces';
+import { IValueColumnDesc, IDataRow, ITypeFactory } from './interfaces';
 import { IEventListener } from '../internal';
 /**
  * emitted when the data of this column has been loaded
@@ -46,5 +46,5 @@ export default class ValueColumn<T> extends Column {
      * @returns {any}
      */
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
 }

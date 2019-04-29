@@ -3,7 +3,7 @@ import ArrayColumn, { IArrayColumnDesc } from './ArrayColumn';
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
 import ValueColumn, { dataLoaded } from './ValueColumn';
 import { IDateDesc, IDatesColumn, IDateFilter } from './IDateColumn';
-import { IDataRow, ECompareValueType } from './interfaces';
+import { IDataRow, ECompareValueType, ITypeFactory } from './interfaces';
 export declare enum EDateSort {
     min = "min",
     max = "max",
@@ -58,7 +58,7 @@ export default class DatesColumn extends ArrayColumn<Date | null> implements IDa
     getSortMethod(): EDateSort;
     setSortMethod(sort: EDateSort): void;
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
     toCompareValue(row: IDataRow): number[];
     toCompareValueType(): ECompareValueType[];
     isFiltered(): any;

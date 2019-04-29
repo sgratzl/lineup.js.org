@@ -1,6 +1,6 @@
 import ArrayColumn, { IArrayColumnDesc } from './ArrayColumn';
 import { ICategoricalDesc, ICategory, ICategoricalColorMappingFunction, ICategoricalsColumn } from './ICategoricalColumn';
-import { IDataRow } from './interfaces';
+import { IDataRow, ITypeFactory } from './interfaces';
 import ValueColumn, { dataLoaded } from './ValueColumn';
 import Column, { labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, widthChanged, dirtyCaches } from './Column';
 import { IEventListener } from '../internal';
@@ -43,5 +43,5 @@ export default class CategoricalsColumn extends ArrayColumn<string | null> imple
     getColorMapping(): ICategoricalColorMappingFunction;
     setColorMapping(mapping: ICategoricalColorMappingFunction): any;
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
 }

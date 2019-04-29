@@ -1,6 +1,6 @@
 import { IBoxPlotData, IEventListener } from '../internal';
 import Column, { dirty, dirtyCaches, dirtyHeader, dirtyValues, groupRendererChanged, labelChanged, metaDataChanged, rendererTypeChanged, summaryRendererChanged, visibilityChanged, widthChanged } from './Column';
-import { IDataRow, ECompareValueType, IValueColumnDesc } from './interfaces';
+import { IDataRow, ECompareValueType, IValueColumnDesc, ITypeFactory } from './interfaces';
 import { ESortMethod, IBoxPlotColumn, INumberDesc, INumberFilter, IColorMappingFunction, IMappingFunction } from './INumberColumn';
 import ValueColumn, { dataLoaded } from './ValueColumn';
 export interface IBoxPlotDesc extends INumberDesc {
@@ -47,7 +47,7 @@ export default class BoxPlotColumn extends ValueColumn<IBoxPlotData> implements 
      * @private
      */
     private currentFilter;
-    constructor(id: string, desc: Readonly<IBoxPlotColumnDesc>);
+    constructor(id: string, desc: Readonly<IBoxPlotColumnDesc>, factory: ITypeFactory);
     getNumberFormat(): (n: number) => string;
     toCompareValue(row: IDataRow): number;
     toCompareValueType(): ECompareValueType;
@@ -65,7 +65,7 @@ export default class BoxPlotColumn extends ValueColumn<IBoxPlotData> implements 
     getSortMethod(): ESortMethod;
     setSortMethod(sort: ESortMethod): void;
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
     protected createEventList(): string[];
     on(type: typeof BoxPlotColumn.EVENT_COLOR_MAPPING_CHANGED, listener: typeof colorMappingChanged_BPC | null): this;
     on(type: typeof BoxPlotColumn.EVENT_MAPPING_CHANGED, listener: typeof mappingChanged_BPC | null): this;

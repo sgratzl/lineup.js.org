@@ -1,5 +1,5 @@
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
-import { IDataRow } from './interfaces';
+import { IDataRow, ITypeFactory } from './interfaces';
 import StringColumn from './StringColumn';
 import { IEventListener } from '../internal';
 import ValueColumn, { dataLoaded } from './ValueColumn';
@@ -46,6 +46,6 @@ export default class AnnotateColumn extends StringColumn {
     on(type: string | string[], listener: IEventListener | null): this;
     getValue(row: IDataRow): string | null;
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
     setValue(row: IDataRow, value: string): boolean;
 }

@@ -1,9 +1,9 @@
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
 import ValueColumn, { dataLoaded } from './ValueColumn';
 import { IKeyValue } from './IArrayColumn';
-import { IDataRow, ECompareValueType } from './interfaces';
+import { IDataRow, ECompareValueType, ITypeFactory } from './interfaces';
 import { EAdvancedSortMethod, IAdvancedBoxPlotColumn, INumberDesc, INumberFilter, IMappingFunction, IColorMappingFunction } from './INumberColumn';
-import { default as MapColumn, IMapColumnDesc } from './MapColumn';
+import MapColumn, { IMapColumnDesc } from './MapColumn';
 import { IEventListener, IAdvancedBoxPlotData } from '../internal';
 export interface INumberMapDesc extends INumberDesc {
     readonly sort?: EAdvancedSortMethod;
@@ -49,7 +49,7 @@ export default class NumberMapColumn extends MapColumn<number> implements IAdvan
      * @private
      */
     private currentFilter;
-    constructor(id: string, desc: Readonly<INumberMapColumnDesc>);
+    constructor(id: string, desc: Readonly<INumberMapColumnDesc>, factory: ITypeFactory);
     getNumberFormat(): (n: number) => string;
     toCompareValue(row: IDataRow): number;
     toCompareValueType(): ECompareValueType;
@@ -73,7 +73,7 @@ export default class NumberMapColumn extends MapColumn<number> implements IAdvan
     getSortMethod(): EAdvancedSortMethod;
     setSortMethod(sort: EAdvancedSortMethod): void;
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
     protected createEventList(): string[];
     on(type: typeof NumberMapColumn.EVENT_COLOR_MAPPING_CHANGED, listener: typeof colorMappingChanged_NMC | null): this;
     on(type: typeof NumberMapColumn.EVENT_MAPPING_CHANGED, listener: typeof mappingChanged_NMC | null): this;

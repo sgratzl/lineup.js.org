@@ -1,5 +1,5 @@
 import 'reflect-metadata';
-import Column from './Column';
+import Column, { IColumnConstructor } from './Column';
 import { IColumnDesc } from './interfaces';
 export declare function SupportType(): {
     (target: Function): void;
@@ -87,7 +87,7 @@ export interface IColumnCategory {
     order: number;
     featureLevel: 'basic' | 'advanced';
 }
-export declare function categoryOf(col: (typeof Column) | Column): IColumnCategory;
+export declare function categoryOf(col: IColumnConstructor | Column): IColumnCategory;
 export declare function categoryOfDesc(col: IColumnDesc | string, models: {
-    [key: string]: typeof Column;
+    [key: string]: IColumnConstructor;
 }): IColumnCategory;

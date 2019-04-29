@@ -2,7 +2,7 @@ import { IEventListener } from '../internal';
 import Column, { dirty, dirtyCaches, dirtyHeader, dirtyValues, groupRendererChanged, labelChanged, metaDataChanged, rendererTypeChanged, summaryRendererChanged, visibilityChanged, widthChanged } from './Column';
 import CompositeColumn, { addColumn, moveColumn, removeColumn } from './CompositeColumn';
 import CompositeNumberColumn, { ICompositeNumberDesc } from './CompositeNumberColumn';
-import { IDataRow } from './interfaces';
+import { IDataRow, ITypeFactory } from './interfaces';
 import { IColorMappingFunction, IMapAbleColumn, IMapAbleDesc, IMappingFunction, INumberFilter } from './INumberColumn';
 /**
  * factory for creating a description creating a mean column
@@ -103,7 +103,7 @@ export default class ScriptColumn extends CompositeNumberColumn implements IMapA
      * @private
      */
     private currentFilter;
-    constructor(id: string, desc: Readonly<IScriptColumnDesc>);
+    constructor(id: string, desc: Readonly<IScriptColumnDesc>, factory: ITypeFactory);
     protected createEventList(): string[];
     on(type: typeof ScriptColumn.EVENT_COLOR_MAPPING_CHANGED, listener: typeof colorMappingChanged | null): this;
     on(type: typeof ScriptColumn.EVENT_MAPPING_CHANGED, listener: typeof mappingChanged | null): this;
@@ -128,7 +128,7 @@ export default class ScriptColumn extends CompositeNumberColumn implements IMapA
     setScript(script: string): void;
     getScript(): string;
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
     protected compute(row: IDataRow): any;
     getExportValue(row: IDataRow, format: 'text' | 'json'): any;
     getRange(): [string, string];

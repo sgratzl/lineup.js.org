@@ -1,5 +1,5 @@
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
-import { IDataRow, IGroup, IValueColumnDesc } from './interfaces';
+import { IDataRow, IGroup, IValueColumnDesc, ITypeFactory } from './interfaces';
 import ValueColumn, { dataLoaded } from './ValueColumn';
 import { IEventListener, ISequence } from '../internal';
 import { IStringDesc, EAlignment } from './StringColumn';
@@ -75,7 +75,7 @@ export default class LinkColumn extends ValueColumn<string | ILink> {
     private transformValue(v, row);
     getLabel(row: IDataRow): string;
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
     isFiltered(): boolean;
     filter(row: IDataRow): any;
     getFilter(): string | RegExp | null;

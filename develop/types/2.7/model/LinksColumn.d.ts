@@ -1,7 +1,7 @@
 import ArrayColumn, { IArrayColumnDesc } from './ArrayColumn';
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
 import ValueColumn, { dataLoaded } from './ValueColumn';
-import { IDataRow } from './interfaces';
+import { IDataRow, ITypeFactory } from './interfaces';
 import { EAlignment } from './StringColumn';
 import { IEventListener } from '../internal';
 import { ILink, ILinkDesc } from './LinkColumn';
@@ -42,5 +42,5 @@ export default class LinksColumn extends ArrayColumn<string | ILink> {
     private transformValue(v, row, i);
     getLinks(row: IDataRow): ILink[];
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
 }

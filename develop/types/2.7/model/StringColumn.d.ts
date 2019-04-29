@@ -1,5 +1,5 @@
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
-import { IDataRow, IGroup, ECompareValueType, IValueColumnDesc } from './interfaces';
+import { IDataRow, IGroup, ECompareValueType, IValueColumnDesc, ITypeFactory } from './interfaces';
 import ValueColumn, { dataLoaded } from './ValueColumn';
 import { IEventListener } from '../internal';
 export declare enum EAlignment {
@@ -62,7 +62,7 @@ export default class StringColumn extends ValueColumn<string> {
     getValue(row: IDataRow): string | null;
     getLabel(row: IDataRow): string;
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
     isFiltered(): boolean;
     filter(row: IDataRow): boolean;
     getFilter(): string | RegExp | null;

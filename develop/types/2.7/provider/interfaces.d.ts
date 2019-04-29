@@ -1,13 +1,20 @@
-import { Column, Ranking, IColumnDesc, IGroup, IndicesArray, IDataRow, IRankingDump, EAggregationState } from '../model';
+import { Column, Ranking, IColumnDesc, IGroup, IndicesArray, IDataRow, IRankingDump, EAggregationState, IColorMappingFunctionConstructor, IMappingFunctionConstructor } from '../model';
 import { AEventDispatcher, ISequence } from '../internal';
 import { IRenderTasks } from '../renderer';
 import { IAbortAblePromise } from 'lineupengine';
+import { IColumnConstructor } from '../model/Column';
 export { ABORTED } from 'lineupengine';
 export declare type IAbortAblePromise<T> = IAbortAblePromise<T>;
 export declare type IAggregationStrategy = 'group' | 'item' | 'group+item' | 'group+top+item' | 'group+item+top';
 export interface IDataProviderOptions {
     columnTypes: {
         [columnType: string]: typeof Column;
+    };
+    colorMappingFunctionTypes: {
+        [colorMappingFunctionType: string]: IColorMappingFunctionConstructor;
+    };
+    mappingFunctionTypes: {
+        [mappingFunctionType: string]: IMappingFunctionConstructor;
     };
     /**
      * allow just single selected rows
@@ -27,7 +34,7 @@ export interface IDataProviderOptions {
 }
 export interface IDataProvider extends AEventDispatcher {
     readonly columnTypes: {
-        [columnType: string]: typeof Column;
+        [columnType: string]: IColumnConstructor;
     };
     getTotalNumberOfRows(): number;
     getTaskExecutor(): IRenderTasks;

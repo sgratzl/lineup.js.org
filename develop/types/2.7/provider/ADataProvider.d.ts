@@ -1,7 +1,8 @@
 import { AEventDispatcher, ISequence, IEventListener } from '../internal';
-import { Column, Ranking, EDirtyReason, IColumnDesc, IDataRow, IGroup, IndicesArray, IOrderedGroup, EAggregationState, IColumnDump, IRankingDump } from '../model';
-import { IDataProvider, IDataProviderDump, IDataProviderOptions, IExportOptions, IAggregationStrategy } from './interfaces';
+import { Column, Ranking, EDirtyReason, IColumnDesc, IDataRow, IGroup, IndicesArray, IOrderedGroup, EAggregationState, IColumnDump, IRankingDump, IColorMappingFunctionConstructor, IMappingFunctionConstructor } from '../model';
+import { IDataProvider, IDataProviderDump, IDataProviderOptions, IExportOptions } from './interfaces';
 import { IRenderTasks } from '../renderer';
+import { IColumnConstructor } from '../model/Column';
 /**
  * emitted when a column has been added
  * @asMemberOf ADataProvider
@@ -142,16 +143,23 @@ declare abstract class ADataProvider extends AEventDispatcher implements IDataPr
     private readonly selection;
     private readonly aggregations;
     private uid;
+    private readonly typeFactory;
+    private readonly options;
     /**
      * lookup map of a column type to its column implementation
      */
     readonly columnTypes: {
-        [columnType: string]: typeof Column;
+        [columnType: string]: IColumnConstructor;
     };
-    protected readonly multiSelections: boolean;
-    private readonly aggregationStrategy;
+    readonly colorMappingFunctionTypes: {
+        [colorMappingFunctionType: string]: IColorMappingFunctionConstructor;
+    };
+    readonly mappingFunctionTypes: {
+        [mappingFunctionType: string]: IMappingFunctionConstructor;
+    };
     private showTopN;
     constructor(options?: Partial<IDataProviderOptions>);
+    private createTypeFactory();
     /**
      * events:
      *  * column changes: addColumn, removeColumn
@@ -299,7 +307,6 @@ declare abstract class ADataProvider extends AEventDispatcher implements IDataPr
      * inverse operation of toDescRef
      */
     fromDescRef(descRef: any): any;
-    private createHelper;
     restoreRanking(dump: IRankingDump): Ranking;
     restore(dump: IDataProviderDump): void;
     abstract findDesc(ref: string): IColumnDesc | null;
@@ -313,7 +320,7 @@ declare abstract class ADataProvider extends AEventDispatcher implements IDataPr
     setAggregationState(ranking: Ranking, group: IGroup, value: EAggregationState): void;
     getTopNAggregated(ranking: Ranking, group: IGroup): number;
     private unaggregateParents(ranking, group);
-    getAggregationStrategy(): IAggregationStrategy;
+    getAggregationStrategy(): "group" | "item" | "group+item" | "group+top+item" | "group+item+top";
     private initAggregateState(ranking, groups);
     setTopNAggregated(ranking: Ranking, group: IGroup, value: number): void;
     aggregateAllOf(ranking: Ranking, aggregateAll: boolean | number | EAggregationState, groups?: IOrderedGroup[]): void;

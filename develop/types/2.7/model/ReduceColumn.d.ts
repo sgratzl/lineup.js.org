@@ -2,7 +2,7 @@ import { IEventListener } from '../internal';
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
 import CompositeColumn, { addColumn, filterChanged, moveColumn, removeColumn } from './CompositeColumn';
 import CompositeNumberColumn, { ICompositeNumberColumnDesc } from './CompositeNumberColumn';
-import { IDataRow } from './interfaces';
+import { IDataRow, ITypeFactory } from './interfaces';
 import { EAdvancedSortMethod } from './INumberColumn';
 /**
  *  factory for creating a description creating a max column
@@ -54,7 +54,7 @@ export default class ReduceColumn extends CompositeNumberColumn {
     getReduce(): EAdvancedSortMethod;
     setReduce(reduce: EAdvancedSortMethod): void;
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
     readonly canJustAddNumbers: boolean;
     getExportValue(row: IDataRow, format: 'text' | 'json'): any;
 }

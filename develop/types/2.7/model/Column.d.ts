@@ -1,5 +1,5 @@
 import { AEventDispatcher, ISequence, IEventListener } from '../internal';
-import { IColumnDump, ECompareValueType, IColumnDesc, IDataRow, IGroup, IColumnParent, IColumnMetaData, IFlatColumn, ICompareValue } from './interfaces';
+import { IColumnDump, ECompareValueType, IColumnDesc, IDataRow, IGroup, IColumnParent, IColumnMetaData, IFlatColumn, ICompareValue, ITypeFactory } from './interfaces';
 import Ranking from './Ranking';
 /**
  * emitted when the width property changes
@@ -67,6 +67,9 @@ export declare function summaryRendererChanged(previous: string, current: string
  * @event
  */
 export declare function visibilityChanged(previous: boolean, current: boolean): void;
+export interface IColumnConstructor {
+    new (id: string, desc: Readonly<IColumnDesc>, factory: ITypeFactory): Column;
+}
 /**
  * a column in LineUp
  */
@@ -216,7 +219,7 @@ export default class Column extends AEventDispatcher {
      * @param dump column dump
      * @param _factory helper for creating columns
      */
-    restore(dump: IColumnDump, _factory: (dump: IColumnDump) => Column | null): void;
+    restore(dump: IColumnDump, _factory: ITypeFactory): void;
     /**
      * return the label of a given row for the current column
      * @param row the current row

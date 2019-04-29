@@ -1,7 +1,7 @@
 import { IEventListener } from '../internal';
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
 import CompositeColumn, { addColumn, filterChanged, moveColumn, removeColumn } from './CompositeColumn';
-import { IDataRow, IColumnDesc, IFlatColumn, IMultiLevelColumn } from './interfaces';
+import { IDataRow, IColumnDesc, IFlatColumn, IMultiLevelColumn, ITypeFactory } from './interfaces';
 /**
  * emitted when the collapse property changes
  * @asMemberOf MultiLevelCompositeColumn
@@ -47,7 +47,7 @@ export default class MultiLevelCompositeColumn extends CompositeColumn implement
     setCollapsed(value: boolean): void;
     getCollapsed(): boolean;
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
     flatten(r: IFlatColumn[], offset: number, levelsToGo?: number, padding?: number): any;
     /**
      * inserts a column at a the given position

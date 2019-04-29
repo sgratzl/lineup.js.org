@@ -1,7 +1,7 @@
 import Column, { labelChanged, metaDataChanged, dirty, widthChanged, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
 import { IArrayColumn } from './IArrayColumn';
 import { ICategoricalDesc, ICategoricalFilter, ICategory, ISetColumn, ICategoricalColorMappingFunction } from './ICategoricalColumn';
-import { IDataRow, ECompareValueType, IValueColumnDesc, IGroup } from './interfaces';
+import { IDataRow, ECompareValueType, IValueColumnDesc, IGroup, ITypeFactory } from './interfaces';
 import ValueColumn, { dataLoaded } from './ValueColumn';
 import { IEventListener } from '../internal';
 export interface ISetDesc extends ICategoricalDesc {
@@ -76,7 +76,7 @@ export default class SetColumn extends ValueColumn<string[]> implements IArrayCo
     }[];
     iterCategory(row: IDataRow): null[] | ICategory[];
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
     isFiltered(): boolean;
     filter(row: IDataRow): boolean;
     getFilter(): any;

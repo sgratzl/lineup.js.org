@@ -4,7 +4,10 @@ export declare class ReplacmentColorMappingFunction implements ICategoricalColor
     readonly map: ReadonlyMap<string, string>;
     constructor(map: Map<ICategory | string, string>);
     apply(v: ICategory): string;
-    dump(): any;
+    toJSON(): {
+        type: string;
+        map: any;
+    };
     clone(): ReplacmentColorMappingFunction;
     eq(other: ICategoricalColorMappingFunction): boolean;
     static restore(dump: any, categories: ICategory[]): ReplacmentColorMappingFunction;

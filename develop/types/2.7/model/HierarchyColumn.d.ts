@@ -1,6 +1,6 @@
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, dirtyCaches, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged } from './Column';
 import { ICategoricalColumn, ICategory, ICategoricalColorMappingFunction } from './ICategoricalColumn';
-import { IDataRow, IGroup, IValueColumnDesc } from './interfaces';
+import { IDataRow, IGroup, IValueColumnDesc, ITypeFactory } from './interfaces';
 import ValueColumn, { dataLoaded } from './ValueColumn';
 import { IEventListener } from '../internal';
 export interface ICategoryNode extends ICategory {
@@ -68,7 +68,7 @@ export default class HierarchyColumn extends ValueColumn<string> implements ICat
     on(type: typeof Column.EVENT_VISIBILITY_CHANGED, listener: typeof visibilityChanged | null): this;
     on(type: string | string[], listener: IEventListener | null): this;
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
     getColorMapping(): ICategoricalColorMappingFunction;
     setColorMapping(mapping: ICategoricalColorMappingFunction): void;
     getCutOff(): ICutOffNode;

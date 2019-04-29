@@ -1,5 +1,6 @@
-import { EAdvancedSortMethod, ESortMethod, INumberColumnDesc } from '../../model';
+import { EAdvancedSortMethod, ESortMethod, INumberColumnDesc, ITypedDump } from '../../model';
 import ColumnBuilder from './ColumnBuilder';
+import { IScriptMappingFunctionType } from '../../model/MappingFunction';
 export default class NumberColumnBuilder extends ColumnBuilder<INumberColumnDesc> {
     constructor(column: string);
     /**
@@ -14,7 +15,7 @@ export default class NumberColumnBuilder extends ColumnBuilder<INumberColumnDesc
      * @deprecated use colorMapping instead
      */
     color(color: string): this;
-    colorMapping(type: string | ((v: number) => string) | any): this;
+    colorMapping(type: string | ((v: number) => string) | ITypedDump): this;
     /**
      * d3-format to use for formatting
      * @param format d3-format
@@ -25,7 +26,7 @@ export default class NumberColumnBuilder extends ColumnBuilder<INumberColumnDesc
      * @param {string} code the code to execute
      * @param {[number , number]} domain the input data domain [min, max]
      */
-    scripted(code: string, domain: [number, number]): this;
+    scripted(code: string | IScriptMappingFunctionType, domain: [number, number]): this;
     /**
      * @inheritDoc
      * @param {string[] | number} labels labels to use for each array item or the expected length of an value

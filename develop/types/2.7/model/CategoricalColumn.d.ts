@@ -1,7 +1,7 @@
 import { IEventListener, ISequence } from '../internal';
 import Column, { dirty, dirtyCaches, dirtyHeader, dirtyValues, groupRendererChanged, labelChanged, metaDataChanged, rendererTypeChanged, summaryRendererChanged, visibilityChanged, widthChanged } from './Column';
 import { ICategoricalColumn, ICategoricalColumnDesc, ICategoricalFilter, ICategory, ICategoricalColorMappingFunction } from './ICategoricalColumn';
-import { IDataRow, IGroup, ICompareValue, ECompareValueType } from './interfaces';
+import { IDataRow, IGroup, ICompareValue, ITypeFactory, ECompareValueType } from './interfaces';
 import ValueColumn, { dataLoaded } from './ValueColumn';
 /**
  * emitted when the color mapping property changes
@@ -66,7 +66,7 @@ export default class CategoricalColumn extends ValueColumn<string> implements IC
     getSet(row: IDataRow): Set<ICategory>;
     iterCategory(row: IDataRow): (Readonly<ICategory> | null)[];
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
     getColor(row: IDataRow): string;
     getColorMapping(): ICategoricalColorMappingFunction;
     setColorMapping(mapping: ICategoricalColorMappingFunction): void;

@@ -1,7 +1,7 @@
 import { IEventListener } from '../internal';
 import Column, { dirty, dirtyCaches, dirtyHeader, dirtyValues, groupRendererChanged, labelChanged, metaDataChanged, rendererTypeChanged, summaryRendererChanged, visibilityChanged, widthChanged } from './Column';
 import { ICategoricalColumn, ICategoricalDesc, ICategoricalFilter, ICategory, ICategoricalColorMappingFunction } from './ICategoricalColumn';
-import { IDataRow, IValueColumnDesc } from './interfaces';
+import { IDataRow, IValueColumnDesc, ITypeFactory } from './interfaces';
 import { INumberColumn } from './INumberColumn';
 import ValueColumn, { dataLoaded } from './ValueColumn';
 export declare type IOrdinalColumnDesc = ICategoricalDesc & IValueColumnDesc<number>;
@@ -74,7 +74,7 @@ export default class OrdinalColumn extends ValueColumn<number> implements INumbe
     getRawNumber(row: IDataRow): number;
     getExportValue(row: IDataRow, format: 'text' | 'json'): any;
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
     getMapping(): number[];
     setMapping(mapping: number[]): void;
     getColorMapping(): ICategoricalColorMappingFunction;

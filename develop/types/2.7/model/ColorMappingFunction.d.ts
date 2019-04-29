@@ -1,52 +1,77 @@
-import { IInterpolateColorMappingFunction, IColorMappingFunction, ISolidColorMappingFunction, IQuantizedColorMappingFunction, ICustomColorMappingFunction } from '.';
-export declare class InterpolatingColorFunction implements IInterpolateColorMappingFunction {
+import { IColorMappingFunction } from '.';
+import { ITypedDump, ITypeFactory } from './interfaces';
+export declare class SequentialColorFunction implements IColorMappingFunction {
     readonly name: string;
-    readonly type: 'sequential' | 'divergent';
+    static readonly FUNCTIONS: {
+        [key: string]: (v: number) => string;
+    };
     readonly apply: (v: number) => string;
-    constructor(name: string, type: 'sequential' | 'divergent', apply: (v: number) => string);
-    dump(): string;
+    constructor(name: string);
+    toJSON(): string;
     clone(): this;
     eq(other: IColorMappingFunction): boolean;
 }
-export declare class SolidColorFunction implements ISolidColorMappingFunction {
+export declare class DivergentColorFunction implements IColorMappingFunction {
+    readonly name: string;
+    static readonly FUNCTIONS: {
+        [key: string]: (v: number) => string;
+    };
+    readonly apply: (v: number) => string;
+    constructor(name: string);
+    toJSON(): string;
+    clone(): this;
+    eq(other: IColorMappingFunction): boolean;
+}
+export declare class UnknownColorFunction implements IColorMappingFunction {
+    readonly apply: (v: number) => string;
+    constructor(apply: (v: number) => string);
+    toJSON(): string;
+    clone(): this;
+    eq(other: IColorMappingFunction): boolean;
+}
+export declare class SolidColorFunction implements IColorMappingFunction {
     readonly color: string;
     constructor(color: string);
-    readonly type: 'solid';
     apply(): string;
-    dump(): string;
+    toJSON(): string;
     clone(): this;
     eq(other: IColorMappingFunction): boolean;
 }
-export declare class QuantizedColorFunction implements IQuantizedColorMappingFunction {
+export declare class QuantizedColorFunction implements IColorMappingFunction {
     readonly base: IColorMappingFunction;
     readonly steps: number;
+    constructor(dump: ITypedDump, factory: ITypeFactory);
     constructor(base: IColorMappingFunction, steps: number);
-    readonly type: 'quantized';
     apply(v: number): string;
-    dump(): {
-        base: any;
+    toJSON(): {
+        type: string;
+        base: string | ITypedDump;
         steps: number;
     };
     clone(): QuantizedColorFunction;
     eq(other: IColorMappingFunction): boolean;
 }
-export declare class CustomColorMappingFunction implements ICustomColorMappingFunction {
+export declare class CustomColorMappingFunction implements IColorMappingFunction {
+    private readonly scale;
     readonly entries: {
         value: number;
         color: string;
     }[];
-    private readonly scale;
+    constructor(dump: ITypedDump);
     constructor(entries: {
         value: number;
         color: string;
     }[]);
-    readonly type: 'custom';
     apply(v: number): string;
-    dump(): {
-        value: number;
-        color: string;
-    }[];
+    toJSON(): {
+        type: string;
+        entries: {
+            value: number;
+            color: string;
+        }[];
+    };
     clone(): CustomColorMappingFunction;
     eq(other: IColorMappingFunction): boolean;
 }
+export declare function colorMappingFunctions(): any;
 export declare const DEFAULT_COLOR_FUNCTION: SolidColorFunction;

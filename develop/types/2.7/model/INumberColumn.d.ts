@@ -1,48 +1,32 @@
 import { IAdvancedBoxPlotData, IBoxPlotData, IForEachAble } from '../internal';
 import Column from './Column';
 import { IArrayColumn } from './IArrayColumn';
-import { IColumnDesc, IDataRow } from './interfaces';
-export interface IColorMappingFunctionBase {
+import { IColumnDesc, IDataRow, ITypedDump, ITypeFactory } from './interfaces';
+export interface IColorMappingFunction {
     apply(v: number): string;
-    dump(): any;
+    toJSON(): ITypedDump | string;
     clone(): IColorMappingFunction;
     eq(other: IColorMappingFunction): boolean;
 }
-export interface IInterpolateColorMappingFunction extends IColorMappingFunctionBase {
-    type: 'sequential' | 'divergent';
-    name: string;
+export interface IColorMappingFunctionConstructor {
+    new (dump: ITypedDump | string, factory: ITypeFactory): IColorMappingFunction;
 }
-export interface IQuantizedColorMappingFunction extends IColorMappingFunctionBase {
-    type: 'quantized';
-    base: IColorMappingFunction;
-    steps: number;
-}
-export interface ISolidColorMappingFunction extends IColorMappingFunctionBase {
-    type: 'solid';
-    color: string;
-}
-export interface ICustomColorMappingFunction extends IColorMappingFunctionBase {
-    type: 'custom';
-    entries: {
-        value: number;
-        color: string;
-    }[];
-}
-export declare type IColorMappingFunction = ISolidColorMappingFunction | ICustomColorMappingFunction | IQuantizedColorMappingFunction | IInterpolateColorMappingFunction;
 export interface IMappingFunction {
     apply(v: number): number;
-    dump(): any;
-    restore(dump: any): void;
+    toJSON(): ITypedDump;
     domain: number[];
     clone(): IMappingFunction;
     eq(other: IMappingFunction): boolean;
     getRange(formatter: (v: number) => string): [string, string];
 }
+export interface IMappingFunctionConstructor {
+    new (dump: ITypedDump): IMappingFunction;
+}
 export interface IMapAbleDesc {
     /**
      * dump of mapping function
      */
-    map?: any;
+    map?: ITypedDump;
     /**
      * either map or domain should be available
      */
@@ -58,7 +42,7 @@ export interface IMapAbleDesc {
     /**
      * color mapping
      */
-    colorMapping?: string | ((v: number) => string) | any;
+    colorMapping?: string | ((v: number) => string) | ITypedDump;
 }
 export interface IMapAbleColumn extends INumberColumn {
     getOriginalMapping(): IMappingFunction;

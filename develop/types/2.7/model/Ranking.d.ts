@@ -1,6 +1,6 @@
 import { IEventListener, AEventDispatcher } from '../internal';
 import Column, { dirty, dirtyCaches, dirtyHeader, dirtyValues, labelChanged, visibilityChanged, widthChanged } from './Column';
-import { IRankingDump, IndicesArray, IOrderedGroup, IDataRow, IColumnParent, IFlatColumn, ISortCriteria } from './interfaces';
+import { IRankingDump, IndicesArray, IOrderedGroup, IDataRow, IColumnParent, IFlatColumn, ISortCriteria, ITypeFactory } from './interfaces';
 export declare enum EDirtyReason {
     UNKNOWN = "unknown",
     FILTER_CHANGED = "filter",
@@ -146,7 +146,7 @@ export default class Ranking extends AEventDispatcher implements IColumnParent {
     getOrderLength(): number;
     getGroups(): IOrderedGroup[];
     dump(toDescRef: (desc: any) => any): IRankingDump;
-    restore(dump: IRankingDump, factory: (dump: any) => Column | null): void;
+    restore(dump: IRankingDump, factory: ITypeFactory): void;
     flatten(r: IFlatColumn[], offset: number, levelsToGo?: number, padding?: number): number;
     getPrimarySortCriteria(): ISortCriteria | null;
     getSortCriteria(): ISortCriteria[];

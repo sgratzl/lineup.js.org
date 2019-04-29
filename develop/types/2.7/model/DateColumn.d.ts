@@ -1,7 +1,7 @@
 import { ISequence, IEventListener } from '../internal';
 import Column, { dirty, dirtyCaches, dirtyHeader, dirtyValues, groupRendererChanged, labelChanged, metaDataChanged, rendererTypeChanged, summaryRendererChanged, visibilityChanged, widthChanged } from './Column';
 import { IDateColumn, IDateDesc, IDateFilter, IDateGrouper } from './IDateColumn';
-import { IDataRow, IGroup, ECompareValueType, IValueColumnDesc } from './interfaces';
+import { IDataRow, IGroup, ECompareValueType, IValueColumnDesc, ITypeFactory } from './interfaces';
 import ValueColumn, { dataLoaded } from './ValueColumn';
 export declare type IDateColumnDesc = IValueColumnDesc<Date> & IDateDesc;
 /**
@@ -32,7 +32,7 @@ export default class DateColumn extends ValueColumn<Date> implements IDateColumn
     constructor(id: string, desc: Readonly<IDateColumnDesc>);
     getFormatter(): (date: Date | null) => string;
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
     protected createEventList(): string[];
     on(type: typeof DateColumn.EVENT_FILTER_CHANGED, listener: typeof filterChanged_DC | null): this;
     on(type: typeof DateColumn.EVENT_GROUPING_CHANGED, listener: typeof groupingChanged_DC | null): this;

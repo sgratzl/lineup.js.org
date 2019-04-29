@@ -1,6 +1,6 @@
 import { IEventListener, ISequence } from '../internal';
 import Column, { dirty, dirtyCaches, dirtyHeader, dirtyValues, groupRendererChanged, labelChanged, metaDataChanged, rendererTypeChanged, summaryRendererChanged, visibilityChanged, widthChanged } from './Column';
-import { IDataRow, IGroup, ECompareValueType, IValueColumnDesc } from './interfaces';
+import { IDataRow, IGroup, ECompareValueType, IValueColumnDesc, ITypeFactory } from './interfaces';
 import { INumberColumn, EAdvancedSortMethod, INumberDesc, INumberFilter, IMappingFunction, IColorMappingFunction, IMapAbleColumn } from './INumberColumn';
 import ValueColumn, { dataLoaded } from './ValueColumn';
 export declare type INumberColumnDesc = INumberDesc & IValueColumnDesc<number>;
@@ -55,10 +55,10 @@ export default class NumberColumn extends ValueColumn<number> implements INumber
     private readonly numberFormat;
     private currentGroupThresholds;
     private groupSortMethod;
-    constructor(id: string, desc: INumberColumnDesc);
+    constructor(id: string, desc: INumberColumnDesc, factory: ITypeFactory);
     getNumberFormat(): (n: number) => string;
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
     protected createEventList(): string[];
     on(type: typeof NumberColumn.EVENT_MAPPING_CHANGED, listener: typeof mappingChanged_NC | null): this;
     on(type: typeof NumberColumn.EVENT_COLOR_MAPPING_CHANGED, listener: typeof colorMappingChanged_NC | null): this;

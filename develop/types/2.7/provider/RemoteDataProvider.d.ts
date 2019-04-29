@@ -39,7 +39,7 @@ export interface IRemoteDataProviderOptions {
  */
 export default class RemoteDataProvider extends ACommonDataProvider {
     private server;
-    private readonly options;
+    private readonly ooptions;
     private readonly cache;
     constructor(server: IServerData, columns?: IColumnDesc[], options?: Partial<IRemoteDataProviderOptions & IDataProviderOptions>);
     getTotalNumberOfRows(): number;

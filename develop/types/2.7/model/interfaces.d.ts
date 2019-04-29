@@ -1,6 +1,9 @@
 import Column from './Column';
 import Ranking from './Ranking';
 import CompositeColumn from './CompositeColumn';
+import { IColorMappingFunction, IMappingFunction } from './INumberColumn';
+import { ICategoricalColorMappingFunction, ICategory } from './ICategoricalColumn';
+import { IScriptMappingFunctionType } from './MappingFunction';
 export interface IStyleColumn {
     /**
      * column description
@@ -144,6 +147,10 @@ export declare enum ECompareValueType {
     DOUBLE_ASC = 11,
     STRING = 12,
 }
+export interface ITypedDump {
+    readonly type: string;
+    [key: string]: any;
+}
 export interface IColumnDump {
     id: string;
     width?: number;
@@ -189,6 +196,12 @@ export interface IRankingDump {
         sortBy: string;
         asc: boolean;
     };
+}
+export interface ITypeFactory {
+    (dump: IColumnDump): Column;
+    colorMappingFunction(dump?: ITypedDump | string | ((v: number) => string)): IColorMappingFunction;
+    mappingFunction(dump?: ITypedDump | IScriptMappingFunctionType): IMappingFunction;
+    categoricalColorMappingFunction(dump: ITypedDump | undefined, categories: ICategory[]): ICategoricalColorMappingFunction;
 }
 export interface IMultiLevelColumn extends CompositeColumn {
     getCollapsed(): boolean;

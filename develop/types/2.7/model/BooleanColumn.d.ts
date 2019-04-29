@@ -1,7 +1,7 @@
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
 import ValueColumn, { dataLoaded } from './ValueColumn';
 import { ICategoricalColumn, ICategory, ICategoricalColorMappingFunction } from './ICategoricalColumn';
-import { IDataRow, ECompareValueType, IValueColumnDesc } from './interfaces';
+import { IDataRow, ECompareValueType, IValueColumnDesc, ITypeFactory } from './interfaces';
 import { IEventListener } from '../internal';
 export interface IBooleanDesc {
     /**
@@ -76,7 +76,7 @@ export default class BooleanColumn extends ValueColumn<boolean> implements ICate
     getMapLabel(row: IDataRow): any;
     getSet(row: IDataRow): Set<ICategory>;
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
     getColorMapping(): ICategoricalColorMappingFunction;
     setColorMapping(mapping: ICategoricalColorMappingFunction): void;
     isFiltered(): boolean;

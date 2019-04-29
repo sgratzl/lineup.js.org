@@ -2,7 +2,7 @@ import { IAdvancedBoxPlotData, IEventListener } from '../internal';
 import ArrayColumn, { IArrayColumnDesc } from './ArrayColumn';
 import Column, { dirty, dirtyCaches, dirtyHeader, dirtyValues, groupRendererChanged, labelChanged, metaDataChanged, rendererTypeChanged, summaryRendererChanged, visibilityChanged, widthChanged } from './Column';
 import { IArrayDesc } from './IArrayColumn';
-import { IDataRow, ECompareValueType } from './interfaces';
+import { IDataRow, ECompareValueType, ITypeFactory } from './interfaces';
 import { EAdvancedSortMethod, IColorMappingFunction, IMappingFunction, INumberDesc, INumberFilter, INumbersColumn } from './INumberColumn';
 import ValueColumn, { dataLoaded } from './ValueColumn';
 export interface INumbersDesc extends IArrayDesc, INumberDesc {
@@ -50,7 +50,7 @@ export default class NumbersColumn extends ArrayColumn<number> implements INumbe
      * @private
      */
     private currentFilter;
-    constructor(id: string, desc: Readonly<INumbersColumnDesc>);
+    constructor(id: string, desc: Readonly<INumbersColumnDesc>, factory: ITypeFactory);
     getNumberFormat(): (n: number) => string;
     toCompareValue(row: IDataRow): number;
     toCompareValueType(): ECompareValueType;
@@ -71,7 +71,7 @@ export default class NumbersColumn extends ArrayColumn<number> implements INumbe
     getSortMethod(): EAdvancedSortMethod;
     setSortMethod(sort: EAdvancedSortMethod): void;
     dump(toDescRef: (desc: any) => any): any;
-    restore(dump: any, factory: (dump: any) => Column | null): void;
+    restore(dump: any, factory: ITypeFactory): void;
     protected createEventList(): string[];
     on(type: typeof NumbersColumn.EVENT_COLOR_MAPPING_CHANGED, listener: typeof colorMappingChanged_NCS | null): this;
     on(type: typeof NumbersColumn.EVENT_MAPPING_CHANGED, listener: typeof mappingChanged_NCS | null): this;
