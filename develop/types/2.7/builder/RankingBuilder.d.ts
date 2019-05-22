@@ -4,7 +4,7 @@ export interface IImposeColumnBuilder {
     type: 'impose';
     column: string;
     label?: string;
-    categoricalColumn: string;
+    colorColumn: string;
 }
 export interface INestedBuilder {
     type: 'nested';
@@ -72,9 +72,9 @@ export default class RankingBuilder {
      * add an imposed column (numerical column colored by categorical column) to this ranking
      * @param {string | null} label optional label
      * @param {string} numberColumn numerical column reference
-     * @param {string} categoricalColumn categorical column reference
+     * @param {string} colorColumn categorical column reference
      */
-    impose(label: string | null, numberColumn: string, categoricalColumn: string): this;
+    impose(label: string | null, numberColumn: string, colorColumn: string): this;
     /**
      * add a nested / group composite column
      * @param {string | null} label optional label
