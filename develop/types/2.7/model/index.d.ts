@@ -29,7 +29,7 @@ export { default as CategoricalMapColumn } from './CategoricalMapColumn';
 export * from './CategoricalMapColumn';
 export { default as CategoricalsColumn } from './CategoricalsColumn';
 export * from './CategoricalsColumn';
-export { default, default as Column } from './Column';
+export { default, default as Column, IColumnConstructor } from './Column';
 export { default as CompositeColumn } from './CompositeColumn';
 export { default as CompositeNumberColumn } from './CompositeNumberColumn';
 export * from './CompositeNumberColumn';
