@@ -1276,16 +1276,6 @@ span.lu-mapping-hint {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat; }
-  .lu-renderer-image:not(.lu-missing)::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEyNCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDEyNCAzMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQogIDxzdHlsZT4vKiA8IVtDREFUQVsgKi8NCiAgICBAa2V5ZnJhbWVzIGxvYWQgew0KICAgICAgMCUgICB7IHRyYW5zZm9ybTogdHJhbnNsYXRlKDAsMjFweClzY2FsZSgxLDUpOyB9DQogICAgICAxMDAlIHsgdHJhbnNmb3JtOiB0cmFuc2xhdGUoMCwxM3B4KXNjYWxlKDEsMjEpOyB9DQogICAgfQ0KICAgIHJlY3Qgew0KICAgICAgZmlsbDogI2MxYzFjMTsNCiAgICAgIGFuaW1hdGlvbjogbG9hZCAwLjZzIGxpbmVhciBhbHRlcm5hdGUgaW5maW5pdGU7DQogICAgfS8qIF1dPiAqLw0KICA8L3N0eWxlPg0KICA8cmVjdCB4PSI1MCIgd2lkdGg9IjQiIGhlaWdodD0iMSIvPg0KICA8cmVjdCB4PSI2MCIgd2lkdGg9IjQiIGhlaWdodD0iMSIgc3R5bGU9ImFuaW1hdGlvbi1kZWxheTogMC4xNXMiLz4NCiAgPHJlY3QgeD0iNzAiIHdpZHRoPSI0IiBoZWlnaHQ9IjEiIHN0eWxlPSJhbmltYXRpb24tZGVsYXk6IDAuM3MiLz4NCjwvc3ZnPg0K);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-blend-mode: overlay;
-    z-index: -1; }
 
 .lu-renderer-interleaving {
   display: flex;

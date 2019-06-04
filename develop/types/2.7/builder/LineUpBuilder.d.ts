@@ -80,12 +80,12 @@ export default class LineUpBuilder {
      * height and padding of a row
      * @default 18 and 2
      */
-    rowHeight(rowHeight: number, rowPadding: number): this;
+    rowHeight(rowHeight: number, rowPadding?: number): this;
     /**
      * height and padding of an aggregated group in pixel
      * @default 40 and 5
      */
-    groupRowHeight(groupHeight: number, groupPadding: number): this;
+    groupRowHeight(groupHeight: number, groupPadding?: number): this;
     /**
      * custom function to compute the height of a row (group or item)
      * @param {(data: (IGroupItem | IGroupData)[], ranking: Ranking) => (IDynamicHeight | null)} callback
