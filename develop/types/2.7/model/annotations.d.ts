@@ -1,6 +1,6 @@
 import 'reflect-metadata';
-import Column, { IColumnConstructor } from './Column';
-import { IColumnDesc } from './interfaces';
+import Column from './Column';
+import { IColumnDesc, IColumnConstructor } from './interfaces';
 export declare function SupportType(): {
     (target: Function): void;
     (target: Object, propertyKey: string | symbol): void;

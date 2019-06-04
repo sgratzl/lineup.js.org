@@ -67,9 +67,6 @@ export declare function summaryRendererChanged(previous: string, current: string
  * @event
  */
 export declare function visibilityChanged(previous: boolean, current: boolean): void;
-export interface IColumnConstructor {
-    new (id: string, desc: Readonly<IColumnDesc> & any, factory: ITypeFactory): Column;
-}
 /**
  * a column in LineUp
  */
