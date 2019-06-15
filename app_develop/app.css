@@ -7955,6 +7955,8 @@ input[type=search].lu-search-input {
   padding-top: 2em; }
   .lu-side-panel.lu-collapsed {
     transform: unset; }
+    .lu-side-panel.lu-collapsed > .lu-rule-button-chooser.switch {
+      display: none; }
 
 .lu-header > .lu-label {
   line-height: 1.5; }

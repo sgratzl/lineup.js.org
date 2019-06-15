@@ -62,11 +62,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "android-chrome-512x512.png"
   },
   {
-    "revision": "b45d8e353b2ceb08de86",
+    "revision": "c291ab5ad4b6b00ca763",
     "url": "app.css"
   },
   {
-    "revision": "b45d8e353b2ceb08de86",
+    "revision": "c291ab5ad4b6b00ca763",
     "url": "app.js"
   },
   {
