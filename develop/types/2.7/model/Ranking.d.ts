@@ -141,6 +141,7 @@ export default class Ranking extends AEventDispatcher implements IColumnParent {
     getLabel(): string;
     setLabel(value: string): void;
     setGroups(groups: IOrderedGroup[], index2pos: IndicesArray, dirtyReason: EDirtyReason[]): void;
+    private unifyGroups(groups);
     getRank(dataIndex: number): number;
     getOrder(): IndicesArray;
     getOrderLength(): number;
