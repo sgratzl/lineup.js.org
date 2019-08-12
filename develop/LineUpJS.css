@@ -1937,7 +1937,8 @@ section.lu-slopegraph-header {
       transform: unset; } } }
 
 .lu {
-  position: relative; }
+  position: relative;
+  line-height: normal; }
   .lu > aside {
     float: right;
     display: flex;
