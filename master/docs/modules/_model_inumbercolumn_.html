@@ -96,12 +96,14 @@
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_model_inumbercolumn_.html#compareboxplot" class="tsd-kind-icon">compare<wbr>Box<wbr>Plot</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_model_inumbercolumn_.html#getboxplotnumber" class="tsd-kind-icon">get<wbr>Box<wbr>Plot<wbr>Number</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_model_inumbercolumn_.html#isboxplotcolumn" class="tsd-kind-icon">is<wbr>Box<wbr>Plot<wbr>Column</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_model_inumbercolumn_.html#isdummynumberfilter" class="tsd-kind-icon">is<wbr>Dummy<wbr>Number<wbr>Filter</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_model_inumbercolumn_.html#isequalnumberfilter" class="tsd-kind-icon">is<wbr>Equal<wbr>Number<wbr>Filter</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_model_inumbercolumn_.html#isnumbercolumn" class="tsd-kind-icon">is<wbr>Number<wbr>Column</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_model_inumbercolumn_.html#isnumberincluded" class="tsd-kind-icon">is<wbr>Number<wbr>Included</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_model_inumbercolumn_.html#isnumberscolumn" class="tsd-kind-icon">is<wbr>Numbers<wbr>Column</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_model_inumbercolumn_.html#nonumberfilter" class="tsd-kind-icon">no<wbr>Number<wbr>Filter</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_model_inumbercolumn_.html#numbercompare" class="tsd-kind-icon">number<wbr>Compare</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_model_inumbercolumn_.html#restorenumberfilter" class="tsd-kind-icon">restore<wbr>Number<wbr>Filter</a></li>
 							</ul>
 						</section>
 					</div>
@@ -115,7 +117,7 @@
 					<div class="tsd-signature tsd-kind-icon">DEFAULT_<wbr>FORMATTER<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;format(&#x27;.3n&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/INumberColumn.ts#L19">model/INumberColumn.ts:19</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/INumberColumn.ts#L19">model/INumberColumn.ts:19</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -153,7 +155,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/INumberColumn.ts#L61">model/INumberColumn.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/INumberColumn.ts#L61">model/INumberColumn.ts:61</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -182,7 +184,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/INumberColumn.ts#L74">model/INumberColumn.ts:74</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/INumberColumn.ts#L74">model/INumberColumn.ts:74</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -211,13 +213,42 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/INumberColumn.ts#L102">model/INumberColumn.ts:102</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/INumberColumn.ts#L102">model/INumberColumn.ts:102</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>col: <a href="../classes/_model_column_.column.html" class="tsd-signature-type">Column</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="isdummynumberfilter" class="tsd-anchor"></a>
+					<h3>is<wbr>Dummy<wbr>Number<wbr>Filter</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Dummy<wbr>Number<wbr>Filter<span class="tsd-signature-symbol">(</span>filter<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_inumbercolumn_.inumberfilter.html" class="tsd-signature-type">INumberFilter</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/INumberColumn.ts#L176">model/INumberColumn.ts:176</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>internal</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>filter: <a href="../interfaces/_model_inumbercolumn_.inumberfilter.html" class="tsd-signature-type">INumberFilter</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -234,7 +265,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/INumberColumn.ts#L161">model/INumberColumn.ts:161</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/INumberColumn.ts#L161">model/INumberColumn.ts:161</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -261,7 +292,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/INumberColumn.ts#L55">model/INumberColumn.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/INumberColumn.ts#L55">model/INumberColumn.ts:55</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -280,7 +311,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/INumberColumn.ts#L56">model/INumberColumn.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/INumberColumn.ts#L56">model/INumberColumn.ts:56</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -303,7 +334,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/INumberColumn.ts#L165">model/INumberColumn.ts:165</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/INumberColumn.ts#L165">model/INumberColumn.ts:165</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -329,7 +360,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/INumberColumn.ts#L127">model/INumberColumn.ts:127</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/INumberColumn.ts#L127">model/INumberColumn.ts:127</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -352,7 +383,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/INumberColumn.ts#L157">model/INumberColumn.ts:157</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/INumberColumn.ts#L157">model/INumberColumn.ts:157</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
@@ -371,7 +402,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/INumberColumn.ts#L139">model/INumberColumn.ts:139</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/INumberColumn.ts#L139">model/INumberColumn.ts:139</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -395,6 +426,35 @@
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="restorenumberfilter" class="tsd-anchor"></a>
+					<h3>restore<wbr>Number<wbr>Filter</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">restore<wbr>Number<wbr>Filter<span class="tsd-signature-symbol">(</span>v<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_inumbercolumn_.inumberfilter.html" class="tsd-signature-type">INumberFilter</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_inumbercolumn_.inumberfilter.html" class="tsd-signature-type">INumberFilter</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/INumberColumn.ts#L181">model/INumberColumn.ts:181</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>internal</dt>
+									<dd></dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>v: <a href="../interfaces/_model_inumbercolumn_.inumberfilter.html" class="tsd-signature-type">INumberFilter</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_model_inumbercolumn_.inumberfilter.html" class="tsd-signature-type">INumberFilter</a></h4>
 						</li>
 					</ul>
 				</section>
@@ -450,6 +510,9 @@
 						<a href="_model_inumbercolumn_.html#isboxplotcolumn" class="tsd-kind-icon">is<wbr>Box<wbr>Plot<wbr>Column</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_model_inumbercolumn_.html#isdummynumberfilter" class="tsd-kind-icon">is<wbr>Dummy<wbr>Number<wbr>Filter</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="_model_inumbercolumn_.html#isequalnumberfilter" class="tsd-kind-icon">is<wbr>Equal<wbr>Number<wbr>Filter</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
@@ -466,6 +529,9 @@
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="_model_inumbercolumn_.html#numbercompare" class="tsd-kind-icon">number<wbr>Compare</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_model_inumbercolumn_.html#restorenumberfilter" class="tsd-kind-icon">restore<wbr>Number<wbr>Filter</a>
 					</li>
 				</ul>
 			</nav>
@@ -484,6 +550,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

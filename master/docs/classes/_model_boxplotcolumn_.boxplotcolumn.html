@@ -98,6 +98,7 @@
 						<section class="tsd-index-section ">
 							<h3>Events</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_model_boxplotcolumn_.boxplotcolumn.html#filterchanged" class="tsd-kind-icon">filter<wbr>Changed</a></li>
 								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_model_boxplotcolumn_.boxplotcolumn.html#mappingchanged" class="tsd-kind-icon">mapping<wbr>Changed</a></li>
 								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_model_boxplotcolumn_.boxplotcolumn.html#sortmethodchanged" class="tsd-kind-icon">sort<wbr>Method<wbr>Changed</a></li>
 							</ul>
@@ -114,6 +115,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_model_boxplotcolumn_.boxplotcolumn.html#event_dirty" class="tsd-kind-icon">EVENT_<wbr>DIRTY</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_model_boxplotcolumn_.boxplotcolumn.html#event_dirty_header" class="tsd-kind-icon">EVENT_<wbr>DIRTY_<wbr>HEADER</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_model_boxplotcolumn_.boxplotcolumn.html#event_dirty_values" class="tsd-kind-icon">EVENT_<wbr>DIRTY_<wbr>VALUES</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_model_boxplotcolumn_.boxplotcolumn.html#event_filter_changed" class="tsd-kind-icon">EVENT_<wbr>FILTER_<wbr>CHANGED</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_model_boxplotcolumn_.boxplotcolumn.html#event_group_renderer_type_changed" class="tsd-kind-icon">EVENT_<wbr>GROUP_<wbr>RENDERER_<wbr>TYPE_<wbr>CHANGED</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_model_boxplotcolumn_.boxplotcolumn.html#event_label_changed" class="tsd-kind-icon">EVENT_<wbr>LABEL_<wbr>CHANGED</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_model_boxplotcolumn_.boxplotcolumn.html#event_mapping_changed" class="tsd-kind-icon">EVENT_<wbr>MAPPING_<wbr>CHANGED</a></li>
@@ -130,7 +132,6 @@
 						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_model_boxplotcolumn_.boxplotcolumn.html#color" class="tsd-kind-icon">color</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_model_boxplotcolumn_.boxplotcolumn.html#description" class="tsd-kind-icon">description</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_model_boxplotcolumn_.boxplotcolumn.html#fixed" class="tsd-kind-icon">fixed</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_model_boxplotcolumn_.boxplotcolumn.html#fqid" class="tsd-kind-icon">fqid</a></li>
@@ -224,7 +225,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L64">model/BoxPlotColumn.ts:64</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L71">model/BoxPlotColumn.ts:71</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -244,6 +245,42 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Events</h2>
 				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class">
+					<a name="filterchanged" class="tsd-anchor"></a>
+					<h3>filter<wbr>Changed</h3>
+					<ul class="tsd-signatures tsd-kind-event tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">filter<wbr>Changed<span class="tsd-signature-symbol">(</span>previous<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_inumbercolumn_.inumberfilter.html" class="tsd-signature-type">INumberFilter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, current<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_inumbercolumn_.inumberfilter.html" class="tsd-signature-type">INumberFilter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L45">model/BoxPlotColumn.ts:45</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>emitted when the filter property changes</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>asmemberof</dt>
+									<dd><p>BoxPlotColumn</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>previous: <a href="../interfaces/_model_inumbercolumn_.inumberfilter.html" class="tsd-signature-type">INumberFilter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+								<li>
+									<h5>current: <a href="../interfaces/_model_inumbercolumn_.inumberfilter.html" class="tsd-signature-type">INumberFilter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class">
 					<a name="mappingchanged" class="tsd-anchor"></a>
 					<h3>mapping<wbr>Changed</h3>
 					<ul class="tsd-signatures tsd-kind-event tsd-parent-kind-class">
@@ -253,7 +290,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L39">model/BoxPlotColumn.ts:39</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L38">model/BoxPlotColumn.ts:38</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -289,7 +326,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L32">model/BoxPlotColumn.ts:32</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L31">model/BoxPlotColumn.ts:31</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -326,7 +363,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#desc">desc</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#desc">desc</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L170">model/Column.ts:170</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L169">model/Column.ts:169</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -338,7 +375,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#parent">parent</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#parent">parent</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L162">model/Column.ts:162</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L161">model/Column.ts:161</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -355,7 +392,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#default_color">DEFAULT_COLOR</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#default_color">DEFAULT_COLOR</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L129">model/Column.ts:129</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L128">model/Column.ts:128</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -375,7 +412,7 @@
 					<div class="tsd-signature tsd-kind-icon">DEFAULT_<wbr>FORMATTER<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> =&nbsp;format(&#x27;.3n&#x27;)</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L51">model/BoxPlotColumn.ts:51</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L58">model/BoxPlotColumn.ts:58</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-type-declaration">
@@ -406,7 +443,7 @@
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>COLOR_<wbr>MAPPING_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"colorMappingChanged"</span><span class="tsd-signature-symbol"> =&nbsp;NumberColumn.EVENT_COLOR_MAPPING_CHANGED</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L48">model/BoxPlotColumn.ts:48</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L54">model/BoxPlotColumn.ts:54</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -417,7 +454,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#event_data_loaded">EVENT_DATA_LOADED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/ValueColumn.ts#L35">model/ValueColumn.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/ValueColumn.ts#L35">model/ValueColumn.ts:35</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -429,7 +466,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#event_dirty">EVENT_DIRTY</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_dirty">EVENT_DIRTY</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L139">model/Column.ts:139</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L138">model/Column.ts:138</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -441,7 +478,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#event_dirty_header">EVENT_DIRTY_HEADER</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_dirty_header">EVENT_DIRTY_HEADER</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L140">model/Column.ts:140</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L139">model/Column.ts:139</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -453,7 +490,17 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#event_dirty_values">EVENT_DIRTY_VALUES</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_dirty_values">EVENT_DIRTY_VALUES</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L141">model/Column.ts:141</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L140">model/Column.ts:140</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="event_filter_changed" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>FILTER_<wbr>CHANGED</h3>
+					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>FILTER_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"filterChanged"</span><span class="tsd-signature-symbol"> =&nbsp;NumberColumn.EVENT_FILTER_CHANGED</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L56">model/BoxPlotColumn.ts:56</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -465,7 +512,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#event_group_renderer_type_changed">EVENT_GROUP_RENDERER_TYPE_CHANGED</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_group_renderer_type_changed">EVENT_GROUP_RENDERER_TYPE_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L143">model/Column.ts:143</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L142">model/Column.ts:142</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -477,7 +524,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#event_label_changed">EVENT_LABEL_CHANGED</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_label_changed">EVENT_LABEL_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L137">model/Column.ts:137</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L136">model/Column.ts:136</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -487,7 +534,7 @@
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>MAPPING_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"mappingChanged"</span><span class="tsd-signature-symbol"> =&nbsp;NumberColumn.EVENT_MAPPING_CHANGED</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L47">model/BoxPlotColumn.ts:47</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L53">model/BoxPlotColumn.ts:53</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -499,7 +546,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#event_metadata_changed">EVENT_METADATA_CHANGED</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_metadata_changed">EVENT_METADATA_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L138">model/Column.ts:138</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L137">model/Column.ts:137</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -511,17 +558,17 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#event_renderer_type_changed">EVENT_RENDERER_TYPE_CHANGED</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_renderer_type_changed">EVENT_RENDERER_TYPE_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L142">model/Column.ts:142</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L141">model/Column.ts:141</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
 					<a name="event_sortmethod_changed" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>SORTMETHOD_<wbr>CHANGED</h3>
-					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>SORTMETHOD_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"sortMethodChanged"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;sortMethodChanged&quot;</span></div>
+					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>SORTMETHOD_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"sortMethodChanged"</span><span class="tsd-signature-symbol"> =&nbsp;NumberColumn.EVENT_SORTMETHOD_CHANGED</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L49">model/BoxPlotColumn.ts:49</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L55">model/BoxPlotColumn.ts:55</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -533,7 +580,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#event_summary_renderer_type_changed">EVENT_SUMMARY_RENDERER_TYPE_CHANGED</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_summary_renderer_type_changed">EVENT_SUMMARY_RENDERER_TYPE_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L144">model/Column.ts:144</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L143">model/Column.ts:143</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -545,7 +592,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#event_visibility_changed">EVENT_VISIBILITY_CHANGED</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_visibility_changed">EVENT_VISIBILITY_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L145">model/Column.ts:145</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L144">model/Column.ts:144</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -557,7 +604,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#event_width_changed">EVENT_WIDTH_CHANGED</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_width_changed">EVENT_WIDTH_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L136">model/Column.ts:136</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L135">model/Column.ts:135</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -569,7 +616,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#flat_all_columns">FLAT_ALL_COLUMNS</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#flat_all_columns">FLAT_ALL_COLUMNS</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L134">model/Column.ts:134</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L133">model/Column.ts:133</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -590,34 +637,13 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#renderer_loading">RENDERER_LOADING</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/ValueColumn.ts#L37">model/ValueColumn.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/ValueColumn.ts#L37">model/ValueColumn.ts:37</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
 				<h2>Accessors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-					<a name="color" class="tsd-anchor"></a>
-					<h3>color</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> color<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#color">color</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L210">model/Column.ts:210</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span>
-								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">string</span>
-							</h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
 					<a name="description" class="tsd-anchor"></a>
 					<h3>description</h3>
@@ -629,7 +655,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#description">description</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L206">model/Column.ts:206</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L204">model/Column.ts:204</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -647,7 +673,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#fixed">fixed</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L186">model/Column.ts:186</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L184">model/Column.ts:184</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -665,7 +691,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#fqid">fqid</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L218">model/Column.ts:218</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L212">model/Column.ts:212</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -688,7 +714,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#fqpath">fqpath</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L222">model/Column.ts:222</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L216">model/Column.ts:216</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -706,7 +732,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#frozen">frozen</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L190">model/Column.ts:190</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L188">model/Column.ts:188</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -724,7 +750,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#id">id</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L194">model/Column.ts:194</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L192">model/Column.ts:192</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -742,7 +768,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#label">label</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L202">model/Column.ts:202</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L200">model/Column.ts:200</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -763,7 +789,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#assignnewid">assignNewId</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L198">model/Column.ts:198</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L196">model/Column.ts:196</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -800,7 +826,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#attach">attach</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#attach">attach</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L425">model/Column.ts:425</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L415">model/Column.ts:415</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -830,7 +856,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#compare">compare</a></p>
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#compare">compare</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L77">model/BoxPlotColumn.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L84">model/BoxPlotColumn.ts:84</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -858,7 +884,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#detach">detach</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#detach">detach</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L432">model/Column.ts:432</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L422">model/Column.ts:422</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -881,7 +907,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#dump">dump</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L163">model/BoxPlotColumn.ts:163</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L170">model/BoxPlotColumn.ts:170</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -924,7 +950,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#filter">filter</a></p>
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#filter">filter</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L254">model/BoxPlotColumn.ts:254</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L262">model/BoxPlotColumn.ts:262</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -949,7 +975,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#findmyranker">findMyRanker</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#findmyranker">findMyRanker</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L452">model/Column.ts:452</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L442">model/Column.ts:442</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -977,7 +1003,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#flatten">flatten</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#flatten">flatten</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L283">model/Column.ts:283</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L277">model/Column.ts:277</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1028,7 +1054,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#getboxplotdata">getBoxPlotData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L81">model/BoxPlotColumn.ts:81</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L88">model/BoxPlotColumn.ts:88</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1056,7 +1082,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#getcolor">getColor</a></p>
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getcolor">getColor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L227">model/BoxPlotColumn.ts:227</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L235">model/BoxPlotColumn.ts:235</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1080,7 +1106,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#getcolormapping">getColorMapping</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L231">model/BoxPlotColumn.ts:231</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L239">model/BoxPlotColumn.ts:239</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_model_colormappingfunction_.isolidcolormappingfunction.html" class="tsd-signature-type">ISolidColorMappingFunction</a>
@@ -1106,7 +1132,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#getexportvalue">getExportValue</a></p>
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getexportvalue">getExportValue</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L97">model/BoxPlotColumn.ts:97</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L104">model/BoxPlotColumn.ts:104</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1133,7 +1159,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#getfilter">getFilter</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L246">model/BoxPlotColumn.ts:246</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L254">model/BoxPlotColumn.ts:254</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_model_inumbercolumn_.inumberfilter.html" class="tsd-signature-type">INumberFilter</a></h4>
@@ -1152,7 +1178,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#getgrouprenderer">getGroupRenderer</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getgrouprenderer">getGroupRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L599">model/Column.ts:599</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L585">model/Column.ts:585</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -1171,7 +1197,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#getlabel">getLabel</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#getlabel">getLabel</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L139">model/BoxPlotColumn.ts:139</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L146">model/BoxPlotColumn.ts:146</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1195,7 +1221,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#getmapping">getMapping</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L216">model/BoxPlotColumn.ts:216</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L224">model/BoxPlotColumn.ts:224</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_model_mappingfunction_.imappingfunction.html" class="tsd-signature-type">IMappingFunction</a></h4>
@@ -1214,7 +1240,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#getmetadata">getMetaData</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getmetadata">getMetaData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L318">model/Column.ts:318</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L308">model/Column.ts:308</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_column_.icolumnmetadata.html" class="tsd-signature-type">IColumnMetaData</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1232,7 +1258,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#getnumber">getNumber</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L131">model/BoxPlotColumn.ts:131</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L138">model/BoxPlotColumn.ts:138</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1256,7 +1282,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#getoriginalmapping">getOriginalMapping</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L212">model/BoxPlotColumn.ts:212</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L220">model/BoxPlotColumn.ts:220</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_model_mappingfunction_.imappingfunction.html" class="tsd-signature-type">IMappingFunction</a></h4>
@@ -1267,17 +1293,17 @@
 					<a name="getrange" class="tsd-anchor"></a>
 					<h3>get<wbr>Range</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Range<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Range<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#getrange">getRange</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L85">model/BoxPlotColumn.ts:85</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L92">model/BoxPlotColumn.ts:92</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Object</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1292,7 +1318,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#getraw">getRaw</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/ValueColumn.ts#L81">model/ValueColumn.ts:81</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/ValueColumn.ts#L81">model/ValueColumn.ts:81</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1319,7 +1345,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#getrawboxplotdata">getRawBoxPlotData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L89">model/BoxPlotColumn.ts:89</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L96">model/BoxPlotColumn.ts:96</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1346,7 +1372,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#getrawnumber">getRawNumber</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L135">model/BoxPlotColumn.ts:135</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L142">model/BoxPlotColumn.ts:142</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1369,7 +1395,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L93">model/BoxPlotColumn.ts:93</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L100">model/BoxPlotColumn.ts:100</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1398,7 +1424,7 @@
 								<p>Inherited from <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#getrenderer">getRenderer</a></p>
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getrenderer">getRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/ValueColumn.ts#L103">model/ValueColumn.ts:103</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/ValueColumn.ts#L103">model/ValueColumn.ts:103</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -1416,7 +1442,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#getsortmethod">getSortMethod</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L148">model/BoxPlotColumn.ts:148</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L155">model/BoxPlotColumn.ts:155</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../enums/_model_inumbercolumn_.esortmethod.html" class="tsd-signature-type">ESortMethod</a></h4>
@@ -1435,7 +1461,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#getsummaryrenderer">getSummaryRenderer</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getsummaryrenderer">getSummaryRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L603">model/Column.ts:603</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L589">model/Column.ts:589</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -1454,7 +1480,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#getvalue">getValue</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#getvalue">getValue</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L101">model/BoxPlotColumn.ts:101</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L108">model/BoxPlotColumn.ts:108</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1482,7 +1508,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#getvisible">getVisible</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getvisible">getVisible</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L264">model/Column.ts:264</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L258">model/Column.ts:258</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -1501,7 +1527,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#getwidth">getWidth</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getwidth">getWidth</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L248">model/Column.ts:248</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L242">model/Column.ts:242</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -1520,7 +1546,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#group">group</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#group">group</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L560">model/Column.ts:560</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L546">model/Column.ts:546</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1550,7 +1576,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#groupbyme">groupByMe</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#groupbyme">groupByMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L336">model/Column.ts:336</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L326">model/Column.ts:326</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -1569,7 +1595,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#groupcompare">groupCompare</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#groupcompare">groupCompare</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L570">model/Column.ts:570</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L556">model/Column.ts:556</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1602,7 +1628,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#groupsortbyme">groupSortByMe</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#groupsortbyme">groupSortByMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L388">model/Column.ts:388</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L378">model/Column.ts:378</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1630,7 +1656,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#hide">hide</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#hide">hide</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L252">model/Column.ts:252</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L246">model/Column.ts:246</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1649,7 +1675,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#insertafterme">insertAfterMe</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#insertafterme">insertAfterMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L441">model/Column.ts:441</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L431">model/Column.ts:431</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1683,7 +1709,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#isfiltered">isFiltered</a></p>
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#isfiltered">isFiltered</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L242">model/BoxPlotColumn.ts:242</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L250">model/BoxPlotColumn.ts:250</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -1702,7 +1728,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#isgroupsortedbyme">isGroupSortedByMe</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#isgroupsortedbyme">isGroupSortedByMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L404">model/Column.ts:404</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L394">model/Column.ts:394</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
@@ -1723,7 +1749,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#isgroupedby">isGroupedBy</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#isgroupedby">isGroupedBy</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L348">model/Column.ts:348</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L338">model/Column.ts:338</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1743,7 +1769,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#isloaded">isLoaded</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/ValueColumn.ts#L92">model/ValueColumn.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/ValueColumn.ts#L92">model/ValueColumn.ts:92</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -1762,7 +1788,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#ismissing">isMissing</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#ismissing">isMissing</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L541">model/Column.ts:541</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L527">model/Column.ts:527</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1787,7 +1813,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#issortedbyme">isSortedByMe</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#issortedbyme">isSortedByMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L384">model/Column.ts:384</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L374">model/Column.ts:374</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
@@ -1808,7 +1834,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#isvisible">isVisible</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#isvisible">isVisible</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L260">model/Column.ts:260</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L254">model/Column.ts:254</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -1827,7 +1853,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#markdirty">markDirty</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#markdirty">markDirty</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L663">model/Column.ts:663</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L649">model/Column.ts:649</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1855,6 +1881,7 @@
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"colorMappingChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_numbercolumn_.numbercolumn.html#colormappingchanged" class="tsd-signature-type">colorMappingChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"mappingChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_boxplotcolumn_.boxplotcolumn.html#mappingchanged" class="tsd-signature-type">mappingChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"sortMethodChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_boxplotcolumn_.boxplotcolumn.html#sortmethodchanged" class="tsd-signature-type">sortMethodChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"filterChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_boxplotcolumn_.boxplotcolumn.html#filterchanged" class="tsd-signature-type">filterChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"dataLoaded"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_valuecolumn_.valuecolumn.html#dataloaded" class="tsd-signature-type">dataLoaded</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"widthChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html#widthchanged" class="tsd-signature-type">widthChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"labelChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html#labelchanged" class="tsd-signature-type">labelChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
@@ -1872,7 +1899,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L194">model/BoxPlotColumn.ts:194</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L201">model/BoxPlotColumn.ts:201</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1890,7 +1917,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L195">model/BoxPlotColumn.ts:195</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L202">model/BoxPlotColumn.ts:202</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1908,7 +1935,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L196">model/BoxPlotColumn.ts:196</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L203">model/BoxPlotColumn.ts:203</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1926,7 +1953,25 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L197">model/BoxPlotColumn.ts:197</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L204">model/BoxPlotColumn.ts:204</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">"filterChanged"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="_model_boxplotcolumn_.boxplotcolumn.html#filterchanged" class="tsd-signature-type">filterChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L205">model/BoxPlotColumn.ts:205</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1945,7 +1990,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L198">model/BoxPlotColumn.ts:198</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L206">model/BoxPlotColumn.ts:206</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1964,7 +2009,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L199">model/BoxPlotColumn.ts:199</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L207">model/BoxPlotColumn.ts:207</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1983,7 +2028,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L200">model/BoxPlotColumn.ts:200</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L208">model/BoxPlotColumn.ts:208</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2002,7 +2047,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L201">model/BoxPlotColumn.ts:201</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L209">model/BoxPlotColumn.ts:209</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2021,7 +2066,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L202">model/BoxPlotColumn.ts:202</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L210">model/BoxPlotColumn.ts:210</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2040,7 +2085,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L203">model/BoxPlotColumn.ts:203</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L211">model/BoxPlotColumn.ts:211</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2059,7 +2104,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L204">model/BoxPlotColumn.ts:204</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L212">model/BoxPlotColumn.ts:212</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2078,7 +2123,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L205">model/BoxPlotColumn.ts:205</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L213">model/BoxPlotColumn.ts:213</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2097,7 +2142,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L206">model/BoxPlotColumn.ts:206</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L214">model/BoxPlotColumn.ts:214</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2116,7 +2161,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L207">model/BoxPlotColumn.ts:207</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L215">model/BoxPlotColumn.ts:215</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2144,7 +2189,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#removeme">removeMe</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#removeme">removeMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L412">model/Column.ts:412</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L402">model/Column.ts:402</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2168,7 +2213,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#restore">restore</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L172">model/BoxPlotColumn.ts:172</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L179">model/BoxPlotColumn.ts:179</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2216,7 +2261,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#setcolormapping">setColorMapping</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L235">model/BoxPlotColumn.ts:235</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L243">model/BoxPlotColumn.ts:243</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2239,7 +2284,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L250">model/BoxPlotColumn.ts:250</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L258">model/BoxPlotColumn.ts:258</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2264,7 +2309,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#setgrouprenderer">setGroupRenderer</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setgrouprenderer">setGroupRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L622">model/Column.ts:622</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L608">model/Column.ts:608</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2288,7 +2333,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#setloaded">setLoaded</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/ValueColumn.ts#L96">model/ValueColumn.ts:96</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/ValueColumn.ts#L96">model/ValueColumn.ts:96</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2312,7 +2357,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#setmapping">setMapping</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L220">model/BoxPlotColumn.ts:220</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L228">model/BoxPlotColumn.ts:228</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2337,7 +2382,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#setmetadata">setMetaData</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setmetadata">setMetaData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L300">model/Column.ts:300</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L294">model/Column.ts:294</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2362,7 +2407,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#setrenderer">setRenderer</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setrenderer">setRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L607">model/Column.ts:607</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L593">model/Column.ts:593</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2385,7 +2430,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/BoxPlotColumn.ts#L152">model/BoxPlotColumn.ts:152</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/BoxPlotColumn.ts#L159">model/BoxPlotColumn.ts:159</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2410,7 +2455,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#setsummaryrenderer">setSummaryRenderer</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setsummaryrenderer">setSummaryRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L637">model/Column.ts:637</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L623">model/Column.ts:623</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2435,7 +2480,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#setvisible">setVisible</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setvisible">setVisible</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L268">model/Column.ts:268</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L262">model/Column.ts:262</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2460,7 +2505,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#setwidth">setWidth</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setwidth">setWidth</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L289">model/Column.ts:289</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L283">model/Column.ts:283</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2485,7 +2530,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#setwidthimpl">setWidthImpl</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setwidthimpl">setWidthImpl</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L296">model/Column.ts:296</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L290">model/Column.ts:290</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2510,7 +2555,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#show">show</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#show">show</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L256">model/Column.ts:256</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L250">model/Column.ts:250</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2529,7 +2574,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#sortbyme">sortByMe</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#sortbyme">sortByMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L328">model/Column.ts:328</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L318">model/Column.ts:318</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2569,7 +2614,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#togglemygroupsorting">toggleMyGroupSorting</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#togglemygroupsorting">toggleMyGroupSorting</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L396">model/Column.ts:396</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L386">model/Column.ts:386</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -2588,7 +2633,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html">IBoxPlotColumn</a>.<a href="../interfaces/_model_inumbercolumn_.iboxplotcolumn.html#togglemysorting">toggleMySorting</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#togglemysorting">toggleMySorting</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L360">model/Column.ts:360</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L350">model/Column.ts:350</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2625,6 +2670,9 @@
 								<a href="_model_boxplotcolumn_.boxplotcolumn.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-event tsd-parent-kind-class">
+								<a href="_model_boxplotcolumn_.boxplotcolumn.html#filterchanged" class="tsd-kind-icon">filter<wbr>Changed</a>
+							</li>
+							<li class=" tsd-kind-event tsd-parent-kind-class">
 								<a href="_model_boxplotcolumn_.boxplotcolumn.html#mappingchanged" class="tsd-kind-icon">mapping<wbr>Changed</a>
 							</li>
 							<li class=" tsd-kind-event tsd-parent-kind-class">
@@ -2656,6 +2704,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 								<a href="_model_boxplotcolumn_.boxplotcolumn.html#event_dirty_values" class="tsd-kind-icon">EVENT_<wbr>DIRTY_<wbr>VALUES</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="_model_boxplotcolumn_.boxplotcolumn.html#event_filter_changed" class="tsd-kind-icon">EVENT_<wbr>FILTER_<wbr>CHANGED</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 								<a href="_model_boxplotcolumn_.boxplotcolumn.html#event_group_renderer_type_changed" class="tsd-kind-icon">EVENT_<wbr>GROUP_<wbr>RENDERER_<wbr>TYPE_<wbr>CHANGED</a>
@@ -2689,9 +2740,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 								<a href="_model_boxplotcolumn_.boxplotcolumn.html#renderer_loading" class="tsd-kind-icon">RENDERER_<wbr>LOADING</a>
-							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-								<a href="_model_boxplotcolumn_.boxplotcolumn.html#color" class="tsd-kind-icon">color</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
 								<a href="_model_boxplotcolumn_.boxplotcolumn.html#description" class="tsd-kind-icon">description</a>
@@ -2930,6 +2978,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

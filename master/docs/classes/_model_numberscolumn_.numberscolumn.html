@@ -99,6 +99,7 @@
 						<section class="tsd-index-section ">
 							<h3>Events</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_model_numberscolumn_.numberscolumn.html#filterchanged" class="tsd-kind-icon">filter<wbr>Changed</a></li>
 								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_model_numberscolumn_.numberscolumn.html#mappingchanged" class="tsd-kind-icon">mapping<wbr>Changed</a></li>
 								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_model_numberscolumn_.numberscolumn.html#sortmethodchanged" class="tsd-kind-icon">sort<wbr>Method<wbr>Changed</a></li>
 							</ul>
@@ -115,6 +116,7 @@
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_model_numberscolumn_.numberscolumn.html#event_dirty" class="tsd-kind-icon">EVENT_<wbr>DIRTY</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_model_numberscolumn_.numberscolumn.html#event_dirty_header" class="tsd-kind-icon">EVENT_<wbr>DIRTY_<wbr>HEADER</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_model_numberscolumn_.numberscolumn.html#event_dirty_values" class="tsd-kind-icon">EVENT_<wbr>DIRTY_<wbr>VALUES</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_model_numberscolumn_.numberscolumn.html#event_filter_changed" class="tsd-kind-icon">EVENT_<wbr>FILTER_<wbr>CHANGED</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_model_numberscolumn_.numberscolumn.html#event_group_renderer_type_changed" class="tsd-kind-icon">EVENT_<wbr>GROUP_<wbr>RENDERER_<wbr>TYPE_<wbr>CHANGED</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_model_numberscolumn_.numberscolumn.html#event_label_changed" class="tsd-kind-icon">EVENT_<wbr>LABEL_<wbr>CHANGED</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_model_numberscolumn_.numberscolumn.html#event_mapping_changed" class="tsd-kind-icon">EVENT_<wbr>MAPPING_<wbr>CHANGED</a></li>
@@ -132,7 +134,6 @@
 						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_model_numberscolumn_.numberscolumn.html#color" class="tsd-kind-icon">color</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_model_numberscolumn_.numberscolumn.html#datalength" class="tsd-kind-icon">data<wbr>Length</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_model_numberscolumn_.numberscolumn.html#description" class="tsd-kind-icon">description</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_model_numberscolumn_.numberscolumn.html#fixed" class="tsd-kind-icon">fixed</a></li>
@@ -236,7 +237,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L62">model/NumbersColumn.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L70">model/NumbersColumn.ts:70</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -256,6 +257,42 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Events</h2>
 				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class">
+					<a name="filterchanged" class="tsd-anchor"></a>
+					<h3>filter<wbr>Changed</h3>
+					<ul class="tsd-signatures tsd-kind-event tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">filter<wbr>Changed<span class="tsd-signature-symbol">(</span>previous<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_inumbercolumn_.inumberfilter.html" class="tsd-signature-type">INumberFilter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, current<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_inumbercolumn_.inumberfilter.html" class="tsd-signature-type">INumberFilter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L47">model/NumbersColumn.ts:47</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>emitted when the filter property changes</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>asmemberof</dt>
+									<dd><p>NumbersColumn</p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>previous: <a href="../interfaces/_model_inumbercolumn_.inumberfilter.html" class="tsd-signature-type">INumberFilter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+								<li>
+									<h5>current: <a href="../interfaces/_model_inumbercolumn_.inumberfilter.html" class="tsd-signature-type">INumberFilter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class">
 					<a name="mappingchanged" class="tsd-anchor"></a>
 					<h3>mapping<wbr>Changed</h3>
 					<ul class="tsd-signatures tsd-kind-event tsd-parent-kind-class">
@@ -265,7 +302,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L34">model/NumbersColumn.ts:34</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L33">model/NumbersColumn.ts:33</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -301,7 +338,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L41">model/NumbersColumn.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L40">model/NumbersColumn.ts:40</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -338,7 +375,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#desc">desc</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#desc">desc</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L170">model/Column.ts:170</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L169">model/Column.ts:169</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -350,7 +387,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#parent">parent</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#parent">parent</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L162">model/Column.ts:162</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L161">model/Column.ts:161</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -365,7 +402,7 @@
 					<div class="tsd-signature tsd-kind-icon">CENTER<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">0</span><span class="tsd-signature-symbol"> =&nbsp;0</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L51">model/NumbersColumn.ts:51</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L59">model/NumbersColumn.ts:59</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -377,7 +414,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#default_color">DEFAULT_COLOR</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#default_color">DEFAULT_COLOR</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L129">model/Column.ts:129</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L128">model/Column.ts:128</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -397,7 +434,7 @@
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>COLOR_<wbr>MAPPING_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"colorMappingChanged"</span><span class="tsd-signature-symbol"> =&nbsp;NumberColumn.EVENT_COLOR_MAPPING_CHANGED</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L48">model/NumbersColumn.ts:48</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L54">model/NumbersColumn.ts:54</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -408,7 +445,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#event_data_loaded">EVENT_DATA_LOADED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/ValueColumn.ts#L35">model/ValueColumn.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/ValueColumn.ts#L35">model/ValueColumn.ts:35</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -420,7 +457,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#event_dirty">EVENT_DIRTY</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_dirty">EVENT_DIRTY</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L139">model/Column.ts:139</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L138">model/Column.ts:138</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -432,7 +469,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#event_dirty_header">EVENT_DIRTY_HEADER</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_dirty_header">EVENT_DIRTY_HEADER</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L140">model/Column.ts:140</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L139">model/Column.ts:139</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -444,7 +481,17 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#event_dirty_values">EVENT_DIRTY_VALUES</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_dirty_values">EVENT_DIRTY_VALUES</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L141">model/Column.ts:141</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L140">model/Column.ts:140</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="event_filter_changed" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>FILTER_<wbr>CHANGED</h3>
+					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>FILTER_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"filterChanged"</span><span class="tsd-signature-symbol"> =&nbsp;NumberColumn.EVENT_FILTER_CHANGED</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L56">model/NumbersColumn.ts:56</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -456,7 +503,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#event_group_renderer_type_changed">EVENT_GROUP_RENDERER_TYPE_CHANGED</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_group_renderer_type_changed">EVENT_GROUP_RENDERER_TYPE_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L143">model/Column.ts:143</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L142">model/Column.ts:142</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -468,7 +515,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#event_label_changed">EVENT_LABEL_CHANGED</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_label_changed">EVENT_LABEL_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L137">model/Column.ts:137</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L136">model/Column.ts:136</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -478,7 +525,7 @@
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>MAPPING_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"mappingChanged"</span><span class="tsd-signature-symbol"> =&nbsp;NumberColumn.EVENT_MAPPING_CHANGED</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L47">model/NumbersColumn.ts:47</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L53">model/NumbersColumn.ts:53</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -490,7 +537,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#event_metadata_changed">EVENT_METADATA_CHANGED</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_metadata_changed">EVENT_METADATA_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L138">model/Column.ts:138</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L137">model/Column.ts:137</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -502,7 +549,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#event_renderer_type_changed">EVENT_RENDERER_TYPE_CHANGED</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_renderer_type_changed">EVENT_RENDERER_TYPE_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L142">model/Column.ts:142</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L141">model/Column.ts:141</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -512,7 +559,7 @@
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>SORTMETHOD_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"sortMethodChanged"</span><span class="tsd-signature-symbol"> =&nbsp;NumberColumn.EVENT_SORTMETHOD_CHANGED</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L49">model/NumbersColumn.ts:49</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L55">model/NumbersColumn.ts:55</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -523,7 +570,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#event_splice_changed">EVENT_SPLICE_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/ArrayColumn.ts#L35">model/ArrayColumn.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/ArrayColumn.ts#L35">model/ArrayColumn.ts:35</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -535,7 +582,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#event_summary_renderer_type_changed">EVENT_SUMMARY_RENDERER_TYPE_CHANGED</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_summary_renderer_type_changed">EVENT_SUMMARY_RENDERER_TYPE_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L144">model/Column.ts:144</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L143">model/Column.ts:143</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -547,7 +594,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#event_visibility_changed">EVENT_VISIBILITY_CHANGED</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_visibility_changed">EVENT_VISIBILITY_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L145">model/Column.ts:145</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L144">model/Column.ts:144</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -559,7 +606,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#event_width_changed">EVENT_WIDTH_CHANGED</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_width_changed">EVENT_WIDTH_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L136">model/Column.ts:136</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L135">model/Column.ts:135</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -571,7 +618,7 @@
 						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#flat_all_columns">FLAT_ALL_COLUMNS</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#flat_all_columns">FLAT_ALL_COLUMNS</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L134">model/Column.ts:134</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L133">model/Column.ts:133</a></li>
 						</ul>
 					</aside>
 					<div class="tsd-comment tsd-typography">
@@ -592,34 +639,13 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#renderer_loading">RENDERER_LOADING</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/ValueColumn.ts#L37">model/ValueColumn.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/ValueColumn.ts#L37">model/ValueColumn.ts:37</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
 				<h2>Accessors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-					<a name="color" class="tsd-anchor"></a>
-					<h3>color</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> color<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#color">color</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L210">model/Column.ts:210</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span>
-								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">string</span>
-							</h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
 					<a name="datalength" class="tsd-anchor"></a>
 					<h3>data<wbr>Length</h3>
@@ -631,7 +657,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#datalength">dataLength</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/ArrayColumn.ts#L68">model/ArrayColumn.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/ArrayColumn.ts#L68">model/ArrayColumn.ts:68</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span>
@@ -652,7 +678,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#description">description</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L206">model/Column.ts:206</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L204">model/Column.ts:204</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -670,7 +696,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#fixed">fixed</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L186">model/Column.ts:186</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L184">model/Column.ts:184</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -688,7 +714,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#fqid">fqid</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L218">model/Column.ts:218</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L212">model/Column.ts:212</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -711,7 +737,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#fqpath">fqpath</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L222">model/Column.ts:222</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L216">model/Column.ts:216</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -729,7 +755,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#frozen">frozen</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L190">model/Column.ts:190</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L188">model/Column.ts:188</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -747,7 +773,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#id">id</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L194">model/Column.ts:194</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L192">model/Column.ts:192</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -765,7 +791,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#label">label</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L202">model/Column.ts:202</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L200">model/Column.ts:200</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -783,7 +809,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#labels">labels</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/ArrayColumn.ts#L57">model/ArrayColumn.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/ArrayColumn.ts#L57">model/ArrayColumn.ts:57</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
@@ -804,7 +830,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#assignnewid">assignNewId</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L198">model/Column.ts:198</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L196">model/Column.ts:196</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -841,7 +867,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#attach">attach</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#attach">attach</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L425">model/Column.ts:425</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L415">model/Column.ts:415</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -871,7 +897,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#compare">compare</a></p>
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#compare">compare</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L81">model/NumbersColumn.ts:81</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L89">model/NumbersColumn.ts:89</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -899,7 +925,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#detach">detach</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#detach">detach</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L432">model/Column.ts:432</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L422">model/Column.ts:422</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -922,7 +948,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#dump">dump</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L154">model/NumbersColumn.ts:154</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L162">model/NumbersColumn.ts:162</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -965,7 +991,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#filter">filter</a></p>
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#filter">filter</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L246">model/NumbersColumn.ts:246</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L255">model/NumbersColumn.ts:255</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -990,7 +1016,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#findmyranker">findMyRanker</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#findmyranker">findMyRanker</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L452">model/Column.ts:452</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L442">model/Column.ts:442</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1018,7 +1044,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#flatten">flatten</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#flatten">flatten</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L283">model/Column.ts:283</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L277">model/Column.ts:277</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1069,7 +1095,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getboxplotdata">getBoxPlotData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L89">model/NumbersColumn.ts:89</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L97">model/NumbersColumn.ts:97</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1097,7 +1123,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getcolor">getColor</a></p>
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getcolor">getColor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L219">model/NumbersColumn.ts:219</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L228">model/NumbersColumn.ts:228</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1121,7 +1147,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getcolormapping">getColorMapping</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L223">model/NumbersColumn.ts:223</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L232">model/NumbersColumn.ts:232</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_model_colormappingfunction_.isolidcolormappingfunction.html" class="tsd-signature-type">ISolidColorMappingFunction</a>
@@ -1147,7 +1173,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getexportvalue">getExportValue</a></p>
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getexportvalue">getExportValue</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L131">model/NumbersColumn.ts:131</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L139">model/NumbersColumn.ts:139</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1174,7 +1200,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getfilter">getFilter</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L238">model/NumbersColumn.ts:238</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L247">model/NumbersColumn.ts:247</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_model_inumbercolumn_.inumberfilter.html" class="tsd-signature-type">INumberFilter</a></h4>
@@ -1193,7 +1219,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getgrouprenderer">getGroupRenderer</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getgrouprenderer">getGroupRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L599">model/Column.ts:599</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L585">model/Column.ts:585</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -1213,7 +1239,7 @@
 								<p>Inherited from <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#getlabel">getLabel</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#getlabel">getLabel</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/ArrayColumn.ts#L91">model/ArrayColumn.ts:91</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/ArrayColumn.ts#L91">model/ArrayColumn.ts:91</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1238,7 +1264,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getlabels">getLabels</a></p>
 								<p>Overrides <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#getlabels">getLabels</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L135">model/NumbersColumn.ts:135</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L143">model/NumbersColumn.ts:143</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1263,7 +1289,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getmap">getMap</a></p>
 								<p>Inherited from <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#getmap">getMap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/ArrayColumn.ts#L99">model/ArrayColumn.ts:99</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/ArrayColumn.ts#L99">model/ArrayColumn.ts:99</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1288,7 +1314,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getmaplabel">getMapLabel</a></p>
 								<p>Inherited from <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#getmaplabel">getMapLabel</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/ArrayColumn.ts#L104">model/ArrayColumn.ts:104</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/ArrayColumn.ts#L104">model/ArrayColumn.ts:104</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1312,7 +1338,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getmapping">getMapping</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L208">model/NumbersColumn.ts:208</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L217">model/NumbersColumn.ts:217</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_model_mappingfunction_.imappingfunction.html" class="tsd-signature-type">IMappingFunction</a></h4>
@@ -1331,7 +1357,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getmetadata">getMetaData</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getmetadata">getMetaData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L318">model/Column.ts:318</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L308">model/Column.ts:308</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_column_.icolumnmetadata.html" class="tsd-signature-type">IColumnMetaData</a><span class="tsd-signature-symbol">&gt;</span></h4>
@@ -1349,7 +1375,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getnumber">getNumber</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L113">model/NumbersColumn.ts:113</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L121">model/NumbersColumn.ts:121</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1373,7 +1399,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getnumbers">getNumbers</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L109">model/NumbersColumn.ts:109</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L117">model/NumbersColumn.ts:117</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1397,7 +1423,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getoriginalmapping">getOriginalMapping</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L204">model/NumbersColumn.ts:204</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L213">model/NumbersColumn.ts:213</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_model_mappingfunction_.imappingfunction.html" class="tsd-signature-type">IMappingFunction</a></h4>
@@ -1408,17 +1434,17 @@
 					<a name="getrange" class="tsd-anchor"></a>
 					<h3>get<wbr>Range</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Range<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Object</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Range<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getrange">getRange</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L97">model/NumbersColumn.ts:97</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L105">model/NumbersColumn.ts:105</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Object</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1433,7 +1459,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#getraw">getRaw</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/ValueColumn.ts#L81">model/ValueColumn.ts:81</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/ValueColumn.ts#L81">model/ValueColumn.ts:81</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1460,7 +1486,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getrawboxplotdata">getRawBoxPlotData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L101">model/NumbersColumn.ts:101</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L109">model/NumbersColumn.ts:109</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1487,7 +1513,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getrawnumber">getRawNumber</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L117">model/NumbersColumn.ts:117</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L125">model/NumbersColumn.ts:125</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1511,7 +1537,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getrawnumbers">getRawNumbers</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L85">model/NumbersColumn.ts:85</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L93">model/NumbersColumn.ts:93</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1534,7 +1560,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L126">model/NumbersColumn.ts:126</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L134">model/NumbersColumn.ts:134</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1560,7 +1586,7 @@
 								<p>Inherited from <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#getrenderer">getRenderer</a></p>
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getrenderer">getRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/ValueColumn.ts#L103">model/ValueColumn.ts:103</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/ValueColumn.ts#L103">model/ValueColumn.ts:103</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -1578,7 +1604,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getsortmethod">getSortMethod</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L139">model/NumbersColumn.ts:139</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L147">model/NumbersColumn.ts:147</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../enums/_model_inumbercolumn_.eadvancedsortmethod.html" class="tsd-signature-type">EAdvancedSortMethod</a></h4>
@@ -1596,7 +1622,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#getsplicer">getSplicer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/ArrayColumn.ts#L64">model/ArrayColumn.ts:64</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/ArrayColumn.ts#L64">model/ArrayColumn.ts:64</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
@@ -1617,7 +1643,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getsummaryrenderer">getSummaryRenderer</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getsummaryrenderer">getSummaryRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L603">model/Column.ts:603</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L589">model/Column.ts:589</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -1636,7 +1662,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getvalue">getValue</a></p>
 								<p>Overrides <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#getvalue">getValue</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L121">model/NumbersColumn.ts:121</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L129">model/NumbersColumn.ts:129</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1661,7 +1687,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getvalues">getValues</a></p>
 								<p>Inherited from <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#getvalues">getValues</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/ArrayColumn.ts#L79">model/ArrayColumn.ts:79</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/ArrayColumn.ts#L79">model/ArrayColumn.ts:79</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1686,7 +1712,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getvisible">getVisible</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getvisible">getVisible</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L264">model/Column.ts:264</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L258">model/Column.ts:258</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -1705,7 +1731,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#getwidth">getWidth</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getwidth">getWidth</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L248">model/Column.ts:248</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L242">model/Column.ts:242</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -1724,7 +1750,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#group">group</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#group">group</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L560">model/Column.ts:560</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L546">model/Column.ts:546</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1754,7 +1780,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#groupbyme">groupByMe</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#groupbyme">groupByMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L336">model/Column.ts:336</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L326">model/Column.ts:326</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -1773,7 +1799,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#groupcompare">groupCompare</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#groupcompare">groupCompare</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L570">model/Column.ts:570</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L556">model/Column.ts:556</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1806,7 +1832,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#groupsortbyme">groupSortByMe</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#groupsortbyme">groupSortByMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L388">model/Column.ts:388</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L378">model/Column.ts:378</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1834,7 +1860,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#hide">hide</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#hide">hide</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L252">model/Column.ts:252</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L246">model/Column.ts:246</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1853,7 +1879,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#insertafterme">insertAfterMe</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#insertafterme">insertAfterMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L441">model/Column.ts:441</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L431">model/Column.ts:431</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1887,7 +1913,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#isfiltered">isFiltered</a></p>
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#isfiltered">isFiltered</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L234">model/NumbersColumn.ts:234</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L243">model/NumbersColumn.ts:243</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -1906,7 +1932,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#isgroupsortedbyme">isGroupSortedByMe</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#isgroupsortedbyme">isGroupSortedByMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L404">model/Column.ts:404</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L394">model/Column.ts:394</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
@@ -1927,7 +1953,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#isgroupedby">isGroupedBy</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#isgroupedby">isGroupedBy</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L348">model/Column.ts:348</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L338">model/Column.ts:338</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1947,7 +1973,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#isloaded">isLoaded</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/ValueColumn.ts#L92">model/ValueColumn.ts:92</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/ValueColumn.ts#L92">model/ValueColumn.ts:92</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -1966,7 +1992,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#ismissing">isMissing</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#ismissing">isMissing</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L541">model/Column.ts:541</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L527">model/Column.ts:527</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1991,7 +2017,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#issortedbyme">isSortedByMe</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#issortedbyme">isSortedByMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L384">model/Column.ts:384</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L374">model/Column.ts:374</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
@@ -2012,7 +2038,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#isvisible">isVisible</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#isvisible">isVisible</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L260">model/Column.ts:260</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L254">model/Column.ts:254</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -2031,7 +2057,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#markdirty">markDirty</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#markdirty">markDirty</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L663">model/Column.ts:663</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L649">model/Column.ts:649</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2059,6 +2085,7 @@
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"colorMappingChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_numbercolumn_.numbercolumn.html#colormappingchanged" class="tsd-signature-type">colorMappingChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"mappingChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_numberscolumn_.numberscolumn.html#mappingchanged" class="tsd-signature-type">mappingChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"sortMethodChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_numberscolumn_.numberscolumn.html#sortmethodchanged" class="tsd-signature-type">sortMethodChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"filterChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_numberscolumn_.numberscolumn.html#filterchanged" class="tsd-signature-type">filterChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"spliceChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_arraycolumn_.arraycolumn.html#splicechanged" class="tsd-signature-type">spliceChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"dataLoaded"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_valuecolumn_.valuecolumn.html#dataloaded" class="tsd-signature-type">dataLoaded</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"widthChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html#widthchanged" class="tsd-signature-type">widthChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
@@ -2077,7 +2104,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L185">model/NumbersColumn.ts:185</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L193">model/NumbersColumn.ts:193</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2095,7 +2122,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L186">model/NumbersColumn.ts:186</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L194">model/NumbersColumn.ts:194</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2113,7 +2140,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L187">model/NumbersColumn.ts:187</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L195">model/NumbersColumn.ts:195</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2131,7 +2158,25 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L188">model/NumbersColumn.ts:188</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L196">model/NumbersColumn.ts:196</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">"filterChanged"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="_model_numberscolumn_.numberscolumn.html#filterchanged" class="tsd-signature-type">filterChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#on">on</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L197">model/NumbersColumn.ts:197</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2149,7 +2194,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L189">model/NumbersColumn.ts:189</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L198">model/NumbersColumn.ts:198</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2168,7 +2213,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L190">model/NumbersColumn.ts:190</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L199">model/NumbersColumn.ts:199</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2187,7 +2232,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L191">model/NumbersColumn.ts:191</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L200">model/NumbersColumn.ts:200</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2206,7 +2251,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L192">model/NumbersColumn.ts:192</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L201">model/NumbersColumn.ts:201</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2225,7 +2270,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L193">model/NumbersColumn.ts:193</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L202">model/NumbersColumn.ts:202</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2244,7 +2289,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L194">model/NumbersColumn.ts:194</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L203">model/NumbersColumn.ts:203</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2263,7 +2308,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L195">model/NumbersColumn.ts:195</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L204">model/NumbersColumn.ts:204</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2282,7 +2327,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L196">model/NumbersColumn.ts:196</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L205">model/NumbersColumn.ts:205</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2301,7 +2346,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L197">model/NumbersColumn.ts:197</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L206">model/NumbersColumn.ts:206</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2320,7 +2365,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L198">model/NumbersColumn.ts:198</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L207">model/NumbersColumn.ts:207</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2339,7 +2384,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L199">model/NumbersColumn.ts:199</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L208">model/NumbersColumn.ts:208</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2367,7 +2412,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#removeme">removeMe</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#removeme">removeMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L412">model/Column.ts:412</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L402">model/Column.ts:402</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2391,7 +2436,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#restore">restore</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L163">model/NumbersColumn.ts:163</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L171">model/NumbersColumn.ts:171</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2439,7 +2484,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#setcolormapping">setColorMapping</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L227">model/NumbersColumn.ts:227</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L236">model/NumbersColumn.ts:236</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2462,7 +2507,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L242">model/NumbersColumn.ts:242</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L251">model/NumbersColumn.ts:251</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2487,7 +2532,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#setgrouprenderer">setGroupRenderer</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setgrouprenderer">setGroupRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L622">model/Column.ts:622</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L608">model/Column.ts:608</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2511,7 +2556,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#setloaded">setLoaded</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/ValueColumn.ts#L96">model/ValueColumn.ts:96</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/ValueColumn.ts#L96">model/ValueColumn.ts:96</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2535,7 +2580,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#setmapping">setMapping</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L212">model/NumbersColumn.ts:212</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L221">model/NumbersColumn.ts:221</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2560,7 +2605,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#setmetadata">setMetaData</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setmetadata">setMetaData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L300">model/Column.ts:300</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L294">model/Column.ts:294</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2585,7 +2630,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#setrenderer">setRenderer</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setrenderer">setRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L607">model/Column.ts:607</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L593">model/Column.ts:593</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2608,7 +2653,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/NumbersColumn.ts#L143">model/NumbersColumn.ts:143</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/NumbersColumn.ts#L151">model/NumbersColumn.ts:151</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2632,7 +2677,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_arraycolumn_.arraycolumn.html">ArrayColumn</a>.<a href="_model_arraycolumn_.arraycolumn.html#setsplicer">setSplicer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/ArrayColumn.ts#L53">model/ArrayColumn.ts:53</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/ArrayColumn.ts#L53">model/ArrayColumn.ts:53</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2657,7 +2702,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#setsummaryrenderer">setSummaryRenderer</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setsummaryrenderer">setSummaryRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L637">model/Column.ts:637</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L623">model/Column.ts:623</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2682,7 +2727,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#setvisible">setVisible</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setvisible">setVisible</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L268">model/Column.ts:268</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L262">model/Column.ts:262</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2707,7 +2752,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#setwidth">setWidth</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setwidth">setWidth</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L289">model/Column.ts:289</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L283">model/Column.ts:283</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2732,7 +2777,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#setwidthimpl">setWidthImpl</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setwidthimpl">setWidthImpl</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L296">model/Column.ts:296</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L290">model/Column.ts:290</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2757,7 +2802,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#show">show</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#show">show</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L256">model/Column.ts:256</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L250">model/Column.ts:250</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2776,7 +2821,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#sortbyme">sortByMe</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#sortbyme">sortByMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L328">model/Column.ts:328</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L318">model/Column.ts:318</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2816,7 +2861,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#togglemygroupsorting">toggleMyGroupSorting</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#togglemygroupsorting">toggleMyGroupSorting</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L396">model/Column.ts:396</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L386">model/Column.ts:386</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -2835,7 +2880,7 @@
 								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html">INumbersColumn</a>.<a href="../interfaces/_model_inumbercolumn_.inumberscolumn.html#togglemysorting">toggleMySorting</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#togglemysorting">toggleMySorting</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/23ca83ca/src/model/Column.ts#L360">model/Column.ts:360</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/c22cf5b7/src/model/Column.ts#L350">model/Column.ts:350</a></li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -2872,6 +2917,9 @@
 								<a href="_model_numberscolumn_.numberscolumn.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-event tsd-parent-kind-class">
+								<a href="_model_numberscolumn_.numberscolumn.html#filterchanged" class="tsd-kind-icon">filter<wbr>Changed</a>
+							</li>
+							<li class=" tsd-kind-event tsd-parent-kind-class">
 								<a href="_model_numberscolumn_.numberscolumn.html#mappingchanged" class="tsd-kind-icon">mapping<wbr>Changed</a>
 							</li>
 							<li class=" tsd-kind-event tsd-parent-kind-class">
@@ -2903,6 +2951,9 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 								<a href="_model_numberscolumn_.numberscolumn.html#event_dirty_values" class="tsd-kind-icon">EVENT_<wbr>DIRTY_<wbr>VALUES</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="_model_numberscolumn_.numberscolumn.html#event_filter_changed" class="tsd-kind-icon">EVENT_<wbr>FILTER_<wbr>CHANGED</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 								<a href="_model_numberscolumn_.numberscolumn.html#event_group_renderer_type_changed" class="tsd-kind-icon">EVENT_<wbr>GROUP_<wbr>RENDERER_<wbr>TYPE_<wbr>CHANGED</a>
@@ -2939,9 +2990,6 @@
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 								<a href="_model_numberscolumn_.numberscolumn.html#renderer_loading" class="tsd-kind-icon">RENDERER_<wbr>LOADING</a>
-							</li>
-							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
-								<a href="_model_numberscolumn_.numberscolumn.html#color" class="tsd-kind-icon">color</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
 								<a href="_model_numberscolumn_.numberscolumn.html#datalength" class="tsd-kind-icon">data<wbr>Length</a>
@@ -3210,6 +3258,7 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
