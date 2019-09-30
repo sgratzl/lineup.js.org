@@ -118,7 +118,7 @@ export interface IGroup {
     color: string;
     parent?: Readonly<IGroupParent> | null;
 }
-export declare type IndicesArray = (number[] | UIntTypedArray) & ArrayLike<number>;
+export declare type IndicesArray = (ReadonlyArray<number> | UIntTypedArray) & ArrayLike<number>;
 export interface IOrderedGroup extends IGroup {
     order: IndicesArray;
 }

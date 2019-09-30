@@ -17,7 +17,3 @@ export interface ITopNGetter {
 export declare function groupEndLevel(item: IGroupData | IGroupItem, topNGetter: ITopNGetter): number;
 export declare function isSummaryGroup(group: IGroup, strategy: IAggregationStrategy, topNGetter: ITopNGetter): boolean;
 export declare function toRowMeta(item: IGroupData | IGroupItem, strategy: IAggregationStrategy, topNGetter: ITopNGetter): string | null;
-export declare function index2pos(groups: IOrderedGroup[], maxDataIndex: number): {
-    groups: IOrderedGroup[];
-    index2pos: Uint8Array | Uint16Array | Uint32Array;
-};

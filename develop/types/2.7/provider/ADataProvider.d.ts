@@ -1,5 +1,5 @@
 import { AEventDispatcher, ISequence, IEventListener } from '../internal';
-import { Column, IColumnConstructor, Ranking, EDirtyReason, IColumnDesc, IDataRow, IGroup, IndicesArray, IOrderedGroup, EAggregationState, INumberColumn, IColumnDump, IRankingDump, IColorMappingFunctionConstructor, IMappingFunctionConstructor } from '../model';
+import { Column, IColumnConstructor, Ranking, EDirtyReason, IColumnDesc, IDataRow, IGroup, IndicesArray, IOrderedGroup, EAggregationState, IColumnDump, IRankingDump, IColorMappingFunctionConstructor, IMappingFunctionConstructor } from '../model';
 import { IDataProvider, IDataProviderDump, IDataProviderOptions, IExportOptions } from './interfaces';
 import { IRenderTasks } from '../renderer';
 /**
@@ -301,11 +301,11 @@ declare abstract class ADataProvider extends AEventDispatcher implements IDataPr
     /**
      * for better dumping describe reference, by default just return the description
      */
-    toDescRef: (desc: any) => any;
+    toDescRef(desc: any): any;
     /**
      * inverse operation of toDescRef
      */
-    fromDescRef: (descRef: any) => any;
+    fromDescRef(descRef: any): any;
     restoreRanking(dump: IRankingDump): Ranking;
     restore(dump: IDataProviderDump): void;
     abstract findDesc(ref: string): IColumnDesc | null;
@@ -342,14 +342,14 @@ declare abstract class ADataProvider extends AEventDispatcher implements IDataPr
      * @param indices
      * @return {Promise<any>}
      */
-    abstract view(indices: IndicesArray): Promise<any[]> | any[];
+    abstract view(indices: ArrayLike<number>): Promise<any[]> | any[];
     abstract getRow(index: number): Promise<IDataRow> | IDataRow;
     /**
      * returns a data sample used for the mapping editor
      * @param col
      * @return {Promise<any>}
      */
-    abstract mappingSample(col: INumberColumn): Promise<ISequence<number>> | ISequence<number>;
+    abstract mappingSample(col: Column): Promise<ISequence<number>> | ISequence<number>;
     /**
      * is the given row selected
      * @param index

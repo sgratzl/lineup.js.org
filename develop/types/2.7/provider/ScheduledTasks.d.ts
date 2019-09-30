@@ -2,8 +2,8 @@ import { IAdvancedBoxPlotData, ICategoricalStatistics, IDateStatistics, ISequenc
 import Column, { ICategoricalLikeColumn, IDataRow, IDateColumn, IGroup, IndicesArray, INumberColumn, IOrderedGroup, Ranking } from '../model';
 import { IRenderTask } from '../renderer';
 import { CompareLookup } from './sort';
-import { ARenderTasks, IRenderTaskExecutor, MultiIndices, TaskLater, TaskNow } from './tasks';
-export declare class ScheduleRenderTasks extends ARenderTasks implements IRenderTaskExecutor {
+import { ARenderTasks, IRenderTaskExectutor, MultiIndices, TaskLater, TaskNow } from './tasks';
+export declare class ScheduleRenderTasks extends ARenderTasks implements IRenderTaskExectutor {
     private readonly cache;
     private readonly tasks;
     private readonly workers;

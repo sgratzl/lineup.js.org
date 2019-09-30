@@ -7,15 +7,14 @@ import { CompareLookup } from './sort';
  * a render task that is already resolved
  */
 export declare class TaskNow<T> implements IRenderTask<T> {
-    readonly v: T | symbol;
-    constructor(v: T | symbol);
-    then<U = void>(onfullfilled: (value: T | symbol) => U): U;
+    readonly v: T;
+    constructor(v: T);
+    then<U = void>(onfullfilled: (value: T) => U): U;
 }
 /**
  * factory function for
  */
 export declare function taskNow<T>(v: T): TaskNow<T>;
-export declare function abortedTask<T>(): IRenderTask<T>;
 /**
  * a render task based on an abortable promise
  */
@@ -29,7 +28,7 @@ export declare function taskLater<T>(v: IAbortAblePromise<T>): TaskLater<T>;
  * similar to Promise.all
  */
 export declare function tasksAll<T>(tasks: IRenderTask<T>[]): IRenderTask<T[]>;
-export interface IRenderTaskExecutor extends IRenderTasks {
+export interface IRenderTaskExectutor extends IRenderTasks {
     setData(data: IDataRow[]): void;
     dirtyColumn(col: Column, type: 'data' | 'summary' | 'group'): void;
     dirtyRanking(ranking: Ranking, type: 'data' | 'summary' | 'group'): void;
@@ -51,7 +50,7 @@ export declare class MultiIndices {
     private readonly maxDataIndex;
     private _joined;
     constructor(indices: IndicesArray[], maxDataIndex: number);
-    readonly joined: Uint8Array | Uint16Array | Uint32Array | (number[] & ArrayLike<number>);
+    readonly joined: Uint8Array | Uint16Array | Uint32Array | (ReadonlyArray<number> & ArrayLike<number>);
 }
 export declare class ARenderTasks {
     protected data: IDataRow[];
