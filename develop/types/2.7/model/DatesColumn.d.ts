@@ -34,6 +34,7 @@ export default class DatesColumn extends ArrayColumn<Date | null> implements IDa
     private currentFilter;
     constructor(id: string, desc: Readonly<IDatesColumnDesc>);
     getFormatter(): (date: Date | null) => string;
+    getParser(): (date: string) => Date | null;
     protected createEventList(): string[];
     on(type: typeof DatesColumn.EVENT_SORTMETHOD_CHANGED, listener: typeof sortMethodChanged_DCS | null): this;
     on(type: typeof DatesColumn.EVENT_FILTER_CHANGED, listener: typeof filterChanged_DCS | null): this;

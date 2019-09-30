@@ -2,7 +2,7 @@ import { ISequence } from '../internal';
 import { Column, EDirtyReason, Ranking, IColumnDesc, IDataRow, IGroup, IndicesArray, INumberColumn, IOrderedGroup } from '../model';
 import ACommonDataProvider from './ACommonDataProvider';
 import { IDataProviderOptions } from './interfaces';
-import { IRenderTaskExectutor } from './tasks';
+import { IRenderTaskExecutor } from './tasks';
 export interface ILocalDataProviderOptions {
     /**
      * whether the filter should be applied to all rankings regardless where they are
@@ -37,7 +37,7 @@ export default class LocalDataProvider extends ACommonDataProvider {
     setFilter(filter: ((row: IDataRow) => boolean) | null): void;
     getFilter(): ((row: IDataRow) => boolean) | null;
     getTotalNumberOfRows(): number;
-    getTaskExecutor(): IRenderTaskExectutor;
+    getTaskExecutor(): IRenderTaskExecutor;
     readonly data: any[];
     destroy(): void;
     /**
@@ -60,7 +60,6 @@ export default class LocalDataProvider extends ACommonDataProvider {
     private createSorter(ranking, filter, needsFiltering, needsGrouping, needsSorting);
     private sortGroup(g, i, ranking, lookups, groupLookup, singleGroup, maxDataIndex);
     private sortGroups(groups, groupLookup);
-    private index2pos(groups, maxDataIndex);
     sort(ranking: Ranking, dirtyReason: EDirtyReason[]): {
         groups: ({
             order: Uint8Array | Uint16Array | Uint32Array;
@@ -73,11 +72,7 @@ export default class LocalDataProvider extends ACommonDataProvider {
         groups: never[];
         index2pos: never[];
     };
-    private readonly mapToDataRow;
-    viewRaw(indices: IndicesArray): any[];
-    viewRawRows(indices: IndicesArray): IDataRow[];
     getRow(index: number): IDataRow;
-    seq(indices: IndicesArray): ISequence<IDataRow>;
     view(indices: IndicesArray): any[];
     mappingSample(col: INumberColumn): ISequence<number>;
     searchAndJump(search: string | RegExp, col: Column): void;

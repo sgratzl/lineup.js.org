@@ -31,6 +31,7 @@ export default class DateColumn extends ValueColumn<Date> implements IDateColumn
     private currentGrouper;
     constructor(id: string, desc: Readonly<IDateColumnDesc>);
     getFormatter(): (date: Date | null) => string;
+    getParser(): (date: string) => Date | null;
     dump(toDescRef: (desc: any) => any): any;
     restore(dump: any, factory: ITypeFactory): void;
     protected createEventList(): string[];
