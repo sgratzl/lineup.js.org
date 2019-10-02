@@ -2,7 +2,7 @@
 * https://github.com/lineupjs/lineup_app
 * Copyright (c) 2019 Samuel Gratzl; Licensed MIT */
 
-/*! lineupjs - v4.0.0-alpha.10 - 2019
+/*! lineupjs - v4.0.0-alpha.12 - 2019
 * https://lineup.js.org
 * Copyright (c) 2019 Samuel Gratzl; Licensed BSD-3-Clause */
 
@@ -758,6 +758,9 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
 .le-td {
   box-sizing: border-box; }
 
+.le-footer {
+  width: 50px; }
+
 .le-th {
   color: black;
   margin-bottom: 15px;
@@ -915,6 +918,9 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
   display: flex; }
   .lu-renderer-aggregate.le-td {
     overflow: visible; }
+
+.lu-renderer-group.le-td {
+  overflow: visible; }
 
 .lu-agg-level {
   flex: 0 0 22px;
@@ -1274,16 +1280,6 @@ span.lu-mapping-hint {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat; }
-  .lu-renderer-image:not(.lu-missing)::before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEyNCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDEyNCAzMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQogIDxzdHlsZT4vKiA8IVtDREFUQVsgKi8NCiAgICBAa2V5ZnJhbWVzIGxvYWQgew0KICAgICAgMCUgICB7IHRyYW5zZm9ybTogdHJhbnNsYXRlKDAsMjFweClzY2FsZSgxLDUpOyB9DQogICAgICAxMDAlIHsgdHJhbnNmb3JtOiB0cmFuc2xhdGUoMCwxM3B4KXNjYWxlKDEsMjEpOyB9DQogICAgfQ0KICAgIHJlY3Qgew0KICAgICAgZmlsbDogI2MxYzFjMTsNCiAgICAgIGFuaW1hdGlvbjogbG9hZCAwLjZzIGxpbmVhciBhbHRlcm5hdGUgaW5maW5pdGU7DQogICAgfS8qIF1dPiAqLw0KICA8L3N0eWxlPg0KICA8cmVjdCB4PSI1MCIgd2lkdGg9IjQiIGhlaWdodD0iMSIvPg0KICA8cmVjdCB4PSI2MCIgd2lkdGg9IjQiIGhlaWdodD0iMSIgc3R5bGU9ImFuaW1hdGlvbi1kZWxheTogMC4xNXMiLz4NCiAgPHJlY3QgeD0iNzAiIHdpZHRoPSI0IiBoZWlnaHQ9IjEiIHN0eWxlPSJhbmltYXRpb24tZGVsYXk6IDAuM3MiLz4NCjwvc3ZnPg0K);
-    background-position: center;
-    background-repeat: no-repeat;
-    background-blend-mode: overlay;
-    z-index: -1; }
 
 .lu-renderer-interleaving {
   display: flex;
@@ -1337,7 +1333,13 @@ span.lu-mapping-hint {
   vector-effect: non-scaling-stroke; }
 
 .lu-stack-sub {
+  position: relative;
   height: 100%; }
+
+.lu-nested-sub {
+  position: relative;
+  height: 100%;
+  width: calc(100% - 5px); }
 
 .le-td.lu-renderer-string {
   display: flex;
@@ -1424,7 +1426,7 @@ span.lu-mapping-hint {
 
 section.lu-slopegraph {
   width: 200px;
-  position: relative; }
+  position: absolute; }
 
 section.lu-slopegraph > svg {
   shape-rendering: geometricprecision;
@@ -1487,9 +1489,19 @@ section.lu-slopegraph-header {
 .lu-stats {
   font-size: small;
   padding: 1em 0.5em; }
-  .lu-stats span {
+  .lu-stats > span {
     padding: 2px;
     border: 1px solid #ffa500; }
+
+.lu-stats-reset {
+  padding: 2px;
+  font-style: normal;
+  display: unset;
+  color: #999; }
+  .lu-stats-reset:hover {
+    color: black; }
+  .lu-stats-reset > span {
+    padding-left: 2px; }
 
 .lu-collapser {
   position: absolute;
@@ -1922,8 +1934,15 @@ section.lu-slopegraph-header {
     left: -1em;
     right: -1em; }
 
+@media not all and (min-resolution: 0.001dpcm) {
+  @supports (-webkit-appearance: none) {
+    .le-header,
+    .lu-side-panel {
+      transform: unset; } } }
+
 .lu {
-  position: relative; }
+  position: relative;
+  line-height: normal; }
   .lu > aside {
     float: right;
     display: flex;
