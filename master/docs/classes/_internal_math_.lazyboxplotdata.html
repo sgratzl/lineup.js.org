@@ -65,17 +65,6 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<section class="tsd-panel tsd-comment">
-				<div class="tsd-comment tsd-typography">
-					<div class="lead">
-						<p>helper class to lazily compute box plotdata out of a given number array</p>
-					</div>
-					<dl class="tsd-comment-tags">
-						<dt>internal</dt>
-						<dd></dd>
-					</dl>
-				</div>
-			</section>
 			<section class="tsd-panel tsd-hierarchy">
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
@@ -132,13 +121,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Lazy<wbr>Box<wbr>Plot<wbr>Data<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>, scale<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_mappingfunction_.imappingfunction.html" class="tsd-signature-type">IMappingFunction</a><span class="tsd-signature-symbol">&gt;</span>, histGen<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_internal_math_.lazyboxplotdata.html" class="tsd-signature-type">LazyBoxPlotData</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Lazy<wbr>Box<wbr>Plot<wbr>Data<span class="tsd-signature-symbol">(</span>values<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>, scale<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_mappingfunction_.imappingfunction.html" class="tsd-signature-type">IMappingFunction</a><span class="tsd-signature-symbol">&gt;</span>, histGen<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_internal_math_.lazyboxplotdata.html" class="tsd-signature-type">LazyBoxPlotData</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/85df597d/src/internal/math.ts#L62">internal/math.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/1f56c595/src/internal/math.ts#L62">internal/math.ts:62</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -167,7 +156,7 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/_internal_math_.istatistics.html">IStatistics</a>.<a href="../interfaces/_internal_math_.istatistics.html#missing">missing</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/85df597d/src/internal/math.ts#L62">internal/math.ts:62</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/1f56c595/src/internal/math.ts#L62">internal/math.ts:62</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -177,206 +166,134 @@
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="count" class="tsd-anchor"></a>
 					<h3>count</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> count<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/85df597d/src/internal/math.ts#L70">internal/math.ts:70</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">count<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_internal_math_.istatistics.html">IStatistics</a>.<a href="../interfaces/_internal_math_.istatistics.html#count">count</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/1f56c595/src/internal/math.ts#L70">internal/math.ts:70</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="hist" class="tsd-anchor"></a>
 					<h3>hist</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> hist<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_internal_math_.inumberbin.html" class="tsd-signature-type">INumberBin</a><span class="tsd-signature-symbol">[]</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/85df597d/src/internal/math.ts#L93">internal/math.ts:93</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_internal_math_.inumberbin.html" class="tsd-signature-type">INumberBin</a><span class="tsd-signature-symbol">[]</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">hist<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_internal_math_.istatistics.html">IStatistics</a>.<a href="../interfaces/_internal_math_.istatistics.html#hist">hist</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/1f56c595/src/internal/math.ts#L93">internal/math.ts:93</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="max" class="tsd-anchor"></a>
 					<h3>max</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> max<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/85df597d/src/internal/math.ts#L111">internal/math.ts:111</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">max<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_internal_math_.istatistics.html">IStatistics</a>.<a href="../interfaces/_internal_math_.istatistics.html#max">max</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/1f56c595/src/internal/math.ts#L111">internal/math.ts:111</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="maxbin" class="tsd-anchor"></a>
 					<h3>max<wbr>Bin</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> maxBin<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/85df597d/src/internal/math.ts#L101">internal/math.ts:101</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">max<wbr>Bin<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_internal_math_.istatistics.html">IStatistics</a>.<a href="../interfaces/_internal_math_.istatistics.html#maxbin">maxBin</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/1f56c595/src/internal/math.ts#L101">internal/math.ts:101</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="mean" class="tsd-anchor"></a>
 					<h3>mean</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> mean<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/85df597d/src/internal/math.ts#L131">internal/math.ts:131</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">mean<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_internal_math_.istatistics.html">IStatistics</a>.<a href="../interfaces/_internal_math_.istatistics.html#mean">mean</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/1f56c595/src/internal/math.ts#L131">internal/math.ts:131</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="median" class="tsd-anchor"></a>
 					<h3>median</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> median<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/85df597d/src/internal/math.ts#L116">internal/math.ts:116</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">median<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_internal_math_.istatistics.html">IStatistics</a>.<a href="../interfaces/_internal_math_.istatistics.html#median">median</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/1f56c595/src/internal/math.ts#L116">internal/math.ts:116</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="min" class="tsd-anchor"></a>
 					<h3>min</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> min<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/85df597d/src/internal/math.ts#L106">internal/math.ts:106</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">min<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_internal_math_.istatistics.html">IStatistics</a>.<a href="../interfaces/_internal_math_.istatistics.html#min">min</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/1f56c595/src/internal/math.ts#L106">internal/math.ts:106</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="outlier" class="tsd-anchor"></a>
 					<h3>outlier</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> outlier<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/85df597d/src/internal/math.ts#L171">internal/math.ts:171</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">outlier<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_internal_math_.istatistics.html">IStatistics</a>.<a href="../interfaces/_internal_math_.istatistics.html#outlier">outlier</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/1f56c595/src/internal/math.ts#L171">internal/math.ts:171</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="q1" class="tsd-anchor"></a>
 					<h3>q1</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> q1<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/85df597d/src/internal/math.ts#L121">internal/math.ts:121</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">q1<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_internal_math_.istatistics.html">IStatistics</a>.<a href="../interfaces/_internal_math_.istatistics.html#q1">q1</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/1f56c595/src/internal/math.ts#L121">internal/math.ts:121</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="q3" class="tsd-anchor"></a>
 					<h3>q3</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> q3<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/85df597d/src/internal/math.ts#L126">internal/math.ts:126</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">q3<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_internal_math_.istatistics.html">IStatistics</a>.<a href="../interfaces/_internal_math_.istatistics.html#q3">q3</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/1f56c595/src/internal/math.ts#L126">internal/math.ts:126</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="whiskerhigh" class="tsd-anchor"></a>
 					<h3>whisker<wbr>High</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> whiskerHigh<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/85df597d/src/internal/math.ts#L153">internal/math.ts:153</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">whisker<wbr>High<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_internal_math_.istatistics.html">IStatistics</a>.<a href="../interfaces/_internal_math_.istatistics.html#whiskerhigh">whiskerHigh</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/1f56c595/src/internal/math.ts#L153">internal/math.ts:153</a></li>
+						</ul>
+					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
 					<a name="whiskerlow" class="tsd-anchor"></a>
 					<h3>whisker<wbr>Low</h3>
-					<ul class="tsd-signatures tsd-kind-get-signature tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">get</span> whiskerLow<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/85df597d/src/internal/math.ts#L136">internal/math.ts:136</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
-						</li>
-					</ul>
+					<div class="tsd-signature tsd-kind-icon">whisker<wbr>Low<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_internal_math_.istatistics.html">IStatistics</a>.<a href="../interfaces/_internal_math_.istatistics.html#whiskerlow">whiskerLow</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/1f56c595/src/internal/math.ts#L136">internal/math.ts:136</a></li>
+						</ul>
+					</aside>
 				</section>
 			</section>
 		</div>
