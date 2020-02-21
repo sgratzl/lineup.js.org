@@ -63,7 +63,7 @@ builder
 const ranking = LineUpJS.buildRanking()
   .supportTypes()
   .allColumns() // add all columns
-  .impose('a+cat', 'a', 'cat2'); // create composite column
+  .impose('a+cat', 'a', 'cat2') // create composite column
   .groupBy('cat')
   .sortBy('a', 'desc')
   
