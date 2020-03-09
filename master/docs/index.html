@@ -79,7 +79,7 @@
 					<li>group aggregations (show a whole group as a single group row)</li>
 					<li>numerous visualizations for summaries, cells, and group aggregations</li>
 					<li>side panel for easy filtering and column management</li>
-					<li><a href="#react">React</a>, <a href="#angular">Angular</a>, <a href="#vue">Vue.js</a>, <a href="#polymer">Polymer</a>, <a href="#rshiny">RShiny</a>, <a href="#jupyter">Juypter</a>, and <a href="#powerbi">Power BI</a> wrapper</li>
+					<li><a href="#react">React</a>, <a href="#angular">Angular</a>, <a href="#vue">Vue.js</a>, <a href="#polymer">Polymer</a>, <a href="#rshiny">RShiny</a>, <a href="#jupyter">Juypter</a>, <a href="#observablehq">ObservableHQ</a>, and <a href="#powerbi">Power BI</a> wrapper</li>
 					<li><a href="#demo">Demo Application</a> with CSV import and export capabilities</li>
 					<li><a href="#api">API Documentation</a> based on generated TypeDoc documenation</li>
 				</ul>
@@ -457,6 +457,56 @@ w</code></pre>
 
 interact(selection_changed, selection=lineup_widget.LineUpWidget(df));</code></pre>
 				<p><img src="https://user-images.githubusercontent.com/4129778/35321846-6c5b07cc-00e8-11e8-9388-0acb65cbb509.png" alt="interact example"></p>
+				<p><a id="observablehq"></a></p>
+				<a href="#observable-hq" id="observable-hq" style="color: inherit; text-decoration: none;">
+					<h2>Observable HQ</h2>
+				</a>
+				<p>A <a href="https://observablehq.com/">ObservableHQ</a> wrapper is located at <a href="https://observablehq.com/@sgratzl/lineup-js-observable-library">lineup-js-observable</a>. </p>
+				<pre><code class="language-js">data = {
+  <span class="hljs-keyword">const</span> arr = [];
+  <span class="hljs-keyword">const</span> cats = [<span class="hljs-string">'c1'</span>, <span class="hljs-string">'c2'</span>, <span class="hljs-string">'c3'</span>];
+  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">100</span>; ++i) {
+    arr.push({
+      <span class="hljs-attr">a</span>: <span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">10</span>,
+      <span class="hljs-attr">d</span>: <span class="hljs-string">'Row '</span> + i,
+      <span class="hljs-attr">cat</span>: cats[<span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">3</span>)],
+      <span class="hljs-attr">cat2</span>: cats[<span class="hljs-built_in">Math</span>.floor(<span class="hljs-built_in">Math</span>.random() * <span class="hljs-number">3</span>)]
+    })
+  }
+  <span class="hljs-keyword">return</span> arr;
+}</code></pre>
+				<pre><code class="language-js"><span class="hljs-keyword">import</span> { asLineUp } <span class="hljs-keyword">from</span> <span class="hljs-string">'@sgratzl/lineup-js-observable-library'</span></code></pre>
+				<pre><code class="language-js">viewof selection = asLineUp(arr)</code></pre>
+				<p><a href="https://observablehq.com/@sgratzl/lineup-simple-example-with-observable-base">ObservableHQ</a></p>
+				<p><a href="https://observablehq.com/@sgratzl/lineup-simple-example-with-observable-base"><img src="https://user-images.githubusercontent.com/4129778/75078130-cd276d80-54d2-11ea-9496-0cc685e826ee.png" alt="Minimal Result"></a></p>
+				<a href="#advanced-usage-example" id="advanced-usage-example" style="color: inherit; text-decoration: none;">
+					<h3>Advanced Usage Example</h3>
+				</a>
+				<pre><code class="language-js"><span class="hljs-comment">// arr from before</span>
+viewof selection = {
+  <span class="hljs-keyword">const</span> b = builder(data);
+  b.column(
+    LineUpJS.buildStringColumn(<span class="hljs-string">'d'</span>)
+      .label(<span class="hljs-string">'Label'</span>)
+      .width(<span class="hljs-number">100</span>)
+  )
+    .column(LineUpJS.buildCategoricalColumn(<span class="hljs-string">'cat'</span>, cats).color(<span class="hljs-string">'green'</span>))
+    .column(LineUpJS.buildCategoricalColumn(<span class="hljs-string">'cat2'</span>, cats).color(<span class="hljs-string">'blue'</span>))
+    .column(LineUpJS.buildNumberColumn(<span class="hljs-string">'a'</span>, [<span class="hljs-number">0</span>, <span class="hljs-number">10</span>]).color(<span class="hljs-string">'blue'</span>));
+
+  <span class="hljs-comment">// and two rankings</span>
+  <span class="hljs-keyword">const</span> ranking = LineUpJS.buildRanking()
+    .supportTypes()
+    .allColumns() <span class="hljs-comment">// add all columns</span>
+    .impose(<span class="hljs-string">'a+cat'</span>, <span class="hljs-string">'a'</span>, <span class="hljs-string">'cat2'</span>) <span class="hljs-comment">// create composite column</span>
+    .groupBy(<span class="hljs-string">'cat'</span>)
+    .sortBy(<span class="hljs-string">'a'</span>, <span class="hljs-string">'desc'</span>);
+
+  b.defaultRanking().ranking(ranking);
+  <span class="hljs-keyword">return</span> b.build();
+}</code></pre>
+				<p><a href="https://observablehq.com/@sgratzl/lineup-advanced-example">ObservableHQ</a></p>
+				<p><a href="https://observablehq.com/@sgratzl/lineup-advanced-example"><img src="https://user-images.githubusercontent.com/4129778/75078499-bfbeb300-54d3-11ea-92aa-b9ab0d2af043.png" alt="Advanced Result"></a></p>
 				<p><a id="powerbi"></a></p>
 				<a href="#powerbi-custom-visual-under-development" id="powerbi-custom-visual-under-development" style="color: inherit; text-decoration: none;">
 					<h2>PowerBI Custom Visual (under development)</h2>
