@@ -28,7 +28,7 @@ Supported Browsers
   <li class="collection-item">last 2 Edge versions (best performance)</li>
   <li class="collection-item">last 2 Firefox versions</li>
   <li class="collection-item">Firefox [Extended Support Release](https://www.mozilla.org/en-US/firefox/enterprise/) (ESR)</li>
-  <li class="collection-item">Edge 16+</li>
+  <li class="collection-item">Edge 18</li>
 </ul>
 
 Related Publications
