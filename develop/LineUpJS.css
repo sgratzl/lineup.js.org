@@ -1,8 +1,14 @@
-/*! lineupjs - v4.0.0-alpha.12 - 2019
+/*! lineupjs - v4.0.0-beta.1 - 2020
 * https://lineup.js.org
-* Copyright (c) 2019 Samuel Gratzl; Licensed BSD-3-Clause */
+* Copyright (c) 2020 Samuel Gratzl; Licensed BSD-3-Clause */
 
 @charset "UTF-8";
+/**
+ * Width of the drag handler text of the histogram filter
+ */
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-aria,
 .lu-hidden {
   display: none !important; }
@@ -18,9 +24,6 @@
     pointer-events: none !important; }
   .lu-dragover > * {
     pointer-events: none !important; }
-
-.lu-filter-missing {
-  font-size: 13px; }
 
 .lu-checkbox {
   display: inline; }
@@ -81,6 +84,15 @@
 .lu-busy * {
   cursor: wait !important; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
+/**
+ * Width of the drag handler text of the histogram filter
+ */
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 @font-face {
   font-family: 'lu-font';
   src: url(29334f20971b9251d88c2b7c1a082917.eot);
@@ -131,6 +143,12 @@
 /**
   popups, e.g., rename dialogs,...
  */
+/**
+ * Width of the drag handler text of the histogram filter
+ */
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 @keyframes lu-dialogs-fade-in {
   from {
     opacity: 0; }
@@ -178,6 +196,12 @@
 .lu-dialog input {
   font-size: 8pt; }
 
+.lu-dialog .lu-checkbox:not(.lu-dialog-filter-table-entry) > span {
+  font-weight: normal;
+  align-items: center;
+  margin: 5px 0;
+  font-size: 13px; }
+
 .lu-dialog-button {
   border: none;
   background: none;
@@ -204,6 +228,8 @@
     content: ""; }
   .lu-dialog-button[type=submit] {
     float: right;
+    color: #8e8e8e; }
+  .lu-dialog-button[title=Remove] {
     color: #8e8e8e; }
 
 .lu-dialog-sub-nested {
@@ -250,7 +276,9 @@
   display: flex; }
 
 .lu-dialog-color {
-  width: 15em; }
+  width: 17em;
+  display: flex;
+  flex-direction: column; }
   .lu-dialog-color > strong[data-toggle] {
     cursor: pointer; }
     .lu-dialog-color > strong[data-toggle]::before {
@@ -306,6 +334,12 @@
     border-top: 5px solid black;
     bottom: -5px; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-dialog-mapper {
   width: 25em; }
   .lu-dialog-mapper > .lu-summary {
@@ -317,7 +351,6 @@
     display: block; }
 
 div.lu-dialog-mapper-script {
-  margin-top: 1em;
   display: none; }
   div.lu-dialog-mapper-script textarea {
     height: 5em;
@@ -325,26 +358,44 @@ div.lu-dialog-mapper-script {
     font-size: 9pt;
     display: block; }
 
+.lu-dialog-mapper-domain,
+.lu-dialog-mapper-range {
+  transform: translate(0, 24px);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0 14px;
+  border-bottom: 3px solid #c1c1c1;
+  padding: 0.4em 2px 20px;
+  text-align: center; }
+
+.lu-dialog-mapper-range {
+  padding: 20px 2px 0.4em;
+  transform: translate(0, -24px);
+  border-bottom: none;
+  border-top: 3px solid #c1c1c1;
+  justify-content: space-around; }
+
 svg.lu-dialog-mapper-details {
   shape-rendering: geometricprecision;
-  height: 15em; }
+  z-index: 1;
+  height: 15em;
+  background: transparent; }
   svg.lu-dialog-mapper-details rect {
     fill: transparent;
     stroke: none; }
   svg.lu-dialog-mapper-details line {
     stroke: black;
-    stroke-width: 1;
+    stroke-width: 0.8;
     stroke-linejoin: round;
     stroke-linecap: round; }
-    svg.lu-dialog-mapper-details line:not([x1]) {
-      stroke-width: 1.5; }
     svg.lu-dialog-mapper-details line[data-v] {
       stroke-opacity: 0.5;
       stroke-width: 0.5;
-      stroke: #999;
+      stroke: #e5e5e5;
       pointer-events: none; }
   svg.lu-dialog-mapper-details circle {
-    fill: #999; }
+    fill: black; }
 
 g.lu-dialog-mapper-mapping {
   cursor: ew-resize; }
@@ -353,15 +404,36 @@ g.lu-dialog-mapper-mapping {
     stroke: transparent !important; }
   g.lu-dialog-mapper-mapping.lu-frozen circle:first-of-type {
     cursor: not-allowed;
-    fill: #999 !important; }
-  g.lu-dialog-mapper-mapping:hover circle {
+    fill: black !important;
+    transform: scale(0.4); }
+  g.lu-dialog-mapper-mapping.lu-mapping-line-selected circle, g.lu-dialog-mapper-mapping:hover circle {
     fill: #ffa500; }
-  g.lu-dialog-mapper-mapping:hover line {
+  g.lu-dialog-mapper-mapping.lu-mapping-line-selected line, g.lu-dialog-mapper-mapping:hover line {
     stroke: #ffa500; }
+  g.lu-dialog-mapper-mapping.lu-frozen > .lu-dialog-mapper-mapping-domain {
+    display: none; }
+
+.lu-dialog-mapper-mapping-domain {
+  pointer-events: none;
+  font-size: 4px; }
+
+.lu-dialog-mapper-mapping-range {
+  pointer-events: none;
+  font-size: 4px;
+  dominant-baseline: hanging; }
+
+.lu-dialog-mapper-mapping-right {
+  text-anchor: end; }
+
+.lu-dialog-mapper-mapping-middle {
+  text-anchor: middle; }
 
 .lu-dialog-mapper[data-scale=script] div.lu-dialog-mapper-script {
   display: block; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-header,
 .lu-side-panel-entry {
   -moz-user-select: none;
@@ -401,6 +473,12 @@ g.lu-dialog-mapper-mapping {
   overflow-x: hidden;
   text-overflow: ellipsis; }
 
+.lu-sublabel {
+  white-space: nowrap;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  font-size: smaller; }
+
 .lu-spacing {
   flex: 1; }
 
@@ -408,6 +486,9 @@ g.lu-dialog-mapper-mapping {
   position: relative;
   font-size: x-small; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-summary span.lu-disabled {
   -moz-user-select: none;
   -webkit-user-select: none;
@@ -433,6 +514,12 @@ g.lu-dialog-mapper-mapping {
   margin: 5px 0;
   font-size: 13px; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-toolbar {
   position: relative;
   font-size: 11pt;
@@ -610,6 +697,9 @@ g.lu-dialog-mapper-mapping {
     .lu-more-options > .lu-action-group::after {
       display: none; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .le-loading {
   background: url(data:image/svg+xml;base64,PHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEyNCIgaGVpZ2h0PSIzMCIgdmlld0JveD0iMCAwIDEyNCAzMCIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+DQogIDxzdHlsZT4vKiA8IVtDREFUQVsgKi8NCiAgICByZWN0IHsNCiAgICAgIGZpbGw6ICNjMWMxYzE7DQogICAgfS8qIF1dPiAqLw0KICA8L3N0eWxlPg0KICA8cmVjdCB4PSI1MCIgeT0iMTMiIHdpZHRoPSI0IiBoZWlnaHQ9IjUiIC8+DQogIDxyZWN0IHg9IjYwIiB5PSI1IiB3aWR0aD0iNCIgaGVpZ2h0PSIyMSIgLz4NCiAgPHJlY3QgeD0iNzAiIHk9IjkiIHdpZHRoPSI0IiBoZWlnaHQ9IjEzIiAvPg0KPC9zdmc+DQo=) repeat-x center/contain !important;
   background-blend-mode: overlay !important;
@@ -757,18 +847,32 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
 .le-footer {
   width: 50px; }
 
+.lu-resize-helper {
+  display: none; }
+
+.lu-resize-helper.lu-resize-animated {
+  transition: transform 1000ms linear !important; }
+
+.lu-resize-helper.lu-resizing {
+  display: unset; }
+
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .le-th {
   color: black;
   margin-bottom: 15px;
   border-bottom: 1px solid black; }
-  .le-th.le-frozen::before {
+  .le-th.le-frozen {
+    position: sticky; }
+  .le-th.le-shifted.le-frozen::before {
     /**
     add a dummy white blocker for the margin-bottom
      */
     content: '';
     position: absolute;
     left: 0;
-    width: 100%;
+    right: -5px;
     height: 15px;
     bottom: -16px;
     background: white;
@@ -786,6 +890,14 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
   padding-left: 0.8em;
   margin-right: 5px;
   font-weight: 500; }
+
+.lu-th-sublabel {
+  text-align: center;
+  margin-right: 5px;
+  display: none; }
+
+.lu-show-sublabel > .lu-header > .lu-sublabel {
+  display: unset; }
 
 .lu-th-summary {
   height: 2em; }
@@ -826,6 +938,12 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
   .lu-handle:hover {
     background-color: #e5e5e5; }
 
+.lu-resizing {
+  cursor: col-resize !important; }
+
+.lu-dragging {
+  cursor: ew-resize !important; }
+
 .lu-dialog-sub-nested > section {
   margin-bottom: 20px; }
 
@@ -850,6 +968,9 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
     text-align: left;
     transform-origin: top left; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-hr {
   position: absolute;
   left: 0;
@@ -876,6 +997,9 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
   -ms-user-select: none;
   user-select: none; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-hover-only {
   visibility: hidden;
   padding-left: 4px; }
@@ -910,6 +1034,19 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
   height: auto !important;
   white-space: unset; }
 
+.le-td.le-shifted.le-frozen {
+  /**
+  add a dummy white blocker for the margin-right
+    */
+  border-right: 5px solid white;
+  box-sizing: content-box; }
+
+/**
+ * Width of the drag handler text of the histogram filter
+ */
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-renderer-aggregate {
   display: flex; }
   .lu-renderer-aggregate.le-td {
@@ -996,6 +1133,9 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
   .lu-agg-all[data-level='4'] {
     left: 88px; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-bar-label {
   position: absolute;
   width: 100%;
@@ -1003,7 +1143,8 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
   bottom: 0;
   display: flex;
   justify-content: center;
-  flex-direction: column; }
+  flex-direction: column;
+  font-variant-numeric: tabular-nums; }
   .lu-bar-label > span.lu-hover-only {
     position: relative; }
 
@@ -1016,6 +1157,9 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
   justify-content: center;
   flex-direction: column; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-renderer-boxplot {
   display: flex;
   flex-direction: row;
@@ -1090,6 +1234,9 @@ outlier
   .lu-boxplot-outlier[data-sort] {
     background: #ffa500; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-renderer-catdistributionbar {
   display: flex; }
 
@@ -1108,6 +1255,9 @@ outlier
     text-overflow: ellipsis;
     white-space: nowrap; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-renderer-categorical,
 .lu-renderer-brightness {
   display: flex;
@@ -1131,10 +1281,16 @@ outlier
   text-overflow: ellipsis;
   align-self: center; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .le-td.lu-renderer-date {
   display: flex;
   align-items: center; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-renderer-dot > div {
   background: gray;
   opacity: 0.5;
@@ -1146,6 +1302,9 @@ outlier
   top: 50%;
   position: absolute; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-heatmap {
   display: flex;
   flex-direction: row;
@@ -1164,6 +1323,9 @@ outlier
 .lu-heatmap:not(.lu-dense) > div[data-title]:last-of-type::before {
   text-align: right; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-histogram {
   display: flex;
   flex-direction: row; }
@@ -1231,6 +1393,7 @@ span.lu-mapping-hint {
   top: 0;
   height: 100%;
   border-right: 1px solid black;
+  transform: translate(-1px, 0);
   transition: border-width 0.2s ease;
   width: 1px;
   cursor: ew-resize; }
@@ -1239,7 +1402,7 @@ span.lu-mapping-hint {
     content: attr(data-value);
     position: absolute;
     bottom: -15px;
-    width: 5em;
+    width: 7em;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis; }
@@ -1247,11 +1410,12 @@ span.lu-mapping-hint {
 .lu-histogram-max {
   right: 0;
   border-right: none;
+  transform: translate(1px, 0);
   border-left: 1px solid black; }
 
 .lu-histogram-min.lu-swap-hint::before,
 .lu-histogram-max:not(.lu-swap-hint)::before {
-  left: -5em;
+  left: -7em;
   text-align: right; }
 
 .lu-histogram-min-hint,
@@ -1272,11 +1436,17 @@ span.lu-mapping-hint {
   .lu-histogram.lu-histogram-i:hover > .lu-histogram-max {
     border-left-width: 5px; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-renderer-image {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-renderer-interleaving {
   display: flex;
   flex-direction: column; }
@@ -1286,15 +1456,25 @@ span.lu-mapping-hint {
     flex: 1 1 0;
     overflow-y: hidden; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-renderer-rank {
   text-align: right;
   display: flex;
-  justify-content: flex-end; }
+  justify-content: flex-end;
+  font-variant-numeric: tabular-nums; }
 
 .lu-group.lu-renderer-rank {
   flex-direction: column;
   justify-content: space-between; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .le-td.lu-renderer-selection {
   display: flex;
   align-items: center;
@@ -1318,6 +1498,9 @@ span.lu-mapping-hint {
 .le-td.lu-group-selected::before {
   content: ""; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-renderer-sparkline > path {
   stroke: black;
   fill: none;
@@ -1328,6 +1511,9 @@ span.lu-mapping-hint {
   stroke-width: 1;
   vector-effect: non-scaling-stroke; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-stack-sub {
   position: relative;
   height: 100%; }
@@ -1337,11 +1523,15 @@ span.lu-mapping-hint {
   height: 100%;
   width: calc(100% - 5px); }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .le-td.lu-renderer-string {
   display: flex;
   align-items: center; }
 
 .lu-group.lu-renderer-string,
+.lu-group.lu-renderer-link,
 .lu-group.lu-renderer-date {
   display: block;
   overflow: hidden;
@@ -1366,6 +1556,9 @@ span.lu-mapping-hint {
   justify-content: center;
   text-align: left; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-rtable {
   font-size: 60%;
   padding: 0;
@@ -1387,6 +1580,9 @@ span.lu-mapping-hint {
     top: 0;
     bottom: 0; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-renderer-threshold {
   align-items: flex-start; }
   .lu-renderer-threshold > div {
@@ -1394,6 +1590,9 @@ span.lu-mapping-hint {
     .lu-renderer-threshold > div.down {
       align-self: flex-end; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-renderer-upset {
   display: flex;
   align-items: center;
@@ -1415,11 +1614,20 @@ span.lu-mapping-hint {
   .lu-upset-dot.lu-enabled {
     opacity: 1; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-renderer-verticalbar {
   align-items: flex-end; }
   .lu-renderer-verticalbar > div {
     position: relative; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 section.lu-slopegraph {
   width: 200px;
   position: absolute; }
@@ -1476,6 +1684,12 @@ section.lu-slopegraph-header {
     section.lu-slopegraph-header i[title=Band]::before {
       content: ""; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-side-panel {
   display: flex;
   flex-direction: column;
@@ -1533,6 +1747,9 @@ section.lu-slopegraph-header {
     .lu-side-panel.lu-collapsed .lu-collapser::before {
       transform: scale(-1, 1); }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-search {
   position: relative;
   display: flex; }
@@ -1605,6 +1822,9 @@ section.lu-slopegraph-header {
   display: block;
   max-height: 70vh; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-side-panel-entry {
   background-color: #fff; }
 
@@ -1618,12 +1838,13 @@ section.lu-slopegraph-header {
   font-size: 14px;
   font-weight: 500; }
 
-.lu-side-panel-label {
+.lu-side-panel-labels {
   margin: 0 1em 0 0;
   padding: 0 0 0 0.4em;
   overflow: hidden !important;
   cursor: pointer;
-  flex: 1; }
+  flex: 1;
+  white-space: nowrap; }
 
 .lu-side-panel-toolbar {
   color: #999;
@@ -1640,6 +1861,9 @@ section.lu-slopegraph-header {
     flex-direction: column;
     height: auto; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-hierarchy {
   position: relative;
   order: 2; }
@@ -1722,6 +1946,12 @@ section.lu-slopegraph-header {
     color: black;
     background: white; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-side-panel-rankings {
   border-bottom: 2px solid #f0f0f0;
   display: flex;
@@ -1797,6 +2027,12 @@ section.lu-slopegraph-header {
     .lu-side-panel-ranking-label > i:hover {
       color: black; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-typed-icon[data-type-cat]::before {
   display: inline-block;
   font: normal normal normal 14px/1 lu-font, serif;
@@ -1836,6 +2072,12 @@ section.lu-slopegraph-header {
   .lu-header > .lu-typed-icon[data-type-cat='other']::before {
     display: none; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-rule-button-chooser {
   padding: 0.5em 0.5em 0 1em;
   flex: 0 0 auto;
@@ -1890,6 +2132,12 @@ section.lu-slopegraph-header {
     top: -6px;
     left: 29.4%; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 .lu-unsupported-browser {
   display: flex;
   flex-direction: column;
@@ -1930,6 +2178,9 @@ section.lu-slopegraph-header {
     left: -1em;
     right: -1em; }
 
+/**
+ * Width of the drag handler text of the histogram filter
+ */
 @media not all and (min-resolution: 0.001dpcm) {
   @supports (-webkit-appearance: none) {
     .le-header,
