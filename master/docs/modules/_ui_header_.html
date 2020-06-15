@@ -82,6 +82,7 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_ui_header_.html#actioncssclass" class="tsd-kind-icon">actionCSSClass</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_ui_header_.html#createheader" class="tsd-kind-icon">create<wbr>Header</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_ui_header_.html#createshortcutmenuitems" class="tsd-kind-icon">create<wbr>Shortcut<wbr>Menu<wbr>Items</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_ui_header_.html#createtoolbarmenuitems" class="tsd-kind-icon">create<wbr>Toolbar<wbr>Menu<wbr>Items</a></li>
@@ -105,13 +106,36 @@
 					<div class="tsd-signature tsd-kind-icon">MIMETYPE_<wbr>PREFIX<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"text/x-caleydo-lineup-column"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;text/x-caleydo-lineup-column&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/header.ts#L345">ui/header.ts:345</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/header.ts#L370">ui/header.ts:370</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="actioncssclass" class="tsd-anchor"></a>
+					<h3>actionCSSClass</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">actionCSSClass<span class="tsd-signature-symbol">(</span>title<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/header.ts#L154">ui/header.ts:154</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>title: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
 					<a name="createheader" class="tsd-anchor"></a>
 					<h3>create<wbr>Header</h3>
@@ -122,7 +146,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/header.ts#L31">ui/header.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/header.ts#L22">ui/header.ts:22</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -145,13 +169,13 @@
 					<a name="createshortcutmenuitems" class="tsd-anchor"></a>
 					<h3>create<wbr>Shortcut<wbr>Menu<wbr>Items</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Shortcut<wbr>Menu<wbr>Items<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span>, level<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, col<span class="tsd-signature-symbol">: </span><a href="../classes/_model_column_.column.html" class="tsd-signature-type">Column</a>, ctx<span class="tsd-signature-symbol">: </span><a href="_ui_interfaces_.html#irankingheadercontext" class="tsd-signature-type">IRankingHeaderContext</a>, willAutoHide<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Shortcut<wbr>Menu<wbr>Items<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span>, level<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, col<span class="tsd-signature-symbol">: </span><a href="../classes/_model_column_.column.html" class="tsd-signature-type">Column</a>, ctx<span class="tsd-signature-symbol">: </span><a href="_ui_interfaces_.html#irankingheadercontext" class="tsd-signature-type">IRankingHeaderContext</a>, mode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"header"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"sidePanel"</span>, willAutoHide<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/header.ts#L145">ui/header.ts:145</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/header.ts#L196">ui/header.ts:196</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -167,6 +191,9 @@
 								</li>
 								<li>
 									<h5>ctx: <a href="_ui_interfaces_.html#irankingheadercontext" class="tsd-signature-type">IRankingHeaderContext</a></h5>
+								</li>
+								<li>
+									<h5>mode: <span class="tsd-signature-type">"header"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"sidePanel"</span></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> willAutoHide: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;true</span></h5>
@@ -180,13 +207,13 @@
 					<a name="createtoolbarmenuitems" class="tsd-anchor"></a>
 					<h3>create<wbr>Toolbar<wbr>Menu<wbr>Items</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Toolbar<wbr>Menu<wbr>Items<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span>, level<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, col<span class="tsd-signature-symbol">: </span><a href="../classes/_model_column_.column.html" class="tsd-signature-type">Column</a>, ctx<span class="tsd-signature-symbol">: </span><a href="_ui_interfaces_.html#irankingheadercontext" class="tsd-signature-type">IRankingHeaderContext</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Toolbar<wbr>Menu<wbr>Items<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span>, level<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, col<span class="tsd-signature-symbol">: </span><a href="../classes/_model_column_.column.html" class="tsd-signature-type">Column</a>, ctx<span class="tsd-signature-symbol">: </span><a href="_ui_interfaces_.html#irankingheadercontext" class="tsd-signature-type">IRankingHeaderContext</a>, mode<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"header"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"sidePanel"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/header.ts#L170">ui/header.ts:170</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/header.ts#L222">ui/header.ts:222</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -202,6 +229,9 @@
 								</li>
 								<li>
 									<h5>ctx: <a href="_ui_interfaces_.html#irankingheadercontext" class="tsd-signature-type">IRankingHeaderContext</a></h5>
+								</li>
+								<li>
+									<h5>mode: <span class="tsd-signature-type">"header"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"sidePanel"</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -218,7 +248,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/header.ts#L351">ui/header.ts:351</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/header.ts#L376">ui/header.ts:376</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -247,7 +277,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/header.ts#L284">ui/header.ts:284</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/header.ts#L289">ui/header.ts:289</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -273,7 +303,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/header.ts#L508">ui/header.ts:508</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/header.ts#L528">ui/header.ts:528</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -302,7 +332,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/header.ts#L394">ui/header.ts:394</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/header.ts#L419">ui/header.ts:419</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -331,7 +361,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/header.ts#L432">ui/header.ts:432</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/header.ts#L457">ui/header.ts:457</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -360,13 +390,13 @@
 					<a name="updateheader" class="tsd-anchor"></a>
 					<h3>update<wbr>Header</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">update<wbr>Header<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span>, col<span class="tsd-signature-symbol">: </span><a href="../classes/_model_column_.column.html" class="tsd-signature-type">Column</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">update<wbr>Header<span class="tsd-signature-symbol">(</span>node<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span>, col<span class="tsd-signature-symbol">: </span><a href="../classes/_model_column_.column.html" class="tsd-signature-type">Column</a>, minWidth<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/header.ts#L70">ui/header.ts:70</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/header.ts#L66">ui/header.ts:66</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -376,6 +406,9 @@
 								</li>
 								<li>
 									<h5>col: <a href="../classes/_model_column_.column.html" class="tsd-signature-type">Column</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> minWidth: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;MIN_LABEL_WIDTH</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -392,7 +425,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/header.ts#L83">ui/header.ts:83</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/header.ts#L106">ui/header.ts:106</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -431,6 +464,9 @@
 					</li>
 					<li class=" tsd-kind-variable tsd-parent-kind-external-module">
 						<a href="_ui_header_.html#mimetype_prefix" class="tsd-kind-icon">MIMETYPE_<wbr>PREFIX</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_ui_header_.html#actioncssclass" class="tsd-kind-icon">actionCSSClass</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="_ui_header_.html#createheader" class="tsd-kind-icon">create<wbr>Header</a>
@@ -479,7 +515,6 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

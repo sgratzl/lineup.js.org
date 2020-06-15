@@ -60,16 +60,12 @@
 	<div class="row">
 		<div class="col-8 col-content">
 			<div class="tsd-panel tsd-typography">
-				<a href="#lineupjs-visual-analysis-of-multi-attribute-rankings" id="lineupjs-visual-analysis-of-multi-attribute-rankings" style="color: inherit; text-decoration: none;">
-					<h1>LineUp.js: Visual Analysis of Multi-Attribute Rankings</h1>
-				</a>
-				<p><a href="https://opensource.org/licenses/BSD-3-Clause"><img src="https://img.shields.io/badge/License-BSD%203--Clause-blue.svg" alt="License"></a> <a href="https://npmjs.org/package/lineupjs"><img src="https://badge.fury.io/js/lineupjs.svg" alt="NPM version"></a> <a href="https://circleci.com/gh/datavisyn/lineupjs"><img src="https://circleci.com/gh/datavisyn/lineupjs.svg?style=shield" alt="CircleCI"></a> <a href="https://circleci.com/gh/datavisyn/lineupjs/tree/develop"><img src="https://circleci.com/gh/datavisyn/lineupjs/tree/develop.svg?style=shield" alt="CircleCI"></a> <sup>(dev)</sup></p>
+				<h1 id="lineup-js-visual-analysis-of-multi-attribute-rankings">LineUp.js: Visual Analysis of Multi-Attribute Rankings</h1>
+				<p><a href="https://opensource.org/licenses/BSD-3-Clause"><img src="https://img.shields.io/badge/License-BSD%203--Clause-blue.svg" alt="License"></a> <a href="https://npmjs.org/package/lineupjs"><img src="https://badge.fury.io/js/lineupjs.svg" alt="NPM version"></a> <a href="https://circleci.com/gh/lineupjs/lineupjs"><img src="https://circleci.com/gh/lineupjs/lineupjs.svg?style=shield" alt="CircleCI"></a> <a href="https://circleci.com/gh/lineupjs/lineupjs/tree/develop"><img src="https://circleci.com/gh/lineupjs/lineupjs/tree/develop.svg?style=shield" alt="CircleCI"></a> <sup>(dev)</sup></p>
 				<p>LineUp is an interactive technique designed to create, visualize and explore rankings of items based on a set of heterogeneous attributes.</p>
-				<a href="#key-features" id="key-features" style="color: inherit; text-decoration: none;">
-					<h2>Key Features</h2>
-				</a>
+				<h2 id="key-features">Key Features</h2>
 				<ul>
-					<li>scalable (~100k rows)</li>
+					<li>scalable (~1M rows)</li>
 					<li>heterogenous attribute types (string, numerical, categorical, boolean, date)</li>
 					<li>composite column types (weighted sum, min, max, mean, median, impose, nested, ...)</li>
 					<li>array (multi value) and map column types (strings, stringMap, numbers, numberMap, ...)</li>
@@ -83,9 +79,7 @@
 					<li><a href="#demo">Demo Application</a> with CSV import and export capabilities</li>
 					<li><a href="#api">API Documentation</a> based on generated TypeDoc documenation</li>
 				</ul>
-				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
-					<h2>Usage</h2>
-				</a>
+				<h2 id="usage">Usage</h2>
 				<p><strong>Installation</strong></p>
 				<pre><code class="language-bash">npm install --save lineupjs</code></pre>
 				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">"https://unpkg.com/lineupjs/build/LineUpJS.css"</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">"stylesheet"</span>&gt;</span>
@@ -133,30 +127,22 @@ builder
 <span class="hljs-keyword">const</span> lineup = builder.build(<span class="hljs-built_in">document</span>.body);</code></pre>
 				<p><a href="https://codepen.io/sgratzl/pen/vppyML">CodePen</a></p>
 				<p><a href="https://codepen.io/sgratzl/pen/vppyML"><img src="https://user-images.githubusercontent.com/4129778/34654174-3235f784-f3f8-11e7-9361-44f5fa068bb9.png" alt="Advanced Result"></a></p>
-				<a href="#supported-browsers" id="supported-browsers" style="color: inherit; text-decoration: none;">
-					<h2>Supported Browsers</h2>
-				</a>
+				<h2 id="supported-browsers">Supported Browsers</h2>
 				<ul>
 					<li>Chrome 64+ (best performance)</li>
 					<li>Firefox 57+</li>
 					<li>Edge 16+</li>
 				</ul>
 				<p><a id="demo"></a></p>
-				<a href="#demo-application" id="demo-application" style="color: inherit; text-decoration: none;">
-					<h2>Demo Application</h2>
-				</a>
-				<p>A demo application is located at <a href="https://github.com/sgratzl/lineup_app">lineup_app</a>. It support CSV Import, CSV Export, JSON Export, CodePen Export, and Github Gist Export. </p>
+				<h2 id="demo-application">Demo Application</h2>
+				<p>A demo application is located at <a href="https://github.com/lineupjs/lineup_app">lineup_app</a>. It support CSV Import, CSV Export, JSON Export, CodePen Export, nad local data management. </p>
 				<p>The application is deployed at <a href="https://lineup.js.org/app">https://lineup.js.org/app</a></p>
 				<p><a href="https://lineup.js.org/app"><img src="https://user-images.githubusercontent.com/4129778/36336600-8590a932-1389-11e8-8de0-269079efc37b.png" alt="Screenshot"></a> </p>
 				<p><a id="api"></a></p>
-				<a href="#api-documentation" id="api-documentation" style="color: inherit; text-decoration: none;">
-					<h2>API Documentation</h2>
-				</a>
+				<h2 id="api-documentation">API Documentation</h2>
 				<p>LineUp is implemented in clean TypeScript in an object oriented manner. A fully generated API documentation based on <a href="http://typedoc.org">TypeDoc</a> is available at <a href="https://lineup.js.org/master/docs">https://lineup.js.org/master/docs</a></p>
 				<p>LineUp can be build manually or using via the builder design pattern (see <a href="#advanced_usage_example">Advanced Usage Example</a>). The builder design pattern in the more common way. </p>
-				<a href="#lineup-builder" id="lineup-builder" style="color: inherit; text-decoration: none;">
-					<h3>LineUp Builder</h3>
-				</a>
+				<h3 id="lineup-builder">LineUp Builder</h3>
 				<p>The simplest methods to create a new instance are: </p>
 				<ul>
 					<li><a href="https://lineup.js.org/master/docs/modules/_builder_index_.html#aslineup">asLineUp</a> returning a ready to use <a href="https://lineup.js.org/master/docs/classes/_ui_lineup_.lineup.html">LineUp</a> instance<pre><code class="language-ts">asLineUp(node: HTMLElement, data: <span class="hljs-built_in">any</span>[], ...columns: <span class="hljs-built_in">string</span>[]): LineUp</code></pre>
@@ -184,9 +170,7 @@ builder
 				</ul>
 				<p>In order to build custom rankings within the <code>DataBuilder</code> the <a href="https://lineup.js.org/master/docs/modules/_builder_rankingbuilder_.html#buildranking">buildRanking</a> returning a new <a href="https://lineup.js.org/master/docs/classes/_builder_rankingbuilder_.rankingbuilder.html">RankingBuilder</a> is used. </p>
 				<pre><code class="language-ts">buildRanking(): RankingBuilder</code></pre>
-				<a href="#lineup-classes-and-manual-creation" id="lineup-classes-and-manual-creation" style="color: inherit; text-decoration: none;">
-					<h3>LineUp classes and manual creation</h3>
-				</a>
+				<h3 id="lineup-classes-and-manual-creation">LineUp classes and manual creation</h3>
 				<p>The relevant classes for creating a LineUp instance manually are <a href="https://lineup.js.org/master/docs/classes/_ui_lineup_.lineup.html">LineUp</a>, <a href="https://lineup.js.org/master/docs/classes/_ui_taggle_taggle_.taggle.html">Taggle</a>, and <a href="https://lineup.js.org/master/docs/classes/_provider_localdataprovider_.localdataprovider.html">LocalDataProvider</a>. A <code>LocalDataProvider</code> is an sub class of <code>ADataProvider</code> implementing the data model management based on a local JavaScript array. <code>LineUp</code> and <code>Taggle</code> are the visual interfaces to the <code>LocalDataProvider</code>. </p>
 				<p>The classes can be instantiated either using the factory pattern or via their regular class constructors: </p>
 				<pre><code class="language-ts">createLineUp(container: HTMLElement, data: ADataProvider, config?: Partial&lt;ILineUpOptions&gt;): LineUp
@@ -210,9 +194,7 @@ createLocalDataProvider(data: <span class="hljs-built_in">any</span>[], columns:
 					</li>
 				</ul>
 				<p><a id="react"></a></p>
-				<a href="#react-support-lineupjsx" id="react-support-lineupjsx" style="color: inherit; text-decoration: none;">
-					<h2>React Support (LineUp.jsx)</h2>
-				</a>
+				<h2 id="react-support-lineup-jsx-">React Support (LineUp.jsx)</h2>
 				<p>A <a href="https://reactjs.org/">React</a> wrapper is located at <a href="https://github.com/lineupjs/lineupjsx">lineupjsx</a>. </p>
 				<p><strong>Installation</strong></p>
 				<pre><code class="language-bash">npm install --save lineupjsx</code></pre>
@@ -236,23 +218,21 @@ createLocalDataProvider(data: <span class="hljs-built_in">any</span>[], columns:
 				<p><strong>Advanced Usage Example</strong></p>
 				<pre><code class="language-jsx"><span class="hljs-comment">// arr from before</span>
 &lt;LineUp data={arr} defaultRanking&gt;
-  &lt;LineUpStringColumnDesc column="d" label="Label" width={100} /&gt;
-  &lt;LineUpCategoricalColumnDesc column="cat" categories={cats} color="green" /&gt;
-  &lt;LineUpCategoricalColumnDesc column="cat2" categories={cats} color="blue" /&gt;
-  &lt;LineUpNumberColumnDesc column="a" domain={[0, 10]} color="blue" /&gt;
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">LineUpStringColumnDesc</span> <span class="hljs-attr">column</span>=<span class="hljs-string">"d"</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"Label"</span> <span class="hljs-attr">width</span>=<span class="hljs-string">{100}</span> /&gt;</span></span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">LineUpCategoricalColumnDesc</span> <span class="hljs-attr">column</span>=<span class="hljs-string">"cat"</span> <span class="hljs-attr">categories</span>=<span class="hljs-string">{cats}</span> <span class="hljs-attr">color</span>=<span class="hljs-string">"green"</span> /&gt;</span></span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">LineUpCategoricalColumnDesc</span> <span class="hljs-attr">column</span>=<span class="hljs-string">"cat2"</span> <span class="hljs-attr">categories</span>=<span class="hljs-string">{cats}</span> <span class="hljs-attr">color</span>=<span class="hljs-string">"blue"</span> /&gt;</span></span>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">LineUpNumberColumnDesc</span> <span class="hljs-attr">column</span>=<span class="hljs-string">"a"</span> <span class="hljs-attr">domain</span>=<span class="hljs-string">{[0,</span> <span class="hljs-attr">10</span>]} <span class="hljs-attr">color</span>=<span class="hljs-string">"blue"</span> /&gt;</span></span>
 
-  &lt;LineUpRanking groupBy="cat" sortBy="a:desc"&gt;
-    &lt;LineUpSupportColumn type="*" /&gt;
-    &lt;LineUpColumn column="*" /&gt;
-    &lt;LineUpImposeColumn label="a+cat" column="a" categeoricalColumn="cat2" /&gt;
-  &lt;/LineUpRanking&gt;
-&lt;/LineUp&gt;;</code></pre>
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">LineUpRanking</span> <span class="hljs-attr">groupBy</span>=<span class="hljs-string">"cat"</span> <span class="hljs-attr">sortBy</span>=<span class="hljs-string">"a:desc"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">LineUpSupportColumn</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"*"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">LineUpColumn</span> <span class="hljs-attr">column</span>=<span class="hljs-string">"*"</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">LineUpImposeColumn</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"a+cat"</span> <span class="hljs-attr">column</span>=<span class="hljs-string">"a"</span> <span class="hljs-attr">categeoricalColumn</span>=<span class="hljs-string">"cat2"</span> /&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">LineUpRanking</span>&gt;</span></span>
+&lt;<span class="hljs-regexp">/LineUp&gt;;</span></code></pre>
 				<p><a href="https://codepen.io/sgratzl/pen/yvJpWQ">CodePen</a></p>
 				<p>Result is same as the builder advanced example</p>
 				<p><a id="angular"></a></p>
-				<a href="#angular-6-support-nglineup" id="angular-6-support-nglineup" style="color: inherit; text-decoration: none;">
-					<h2>Angular 6 Support (nglineup)</h2>
-				</a>
+				<h2 id="angular-6-support-nglineup-">Angular 6 Support (nglineup)</h2>
 				<p>An <a href="https://angular.io/">Angular</a> wrapper is located at <a href="https://github.com/lineupjs/nglineup">nglineup</a>. </p>
 				<p><strong>Installation</strong></p>
 				<pre><code class="language-bash">npm install --save nglineup</code></pre>
@@ -306,7 +286,7 @@ createLocalDataProvider(data: <span class="hljs-built_in">any</span>[], columns:
 				<p>Result is same as the builder minimal example</p>
 				<p><strong>Advanced Usage Example</strong></p>
 				<p><code>app.component.html</code>:</p>
-				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">lineup-lineup</span> [<span class="hljs-attr">data</span>]=<span class="hljs-string">"data"</span> [<span class="hljs-attr">defaultRanking</span>]=<span class="hljs-string">"true"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 800px"</span>&gt;</span>
+				<pre><code class="language-html"><span class="hljs-tag">&lt;<span class="hljs-name">lineup-lineup</span> [<span class="hljs-attr">data</span>]=<span class="hljs-string">"data"</span> [<span class="hljs-attr">defaultRanking</span>]=<span class="hljs-string">"true"</span> <span class="hljs-attr">style</span>=<span class="hljs-string">"height: 800px;"</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">lineup-string-column-desc</span> <span class="hljs-attr">column</span>=<span class="hljs-string">"d"</span> <span class="hljs-attr">label</span>=<span class="hljs-string">"Label"</span> [<span class="hljs-attr">width</span>]=<span class="hljs-string">"100"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">lineup-string-column-desc</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">lineup-categorical-column-desc</span> <span class="hljs-attr">column</span>=<span class="hljs-string">"cat"</span> [<span class="hljs-attr">categories</span>]=<span class="hljs-string">"cats"</span> <span class="hljs-attr">color</span>=<span class="hljs-string">"green"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">lineup-categorical-column-desc</span>&gt;</span>
   <span class="hljs-tag">&lt;<span class="hljs-name">lineup-categorical-column-desc</span> <span class="hljs-attr">column</span>=<span class="hljs-string">"cat2"</span> [<span class="hljs-attr">categories</span>]=<span class="hljs-string">"cats"</span> <span class="hljs-attr">color</span>=<span class="hljs-string">"blue"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">lineup-categorical-column-desc</span>&gt;</span>
@@ -321,9 +301,7 @@ createLocalDataProvider(data: <span class="hljs-built_in">any</span>[], columns:
 				<p><a href="https://codepen.io/sgratzl/pen/BVMdZL">CodePen</a></p>
 				<p>Result is same as the builder advanced example</p>
 				<p><a id="vue"></a></p>
-				<a href="#vuejs-support-vue-lineup" id="vuejs-support-vue-lineup" style="color: inherit; text-decoration: none;">
-					<h2>Vue.js Support (vue-lineup)</h2>
-				</a>
+				<h2 id="vue-js-support-vue-lineup-">Vue.js Support (vue-lineup)</h2>
 				<p>A <a href="https://vuejs.org">Vue.js</a> wrapper is located at <a href="https://github.com/lineupjs/vue-lineup">vue-lineup</a>. </p>
 				<p><strong>Installation</strong></p>
 				<pre><code class="language-bash">npm install --save vue-lineup</code></pre>
@@ -373,9 +351,7 @@ Vue.use(VueLineUp);
 				<p><a href="https://codepen.io/sgratzl/pen/vrboWB">CodePen</a></p>
 				<p>Result is same as the builder advanced example</p>
 				<p><a id="polymer"></a></p>
-				<a href="#polymer-support-lineup-element" id="polymer-support-lineup-element" style="color: inherit; text-decoration: none;">
-					<h2>Polymer Support (LineUp-Element)</h2>
-				</a>
+				<h2 id="polymer-support-lineup-element-">Polymer Support (LineUp-Element)</h2>
 				<p>A <a href="https://www.polymer-project.org/">Polymer 2.0</a> web component wrapper is located at <a href="https://github.com/lineupjs/lineup-element">lineup-element</a>. </p>
 				<p><strong>Installation</strong></p>
 				<pre><code class="language-bash">bower install https://github.com/lineupjs/lineup-element</code></pre>
@@ -393,7 +369,7 @@ Vue.use(VueLineUp);
   })
 }
 conat data = { arr, cats };</code></pre>
-				<pre><code class="language-jsx">&lt;lineup-element data=<span class="hljs-string">"[[data.arr]]"</span>&gt;<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">lineup-element</span>&gt;</span></span></code></pre>
+				<pre><code class="language-jsx">&lt;lineup-element data=<span class="hljs-string">"[[data.arr]]"</span>&gt;&lt;<span class="hljs-regexp">/lineup-element&gt;</span></code></pre>
 				<p>TODO
 				<a href="">CodePen</a></p>
 				<p>Result is same as the builder minimal example</p>
@@ -408,28 +384,24 @@ conat data = { arr, cats };</code></pre>
     <span class="hljs-tag">&lt;<span class="hljs-name">lineup-support-column</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"*"</span> &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">lineup-support-column</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">lineup-column</span> <span class="hljs-attr">column</span>=<span class="hljs-string">"*"</span> &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">lineup-column</span>&gt;</span>
   <span class="hljs-tag">&lt;/<span class="hljs-name">lineup-ranking</span>&gt;</span></span>
-<span class="xml"><span class="hljs-tag">&lt;/<span class="hljs-name">lineup-element</span>&gt;</span></span></code></pre>
+&lt;<span class="hljs-regexp">/lineup-element&gt;</span></code></pre>
 				<p>TODO
 				<a href="">CodePen</a></p>
 				<p>Result is same as the builder advanced example</p>
 				<p><a id="rshiny"></a></p>
-				<a href="#r-rshiny-and-r-markdown-support" id="r-rshiny-and-r-markdown-support" style="color: inherit; text-decoration: none;">
-					<h2>R, RShiny, and R Markdown Support</h2>
-				</a>
+				<h2 id="r-rshiny-and-r-markdown-support">R, RShiny, and R Markdown Support</h2>
 				<p>A <a href="http://www.htmlwidgets.org/">HTMLWidget</a> wrapper for R is located at <a href="https://github.com/lineupjs/lineup_htmlwidget">lineup_htmlwidget</a>.
 					It can be used within standalone <a href="https://shiny.rstudio.com/">R Shiny</a> apps or <a href="http://rmarkdown.rstudio.com/">R Markdown</a> files. Integrated plotting does not work due to an outdated integrated Webkit version in RStudio.
 				<a href="https://rstudio.github.io/crosstalk/">Crosstalk</a> is supported for synching selections and filtering among widgets. </p>
 				<p><strong>Installation</strong></p>
 				<pre><code class="language-R">devtools::install_github(<span class="hljs-string">"rstudio/crosstalk"</span>)
 devtools::install_github(<span class="hljs-string">"lineupjs/lineup_htmlwidget"</span>)
-<span class="hljs-keyword">library</span>(lineup)</code></pre>
+<span class="hljs-keyword">library</span>(lineupjs)</code></pre>
 				<p><strong>Examples</strong></p>
 				<pre><code class="language-R">lineup(iris)</code></pre>
 				<p><img src="https://user-images.githubusercontent.com/4129778/34919941-fec50232-f96a-11e7-95be-9eefb213e3d6.png" alt="iris output"></p>
 				<p><a id="jupyter"></a></p>
-				<a href="#jupyter-widget-to-be-released" id="jupyter-widget-to-be-released" style="color: inherit; text-decoration: none;">
-					<h2>Jupyter Widget (to be released)</h2>
-				</a>
+				<h2 id="jupyter-widget-to-be-released-">Jupyter Widget (to be released)</h2>
 				<p>A <a href="https://jupyter.org/widgets.html">Jupyter Widget</a> wrapper for Python is located at <a href="https://github.com/lineupjs/lineup_widget">lineup_widget</a>.</p>
 				<p><strong>Installation</strong></p>
 				<pre><code class="language-bash">pip install -e git+https://github.com/lineupjs/lineup_widget.git<span class="hljs-comment">#egg=lineup_widget</span>
@@ -458,9 +430,7 @@ w</code></pre>
 interact(selection_changed, selection=lineup_widget.LineUpWidget(df));</code></pre>
 				<p><img src="https://user-images.githubusercontent.com/4129778/35321846-6c5b07cc-00e8-11e8-9388-0acb65cbb509.png" alt="interact example"></p>
 				<p><a id="observablehq"></a></p>
-				<a href="#observable-hq" id="observable-hq" style="color: inherit; text-decoration: none;">
-					<h2>Observable HQ</h2>
-				</a>
+				<h2 id="observable-hq">Observable HQ</h2>
 				<p>A <a href="https://observablehq.com/">ObservableHQ</a> wrapper is located at <a href="https://observablehq.com/@sgratzl/lineup-js-observable-library">lineup-js-observable</a>. </p>
 				<pre><code class="language-js">data = {
   <span class="hljs-keyword">const</span> arr = [];
@@ -479,9 +449,7 @@ interact(selection_changed, selection=lineup_widget.LineUpWidget(df));</code></p
 				<pre><code class="language-js">viewof selection = asLineUp(arr)</code></pre>
 				<p><a href="https://observablehq.com/@sgratzl/lineup-simple-example-with-observable-base">ObservableHQ</a></p>
 				<p><a href="https://observablehq.com/@sgratzl/lineup-simple-example-with-observable-base"><img src="https://user-images.githubusercontent.com/4129778/75078130-cd276d80-54d2-11ea-9496-0cc685e826ee.png" alt="Minimal Result"></a></p>
-				<a href="#advanced-usage-example" id="advanced-usage-example" style="color: inherit; text-decoration: none;">
-					<h3>Advanced Usage Example</h3>
-				</a>
+				<h3 id="advanced-usage-example">Advanced Usage Example</h3>
 				<pre><code class="language-js"><span class="hljs-comment">// arr from before</span>
 viewof selection = {
   <span class="hljs-keyword">const</span> b = builder(data);
@@ -508,46 +476,37 @@ viewof selection = {
 				<p><a href="https://observablehq.com/@sgratzl/lineup-advanced-example">ObservableHQ</a></p>
 				<p><a href="https://observablehq.com/@sgratzl/lineup-advanced-example"><img src="https://user-images.githubusercontent.com/4129778/75078499-bfbeb300-54d3-11ea-92aa-b9ab0d2af043.png" alt="Advanced Result"></a></p>
 				<p><a id="powerbi"></a></p>
-				<a href="#powerbi-custom-visual-under-development" id="powerbi-custom-visual-under-development" style="color: inherit; text-decoration: none;">
-					<h2>PowerBI Custom Visual (under development)</h2>
-				</a>
+				<h2 id="powerbi-custom-visual-under-development-">PowerBI Custom Visual (under development)</h2>
 				<p>A <a href="https://github.com/Microsoft/PowerBI-Visuals">PowerBI Visual</a> wrapper is located at <a href="https://github.com/lineupjs/lineup_powerbi">lineup_powerbi</a>.</p>
 				<p><strong>Installation</strong></p>
 				<p>TODO</p>
 				<p><strong>Examples</strong></p>
 				<p>TODO</p>
-				<a href="#api-documentation-1" id="api-documentation-1" style="color: inherit; text-decoration: none;">
-					<h2>API Documentation</h2>
-				</a>
+				<h2 id="api-documentation">API Documentation</h2>
 				<p>See <a href="https://lineup.js.org/master/docs">API documentation</a> and <a href="https://lineup.js.org/develop/docs">Develop API documentation</a></p>
-				<a href="#demos" id="demos" style="color: inherit; text-decoration: none;">
-					<h2>Demos</h2>
-				</a>
+				<h2 id="demos">Demos</h2>
 				<p>See <a href="https://lineup.js.org/master">Demos</a>, <a href="https://lineup.js.org/develop">Develop Demos</a>, and <a href="https://lineup.js.org/R">R Demos</a></p>
-				<a href="#related-publications" id="related-publications" style="color: inherit; text-decoration: none;">
-					<h2>Related Publications</h2>
-				</a>
+				<h2 id="related-publications">Related Publications</h2>
 				<p><strong>LineUp: Visual Analysis of Multi-Attribute Rankings</strong> <a href="http://data.caleydo.org/papers/2013_infovis_lineup.pdf">Paper</a> <a href="http://caleydo.org/publications/2013_infovis_lineup/">Paper Website</a></p>
 				<p>Samuel Gratzl, Alexander Lex, Nils Gehlenborg, Hanspeter Pfister, and Marc Streit <br>
-				IEEE Transactions on Visualization and Computer Graphics (InfoVis &#39;13), 19(12), pp. 2277–2286, doi:10.1109/TVCG.2013.173, 2013.</p>
+				IEEE Transactions on Visualization and Computer Graphics (InfoVis &#39;13), 19(12), pp. 2277–2286, <a href="https://dx.doi.org/10.1109/TVCG.2013.173">doi:10.1109/TVCG.2013.173</a>, 2013.</p>
 				<p>:trophy: <a href="http://ieeevis.org">IEEE VIS</a> InfoVis 2013 Best Paper Award </p>
-				<p><strong>Taggle: Scalable Visualization of Tabular Data through Aggregation</strong> <a href="http://sci.utah.edu/~vdl/papers/2017_preprint_taggle.pdf">Paper Preprint</a> <a href="http://vdl.sci.utah.edu/publications/2017_preprint_taggle/">Paper Website</a></p>
+				<p><strong>Taggle: Scalable Visualization of Tabular Data through Aggregation</strong> <a href="http://data.caleydo.org/papers/2019_sage_infovis_taggle.pdf">Paper Preprint</a> <a href="http://caleydo.org/publications/2019_sage_infovis_taggle/">Paper Website</a></p>
 				<p>Katarina Furmanova, Samuel Gratzl, Holger Stitz, Thomas Zichner, Miroslava Jaresova, Martin Ennemoser, Alexander Lex, and Marc Streit <br>
-				arXiv preprint, 2017.</p>
-				<a href="#dependencies" id="dependencies" style="color: inherit; text-decoration: none;">
-					<h2>Dependencies</h2>
-				</a>
+				Information Visualization, 19(2): 114-136, <a href="https://dx.doi.org/10.1177/1473871619878085">doi:10.1177/1473871619878085</a>, 2019. </p>
+				<h2 id="dependencies">Dependencies</h2>
 				<p>LineUp.js depends on </p>
 				<ul>
-					<li><a href="https://github.com/sgratzl/lineupengine">LineUpEngine</a> table rendering engine</li>
+					<li><a href="https://github.com/lineupjs/lineupengine">LineUpEngine</a> table rendering engine</li>
 					<li><a href="http://d3js.org">D3</a> utilities: scales, format, dragging</li>
 					<li><a href="https://popper.js.org">Popper.js</a> dialogs</li>
 				</ul>
 				<p><strong>Development Dependencies</strong></p>
 				<p><a href="https://webpack.github.io">Webpack</a> is used as build tool. LineUp itself is written in <a href="https://www.typescriptlang.org">TypeScript</a> and <a href="https://sass-lang.com">SASS</a>. </p>
-				<a href="#development-environment" id="development-environment" style="color: inherit; text-decoration: none;">
-					<h2>Development Environment</h2>
-				</a>
+				<h2 id="development-environment">Development Environment</h2>
+				<p>Try the Gitpod online IDE and start coding instantly in your browser.</p>
+				<p><a href="https://gitpod.io/#https://github.com/lineupjs/lineupjs"><img src="https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod" alt="Gitpod Ready-to-Code"></a></p>
+				<p>Otherwise follow the steps to setup a local development environment.</p>
 				<p><strong>Installation</strong></p>
 				<pre><code class="language-bash">git <span class="hljs-built_in">clone</span> https://github.com/lineupjs/lineupjs.git -b develop
 <span class="hljs-built_in">cd</span> lineupjs
@@ -556,17 +515,28 @@ npm install</code></pre>
 				<pre><code class="language-bash">npm run build</code></pre>
 				<p><strong>Run Linting</strong></p>
 				<pre><code class="language-bash">npm run lint</code></pre>
+				<p><strong>Run Unit Tests</strong></p>
+				<pre><code class="language-bash">npm <span class="hljs-built_in">test</span></code></pre>
 				<p><strong>Serve integrated webserver</strong></p>
-				<pre><code class="language-bash">npm run start</code></pre>
+				<pre><code class="language-bash">npm start</code></pre>
+				<p><strong>Run E2E Tests</strong></p>
+				<p>via cypress.io</p>
+				<p>Variant 1: with prebuilt LineUp</p>
+				<pre><code class="language-sh">npm run compile
+npm run build:prod
+npm run cy:open</code></pre>
+				<p>Variant 2: with webpack-dev-server</p>
+				<p>first shell:</p>
+				<pre><code class="language-sh">npm start</code></pre>
+				<p>second shell:</p>
+				<pre><code class="language-sh">npm run cy:start</code></pre>
 				<p><strong>Link develop version</strong></p>
 				<p>In order to use the library during development in another repository, one need to build and watch the library and produce development typings. </p>
 				<pre><code class="language-bash">ln -s . &lt;target_project&gt;/node_modules/lineupjs
 npm run compile:dev
 npm run watch</code></pre>
 				<p>The development typings are needed cause during production the are located at <code>/src</code>. That causes problems cause during compilation of a dependent project the Typescript compiler will first find the original TypeScript file e.g. <code>config.ts</code> before looking for <code>config.d.ts</code>, will complain that the library owner should deliver JavaScript files and won&#39;t compile the file. Thus the typings have to lie at a different location in this scenario.</p>
-				<a href="#authors" id="authors" style="color: inherit; text-decoration: none;">
-					<h2>Authors</h2>
-				</a>
+				<h2 id="authors">Authors</h2>
 				<ul>
 					<li>Samuel Gratzl (@sgratzl)</li>
 					<li>Holger Stitz (@thinkh)</li>
@@ -597,6 +567,9 @@ npm run watch</code></pre>
 						<a href="modules/_builder_rankingbuilder_.html">"builder/<wbr>Ranking<wbr>Builder"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_builder_adapter_builderadapter_.html">"builder/adapter/builder<wbr>Adapter"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_builder_adapter_column_.html">"builder/adapter/column"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -613,6 +586,9 @@ npm run watch</code></pre>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_builder_column_actionscolumnbuilder_.html">"builder/column/<wbr>Actions<wbr>Column<wbr>Builder"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_builder_column_booleancolumnbuilder_.html">"builder/column/<wbr>Boolean<wbr>Column<wbr>Builder"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_builder_column_categoricalcolumnbuilder_.html">"builder/column/<wbr>Categorical<wbr>Column<wbr>Builder"</a>
@@ -639,13 +615,16 @@ npm run watch</code></pre>
 						<a href="modules/_builder_index_.html">"builder/index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_bundle_.html">"bundle"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_config_.html">"config"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_index_.html">"index"</a>
+						<a href="modules/_constants_.html">"constants"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_interfaces_.html">"interfaces"</a>
+						<a href="modules/_index_.html">"index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_internal_aeventdispatcher_.html">"internal/AEvent<wbr>Dispatcher"</a>
@@ -669,13 +648,25 @@ npm run watch</code></pre>
 						<a href="modules/_internal_index_.html">"internal/index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_internal_interable_.html">"internal/interable"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_internal_math_.html">"internal/math"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_internal_mathinterfaces_.html">"internal/math<wbr>Interfaces"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_internal_merge_.html">"internal/merge"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_internal_scheduler_.html">"internal/scheduler"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_internal_utils_.html">"internal/utils"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_internal_worker_.html">"internal/worker"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_model_actioncolumn_.html">"model/<wbr>Action<wbr>Column"</a>
@@ -697,6 +688,9 @@ npm run watch</code></pre>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_model_boxplotcolumn_.html">"model/<wbr>Box<wbr>Plot<wbr>Column"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_categoricalcolormappingfunction_.html">"model/<wbr>Categorical<wbr>Color<wbr>Mapping<wbr>Function"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_model_categoricalcolumn_.html">"model/<wbr>Categorical<wbr>Column"</a>
@@ -727,12 +721,6 @@ npm run watch</code></pre>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_model_datesmapcolumn_.html">"model/<wbr>Dates<wbr>Map<wbr>Column"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_model_dummycolumn_.html">"model/<wbr>Dummy<wbr>Column"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_model_group_.html">"model/<wbr>Group"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_model_groupcolumn_.html">"model/<wbr>Group<wbr>Column"</a>
@@ -840,7 +828,19 @@ npm run watch</code></pre>
 						<a href="modules/_model_internal_.html">"model/internal"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_internalcategorical_.html">"model/internal<wbr>Categorical"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_internaldate_.html">"model/internal<wbr>Date"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_internalnumber_.html">"model/internal<wbr>Number"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_model_missing_.html">"model/missing"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_model_models_.html">"model/models"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_provider_acommondataprovider_.html">"provider/ACommon<wbr>Data<wbr>Provider"</a>
@@ -849,13 +849,31 @@ npm run watch</code></pre>
 						<a href="modules/_provider_adataprovider_.html">"provider/AData<wbr>Provider"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_provider_directrendertasks_.html">"provider/<wbr>Direct<wbr>Render<wbr>Tasks"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_provider_localdataprovider_.html">"provider/<wbr>Local<wbr>Data<wbr>Provider"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_provider_remotedataprovider_.html">"provider/<wbr>Remote<wbr>Data<wbr>Provider"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_provider_scheduledtasks_.html">"provider/<wbr>Scheduled<wbr>Tasks"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_provider_index_.html">"provider/index"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_provider_interfaces_.html">"provider/interfaces"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_provider_internal_.html">"provider/internal"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_provider_sort_.html">"provider/sort"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_provider_tasks_.html">"provider/tasks"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_provider_utils_.html">"provider/utils"</a>
@@ -903,6 +921,9 @@ npm run watch</code></pre>
 						<a href="modules/_renderer_datecellrenderer_.html">"renderer/<wbr>Date<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_renderer_datehistogramcellrenderer_.html">"renderer/<wbr>Date<wbr>Histogram<wbr>Cell<wbr>Renderer"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_renderer_defaultcellrenderer_.html">"renderer/<wbr>Default<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -945,6 +966,9 @@ npm run watch</code></pre>
 						<a href="modules/_renderer_selectionrenderer_.html">"renderer/<wbr>Selection<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_renderer_setcellrenderer_.html">"renderer/<wbr>Set<wbr>Cell<wbr>Renderer"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_renderer_sparklinecellrenderer_.html">"renderer/<wbr>Sparkline<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -960,6 +984,9 @@ npm run watch</code></pre>
 						<a href="modules/_renderer_verticalbarcellrenderer_.html">"renderer/<wbr>Vertical<wbr>Bar<wbr>Cell<wbr>Renderer"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_renderer_histogram_.html">"renderer/histogram"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_renderer_impose_.html">"renderer/impose"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -970,6 +997,9 @@ npm run watch</code></pre>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_renderer_missing_.html">"renderer/missing"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_renderer_renderers_.html">"renderer/renderers"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_renderer_utils_.html">"renderer/utils"</a>
@@ -1008,10 +1038,16 @@ npm run watch</code></pre>
 						<a href="modules/_ui_dialogs_adialog_.html">"ui/dialogs/ADialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_ui_dialogs_apopup_.html">"ui/dialogs/APopup"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_ui_dialogs_addondialog_.html">"ui/dialogs/<wbr>Addon<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_ui_dialogs_booleanfilterdialog_.html">"ui/dialogs/<wbr>Boolean<wbr>Filter<wbr>Dialog"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_ui_dialogs_categoricalcolormappingdialog_.html">"ui/dialogs/<wbr>Categorical<wbr>Color<wbr>Mapping<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_ui_dialogs_categoricalfilterdialog_.html">"ui/dialogs/<wbr>Categorical<wbr>Filter<wbr>Dialog"</a>
@@ -1047,6 +1083,9 @@ npm run watch</code></pre>
 						<a href="modules/_ui_dialogs_groupdialog_.html">"ui/dialogs/<wbr>Group<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_ui_dialogs_inputdatedialog_.html">"ui/dialogs/<wbr>Input<wbr>Date<wbr>Dialog"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_ui_dialogs_inputnumberdialog_.html">"ui/dialogs/<wbr>Input<wbr>Number<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -1080,6 +1119,9 @@ npm run watch</code></pre>
 						<a href="modules/_ui_dialogs_searchdialog_.html">"ui/dialogs/<wbr>Search<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="modules/_ui_dialogs_showtopndialog_.html">"ui/dialogs/<wbr>Show<wbr>TopNDialog"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="modules/_ui_dialogs_sortdialog_.html">"ui/dialogs/<wbr>Sort<wbr>Dialog"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
@@ -1102,6 +1144,9 @@ npm run watch</code></pre>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_ui_dialogs_utils_.html">"ui/dialogs/utils"</a>
+					</li>
+					<li class=" tsd-kind-external-module">
+						<a href="modules/_ui_domelementcache_.html">"ui/dom<wbr>Element<wbr>Cache"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_ui_header_.html">"ui/header"</a>
@@ -1143,10 +1188,7 @@ npm run watch</code></pre>
 						<a href="modules/_ui_taggle_index_.html">"ui/taggle/index"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
-						<a href="modules/_ui_taggle_interfaces_.html">"ui/taggle/interfaces"</a>
-					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_ui_taggle_spacefillingrule_.html">"ui/taggle/space<wbr>Filling<wbr>Rule"</a>
+						<a href="modules/_ui_taggle_rules_.html">"ui/taggle/rules"</a>
 					</li>
 					<li class=" tsd-kind-external-module">
 						<a href="modules/_ui_toolbar_.html">"ui/toolbar"</a>
@@ -1172,7 +1214,6 @@ npm run watch</code></pre>
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

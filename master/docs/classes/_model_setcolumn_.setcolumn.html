@@ -83,6 +83,7 @@
 				<ul class="tsd-hierarchy">
 					<li><a href="../interfaces/_internal_aeventdispatcher_.ieventhandler.html" class="tsd-signature-type">IEventHandler</a></li>
 					<li><a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html" class="tsd-signature-type">IArrayColumn</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">&gt;</span></li>
+					<li><a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html" class="tsd-signature-type">ISetColumn</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -98,7 +99,8 @@
 						<section class="tsd-index-section ">
 							<h3>Events</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_model_setcolumn_.setcolumn.html#filterchanged" class="tsd-kind-icon">filter<wbr>Changed</a></li>
+								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_model_setcolumn_.setcolumn.html#colormappingchanged_ssc" class="tsd-kind-icon">color<wbr>Mapping<wbr>Changed_<wbr>SSC</a></li>
+								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_model_setcolumn_.setcolumn.html#filterchanged_ssc" class="tsd-kind-icon">filter<wbr>Changed_<wbr>SSC</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -107,9 +109,10 @@
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_model_setcolumn_.setcolumn.html#categories" class="tsd-kind-icon">categories</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#desc" class="tsd-kind-icon">desc</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#parent" class="tsd-kind-icon">parent</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_model_setcolumn_.setcolumn.html#default_color" class="tsd-kind-icon">DEFAULT_<wbr>COLOR</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_model_setcolumn_.setcolumn.html#event_color_mapping_changed" class="tsd-kind-icon">EVENT_<wbr>COLOR_<wbr>MAPPING_<wbr>CHANGED</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_model_setcolumn_.setcolumn.html#event_data_loaded" class="tsd-kind-icon">EVENT_<wbr>DATA_<wbr>LOADED</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_model_setcolumn_.setcolumn.html#event_dirty" class="tsd-kind-icon">EVENT_<wbr>DIRTY</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_model_setcolumn_.setcolumn.html#event_dirty_caches" class="tsd-kind-icon">EVENT_<wbr>DIRTY_<wbr>CACHES</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_model_setcolumn_.setcolumn.html#event_dirty_header" class="tsd-kind-icon">EVENT_<wbr>DIRTY_<wbr>HEADER</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_model_setcolumn_.setcolumn.html#event_dirty_values" class="tsd-kind-icon">EVENT_<wbr>DIRTY_<wbr>VALUES</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_model_setcolumn_.setcolumn.html#event_filter_changed" class="tsd-kind-icon">EVENT_<wbr>FILTER_<wbr>CHANGED</a></li>
@@ -143,7 +146,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#assignnewid" class="tsd-kind-icon">assign<wbr>New<wbr>Id</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#attach" class="tsd-kind-icon">attach</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_model_setcolumn_.setcolumn.html#compare" class="tsd-kind-icon">compare</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_model_setcolumn_.setcolumn.html#clearfilter" class="tsd-kind-icon">clear<wbr>Filter</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#detach" class="tsd-kind-icon">detach</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_model_setcolumn_.setcolumn.html#dump" class="tsd-kind-icon">dump</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_model_setcolumn_.setcolumn.html#filter" class="tsd-kind-icon">filter</a></li>
@@ -151,6 +154,8 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#flatten" class="tsd-kind-icon">flatten</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_model_setcolumn_.setcolumn.html#getcategories" class="tsd-kind-icon">get<wbr>Categories</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#getcolor" class="tsd-kind-icon">get<wbr>Color</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_model_setcolumn_.setcolumn.html#getcolormapping" class="tsd-kind-icon">get<wbr>Color<wbr>Mapping</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_model_setcolumn_.setcolumn.html#getcolors" class="tsd-kind-icon">get<wbr>Colors</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#getexportvalue" class="tsd-kind-icon">get<wbr>Export<wbr>Value</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_model_setcolumn_.setcolumn.html#getfilter" class="tsd-kind-icon">get<wbr>Filter</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#getgrouprenderer" class="tsd-kind-icon">get<wbr>Group<wbr>Renderer</a></li>
@@ -162,14 +167,14 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#getraw" class="tsd-kind-icon">get<wbr>Raw</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#getrenderer" class="tsd-kind-icon">get<wbr>Renderer</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_model_setcolumn_.setcolumn.html#getset" class="tsd-kind-icon">get<wbr>Set</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_model_setcolumn_.setcolumn.html#getsortedset" class="tsd-kind-icon">get<wbr>Sorted<wbr>Set</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#getsummaryrenderer" class="tsd-kind-icon">get<wbr>Summary<wbr>Renderer</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_model_setcolumn_.setcolumn.html#getvalue" class="tsd-kind-icon">get<wbr>Value</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_model_setcolumn_.setcolumn.html#getvalues" class="tsd-kind-icon">get<wbr>Values</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#getvisible" class="tsd-kind-icon">get<wbr>Visible</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#getwidth" class="tsd-kind-icon">get<wbr>Width</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#group" class="tsd-kind-icon">group</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_model_setcolumn_.setcolumn.html#group" class="tsd-kind-icon">group</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#groupbyme" class="tsd-kind-icon">group<wbr>ByMe</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#groupcompare" class="tsd-kind-icon">group<wbr>Compare</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#groupsortbyme" class="tsd-kind-icon">group<wbr>Sort<wbr>ByMe</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#hide" class="tsd-kind-icon">hide</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#insertafterme" class="tsd-kind-icon">insert<wbr>After<wbr>Me</a></li>
@@ -177,13 +182,14 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#isgroupsortedbyme" class="tsd-kind-icon">is<wbr>Group<wbr>Sorted<wbr>ByMe</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#isgroupedby" class="tsd-kind-icon">is<wbr>Grouped<wbr>By</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#isloaded" class="tsd-kind-icon">is<wbr>Loaded</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_model_setcolumn_.setcolumn.html#ismissing" class="tsd-kind-icon">is<wbr>Missing</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#issortedbyme" class="tsd-kind-icon">is<wbr>Sorted<wbr>ByMe</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#isvisible" class="tsd-kind-icon">is<wbr>Visible</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_model_setcolumn_.setcolumn.html#itercategory" class="tsd-kind-icon">iter<wbr>Category</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#markdirty" class="tsd-kind-icon">mark<wbr>Dirty</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_model_setcolumn_.setcolumn.html#on" class="tsd-kind-icon">on</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#removeme" class="tsd-kind-icon">remove<wbr>Me</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_model_setcolumn_.setcolumn.html#restore" class="tsd-kind-icon">restore</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_model_setcolumn_.setcolumn.html#setcolormapping" class="tsd-kind-icon">set<wbr>Color<wbr>Mapping</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_model_setcolumn_.setcolumn.html#setfilter" class="tsd-kind-icon">set<wbr>Filter</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#setgrouprenderer" class="tsd-kind-icon">set<wbr>Group<wbr>Renderer</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#setloaded" class="tsd-kind-icon">set<wbr>Loaded</a></li>
@@ -195,6 +201,10 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#setwidthimpl" class="tsd-kind-icon">set<wbr>Width<wbr>Impl</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#show" class="tsd-kind-icon">show</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#sortbyme" class="tsd-kind-icon">sort<wbr>ByMe</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#tocomparegroupvalue" class="tsd-kind-icon">to<wbr>Compare<wbr>Group<wbr>Value</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#tocomparegroupvaluetype" class="tsd-kind-icon">to<wbr>Compare<wbr>Group<wbr>Value<wbr>Type</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_model_setcolumn_.setcolumn.html#tocomparevalue" class="tsd-kind-icon">to<wbr>Compare<wbr>Value</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_model_setcolumn_.setcolumn.html#tocomparevaluetype" class="tsd-kind-icon">to<wbr>Compare<wbr>Value<wbr>Type</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#togglemygroupsorting" class="tsd-kind-icon">toggle<wbr>MyGroup<wbr>Sorting</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_setcolumn_.setcolumn.html#togglemysorting" class="tsd-kind-icon">toggle<wbr>MySorting</a></li>
 							</ul>
@@ -215,7 +225,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L42">model/SetColumn.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L55">model/SetColumn.ts:55</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -235,25 +245,51 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Events</h2>
 				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class">
-					<a name="filterchanged" class="tsd-anchor"></a>
-					<h3>filter<wbr>Changed</h3>
+					<a name="colormappingchanged_ssc" class="tsd-anchor"></a>
+					<h3>color<wbr>Mapping<wbr>Changed_<wbr>SSC</h3>
 					<ul class="tsd-signatures tsd-kind-event tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">filter<wbr>Changed<span class="tsd-signature-symbol">(</span>previous<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_icategoricalcolumn_.icategoricalfilter.html" class="tsd-signature-type">ICategoricalFilter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, current<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_icategoricalcolumn_.icategoricalfilter.html" class="tsd-signature-type">ICategoricalFilter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">color<wbr>Mapping<wbr>Changed_<wbr>SSC<span class="tsd-signature-symbol">(</span>previous<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_icategoricalcolumn_.icategoricalcolormappingfunction.html" class="tsd-signature-type">ICategoricalColorMappingFunction</a>, current<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_icategoricalcolumn_.icategoricalcolormappingfunction.html" class="tsd-signature-type">ICategoricalColorMappingFunction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L22">model/SetColumn.ts:22</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L24">model/SetColumn.ts:24</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>previous: <a href="../interfaces/_model_icategoricalcolumn_.icategoricalfilter.html" class="tsd-signature-type">ICategoricalFilter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+									<h5>previous: <a href="../interfaces/_model_icategoricalcolumn_.icategoricalcolormappingfunction.html" class="tsd-signature-type">ICategoricalColorMappingFunction</a></h5>
 								</li>
 								<li>
-									<h5>current: <a href="../interfaces/_model_icategoricalcolumn_.icategoricalfilter.html" class="tsd-signature-type">ICategoricalFilter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+									<h5>current: <a href="../interfaces/_model_icategoricalcolumn_.icategoricalcolormappingfunction.html" class="tsd-signature-type">ICategoricalColorMappingFunction</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class">
+					<a name="filterchanged_ssc" class="tsd-anchor"></a>
+					<h3>filter<wbr>Changed_<wbr>SSC</h3>
+					<ul class="tsd-signatures tsd-kind-event tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">filter<wbr>Changed_<wbr>SSC<span class="tsd-signature-symbol">(</span>previous<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_icategoricalcolumn_.isetcategoricalfilter.html" class="tsd-signature-type">ISetCategoricalFilter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, current<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_icategoricalcolumn_.isetcategoricalfilter.html" class="tsd-signature-type">ISetCategoricalFilter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L32">model/SetColumn.ts:32</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>previous: <a href="../interfaces/_model_icategoricalcolumn_.isetcategoricalfilter.html" class="tsd-signature-type">ISetCategoricalFilter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+								<li>
+									<h5>current: <a href="../interfaces/_model_icategoricalcolumn_.isetcategoricalfilter.html" class="tsd-signature-type">ISetCategoricalFilter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -268,8 +304,9 @@
 					<h3>categories</h3>
 					<div class="tsd-signature tsd-kind-icon">categories<span class="tsd-signature-symbol">:</span> <a href="../interfaces/_model_icategoricalcolumn_.icategory.html" class="tsd-signature-type">ICategory</a><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#categories">categories</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L32">model/SetColumn.ts:32</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L43">model/SetColumn.ts:43</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -278,34 +315,32 @@
 					<h3>desc</h3>
 					<div class="tsd-signature tsd-kind-icon">desc<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_interfaces_.icolumndesc.html" class="tsd-signature-type">IColumnDesc</a><span class="tsd-signature-symbol">&gt;</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#desc">desc</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#desc">desc</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#desc">desc</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L169">model/Column.ts:169</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L128">model/Column.ts:128</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="parent" class="tsd-anchor"></a>
 					<h3>parent</h3>
-					<div class="tsd-signature tsd-kind-icon">parent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_column_.icolumnparent.html" class="tsd-signature-type">IColumnParent</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
+					<div class="tsd-signature tsd-kind-icon">parent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_interfaces_.icolumnparent.html" class="tsd-signature-type">IColumnParent</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#parent">parent</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#parent">parent</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#parent">parent</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L161">model/Column.ts:161</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L120">model/Column.ts:120</a></li>
 						</ul>
 					</aside>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-					<a name="default_color" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> DEFAULT_<wbr>COLOR</h3>
-					<div class="tsd-signature tsd-kind-icon">DEFAULT_<wbr>COLOR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"#C1C1C1"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;#C1C1C1&quot;</span></div>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="event_color_mapping_changed" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>COLOR_<wbr>MAPPING_<wbr>CHANGED</h3>
+					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>COLOR_<wbr>MAPPING_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"colorMappingChanged"</span><span class="tsd-signature-symbol"> =&nbsp;CategoricalColumn.EVENT_COLOR_MAPPING_CHANGED</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#default_color">DEFAULT_COLOR</a></p>
-						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#default_color">DEFAULT_COLOR</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L128">model/Column.ts:128</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L41">model/SetColumn.ts:41</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -316,7 +351,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#event_data_loaded">EVENT_DATA_LOADED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/ValueColumn.ts#L35">model/ValueColumn.ts:35</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/ValueColumn.ts#L16">model/ValueColumn.ts:16</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -325,10 +360,22 @@
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>DIRTY</h3>
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>DIRTY<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"dirty"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;dirty&quot;</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#event_dirty">EVENT_DIRTY</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#event_dirty">EVENT_DIRTY</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_dirty">EVENT_DIRTY</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L138">model/Column.ts:138</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L96">model/Column.ts:96</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="event_dirty_caches" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>DIRTY_<wbr>CACHES</h3>
+					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>DIRTY_<wbr>CACHES<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"dirtyCaches"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;dirtyCaches&quot;</span></div>
+					<aside class="tsd-sources">
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#event_dirty_caches">EVENT_DIRTY_CACHES</a></p>
+						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_dirty_caches">EVENT_DIRTY_CACHES</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L99">model/Column.ts:99</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -337,10 +384,10 @@
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>DIRTY_<wbr>HEADER</h3>
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>DIRTY_<wbr>HEADER<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"dirtyHeader"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;dirtyHeader&quot;</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#event_dirty_header">EVENT_DIRTY_HEADER</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#event_dirty_header">EVENT_DIRTY_HEADER</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_dirty_header">EVENT_DIRTY_HEADER</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L139">model/Column.ts:139</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L97">model/Column.ts:97</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -349,10 +396,10 @@
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>DIRTY_<wbr>VALUES</h3>
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>DIRTY_<wbr>VALUES<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"dirtyValues"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;dirtyValues&quot;</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#event_dirty_values">EVENT_DIRTY_VALUES</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#event_dirty_values">EVENT_DIRTY_VALUES</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_dirty_values">EVENT_DIRTY_VALUES</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L140">model/Column.ts:140</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L98">model/Column.ts:98</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -362,7 +409,7 @@
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>FILTER_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"filterChanged"</span><span class="tsd-signature-symbol"> =&nbsp;CategoricalColumn.EVENT_FILTER_CHANGED</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L30">model/SetColumn.ts:30</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L40">model/SetColumn.ts:40</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -371,10 +418,10 @@
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>GROUP_<wbr>RENDERER_<wbr>TYPE_<wbr>CHANGED</h3>
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>GROUP_<wbr>RENDERER_<wbr>TYPE_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"groupRendererChanged"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;groupRendererChanged&quot;</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#event_group_renderer_type_changed">EVENT_GROUP_RENDERER_TYPE_CHANGED</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#event_group_renderer_type_changed">EVENT_GROUP_RENDERER_TYPE_CHANGED</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_group_renderer_type_changed">EVENT_GROUP_RENDERER_TYPE_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L142">model/Column.ts:142</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L101">model/Column.ts:101</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -383,10 +430,10 @@
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>LABEL_<wbr>CHANGED</h3>
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>LABEL_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"labelChanged"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;labelChanged&quot;</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#event_label_changed">EVENT_LABEL_CHANGED</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#event_label_changed">EVENT_LABEL_CHANGED</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_label_changed">EVENT_LABEL_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L136">model/Column.ts:136</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L94">model/Column.ts:94</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -395,10 +442,10 @@
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>METADATA_<wbr>CHANGED</h3>
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>METADATA_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"metaDataChanged"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;metaDataChanged&quot;</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#event_metadata_changed">EVENT_METADATA_CHANGED</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#event_metadata_changed">EVENT_METADATA_CHANGED</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_metadata_changed">EVENT_METADATA_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L137">model/Column.ts:137</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L95">model/Column.ts:95</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -407,10 +454,10 @@
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>RENDERER_<wbr>TYPE_<wbr>CHANGED</h3>
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>RENDERER_<wbr>TYPE_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"rendererTypeChanged"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;rendererTypeChanged&quot;</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#event_renderer_type_changed">EVENT_RENDERER_TYPE_CHANGED</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#event_renderer_type_changed">EVENT_RENDERER_TYPE_CHANGED</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_renderer_type_changed">EVENT_RENDERER_TYPE_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L141">model/Column.ts:141</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L100">model/Column.ts:100</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -419,10 +466,10 @@
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>SUMMARY_<wbr>RENDERER_<wbr>TYPE_<wbr>CHANGED</h3>
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>SUMMARY_<wbr>RENDERER_<wbr>TYPE_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"summaryRendererChanged"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;summaryRendererChanged&quot;</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#event_summary_renderer_type_changed">EVENT_SUMMARY_RENDERER_TYPE_CHANGED</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#event_summary_renderer_type_changed">EVENT_SUMMARY_RENDERER_TYPE_CHANGED</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_summary_renderer_type_changed">EVENT_SUMMARY_RENDERER_TYPE_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L143">model/Column.ts:143</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L102">model/Column.ts:102</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -431,10 +478,10 @@
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>VISIBILITY_<wbr>CHANGED</h3>
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>VISIBILITY_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"visibilityChanged"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;visibilityChanged&quot;</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#event_visibility_changed">EVENT_VISIBILITY_CHANGED</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#event_visibility_changed">EVENT_VISIBILITY_CHANGED</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_visibility_changed">EVENT_VISIBILITY_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L144">model/Column.ts:144</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L103">model/Column.ts:103</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -443,10 +490,10 @@
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>WIDTH_<wbr>CHANGED</h3>
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>WIDTH_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"widthChanged"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;widthChanged&quot;</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#event_width_changed">EVENT_WIDTH_CHANGED</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#event_width_changed">EVENT_WIDTH_CHANGED</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_width_changed">EVENT_WIDTH_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L135">model/Column.ts:135</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L93">model/Column.ts:93</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -455,10 +502,10 @@
 					<h3><span class="tsd-flag ts-flagStatic">Static</span> FLAT_<wbr>ALL_<wbr>COLUMNS</h3>
 					<div class="tsd-signature tsd-kind-icon">FLAT_<wbr>ALL_<wbr>COLUMNS<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">-1</span><span class="tsd-signature-symbol"> =&nbsp;-1</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#flat_all_columns">FLAT_ALL_COLUMNS</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#flat_all_columns">FLAT_ALL_COLUMNS</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#flat_all_columns">FLAT_ALL_COLUMNS</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L133">model/Column.ts:133</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L91">model/Column.ts:91</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -469,7 +516,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#renderer_loading">RENDERER_LOADING</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/ValueColumn.ts#L37">model/ValueColumn.ts:37</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/ValueColumn.ts#L18">model/ValueColumn.ts:18</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -481,9 +528,9 @@
 					<h3>data<wbr>Length</h3>
 					<div class="tsd-signature tsd-kind-icon">data<wbr>Length<span class="tsd-signature-symbol">:</span> </div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#datalength">dataLength</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#datalength">dataLength</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L78">model/SetColumn.ts:78</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L96">model/SetColumn.ts:96</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -492,10 +539,10 @@
 					<h3>description</h3>
 					<div class="tsd-signature tsd-kind-icon">description<span class="tsd-signature-symbol">:</span> </div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#description">description</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#description">description</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#description">description</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L204">model/Column.ts:204</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L164">model/Column.ts:164</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -504,10 +551,10 @@
 					<h3>fixed</h3>
 					<div class="tsd-signature tsd-kind-icon">fixed<span class="tsd-signature-symbol">:</span> </div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#fixed">fixed</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#fixed">fixed</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#fixed">fixed</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L184">model/Column.ts:184</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L144">model/Column.ts:144</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -516,10 +563,10 @@
 					<h3>fqid</h3>
 					<div class="tsd-signature tsd-kind-icon">fqid<span class="tsd-signature-symbol">:</span> </div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#fqid">fqid</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#fqid">fqid</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#fqid">fqid</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L212">model/Column.ts:212</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L172">model/Column.ts:172</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -528,10 +575,10 @@
 					<h3>fqpath</h3>
 					<div class="tsd-signature tsd-kind-icon">fqpath<span class="tsd-signature-symbol">:</span> </div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#fqpath">fqpath</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#fqpath">fqpath</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#fqpath">fqpath</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L216">model/Column.ts:216</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L176">model/Column.ts:176</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -540,10 +587,10 @@
 					<h3>frozen</h3>
 					<div class="tsd-signature tsd-kind-icon">frozen<span class="tsd-signature-symbol">:</span> </div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#frozen">frozen</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#frozen">frozen</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#frozen">frozen</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L188">model/Column.ts:188</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L148">model/Column.ts:148</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -552,10 +599,10 @@
 					<h3>id</h3>
 					<div class="tsd-signature tsd-kind-icon">id<span class="tsd-signature-symbol">:</span> </div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#id">id</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#id">id</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#id">id</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L192">model/Column.ts:192</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L152">model/Column.ts:152</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -564,10 +611,10 @@
 					<h3>label</h3>
 					<div class="tsd-signature tsd-kind-icon">label<span class="tsd-signature-symbol">:</span> </div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#label">label</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#label">label</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#label">label</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L200">model/Column.ts:200</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L160">model/Column.ts:160</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -576,9 +623,9 @@
 					<h3>labels</h3>
 					<div class="tsd-signature tsd-kind-icon">labels<span class="tsd-signature-symbol">:</span> </div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#labels">labels</a></p>
+						<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#labels">labels</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L74">model/SetColumn.ts:74</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L92">model/SetColumn.ts:92</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -596,7 +643,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#assignnewid">assignNewId</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L196">model/Column.ts:196</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L156">model/Column.ts:156</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -625,21 +672,21 @@
 					<a name="attach" class="tsd-anchor"></a>
 					<h3>attach</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">attach<span class="tsd-signature-symbol">(</span>parent<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_column_.icolumnparent.html" class="tsd-signature-type">IColumnParent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">attach<span class="tsd-signature-symbol">(</span>parent<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.icolumnparent.html" class="tsd-signature-type">IColumnParent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#attach">attach</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#attach">attach</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#attach">attach</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L415">model/Column.ts:415</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L377">model/Column.ts:377</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>parent: <a href="../interfaces/_model_column_.icolumnparent.html" class="tsd-signature-type">IColumnParent</a></h5>
+									<h5>parent: <a href="../interfaces/_model_interfaces_.icolumnparent.html" class="tsd-signature-type">IColumnParent</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -647,30 +694,21 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-					<a name="compare" class="tsd-anchor"></a>
-					<h3>compare</h3>
+					<a name="clearfilter" class="tsd-anchor"></a>
+					<h3>clear<wbr>Filter</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">compare<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a>, b<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon">clear<wbr>Filter<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#compare">compare</a></p>
-								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#compare">compare</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#clearfilter">clearFilter</a></p>
+								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#clearfilter">clearFilter</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L180">model/SetColumn.ts:180</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L234">model/SetColumn.ts:234</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>a: <a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a></h5>
-								</li>
-								<li>
-									<h5>b: <a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -683,10 +721,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#detach">detach</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#detach">detach</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#detach">detach</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L422">model/Column.ts:422</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L384">model/Column.ts:384</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -704,7 +742,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#dump">dump</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L141">model/SetColumn.ts:141</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L183">model/SetColumn.ts:183</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -744,10 +782,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#filter">filter</a></p>
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#filter">filter</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L165">model/SetColumn.ts:165</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L209">model/SetColumn.ts:209</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -769,10 +806,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#findmyranker">findMyRanker</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#findmyranker">findMyRanker</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#findmyranker">findMyRanker</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L442">model/Column.ts:442</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L404">model/Column.ts:404</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="_model_ranking_.ranking.html" class="tsd-signature-type">Ranking</a>
@@ -787,21 +824,21 @@
 					<a name="flatten" class="tsd-anchor"></a>
 					<h3>flatten</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">flatten<span class="tsd-signature-symbol">(</span>r<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_column_.iflatcolumn.html" class="tsd-signature-type">IFlatColumn</a><span class="tsd-signature-symbol">[]</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, _levelsToGo<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, _padding<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon">flatten<span class="tsd-signature-symbol">(</span>r<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.iflatcolumn.html" class="tsd-signature-type">IFlatColumn</a><span class="tsd-signature-symbol">[]</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, _levelsToGo<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, _padding<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#flatten">flatten</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#flatten">flatten</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#flatten">flatten</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L277">model/Column.ts:277</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L238">model/Column.ts:238</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>r: <a href="../interfaces/_model_column_.iflatcolumn.html" class="tsd-signature-type">IFlatColumn</a><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>r: <a href="../interfaces/_model_interfaces_.iflatcolumn.html" class="tsd-signature-type">IFlatColumn</a><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 								<li>
 									<h5>offset: <span class="tsd-signature-type">number</span></h5>
@@ -827,8 +864,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#getcategories">getCategories</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L115">model/SetColumn.ts:115</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L141">model/SetColumn.ts:141</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -850,10 +888,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#getcolor">getColor</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#getcolor">getColor</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getcolor">getColor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L523">model/Column.ts:523</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L490">model/Column.ts:490</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -866,6 +904,47 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getcolormapping" class="tsd-anchor"></a>
+					<h3>get<wbr>Color<wbr>Mapping</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Color<wbr>Mapping<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_icategoricalcolumn_.icategoricalcolormappingfunction.html" class="tsd-signature-type">ICategoricalColorMappingFunction</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#getcolormapping">getColorMapping</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L149">model/SetColumn.ts:149</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_model_icategoricalcolumn_.icategoricalcolormappingfunction.html" class="tsd-signature-type">ICategoricalColorMappingFunction</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getcolors" class="tsd-anchor"></a>
+					<h3>get<wbr>Colors</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Colors<span class="tsd-signature-symbol">(</span>row<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L145">model/SetColumn.ts:145</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>row: <a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getexportvalue" class="tsd-anchor"></a>
 					<h3>get<wbr>Export<wbr>Value</h3>
@@ -875,10 +954,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#getexportvalue">getExportValue</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#getexportvalue">getExportValue</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getexportvalue">getExportValue</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L519">model/Column.ts:519</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L486">model/Column.ts:486</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -898,16 +977,19 @@
 					<a name="getfilter" class="tsd-anchor"></a>
 					<h3>get<wbr>Filter</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Filter<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Filter<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_icategoricalcolumn_.isetcategoricalfilter.html" class="tsd-signature-type">ISetCategoricalFilter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L172">model/SetColumn.ts:172</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L223">model/SetColumn.ts:223</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_model_icategoricalcolumn_.isetcategoricalfilter.html" class="tsd-signature-type">ISetCategoricalFilter</a>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">null</span>
+							</h4>
 						</li>
 					</ul>
 				</section>
@@ -920,10 +1002,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#getgrouprenderer">getGroupRenderer</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#getgrouprenderer">getGroupRenderer</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getgrouprenderer">getGroupRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L585">model/Column.ts:585</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L553">model/Column.ts:553</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -939,10 +1021,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#getlabel">getLabel</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#getlabel">getLabel</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#getlabel">getLabel</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L86">model/SetColumn.ts:86</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L108">model/SetColumn.ts:108</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -964,9 +1046,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#getlabels">getLabels</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#getlabels">getLabels</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L129">model/SetColumn.ts:129</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L163">model/SetColumn.ts:163</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -988,9 +1070,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#getmap">getMap</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#getmap">getMap</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L133">model/SetColumn.ts:133</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L167">model/SetColumn.ts:167</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1012,9 +1094,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#getmaplabel">getMapLabel</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#getmaplabel">getMapLabel</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L137">model/SetColumn.ts:137</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L171">model/SetColumn.ts:171</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1031,18 +1113,18 @@
 					<a name="getmetadata" class="tsd-anchor"></a>
 					<h3>get<wbr>Meta<wbr>Data</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Meta<wbr>Data<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_column_.icolumnmetadata.html" class="tsd-signature-type">IColumnMetaData</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Meta<wbr>Data<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_interfaces_.icolumnmetadata.html" class="tsd-signature-type">IColumnMetaData</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#getmetadata">getMetaData</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#getmetadata">getMetaData</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getmetadata">getMetaData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L308">model/Column.ts:308</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L270">model/Column.ts:270</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_column_.icolumnmetadata.html" class="tsd-signature-type">IColumnMetaData</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_interfaces_.icolumnmetadata.html" class="tsd-signature-type">IColumnMetaData</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1050,14 +1132,14 @@
 					<a name="getraw" class="tsd-anchor"></a>
 					<h3>get<wbr>Raw</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Raw<span class="tsd-signature-symbol">(</span>row<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">T</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Raw<span class="tsd-signature-symbol">(</span>row<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#getraw">getRaw</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/ValueColumn.ts#L82">model/ValueColumn.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/ValueColumn.ts#L65">model/ValueColumn.ts:65</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1066,9 +1148,9 @@
 									<h5>row: <a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>
 								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">T</span>
+								<span class="tsd-signature-type">null</span>
 							</h4>
 						</li>
 					</ul>
@@ -1082,11 +1164,11 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#getrenderer">getRenderer</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#getrenderer">getRenderer</a></p>
 								<p>Inherited from <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#getrenderer">getRenderer</a></p>
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getrenderer">getRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/ValueColumn.ts#L104">model/ValueColumn.ts:104</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/ValueColumn.ts#L87">model/ValueColumn.ts:87</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -1102,8 +1184,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#getset">getSet</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L103">model/SetColumn.ts:103</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L125">model/SetColumn.ts:125</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1116,6 +1199,29 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="getsortedset" class="tsd-anchor"></a>
+					<h3>get<wbr>Sorted<wbr>Set</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Sorted<wbr>Set<span class="tsd-signature-symbol">(</span>row<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_icategoricalcolumn_.icategory.html" class="tsd-signature-type">ICategory</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L137">model/SetColumn.ts:137</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>row: <a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_model_icategoricalcolumn_.icategory.html" class="tsd-signature-type">ICategory</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="getsummaryrenderer" class="tsd-anchor"></a>
 					<h3>get<wbr>Summary<wbr>Renderer</h3>
@@ -1125,10 +1231,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#getsummaryrenderer">getSummaryRenderer</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#getsummaryrenderer">getSummaryRenderer</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getsummaryrenderer">getSummaryRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L589">model/Column.ts:589</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L557">model/Column.ts:557</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -1139,15 +1245,15 @@
 					<a name="getvalue" class="tsd-anchor"></a>
 					<h3>get<wbr>Value</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Value<span class="tsd-signature-symbol">(</span>row<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Value<span class="tsd-signature-symbol">(</span>row<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#getvalue">getValue</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#getvalue">getValue</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#getvalue">getValue</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L82">model/SetColumn.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L100">model/SetColumn.ts:100</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1156,7 +1262,10 @@
 									<h5>row: <a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">null</span>
+							</h4>
 						</li>
 					</ul>
 				</section>
@@ -1169,9 +1278,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#getvalues">getValues</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#getvalues">getValues</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L124">model/SetColumn.ts:124</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L158">model/SetColumn.ts:158</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1193,10 +1302,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#getvisible">getVisible</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#getvisible">getVisible</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getvisible">getVisible</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L258">model/Column.ts:258</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L219">model/Column.ts:219</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -1212,35 +1321,34 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#getwidth">getWidth</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#getwidth">getWidth</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getwidth">getWidth</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L242">model/Column.ts:242</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L203">model/Column.ts:203</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 					<a name="group" class="tsd-anchor"></a>
 					<h3>group</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">group<span class="tsd-signature-symbol">(</span>_row<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.igroup.html" class="tsd-signature-type">IGroup</a></li>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">group<span class="tsd-signature-symbol">(</span>row<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.igroup.html" class="tsd-signature-type">IGroup</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#group">group</a></p>
-								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#group">group</a></p>
+								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#group">group</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L546">model/Column.ts:546</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L252">model/SetColumn.ts:252</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>_row: <a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a></h5>
+									<h5>row: <a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_model_interfaces_.igroup.html" class="tsd-signature-type">IGroup</a></h4>
@@ -1256,41 +1364,13 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#groupbyme">groupByMe</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#groupbyme">groupByMe</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#groupbyme">groupByMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L326">model/Column.ts:326</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L288">model/Column.ts:288</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="groupcompare" class="tsd-anchor"></a>
-					<h3>group<wbr>Compare</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">group<wbr>Compare<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.igroupdata.html" class="tsd-signature-type">IGroupData</a>, b<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.igroupdata.html" class="tsd-signature-type">IGroupData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#groupcompare">groupCompare</a></p>
-								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#groupcompare">groupCompare</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L556">model/Column.ts:556</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>a: <a href="../interfaces/_model_interfaces_.igroupdata.html" class="tsd-signature-type">IGroupData</a></h5>
-								</li>
-								<li>
-									<h5>b: <a href="../interfaces/_model_interfaces_.igroupdata.html" class="tsd-signature-type">IGroupData</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1303,10 +1383,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#groupsortbyme">groupSortByMe</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#groupsortbyme">groupSortByMe</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#groupsortbyme">groupSortByMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L378">model/Column.ts:378</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L340">model/Column.ts:340</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1331,10 +1411,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#hide">hide</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#hide">hide</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#hide">hide</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L246">model/Column.ts:246</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L207">model/Column.ts:207</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1350,10 +1430,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#insertafterme">insertAfterMe</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#insertafterme">insertAfterMe</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#insertafterme">insertAfterMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L431">model/Column.ts:431</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L393">model/Column.ts:393</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1376,10 +1456,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#isfiltered">isFiltered</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#isfiltered">isFiltered</a></p>
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#isfiltered">isFiltered</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L161">model/SetColumn.ts:161</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L205">model/SetColumn.ts:205</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -1395,10 +1475,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#isgroupsortedbyme">isGroupSortedByMe</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#isgroupsortedbyme">isGroupSortedByMe</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#isgroupsortedbyme">isGroupSortedByMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L394">model/Column.ts:394</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L356">model/Column.ts:356</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
@@ -1416,10 +1496,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#isgroupedby">isGroupedBy</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#isgroupedby">isGroupedBy</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#isgroupedby">isGroupedBy</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L338">model/Column.ts:338</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L300">model/Column.ts:300</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -1437,34 +1517,9 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#isloaded">isLoaded</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/ValueColumn.ts#L93">model/ValueColumn.ts:93</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/ValueColumn.ts#L76">model/ValueColumn.ts:76</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-					<a name="ismissing" class="tsd-anchor"></a>
-					<h3>is<wbr>Missing</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Missing<span class="tsd-signature-symbol">(</span>row<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#ismissing">isMissing</a></p>
-								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#ismissing">isMissing</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L119">model/SetColumn.ts:119</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>row: <a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a></h5>
-								</li>
-							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
@@ -1478,10 +1533,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#issortedbyme">isSortedByMe</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#issortedbyme">isSortedByMe</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#issortedbyme">isSortedByMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L374">model/Column.ts:374</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L336">model/Column.ts:336</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
@@ -1499,13 +1554,40 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#isvisible">isVisible</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#isvisible">isVisible</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#isvisible">isVisible</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L254">model/Column.ts:254</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L215">model/Column.ts:215</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="itercategory" class="tsd-anchor"></a>
+					<h3>iter<wbr>Category</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">iter<wbr>Category<span class="tsd-signature-symbol">(</span>row<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_model_icategoricalcolumn_.icategory.html" class="tsd-signature-type">ICategory</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#itercategory">iterCategory</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L175">model/SetColumn.ts:175</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>row: <a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">[]</span>
+								<span class="tsd-signature-symbol"> | </span>
+								<a href="../interfaces/_model_icategoricalcolumn_.icategory.html" class="tsd-signature-type">ICategory</a><span class="tsd-signature-symbol">[]</span>
+							</h4>
 						</li>
 					</ul>
 				</section>
@@ -1518,10 +1600,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#markdirty">markDirty</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#markdirty">markDirty</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#markdirty">markDirty</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L649">model/Column.ts:649</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L589">model/Column.ts:589</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1538,7 +1620,8 @@
 					<a name="on" class="tsd-anchor"></a>
 					<h3>on</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"filterChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_setcolumn_.setcolumn.html#filterchanged" class="tsd-signature-type">filterChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"filterChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_setcolumn_.setcolumn.html#filterchanged_ssc" class="tsd-signature-type">filterChanged_SSC</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"colorMappingChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_setcolumn_.setcolumn.html#colormappingchanged_ssc" class="tsd-signature-type">colorMappingChanged_SSC</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"dataLoaded"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_valuecolumn_.valuecolumn.html#dataloaded" class="tsd-signature-type">dataLoaded</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"widthChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html#widthchanged" class="tsd-signature-type">widthChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"labelChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html#labelchanged" class="tsd-signature-type">labelChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
@@ -1546,6 +1629,7 @@
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"dirty"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html#dirty" class="tsd-signature-type">dirty</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"dirtyHeader"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html#dirtyheader" class="tsd-signature-type">dirtyHeader</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"dirtyValues"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html#dirtyvalues" class="tsd-signature-type">dirtyValues</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"dirtyCaches"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html#dirtycaches" class="tsd-signature-type">dirtyCaches</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"rendererTypeChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html#renderertypechanged" class="tsd-signature-type">rendererTypeChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"groupRendererChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html#grouprendererchanged" class="tsd-signature-type">groupRendererChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"summaryRendererChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html#summaryrendererchanged" class="tsd-signature-type">summaryRendererChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
@@ -1557,7 +1641,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L57">model/SetColumn.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L73">model/SetColumn.ts:73</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1566,7 +1650,7 @@
 									<h5>type: <span class="tsd-signature-type">"filterChanged"</span></h5>
 								</li>
 								<li>
-									<h5>listener: <a href="_model_setcolumn_.setcolumn.html#filterchanged" class="tsd-signature-type">filterChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+									<h5>listener: <a href="_model_setcolumn_.setcolumn.html#filterchanged_ssc" class="tsd-signature-type">filterChanged_SSC</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -1575,7 +1659,25 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L58">model/SetColumn.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L74">model/SetColumn.ts:74</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">"colorMappingChanged"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="_model_setcolumn_.setcolumn.html#colormappingchanged_ssc" class="tsd-signature-type">colorMappingChanged_SSC</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L75">model/SetColumn.ts:75</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1591,10 +1693,10 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#on">on</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L59">model/SetColumn.ts:59</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L76">model/SetColumn.ts:76</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1610,10 +1712,10 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#on">on</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L60">model/SetColumn.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L77">model/SetColumn.ts:77</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1629,10 +1731,10 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#on">on</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L61">model/SetColumn.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L78">model/SetColumn.ts:78</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1648,10 +1750,10 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#on">on</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L62">model/SetColumn.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L79">model/SetColumn.ts:79</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1667,10 +1769,10 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#on">on</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L63">model/SetColumn.ts:63</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L80">model/SetColumn.ts:80</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1686,10 +1788,10 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#on">on</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L64">model/SetColumn.ts:64</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L81">model/SetColumn.ts:81</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1705,10 +1807,29 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#on">on</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L65">model/SetColumn.ts:65</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L82">model/SetColumn.ts:82</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">"dirtyCaches"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="_model_column_.column.html#dirtycaches" class="tsd-signature-type">dirtyCaches</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#on">on</a></p>
+								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L83">model/SetColumn.ts:83</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1724,10 +1845,10 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#on">on</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L66">model/SetColumn.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L84">model/SetColumn.ts:84</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1743,10 +1864,10 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#on">on</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L67">model/SetColumn.ts:67</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L85">model/SetColumn.ts:85</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1762,10 +1883,10 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#on">on</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L68">model/SetColumn.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L86">model/SetColumn.ts:86</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1781,10 +1902,10 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#on">on</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#on">on</a></p>
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L69">model/SetColumn.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L87">model/SetColumn.ts:87</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1809,10 +1930,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#removeme">removeMe</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#removeme">removeMe</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#removeme">removeMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L402">model/Column.ts:402</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L364">model/Column.ts:364</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -1824,14 +1945,14 @@
 					<a name="restore" class="tsd-anchor"></a>
 					<h3>restore</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">restore<span class="tsd-signature-symbol">(</span>dump<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, factory<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">restore<span class="tsd-signature-symbol">(</span>dump<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, factory<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.itypefactory.html" class="tsd-signature-type">ITypeFactory</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#restore">restore</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L147">model/SetColumn.ts:147</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L190">model/SetColumn.ts:190</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1840,28 +1961,31 @@
 									<h5>dump: <span class="tsd-signature-type">any</span></h5>
 								</li>
 								<li>
-									<h5>factory: <span class="tsd-signature-type">function</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>dump<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html" class="tsd-signature-type">Column</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<h4 class="tsd-parameters-title">Parameters</h4>
-													<ul class="tsd-parameters">
-														<li>
-															<h5>dump: <span class="tsd-signature-type">any</span></h5>
-														</li>
-													</ul>
-													<h4 class="tsd-returns-title">Returns <a href="_model_column_.column.html" class="tsd-signature-type">Column</a>
-														<span class="tsd-signature-symbol"> | </span>
-														<span class="tsd-signature-type">null</span>
-													</h4>
-												</li>
-											</ul>
-										</li>
-									</ul>
+									<h5>factory: <a href="../interfaces/_model_interfaces_.itypefactory.html" class="tsd-signature-type">ITypeFactory</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setcolormapping" class="tsd-anchor"></a>
+					<h3>set<wbr>Color<wbr>Mapping</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Color<wbr>Mapping<span class="tsd-signature-symbol">(</span>mapping<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_icategoricalcolumn_.icategoricalcolormappingfunction.html" class="tsd-signature-type">ICategoricalColorMappingFunction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#setcolormapping">setColorMapping</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L153">model/SetColumn.ts:153</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>mapping: <a href="../interfaces/_model_icategoricalcolumn_.icategoricalcolormappingfunction.html" class="tsd-signature-type">ICategoricalColorMappingFunction</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1872,22 +1996,22 @@
 					<a name="setfilter" class="tsd-anchor"></a>
 					<h3>set<wbr>Filter</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Filter<span class="tsd-signature-symbol">(</span>filter<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_icategoricalcolumn_.icategoricalfilter.html" class="tsd-signature-type">ICategoricalFilter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Filter<span class="tsd-signature-symbol">(</span>filter<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_icategoricalcolumn_.isetcategoricalfilter.html" class="tsd-signature-type">ISetCategoricalFilter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/SetColumn.ts#L176">model/SetColumn.ts:176</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L227">model/SetColumn.ts:227</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>filter: <a href="../interfaces/_model_icategoricalcolumn_.icategoricalfilter.html" class="tsd-signature-type">ICategoricalFilter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+									<h5>filter: <a href="../interfaces/_model_icategoricalcolumn_.isetcategoricalfilter.html" class="tsd-signature-type">ISetCategoricalFilter</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1900,10 +2024,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#setgrouprenderer">setGroupRenderer</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#setgrouprenderer">setGroupRenderer</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setgrouprenderer">setGroupRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L608">model/Column.ts:608</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L569">model/Column.ts:569</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1927,7 +2051,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_valuecolumn_.valuecolumn.html">ValueColumn</a>.<a href="_model_valuecolumn_.valuecolumn.html#setloaded">setLoaded</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/ValueColumn.ts#L97">model/ValueColumn.ts:97</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/ValueColumn.ts#L80">model/ValueColumn.ts:80</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1944,21 +2068,21 @@
 					<a name="setmetadata" class="tsd-anchor"></a>
 					<h3>set<wbr>Meta<wbr>Data</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Meta<wbr>Data<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_column_.icolumnmetadata.html" class="tsd-signature-type">IColumnMetaData</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Meta<wbr>Data<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_interfaces_.icolumnmetadata.html" class="tsd-signature-type">IColumnMetaData</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#setmetadata">setMetaData</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#setmetadata">setMetaData</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setmetadata">setMetaData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L294">model/Column.ts:294</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L255">model/Column.ts:255</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>value: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_column_.icolumnmetadata.html" class="tsd-signature-type">IColumnMetaData</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>value: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_interfaces_.icolumnmetadata.html" class="tsd-signature-type">IColumnMetaData</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1974,10 +2098,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#setrenderer">setRenderer</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#setrenderer">setRenderer</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setrenderer">setRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L593">model/Column.ts:593</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L561">model/Column.ts:561</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1999,10 +2123,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#setsummaryrenderer">setSummaryRenderer</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#setsummaryrenderer">setSummaryRenderer</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setsummaryrenderer">setSummaryRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L623">model/Column.ts:623</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L577">model/Column.ts:577</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2024,10 +2148,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#setvisible">setVisible</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#setvisible">setVisible</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setvisible">setVisible</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L262">model/Column.ts:262</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L223">model/Column.ts:223</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2049,10 +2173,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#setwidth">setWidth</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#setwidth">setWidth</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setwidth">setWidth</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L283">model/Column.ts:283</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L244">model/Column.ts:244</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2074,10 +2198,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#setwidthimpl">setWidthImpl</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#setwidthimpl">setWidthImpl</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setwidthimpl">setWidthImpl</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L290">model/Column.ts:290</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L251">model/Column.ts:251</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2099,10 +2223,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#show">show</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#show">show</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#show">show</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L250">model/Column.ts:250</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L211">model/Column.ts:211</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2118,10 +2242,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#sortbyme">sortByMe</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#sortbyme">sortByMe</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#sortbyme">sortByMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L318">model/Column.ts:318</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L280">model/Column.ts:280</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2139,6 +2263,105 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tocomparegroupvalue" class="tsd-anchor"></a>
+					<h3>to<wbr>Compare<wbr>Group<wbr>Value</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Compare<wbr>Group<wbr>Value<span class="tsd-signature-symbol">(</span>_rows<span class="tsd-signature-symbol">: </span><a href="../interfaces/_internal_interable_.isequence.html" class="tsd-signature-type">ISequence</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a><span class="tsd-signature-symbol">&gt;</span>, group<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.igroup.html" class="tsd-signature-type">IGroup</a>, _valueCache<span class="tsd-signature-symbol">: </span><a href="../interfaces/_internal_interable_.isequence.html" class="tsd-signature-type">ISequence</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_model_interfaces_.html#icomparevalue" class="tsd-signature-type">ICompareValue</a><span class="tsd-signature-symbol"> | </span><a href="../modules/_model_interfaces_.html#icomparevalue" class="tsd-signature-type">ICompareValue</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#tocomparegroupvalue">toCompareGroupValue</a></p>
+								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#tocomparegroupvalue">toCompareGroupValue</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L511">model/Column.ts:511</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>_rows: <a href="../interfaces/_internal_interable_.isequence.html" class="tsd-signature-type">ISequence</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>group: <a href="../interfaces/_model_interfaces_.igroup.html" class="tsd-signature-type">IGroup</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> _valueCache: <a href="../interfaces/_internal_interable_.isequence.html" class="tsd-signature-type">ISequence</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_model_interfaces_.html#icomparevalue" class="tsd-signature-type">ICompareValue</a>
+								<span class="tsd-signature-symbol"> | </span>
+								<a href="../modules/_model_interfaces_.html#icomparevalue" class="tsd-signature-type">ICompareValue</a><span class="tsd-signature-symbol">[]</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tocomparegroupvaluetype" class="tsd-anchor"></a>
+					<h3>to<wbr>Compare<wbr>Group<wbr>Value<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Compare<wbr>Group<wbr>Value<wbr>Type<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/_model_interfaces_.ecomparevaluetype.html" class="tsd-signature-type">ECompareValueType</a><span class="tsd-signature-symbol"> | </span><a href="../enums/_model_interfaces_.ecomparevaluetype.html" class="tsd-signature-type">ECompareValueType</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#tocomparegroupvaluetype">toCompareGroupValueType</a></p>
+								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#tocomparegroupvaluetype">toCompareGroupValueType</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L515">model/Column.ts:515</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../enums/_model_interfaces_.ecomparevaluetype.html" class="tsd-signature-type">ECompareValueType</a>
+								<span class="tsd-signature-symbol"> | </span>
+								<a href="../enums/_model_interfaces_.ecomparevaluetype.html" class="tsd-signature-type">ECompareValueType</a><span class="tsd-signature-symbol">[]</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="tocomparevalue" class="tsd-anchor"></a>
+					<h3>to<wbr>Compare<wbr>Value</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Compare<wbr>Value<span class="tsd-signature-symbol">(</span>row<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#tocomparevalue">toCompareValue</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L238">model/SetColumn.ts:238</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>row: <a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="tocomparevaluetype" class="tsd-anchor"></a>
+					<h3>to<wbr>Compare<wbr>Value<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Compare<wbr>Value<wbr>Type<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/_model_interfaces_.ecomparevaluetype.html" class="tsd-signature-type">ECompareValueType</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#tocomparevaluetype">toCompareValueType</a></p>
+								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#tocomparevaluetype">toCompareValueType</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/SetColumn.ts#L248">model/SetColumn.ts:248</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../enums/_model_interfaces_.ecomparevaluetype.html" class="tsd-signature-type">ECompareValueType</a><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="togglemygroupsorting" class="tsd-anchor"></a>
 					<h3>toggle<wbr>MyGroup<wbr>Sorting</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
@@ -2147,10 +2370,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#togglemygroupsorting">toggleMyGroupSorting</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#togglemygroupsorting">toggleMyGroupSorting</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#togglemygroupsorting">toggleMyGroupSorting</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L386">model/Column.ts:386</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L348">model/Column.ts:348</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -2166,10 +2389,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html">IArrayColumn</a>.<a href="../interfaces/_model_iarraycolumn_.iarraycolumn.html#togglemysorting">toggleMySorting</a></p>
+								<p>Implementation of <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html">ISetColumn</a>.<a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html#togglemysorting">toggleMySorting</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#togglemysorting">toggleMySorting</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L350">model/Column.ts:350</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L312">model/Column.ts:312</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -2201,7 +2424,10 @@
 								<a href="_model_setcolumn_.setcolumn.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-event tsd-parent-kind-class">
-								<a href="_model_setcolumn_.setcolumn.html#filterchanged" class="tsd-kind-icon">filter<wbr>Changed</a>
+								<a href="_model_setcolumn_.setcolumn.html#colormappingchanged_ssc" class="tsd-kind-icon">color<wbr>Mapping<wbr>Changed_<wbr>SSC</a>
+							</li>
+							<li class=" tsd-kind-event tsd-parent-kind-class">
+								<a href="_model_setcolumn_.setcolumn.html#filterchanged_ssc" class="tsd-kind-icon">filter<wbr>Changed_<wbr>SSC</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_model_setcolumn_.setcolumn.html#categories" class="tsd-kind-icon">categories</a>
@@ -2212,14 +2438,17 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_model_setcolumn_.setcolumn.html#parent" class="tsd-kind-icon">parent</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="_model_setcolumn_.setcolumn.html#default_color" class="tsd-kind-icon">DEFAULT_<wbr>COLOR</a>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="_model_setcolumn_.setcolumn.html#event_color_mapping_changed" class="tsd-kind-icon">EVENT_<wbr>COLOR_<wbr>MAPPING_<wbr>CHANGED</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 								<a href="_model_setcolumn_.setcolumn.html#event_data_loaded" class="tsd-kind-icon">EVENT_<wbr>DATA_<wbr>LOADED</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 								<a href="_model_setcolumn_.setcolumn.html#event_dirty" class="tsd-kind-icon">EVENT_<wbr>DIRTY</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="_model_setcolumn_.setcolumn.html#event_dirty_caches" class="tsd-kind-icon">EVENT_<wbr>DIRTY_<wbr>CACHES</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 								<a href="_model_setcolumn_.setcolumn.html#event_dirty_header" class="tsd-kind-icon">EVENT_<wbr>DIRTY_<wbr>HEADER</a>
@@ -2291,7 +2520,7 @@
 								<a href="_model_setcolumn_.setcolumn.html#attach" class="tsd-kind-icon">attach</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-								<a href="_model_setcolumn_.setcolumn.html#compare" class="tsd-kind-icon">compare</a>
+								<a href="_model_setcolumn_.setcolumn.html#clearfilter" class="tsd-kind-icon">clear<wbr>Filter</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_model_setcolumn_.setcolumn.html#detach" class="tsd-kind-icon">detach</a>
@@ -2313,6 +2542,12 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_model_setcolumn_.setcolumn.html#getcolor" class="tsd-kind-icon">get<wbr>Color</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_model_setcolumn_.setcolumn.html#getcolormapping" class="tsd-kind-icon">get<wbr>Color<wbr>Mapping</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_model_setcolumn_.setcolumn.html#getcolors" class="tsd-kind-icon">get<wbr>Colors</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_model_setcolumn_.setcolumn.html#getexportvalue" class="tsd-kind-icon">get<wbr>Export<wbr>Value</a>
@@ -2347,6 +2582,9 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_model_setcolumn_.setcolumn.html#getset" class="tsd-kind-icon">get<wbr>Set</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_model_setcolumn_.setcolumn.html#getsortedset" class="tsd-kind-icon">get<wbr>Sorted<wbr>Set</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_model_setcolumn_.setcolumn.html#getsummaryrenderer" class="tsd-kind-icon">get<wbr>Summary<wbr>Renderer</a>
 							</li>
@@ -2362,14 +2600,11 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_model_setcolumn_.setcolumn.html#getwidth" class="tsd-kind-icon">get<wbr>Width</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="_model_setcolumn_.setcolumn.html#group" class="tsd-kind-icon">group</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_model_setcolumn_.setcolumn.html#groupbyme" class="tsd-kind-icon">group<wbr>ByMe</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="_model_setcolumn_.setcolumn.html#groupcompare" class="tsd-kind-icon">group<wbr>Compare</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_model_setcolumn_.setcolumn.html#groupsortbyme" class="tsd-kind-icon">group<wbr>Sort<wbr>ByMe</a>
@@ -2392,14 +2627,14 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_model_setcolumn_.setcolumn.html#isloaded" class="tsd-kind-icon">is<wbr>Loaded</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-								<a href="_model_setcolumn_.setcolumn.html#ismissing" class="tsd-kind-icon">is<wbr>Missing</a>
-							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_model_setcolumn_.setcolumn.html#issortedbyme" class="tsd-kind-icon">is<wbr>Sorted<wbr>ByMe</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_model_setcolumn_.setcolumn.html#isvisible" class="tsd-kind-icon">is<wbr>Visible</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_model_setcolumn_.setcolumn.html#itercategory" class="tsd-kind-icon">iter<wbr>Category</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_model_setcolumn_.setcolumn.html#markdirty" class="tsd-kind-icon">mark<wbr>Dirty</a>
@@ -2412,6 +2647,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="_model_setcolumn_.setcolumn.html#restore" class="tsd-kind-icon">restore</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_model_setcolumn_.setcolumn.html#setcolormapping" class="tsd-kind-icon">set<wbr>Color<wbr>Mapping</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_model_setcolumn_.setcolumn.html#setfilter" class="tsd-kind-icon">set<wbr>Filter</a>
@@ -2447,6 +2685,18 @@
 								<a href="_model_setcolumn_.setcolumn.html#sortbyme" class="tsd-kind-icon">sort<wbr>ByMe</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_model_setcolumn_.setcolumn.html#tocomparegroupvalue" class="tsd-kind-icon">to<wbr>Compare<wbr>Group<wbr>Value</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_model_setcolumn_.setcolumn.html#tocomparegroupvaluetype" class="tsd-kind-icon">to<wbr>Compare<wbr>Group<wbr>Value<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_model_setcolumn_.setcolumn.html#tocomparevalue" class="tsd-kind-icon">to<wbr>Compare<wbr>Value</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_model_setcolumn_.setcolumn.html#tocomparevaluetype" class="tsd-kind-icon">to<wbr>Compare<wbr>Value<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_model_setcolumn_.setcolumn.html#togglemygroupsorting" class="tsd-kind-icon">toggle<wbr>MyGroup<wbr>Sorting</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
@@ -2479,7 +2729,6 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

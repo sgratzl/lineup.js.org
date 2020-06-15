@@ -86,6 +86,7 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_lineupbuilder_.lineupbuilder.html#animated" class="tsd-kind-icon">animated</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_lineupbuilder_.lineupbuilder.html#canrender" class="tsd-kind-icon">can<wbr>Render</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_lineupbuilder_.lineupbuilder.html#defaultslopegraphmode" class="tsd-kind-icon">default<wbr>Slope<wbr>Graph<wbr>Mode</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_lineupbuilder_.lineupbuilder.html#disableadvancedmodelfeatures" class="tsd-kind-icon">disable<wbr>Advanced<wbr>Model<wbr>Features</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_lineupbuilder_.lineupbuilder.html#disableadvancedrankingfeatures" class="tsd-kind-icon">disable<wbr>Advanced<wbr>Ranking<wbr>Features</a></li>
@@ -96,6 +97,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_lineupbuilder_.lineupbuilder.html#hierarchyindicator" class="tsd-kind-icon">hierarchy<wbr>Indicator</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_lineupbuilder_.lineupbuilder.html#ignoreunsupportedbrowser" class="tsd-kind-icon">ignore<wbr>Unsupported<wbr>Browser</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_lineupbuilder_.lineupbuilder.html#labelrotation" class="tsd-kind-icon">label<wbr>Rotation</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_lineupbuilder_.lineupbuilder.html#livepreviews" class="tsd-kind-icon">live<wbr>Previews</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_lineupbuilder_.lineupbuilder.html#overviewmode" class="tsd-kind-icon">overview<wbr>Mode</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_lineupbuilder_.lineupbuilder.html#registerrenderer" class="tsd-kind-icon">register<wbr>Renderer</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_lineupbuilder_.lineupbuilder.html#registertoolbaraction" class="tsd-kind-icon">register<wbr>Toolbar<wbr>Action</a></li>
@@ -120,13 +122,63 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/LineUpBuilder.ts#L21">builder/LineUpBuilder.ts:21</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/LineUpBuilder.ts#L21">builder/LineUpBuilder.ts:21</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>enable: <span class="tsd-signature-type">boolean</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="canrender" class="tsd-anchor"></a>
+					<h3>can<wbr>Render</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">can<wbr>Render<span class="tsd-signature-symbol">(</span>canRender<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/LineUpBuilder.ts#L119">builder/LineUpBuilder.ts:119</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>canRender: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, renderer<span class="tsd-signature-symbol">: </span><a href="../interfaces/_renderer_interfaces_.icellrendererfactory.html" class="tsd-signature-type">ICellRendererFactory</a>, col<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html" class="tsd-signature-type">Column</a>, mode<span class="tsd-signature-symbol">: </span><a href="../enums/_renderer_interfaces_.erendermode.html" class="tsd-signature-type">ERenderMode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>type: <span class="tsd-signature-type">string</span></h5>
+														</li>
+														<li>
+															<h5>renderer: <a href="../interfaces/_renderer_interfaces_.icellrendererfactory.html" class="tsd-signature-type">ICellRendererFactory</a></h5>
+														</li>
+														<li>
+															<h5>col: <a href="_model_column_.column.html" class="tsd-signature-type">Column</a></h5>
+														</li>
+														<li>
+															<h5>mode: <a href="../enums/_renderer_interfaces_.erendermode.html" class="tsd-signature-type">ERenderMode</a></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -143,7 +195,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/LineUpBuilder.ts#L60">builder/LineUpBuilder.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/LineUpBuilder.ts#L65">builder/LineUpBuilder.ts:65</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -166,7 +218,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/LineUpBuilder.ts#L171">builder/LineUpBuilder.ts:171</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/LineUpBuilder.ts#L184">builder/LineUpBuilder.ts:184</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -183,7 +235,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/LineUpBuilder.ts#L163">builder/LineUpBuilder.ts:163</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/LineUpBuilder.ts#L176">builder/LineUpBuilder.ts:176</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -200,7 +252,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/LineUpBuilder.ts#L179">builder/LineUpBuilder.ts:179</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/LineUpBuilder.ts#L192">builder/LineUpBuilder.ts:192</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -217,7 +269,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/LineUpBuilder.ts#L155">builder/LineUpBuilder.ts:155</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/LineUpBuilder.ts#L168">builder/LineUpBuilder.ts:168</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -227,14 +279,14 @@
 									<ul class="tsd-parameters">
 										<li class="tsd-parameter-siganture">
 											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><a href="../interfaces/_model_interfaces_.igroupdata.html" class="tsd-signature-type">IGroupData</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_model_interfaces_.igroupitem.html" class="tsd-signature-type">IGroupItem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span>, ranking<span class="tsd-signature-symbol">: </span><a href="_model_ranking_.ranking.html" class="tsd-signature-type">Ranking</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_interfaces_.idynamicheight.html" class="tsd-signature-type">IDynamicHeight</a></li>
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_model_interfaces_.igroupitem.html" class="tsd-signature-type">IGroupItem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span>, ranking<span class="tsd-signature-symbol">: </span><a href="_model_ranking_.ranking.html" class="tsd-signature-type">Ranking</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_config_.idynamicheight.html" class="tsd-signature-type">IDynamicHeight</a></li>
 											</ul>
 											<ul class="tsd-descriptions">
 												<li class="tsd-description">
 													<h4 class="tsd-parameters-title">Parameters</h4>
 													<ul class="tsd-parameters">
 														<li>
-															<h5>data: <span class="tsd-signature-symbol">(</span><a href="../interfaces/_model_interfaces_.igroupdata.html" class="tsd-signature-type">IGroupData</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_model_interfaces_.igroupitem.html" class="tsd-signature-type">IGroupItem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></h5>
+															<h5>data: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_model_interfaces_.igroupitem.html" class="tsd-signature-type">IGroupItem</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></h5>
 														</li>
 														<li>
 															<h5>ranking: <a href="_model_ranking_.ranking.html" class="tsd-signature-type">Ranking</a></h5>
@@ -242,7 +294,7 @@
 													</ul>
 													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">null</span>
 														<span class="tsd-signature-symbol"> | </span>
-														<a href="../interfaces/_interfaces_.idynamicheight.html" class="tsd-signature-type">IDynamicHeight</a>
+														<a href="../interfaces/_config_.idynamicheight.html" class="tsd-signature-type">IDynamicHeight</a>
 													</h4>
 												</li>
 											</ul>
@@ -264,7 +316,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/LineUpBuilder.ts#L78">builder/LineUpBuilder.ts:78</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/LineUpBuilder.ts#L83">builder/LineUpBuilder.ts:83</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -281,13 +333,13 @@
 					<a name="grouprowheight" class="tsd-anchor"></a>
 					<h3>group<wbr>Row<wbr>Height</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">group<wbr>Row<wbr>Height<span class="tsd-signature-symbol">(</span>groupHeight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, groupPadding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">group<wbr>Row<wbr>Height<span class="tsd-signature-symbol">(</span>groupHeight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, groupPadding<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/LineUpBuilder.ts#L145">builder/LineUpBuilder.ts:145</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/LineUpBuilder.ts#L158">builder/LineUpBuilder.ts:158</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -296,7 +348,7 @@
 									<h5>groupHeight: <span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li>
-									<h5>groupPadding: <span class="tsd-signature-type">number</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> groupPadding: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;5</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -313,7 +365,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/LineUpBuilder.ts#L51">builder/LineUpBuilder.ts:51</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/LineUpBuilder.ts#L56">builder/LineUpBuilder.ts:56</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -336,7 +388,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/LineUpBuilder.ts#L96">builder/LineUpBuilder.ts:96</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/LineUpBuilder.ts#L101">builder/LineUpBuilder.ts:101</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -353,13 +405,36 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/LineUpBuilder.ts#L31">builder/LineUpBuilder.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/LineUpBuilder.ts#L36">builder/LineUpBuilder.ts:36</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>rotation: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="livepreviews" class="tsd-anchor"></a>
+					<h3>live<wbr>Previews</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">live<wbr>Previews<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_config_.ilivepreviewoptions.html" class="tsd-signature-type">ILivePreviewOptions</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/LineUpBuilder.ts#L26">builder/LineUpBuilder.ts:26</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>options: <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_config_.ilivepreviewoptions.html" class="tsd-signature-type">ILivePreviewOptions</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -376,7 +451,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/LineUpBuilder.ts#L87">builder/LineUpBuilder.ts:87</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/LineUpBuilder.ts#L92">builder/LineUpBuilder.ts:92</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -393,7 +468,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/LineUpBuilder.ts#L106">builder/LineUpBuilder.ts:106</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/LineUpBuilder.ts#L111">builder/LineUpBuilder.ts:111</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -413,13 +488,13 @@
 					<a name="registertoolbaraction" class="tsd-anchor"></a>
 					<h3>register<wbr>Toolbar<wbr>Action</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">register<wbr>Toolbar<wbr>Action<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, action<span class="tsd-signature-symbol">: </span><a href="../interfaces/_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">register<wbr>Toolbar<wbr>Action<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, action<span class="tsd-signature-symbol">: </span><a href="../interfaces/_ui_interfaces_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/LineUpBuilder.ts#L116">builder/LineUpBuilder.ts:116</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/LineUpBuilder.ts#L129">builder/LineUpBuilder.ts:129</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -428,7 +503,7 @@
 									<h5>id: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5>action: <a href="../interfaces/_ui_toolbar_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a></h5>
+									<h5>action: <a href="../interfaces/_ui_interfaces_.itoolbaraction.html" class="tsd-signature-type">IToolbarAction</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -439,13 +514,13 @@
 					<a name="registertoolbardialogaddon" class="tsd-anchor"></a>
 					<h3>register<wbr>Toolbar<wbr>Dialog<wbr>Addon</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">register<wbr>Toolbar<wbr>Dialog<wbr>Addon<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, addon<span class="tsd-signature-symbol">: </span><a href="../interfaces/_ui_toolbar_.itoolbardialogaddon.html" class="tsd-signature-type">IToolbarDialogAddon</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">register<wbr>Toolbar<wbr>Dialog<wbr>Addon<span class="tsd-signature-symbol">(</span>id<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, addon<span class="tsd-signature-symbol">: </span><a href="../interfaces/_ui_interfaces_.itoolbardialogaddon.html" class="tsd-signature-type">IToolbarDialogAddon</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/LineUpBuilder.ts#L126">builder/LineUpBuilder.ts:126</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/LineUpBuilder.ts#L139">builder/LineUpBuilder.ts:139</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -454,7 +529,7 @@
 									<h5>id: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5>addon: <a href="../interfaces/_ui_toolbar_.itoolbardialogaddon.html" class="tsd-signature-type">IToolbarDialogAddon</a></h5>
+									<h5>addon: <a href="../interfaces/_ui_interfaces_.itoolbardialogaddon.html" class="tsd-signature-type">IToolbarDialogAddon</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -465,13 +540,13 @@
 					<a name="rowheight" class="tsd-anchor"></a>
 					<h3>row<wbr>Height</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">row<wbr>Height<span class="tsd-signature-symbol">(</span>rowHeight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, rowPadding<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">row<wbr>Height<span class="tsd-signature-symbol">(</span>rowHeight<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, rowPadding<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/LineUpBuilder.ts#L135">builder/LineUpBuilder.ts:135</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/LineUpBuilder.ts#L148">builder/LineUpBuilder.ts:148</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -480,7 +555,7 @@
 									<h5>rowHeight: <span class="tsd-signature-type">number</span></h5>
 								</li>
 								<li>
-									<h5>rowPadding: <span class="tsd-signature-type">number</span></h5>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> rowPadding: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> =&nbsp;2</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -497,7 +572,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/LineUpBuilder.ts#L41">builder/LineUpBuilder.ts:41</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/LineUpBuilder.ts#L46">builder/LineUpBuilder.ts:46</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -523,7 +598,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/LineUpBuilder.ts#L69">builder/LineUpBuilder.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/LineUpBuilder.ts#L74">builder/LineUpBuilder.ts:74</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -560,6 +635,9 @@
 								<a href="_builder_lineupbuilder_.lineupbuilder.html#animated" class="tsd-kind-icon">animated</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_builder_lineupbuilder_.lineupbuilder.html#canrender" class="tsd-kind-icon">can<wbr>Render</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_builder_lineupbuilder_.lineupbuilder.html#defaultslopegraphmode" class="tsd-kind-icon">default<wbr>Slope<wbr>Graph<wbr>Mode</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
@@ -588,6 +666,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_builder_lineupbuilder_.lineupbuilder.html#labelrotation" class="tsd-kind-icon">label<wbr>Rotation</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_builder_lineupbuilder_.lineupbuilder.html#livepreviews" class="tsd-kind-icon">live<wbr>Previews</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_builder_lineupbuilder_.lineupbuilder.html#overviewmode" class="tsd-kind-icon">overview<wbr>Mode</a>
@@ -631,7 +712,6 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

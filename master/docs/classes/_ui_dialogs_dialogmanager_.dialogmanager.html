@@ -69,8 +69,19 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="target">DialogManager</span>
+						<a href="_internal_aeventdispatcher_.aeventdispatcher.html" class="tsd-signature-type">AEventDispatcher</a>
+						<ul class="tsd-hierarchy">
+							<li>
+								<span class="target">DialogManager</span>
+							</li>
+						</ul>
 					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel">
+				<h3>Implements</h3>
+				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/_internal_aeventdispatcher_.ieventhandler.html" class="tsd-signature-type">IEventHandler</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -80,19 +91,37 @@
 						<section class="tsd-index-section ">
 							<h3>Constructors</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-constructor tsd-parent-kind-class"><a href="_ui_dialogs_dialogmanager_.dialogmanager.html#constructor" class="tsd-kind-icon">constructor</a></li>
+								<li class="tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite"><a href="_ui_dialogs_dialogmanager_.dialogmanager.html#constructor" class="tsd-kind-icon">constructor</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Events</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_ui_dialogs_dialogmanager_.dialogmanager.html#dialogclosed" class="tsd-kind-icon">dialog<wbr>Closed</a></li>
+								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_ui_dialogs_dialogmanager_.dialogmanager.html#dialogopened" class="tsd-kind-icon">dialog<wbr>Opened</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_ui_dialogs_dialogmanager_.dialogmanager.html#livepreviews" class="tsd-kind-icon">live<wbr>Previews</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_ui_dialogs_dialogmanager_.dialogmanager.html#node" class="tsd-kind-icon">node</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_ui_dialogs_dialogmanager_.dialogmanager.html#ondialogbackgroundclick" class="tsd-kind-icon">on<wbr>Dialog<wbr>Background<wbr>Click</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_ui_dialogs_dialogmanager_.dialogmanager.html#event_dialog_closed" class="tsd-kind-icon">EVENT_<wbr>DIALOG_<wbr>CLOSED</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_ui_dialogs_dialogmanager_.dialogmanager.html#event_dialog_opened" class="tsd-kind-icon">EVENT_<wbr>DIALOG_<wbr>OPENED</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Accessors</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_ui_dialogs_dialogmanager_.dialogmanager.html#maxlevel" class="tsd-kind-icon">max<wbr>Level</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ui_dialogs_dialogmanager_.dialogmanager.html#clearhighlight" class="tsd-kind-icon">clear<wbr>Highlight</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_ui_dialogs_dialogmanager_.dialogmanager.html#on" class="tsd-kind-icon">on</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ui_dialogs_dialogmanager_.dialogmanager.html#push" class="tsd-kind-icon">push</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ui_dialogs_dialogmanager_.dialogmanager.html#remove" class="tsd-kind-icon">remove</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ui_dialogs_dialogmanager_.dialogmanager.html#removeabovelevel" class="tsd-kind-icon">remove<wbr>Above<wbr>Level</a></li>
@@ -100,6 +129,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ui_dialogs_dialogmanager_.dialogmanager.html#removelike" class="tsd-kind-icon">remove<wbr>Like</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ui_dialogs_dialogmanager_.dialogmanager.html#sethighlight" class="tsd-kind-icon">set<wbr>Highlight</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ui_dialogs_dialogmanager_.dialogmanager.html#sethighlightcolumn" class="tsd-kind-icon">set<wbr>Highlight<wbr>Column</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_ui_dialogs_dialogmanager_.dialogmanager.html#triggerdialogclosed" class="tsd-kind-icon">trigger<wbr>Dialog<wbr>Closed</a></li>
 							</ul>
 						</section>
 					</div>
@@ -107,23 +137,26 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Constructors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class">
+				<section class="tsd-panel tsd-member tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
-					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Dialog<wbr>Manager<span class="tsd-signature-symbol">(</span>doc<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">Document</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_ui_dialogs_dialogmanager_.dialogmanager.html" class="tsd-signature-type">DialogManager</a></li>
+					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Dialog<wbr>Manager<span class="tsd-signature-symbol">(</span>options<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_ui_dialogs_dialogmanager_.dialogmanager.html" class="tsd-signature-type">DialogManager</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Overrides <a href="_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_internal_aeventdispatcher_.aeventdispatcher.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/dialogs/DialogManager.ts#L14">ui/dialogs/DialogManager.ts:14</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/DialogManager.ts#L38">ui/dialogs/DialogManager.ts:38</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> doc: <span class="tsd-signature-type">Document</span><span class="tsd-signature-symbol"> =&nbsp;document</span></h5>
+									<h5>options: <span class="tsd-signature-type">object</span></h5>
+									<ul class="tsd-parameters">
+									</ul>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_ui_dialogs_dialogmanager_.dialogmanager.html" class="tsd-signature-type">DialogManager</a></h4>
@@ -132,14 +165,119 @@
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Events</h2>
+				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class">
+					<a name="dialogclosed" class="tsd-anchor"></a>
+					<h3>dialog<wbr>Closed</h3>
+					<ul class="tsd-signatures tsd-kind-event tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">dialog<wbr>Closed<span class="tsd-signature-symbol">(</span>dialog<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ADialog</span>, action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"cancel"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"confirm"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/DialogManager.ts#L22">ui/dialogs/DialogManager.ts:22</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dialog: <span class="tsd-signature-type">ADialog</span></h5>
+								</li>
+								<li>
+									<h5>action: <span class="tsd-signature-type">"cancel"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"confirm"</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class">
+					<a name="dialogopened" class="tsd-anchor"></a>
+					<h3>dialog<wbr>Opened</h3>
+					<ul class="tsd-signatures tsd-kind-event tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">dialog<wbr>Opened<span class="tsd-signature-symbol">(</span>dialog<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ADialog</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/DialogManager.ts#L13">ui/dialogs/DialogManager.ts:13</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dialog: <span class="tsd-signature-type">ADialog</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="livepreviews" class="tsd-anchor"></a>
+					<h3>live<wbr>Previews</h3>
+					<div class="tsd-signature tsd-kind-icon">live<wbr>Previews<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Partial</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_config_.ilivepreviewoptions.html" class="tsd-signature-type">ILivePreviewOptions</a><span class="tsd-signature-symbol">&gt;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/DialogManager.ts#L37">ui/dialogs/DialogManager.ts:37</a></li>
+						</ul>
+					</aside>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="node" class="tsd-anchor"></a>
 					<h3>node</h3>
 					<div class="tsd-signature tsd-kind-icon">node<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">HTMLElement</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/dialogs/DialogManager.ts#L14">ui/dialogs/DialogManager.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/DialogManager.ts#L36">ui/dialogs/DialogManager.ts:36</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="ondialogbackgroundclick" class="tsd-anchor"></a>
+					<h3>on<wbr>Dialog<wbr>Background<wbr>Click</h3>
+					<div class="tsd-signature tsd-kind-icon">on<wbr>Dialog<wbr>Background<wbr>Click<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"cancel"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"confirm"</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/DialogManager.ts#L38">ui/dialogs/DialogManager.ts:38</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="event_dialog_closed" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>DIALOG_<wbr>CLOSED</h3>
+					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>DIALOG_<wbr>CLOSED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"dialogClosed"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;dialogClosed&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/DialogManager.ts#L27">ui/dialogs/DialogManager.ts:27</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="event_dialog_opened" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>DIALOG_<wbr>OPENED</h3>
+					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>DIALOG_<wbr>OPENED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"dialogOpened"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;dialogOpened&quot;</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/DialogManager.ts#L26">ui/dialogs/DialogManager.ts:26</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Accessors</h2>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="maxlevel" class="tsd-anchor"></a>
+					<h3>max<wbr>Level</h3>
+					<div class="tsd-signature tsd-kind-icon">max<wbr>Level<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/DialogManager.ts#L64">ui/dialogs/DialogManager.ts:64</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -156,10 +294,76 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/dialogs/DialogManager.ts#L63">ui/dialogs/DialogManager.ts:63</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/DialogManager.ts#L108">ui/dialogs/DialogManager.ts:108</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="on" class="tsd-anchor"></a>
+					<h3>on</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"dialogOpened"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_ui_dialogs_dialogmanager_.dialogmanager.html#dialogopened" class="tsd-signature-type">dialogOpened</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"dialogClosed"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_ui_dialogs_dialogmanager_.dialogmanager.html#dialogclosed" class="tsd-signature-type">dialogClosed</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, listener<span class="tsd-signature-symbol">: </span><a href="../interfaces/_internal_aeventdispatcher_.ieventlistener.html" class="tsd-signature-type">IEventListener</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_internal_aeventdispatcher_.aeventdispatcher.html#on">on</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/DialogManager.ts#L57">ui/dialogs/DialogManager.ts:57</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">"dialogOpened"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="_ui_dialogs_dialogmanager_.dialogmanager.html#dialogopened" class="tsd-signature-type">dialogOpened</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_internal_aeventdispatcher_.aeventdispatcher.html#on">on</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/DialogManager.ts#L58">ui/dialogs/DialogManager.ts:58</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">"dialogClosed"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="_ui_dialogs_dialogmanager_.dialogmanager.html#dialogclosed" class="tsd-signature-type">dialogClosed</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/_internal_aeventdispatcher_.ieventhandler.html">IEventHandler</a>.<a href="../interfaces/_internal_aeventdispatcher_.ieventhandler.html#on">on</a></p>
+								<p>Overrides <a href="_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_internal_aeventdispatcher_.aeventdispatcher.html#on">on</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/DialogManager.ts#L59">ui/dialogs/DialogManager.ts:59</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="../interfaces/_internal_aeventdispatcher_.ieventlistener.html" class="tsd-signature-type">IEventListener</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -173,7 +377,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/dialogs/DialogManager.ts#L128">ui/dialogs/DialogManager.ts:128</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/DialogManager.ts#L179">ui/dialogs/DialogManager.ts:179</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -190,19 +394,22 @@
 					<a name="remove" class="tsd-anchor"></a>
 					<h3>remove</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">(</span>dialog<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ADialog</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">remove<span class="tsd-signature-symbol">(</span>dialog<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ADialog</span>, handled<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/dialogs/DialogManager.ts#L84">ui/dialogs/DialogManager.ts:84</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/DialogManager.ts#L133">ui/dialogs/DialogManager.ts:133</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>dialog: <span class="tsd-signature-type">ADialog</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> handled: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> =&nbsp;false</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -219,7 +426,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/dialogs/DialogManager.ts#L99">ui/dialogs/DialogManager.ts:99</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/DialogManager.ts#L152">ui/dialogs/DialogManager.ts:152</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -242,7 +449,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/dialogs/DialogManager.ts#L75">ui/dialogs/DialogManager.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/DialogManager.ts#L120">ui/dialogs/DialogManager.ts:120</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -259,7 +466,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/dialogs/DialogManager.ts#L104">ui/dialogs/DialogManager.ts:104</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/DialogManager.ts#L157">ui/dialogs/DialogManager.ts:157</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -282,7 +489,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/dialogs/DialogManager.ts#L25">ui/dialogs/DialogManager.ts:25</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/DialogManager.ts#L69">ui/dialogs/DialogManager.ts:69</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -307,13 +514,39 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/dialogs/DialogManager.ts#L42">ui/dialogs/DialogManager.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/DialogManager.ts#L87">ui/dialogs/DialogManager.ts:87</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>column: <a href="_model_column_.column.html" class="tsd-signature-type">Column</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="triggerdialogclosed" class="tsd-anchor"></a>
+					<h3>trigger<wbr>Dialog<wbr>Closed</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">trigger<wbr>Dialog<wbr>Closed<span class="tsd-signature-symbol">(</span>dialog<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ADialog</span>, action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"cancel"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"confirm"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/DialogManager.ts#L129">ui/dialogs/DialogManager.ts:129</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dialog: <span class="tsd-signature-type">ADialog</span></h5>
+								</li>
+								<li>
+									<h5>action: <span class="tsd-signature-type">"cancel"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"confirm"</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -340,14 +573,38 @@
 					<li class="current tsd-kind-class tsd-parent-kind-external-module">
 						<a href="_ui_dialogs_dialogmanager_.dialogmanager.html" class="tsd-kind-icon">Dialog<wbr>Manager</a>
 						<ul>
-							<li class=" tsd-kind-constructor tsd-parent-kind-class">
+							<li class=" tsd-kind-constructor tsd-parent-kind-class tsd-is-overwrite">
 								<a href="_ui_dialogs_dialogmanager_.dialogmanager.html#constructor" class="tsd-kind-icon">constructor</a>
+							</li>
+							<li class=" tsd-kind-event tsd-parent-kind-class">
+								<a href="_ui_dialogs_dialogmanager_.dialogmanager.html#dialogclosed" class="tsd-kind-icon">dialog<wbr>Closed</a>
+							</li>
+							<li class=" tsd-kind-event tsd-parent-kind-class">
+								<a href="_ui_dialogs_dialogmanager_.dialogmanager.html#dialogopened" class="tsd-kind-icon">dialog<wbr>Opened</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_ui_dialogs_dialogmanager_.dialogmanager.html#livepreviews" class="tsd-kind-icon">live<wbr>Previews</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_ui_dialogs_dialogmanager_.dialogmanager.html#node" class="tsd-kind-icon">node</a>
 							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_ui_dialogs_dialogmanager_.dialogmanager.html#ondialogbackgroundclick" class="tsd-kind-icon">on<wbr>Dialog<wbr>Background<wbr>Click</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="_ui_dialogs_dialogmanager_.dialogmanager.html#event_dialog_closed" class="tsd-kind-icon">EVENT_<wbr>DIALOG_<wbr>CLOSED</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="_ui_dialogs_dialogmanager_.dialogmanager.html#event_dialog_opened" class="tsd-kind-icon">EVENT_<wbr>DIALOG_<wbr>OPENED</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="_ui_dialogs_dialogmanager_.dialogmanager.html#maxlevel" class="tsd-kind-icon">max<wbr>Level</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_ui_dialogs_dialogmanager_.dialogmanager.html#clearhighlight" class="tsd-kind-icon">clear<wbr>Highlight</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_ui_dialogs_dialogmanager_.dialogmanager.html#on" class="tsd-kind-icon">on</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_ui_dialogs_dialogmanager_.dialogmanager.html#push" class="tsd-kind-icon">push</a>
@@ -370,6 +627,9 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_ui_dialogs_dialogmanager_.dialogmanager.html#sethighlightcolumn" class="tsd-kind-icon">set<wbr>Highlight<wbr>Column</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_ui_dialogs_dialogmanager_.dialogmanager.html#triggerdialogclosed" class="tsd-kind-icon">trigger<wbr>Dialog<wbr>Closed</a>
+							</li>
 						</ul>
 					</li>
 				</ul>
@@ -391,7 +651,6 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

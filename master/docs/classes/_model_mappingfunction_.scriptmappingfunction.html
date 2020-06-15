@@ -76,7 +76,7 @@
 			<section class="tsd-panel">
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
-					<li><a href="../interfaces/_model_mappingfunction_.imappingfunction.html" class="tsd-signature-type">IMappingFunction</a></li>
+					<li><a href="../interfaces/_model_inumbercolumn_.imappingfunction.html" class="tsd-signature-type">IMappingFunction</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -92,13 +92,8 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_model_mappingfunction_.scriptmappingfunction.html#code" class="tsd-kind-icon">code</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_model_mappingfunction_.scriptmappingfunction.html#domain" class="tsd-kind-icon">domain</a></li>
-							</ul>
-						</section>
-						<section class="tsd-index-section ">
-							<h3>Accessors</h3>
-							<ul class="tsd-index-list">
-								<li class="tsd-kind-accessor tsd-parent-kind-class"><a href="_model_mappingfunction_.scriptmappingfunction.html#code" class="tsd-kind-icon">code</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -106,10 +101,9 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_model_mappingfunction_.scriptmappingfunction.html#apply" class="tsd-kind-icon">apply</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_model_mappingfunction_.scriptmappingfunction.html#clone" class="tsd-kind-icon">clone</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_model_mappingfunction_.scriptmappingfunction.html#dump" class="tsd-kind-icon">dump</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_model_mappingfunction_.scriptmappingfunction.html#eq" class="tsd-kind-icon">eq</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_model_mappingfunction_.scriptmappingfunction.html#getrange" class="tsd-kind-icon">get<wbr>Range</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_model_mappingfunction_.scriptmappingfunction.html#restore" class="tsd-kind-icon">restore</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_model_mappingfunction_.scriptmappingfunction.html#tojson" class="tsd-kind-icon">toJSON</a></li>
 							</ul>
 						</section>
 					</div>
@@ -121,22 +115,46 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Script<wbr>Mapping<wbr>Function<span class="tsd-signature-symbol">(</span>domain<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>, _code<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_model_mappingfunction_.scriptmappingfunction.html" class="tsd-signature-type">ScriptMappingFunction</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Script<wbr>Mapping<wbr>Function<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_model_mappingfunction_.scriptmappingfunction.html" class="tsd-signature-type">ScriptMappingFunction</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Script<wbr>Mapping<wbr>Function<span class="tsd-signature-symbol">(</span>dump<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.itypeddump.html" class="tsd-signature-type">ITypedDump</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_model_mappingfunction_.scriptmappingfunction.html" class="tsd-signature-type">ScriptMappingFunction</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Script<wbr>Mapping<wbr>Function<span class="tsd-signature-symbol">(</span>domain<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span>, code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_model_mappingfunction_.iscriptmappingfunctiontype.html" class="tsd-signature-type">IScriptMappingFunctionType</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_model_mappingfunction_.scriptmappingfunction.html" class="tsd-signature-type">ScriptMappingFunction</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/MappingFunction.ts#L172">model/MappingFunction.ts:172</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/MappingFunction.ts#L148">model/MappingFunction.ts:148</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="_model_mappingfunction_.scriptmappingfunction.html" class="tsd-signature-type">ScriptMappingFunction</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/MappingFunction.ts#L150">model/MappingFunction.ts:150</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> domain: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol"> =&nbsp;[0, 1]</span></h5>
+									<h5>dump: <a href="../interfaces/_model_interfaces_.itypeddump.html" class="tsd-signature-type">ITypedDump</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="_model_mappingfunction_.scriptmappingfunction.html" class="tsd-signature-type">ScriptMappingFunction</a></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/MappingFunction.ts#L151">model/MappingFunction.ts:151</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>domain: <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 								<li>
-									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> _code: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;return this.linear(value,this.value_min,this.value_max);&quot;</span></h5>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> code: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_model_mappingfunction_.iscriptmappingfunctiontype.html" class="tsd-signature-type">IScriptMappingFunctionType</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_model_mappingfunction_.scriptmappingfunction.html" class="tsd-signature-type">ScriptMappingFunction</a></h4>
@@ -147,27 +165,23 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
+					<a name="code" class="tsd-anchor"></a>
+					<h3>code</h3>
+					<div class="tsd-signature tsd-kind-icon">code<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/MappingFunction.ts#L148">model/MappingFunction.ts:148</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="domain" class="tsd-anchor"></a>
 					<h3>domain</h3>
 					<div class="tsd-signature tsd-kind-icon">domain<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">[]</span></div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_mappingfunction_.imappingfunction.html">IMappingFunction</a>.<a href="../interfaces/_model_mappingfunction_.imappingfunction.html#domain">domain</a></p>
+						<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.imappingfunction.html">IMappingFunction</a>.<a href="../interfaces/_model_inumbercolumn_.imappingfunction.html#domain">domain</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/MappingFunction.ts#L174">model/MappingFunction.ts:174</a></li>
-						</ul>
-					</aside>
-				</section>
-			</section>
-			<section class="tsd-panel-group tsd-member-group ">
-				<h2>Accessors</h2>
-				<section class="tsd-panel tsd-member tsd-kind-accessor tsd-parent-kind-class">
-					<a name="code" class="tsd-anchor"></a>
-					<h3>code</h3>
-					<div class="tsd-signature tsd-kind-icon">code<span class="tsd-signature-symbol">:</span> </div>
-					<aside class="tsd-sources">
-						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/MappingFunction.ts#L178">model/MappingFunction.ts:178</a></li>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/MappingFunction.ts#L182">model/MappingFunction.ts:182</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/MappingFunction.ts#L147">model/MappingFunction.ts:147</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -183,9 +197,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_mappingfunction_.imappingfunction.html">IMappingFunction</a>.<a href="../interfaces/_model_mappingfunction_.imappingfunction.html#apply">apply</a></p>
+								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.imappingfunction.html">IMappingFunction</a>.<a href="../interfaces/_model_inumbercolumn_.imappingfunction.html#apply">apply</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/MappingFunction.ts#L194">model/MappingFunction.ts:194</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/MappingFunction.ts#L169">model/MappingFunction.ts:169</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -207,9 +221,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_mappingfunction_.imappingfunction.html">IMappingFunction</a>.<a href="../interfaces/_model_mappingfunction_.imappingfunction.html#clone">clone</a></p>
+								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.imappingfunction.html">IMappingFunction</a>.<a href="../interfaces/_model_inumbercolumn_.imappingfunction.html#clone">clone</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/MappingFunction.ts#L232">model/MappingFunction.ts:232</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/MappingFunction.ts#L202">model/MappingFunction.ts:202</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="_model_mappingfunction_.scriptmappingfunction.html" class="tsd-signature-type">ScriptMappingFunction</a></h4>
@@ -217,41 +231,23 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="dump" class="tsd-anchor"></a>
-					<h3>dump</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">dump<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_mappingfunction_.imappingfunction.html">IMappingFunction</a>.<a href="../interfaces/_model_mappingfunction_.imappingfunction.html#dump">dump</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/MappingFunction.ts#L211">model/MappingFunction.ts:211</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="eq" class="tsd-anchor"></a>
 					<h3>eq</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">eq<span class="tsd-signature-symbol">(</span>other<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_mappingfunction_.imappingfunction.html" class="tsd-signature-type">IMappingFunction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">eq<span class="tsd-signature-symbol">(</span>other<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_inumbercolumn_.imappingfunction.html" class="tsd-signature-type">IMappingFunction</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_mappingfunction_.imappingfunction.html">IMappingFunction</a>.<a href="../interfaces/_model_mappingfunction_.imappingfunction.html#eq">eq</a></p>
+								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.imappingfunction.html">IMappingFunction</a>.<a href="../interfaces/_model_inumbercolumn_.imappingfunction.html#eq">eq</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/MappingFunction.ts#L219">model/MappingFunction.ts:219</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/MappingFunction.ts#L194">model/MappingFunction.ts:194</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>other: <a href="../interfaces/_model_mappingfunction_.imappingfunction.html" class="tsd-signature-type">IMappingFunction</a></h5>
+									<h5>other: <a href="../interfaces/_model_inumbercolumn_.imappingfunction.html" class="tsd-signature-type">IMappingFunction</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -268,7 +264,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/MappingFunction.ts#L190">model/MappingFunction.ts:190</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/MappingFunction.ts#L165">model/MappingFunction.ts:165</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">]</span></h4>
@@ -276,26 +272,22 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
-					<a name="restore" class="tsd-anchor"></a>
-					<h3>restore</h3>
+					<a name="tojson" class="tsd-anchor"></a>
+					<h3>toJSON</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">restore<span class="tsd-signature-symbol">(</span>dump<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">toJSON<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">object</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_mappingfunction_.imappingfunction.html">IMappingFunction</a>.<a href="../interfaces/_model_mappingfunction_.imappingfunction.html#restore">restore</a></p>
+								<p>Implementation of <a href="../interfaces/_model_inumbercolumn_.imappingfunction.html">IMappingFunction</a>.<a href="../interfaces/_model_inumbercolumn_.imappingfunction.html#tojson">toJSON</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/MappingFunction.ts#L227">model/MappingFunction.ts:227</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/MappingFunction.ts#L186">model/MappingFunction.ts:186</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
 							<ul class="tsd-parameters">
-								<li>
-									<h5>dump: <span class="tsd-signature-type">any</span></h5>
-								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -326,10 +318,10 @@
 								<a href="_model_mappingfunction_.scriptmappingfunction.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
-								<a href="_model_mappingfunction_.scriptmappingfunction.html#domain" class="tsd-kind-icon">domain</a>
-							</li>
-							<li class=" tsd-kind-accessor tsd-parent-kind-class">
 								<a href="_model_mappingfunction_.scriptmappingfunction.html#code" class="tsd-kind-icon">code</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class">
+								<a href="_model_mappingfunction_.scriptmappingfunction.html#domain" class="tsd-kind-icon">domain</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_model_mappingfunction_.scriptmappingfunction.html#apply" class="tsd-kind-icon">apply</a>
@@ -338,38 +330,32 @@
 								<a href="_model_mappingfunction_.scriptmappingfunction.html#clone" class="tsd-kind-icon">clone</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_model_mappingfunction_.scriptmappingfunction.html#dump" class="tsd-kind-icon">dump</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_model_mappingfunction_.scriptmappingfunction.html#eq" class="tsd-kind-icon">eq</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_model_mappingfunction_.scriptmappingfunction.html#getrange" class="tsd-kind-icon">get<wbr>Range</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
-								<a href="_model_mappingfunction_.scriptmappingfunction.html#restore" class="tsd-kind-icon">restore</a>
+								<a href="_model_mappingfunction_.scriptmappingfunction.html#tojson" class="tsd-kind-icon">toJSON</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="../interfaces/_model_mappingfunction_.imapablecolumn.html" class="tsd-kind-icon">IMap<wbr>Able<wbr>Column</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="../interfaces/_model_mappingfunction_.imapabledesc.html" class="tsd-kind-icon">IMap<wbr>Able<wbr>Desc</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="../interfaces/_model_mappingfunction_.imappingfunction.html" class="tsd-kind-icon">IMapping<wbr>Function</a>
-					</li>
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="../interfaces/_model_mappingfunction_.iscale.html" class="tsd-kind-icon">IScale</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_model_mappingfunction_.iscriptmappingfunctioncontext.html" class="tsd-kind-icon">IScript<wbr>Mapping<wbr>Function<wbr>Context</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/_model_mappingfunction_.iscriptmappingfunctiontype.html" class="tsd-kind-icon">IScript<wbr>Mapping<wbr>Function<wbr>Type</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="../modules/_model_mappingfunction_.html#createmappingfunction" class="tsd-kind-icon">create<wbr>Mapping<wbr>Function</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_model_mappingfunction_.html#ismapablecolumn" class="tsd-kind-icon">is<wbr>Map<wbr>Able<wbr>Column</a>
+						<a href="../modules/_model_mappingfunction_.html#mappingfunctions" class="tsd-kind-icon">mapping<wbr>Functions</a>
 					</li>
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="../modules/_model_mappingfunction_.html#restoremapping" class="tsd-kind-icon">restore<wbr>Mapping</a>
@@ -391,7 +377,6 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

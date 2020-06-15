@@ -69,7 +69,11 @@
 						<section class="tsd-index-section ">
 							<h3>Functions</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_internal_accessor_.html#iscomplexaccessor" class="tsd-kind-icon">is<wbr>Complex<wbr>Accessor</a></li>
 								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_internal_accessor_.html#resolvevalue" class="tsd-kind-icon">resolve<wbr>Value</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_internal_accessor_.html#rowcomplexgetter" class="tsd-kind-icon">row<wbr>Complex<wbr>Getter</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_internal_accessor_.html#rowgetter" class="tsd-kind-icon">row<wbr>Getter</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-external-module"><a href="_internal_accessor_.html#rowguessgetter" class="tsd-kind-icon">row<wbr>Guess<wbr>Getter</a></li>
 							</ul>
 						</section>
 					</div>
@@ -78,25 +82,126 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Functions</h2>
 				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
-					<a name="resolvevalue" class="tsd-anchor"></a>
-					<h3>resolve<wbr>Value</h3>
+					<a name="iscomplexaccessor" class="tsd-anchor"></a>
+					<h3>is<wbr>Complex<wbr>Accessor</h3>
 					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
-						<li class="tsd-signature tsd-kind-icon">resolve<wbr>Value<span class="tsd-signature-symbol">(</span>row<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, column<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Complex<wbr>Accessor<span class="tsd-signature-symbol">(</span>column<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/internal/accessor.ts#L5">internal/accessor.ts:5</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/internal/accessor.ts#L7">internal/accessor.ts:7</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>row: <span class="tsd-signature-type">any</span></h5>
+									<h5>column: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="resolvevalue" class="tsd-anchor"></a>
+					<h3>resolve<wbr>Value</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">resolve<wbr>Value<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, column<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/internal/accessor.ts#L15">internal/accessor.ts:15</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
 								</li>
 								<li>
 									<h5>column: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="rowcomplexgetter" class="tsd-anchor"></a>
+					<h3>row<wbr>Complex<wbr>Getter</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">row<wbr>Complex<wbr>Getter<span class="tsd-signature-symbol">(</span>row<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a>, desc<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/internal/accessor.ts#L25">internal/accessor.ts:25</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>row: <a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a></h5>
+								</li>
+								<li>
+									<h5>desc: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="rowgetter" class="tsd-anchor"></a>
+					<h3>row<wbr>Getter</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">row<wbr>Getter<span class="tsd-signature-symbol">(</span>row<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a>, desc<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/internal/accessor.ts#L34">internal/accessor.ts:34</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>row: <a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a></h5>
+								</li>
+								<li>
+									<h5>desc: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-external-module">
+					<a name="rowguessgetter" class="tsd-anchor"></a>
+					<h3>row<wbr>Guess<wbr>Getter</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-external-module">
+						<li class="tsd-signature tsd-kind-icon">row<wbr>Guess<wbr>Getter<span class="tsd-signature-symbol">(</span>row<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a>, desc<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/internal/accessor.ts#L42">internal/accessor.ts:42</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>row: <a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a></h5>
+								</li>
+								<li>
+									<h5>desc: <span class="tsd-signature-type">any</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
@@ -119,7 +224,19 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_internal_accessor_.html#iscomplexaccessor" class="tsd-kind-icon">is<wbr>Complex<wbr>Accessor</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
 						<a href="_internal_accessor_.html#resolvevalue" class="tsd-kind-icon">resolve<wbr>Value</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_internal_accessor_.html#rowcomplexgetter" class="tsd-kind-icon">row<wbr>Complex<wbr>Getter</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_internal_accessor_.html#rowgetter" class="tsd-kind-icon">row<wbr>Getter</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module">
+						<a href="_internal_accessor_.html#rowguessgetter" class="tsd-kind-icon">row<wbr>Guess<wbr>Getter</a>
 					</li>
 				</ul>
 			</nav>
@@ -138,7 +255,6 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

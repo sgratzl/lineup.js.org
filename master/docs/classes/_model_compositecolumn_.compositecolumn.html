@@ -75,7 +75,13 @@
 								<span class="target">CompositeColumn</span>
 								<ul class="tsd-hierarchy">
 									<li>
-										<a href="../interfaces/_model_compositecolumn_.imultilevelcolumn.html" class="tsd-signature-type">IMultiLevelColumn</a>
+										<a href="../interfaces/_model_interfaces_.imultilevelcolumn.html" class="tsd-signature-type">IMultiLevelColumn</a>
+									</li>
+									<li>
+										<a href="_model_compositenumbercolumn_.compositenumbercolumn.html" class="tsd-signature-type">CompositeNumberColumn</a>
+									</li>
+									<li>
+										<a href="_model_impositionboxplotcolumn_.impositionboxplotcolumn.html" class="tsd-signature-type">ImpositionBoxPlotColumn</a>
 									</li>
 									<li>
 										<a href="_model_impositioncompositecolumn_.impositioncompositecolumn.html" class="tsd-signature-type">ImpositionCompositeColumn</a>
@@ -84,13 +90,7 @@
 										<a href="_model_impositioncompositescolumn_.impositioncompositescolumn.html" class="tsd-signature-type">ImpositionCompositesColumn</a>
 									</li>
 									<li>
-										<a href="_model_compositenumbercolumn_.compositenumbercolumn.html" class="tsd-signature-type">CompositeNumberColumn</a>
-									</li>
-									<li>
 										<a href="_model_multilevelcompositecolumn_.multilevelcompositecolumn.html" class="tsd-signature-type">MultiLevelCompositeColumn</a>
-									</li>
-									<li>
-										<a href="_model_impositionboxplotcolumn_.impositionboxplotcolumn.html" class="tsd-signature-type">ImpositionBoxPlotColumn</a>
 									</li>
 								</ul>
 							</li>
@@ -102,7 +102,7 @@
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
 					<li><a href="../interfaces/_internal_aeventdispatcher_.ieventhandler.html" class="tsd-signature-type">IEventHandler</a></li>
-					<li><a href="../interfaces/_model_column_.icolumnparent.html" class="tsd-signature-type">IColumnParent</a></li>
+					<li><a href="../interfaces/_model_interfaces_.icolumnparent.html" class="tsd-signature-type">IColumnParent</a></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -129,9 +129,9 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#desc" class="tsd-kind-icon">desc</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#parent" class="tsd-kind-icon">parent</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_model_compositecolumn_.compositecolumn.html#default_color" class="tsd-kind-icon">DEFAULT_<wbr>COLOR</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_model_compositecolumn_.compositecolumn.html#event_add_column" class="tsd-kind-icon">EVENT_<wbr>ADD_<wbr>COLUMN</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_model_compositecolumn_.compositecolumn.html#event_dirty" class="tsd-kind-icon">EVENT_<wbr>DIRTY</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_model_compositecolumn_.compositecolumn.html#event_dirty_caches" class="tsd-kind-icon">EVENT_<wbr>DIRTY_<wbr>CACHES</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_model_compositecolumn_.compositecolumn.html#event_dirty_header" class="tsd-kind-icon">EVENT_<wbr>DIRTY_<wbr>HEADER</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static"><a href="_model_compositecolumn_.compositecolumn.html#event_dirty_values" class="tsd-kind-icon">EVENT_<wbr>DIRTY_<wbr>VALUES</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_model_compositecolumn_.compositecolumn.html#event_filter_changed" class="tsd-kind-icon">EVENT_<wbr>FILTER_<wbr>CHANGED</a></li>
@@ -168,7 +168,7 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_model_compositecolumn_.compositecolumn.html#assignnewid" class="tsd-kind-icon">assign<wbr>New<wbr>Id</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_model_compositecolumn_.compositecolumn.html#at" class="tsd-kind-icon">at</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#attach" class="tsd-kind-icon">attach</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#compare" class="tsd-kind-icon">compare</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_model_compositecolumn_.compositecolumn.html#clearfilter" class="tsd-kind-icon">clear<wbr>Filter</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#detach" class="tsd-kind-icon">detach</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_model_compositecolumn_.compositecolumn.html#dump" class="tsd-kind-icon">dump</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="_model_compositecolumn_.compositecolumn.html#filter" class="tsd-kind-icon">filter</a></li>
@@ -186,7 +186,6 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#getwidth" class="tsd-kind-icon">get<wbr>Width</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#group" class="tsd-kind-icon">group</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#groupbyme" class="tsd-kind-icon">group<wbr>ByMe</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#groupcompare" class="tsd-kind-icon">group<wbr>Compare</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#groupsortbyme" class="tsd-kind-icon">group<wbr>Sort<wbr>ByMe</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#hide" class="tsd-kind-icon">hide</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_model_compositecolumn_.compositecolumn.html#indexof" class="tsd-kind-icon">index<wbr>Of</a></li>
@@ -197,7 +196,6 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#isgroupsortedbyme" class="tsd-kind-icon">is<wbr>Group<wbr>Sorted<wbr>ByMe</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#isgroupedby" class="tsd-kind-icon">is<wbr>Grouped<wbr>By</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_model_compositecolumn_.compositecolumn.html#isloaded" class="tsd-kind-icon">is<wbr>Loaded</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#ismissing" class="tsd-kind-icon">is<wbr>Missing</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#issortedbyme" class="tsd-kind-icon">is<wbr>Sorted<wbr>ByMe</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#isvisible" class="tsd-kind-icon">is<wbr>Visible</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#markdirty" class="tsd-kind-icon">mark<wbr>Dirty</a></li>
@@ -217,6 +215,10 @@
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#setwidthimpl" class="tsd-kind-icon">set<wbr>Width<wbr>Impl</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#show" class="tsd-kind-icon">show</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#sortbyme" class="tsd-kind-icon">sort<wbr>ByMe</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#tocomparegroupvalue" class="tsd-kind-icon">to<wbr>Compare<wbr>Group<wbr>Value</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#tocomparegroupvaluetype" class="tsd-kind-icon">to<wbr>Compare<wbr>Group<wbr>Value<wbr>Type</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#tocomparevalue" class="tsd-kind-icon">to<wbr>Compare<wbr>Value</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#tocomparevaluetype" class="tsd-kind-icon">to<wbr>Compare<wbr>Value<wbr>Type</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#togglemygroupsorting" class="tsd-kind-icon">toggle<wbr>MyGroup<wbr>Sorting</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_model_compositecolumn_.compositecolumn.html#togglemysorting" class="tsd-kind-icon">toggle<wbr>MySorting</a></li>
 							</ul>
@@ -238,7 +240,7 @@
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#constructor">constructor</a></p>
 								<p>Overrides <a href="_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_internal_aeventdispatcher_.aeventdispatcher.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L167">model/Column.ts:167</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L126">model/Column.ts:126</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -267,7 +269,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L24">model/CompositeColumn.ts:24</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L20">model/CompositeColumn.ts:20</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -293,7 +295,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L17">model/CompositeColumn.ts:17</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L13">model/CompositeColumn.ts:13</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -319,7 +321,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L31">model/CompositeColumn.ts:31</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L27">model/CompositeColumn.ts:27</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -348,7 +350,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L38">model/CompositeColumn.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L34">model/CompositeColumn.ts:34</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -374,29 +376,18 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#desc">desc</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L169">model/Column.ts:169</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L128">model/Column.ts:128</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 					<a name="parent" class="tsd-anchor"></a>
 					<h3>parent</h3>
-					<div class="tsd-signature tsd-kind-icon">parent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_column_.icolumnparent.html" class="tsd-signature-type">IColumnParent</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
+					<div class="tsd-signature tsd-kind-icon">parent<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_interfaces_.icolumnparent.html" class="tsd-signature-type">IColumnParent</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol"> =&nbsp;null</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#parent">parent</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L161">model/Column.ts:161</a></li>
-						</ul>
-					</aside>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-					<a name="default_color" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagStatic">Static</span> DEFAULT_<wbr>COLOR</h3>
-					<div class="tsd-signature tsd-kind-icon">DEFAULT_<wbr>COLOR<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"#C1C1C1"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;#C1C1C1&quot;</span></div>
-					<aside class="tsd-sources">
-						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#default_color">DEFAULT_COLOR</a></p>
-						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L128">model/Column.ts:128</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L120">model/Column.ts:120</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -406,7 +397,7 @@
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>ADD_<wbr>COLUMN<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"addColumn"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;addColumn&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L47">model/CompositeColumn.ts:47</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L43">model/CompositeColumn.ts:43</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -417,7 +408,18 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_dirty">EVENT_DIRTY</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L138">model/Column.ts:138</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L96">model/Column.ts:96</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+					<a name="event_dirty_caches" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>DIRTY_<wbr>CACHES</h3>
+					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>DIRTY_<wbr>CACHES<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"dirtyCaches"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;dirtyCaches&quot;</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_dirty_caches">EVENT_DIRTY_CACHES</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L99">model/Column.ts:99</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -428,7 +430,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_dirty_header">EVENT_DIRTY_HEADER</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L139">model/Column.ts:139</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L97">model/Column.ts:97</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -439,7 +441,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_dirty_values">EVENT_DIRTY_VALUES</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L140">model/Column.ts:140</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L98">model/Column.ts:98</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -449,7 +451,7 @@
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>FILTER_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"filterChanged"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;filterChanged&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L46">model/CompositeColumn.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L42">model/CompositeColumn.ts:42</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -460,7 +462,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_group_renderer_type_changed">EVENT_GROUP_RENDERER_TYPE_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L142">model/Column.ts:142</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L101">model/Column.ts:101</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -471,7 +473,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_label_changed">EVENT_LABEL_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L136">model/Column.ts:136</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L94">model/Column.ts:94</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -482,7 +484,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_metadata_changed">EVENT_METADATA_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L137">model/Column.ts:137</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L95">model/Column.ts:95</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -492,7 +494,7 @@
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>MOVE_<wbr>COLUMN<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"moveColumn"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;moveColumn&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L48">model/CompositeColumn.ts:48</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L44">model/CompositeColumn.ts:44</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -502,7 +504,7 @@
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>REMOVE_<wbr>COLUMN<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"removeColumn"</span><span class="tsd-signature-symbol"> =&nbsp;&quot;removeColumn&quot;</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L49">model/CompositeColumn.ts:49</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L45">model/CompositeColumn.ts:45</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -513,7 +515,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_renderer_type_changed">EVENT_RENDERER_TYPE_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L141">model/Column.ts:141</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L100">model/Column.ts:100</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -524,7 +526,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_summary_renderer_type_changed">EVENT_SUMMARY_RENDERER_TYPE_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L143">model/Column.ts:143</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L102">model/Column.ts:102</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -535,7 +537,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_visibility_changed">EVENT_VISIBILITY_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L144">model/Column.ts:144</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L103">model/Column.ts:103</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -546,7 +548,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#event_width_changed">EVENT_WIDTH_CHANGED</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L135">model/Column.ts:135</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L93">model/Column.ts:93</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -557,7 +559,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#flat_all_columns">FLAT_ALL_COLUMNS</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L133">model/Column.ts:133</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L91">model/Column.ts:91</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -570,7 +572,7 @@
 					<div class="tsd-signature tsd-kind-icon">can<wbr>Just<wbr>Add<wbr>Numbers<span class="tsd-signature-symbol">:</span> </div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L229">model/CompositeColumn.ts:229</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L226">model/CompositeColumn.ts:226</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -580,7 +582,7 @@
 					<div class="tsd-signature tsd-kind-icon">children<span class="tsd-signature-symbol">:</span> </div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L81">model/CompositeColumn.ts:81</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L78">model/CompositeColumn.ts:78</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -591,7 +593,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#description">description</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L204">model/Column.ts:204</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L164">model/Column.ts:164</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -602,7 +604,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#fixed">fixed</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L184">model/Column.ts:184</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L144">model/Column.ts:144</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -611,10 +613,10 @@
 					<h3>fqid</h3>
 					<div class="tsd-signature tsd-kind-icon">fqid<span class="tsd-signature-symbol">:</span> </div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_column_.icolumnparent.html">IColumnParent</a>.<a href="../interfaces/_model_column_.icolumnparent.html#fqid">fqid</a></p>
+						<p>Implementation of <a href="../interfaces/_model_interfaces_.icolumnparent.html">IColumnParent</a>.<a href="../interfaces/_model_interfaces_.icolumnparent.html#fqid">fqid</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#fqid">fqid</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L212">model/Column.ts:212</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L172">model/Column.ts:172</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -623,10 +625,10 @@
 					<h3>fqpath</h3>
 					<div class="tsd-signature tsd-kind-icon">fqpath<span class="tsd-signature-symbol">:</span> </div>
 					<aside class="tsd-sources">
-						<p>Implementation of <a href="../interfaces/_model_column_.icolumnparent.html">IColumnParent</a>.<a href="../interfaces/_model_column_.icolumnparent.html#fqpath">fqpath</a></p>
+						<p>Implementation of <a href="../interfaces/_model_interfaces_.icolumnparent.html">IColumnParent</a>.<a href="../interfaces/_model_interfaces_.icolumnparent.html#fqpath">fqpath</a></p>
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#fqpath">fqpath</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L216">model/Column.ts:216</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L176">model/Column.ts:176</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -637,7 +639,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#frozen">frozen</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L188">model/Column.ts:188</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L148">model/Column.ts:148</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -648,7 +650,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#id">id</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L192">model/Column.ts:192</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L152">model/Column.ts:152</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -659,7 +661,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#label">label</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L200">model/Column.ts:200</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L160">model/Column.ts:160</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -669,7 +671,7 @@
 					<div class="tsd-signature tsd-kind-icon">length<span class="tsd-signature-symbol">:</span> </div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L85">model/CompositeColumn.ts:85</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L82">model/CompositeColumn.ts:82</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -687,7 +689,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#assignnewid">assignNewId</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L76">model/CompositeColumn.ts:76</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L73">model/CompositeColumn.ts:73</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -721,9 +723,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_column_.icolumnparent.html">IColumnParent</a>.<a href="../interfaces/_model_column_.icolumnparent.html#at">at</a></p>
+								<p>Implementation of <a href="../interfaces/_model_interfaces_.icolumnparent.html">IColumnParent</a>.<a href="../interfaces/_model_interfaces_.icolumnparent.html#at">at</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L172">model/CompositeColumn.ts:172</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L169">model/CompositeColumn.ts:169</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -740,50 +742,41 @@
 					<a name="attach" class="tsd-anchor"></a>
 					<h3>attach</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">attach<span class="tsd-signature-symbol">(</span>parent<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_column_.icolumnparent.html" class="tsd-signature-type">IColumnParent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">attach<span class="tsd-signature-symbol">(</span>parent<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.icolumnparent.html" class="tsd-signature-type">IColumnParent</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#attach">attach</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L415">model/Column.ts:415</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L377">model/Column.ts:377</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>parent: <a href="../interfaces/_model_column_.icolumnparent.html" class="tsd-signature-type">IColumnParent</a></h5>
+									<h5>parent: <a href="../interfaces/_model_interfaces_.icolumnparent.html" class="tsd-signature-type">IColumnParent</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="compare" class="tsd-anchor"></a>
-					<h3>compare</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">compare<span class="tsd-signature-symbol">(</span>_a<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a>, _b<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+					<a name="clearfilter" class="tsd-anchor"></a>
+					<h3>clear<wbr>Filter</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+						<li class="tsd-signature tsd-kind-icon">clear<wbr>Filter<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#compare">compare</a></p>
+								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#clearfilter">clearFilter</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L537">model/Column.ts:537</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L214">model/CompositeColumn.ts:214</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>_a: <a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a></h5>
-								</li>
-								<li>
-									<h5>_b: <a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -798,7 +791,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#detach">detach</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L422">model/Column.ts:422</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L384">model/Column.ts:384</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -816,7 +809,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#dump">dump</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L108">model/CompositeColumn.ts:108</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L105">model/CompositeColumn.ts:105</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -858,7 +851,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#filter">filter</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L221">model/CompositeColumn.ts:221</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L218">model/CompositeColumn.ts:218</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -880,10 +873,10 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_column_.icolumnparent.html">IColumnParent</a>.<a href="../interfaces/_model_column_.icolumnparent.html#findmyranker">findMyRanker</a></p>
+								<p>Implementation of <a href="../interfaces/_model_interfaces_.icolumnparent.html">IColumnParent</a>.<a href="../interfaces/_model_interfaces_.icolumnparent.html#findmyranker">findMyRanker</a></p>
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#findmyranker">findMyRanker</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L442">model/Column.ts:442</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L404">model/Column.ts:404</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="_model_ranking_.ranking.html" class="tsd-signature-type">Ranking</a>
@@ -898,20 +891,20 @@
 					<a name="flatten" class="tsd-anchor"></a>
 					<h3>flatten</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">flatten<span class="tsd-signature-symbol">(</span>r<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_column_.iflatcolumn.html" class="tsd-signature-type">IFlatColumn</a><span class="tsd-signature-symbol">[]</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, levelsToGo<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, padding<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+						<li class="tsd-signature tsd-kind-icon">flatten<span class="tsd-signature-symbol">(</span>r<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.iflatcolumn.html" class="tsd-signature-type">IFlatColumn</a><span class="tsd-signature-symbol">[]</span>, offset<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, levelsToGo<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span>, padding<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#flatten">flatten</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L89">model/CompositeColumn.ts:89</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L86">model/CompositeColumn.ts:86</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>r: <a href="../interfaces/_model_column_.iflatcolumn.html" class="tsd-signature-type">IFlatColumn</a><span class="tsd-signature-symbol">[]</span></h5>
+									<h5>r: <a href="../interfaces/_model_interfaces_.iflatcolumn.html" class="tsd-signature-type">IFlatColumn</a><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 								<li>
 									<h5>offset: <span class="tsd-signature-type">number</span></h5>
@@ -938,7 +931,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getcolor">getColor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L523">model/Column.ts:523</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L490">model/Column.ts:490</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -962,7 +955,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getexportvalue">getExportValue</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L519">model/Column.ts:519</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L486">model/Column.ts:486</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -989,7 +982,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getgrouprenderer">getGroupRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L585">model/Column.ts:585</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L553">model/Column.ts:553</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -1007,7 +1000,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getlabel">getLabel</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L502">model/Column.ts:502</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L468">model/Column.ts:468</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1025,17 +1018,17 @@
 					<a name="getmetadata" class="tsd-anchor"></a>
 					<h3>get<wbr>Meta<wbr>Data</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Meta<wbr>Data<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_column_.icolumnmetadata.html" class="tsd-signature-type">IColumnMetaData</a><span class="tsd-signature-symbol">&gt;</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Meta<wbr>Data<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_interfaces_.icolumnmetadata.html" class="tsd-signature-type">IColumnMetaData</a><span class="tsd-signature-symbol">&gt;</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getmetadata">getMetaData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L308">model/Column.ts:308</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L270">model/Column.ts:270</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_column_.icolumnmetadata.html" class="tsd-signature-type">IColumnMetaData</a><span class="tsd-signature-symbol">&gt;</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_interfaces_.icolumnmetadata.html" class="tsd-signature-type">IColumnMetaData</a><span class="tsd-signature-symbol">&gt;</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1050,7 +1043,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getrenderer">getRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L581">model/Column.ts:581</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L549">model/Column.ts:549</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -1068,7 +1061,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getsummaryrenderer">getSummaryRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L589">model/Column.ts:589</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L557">model/Column.ts:557</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
@@ -1079,14 +1072,14 @@
 					<a name="getvalue" class="tsd-anchor"></a>
 					<h3>get<wbr>Value</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Value<span class="tsd-signature-symbol">(</span>_row<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Value<span class="tsd-signature-symbol">(</span>_row<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getvalue">getValue</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L511">model/Column.ts:511</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L478">model/Column.ts:478</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1095,7 +1088,10 @@
 									<h5>_row: <a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a></h5>
 								</li>
 							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span>
+								<span class="tsd-signature-symbol"> | </span>
+								<span class="tsd-signature-type">null</span>
+							</h4>
 							<p>the value of this column at the specified row</p>
 						</li>
 					</ul>
@@ -1111,7 +1107,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getvisible">getVisible</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L258">model/Column.ts:258</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L219">model/Column.ts:219</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -1129,7 +1125,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#getwidth">getWidth</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L242">model/Column.ts:242</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L203">model/Column.ts:203</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -1140,20 +1136,23 @@
 					<a name="group" class="tsd-anchor"></a>
 					<h3>group</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">group<span class="tsd-signature-symbol">(</span>_row<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.igroup.html" class="tsd-signature-type">IGroup</a></li>
+						<li class="tsd-signature tsd-kind-icon">group<span class="tsd-signature-symbol">(</span>_row<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a>, _valueCache<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.igroup.html" class="tsd-signature-type">IGroup</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#group">group</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L546">model/Column.ts:546</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L507">model/Column.ts:507</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>_row: <a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> _valueCache: <span class="tsd-signature-type">any</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_model_interfaces_.igroup.html" class="tsd-signature-type">IGroup</a></h4>
@@ -1171,37 +1170,10 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#groupbyme">groupByMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L326">model/Column.ts:326</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L288">model/Column.ts:288</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="groupcompare" class="tsd-anchor"></a>
-					<h3>group<wbr>Compare</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">group<wbr>Compare<span class="tsd-signature-symbol">(</span>a<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.igroupdata.html" class="tsd-signature-type">IGroupData</a>, b<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.igroupdata.html" class="tsd-signature-type">IGroupData</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#groupcompare">groupCompare</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L556">model/Column.ts:556</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>a: <a href="../interfaces/_model_interfaces_.igroupdata.html" class="tsd-signature-type">IGroupData</a></h5>
-								</li>
-								<li>
-									<h5>b: <a href="../interfaces/_model_interfaces_.igroupdata.html" class="tsd-signature-type">IGroupData</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -1216,7 +1188,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#groupsortbyme">groupSortByMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L378">model/Column.ts:378</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L340">model/Column.ts:340</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1243,7 +1215,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#hide">hide</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L246">model/Column.ts:246</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L207">model/Column.ts:207</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1259,9 +1231,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_column_.icolumnparent.html">IColumnParent</a>.<a href="../interfaces/_model_column_.icolumnparent.html#indexof">indexOf</a></p>
+								<p>Implementation of <a href="../interfaces/_model_interfaces_.icolumnparent.html">IColumnParent</a>.<a href="../interfaces/_model_interfaces_.icolumnparent.html#indexof">indexOf</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L176">model/CompositeColumn.ts:176</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L173">model/CompositeColumn.ts:173</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1284,7 +1256,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L130">model/CompositeColumn.ts:130</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L127">model/CompositeColumn.ts:127</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1312,9 +1284,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_column_.icolumnparent.html">IColumnParent</a>.<a href="../interfaces/_model_column_.icolumnparent.html#insertafter">insertAfter</a></p>
+								<p>Implementation of <a href="../interfaces/_model_interfaces_.icolumnparent.html">IColumnParent</a>.<a href="../interfaces/_model_interfaces_.icolumnparent.html#insertafter">insertAfter</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L180">model/CompositeColumn.ts:180</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L177">model/CompositeColumn.ts:177</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1344,7 +1316,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#insertafterme">insertAfterMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L431">model/Column.ts:431</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L393">model/Column.ts:393</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1369,7 +1341,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#isfiltered">isFiltered</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L217">model/CompositeColumn.ts:217</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L210">model/CompositeColumn.ts:210</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -1387,7 +1359,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#isgroupsortedbyme">isGroupSortedByMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L394">model/Column.ts:394</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L356">model/Column.ts:356</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
@@ -1407,7 +1379,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#isgroupedby">isGroupedBy</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L338">model/Column.ts:338</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L300">model/Column.ts:300</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -1424,33 +1396,9 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L225">model/CompositeColumn.ts:225</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L222">model/CompositeColumn.ts:222</a></li>
 								</ul>
 							</aside>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="ismissing" class="tsd-anchor"></a>
-					<h3>is<wbr>Missing</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">is<wbr>Missing<span class="tsd-signature-symbol">(</span>row<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#ismissing">isMissing</a></p>
-								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L527">model/Column.ts:527</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>row: <a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a></h5>
-								</li>
-							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
 						</li>
 					</ul>
@@ -1466,7 +1414,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#issortedbyme">isSortedByMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L374">model/Column.ts:374</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L336">model/Column.ts:336</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">object</span></h4>
@@ -1486,7 +1434,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#isvisible">isVisible</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L254">model/Column.ts:254</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L215">model/Column.ts:215</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -1504,7 +1452,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#markdirty">markDirty</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L649">model/Column.ts:649</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L589">model/Column.ts:589</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1527,7 +1475,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L139">model/CompositeColumn.ts:139</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L136">model/CompositeColumn.ts:136</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1555,9 +1503,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_column_.icolumnparent.html">IColumnParent</a>.<a href="../interfaces/_model_column_.icolumnparent.html#moveafter">moveAfter</a></p>
+								<p>Implementation of <a href="../interfaces/_model_interfaces_.icolumnparent.html">IColumnParent</a>.<a href="../interfaces/_model_interfaces_.icolumnparent.html#moveafter">moveAfter</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L188">model/CompositeColumn.ts:188</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L185">model/CompositeColumn.ts:185</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1590,6 +1538,7 @@
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"dirty"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html#dirty" class="tsd-signature-type">dirty</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"dirtyHeader"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html#dirtyheader" class="tsd-signature-type">dirtyHeader</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"dirtyValues"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html#dirtyvalues" class="tsd-signature-type">dirtyValues</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"dirtyCaches"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html#dirtycaches" class="tsd-signature-type">dirtyCaches</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"rendererTypeChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html#renderertypechanged" class="tsd-signature-type">rendererTypeChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"groupRendererChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html#grouprendererchanged" class="tsd-signature-type">groupRendererChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"summaryRendererChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html#summaryrendererchanged" class="tsd-signature-type">summaryRendererChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
@@ -1601,7 +1550,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L57">model/CompositeColumn.ts:57</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L53">model/CompositeColumn.ts:53</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1619,7 +1568,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L58">model/CompositeColumn.ts:58</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L54">model/CompositeColumn.ts:54</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1637,7 +1586,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L59">model/CompositeColumn.ts:59</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L55">model/CompositeColumn.ts:55</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1655,7 +1604,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L60">model/CompositeColumn.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L56">model/CompositeColumn.ts:56</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1673,7 +1622,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L61">model/CompositeColumn.ts:61</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L57">model/CompositeColumn.ts:57</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1691,7 +1640,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L62">model/CompositeColumn.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L58">model/CompositeColumn.ts:58</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1709,7 +1658,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L63">model/CompositeColumn.ts:63</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L59">model/CompositeColumn.ts:59</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1727,7 +1676,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L64">model/CompositeColumn.ts:64</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L60">model/CompositeColumn.ts:60</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1745,7 +1694,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L65">model/CompositeColumn.ts:65</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L61">model/CompositeColumn.ts:61</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1763,7 +1712,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L66">model/CompositeColumn.ts:66</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L62">model/CompositeColumn.ts:62</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1781,7 +1730,25 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L67">model/CompositeColumn.ts:67</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L63">model/CompositeColumn.ts:63</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">"dirtyCaches"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="_model_column_.column.html#dirtycaches" class="tsd-signature-type">dirtyCaches</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#on">on</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L64">model/CompositeColumn.ts:64</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1799,7 +1766,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L68">model/CompositeColumn.ts:68</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L65">model/CompositeColumn.ts:65</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1817,7 +1784,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L69">model/CompositeColumn.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L66">model/CompositeColumn.ts:66</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1835,7 +1802,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L70">model/CompositeColumn.ts:70</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L67">model/CompositeColumn.ts:67</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1854,7 +1821,7 @@
 								<p>Implementation of <a href="../interfaces/_internal_aeventdispatcher_.ieventhandler.html">IEventHandler</a>.<a href="../interfaces/_internal_aeventdispatcher_.ieventhandler.html#on">on</a></p>
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L71">model/CompositeColumn.ts:71</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L68">model/CompositeColumn.ts:68</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1880,7 +1847,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L168">model/CompositeColumn.ts:168</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L165">model/CompositeColumn.ts:165</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1905,9 +1872,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_model_column_.icolumnparent.html">IColumnParent</a>.<a href="../interfaces/_model_column_.icolumnparent.html#remove">remove</a></p>
+								<p>Implementation of <a href="../interfaces/_model_interfaces_.icolumnparent.html">IColumnParent</a>.<a href="../interfaces/_model_interfaces_.icolumnparent.html#remove">remove</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L197">model/CompositeColumn.ts:197</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L194">model/CompositeColumn.ts:194</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1931,7 +1898,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#removeme">removeMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L402">model/Column.ts:402</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L364">model/Column.ts:364</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -1943,14 +1910,14 @@
 					<a name="restore" class="tsd-anchor"></a>
 					<h3>restore</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
-						<li class="tsd-signature tsd-kind-icon">restore<span class="tsd-signature-symbol">(</span>dump<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, factory<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">restore<span class="tsd-signature-symbol">(</span>dump<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, factory<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.itypefactory.html" class="tsd-signature-type">ITypeFactory</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#restore">restore</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeColumn.ts#L114">model/CompositeColumn.ts:114</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeColumn.ts#L111">model/CompositeColumn.ts:111</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -1959,28 +1926,7 @@
 									<h5>dump: <span class="tsd-signature-type">any</span></h5>
 								</li>
 								<li>
-									<h5>factory: <span class="tsd-signature-type">function</span></h5>
-									<ul class="tsd-parameters">
-										<li class="tsd-parameter-siganture">
-											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
-												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>dump<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html" class="tsd-signature-type">Column</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
-											</ul>
-											<ul class="tsd-descriptions">
-												<li class="tsd-description">
-													<h4 class="tsd-parameters-title">Parameters</h4>
-													<ul class="tsd-parameters">
-														<li>
-															<h5>dump: <span class="tsd-signature-type">any</span></h5>
-														</li>
-													</ul>
-													<h4 class="tsd-returns-title">Returns <a href="_model_column_.column.html" class="tsd-signature-type">Column</a>
-														<span class="tsd-signature-symbol"> | </span>
-														<span class="tsd-signature-type">null</span>
-													</h4>
-												</li>
-											</ul>
-										</li>
-									</ul>
+									<h5>factory: <a href="../interfaces/_model_interfaces_.itypefactory.html" class="tsd-signature-type">ITypeFactory</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -1998,7 +1944,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setgrouprenderer">setGroupRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L608">model/Column.ts:608</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L569">model/Column.ts:569</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2015,20 +1961,20 @@
 					<a name="setmetadata" class="tsd-anchor"></a>
 					<h3>set<wbr>Meta<wbr>Data</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">set<wbr>Meta<wbr>Data<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_column_.icolumnmetadata.html" class="tsd-signature-type">IColumnMetaData</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Meta<wbr>Data<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_interfaces_.icolumnmetadata.html" class="tsd-signature-type">IColumnMetaData</a><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setmetadata">setMetaData</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L294">model/Column.ts:294</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L255">model/Column.ts:255</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>value: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_column_.icolumnmetadata.html" class="tsd-signature-type">IColumnMetaData</a><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>value: <span class="tsd-signature-type">Readonly</span><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_interfaces_.icolumnmetadata.html" class="tsd-signature-type">IColumnMetaData</a><span class="tsd-signature-symbol">&gt;</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2046,7 +1992,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setrenderer">setRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L593">model/Column.ts:593</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L561">model/Column.ts:561</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2070,7 +2016,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setsummaryrenderer">setSummaryRenderer</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L623">model/Column.ts:623</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L577">model/Column.ts:577</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2094,7 +2040,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setvisible">setVisible</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L262">model/Column.ts:262</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L223">model/Column.ts:223</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2118,7 +2064,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setwidth">setWidth</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L283">model/Column.ts:283</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L244">model/Column.ts:244</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2142,7 +2088,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#setwidthimpl">setWidthImpl</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L290">model/Column.ts:290</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L251">model/Column.ts:251</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2166,7 +2112,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#show">show</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L250">model/Column.ts:250</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L211">model/Column.ts:211</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -2184,7 +2130,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#sortbyme">sortByMe</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L318">model/Column.ts:318</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L280">model/Column.ts:280</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -2202,6 +2148,111 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tocomparegroupvalue" class="tsd-anchor"></a>
+					<h3>to<wbr>Compare<wbr>Group<wbr>Value</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Compare<wbr>Group<wbr>Value<span class="tsd-signature-symbol">(</span>_rows<span class="tsd-signature-symbol">: </span><a href="../interfaces/_internal_interable_.isequence.html" class="tsd-signature-type">ISequence</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a><span class="tsd-signature-symbol">&gt;</span>, group<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.igroup.html" class="tsd-signature-type">IGroup</a>, _valueCache<span class="tsd-signature-symbol">: </span><a href="../interfaces/_internal_interable_.isequence.html" class="tsd-signature-type">ISequence</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_model_interfaces_.html#icomparevalue" class="tsd-signature-type">ICompareValue</a><span class="tsd-signature-symbol"> | </span><a href="../modules/_model_interfaces_.html#icomparevalue" class="tsd-signature-type">ICompareValue</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#tocomparegroupvalue">toCompareGroupValue</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L511">model/Column.ts:511</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>_rows: <a href="../interfaces/_internal_interable_.isequence.html" class="tsd-signature-type">ISequence</a><span class="tsd-signature-symbol">&lt;</span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+								<li>
+									<h5>group: <a href="../interfaces/_model_interfaces_.igroup.html" class="tsd-signature-type">IGroup</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> _valueCache: <a href="../interfaces/_internal_interable_.isequence.html" class="tsd-signature-type">ISequence</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">&gt;</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_model_interfaces_.html#icomparevalue" class="tsd-signature-type">ICompareValue</a>
+								<span class="tsd-signature-symbol"> | </span>
+								<a href="../modules/_model_interfaces_.html#icomparevalue" class="tsd-signature-type">ICompareValue</a><span class="tsd-signature-symbol">[]</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tocomparegroupvaluetype" class="tsd-anchor"></a>
+					<h3>to<wbr>Compare<wbr>Group<wbr>Value<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Compare<wbr>Group<wbr>Value<wbr>Type<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/_model_interfaces_.ecomparevaluetype.html" class="tsd-signature-type">ECompareValueType</a><span class="tsd-signature-symbol"> | </span><a href="../enums/_model_interfaces_.ecomparevaluetype.html" class="tsd-signature-type">ECompareValueType</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#tocomparegroupvaluetype">toCompareGroupValueType</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L515">model/Column.ts:515</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../enums/_model_interfaces_.ecomparevaluetype.html" class="tsd-signature-type">ECompareValueType</a>
+								<span class="tsd-signature-symbol"> | </span>
+								<a href="../enums/_model_interfaces_.ecomparevaluetype.html" class="tsd-signature-type">ECompareValueType</a><span class="tsd-signature-symbol">[]</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tocomparevalue" class="tsd-anchor"></a>
+					<h3>to<wbr>Compare<wbr>Value</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Compare<wbr>Value<span class="tsd-signature-symbol">(</span>_row<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a>, _valueCache<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../modules/_model_interfaces_.html#icomparevalue" class="tsd-signature-type">ICompareValue</a><span class="tsd-signature-symbol"> | </span><a href="../modules/_model_interfaces_.html#icomparevalue" class="tsd-signature-type">ICompareValue</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#tocomparevalue">toCompareValue</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L494">model/Column.ts:494</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>_row: <a href="../interfaces/_model_interfaces_.idatarow.html" class="tsd-signature-type">IDataRow</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> _valueCache: <span class="tsd-signature-type">any</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../modules/_model_interfaces_.html#icomparevalue" class="tsd-signature-type">ICompareValue</a>
+								<span class="tsd-signature-symbol"> | </span>
+								<a href="../modules/_model_interfaces_.html#icomparevalue" class="tsd-signature-type">ICompareValue</a><span class="tsd-signature-symbol">[]</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+					<a name="tocomparevaluetype" class="tsd-anchor"></a>
+					<h3>to<wbr>Compare<wbr>Value<wbr>Type</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Compare<wbr>Value<wbr>Type<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../enums/_model_interfaces_.ecomparevaluetype.html" class="tsd-signature-type">ECompareValueType</a><span class="tsd-signature-symbol"> | </span><a href="../enums/_model_interfaces_.ecomparevaluetype.html" class="tsd-signature-type">ECompareValueType</a><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#tocomparevaluetype">toCompareValueType</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L498">model/Column.ts:498</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <a href="../enums/_model_interfaces_.ecomparevaluetype.html" class="tsd-signature-type">ECompareValueType</a>
+								<span class="tsd-signature-symbol"> | </span>
+								<a href="../enums/_model_interfaces_.ecomparevaluetype.html" class="tsd-signature-type">ECompareValueType</a><span class="tsd-signature-symbol">[]</span>
+							</h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 					<a name="togglemygroupsorting" class="tsd-anchor"></a>
 					<h3>toggle<wbr>MyGroup<wbr>Sorting</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
@@ -2212,7 +2263,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#togglemygroupsorting">toggleMyGroupSorting</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L386">model/Column.ts:386</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L348">model/Column.ts:348</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -2230,7 +2281,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="_model_column_.column.html">Column</a>.<a href="_model_column_.column.html#togglemysorting">toggleMySorting</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/Column.ts#L350">model/Column.ts:350</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/Column.ts#L312">model/Column.ts:312</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -2279,14 +2330,14 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited">
 								<a href="_model_compositecolumn_.compositecolumn.html#parent" class="tsd-kind-icon">parent</a>
 							</li>
-							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
-								<a href="_model_compositecolumn_.compositecolumn.html#default_color" class="tsd-kind-icon">DEFAULT_<wbr>COLOR</a>
-							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
 								<a href="_model_compositecolumn_.compositecolumn.html#event_add_column" class="tsd-kind-icon">EVENT_<wbr>ADD_<wbr>COLUMN</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 								<a href="_model_compositecolumn_.compositecolumn.html#event_dirty" class="tsd-kind-icon">EVENT_<wbr>DIRTY</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
+								<a href="_model_compositecolumn_.compositecolumn.html#event_dirty_caches" class="tsd-kind-icon">EVENT_<wbr>DIRTY_<wbr>CACHES</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-inherited tsd-is-static">
 								<a href="_model_compositecolumn_.compositecolumn.html#event_dirty_header" class="tsd-kind-icon">EVENT_<wbr>DIRTY_<wbr>HEADER</a>
@@ -2366,8 +2417,8 @@
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_model_compositecolumn_.compositecolumn.html#attach" class="tsd-kind-icon">attach</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="_model_compositecolumn_.compositecolumn.html#compare" class="tsd-kind-icon">compare</a>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
+								<a href="_model_compositecolumn_.compositecolumn.html#clearfilter" class="tsd-kind-icon">clear<wbr>Filter</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_model_compositecolumn_.compositecolumn.html#detach" class="tsd-kind-icon">detach</a>
@@ -2421,9 +2472,6 @@
 								<a href="_model_compositecolumn_.compositecolumn.html#groupbyme" class="tsd-kind-icon">group<wbr>ByMe</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="_model_compositecolumn_.compositecolumn.html#groupcompare" class="tsd-kind-icon">group<wbr>Compare</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_model_compositecolumn_.compositecolumn.html#groupsortbyme" class="tsd-kind-icon">group<wbr>Sort<wbr>ByMe</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
@@ -2452,9 +2500,6 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_model_compositecolumn_.compositecolumn.html#isloaded" class="tsd-kind-icon">is<wbr>Loaded</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="_model_compositecolumn_.compositecolumn.html#ismissing" class="tsd-kind-icon">is<wbr>Missing</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_model_compositecolumn_.compositecolumn.html#issortedbyme" class="tsd-kind-icon">is<wbr>Sorted<wbr>ByMe</a>
@@ -2514,6 +2559,18 @@
 								<a href="_model_compositecolumn_.compositecolumn.html#sortbyme" class="tsd-kind-icon">sort<wbr>ByMe</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_model_compositecolumn_.compositecolumn.html#tocomparegroupvalue" class="tsd-kind-icon">to<wbr>Compare<wbr>Group<wbr>Value</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_model_compositecolumn_.compositecolumn.html#tocomparegroupvaluetype" class="tsd-kind-icon">to<wbr>Compare<wbr>Group<wbr>Value<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_model_compositecolumn_.compositecolumn.html#tocomparevalue" class="tsd-kind-icon">to<wbr>Compare<wbr>Value</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
+								<a href="_model_compositecolumn_.compositecolumn.html#tocomparevaluetype" class="tsd-kind-icon">to<wbr>Compare<wbr>Value<wbr>Type</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_model_compositecolumn_.compositecolumn.html#togglemygroupsorting" class="tsd-kind-icon">toggle<wbr>MyGroup<wbr>Sorting</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
@@ -2523,12 +2580,6 @@
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
-						<a href="../interfaces/_model_compositecolumn_.imultilevelcolumn.html" class="tsd-kind-icon">IMulti<wbr>Level<wbr>Column</a>
-					</li>
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_model_compositecolumn_.html#ismultilevelcolumn" class="tsd-kind-icon">is<wbr>Multi<wbr>Level<wbr>Column</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
@@ -2546,7 +2597,6 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

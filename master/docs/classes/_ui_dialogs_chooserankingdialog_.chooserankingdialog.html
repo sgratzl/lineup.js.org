@@ -69,7 +69,7 @@
 				<h3>Hierarchy</h3>
 				<ul class="tsd-hierarchy">
 					<li>
-						<span class="tsd-signature-type">ADialog</span>
+						<span class="tsd-signature-type">APopup</span>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">ChooseRankingDialog</span>
@@ -98,13 +98,14 @@
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_ui_dialogs_chooserankingdialog_.chooserankingdialog.html#attachment" class="tsd-kind-icon">attachment</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_ui_dialogs_chooserankingdialog_.chooserankingdialog.html#autoclose" class="tsd-kind-icon">auto<wbr>Close</a></li>
 								<li class="tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited"><a href="_ui_dialogs_chooserankingdialog_.chooserankingdialog.html#level" class="tsd-kind-icon">level</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section tsd-is-inherited">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_ui_dialogs_chooserankingdialog_.chooserankingdialog.html#destroy" class="tsd-kind-icon">destroy</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_ui_dialogs_chooserankingdialog_.chooserankingdialog.html#cleanup" class="tsd-kind-icon">clean<wbr>Up</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_ui_dialogs_chooserankingdialog_.chooserankingdialog.html#equals" class="tsd-kind-icon">equals</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="_ui_dialogs_chooserankingdialog_.chooserankingdialog.html#open" class="tsd-kind-icon">open</a></li>
 							</ul>
@@ -123,9 +124,9 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Overrides ADialog.__constructor</p>
+								<p>Overrides APopup.__constructor</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/dialogs/ChooseRankingDialog.ts#L4">ui/dialogs/ChooseRankingDialog.ts:4</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/ChooseRankingDialog.ts#L6">ui/dialogs/ChooseRankingDialog.ts:6</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -151,7 +152,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from ADialog.node</p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/dialogs/ADialog.ts#L36">ui/dialogs/ADialog.ts:36</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/ADialog.ts#L51">ui/dialogs/ADialog.ts:51</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -165,7 +166,18 @@
 					<aside class="tsd-sources">
 						<p>Inherited from ADialog.attachment</p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/dialogs/ADialog.ts#L46">ui/dialogs/ADialog.ts:46</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/ADialog.ts#L64">ui/dialogs/ADialog.ts:64</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+					<a name="autoclose" class="tsd-anchor"></a>
+					<h3>auto<wbr>Close</h3>
+					<div class="tsd-signature tsd-kind-icon">auto<wbr>Close<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<p>Inherited from ADialog.autoClose</p>
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/ADialog.ts#L60">ui/dialogs/ADialog.ts:60</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -176,7 +188,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from ADialog.level</p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/dialogs/ADialog.ts#L50">ui/dialogs/ADialog.ts:50</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/ADialog.ts#L68">ui/dialogs/ADialog.ts:68</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -184,19 +196,25 @@
 			<section class="tsd-panel-group tsd-member-group tsd-is-inherited">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-					<a name="destroy" class="tsd-anchor"></a>
-					<h3>destroy</h3>
+					<a name="cleanup" class="tsd-anchor"></a>
+					<h3>clean<wbr>Up</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-						<li class="tsd-signature tsd-kind-icon">destroy<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">clean<wbr>Up<span class="tsd-signature-symbol">(</span>action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"cancel"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"confirm"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"handled"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Inherited from ADialog.destroy</p>
+								<p>Inherited from ADialog.cleanUp</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/dialogs/ADialog.ts#L147">ui/dialogs/ADialog.ts:147</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/ADialog.ts#L202">ui/dialogs/ADialog.ts:202</a></li>
 								</ul>
 							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>action: <span class="tsd-signature-type">"cancel"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"confirm"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"handled"</span></h5>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
@@ -212,7 +230,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ADialog.equals</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/dialogs/ADialog.ts#L56">ui/dialogs/ADialog.ts:56</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/ADialog.ts#L96">ui/dialogs/ADialog.ts:96</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -236,7 +254,7 @@
 							<aside class="tsd-sources">
 								<p>Inherited from ADialog.open</p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/dialogs/ADialog.ts#L60">ui/dialogs/ADialog.ts:60</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/dialogs/ADialog.ts#L108">ui/dialogs/ADialog.ts:108</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -273,10 +291,13 @@
 								<a href="_ui_dialogs_chooserankingdialog_.chooserankingdialog.html#attachment" class="tsd-kind-icon">attachment</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
+								<a href="_ui_dialogs_chooserankingdialog_.chooserankingdialog.html#autoclose" class="tsd-kind-icon">auto<wbr>Close</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class tsd-is-inherited">
 								<a href="_ui_dialogs_chooserankingdialog_.chooserankingdialog.html#level" class="tsd-kind-icon">level</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
-								<a href="_ui_dialogs_chooserankingdialog_.chooserankingdialog.html#destroy" class="tsd-kind-icon">destroy</a>
+								<a href="_ui_dialogs_chooserankingdialog_.chooserankingdialog.html#cleanup" class="tsd-kind-icon">clean<wbr>Up</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="_ui_dialogs_chooserankingdialog_.chooserankingdialog.html#equals" class="tsd-kind-icon">equals</a>
@@ -305,7 +326,6 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

@@ -84,8 +84,10 @@
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_rankingbuilder_.rankingbuilder.html#allcolumns" class="tsd-kind-icon">all<wbr>Columns</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_rankingbuilder_.rankingbuilder.html#build" class="tsd-kind-icon">build</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_rankingbuilder_.rankingbuilder.html#column" class="tsd-kind-icon">column</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_rankingbuilder_.rankingbuilder.html#composite" class="tsd-kind-icon">composite</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_rankingbuilder_.rankingbuilder.html#group" class="tsd-kind-icon">group</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_rankingbuilder_.rankingbuilder.html#groupby" class="tsd-kind-icon">group<wbr>By</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_rankingbuilder_.rankingbuilder.html#groupsortby" class="tsd-kind-icon">group<wbr>Sort<wbr>By</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_rankingbuilder_.rankingbuilder.html#impose" class="tsd-kind-icon">impose</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_rankingbuilder_.rankingbuilder.html#nested" class="tsd-kind-icon">nested</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="_builder_rankingbuilder_.rankingbuilder.html#rank" class="tsd-kind-icon">rank</a></li>
@@ -112,7 +114,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/RankingBuilder.ts#L267">builder/RankingBuilder.ts:267</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/RankingBuilder.ts#L291">builder/RankingBuilder.ts:291</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -129,7 +131,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/RankingBuilder.ts#L296">builder/RankingBuilder.ts:296</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/RankingBuilder.ts#L320">builder/RankingBuilder.ts:320</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -140,19 +142,19 @@
 					<a name="build" class="tsd-anchor"></a>
 					<h3>build</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">build<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ADataProvider</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_model_ranking_.ranking.html" class="tsd-signature-type">Ranking</a></li>
+						<li class="tsd-signature tsd-kind-icon">build<span class="tsd-signature-symbol">(</span>data<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">DataProvider</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_model_ranking_.ranking.html" class="tsd-signature-type">Ranking</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/RankingBuilder.ts#L301">builder/RankingBuilder.ts:301</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/RankingBuilder.ts#L325">builder/RankingBuilder.ts:325</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>data: <span class="tsd-signature-type">ADataProvider</span></h5>
+									<h5>data: <span class="tsd-signature-type">DataProvider</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="_model_ranking_.ranking.html" class="tsd-signature-type">Ranking</a></h4>
@@ -169,13 +171,39 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/RankingBuilder.ts#L95">builder/RankingBuilder.ts:95</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/RankingBuilder.ts#L113">builder/RankingBuilder.ts:113</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>column: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_builder_rankingbuilder_.iimposecolumnbuilder.html" class="tsd-signature-type">IImposeColumnBuilder</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_builder_rankingbuilder_.inestedbuilder.html" class="tsd-signature-type">INestedBuilder</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_builder_rankingbuilder_.iweightedsumbuilder.html" class="tsd-signature-type">IWeightedSumBuilder</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_builder_rankingbuilder_.ireducebuilder.html" class="tsd-signature-type">IReduceBuilder</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_builder_rankingbuilder_.iscriptedbuilder.html" class="tsd-signature-type">IScriptedBuilder</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="composite" class="tsd-anchor"></a>
+					<h3>composite</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">composite<span class="tsd-signature-symbol">(</span>desc<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_interfaces_.icolumndesc.html" class="tsd-signature-type">IColumnDesc</a>, columns<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/RankingBuilder.ts#L204">builder/RankingBuilder.ts:204</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>desc: <a href="../interfaces/_model_interfaces_.icolumndesc.html" class="tsd-signature-type">IColumnDesc</a></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> columns: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -192,7 +220,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/RankingBuilder.ts#L256">builder/RankingBuilder.ts:256</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/RankingBuilder.ts#L280">builder/RankingBuilder.ts:280</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -203,19 +231,45 @@
 					<a name="groupby" class="tsd-anchor"></a>
 					<h3>group<wbr>By</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">group<wbr>By<span class="tsd-signature-symbol">(</span>columns<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">group<wbr>By<span class="tsd-signature-symbol">(</span>columns<span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/RankingBuilder.ts#L77">builder/RankingBuilder.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/RankingBuilder.ts#L73">builder/RankingBuilder.ts:73</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5><span class="tsd-flag ts-flagRest">Rest</span> columns: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+									<h5><span class="tsd-flag ts-flagRest">Rest</span> columns: <span class="tsd-signature-symbol">(</span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">[]</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="groupsortby" class="tsd-anchor"></a>
+					<h3>group<wbr>Sort<wbr>By</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">group<wbr>Sort<wbr>By<span class="tsd-signature-symbol">(</span>column<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, asc<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"asc"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"desc"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/RankingBuilder.ts#L89">builder/RankingBuilder.ts:89</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>column: <span class="tsd-signature-type">string</span></h5>
+								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagDefault value">Default value</span> asc: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"asc"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"desc"</span><span class="tsd-signature-symbol"> =&nbsp;true</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -226,13 +280,13 @@
 					<a name="impose" class="tsd-anchor"></a>
 					<h3>impose</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">impose<span class="tsd-signature-symbol">(</span>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, numberColumn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, categoricalColumn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">impose<span class="tsd-signature-symbol">(</span>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, numberColumn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, colorColumn<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/RankingBuilder.ts#L151">builder/RankingBuilder.ts:151</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/RankingBuilder.ts#L168">builder/RankingBuilder.ts:168</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -244,7 +298,7 @@
 									<h5>numberColumn: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
-									<h5>categoricalColumn: <span class="tsd-signature-type">string</span></h5>
+									<h5>colorColumn: <span class="tsd-signature-type">string</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -261,7 +315,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/RankingBuilder.ts#L175">builder/RankingBuilder.ts:175</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/RankingBuilder.ts#L192">builder/RankingBuilder.ts:192</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -290,7 +344,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/RankingBuilder.ts#L278">builder/RankingBuilder.ts:278</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/RankingBuilder.ts#L302">builder/RankingBuilder.ts:302</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -307,7 +361,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/RankingBuilder.ts#L212">builder/RankingBuilder.ts:212</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/RankingBuilder.ts#L241">builder/RankingBuilder.ts:241</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -336,13 +390,13 @@
 					<a name="scripted" class="tsd-anchor"></a>
 					<h3>scripted</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">scripted<span class="tsd-signature-symbol">(</span>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, numberColumn1<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, numberColumn2<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, numberColumns<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">scripted<span class="tsd-signature-symbol">(</span>label<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, code<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, numberColumns<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/RankingBuilder.ts#L231">builder/RankingBuilder.ts:231</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/RankingBuilder.ts#L258">builder/RankingBuilder.ts:258</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -352,12 +406,6 @@
 								</li>
 								<li>
 									<h5>code: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>numberColumn1: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>numberColumn2: <span class="tsd-signature-type">string</span></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagRest">Rest</span> numberColumns: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
@@ -377,7 +425,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/RankingBuilder.ts#L245">builder/RankingBuilder.ts:245</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/RankingBuilder.ts#L269">builder/RankingBuilder.ts:269</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -394,7 +442,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/RankingBuilder.ts#L62">builder/RankingBuilder.ts:62</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/RankingBuilder.ts#L58">builder/RankingBuilder.ts:58</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -420,7 +468,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/RankingBuilder.ts#L289">builder/RankingBuilder.ts:289</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/RankingBuilder.ts#L313">builder/RankingBuilder.ts:313</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
@@ -437,7 +485,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/builder/RankingBuilder.ts#L192">builder/RankingBuilder.ts:192</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/builder/RankingBuilder.ts#L221">builder/RankingBuilder.ts:221</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -498,10 +546,16 @@
 								<a href="_builder_rankingbuilder_.rankingbuilder.html#column" class="tsd-kind-icon">column</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_builder_rankingbuilder_.rankingbuilder.html#composite" class="tsd-kind-icon">composite</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_builder_rankingbuilder_.rankingbuilder.html#group" class="tsd-kind-icon">group</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_builder_rankingbuilder_.rankingbuilder.html#groupby" class="tsd-kind-icon">group<wbr>By</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="_builder_rankingbuilder_.rankingbuilder.html#groupsortby" class="tsd-kind-icon">group<wbr>Sort<wbr>By</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_builder_rankingbuilder_.rankingbuilder.html#impose" class="tsd-kind-icon">impose</a>
@@ -569,7 +623,6 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

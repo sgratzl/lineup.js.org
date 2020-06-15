@@ -110,7 +110,7 @@
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/_renderer_interfaces_.icellrendererfactory.html">ICellRendererFactory</a>.<a href="../interfaces/_renderer_interfaces_.icellrendererfactory.html#title">title</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/renderer/MapBarCellRenderer.ts#L13">renderer/MapBarCellRenderer.ts:13</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/renderer/MapBarCellRenderer.ts#L10">renderer/MapBarCellRenderer.ts:10</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -128,7 +128,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_renderer_interfaces_.icellrendererfactory.html">ICellRendererFactory</a>.<a href="../interfaces/_renderer_interfaces_.icellrendererfactory.html#canrender">canRender</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/renderer/MapBarCellRenderer.ts#L15">renderer/MapBarCellRenderer.ts:15</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/renderer/MapBarCellRenderer.ts#L12">renderer/MapBarCellRenderer.ts:12</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -148,25 +148,22 @@
 					<a name="create" class="tsd-anchor"></a>
 					<h3>create</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_iarraycolumn_.imapcolumn.html" class="tsd-signature-type">IMapColumn</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span>, _context<span class="tsd-signature-symbol">: </span><a href="../interfaces/_renderer_interfaces_.irendercontext.html" class="tsd-signature-type">IRenderContext</a>, _hist<span class="tsd-signature-symbol">: </span><a href="../interfaces/_internal_math_.istatistics.html" class="tsd-signature-type">IStatistics</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_internal_math_.icategoricalstatistics.html" class="tsd-signature-type">ICategoricalStatistics</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span>, imposer<span class="tsd-signature-symbol">: </span><a href="../interfaces/_renderer_interfaces_.iimposer.html" class="tsd-signature-type">IImposer</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_renderer_interfaces_.icellrenderer.html" class="tsd-signature-type">ICellRenderer</a></li>
+						<li class="tsd-signature tsd-kind-icon">create<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_iarraycolumn_.imapcolumn.html" class="tsd-signature-type">IMapColumn</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_model_inumbercolumn_.inumbercolumn.html" class="tsd-signature-type">INumberColumn</a>, _context<span class="tsd-signature-symbol">: </span><a href="../interfaces/_renderer_interfaces_.irendercontext.html" class="tsd-signature-type">IRenderContext</a>, imposer<span class="tsd-signature-symbol">: </span><a href="../interfaces/_renderer_interfaces_.iimposer.html" class="tsd-signature-type">IImposer</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_renderer_interfaces_.icellrenderer.html" class="tsd-signature-type">ICellRenderer</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/renderer/MapBarCellRenderer.ts#L19">renderer/MapBarCellRenderer.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/renderer/MapBarCellRenderer.ts#L16">renderer/MapBarCellRenderer.ts:16</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>col: <a href="../interfaces/_model_iarraycolumn_.imapcolumn.html" class="tsd-signature-type">IMapColumn</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span></h5>
+									<h5>col: <a href="../interfaces/_model_iarraycolumn_.imapcolumn.html" class="tsd-signature-type">IMapColumn</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_model_inumbercolumn_.inumbercolumn.html" class="tsd-signature-type">INumberColumn</a></h5>
 								</li>
 								<li>
 									<h5>_context: <a href="../interfaces/_renderer_interfaces_.irendercontext.html" class="tsd-signature-type">IRenderContext</a></h5>
-								</li>
-								<li>
-									<h5>_hist: <a href="../interfaces/_internal_math_.istatistics.html" class="tsd-signature-type">IStatistics</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/_internal_math_.icategoricalstatistics.html" class="tsd-signature-type">ICategoricalStatistics</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
 								</li>
 								<li>
 									<h5><span class="tsd-flag ts-flagOptional">Optional</span> imposer: <a href="../interfaces/_renderer_interfaces_.iimposer.html" class="tsd-signature-type">IImposer</a></h5>
@@ -186,7 +183,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/renderer/MapBarCellRenderer.ts#L38">renderer/MapBarCellRenderer.ts:38</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/renderer/MapBarCellRenderer.ts#L41">renderer/MapBarCellRenderer.ts:41</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_renderer_interfaces_.igroupcellrenderer.html" class="tsd-signature-type">IGroupCellRenderer</a></h4>
@@ -197,19 +194,19 @@
 					<a name="createsummary" class="tsd-anchor"></a>
 					<h3>create<wbr>Summary</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Summary<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_iarraycolumn_.imapcolumn.html" class="tsd-signature-type">IMapColumn</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_model_mappingfunction_.imapablecolumn.html" class="tsd-signature-type">IMapAbleColumn</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_renderer_interfaces_.isummaryrenderer.html" class="tsd-signature-type">ISummaryRenderer</a></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Summary<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_iarraycolumn_.imapcolumn.html" class="tsd-signature-type">IMapColumn</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_model_inumbercolumn_.imapablecolumn.html" class="tsd-signature-type">IMapAbleColumn</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_renderer_interfaces_.isummaryrenderer.html" class="tsd-signature-type">ISummaryRenderer</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/renderer/MapBarCellRenderer.ts#L42">renderer/MapBarCellRenderer.ts:42</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/renderer/MapBarCellRenderer.ts#L45">renderer/MapBarCellRenderer.ts:45</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>col: <a href="../interfaces/_model_iarraycolumn_.imapcolumn.html" class="tsd-signature-type">IMapColumn</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_model_mappingfunction_.imapablecolumn.html" class="tsd-signature-type">IMapAbleColumn</a></h5>
+									<h5>col: <a href="../interfaces/_model_iarraycolumn_.imapcolumn.html" class="tsd-signature-type">IMapColumn</a><span class="tsd-signature-symbol">&lt;</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">&gt;</span><span class="tsd-signature-symbol"> &amp; </span><a href="../interfaces/_model_inumbercolumn_.imapablecolumn.html" class="tsd-signature-type">IMapAbleColumn</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_renderer_interfaces_.isummaryrenderer.html" class="tsd-signature-type">ISummaryRenderer</a></h4>
@@ -272,7 +269,6 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

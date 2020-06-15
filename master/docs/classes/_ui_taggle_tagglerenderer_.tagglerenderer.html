@@ -97,6 +97,8 @@
 						<section class="tsd-index-section ">
 							<h3>Events</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#dialogclosed" class="tsd-kind-icon">dialog<wbr>Closed</a></li>
+								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#dialogopened" class="tsd-kind-icon">dialog<wbr>Opened</a></li>
 								<li class="tsd-kind-event tsd-parent-kind-class"><a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#highlightchanged" class="tsd-kind-icon">highlight<wbr>Changed</a></li>
 							</ul>
 						</section>
@@ -104,6 +106,8 @@
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-property tsd-parent-kind-class"><a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#data" class="tsd-kind-icon">data</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#event_dialog_closed" class="tsd-kind-icon">EVENT_<wbr>DIALOG_<wbr>CLOSED</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#event_dialog_opened" class="tsd-kind-icon">EVENT_<wbr>DIALOG_<wbr>OPENED</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-class tsd-is-static"><a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#event_highlight_changed" class="tsd-kind-icon">EVENT_<wbr>HIGHLIGHT_<wbr>CHANGED</a></li>
 							</ul>
 						</section>
@@ -111,6 +115,7 @@
 							<h3>Accessors</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#ctx" class="tsd-kind-icon">ctx</a></li>
+								<li class="tsd-kind-get-signature tsd-parent-kind-class"><a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#style" class="tsd-kind-icon">style</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
@@ -145,7 +150,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_internal_aeventdispatcher_.aeventdispatcher.html#constructor">constructor</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/taggle/TaggleRenderer.ts#L40">ui/taggle/TaggleRenderer.ts:40</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L57">ui/taggle/TaggleRenderer.ts:57</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -168,6 +173,55 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Events</h2>
 				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class">
+					<a name="dialogclosed" class="tsd-anchor"></a>
+					<h3>dialog<wbr>Closed</h3>
+					<ul class="tsd-signatures tsd-kind-event tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">dialog<wbr>Closed<span class="tsd-signature-symbol">(</span>dialog<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ADialog</span>, action<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"cancel"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"confirm"</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L34">ui/taggle/TaggleRenderer.ts:34</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dialog: <span class="tsd-signature-type">ADialog</span></h5>
+								</li>
+								<li>
+									<h5>action: <span class="tsd-signature-type">"cancel"</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">"confirm"</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class">
+					<a name="dialogopened" class="tsd-anchor"></a>
+					<h3>dialog<wbr>Opened</h3>
+					<ul class="tsd-signatures tsd-kind-event tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">dialog<wbr>Opened<span class="tsd-signature-symbol">(</span>dialog<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">ADialog</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L26">ui/taggle/TaggleRenderer.ts:26</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>dialog: <span class="tsd-signature-type">ADialog</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-event tsd-parent-kind-class">
 					<a name="highlightchanged" class="tsd-anchor"></a>
 					<h3>highlight<wbr>Changed</h3>
 					<ul class="tsd-signatures tsd-kind-event tsd-parent-kind-class">
@@ -177,7 +231,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/taggle/TaggleRenderer.ts#L19">ui/taggle/TaggleRenderer.ts:19</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L19">ui/taggle/TaggleRenderer.ts:19</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -199,7 +253,27 @@
 					<div class="tsd-signature tsd-kind-icon">data<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">DataProvider</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/taggle/TaggleRenderer.ts#L42">ui/taggle/TaggleRenderer.ts:42</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L59">ui/taggle/TaggleRenderer.ts:59</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="event_dialog_closed" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>DIALOG_<wbr>CLOSED</h3>
+					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>DIALOG_<wbr>CLOSED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"dialogClosed"</span><span class="tsd-signature-symbol"> =&nbsp;EngineRenderer.EVENT_DIALOG_CLOSED</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L45">ui/taggle/TaggleRenderer.ts:45</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class tsd-is-static">
+					<a name="event_dialog_opened" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagStatic">Static</span> EVENT_<wbr>DIALOG_<wbr>OPENED</h3>
+					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>DIALOG_<wbr>OPENED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"dialogOpened"</span><span class="tsd-signature-symbol"> =&nbsp;EngineRenderer.EVENT_DIALOG_OPENED</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L44">ui/taggle/TaggleRenderer.ts:44</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -209,7 +283,7 @@
 					<div class="tsd-signature tsd-kind-icon">EVENT_<wbr>HIGHLIGHT_<wbr>CHANGED<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">"highlightChanged"</span><span class="tsd-signature-symbol"> =&nbsp;EngineRenderer.EVENT_HIGHLIGHT_CHANGED</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/taggle/TaggleRenderer.ts#L28">ui/taggle/TaggleRenderer.ts:28</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L43">ui/taggle/TaggleRenderer.ts:43</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -222,7 +296,17 @@
 					<div class="tsd-signature tsd-kind-icon">ctx<span class="tsd-signature-symbol">:</span> </div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/taggle/TaggleRenderer.ts#L78">ui/taggle/TaggleRenderer.ts:78</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L90">ui/taggle/TaggleRenderer.ts:90</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-get-signature tsd-parent-kind-class">
+					<a name="style" class="tsd-anchor"></a>
+					<h3>style</h3>
+					<div class="tsd-signature tsd-kind-icon">style<span class="tsd-signature-symbol">:</span> </div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L86">ui/taggle/TaggleRenderer.ts:86</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -239,7 +323,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/taggle/TaggleRenderer.ts#L153">ui/taggle/TaggleRenderer.ts:153</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L169">ui/taggle/TaggleRenderer.ts:169</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -256,7 +340,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/taggle/TaggleRenderer.ts#L184">ui/taggle/TaggleRenderer.ts:184</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L200">ui/taggle/TaggleRenderer.ts:200</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -279,7 +363,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/taggle/TaggleRenderer.ts#L180">ui/taggle/TaggleRenderer.ts:180</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L196">ui/taggle/TaggleRenderer.ts:196</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
@@ -291,6 +375,8 @@
 					<h3>on</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"highlightChanged"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#highlightchanged" class="tsd-signature-type">highlightChanged</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"dialogOpened"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#dialogopened" class="tsd-signature-type">dialogOpened</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
+						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">"dialogClosed"</span>, listener<span class="tsd-signature-symbol">: </span><a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#dialogclosed" class="tsd-signature-type">dialogClosed</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 						<li class="tsd-signature tsd-kind-icon">on<span class="tsd-signature-symbol">(</span>type<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span>, listener<span class="tsd-signature-symbol">: </span><a href="../interfaces/_internal_aeventdispatcher_.ieventlistener.html" class="tsd-signature-type">IEventListener</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">this</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
@@ -298,7 +384,7 @@
 							<aside class="tsd-sources">
 								<p>Overrides <a href="_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_internal_aeventdispatcher_.aeventdispatcher.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/taggle/TaggleRenderer.ts#L130">ui/taggle/TaggleRenderer.ts:130</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L144">ui/taggle/TaggleRenderer.ts:144</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -314,10 +400,46 @@
 						</li>
 						<li class="tsd-description">
 							<aside class="tsd-sources">
+								<p>Overrides <a href="_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_internal_aeventdispatcher_.aeventdispatcher.html#on">on</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L145">ui/taggle/TaggleRenderer.ts:145</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">"dialogOpened"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#dialogopened" class="tsd-signature-type">dialogOpened</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Overrides <a href="_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_internal_aeventdispatcher_.aeventdispatcher.html#on">on</a></p>
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L146">ui/taggle/TaggleRenderer.ts:146</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>type: <span class="tsd-signature-type">"dialogClosed"</span></h5>
+								</li>
+								<li>
+									<h5>listener: <a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#dialogclosed" class="tsd-signature-type">dialogClosed</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">this</span></h4>
+						</li>
+						<li class="tsd-description">
+							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/_internal_aeventdispatcher_.ieventhandler.html">IEventHandler</a>.<a href="../interfaces/_internal_aeventdispatcher_.ieventhandler.html#on">on</a></p>
 								<p>Overrides <a href="_internal_aeventdispatcher_.aeventdispatcher.html">AEventDispatcher</a>.<a href="_internal_aeventdispatcher_.aeventdispatcher.html#on">on</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/taggle/TaggleRenderer.ts#L131">ui/taggle/TaggleRenderer.ts:131</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L147">ui/taggle/TaggleRenderer.ts:147</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -343,7 +465,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/taggle/TaggleRenderer.ts#L82">ui/taggle/TaggleRenderer.ts:82</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L94">ui/taggle/TaggleRenderer.ts:94</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -384,7 +506,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/taggle/TaggleRenderer.ts#L162">ui/taggle/TaggleRenderer.ts:162</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L178">ui/taggle/TaggleRenderer.ts:178</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -407,7 +529,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/taggle/TaggleRenderer.ts#L176">ui/taggle/TaggleRenderer.ts:176</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L192">ui/taggle/TaggleRenderer.ts:192</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -427,19 +549,19 @@
 					<a name="switchrule" class="tsd-anchor"></a>
 					<h3>switch<wbr>Rule</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">switch<wbr>Rule<span class="tsd-signature-symbol">(</span>rule<span class="tsd-signature-symbol">: </span><a href="../interfaces/_ui_taggle_interfaces_.irule.html" class="tsd-signature-type">IRule</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+						<li class="tsd-signature tsd-kind-icon">switch<wbr>Rule<span class="tsd-signature-symbol">(</span>rule<span class="tsd-signature-symbol">: </span><a href="../interfaces/_ui_taggle_rules_.irule.html" class="tsd-signature-type">IRule</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/taggle/TaggleRenderer.ts#L145">ui/taggle/TaggleRenderer.ts:145</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L161">ui/taggle/TaggleRenderer.ts:161</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
-									<h5>rule: <a href="../interfaces/_ui_taggle_interfaces_.irule.html" class="tsd-signature-type">IRule</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
+									<h5>rule: <a href="../interfaces/_ui_taggle_rules_.irule.html" class="tsd-signature-type">IRule</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -456,7 +578,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/taggle/TaggleRenderer.ts#L158">ui/taggle/TaggleRenderer.ts:158</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L174">ui/taggle/TaggleRenderer.ts:174</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -473,7 +595,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/taggle/TaggleRenderer.ts#L141">ui/taggle/TaggleRenderer.ts:141</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L157">ui/taggle/TaggleRenderer.ts:157</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -490,7 +612,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/ui/taggle/TaggleRenderer.ts#L137">ui/taggle/TaggleRenderer.ts:137</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/ui/taggle/TaggleRenderer.ts#L153">ui/taggle/TaggleRenderer.ts:153</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
@@ -521,16 +643,31 @@
 								<a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#constructor" class="tsd-kind-icon">constructor</a>
 							</li>
 							<li class=" tsd-kind-event tsd-parent-kind-class">
+								<a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#dialogclosed" class="tsd-kind-icon">dialog<wbr>Closed</a>
+							</li>
+							<li class=" tsd-kind-event tsd-parent-kind-class">
+								<a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#dialogopened" class="tsd-kind-icon">dialog<wbr>Opened</a>
+							</li>
+							<li class=" tsd-kind-event tsd-parent-kind-class">
 								<a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#highlightchanged" class="tsd-kind-icon">highlight<wbr>Changed</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#data" class="tsd-kind-icon">data</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#event_dialog_closed" class="tsd-kind-icon">EVENT_<wbr>DIALOG_<wbr>CLOSED</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
+								<a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#event_dialog_opened" class="tsd-kind-icon">EVENT_<wbr>DIALOG_<wbr>OPENED</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-class tsd-is-static">
 								<a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#event_highlight_changed" class="tsd-kind-icon">EVENT_<wbr>HIGHLIGHT_<wbr>CHANGED</a>
 							</li>
 							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
 								<a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#ctx" class="tsd-kind-icon">ctx</a>
+							</li>
+							<li class=" tsd-kind-get-signature tsd-parent-kind-class">
+								<a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#style" class="tsd-kind-icon">style</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="_ui_taggle_tagglerenderer_.tagglerenderer.html#destroy" class="tsd-kind-icon">destroy</a>
@@ -589,7 +726,6 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

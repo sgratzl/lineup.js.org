@@ -72,10 +72,10 @@
 						<span class="target">IRenderContext</span>
 						<ul class="tsd-hierarchy">
 							<li>
-								<a href="_ui_interfaces_.irankingbodycontext.html" class="tsd-signature-type">IRankingBodyContext</a>
+								<a href="_ui_engineranking_.ienginerankingcontext.html" class="tsd-signature-type">IEngineRankingContext</a>
 							</li>
 							<li>
-								<a href="_ui_engineranking_.ienginerankingcontext.html" class="tsd-signature-type">IEngineRankingContext</a>
+								<a href="_ui_interfaces_.irankingbodycontext.html" class="tsd-signature-type">IRankingBodyContext</a>
 							</li>
 						</ul>
 					</li>
@@ -91,17 +91,16 @@
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_renderer_interfaces_.irendercontext.html#dialogmanager" class="tsd-kind-icon">dialog<wbr>Manager</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_renderer_interfaces_.irendercontext.html#idprefix" class="tsd-kind-icon">id<wbr>Prefix</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_renderer_interfaces_.irendercontext.html#provider" class="tsd-kind-icon">provider</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_renderer_interfaces_.irendercontext.html#totalnumberofrows" class="tsd-kind-icon">total<wbr>Number<wbr>OfRows</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_renderer_interfaces_.irendercontext.html#tasks" class="tsd-kind-icon">tasks</a></li>
 							</ul>
 						</section>
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_renderer_interfaces_.irendercontext.html#aselement" class="tsd-kind-icon">as<wbr>Element</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_renderer_interfaces_.irendercontext.html#colwidth" class="tsd-kind-icon">col<wbr>Width</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_renderer_interfaces_.irendercontext.html#grouprenderer" class="tsd-kind-icon">group<wbr>Renderer</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter"><a href="_renderer_interfaces_.irendercontext.html#option" class="tsd-kind-icon">option</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_renderer_interfaces_.irendercontext.html#renderer" class="tsd-kind-icon">renderer</a></li>
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_renderer_interfaces_.irendercontext.html#statsof" class="tsd-kind-icon">stats<wbr>Of</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_renderer_interfaces_.irendercontext.html#summaryrenderer" class="tsd-kind-icon">summary<wbr>Renderer</a></li>
 							</ul>
 						</section>
@@ -116,7 +115,7 @@
 					<div class="tsd-signature tsd-kind-icon">dialog<wbr>Manager<span class="tsd-signature-symbol">:</span> <a href="../classes/_ui_dialogs_dialogmanager_.dialogmanager.html" class="tsd-signature-type">DialogManager</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/renderer/interfaces.ts#L98">renderer/interfaces.ts:98</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/renderer/interfaces.ts#L114">renderer/interfaces.ts:114</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -126,33 +125,56 @@
 					<div class="tsd-signature tsd-kind-icon">id<wbr>Prefix<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/renderer/interfaces.ts#L84">renderer/interfaces.ts:84</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/renderer/interfaces.ts#L107">renderer/interfaces.ts:107</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
 					<a name="provider" class="tsd-anchor"></a>
 					<h3>provider</h3>
-					<div class="tsd-signature tsd-kind-icon">provider<span class="tsd-signature-symbol">:</span> <a href="_provider_adataprovider_.idataprovider.html" class="tsd-signature-type">IDataProvider</a></div>
+					<div class="tsd-signature tsd-kind-icon">provider<span class="tsd-signature-symbol">:</span> <a href="_provider_interfaces_.idataprovider.html" class="tsd-signature-type">IDataProvider</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/renderer/interfaces.ts#L97">renderer/interfaces.ts:97</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/renderer/interfaces.ts#L113">renderer/interfaces.ts:113</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface">
-					<a name="totalnumberofrows" class="tsd-anchor"></a>
-					<h3>total<wbr>Number<wbr>OfRows</h3>
-					<div class="tsd-signature tsd-kind-icon">total<wbr>Number<wbr>OfRows<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">number</span></div>
+					<a name="tasks" class="tsd-anchor"></a>
+					<h3>tasks</h3>
+					<div class="tsd-signature tsd-kind-icon">tasks<span class="tsd-signature-symbol">:</span> <a href="_renderer_interfaces_.irendertasks.html" class="tsd-signature-type">IRenderTasks</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/renderer/interfaces.ts#L93">renderer/interfaces.ts:93</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/renderer/interfaces.ts#L89">renderer/interfaces.ts:89</a></li>
 						</ul>
 					</aside>
 				</section>
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="aselement" class="tsd-anchor"></a>
+					<h3>as<wbr>Element</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">as<wbr>Element<span class="tsd-signature-symbol">(</span>html<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">HTMLElement</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/renderer/interfaces.ts#L109">renderer/interfaces.ts:109</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>html: <span class="tsd-signature-type">string</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">HTMLElement</span></h4>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="colwidth" class="tsd-anchor"></a>
 					<h3>col<wbr>Width</h3>
@@ -163,7 +185,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/renderer/interfaces.ts#L95">renderer/interfaces.ts:95</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/renderer/interfaces.ts#L111">renderer/interfaces.ts:111</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -186,7 +208,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/renderer/interfaces.ts#L75">renderer/interfaces.ts:75</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/renderer/interfaces.ts#L100">renderer/interfaces.ts:100</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -202,38 +224,6 @@
 						</li>
 					</ul>
 				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
-					<a name="option" class="tsd-anchor"></a>
-					<h3>option</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
-						<li class="tsd-signature tsd-kind-icon">option&lt;T&gt;<span class="tsd-signature-symbol">(</span>key<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span>, defaultValue<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/renderer/interfaces.ts#L91">renderer/interfaces.ts:91</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-type-parameters-title">Type parameters</h4>
-							<ul class="tsd-type-parameters">
-								<li>
-									<h4>T</h4>
-								</li>
-							</ul>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>key: <span class="tsd-signature-type">string</span></h5>
-								</li>
-								<li>
-									<h5>defaultValue: <span class="tsd-signature-type">T</span></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
-						</li>
-					</ul>
-				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="renderer" class="tsd-anchor"></a>
 					<h3>renderer</h3>
@@ -244,7 +234,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/renderer/interfaces.ts#L69">renderer/interfaces.ts:69</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/renderer/interfaces.ts#L94">renderer/interfaces.ts:94</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -261,34 +251,6 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="statsof" class="tsd-anchor"></a>
-					<h3>stats<wbr>Of</h3>
-					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">stats<wbr>Of<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="_model_inumbercolumn_.inumbercolumn.html" class="tsd-signature-type">INumberColumn</a><span class="tsd-signature-symbol"> | </span><a href="_model_icategoricalcolumn_.icategoricalcolumn.html" class="tsd-signature-type">ICategoricalColumn</a><span class="tsd-signature-symbol"> &amp; </span><a href="../classes/_model_column_.column.html" class="tsd-signature-type">Column</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="_internal_math_.icategoricalstatistics.html" class="tsd-signature-type">ICategoricalStatistics</a><span class="tsd-signature-symbol"> | </span><a href="_internal_math_.istatistics.html" class="tsd-signature-type">IStatistics</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
-					</ul>
-					<ul class="tsd-descriptions">
-						<li class="tsd-description">
-							<aside class="tsd-sources">
-								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/renderer/interfaces.ts#L79">renderer/interfaces.ts:79</a></li>
-								</ul>
-							</aside>
-							<h4 class="tsd-parameters-title">Parameters</h4>
-							<ul class="tsd-parameters">
-								<li>
-									<h5>col: <a href="_model_inumbercolumn_.inumbercolumn.html" class="tsd-signature-type">INumberColumn</a><span class="tsd-signature-symbol"> | </span><a href="_model_icategoricalcolumn_.icategoricalcolumn.html" class="tsd-signature-type">ICategoricalColumn</a><span class="tsd-signature-symbol"> &amp; </span><a href="../classes/_model_column_.column.html" class="tsd-signature-type">Column</a></h5>
-								</li>
-							</ul>
-							<h4 class="tsd-returns-title">Returns <a href="_internal_math_.icategoricalstatistics.html" class="tsd-signature-type">ICategoricalStatistics</a>
-								<span class="tsd-signature-symbol"> | </span>
-								<a href="_internal_math_.istatistics.html" class="tsd-signature-type">IStatistics</a>
-								<span class="tsd-signature-symbol"> | </span>
-								<span class="tsd-signature-type">null</span>
-							</h4>
-						</li>
-					</ul>
-				</section>
-				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
 					<a name="summaryrenderer" class="tsd-anchor"></a>
 					<h3>summary<wbr>Renderer</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
@@ -298,7 +260,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/renderer/interfaces.ts#L77">renderer/interfaces.ts:77</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/renderer/interfaces.ts#L102">renderer/interfaces.ts:102</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -362,7 +324,10 @@
 								<a href="_renderer_interfaces_.irendercontext.html#provider" class="tsd-kind-icon">provider</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
-								<a href="_renderer_interfaces_.irendercontext.html#totalnumberofrows" class="tsd-kind-icon">total<wbr>Number<wbr>OfRows</a>
+								<a href="_renderer_interfaces_.irendercontext.html#tasks" class="tsd-kind-icon">tasks</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_renderer_interfaces_.irendercontext.html#aselement" class="tsd-kind-icon">as<wbr>Element</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="_renderer_interfaces_.irendercontext.html#colwidth" class="tsd-kind-icon">col<wbr>Width</a>
@@ -370,14 +335,8 @@
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="_renderer_interfaces_.irendercontext.html#grouprenderer" class="tsd-kind-icon">group<wbr>Renderer</a>
 							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface tsd-has-type-parameter">
-								<a href="_renderer_interfaces_.irendercontext.html#option" class="tsd-kind-icon">option</a>
-							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="_renderer_interfaces_.irendercontext.html#renderer" class="tsd-kind-icon">renderer</a>
-							</li>
-							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="_renderer_interfaces_.irendercontext.html#statsof" class="tsd-kind-icon">stats<wbr>Of</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
 								<a href="_renderer_interfaces_.irendercontext.html#summaryrenderer" class="tsd-kind-icon">summary<wbr>Renderer</a>
@@ -386,8 +345,17 @@
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="_renderer_interfaces_.irendertask.html" class="tsd-kind-icon">IRender<wbr>Task</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_renderer_interfaces_.irendertasks.html" class="tsd-kind-icon">IRender<wbr>Tasks</a>
+					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="_renderer_interfaces_.isummaryrenderer.html" class="tsd-kind-icon">ISummary<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="../modules/_renderer_interfaces_.html#irendercallback" class="tsd-kind-icon">IRender<wbr>Callback</a>
 					</li>
 				</ul>
 			</nav>
@@ -406,7 +374,6 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

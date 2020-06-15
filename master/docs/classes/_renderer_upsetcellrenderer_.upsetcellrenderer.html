@@ -106,11 +106,11 @@
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-class">
 					<a name="title" class="tsd-anchor"></a>
 					<h3>title</h3>
-					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;Matrix&quot;</span></div>
+					<div class="tsd-signature tsd-kind-icon">title<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> =&nbsp;&quot;UpSet&quot;</span></div>
 					<aside class="tsd-sources">
 						<p>Implementation of <a href="../interfaces/_renderer_interfaces_.icellrendererfactory.html">ICellRendererFactory</a>.<a href="../interfaces/_renderer_interfaces_.icellrendererfactory.html#title">title</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/renderer/UpSetCellRenderer.ts#L10">renderer/UpSetCellRenderer.ts:10</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/renderer/UpSetCellRenderer.ts#L7">renderer/UpSetCellRenderer.ts:7</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -121,23 +121,19 @@
 					<a name="canrender" class="tsd-anchor"></a>
 					<h3>can<wbr>Render</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">can<wbr>Render<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html" class="tsd-signature-type">Column</a>, mode<span class="tsd-signature-symbol">: </span><a href="../enums/_renderer_interfaces_.erendermode.html" class="tsd-signature-type">ERenderMode</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+						<li class="tsd-signature tsd-kind-icon">can<wbr>Render<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="_model_column_.column.html" class="tsd-signature-type">Column</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/_renderer_interfaces_.icellrendererfactory.html">ICellRendererFactory</a>.<a href="../interfaces/_renderer_interfaces_.icellrendererfactory.html#canrender">canRender</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/renderer/UpSetCellRenderer.ts#L12">renderer/UpSetCellRenderer.ts:12</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/renderer/UpSetCellRenderer.ts#L9">renderer/UpSetCellRenderer.ts:9</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>col: <a href="_model_column_.column.html" class="tsd-signature-type">Column</a></h5>
-								</li>
-								<li>
-									<h5>mode: <a href="../enums/_renderer_interfaces_.erendermode.html" class="tsd-signature-type">ERenderMode</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
@@ -154,7 +150,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/renderer/UpSetCellRenderer.ts#L55">renderer/UpSetCellRenderer.ts:55</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/renderer/UpSetCellRenderer.ts#L52">renderer/UpSetCellRenderer.ts:52</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
@@ -174,19 +170,22 @@
 					<a name="creategroup" class="tsd-anchor"></a>
 					<h3>create<wbr>Group</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Group<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html" class="tsd-signature-type">ISetColumn</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_renderer_interfaces_.igroupcellrenderer.html" class="tsd-signature-type">IGroupCellRenderer</a></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Group<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html" class="tsd-signature-type">ISetColumn</a>, context<span class="tsd-signature-symbol">: </span><a href="../interfaces/_renderer_interfaces_.irendercontext.html" class="tsd-signature-type">IRenderContext</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_renderer_interfaces_.igroupcellrenderer.html" class="tsd-signature-type">IGroupCellRenderer</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/renderer/UpSetCellRenderer.ts#L101">renderer/UpSetCellRenderer.ts:101</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/renderer/UpSetCellRenderer.ts#L98">renderer/UpSetCellRenderer.ts:98</a></li>
 								</ul>
 							</aside>
 							<h4 class="tsd-parameters-title">Parameters</h4>
 							<ul class="tsd-parameters">
 								<li>
 									<h5>col: <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html" class="tsd-signature-type">ISetColumn</a></h5>
+								</li>
+								<li>
+									<h5>context: <a href="../interfaces/_renderer_interfaces_.irendercontext.html" class="tsd-signature-type">IRenderContext</a></h5>
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_renderer_interfaces_.igroupcellrenderer.html" class="tsd-signature-type">IGroupCellRenderer</a></h4>
@@ -197,15 +196,24 @@
 					<a name="createsummary" class="tsd-anchor"></a>
 					<h3>create<wbr>Summary</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">create<wbr>Summary<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_renderer_interfaces_.isummaryrenderer.html" class="tsd-signature-type">ISummaryRenderer</a></li>
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Summary<span class="tsd-signature-symbol">(</span>col<span class="tsd-signature-symbol">: </span><a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html" class="tsd-signature-type">ISetColumn</a>, context<span class="tsd-signature-symbol">: </span><a href="../interfaces/_renderer_interfaces_.irendercontext.html" class="tsd-signature-type">IRenderContext</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/_renderer_interfaces_.isummaryrenderer.html" class="tsd-signature-type">ISummaryRenderer</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/renderer/UpSetCellRenderer.ts#L112">renderer/UpSetCellRenderer.ts:112</a></li>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/renderer/UpSetCellRenderer.ts#L113">renderer/UpSetCellRenderer.ts:113</a></li>
 								</ul>
 							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>col: <a href="../interfaces/_model_icategoricalcolumn_.isetcolumn.html" class="tsd-signature-type">ISetColumn</a></h5>
+								</li>
+								<li>
+									<h5>context: <a href="../interfaces/_renderer_interfaces_.irendercontext.html" class="tsd-signature-type">IRenderContext</a></h5>
+								</li>
+							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="../interfaces/_renderer_interfaces_.isummaryrenderer.html" class="tsd-signature-type">ISummaryRenderer</a></h4>
 						</li>
 					</ul>
@@ -249,9 +257,6 @@
 					</li>
 				</ul>
 				<ul class="after-current">
-					<li class=" tsd-kind-function tsd-parent-kind-external-module">
-						<a href="../modules/_renderer_upsetcellrenderer_.html#union" class="tsd-kind-icon">union</a>
-					</li>
 				</ul>
 			</nav>
 		</div>
@@ -269,7 +274,6 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>

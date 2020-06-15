@@ -70,6 +70,9 @@
 				<ul class="tsd-hierarchy">
 					<li>
 						<a href="_model_compositenumbercolumn_.icompositenumberdesc.html" class="tsd-signature-type">ICompositeNumberDesc</a>
+					</li>
+					<li>
+						<a href="_model_inumbercolumn_.imapabledesc.html" class="tsd-signature-type">IMapAbleDesc</a>
 						<ul class="tsd-hierarchy">
 							<li>
 								<span class="target">IScriptDesc</span>
@@ -85,9 +88,13 @@
 						<section class="tsd-index-section ">
 							<h3>Properties</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_model_scriptcolumn_.iscriptdesc.html#color" class="tsd-kind-icon">color</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_model_scriptcolumn_.iscriptdesc.html#colormapping" class="tsd-kind-icon">color<wbr>Mapping</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_model_scriptcolumn_.iscriptdesc.html#domain" class="tsd-kind-icon">domain</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_model_scriptcolumn_.iscriptdesc.html#label" class="tsd-kind-icon">label</a></li>
-								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_model_scriptcolumn_.iscriptdesc.html#missingvalue" class="tsd-kind-icon">missing<wbr>Value</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_model_scriptcolumn_.iscriptdesc.html#map" class="tsd-kind-icon">map</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_model_scriptcolumn_.iscriptdesc.html#numberformat" class="tsd-kind-icon">number<wbr>Format</a></li>
+								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_model_scriptcolumn_.iscriptdesc.html#range" class="tsd-kind-icon">range</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface"><a href="_model_scriptcolumn_.iscriptdesc.html#script" class="tsd-kind-icon">script</a></li>
 								<li class="tsd-kind-property tsd-parent-kind-interface tsd-is-inherited"><a href="_model_scriptcolumn_.iscriptdesc.html#type" class="tsd-kind-icon">type</a></li>
 							</ul>
@@ -98,24 +105,57 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Properties</h2>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="color" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> color</h3>
+					<div class="tsd-signature tsd-kind-icon">color<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_model_inumbercolumn_.imapabledesc.html">IMapAbleDesc</a>.<a href="_model_inumbercolumn_.imapabledesc.html#color">color</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/INumberColumn.ts#L59">model/INumberColumn.ts:59</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="colormapping" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> color<wbr>Mapping</h3>
+					<div class="tsd-signature tsd-kind-icon">color<wbr>Mapping<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol"> | </span><a href="_model_interfaces_.itypeddump.html" class="tsd-signature-type">ITypedDump</a></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_model_inumbercolumn_.imapabledesc.html">IMapAbleDesc</a>.<a href="_model_inumbercolumn_.imapabledesc.html#colormapping">colorMapping</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/INumberColumn.ts#L64">model/INumberColumn.ts:64</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="domain" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> domain</h3>
+					<div class="tsd-signature tsd-kind-icon">domain<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_model_inumbercolumn_.imapabledesc.html">IMapAbleDesc</a>.<a href="_model_inumbercolumn_.imapabledesc.html#domain">domain</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/INumberColumn.ts#L50">model/INumberColumn.ts:50</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 					<a name="label" class="tsd-anchor"></a>
 					<h3>label</h3>
 					<div class="tsd-signature tsd-kind-icon">label<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_interfaces_.icolumndesc.html">IColumnDesc</a>.<a href="_model_interfaces_.icolumndesc.html#label">label</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/interfaces.ts#L58">model/interfaces.ts:58</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/interfaces.ts#L81">model/interfaces.ts:81</a></li>
 						</ul>
 					</aside>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-					<a name="missingvalue" class="tsd-anchor"></a>
-					<h3><span class="tsd-flag ts-flagOptional">Optional</span> missing<wbr>Value</h3>
-					<div class="tsd-signature tsd-kind-icon">missing<wbr>Value<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span></div>
+					<a name="map" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> map</h3>
+					<div class="tsd-signature tsd-kind-icon">map<span class="tsd-signature-symbol">:</span> <a href="_model_interfaces_.itypeddump.html" class="tsd-signature-type">ITypedDump</a></div>
 					<aside class="tsd-sources">
-						<p>Inherited from <a href="_model_compositenumbercolumn_.icompositenumberdesc.html">ICompositeNumberDesc</a>.<a href="_model_compositenumbercolumn_.icompositenumberdesc.html#missingvalue">missingValue</a></p>
+						<p>Inherited from <a href="_model_inumbercolumn_.imapabledesc.html">IMapAbleDesc</a>.<a href="_model_inumbercolumn_.imapabledesc.html#map">map</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeNumberColumn.ts#L20">model/CompositeNumberColumn.ts:20</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/INumberColumn.ts#L46">model/INumberColumn.ts:46</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -126,7 +166,18 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_compositenumbercolumn_.icompositenumberdesc.html">ICompositeNumberDesc</a>.<a href="_model_compositenumbercolumn_.icompositenumberdesc.html#numberformat">numberFormat</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/CompositeNumberColumn.ts#L14">model/CompositeNumberColumn.ts:14</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/CompositeNumberColumn.ts#L15">model/CompositeNumberColumn.ts:15</a></li>
+						</ul>
+					</aside>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+					<a name="range" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagOptional">Optional</span> range</h3>
+					<div class="tsd-signature tsd-kind-icon">range<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">[</span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">, </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">]</span></div>
+					<aside class="tsd-sources">
+						<p>Inherited from <a href="_model_inumbercolumn_.imapabledesc.html">IMapAbleDesc</a>.<a href="_model_inumbercolumn_.imapabledesc.html#range">range</a></p>
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/INumberColumn.ts#L54">model/INumberColumn.ts:54</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -136,7 +187,7 @@
 					<div class="tsd-signature tsd-kind-icon">script<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">undefined</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/ScriptColumn.ts#L151">model/ScriptColumn.ts:151</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/ScriptColumn.ts#L190">model/ScriptColumn.ts:190</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -147,7 +198,7 @@
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="_model_interfaces_.icolumndesc.html">IColumnDesc</a>.<a href="_model_interfaces_.icolumndesc.html#type">type</a></p>
 						<ul>
-							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/ac97a355/src/model/interfaces.ts#L62">model/interfaces.ts:62</a></li>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/6a709671/src/model/interfaces.ts#L85">model/interfaces.ts:85</a></li>
 						</ul>
 					</aside>
 				</section>
@@ -175,13 +226,25 @@
 						<a href="_model_scriptcolumn_.iscriptdesc.html" class="tsd-kind-icon">IScript<wbr>Desc</a>
 						<ul>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="_model_scriptcolumn_.iscriptdesc.html#color" class="tsd-kind-icon">color</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="_model_scriptcolumn_.iscriptdesc.html#colormapping" class="tsd-kind-icon">color<wbr>Mapping</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="_model_scriptcolumn_.iscriptdesc.html#domain" class="tsd-kind-icon">domain</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 								<a href="_model_scriptcolumn_.iscriptdesc.html#label" class="tsd-kind-icon">label</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
-								<a href="_model_scriptcolumn_.iscriptdesc.html#missingvalue" class="tsd-kind-icon">missing<wbr>Value</a>
+								<a href="_model_scriptcolumn_.iscriptdesc.html#map" class="tsd-kind-icon">map</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
 								<a href="_model_scriptcolumn_.iscriptdesc.html#numberformat" class="tsd-kind-icon">number<wbr>Format</a>
+							</li>
+							<li class=" tsd-kind-property tsd-parent-kind-interface tsd-is-inherited">
+								<a href="_model_scriptcolumn_.iscriptdesc.html#range" class="tsd-kind-icon">range</a>
 							</li>
 							<li class=" tsd-kind-property tsd-parent-kind-interface">
 								<a href="_model_scriptcolumn_.iscriptdesc.html#script" class="tsd-kind-icon">script</a>
@@ -216,7 +279,6 @@
 				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
 				<li class="tsd-kind-index-signature"><span class="tsd-kind-icon">Index signature</span></li>
 				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
-				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
 			</ul>
 			<ul class="tsd-legend">
 				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
