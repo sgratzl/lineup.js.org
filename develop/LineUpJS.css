@@ -1,4 +1,4 @@
-/*! lineupjs - v4.0.1-20200615-112629 - 2020
+/*! lineupjs - v4.0.1-20200617-083559 - 2020
 * https://lineup.js.org
 * Copyright (c) 2020 Samuel Gratzl; Licensed BSD-3-Clause */
 
@@ -1463,7 +1463,8 @@ span.lu-mapping-hint {
   text-align: right;
   display: flex;
   justify-content: flex-end;
-  font-variant-numeric: tabular-nums; }
+  font-variant-numeric: tabular-nums;
+  align-items: center; }
 
 .lu-group.lu-renderer-rank {
   flex-direction: column;
