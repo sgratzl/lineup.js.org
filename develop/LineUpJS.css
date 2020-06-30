@@ -1,4 +1,4 @@
-/*! lineupjs - v4.0.1-20200629-151002 - 2020
+/*! lineupjs - v4.0.1-20200630-112836 - 2020
 * https://lineup.js.org
 * Copyright (c) 2020 Samuel Gratzl; Licensed BSD-3-Clause */
 
@@ -1054,6 +1054,9 @@ article.le-row-animation.le-update-animation.le-hide-animation > .le-tr[data-ani
 
 .lu-renderer-group.le-td {
   overflow: visible; }
+  .lu-renderer-group.le-td > div {
+    overflow-x: hidden;
+    text-overflow: ellipsis; }
 
 .lu-agg-level {
   flex: 0 0 22px;
@@ -1534,7 +1537,8 @@ span.lu-mapping-hint {
 
 .lu-group.lu-renderer-string,
 .lu-group.lu-renderer-link,
-.lu-group.lu-renderer-date {
+.lu-group.lu-renderer-date,
+.lu-group.lu-renderer-group {
   display: block;
   overflow: hidden;
   text-overflow: ellipsis;
