@@ -1,4 +1,4 @@
-/*! lineupjs - v4.0.1-20200707-114538 - 2020
+/*! lineupjs - v4.0.1-20200720-073903 - 2020
 * https://lineup.js.org
 * Copyright (c) 2020 Samuel Gratzl; Licensed BSD-3-Clause */
 
@@ -242,11 +242,12 @@
     width: 6em; }
 
 .lu-dialog-filter-table-entry {
-  display: block; }
+  display: flex; }
   .lu-dialog-filter-table-entry > input[type=checkbox]:not(:checked) + span {
     opacity: 0.5; }
   .lu-dialog-filter-table-entry > span {
-    transition: opacity 0.25s ease; }
+    transition: opacity 0.25s ease;
+    flex-grow: 1; }
 
 .lu-dialog-color-table-entry {
   min-width: 10em;
@@ -260,6 +261,12 @@
 .lu-dialog-filter-table-color {
   width: 1.2em;
   margin: 0 0.5em; }
+
+.lu-dialog-filter-table-entry-label {
+  flex-grow: 1; }
+
+.lu-dialog-filter-table-entry-stats {
+  color: #c1c1c1; }
 
 .lu-dialog-filter-color-bar {
   width: 100px;
