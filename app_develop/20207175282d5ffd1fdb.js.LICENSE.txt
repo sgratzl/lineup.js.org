@@ -1,0 +1,3 @@
+/*! lineup_app - v4.1.3 - 2021
+* https://github.com/lineupjs/lineup_app
+* Copyright (c) 2021 Samuel Gratzl; Licensed MIT */
