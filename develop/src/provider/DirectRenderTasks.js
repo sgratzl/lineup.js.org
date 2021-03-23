@@ -1,0 +1,227 @@
+import { __extends } from "tslib";
+import { ARenderTasks, taskNow } from './tasks';
+import { toIndexArray, sortComplex, getNumberOfBins } from '../internal';
+/**
+ * @internal
+ */
+export function sortDirect(indices, maxDataIndex, lookups) {
+    var order = toIndexArray(indices, maxDataIndex);
+    if (lookups) {
+        sortComplex(order, lookups.sortOrders);
+    }
+    return order;
+}
+/**
+ * @internal
+ */
+var DirectRenderTasks = /** @class */ (function (_super) {
+    __extends(DirectRenderTasks, _super);
+    function DirectRenderTasks() {
+        var _this = _super !== null && _super.apply(this, arguments) || this;
+        _this.cache = new Map();
+        return _this;
+    }
+    DirectRenderTasks.prototype.setData = function (data) {
+        this.data = data;
+        this.cache.clear();
+        this.valueCacheData.clear();
+    };
+    DirectRenderTasks.prototype.dirtyColumn = function (col, type) {
+        _super.prototype.dirtyColumn.call(this, col, type);
+        if (type === 'group') {
+            return; // not cached
+        }
+        this.cache.delete(col.id + ":summary");
+        this.cache.delete(col.id + ":summary:raw");
+        this.cache.delete(col.id + ":summary:b");
+        this.cache.delete(col.id + ":summary:braw");
+        if (type === 'summary') {
+            return;
+        }
+        this.cache.delete(col.id + ":data");
+        this.cache.delete(col.id + ":data:raw");
+        this.cache.delete(col.id + ":data:b");
+        this.cache.delete(col.id + ":data:braw");
+    };
+    DirectRenderTasks.prototype.dirtyRanking = function (ranking, type) {
+        for (var _i = 0, _a = ranking.flatColumns; _i < _a.length; _i++) {
+            var col = _a[_i];
+            this.dirtyColumn(col, type);
+        }
+    };
+    DirectRenderTasks.prototype.preCompute = function () {
+        // dummy
+    };
+    DirectRenderTasks.prototype.preComputeData = function () {
+        // dummy
+    };
+    DirectRenderTasks.prototype.preComputeCol = function () {
+        // dummy
+    };
+    DirectRenderTasks.prototype.copyData2Summary = function () {
+        // dummy
+    };
+    DirectRenderTasks.prototype.copyCache = function (col, from) {
+        var fromPrefix = from.id + ":";
+        for (var _i = 0, _a = Array.from(this.cache.keys()).sort(); _i < _a.length; _i++) {
+            var key = _a[_i];
+            if (!key.startsWith(fromPrefix)) {
+                continue;
+            }
+            var cacheKey = col.id + ":" + key.slice(fromPrefix.length);
+            this.cache.set(cacheKey, this.cache.get(key));
+        }
+    };
+    DirectRenderTasks.prototype.sort = function (_ranking, _group, indices, _singleCall, maxDataIndex, lookups) {
+        return Promise.resolve(sortDirect(indices, maxDataIndex, lookups));
+    };
+    DirectRenderTasks.prototype.groupCompare = function (ranking, group, rows) {
+        var rg = ranking.getGroupSortCriteria();
+        if (rg.length === 0) {
+            return taskNow([group.name.toLowerCase()]);
+        }
+        var o = this.byOrder(rows);
+        var vs = [];
+        for (var _i = 0, rg_1 = rg; _i < rg_1.length; _i++) {
+            var s = rg_1[_i];
+            var r = s.col.toCompareGroupValue(o, group);
+            if (Array.isArray(r)) {
+                vs.push.apply(vs, r);
+            }
+            else {
+                vs.push(r);
+            }
+        }
+        vs.push(group.name.toLowerCase());
+        return taskNow(vs);
+    };
+    DirectRenderTasks.prototype.groupRows = function (_col, group, _key, compute) {
+        return taskNow(compute(this.byOrder(group.order)));
+    };
+    DirectRenderTasks.prototype.groupExampleRows = function (_col, group, _key, compute) {
+        return taskNow(compute(this.byOrder(group.order.slice(0, 5))));
+    };
+    DirectRenderTasks.prototype.groupBoxPlotStats = function (col, group, raw) {
+        var _a = this.summaryBoxPlotStatsD(col, raw), summary = _a.summary, data = _a.data;
+        return taskNow({
+            group: this.boxplotBuilder(group.order, col, raw).next(Number.POSITIVE_INFINITY).value,
+            summary: summary,
+            data: data,
+        });
+    };
+    DirectRenderTasks.prototype.groupNumberStats = function (col, group, raw) {
+        var _a = this.summaryNumberStatsD(col, raw), summary = _a.summary, data = _a.data;
+        return taskNow({
+            group: this.statsBuilder(group.order, col, summary.hist.length, raw).next(Number.POSITIVE_INFINITY).value,
+            summary: summary,
+            data: data,
+        });
+    };
+    DirectRenderTasks.prototype.groupCategoricalStats = function (col, group) {
+        var _a = this.summaryCategoricalStatsD(col), summary = _a.summary, data = _a.data;
+        return taskNow({
+            group: this.categoricalStatsBuilder(group.order, col).next(Number.POSITIVE_INFINITY).value,
+            summary: summary,
+            data: data,
+        });
+    };
+    DirectRenderTasks.prototype.groupDateStats = function (col, group) {
+        var _a = this.summaryDateStatsD(col), summary = _a.summary, data = _a.data;
+        return taskNow({
+            group: this.dateStatsBuilder(group.order, col, summary).next(Number.POSITIVE_INFINITY).value,
+            summary: summary,
+            data: data,
+        });
+    };
+    DirectRenderTasks.prototype.summaryBoxPlotStats = function (col, raw) {
+        return taskNow(this.summaryBoxPlotStatsD(col, raw));
+    };
+    DirectRenderTasks.prototype.summaryNumberStats = function (col, raw) {
+        return taskNow(this.summaryNumberStatsD(col, raw));
+    };
+    DirectRenderTasks.prototype.summaryCategoricalStats = function (col) {
+        return taskNow(this.summaryCategoricalStatsD(col));
+    };
+    DirectRenderTasks.prototype.summaryDateStats = function (col) {
+        return taskNow(this.summaryDateStatsD(col));
+    };
+    DirectRenderTasks.prototype.summaryNumberStatsD = function (col, raw) {
+        var _this = this;
+        return this.cached('summary', col, function () {
+            var ranking = col.findMyRanker().getOrder();
+            var data = _this.dataNumberStats(col, raw);
+            return {
+                summary: _this.statsBuilder(ranking, col, data.hist.length, raw).next(Number.POSITIVE_INFINITY).value,
+                data: data,
+            };
+        }, raw ? ':raw' : '', col.findMyRanker().getOrderLength() === 0);
+    };
+    DirectRenderTasks.prototype.summaryBoxPlotStatsD = function (col, raw) {
+        var _this = this;
+        return this.cached('summary', col, function () {
+            var ranking = col.findMyRanker().getOrder();
+            var data = _this.dataBoxPlotStats(col, raw);
+            return { summary: _this.boxplotBuilder(ranking, col, raw).next(Number.POSITIVE_INFINITY).value, data: data };
+        }, raw ? ':braw' : ':b', col.findMyRanker().getOrderLength() === 0);
+    };
+    DirectRenderTasks.prototype.summaryCategoricalStatsD = function (col) {
+        var _this = this;
+        return this.cached('summary', col, function () {
+            var ranking = col.findMyRanker().getOrder();
+            var data = _this.dataCategoricalStats(col);
+            return {
+                summary: _this.categoricalStatsBuilder(ranking, col).next(Number.POSITIVE_INFINITY).value,
+                data: data,
+            };
+        }, '', col.findMyRanker().getOrderLength() === 0);
+    };
+    DirectRenderTasks.prototype.summaryDateStatsD = function (col) {
+        var _this = this;
+        return this.cached('summary', col, function () {
+            var ranking = col.findMyRanker().getOrder();
+            var data = _this.dataDateStats(col);
+            return {
+                summary: _this.dateStatsBuilder(ranking, col, data).next(Number.POSITIVE_INFINITY).value,
+                data: data,
+            };
+        }, '', col.findMyRanker().getOrderLength() === 0);
+    };
+    DirectRenderTasks.prototype.cached = function (prefix, col, creator, suffix, dontCache) {
+        if (suffix === void 0) { suffix = ''; }
+        if (dontCache === void 0) { dontCache = false; }
+        var key = col.id + ":" + prefix + suffix;
+        if (this.cache.has(key)) {
+            return this.cache.get(key);
+        }
+        var s = creator();
+        if (!dontCache) {
+            this.cache.set(key, s);
+        }
+        return s;
+    };
+    DirectRenderTasks.prototype.dataBoxPlotStats = function (col, raw) {
+        var _this = this;
+        return this.cached('data', col, function () { return _this.boxplotBuilder(null, col, raw).next(Number.POSITIVE_INFINITY).value; }, raw ? ':braw' : ':b');
+    };
+    DirectRenderTasks.prototype.dataNumberStats = function (col, raw) {
+        var _this = this;
+        return this.cached('data', col, function () {
+            return _this.statsBuilder(null, col, getNumberOfBins(_this.data.length), raw).next(Number.POSITIVE_INFINITY)
+                .value;
+        }, raw ? ':raw' : '');
+    };
+    DirectRenderTasks.prototype.dataCategoricalStats = function (col) {
+        var _this = this;
+        return this.cached('data', col, function () { return _this.categoricalStatsBuilder(null, col).next(Number.POSITIVE_INFINITY).value; });
+    };
+    DirectRenderTasks.prototype.dataDateStats = function (col) {
+        var _this = this;
+        return this.cached('data', col, function () { return _this.dateStatsBuilder(null, col).next(Number.POSITIVE_INFINITY).value; });
+    };
+    DirectRenderTasks.prototype.terminate = function () {
+        this.cache.clear();
+    };
+    return DirectRenderTasks;
+}(ARenderTasks));
+export { DirectRenderTasks };
+//# sourceMappingURL=DirectRenderTasks.js.map
