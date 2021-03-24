@@ -1703,7 +1703,7 @@
       }
     },
     "options": {
-      "module": 99,
+      "module": 5,
       "target": 1,
       "importHelpers": true,
       "sourceMap": true,
