@@ -91,8 +91,8 @@ var MultiLevelCellRenderer = /** @class */ (function (_super) {
         _this.title = _this.stacked ? 'Stacked Bar' : 'Nested';
         return _this;
     }
-    MultiLevelCellRenderer.prototype.canRender = function (col, mode) {
-        return isMultiLevelColumn(col) && mode !== ERenderMode.SUMMARY;
+    MultiLevelCellRenderer.prototype.canRender = function (col) {
+        return isMultiLevelColumn(col);
     };
     MultiLevelCellRenderer.prototype.create = function (col, context, imposer) {
         var _this = this;

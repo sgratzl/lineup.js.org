@@ -29,9 +29,10 @@ import { integrateDefaults } from './internal';
  * @param label
  * @returns {{type: string, label: string}}
  */
-export function createStackDesc(label) {
+export function createStackDesc(label, showNestedSummaries) {
     if (label === void 0) { label = 'Weighted Sum'; }
-    return { type: 'stack', label: label };
+    if (showNestedSummaries === void 0) { showNestedSummaries = true; }
+    return { type: 'stack', label: label, showNestedSummaries: showNestedSummaries };
 }
 /**
  * implementation of the stacked column
@@ -42,7 +43,7 @@ var StackColumn = /** @class */ (function (_super) {
         var _this = _super.call(this, id, integrateDefaults(desc, {
             renderer: 'stack',
             groupRenderer: 'stack',
-            summaryRenderer: 'default',
+            summaryRenderer: 'stack',
         })) || this;
         /**
          * whether this stack column is collapsed i.e. just looks like an ordinary number column
@@ -90,6 +91,9 @@ var StackColumn = /** @class */ (function (_super) {
     };
     StackColumn.prototype.getCollapsed = function () {
         return this.collapsed;
+    };
+    StackColumn.prototype.isShowNestedSummaries = function () {
+        return this.desc.showNestedSummaries !== false;
     };
     Object.defineProperty(StackColumn.prototype, "canJustAddNumbers", {
         get: function () {

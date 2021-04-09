@@ -622,8 +622,8 @@
         "affectsGlobalScope": false
       },
       "../src/model/interfaces.ts": {
-        "version": "594cc3b78a96fe44c1b8045462408459f3050ead928dc74b51079445aeeb5b87",
-        "signature": "12470f6ce608796f748a72134aa085b65e0b94a7abf22bb363a87eaa7093f393",
+        "version": "ff0b43f1da826fae64d36bd01e2596fe576018047f9d12da1254e2c2a589e60d",
+        "signature": "350bd3afb68e70070192864c9131bdfaece9b7b9ec3bb961d22242ead5476f79",
         "affectsGlobalScope": false
       },
       "../src/model/annotations.ts": {
@@ -787,18 +787,18 @@
         "affectsGlobalScope": false
       },
       "../src/model/StackColumn.ts": {
-        "version": "7e79d991346d4012768a80e9f61c18b81788220c1a00e951ae2926df884e26b3",
-        "signature": "e2247292d2950c339612c7606e14f4cab793373d8be901ed971e75772cafc7ff",
+        "version": "e3176483a503eb3b9b3c5949de616c13264b917eba190729f67dfaccda71fffe",
+        "signature": "e99b076e143a35b5893069b2aa9424e151346bf8420291c9c146e937cbce3e0e",
         "affectsGlobalScope": false
       },
       "../src/model/MultiLevelCompositeColumn.ts": {
-        "version": "9a327740bb682d98ab749b82e5953122d9fc2a0e1561cec03ba388c4161c8df3",
-        "signature": "33615dfc7849cb67fb85873f4e9b0bc0aeef9d7741a96de10c702b762f2ec5d5",
+        "version": "951c7de7f03970875945334162aef545579303ea30df71b1d1d1523d2730fb45",
+        "signature": "a9974a6488b58062bfbc3b408e0602a8286b8e9723cf0b60af64f18fbdcf8ed6",
         "affectsGlobalScope": false
       },
       "../src/model/NestedColumn.ts": {
-        "version": "ab448ffaa7ea270ae44f0b280ad02a43cc9a1f8b3f66797ce1bd514017ba016a",
-        "signature": "d76d83ecdd2b16d18d32af95fc6e6512e3f71347e41546db25e0e2ac8de1ac75",
+        "version": "bcf528b75d4e8ad5a0b3dd455499cb136d36f81ac03e597f4cfe6a4404c84d11",
+        "signature": "38569ad2266f4f97c91de51c76d0cafcd0d8ee25d8e12a1de5ecedba809e4579",
         "affectsGlobalScope": false
       },
       "../src/model/NumberMapColumn.ts": {
@@ -1097,8 +1097,8 @@
         "affectsGlobalScope": false
       },
       "../src/renderer/MultiLevelCellRenderer.ts": {
-        "version": "da296e4c49aab1fbb9e5b9b3b497b6ba36344667e3807491a8d9207b40908f5d",
-        "signature": "f18fbcaf2cff8ea2b65d71809b34ef25ce9a1847723cdd7fb943d6325152bc08",
+        "version": "0f54608cd62ec9d5d97935c2b987f39ee06ee6fe98836bf98d12b1e16f51670e",
+        "signature": "70494126d38f837f2d38ba508a2fb575c516f88b1a5e17de4680713ce05fd50f",
         "affectsGlobalScope": false
       },
       "../src/renderer/InterleavingCellRenderer.ts": {
@@ -1352,7 +1352,7 @@
         "affectsGlobalScope": false
       },
       "../src/ui/MultiLevelRenderColumn.ts": {
-        "version": "6823de8f7fa0e5944bca739d286a28850756434df4226bd46b226a812c18d75c",
+        "version": "223619d870b16fc71daa6a485a09fd8ec81a21024a7010c7359fd271d816b4c1",
         "signature": "d8d58018403f47682acef3986a167a7b033d95c7077dbb0a19e728357d3191f7",
         "affectsGlobalScope": false
       },
@@ -2757,7 +2757,8 @@
         "../src/model/CompositeColumn.ts",
         "../src/model/StackColumn.ts",
         "../src/model/annotations.ts",
-        "../src/model/interfaces.ts"
+        "../src/model/interfaces.ts",
+        "../src/model/internal.ts"
       ],
       "../src/model/NestedColumn.ts": [
         "../src/internal/index.ts",

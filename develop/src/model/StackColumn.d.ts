@@ -9,10 +9,7 @@ import type { IDataRow, IFlatColumn, IMultiLevelColumn, ITypeFactory } from './i
  * @param label
  * @returns {{type: string, label: string}}
  */
-export declare function createStackDesc(label?: string): {
-    type: string;
-    label: string;
-};
+export declare function createStackDesc(label?: string, showNestedSummaries?: boolean): IStackColumnColumnDesc;
 /**
  * emitted when the collapse property changes
  * @asMemberOf StackColumn
@@ -31,6 +28,13 @@ export declare function weightsChanged(previous: number[], current: number[]): v
  * @event
  */
 export declare function nestedChildRatio(previous: number[], current: number[]): void;
+export declare type IStackColumnColumnDesc = ICompositeNumberDesc & {
+    /**
+     * show nested summaries
+     * @default true
+     */
+    showNestedSummaries?: boolean;
+};
 /**
  * implementation of the stacked column
  */
@@ -46,7 +50,7 @@ export default class StackColumn extends CompositeNumberColumn implements IMulti
      * @private
      */
     private collapsed;
-    constructor(id: string, desc: ICompositeNumberDesc);
+    constructor(id: string, desc: IStackColumnColumnDesc);
     get label(): string;
     protected createEventList(): string[];
     on(type: typeof StackColumn.EVENT_COLLAPSE_CHANGED, listener: typeof collapseChanged | null): this;
@@ -70,6 +74,7 @@ export default class StackColumn extends CompositeNumberColumn implements IMulti
     on(type: string | string[], listener: IEventListener | null): this;
     setCollapsed(value: boolean): void;
     getCollapsed(): boolean;
+    isShowNestedSummaries(): boolean;
     get canJustAddNumbers(): boolean;
     flatten(r: IFlatColumn[], offset: number, levelsToGo?: number, padding?: number): number;
     dump(toDescRef: (desc: any) => any): any;

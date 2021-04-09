@@ -14,9 +14,17 @@ export declare function collapseChanged_MC(previous: boolean, current: boolean):
  * @event
  */
 export declare function nestedChildRatio_MC(previous: number, current: number): void;
+export declare type IMultiLevelCompositeColumnDesc = IColumnDesc & {
+    /**
+     * show nested summaries
+     * @default true
+     */
+    showNestedSummaries?: boolean;
+};
 export default class MultiLevelCompositeColumn extends CompositeColumn implements IMultiLevelColumn {
     static readonly EVENT_COLLAPSE_CHANGED = "collapseChanged";
     static readonly EVENT_MULTI_LEVEL_CHANGED = "nestedChildRatio";
+    static readonly COLLAPSED_RENDERER = "default";
     private readonly adaptChange;
     /**
      * whether this stack column is collapsed i.e. just looks like an ordinary number column
@@ -24,7 +32,7 @@ export default class MultiLevelCompositeColumn extends CompositeColumn implement
      * @private
      */
     private collapsed;
-    constructor(id: string, desc: Readonly<IColumnDesc>);
+    constructor(id: string, desc: Readonly<IMultiLevelCompositeColumnDesc>);
     protected createEventList(): string[];
     on(type: typeof MultiLevelCompositeColumn.EVENT_COLLAPSE_CHANGED, listener: typeof collapseChanged_MC | null): this;
     on(type: typeof MultiLevelCompositeColumn.EVENT_MULTI_LEVEL_CHANGED, listener: typeof nestedChildRatio_MC | null): this;
@@ -46,6 +54,7 @@ export default class MultiLevelCompositeColumn extends CompositeColumn implement
     on(type: string | string[], listener: IEventListener | null): this;
     setCollapsed(value: boolean): void;
     getCollapsed(): boolean;
+    isShowNestedSummaries(): boolean;
     dump(toDescRef: (desc: any) => any): any;
     restore(dump: any, factory: ITypeFactory): void;
     flatten(r: IFlatColumn[], offset: number, levelsToGo?: number, padding?: number): number;

@@ -27,9 +27,10 @@ import { toolbar } from './annotations';
  * @param label
  * @returns {{type: string, label: string}}
  */
-export function createNestedDesc(label) {
+export function createNestedDesc(label, showNestedSummaries) {
     if (label === void 0) { label = 'Nested'; }
-    return { type: 'nested', label: label };
+    if (showNestedSummaries === void 0) { showNestedSummaries = true; }
+    return { type: 'nested', label: label, showNestedSummaries: showNestedSummaries };
 }
 /**
  * a nested column is a composite column where the sorting order is determined by the nested ordering of the children

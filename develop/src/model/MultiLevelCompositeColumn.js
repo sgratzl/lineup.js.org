@@ -23,11 +23,14 @@ import { similar } from '../internal';
 import { toolbar } from './annotations';
 import Column from './Column';
 import CompositeColumn from './CompositeColumn';
+import { integrateDefaults } from './internal';
 import StackColumn from './StackColumn';
 var MultiLevelCompositeColumn = /** @class */ (function (_super) {
     __extends(MultiLevelCompositeColumn, _super);
     function MultiLevelCompositeColumn(id, desc) {
-        var _this = _super.call(this, id, desc) || this;
+        var _this = _super.call(this, id, integrateDefaults(desc, {
+            summaryRenderer: 'nested',
+        })) || this;
         /**
          * whether this stack column is collapsed i.e. just looks like an ordinary number column
          * @type {boolean}
@@ -57,6 +60,9 @@ var MultiLevelCompositeColumn = /** @class */ (function (_super) {
     };
     MultiLevelCompositeColumn.prototype.getCollapsed = function () {
         return this.collapsed;
+    };
+    MultiLevelCompositeColumn.prototype.isShowNestedSummaries = function () {
+        return this.desc.showNestedSummaries !== false;
     };
     MultiLevelCompositeColumn.prototype.dump = function (toDescRef) {
         var r = _super.prototype.dump.call(this, toDescRef);
@@ -116,7 +122,7 @@ var MultiLevelCompositeColumn = /** @class */ (function (_super) {
     };
     MultiLevelCompositeColumn.prototype.getRenderer = function () {
         if (this.getCollapsed()) {
-            return MultiLevelCompositeColumn_1.EVENT_COLLAPSE_CHANGED;
+            return MultiLevelCompositeColumn_1.COLLAPSED_RENDERER;
         }
         return _super.prototype.getRenderer.call(this);
     };
@@ -131,6 +137,7 @@ var MultiLevelCompositeColumn = /** @class */ (function (_super) {
     var MultiLevelCompositeColumn_1;
     MultiLevelCompositeColumn.EVENT_COLLAPSE_CHANGED = StackColumn.EVENT_COLLAPSE_CHANGED;
     MultiLevelCompositeColumn.EVENT_MULTI_LEVEL_CHANGED = StackColumn.EVENT_MULTI_LEVEL_CHANGED;
+    MultiLevelCompositeColumn.COLLAPSED_RENDERER = 'default';
     MultiLevelCompositeColumn = MultiLevelCompositeColumn_1 = __decorate([
         toolbar('compress', 'expand')
     ], MultiLevelCompositeColumn);

@@ -131,7 +131,7 @@ var MultiLevelRenderColumn = /** @class */ (function (_super) {
     };
     MultiLevelRenderColumn.prototype.updateNested = function (wrapper, r) {
         var _this = this;
-        var sub = this.mc.children;
+        var sub = this.mc.isShowNestedSummaries() ? this.mc.children : [];
         this.matchChildren(wrapper, sub);
         var children = Array.from(wrapper.children);
         var toWait = [];
