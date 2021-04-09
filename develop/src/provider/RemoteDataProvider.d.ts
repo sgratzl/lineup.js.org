@@ -1,7 +1,7 @@
 import Column, { IColumnDesc, IDataRow, Ranking, IndicesArray, IOrderedGroup } from '../model';
 import ACommonDataProvider from './ACommonDataProvider';
-import { IDataProviderOptions } from './interfaces';
-import { IRenderTasks } from '../renderer';
+import type { IDataProviderOptions } from './interfaces';
+import type { IRenderTasks } from '../renderer';
 /**
  * interface what the server side has to provide
  */

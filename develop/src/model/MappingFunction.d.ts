@@ -1,5 +1,5 @@
-import { IMappingFunction } from '.';
-import { ITypedDump } from './interfaces';
+import type { ITypedDump } from './interfaces';
+import type { IMappingFunction } from './INumberColumn';
 /**
  * interface of a d3 scale
  */

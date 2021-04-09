@@ -1,8 +1,9 @@
 import { IEventListener } from '../internal';
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
-import CompositeColumn, { addColumn, filterChanged, moveColumn, removeColumn } from './CompositeColumn';
+import type CompositeColumn from './CompositeColumn';
+import type { addColumn, filterChanged, moveColumn, removeColumn } from './CompositeColumn';
 import CompositeNumberColumn, { ICompositeNumberDesc } from './CompositeNumberColumn';
-import { IDataRow, IFlatColumn, IMultiLevelColumn, ITypeFactory } from './interfaces';
+import type { IDataRow, IFlatColumn, IMultiLevelColumn, ITypeFactory } from './interfaces';
 /**
  * factory for creating a description creating a stacked column
  * @param label

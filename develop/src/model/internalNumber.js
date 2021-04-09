@@ -1,6 +1,6 @@
 import { format } from 'd3-format';
 import { similar, boxplotBuilder } from '../internal';
-import { FIRST_IS_NAN } from '.';
+import { FIRST_IS_NAN } from './missing';
 /** @internal */
 export var DEFAULT_FORMATTER = format('.3n');
 /** @internal */

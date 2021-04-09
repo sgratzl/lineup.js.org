@@ -1,4 +1,4 @@
-import { ICategory, ICategoricalColorMappingFunction } from '.';
+import type { ICategory, ICategoricalColorMappingFunction } from './ICategoricalColumn';
 export declare const DEFAULT_CATEGORICAL_COLOR_FUNCTION: ICategoricalColorMappingFunction;
 export declare class ReplacementColorMappingFunction implements ICategoricalColorMappingFunction {
     readonly map: ReadonlyMap<string, string>;

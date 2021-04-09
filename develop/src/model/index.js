@@ -50,7 +50,7 @@ export { default as CategoricalMapColumn } from './CategoricalMapColumn';
 export * from './CategoricalMapColumn';
 export { default as CategoricalsColumn } from './CategoricalsColumn';
 export * from './CategoricalsColumn';
-export { default, default as Column } from './Column';
+export { default, default as Column, DEFAULT_COLOR } from './Column';
 // no * export
 export { default as CompositeColumn } from './CompositeColumn';
 // no * export

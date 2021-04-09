@@ -1,8 +1,9 @@
 import { ISequence, IEventListener } from '../internal';
 import Column, { dirty, dirtyCaches, dirtyHeader, dirtyValues, groupRendererChanged, labelChanged, metaDataChanged, rendererTypeChanged, summaryRendererChanged, visibilityChanged, widthChanged } from './Column';
-import { IDateColumn, IDateDesc, IDateFilter, IDateGrouper } from './IDateColumn';
+import type { IDateColumn, IDateDesc, IDateFilter, IDateGrouper } from './IDateColumn';
 import { IDataRow, IGroup, ECompareValueType, IValueColumnDesc, ITypeFactory } from './interfaces';
-import ValueColumn, { dataLoaded } from './ValueColumn';
+import type { dataLoaded } from './ValueColumn';
+import ValueColumn from './ValueColumn';
 export declare type IDateColumnDesc = IValueColumnDesc<Date> & IDateDesc;
 /**
  * emitted when the filter property changes

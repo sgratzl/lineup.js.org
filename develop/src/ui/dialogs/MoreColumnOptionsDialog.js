@@ -13,7 +13,7 @@ var __extends = (this && this.__extends) || (function () {
         d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
     };
 })();
-import { createToolbarMenuItems, updateIconState } from '../header';
+import { createToolbarMenuItems, updateIconState } from '../headerTooltip';
 import { cssClass } from '../../styles';
 import APopup from './APopup';
 /** @internal */

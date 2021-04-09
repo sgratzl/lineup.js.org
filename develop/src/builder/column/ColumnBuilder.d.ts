@@ -1,4 +1,4 @@
-import { IColumnDesc } from '../../model';
+import type { IColumnDesc } from '../../model';
 export default class ColumnBuilder<T extends IColumnDesc = IColumnDesc> {
     protected readonly desc: T;
     constructor(type: string, column: string);

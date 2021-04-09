@@ -1,6 +1,6 @@
-import ADialog from './ADialog';
-import Column from '../../model';
-import { ILivePreviewOptions } from '../../config';
+import type ADialog from './ADialog';
+import type Column from '../../model';
+import type { ILivePreviewOptions } from '../../config';
 import { AEventDispatcher, IEventListener } from '../../internal';
 /**
  * emitted a dialog is opened

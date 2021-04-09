@@ -1,7 +1,7 @@
 import Popper from 'popper.js';
-import DialogManager from './DialogManager';
-import { IRankingHeaderContext } from '../interfaces';
-import { ILivePreviewOptions } from '../../config';
+import type DialogManager from './DialogManager';
+import type { IRankingHeaderContext } from '../interfaces';
+import type { ILivePreviewOptions } from '../../config';
 export interface IDialogOptions {
     title: string;
     livePreview: boolean | keyof ILivePreviewOptions;

@@ -1,8 +1,9 @@
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, dirtyCaches, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged } from './Column';
-import { ICategoricalColumn, ICategory, ICategoricalColorMappingFunction } from './ICategoricalColumn';
-import { IDataRow, IGroup, IValueColumnDesc, ITypeFactory } from './interfaces';
-import ValueColumn, { dataLoaded } from './ValueColumn';
-import { IEventListener } from '../internal';
+import type { ICategoricalColumn, ICategory, ICategoricalColorMappingFunction } from './ICategoricalColumn';
+import type { IDataRow, IGroup, IValueColumnDesc, ITypeFactory } from './interfaces';
+import type { dataLoaded } from './ValueColumn';
+import ValueColumn from './ValueColumn';
+import type { IEventListener } from '../internal';
 export interface ICategoryNode extends ICategory {
     children: Readonly<ICategoryNode>[];
 }

@@ -20,9 +20,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import ArrayColumn from './ArrayColumn';
-import { DEFAULT_COLOR } from './interfaces';
 import CategoricalColumn from './CategoricalColumn';
 import { DEFAULT_CATEGORICAL_COLOR_FUNCTION } from './CategoricalColorMappingFunction';
+import { DEFAULT_COLOR, } from './Column';
 import { chooseUIntByDataLength, integrateDefaults } from './internal';
 import { toCategory } from './internalCategorical';
 import { toolbar } from './annotations';

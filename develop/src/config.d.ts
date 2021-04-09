@@ -1,7 +1,7 @@
-import { Column, Ranking, IGroupData, IGroupItem } from './model';
-import { IDataProvider } from './provider';
-import { ICellRendererFactory, ERenderMode } from './renderer';
-import { IToolbarAction, IToolbarDialogAddon } from './ui';
+import type { Column, Ranking, IGroupData, IGroupItem } from './model';
+import type { IDataProvider } from './provider';
+import type { ICellRendererFactory, ERenderMode } from './renderer';
+import type { IToolbarAction, IToolbarDialogAddon } from './ui';
 /**
  * custom height implementation logic
  */

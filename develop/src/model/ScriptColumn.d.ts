@@ -1,8 +1,9 @@
-import { IEventListener } from '../internal';
+import type { IEventListener } from '../internal';
 import Column, { dirty, dirtyCaches, dirtyHeader, dirtyValues, groupRendererChanged, labelChanged, metaDataChanged, rendererTypeChanged, summaryRendererChanged, visibilityChanged, widthChanged } from './Column';
-import CompositeColumn, { addColumn, moveColumn, removeColumn } from './CompositeColumn';
+import type { addColumn, moveColumn, removeColumn } from './CompositeColumn';
+import type CompositeColumn from './CompositeColumn';
 import CompositeNumberColumn, { ICompositeNumberDesc } from './CompositeNumberColumn';
-import { IDataRow, ITypeFactory } from './interfaces';
+import type { IDataRow, ITypeFactory } from './interfaces';
 import { IColorMappingFunction, IMapAbleColumn, IMapAbleDesc, IMappingFunction, INumberFilter } from './INumberColumn';
 /**
  * factory for creating a description creating a mean column

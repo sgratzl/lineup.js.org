@@ -1,5 +1,5 @@
 import { Ranking, EAdvancedSortMethod, IColumnDesc } from '../model';
-import { DataProvider } from '../provider';
+import type { DataProvider } from '../provider';
 export interface IImposeColumnBuilder {
     type: 'impose';
     column: string;

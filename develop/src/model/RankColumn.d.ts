@@ -1,5 +1,5 @@
 import Column from './Column';
-import { IDataRow, IColumnDesc } from './interfaces';
+import type { IDataRow, IColumnDesc } from './interfaces';
 /**
  * factory for creating a description creating a rank column
  * @param label

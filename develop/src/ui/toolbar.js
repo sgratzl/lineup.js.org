@@ -3,8 +3,7 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from) {
         to[j] = from[i];
     return to;
 };
-import { getAllToolbarActions, getAllToolbarDialogAddons } from '../model/internal';
-import { EDateSort, EAdvancedSortMethod, ESortMethod, isSupportType, isSortingAscByDefault, } from '../model';
+import { EAdvancedSortMethod, EDateSort, ESortMethod, isSortingAscByDefault, isSupportType, } from '../model';
 import { cssClass } from '../styles';
 import { dialogContext } from './dialogs/ADialog';
 import CategoricalColorMappingDialog from './dialogs/CategoricalColorMappingDialog';
@@ -16,10 +15,7 @@ import CompositeChildrenDialog from './dialogs/CompositeChildrenDialog';
 import CutOffHierarchyDialog from './dialogs/CutOffHierarchyDialog';
 import DateFilterDialog from './dialogs/DateFilterDialog';
 import EditPatternDialog from './dialogs/EditPatternDialog';
-import appendDate from './dialogs/groupDate';
 import GroupDialog from './dialogs/GroupDialog';
-import appendNumber from './dialogs/groupNumber';
-import appendString from './dialogs/groupString';
 import MappingDialog from './dialogs/MappingDialog';
 import NumberFilterDialog from './dialogs/NumberFilterDialog';
 import ReduceDialog from './dialogs/ReduceDialog';
@@ -29,8 +25,11 @@ import SearchDialog from './dialogs/SearchDialog';
 import ShowTopNDialog from './dialogs/ShowTopNDialog';
 import SortDialog from './dialogs/SortDialog';
 import StringFilterDialog from './dialogs/StringFilterDialog';
-import { sortMethods } from './dialogs/utils';
 import WeightsEditDialog from './dialogs/WeightsEditDialog';
+import appendDate from './dialogs/groupDate';
+import appendNumber from './dialogs/groupNumber';
+import appendString from './dialogs/groupString';
+import { sortMethods } from './dialogs/utils';
 function ui(title, onClick, options) {
     if (options === void 0) { options = {}; }
     return { title: title, onClick: onClick, options: options };
@@ -45,16 +44,6 @@ function uiDialog(title, dialogClass, extraArgs, options) {
             dialog.open();
         },
         options: options,
-    };
-}
-function uiSortMethod(methods) {
-    methods = methods.sort(function (a, b) { return a.toLowerCase().localeCompare(b.toLowerCase()); });
-    return {
-        title: 'Sort By',
-        order: 2,
-        append: function (col, node) {
-            return sortMethods(node, col, methods);
-        },
     };
 }
 var sort = {
@@ -223,28 +212,6 @@ var setShowTopN = {
         featureLevel: 'advanced',
     },
 };
-export var toolbarDialogAddons = {
-    sortNumber: uiSortMethod(Object.keys(EAdvancedSortMethod)),
-    sortNumbers: uiSortMethod(Object.keys(EAdvancedSortMethod)),
-    sortBoxPlot: uiSortMethod(Object.keys(ESortMethod)),
-    sortDates: uiSortMethod(Object.keys(EDateSort)),
-    sortGroups: uiSortMethod(['count', 'name']),
-    groupNumber: {
-        title: 'Split',
-        order: 2,
-        append: appendNumber,
-    },
-    groupString: {
-        title: 'Groups',
-        order: 2,
-        append: appendString,
-    },
-    groupDate: {
-        title: 'Granularity',
-        order: 2,
-        append: appendDate,
-    },
-};
 export var toolbarActions = {
     vis: vis,
     group: group,
@@ -348,81 +315,36 @@ export var toolbarActions = {
         ctx.provider.setSelection(others);
     }, { featureCategory: 'model', featureLevel: 'advanced' }),
 };
-function sortActions(a, b) {
-    if (a.options.order === b.options.order) {
-        return a.title.toString().localeCompare(b.title.toString());
-    }
-    return (a.options.order || 50) - (b.options.order || 50);
+function uiSortMethod(methods) {
+    methods = methods.sort(function (a, b) { return a.toLowerCase().localeCompare(b.toLowerCase()); });
+    return {
+        title: 'Sort By',
+        order: 2,
+        append: function (col, node) {
+            return sortMethods(node, col, methods);
+        },
+    };
 }
-function getFullToolbar(col, ctx) {
-    var cache = ctx.caches.toolbar;
-    if (cache.has(col.desc.type)) {
-        return cache.get(col.desc.type);
-    }
-    var keys = getAllToolbarActions(col);
-    if (!col.fixed) {
-        keys.push('remove');
-    }
-    {
-        var possible = ctx.getPossibleRenderer(col);
-        if (possible.item.length > 2 || possible.group.length > 2 || possible.summary.length > 2) {
-            // default always possible
-            keys.push('vis');
-        }
-    }
-    var actions = ctx.resolveToolbarActions(col, keys);
-    var r = Array.from(new Set(actions)).sort(sortActions);
-    cache.set(col.desc.type, r);
-    return r;
-}
-/** @internal */
-export function getToolbar(col, ctx) {
-    var toolbar = getFullToolbar(col, ctx);
-    var flags = ctx.flags;
-    return toolbar.filter(function (a) {
-        if (a.enabled && !a.enabled(col)) {
-            return false;
-        }
-        // level is basic or not one of disabled features
-        return (a.options.featureLevel === 'basic' ||
-            !((flags.advancedModelFeatures === false && a.options.featureCategory === 'model') ||
-                (flags.advancedRankingFeatures === false && a.options.featureCategory === 'ranking') ||
-                (flags.advancedUIFeatures === false && a.options.featureCategory === 'ui')));
-    });
-}
-/** @internal */
-export function getToolbarDialogAddons(col, key, ctx) {
-    var cacheKey = col.desc.type + "@" + key;
-    var cacheAddon = ctx.caches.toolbarAddons;
-    if (cacheAddon.has(cacheKey)) {
-        return cacheAddon.get(cacheKey);
-    }
-    var keys = getAllToolbarDialogAddons(col, key);
-    var actions = ctx.resolveToolbarDialogAddons(col, keys);
-    var r = Array.from(new Set(actions)).sort(function (a, b) {
-        if (a.order === b.order) {
-            return a.title.localeCompare(b.title);
-        }
-        return (a.order || 50) - (b.order || 50);
-    });
-    cacheAddon.set(cacheKey, r);
-    return r;
-}
-/** @internal */
-export function isSortAble(col, ctx) {
-    var toolbar = getFullToolbar(col, ctx);
-    return (toolbar.find(function (d) { return d === sort || d === sortBy || d.title === sort.title || d.title.startsWith('Sort By'); }) != null);
-}
-/** @internal */
-export function isGroupAble(col, ctx) {
-    var toolbar = getFullToolbar(col, ctx);
-    return (toolbar.find(function (d) { return d === group || d === groupBy || d.title === group.title || d.title.startsWith('Group By'); }) !=
-        null);
-}
-/** @internal */
-export function isGroupSortAble(col, ctx) {
-    var toolbar = getFullToolbar(col, ctx);
-    return (toolbar.find(function (d) { return d === sortGroupBy || d.title === sortGroupBy.title || d.title.startsWith('Sort Groups By'); }) !=
-        null);
-}
+export var toolbarDialogAddons = {
+    sortNumber: uiSortMethod(Object.keys(EAdvancedSortMethod)),
+    sortNumbers: uiSortMethod(Object.keys(EAdvancedSortMethod)),
+    sortBoxPlot: uiSortMethod(Object.keys(ESortMethod)),
+    sortDates: uiSortMethod(Object.keys(EDateSort)),
+    sortGroups: uiSortMethod(['count', 'name']),
+    groupNumber: {
+        title: 'Split',
+        order: 2,
+        append: appendNumber,
+    },
+    groupString: {
+        title: 'Groups',
+        order: 2,
+        append: appendString,
+    },
+    groupDate: {
+        title: 'Granularity',
+        order: 2,
+        append: appendDate,
+    },
+};
 //# sourceMappingURL=toolbar.js.map

@@ -1,9 +1,9 @@
 import { IColumn, IAbortAblePromise, IAsyncUpdate } from 'lineupengine';
-import { Column } from '../model';
-import { ICellRenderer, IGroupCellRenderer } from '../renderer';
-import { ISummaryRenderer, IRenderCallback } from '../renderer';
-import { IRankingContext } from './interfaces';
-import { ILineUpFlags } from '../config';
+import type { Column } from '../model';
+import type { ICellRenderer, IGroupCellRenderer } from '../renderer';
+import type { ISummaryRenderer, IRenderCallback } from '../renderer';
+import type { IRankingContext } from './interfaces';
+import type { ILineUpFlags } from '../config';
 export interface IRenderers {
     singleId: string;
     single: ICellRenderer;

@@ -1,6 +1,7 @@
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
-import ValueColumn, { dataLoaded } from './ValueColumn';
-import { IKeyValue } from './IArrayColumn';
+import type { dataLoaded } from './ValueColumn';
+import type ValueColumn from './ValueColumn';
+import type { IKeyValue } from './IArrayColumn';
 import { IDataRow, ECompareValueType, ITypeFactory } from './interfaces';
 import { EAdvancedSortMethod, IAdvancedBoxPlotColumn, INumberDesc, INumberFilter, IMappingFunction, IColorMappingFunction } from './INumberColumn';
 import MapColumn, { IMapColumnDesc } from './MapColumn';

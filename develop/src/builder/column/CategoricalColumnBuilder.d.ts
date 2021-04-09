@@ -1,4 +1,4 @@
-import { ICategoricalColumnDesc, ICategory } from '../../model';
+import type { ICategoricalColumnDesc, ICategory } from '../../model';
 import ColumnBuilder from './ColumnBuilder';
 export default class CategoricalColumnBuilder extends ColumnBuilder<ICategoricalColumnDesc> {
     constructor(column: string);

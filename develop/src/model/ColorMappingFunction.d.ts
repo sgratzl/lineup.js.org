@@ -1,5 +1,5 @@
-import { IColorMappingFunction } from '.';
-import { ITypedDump, ITypeFactory } from './interfaces';
+import type { ITypedDump, ITypeFactory } from './interfaces';
+import type { IColorMappingFunction } from './INumberColumn';
 export declare class SequentialColorFunction implements IColorMappingFunction {
     readonly name: string;
     static readonly FUNCTIONS: {

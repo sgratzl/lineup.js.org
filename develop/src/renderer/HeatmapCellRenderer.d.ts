@@ -1,5 +1,5 @@
 import { Column, INumbersColumn } from '../model';
-import { IRenderContext, ICellRendererFactory, IImposer, ICellRenderer, IGroupCellRenderer, ISummaryRenderer } from './interfaces';
+import type { IRenderContext, ICellRendererFactory, IImposer, ICellRenderer, IGroupCellRenderer, ISummaryRenderer } from './interfaces';
 export default class HeatmapCellRenderer implements ICellRendererFactory {
     readonly title: string;
     canRender(col: Column): boolean;

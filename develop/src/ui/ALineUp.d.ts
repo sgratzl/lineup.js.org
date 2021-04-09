@@ -1,8 +1,8 @@
-import { ILineUpLike } from '../config';
+import type { ILineUpLike } from '../config';
 import { AEventDispatcher, IEventListener } from '../internal';
-import { Column } from '../model';
+import type { Column } from '../model';
 import { DataProvider, IDataProviderDump } from '../provider';
-import { ADialog } from './dialogs';
+import type { ADialog } from './dialogs';
 /**
  * emitted when the highlight changes
  * @asMemberOf ALineUp

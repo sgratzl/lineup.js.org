@@ -1,6 +1,7 @@
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
 import { IDataRow, IGroup, ECompareValueType, IValueColumnDesc, ITypeFactory } from './interfaces';
-import ValueColumn, { dataLoaded } from './ValueColumn';
+import type { dataLoaded } from './ValueColumn';
+import ValueColumn from './ValueColumn';
 import { IEventListener, ISequence } from '../internal';
 export declare enum EAlignment {
     left = "left",

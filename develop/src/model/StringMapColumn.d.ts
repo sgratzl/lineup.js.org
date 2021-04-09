@@ -1,9 +1,11 @@
-import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
-import ValueColumn, { dataLoaded } from './ValueColumn';
-import { IDataRow } from './interfaces';
+import type { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
+import type Column from './Column';
+import type { dataLoaded } from './ValueColumn';
+import type ValueColumn from './ValueColumn';
+import type { IDataRow } from './interfaces';
 import MapColumn, { IMapColumnDesc } from './MapColumn';
 import { EAlignment, IStringDesc } from './StringColumn';
-import { IEventListener } from '../internal';
+import type { IEventListener } from '../internal';
 export declare type IStringMapColumnDesc = IStringDesc & IMapColumnDesc<string>;
 /**
  * a string column with optional alignment

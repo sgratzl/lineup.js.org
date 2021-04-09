@@ -1,5 +1,5 @@
 import { Column } from '../model';
-import { ICellRendererFactory, ISummaryRenderer, IGroupCellRenderer, ICellRenderer } from './interfaces';
+import type { ICellRendererFactory, ISummaryRenderer, IGroupCellRenderer, ICellRenderer } from './interfaces';
 export default class RankCellRenderer implements ICellRendererFactory {
     readonly title: string;
     canRender(col: Column): boolean;

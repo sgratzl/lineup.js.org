@@ -1,6 +1,11 @@
 import { AEventDispatcher, ISequence, IEventListener } from '../internal';
 import { IColumnDump, ECompareValueType, IColumnDesc, IDataRow, IGroup, IColumnParent, IColumnMetaData, IFlatColumn, ICompareValue, ITypeFactory } from './interfaces';
-import Ranking from './Ranking';
+import type Ranking from './Ranking';
+/**
+ * default color that should be used
+ * @type {string}
+ */
+export declare const DEFAULT_COLOR = "#C1C1C1";
 /**
  * emitted when the width property changes
  * @asMemberOf Column

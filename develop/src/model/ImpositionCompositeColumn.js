@@ -26,8 +26,8 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from) {
 };
 import { suffix } from '../internal';
 import { toolbar, SortByDefault } from './annotations';
+import { DEFAULT_COLOR, } from './Column';
 import CompositeColumn from './CompositeColumn';
-import { DEFAULT_COLOR } from './interfaces';
 import { isNumberColumn, isMapAbleColumn, } from './INumberColumn';
 import NumberColumn from './NumberColumn';
 import { DEFAULT_FORMATTER, noNumberFilter } from './internalNumber';

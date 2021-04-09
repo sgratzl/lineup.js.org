@@ -1,8 +1,9 @@
 import { IEventListener, IAdvancedBoxPlotData } from '../internal';
-import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
+import type Column from './Column';
+import { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
 import CompositeColumn, { addColumn, filterChanged, moveColumn, removeColumn } from './CompositeColumn';
-import { IKeyValue } from './IArrayColumn';
-import { IDataRow, IGroup, IColumnDesc } from './interfaces';
+import type { IKeyValue } from './IArrayColumn';
+import type { IDataRow, IGroup, IColumnDesc } from './interfaces';
 import { EAdvancedSortMethod, INumberFilter, INumbersColumn, IMappingFunction, IColorMappingFunction } from './INumberColumn';
 /**
  *  factory for creating a description creating a max column

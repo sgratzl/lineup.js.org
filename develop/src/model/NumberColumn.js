@@ -22,8 +22,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { format } from 'd3-format';
 import { equalArrays } from '../internal';
 import { Category, dialogAddons, SortByDefault, toolbar } from './annotations';
-import Column from './Column';
-import { ECompareValueType, DEFAULT_COLOR } from './interfaces';
+import Column, { DEFAULT_COLOR, } from './Column';
+import { ECompareValueType } from './interfaces';
 import { EAdvancedSortMethod, } from './INumberColumn';
 import { restoreMapping, ScaleMappingFunction } from './MappingFunction';
 import { isMissingValue, isUnknown, missingGroup } from './missing';

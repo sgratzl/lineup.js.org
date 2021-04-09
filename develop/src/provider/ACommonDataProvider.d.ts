@@ -1,6 +1,6 @@
 import { IColumnDesc, Ranking } from '../model';
 import ADataProvider from './ADataProvider';
-import { IDataProviderDump, IDataProviderOptions } from './interfaces';
+import type { IDataProviderDump, IDataProviderOptions } from './interfaces';
 /**
  * common base implementation of a DataProvider with a fixed list of column descriptions
  */

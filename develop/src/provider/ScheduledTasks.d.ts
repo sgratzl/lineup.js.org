@@ -1,7 +1,7 @@
 import { IAdvancedBoxPlotData, ICategoricalStatistics, IDateStatistics, ISequence, IStatistics } from '../internal';
 import Column, { ICategoricalLikeColumn, ICompareValue, IDataRow, IDateColumn, IGroup, IndicesArray, INumberColumn, IOrderedGroup, Ranking } from '../model';
-import { IRenderTask } from '../renderer';
-import { CompareLookup } from './sort';
+import type { IRenderTask } from '../renderer';
+import type { CompareLookup } from './sort';
 import { ARenderTasks, IRenderTaskExecutor, MultiIndices, TaskLater, TaskNow } from './tasks';
 export declare class ScheduleRenderTasks extends ARenderTasks implements IRenderTaskExecutor {
     private readonly cache;

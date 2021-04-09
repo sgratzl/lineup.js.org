@@ -417,22 +417,17 @@
         "affectsGlobalScope": false
       },
       "../src/internal/worker.ts": {
-        "version": "47ed932c776f9a9a07041e13ac7eaba8429a3155bce8d40b938f21c84d11a757",
+        "version": "4934c0147675d622d1e7568c63bf96d38e1b51e73a89f9c2cba255651d17a700",
         "signature": "14e7397ad7aab084b1c5b23b9f101c079611e43e872d5b4250f2be5499a6a273",
         "affectsGlobalScope": false
       },
-      "../.yarn/cache/fast-deep-equal-npm-3.1.3-790edcfcf5-451526766b.zip/node_modules/fast-deep-equal/index.d.ts": {
-        "version": "37ffe3c12813b6a6d512f7c27b71f3388d03dafa10555ad5094cea393ed3d1f6",
-        "signature": "37ffe3c12813b6a6d512f7c27b71f3388d03dafa10555ad5094cea393ed3d1f6",
-        "affectsGlobalScope": false
-      },
       "../src/internal/mathInterfaces.ts": {
-        "version": "7c7fd5325d2b74a1c6fbb88514dbf6dd1cb69623959f272cfc2afa5172e01c97",
-        "signature": "eb047a747f7478885b6890b7514e16cd4d0ff18ef1e7c87ad93d5f4018204df3",
+        "version": "93059caa42fe9c0bd12f56b2feedc6b88001416059bd3fdd3abcaadb9e618999",
+        "signature": "850dd4d42d55a94805ec5becbf74370baae1bf19cef18c316e463e8a08286062",
         "affectsGlobalScope": false
       },
       "../src/internal/math.ts": {
-        "version": "25f7386e3145775081ac90bbf15007fb5ac899d940012212ff697aa38869cb92",
+        "version": "a9b6eba6437203d17dfbf57cba175a4b7dc250f352f9758c2ecaad099980a273",
         "signature": "cf97ec6f6ccc2269fe650e27d7b876b99c4b1b4f4efb2f8d3bd303141da5c821",
         "affectsGlobalScope": false
       },
@@ -446,9 +441,14 @@
         "signature": "768b8f1f6f1d1956c6989f567ac2a496068a65238d6a7a8359a7fe5128a61318",
         "affectsGlobalScope": false
       },
+      "../.yarn/cache/fast-deep-equal-npm-3.1.3-790edcfcf5-451526766b.zip/node_modules/fast-deep-equal/index.d.ts": {
+        "version": "37ffe3c12813b6a6d512f7c27b71f3388d03dafa10555ad5094cea393ed3d1f6",
+        "signature": "37ffe3c12813b6a6d512f7c27b71f3388d03dafa10555ad5094cea393ed3d1f6",
+        "affectsGlobalScope": false
+      },
       "../src/internal/utils.ts": {
-        "version": "267f172abdc6a7d7484d92a920e81175e33e730359dc971e433c73a29136fd62",
-        "signature": "b8743ec833db64a6b7b8ceecaf19ac98eaec12fd51f7b03abbe0a9e0778a7aa3",
+        "version": "64c174b48ebe8a832422c42a7d482b21eb7fc34705b8436d261a4137e429afd3",
+        "signature": "37b8345f81502db283529b38a48d620b7efb7024c5354e84d2ce20f6c44154aa",
         "affectsGlobalScope": false
       },
       "../.yarn/cache/@types-lodash-npm-4.14.168-2d65abe211-9a4e25f89f.zip/node_modules/@types/lodash/common/common.d.ts": {
@@ -522,7 +522,7 @@
         "affectsGlobalScope": false
       },
       "../src/internal/accessor.ts": {
-        "version": "0340744af421aedd3a7e53d9c033ed12d71c56c7eb31d969656f6ac238c87b68",
+        "version": "0fe52bc0d0c95a24034026d73c04f5af32744e881d8d6ec6478ffb628f24f82e",
         "signature": "56dfbf591e9ab845ac771414b43c04d4bdd11bf5dc9c1d3aff4b724db0f5dfe3",
         "affectsGlobalScope": false
       },
@@ -537,23 +537,23 @@
         "affectsGlobalScope": true
       },
       "../src/model/IArrayColumn.ts": {
-        "version": "23fdb63d2a9c20a75463184d945ef6a0056bf77ad916c279d4018988366f61d6",
-        "signature": "8fb3f12bc009305162edb35ef7668cc3b5e6b59cc316bcf674cab71d121a394e",
+        "version": "1660ec26fbab89d581781341bb6006d785fd586b8929c30186c7c5402481a6c0",
+        "signature": "563ec007f1a98862f6c3792d42b22416fbefe942600259e89c9600711345fe75",
         "affectsGlobalScope": false
       },
       "../src/model/INumberColumn.ts": {
-        "version": "82d186cf7b0f28bcc13ab00e8f9f0aa608723d2c3dadd2daee06fdab5598399a",
-        "signature": "6187e9026b6f3f2e6ea7c976fb54ada4797c04054b2bba46f2e439bcc32554ef",
+        "version": "9b3c5f5cf4a2086971d71a3871aad9ddbb002c845d804b97856a1ba49a900c57",
+        "signature": "da08c106a35a0c41a4756e047daa23b6ccc1bb57eea289c0c655d60408af0e4b",
         "affectsGlobalScope": false
       },
       "../src/model/ValueColumn.ts": {
-        "version": "4be653b25e15a65143676227df72bc6c468d51b9f963f03373a2ddfa0be19db2",
-        "signature": "5c883f5cb46e2a7cdb45cddc8a6cf02c31f4e3125677b6bc8641ba9e6a5a2e90",
+        "version": "8bc9a0ceeafe9bc57bcca44a03f143265acd38734a792cd0af9757e61067b43a",
+        "signature": "3f5ead2ab40b4b4648222cee5609e7941f7b53b92637f58f933b52642c81d530",
         "affectsGlobalScope": false
       },
       "../src/model/CompositeColumn.ts": {
-        "version": "cc255f5c855e61f750a77de3aea79fa230098651dbe9d34f10cef21627977be1",
-        "signature": "3fbab01b157a1abde7ab9c27e314bc7dc15e733fb2008a813c8823c99840806f",
+        "version": "8336640d2ddfbc0009a4a584e3ccf328d8a94a5d5c19c607d0e3f3d3aa031179",
+        "signature": "c5d421e37209d95a27f4f96da56540af3b57ad564d1d51e659d73c2c137dbf9d",
         "affectsGlobalScope": false
       },
       "../.yarn/cache/@types-d3-scale-chromatic-npm-2.0.0-193cb07a74-76d2fca336.zip/node_modules/@types/d3-scale-chromatic/index.d.ts": {
@@ -562,18 +562,48 @@
         "affectsGlobalScope": false
       },
       "../src/model/internal.ts": {
-        "version": "ffd4d17c12e35c8f71a4ff7ca270ef0e031c5f7d7e5a5fa567698c73ef2ee8f3",
-        "signature": "29631b92d805343ca93116db932eec8a6b382d219fc55212db13b99cab4002a7",
+        "version": "17487902d134146b91722e5bf04a85f4642b511feb8a0fc63c518472c15d4025",
+        "signature": "1ecce4696a2425237e795165023160f7923095b786a1401cc9185e17cf106e24",
         "affectsGlobalScope": false
       },
-      "../src/model/Ranking.ts": {
-        "version": "88668b2f48bedb1253df448df6ff34f53e308366eeea8506f22744b6e5131955",
-        "signature": "9830b746f66d85a699c0368d7f2397898461dde4d77b2cf6a5c2ea0c4db943d6",
+      "../src/model/AggregateGroupColumn.ts": {
+        "version": "6b907a7d0aab104795e8dbdbe3f760cc5eae949c0cf0a0070fc1957453db054f",
+        "signature": "063eebaf0fa1bdd8b2dbd7ba0abcabdb732abac767862c2ae180b0e60b034a45",
         "affectsGlobalScope": false
       },
       "../src/model/ICategoricalColumn.ts": {
-        "version": "8b8731c823e5bf37972b34604c0fada337b72b069da38f2fabd0b54475e0bddc",
-        "signature": "9517b25bc40dcb1357919b155e10b9173d46fc5bd49565fdb6176df5c236b6a2",
+        "version": "3521ba3c39ed56c9eb32e4add3d43ddff97a8d62efd245040fa435e8359894ab",
+        "signature": "95bcf8e097214a1f1ff5423d1bf2da6ee02a7749e7ae94ee6ddbdec60bc99415",
+        "affectsGlobalScope": false
+      },
+      "../src/model/CategoricalColorMappingFunction.ts": {
+        "version": "55900a94e9b8b423063940e6684b08e3f49fa4678399a64c1cea9d40988cd9cb",
+        "signature": "cdcc7d8ec0b4a44142131c9bd81db9743125bc0391657d45a3525fbe4a4b3bac",
+        "affectsGlobalScope": false
+      },
+      "../src/model/missing.ts": {
+        "version": "f32c745b8999c021d93b6d4cbd7e62ee3c2362f0752e8113f401b2c3a1b893c5",
+        "signature": "c0307d51cdd9fefa9343a6e4c418a3eb25d0bc09adb5ea0d06e8ef8b6258c8bb",
+        "affectsGlobalScope": false
+      },
+      "../src/model/internalCategorical.ts": {
+        "version": "09e1a5105ca44b187d97e501811cfa72489b07b8758a2624aa71f33def38e21c",
+        "signature": "91e741b720094d06d05d5eeb67a0f7a332310b264dae35d974ef6c610dff625c",
+        "affectsGlobalScope": false
+      },
+      "../src/model/CategoricalColumn.ts": {
+        "version": "67b6ffa0c819b944856b6120203420fc69fbde90d0c5d6b6975d4606969d9586",
+        "signature": "579616972f3c76905b97b874ccfaa779cd12f7968e168ceb492602f6fa3cbe8a",
+        "affectsGlobalScope": false
+      },
+      "../src/model/SetColumn.ts": {
+        "version": "2ae36893b8797e41f0085f89ef7bde4bfd003dd1a79b301fdad33492b1d32358",
+        "signature": "53c13814d089cce3a04cdf3c0541ecb5979ff8abee71c7e2703d20daee1f433c",
+        "affectsGlobalScope": false
+      },
+      "../src/model/Ranking.ts": {
+        "version": "91f40809fe6e7c5c00c6f27fd8e36903e1d1efd311674f28a232541bdd2c3c5c",
+        "signature": "9830b746f66d85a699c0368d7f2397898461dde4d77b2cf6a5c2ea0c4db943d6",
         "affectsGlobalScope": false
       },
       "../.yarn/cache/@types-d3-time-npm-2.0.0-dfa4ae1dca-230ee3feb6.zip/node_modules/@types/d3-time/index.d.ts": {
@@ -587,88 +617,63 @@
         "affectsGlobalScope": false
       },
       "../src/model/MappingFunction.ts": {
-        "version": "4670d0e4de1eff04f1e9bc765df9247a312e9962c142fbf81dd3eb56fe32501a",
-        "signature": "c11691dfe1a194b399195f8edf7257b7f2fa2f312022f3157409c260ec21671e",
+        "version": "e3b47052be48e807bf3bbe27128840ada0b690ac315c34393e4a154b29bb2db2",
+        "signature": "48cb6f47323214c3bf9bbc5be49334add7f86588c7e6fb03281a7ebdd5380eb4",
         "affectsGlobalScope": false
       },
       "../src/model/interfaces.ts": {
-        "version": "aa8514f46411462e61ebad3570ed569e61ecc4a1a6c006d968b468ba8575a6a1",
-        "signature": "345053ebe5703f314af844ab0ea05ba1d50b2a755daa1c7c4356a7f78c1964bf",
+        "version": "594cc3b78a96fe44c1b8045462408459f3050ead928dc74b51079445aeeb5b87",
+        "signature": "12470f6ce608796f748a72134aa085b65e0b94a7abf22bb363a87eaa7093f393",
         "affectsGlobalScope": false
       },
       "../src/model/annotations.ts": {
-        "version": "11730aa62f35132a5814e3f083d5c8eb4610ea0798bd6d40e45cddfbb2291717",
-        "signature": "213100977fe5c7764b46b43a35f9f90a1cd314e1cb39977c5bf0cf868c3f1220",
+        "version": "2b94426a762a383b0e9fa267fbb58bf4b5b8fe1d3f51ea8f7dadd080398dfdde",
+        "signature": "da567da4e0afba850bdb31291dbe34e8a4fdf74415d4f34966ab8ed90ed83610",
         "affectsGlobalScope": false
       },
       "../src/model/Column.ts": {
-        "version": "b2a1748b7ebfe31825ae0b35ff52ff0324b3cbd81dad907f6b57b4c143aecdc5",
-        "signature": "4a4e643d254f9ce69266376abd55768614bd2aede1183c2e62fa4969bfb4c13e",
-        "affectsGlobalScope": false
-      },
-      "../src/model/missing.ts": {
-        "version": "84195318afee573f0752bbd5b02d5101484990a9aa1597ce267bba79713fc3f3",
-        "signature": "ab50e3e963d49551ecbaca4342549f4c3697320380330d23586a5703cf3372ac",
+        "version": "e46dc0ddd74ae3615192486fafd4b465d49ee735eb6314ea25ec795590bffea1",
+        "signature": "8e0d8c36633bdea6fab0a9ed5042e676517007039d554f079e3fe4c2174d49cd",
         "affectsGlobalScope": false
       },
       "../src/model/IDateColumn.ts": {
-        "version": "5902fae3e584f16a41a4071d1a6c62569df71036a66365c304971288ef47629f",
-        "signature": "31e2ddeb2af4efe41ac8666de7d35e6f41b300fe358bd80e8b71fad46b36c924",
-        "affectsGlobalScope": false
-      },
-      "../src/model/internalCategorical.ts": {
-        "version": "5bc9e4c73085772888e19ee7eb1e838af929916dda256187619873cf33d41be4",
-        "signature": "953a2d86785fc26a13df5f7cd2c146201712a88b1e256a9f0018f4effb1567dd",
-        "affectsGlobalScope": false
-      },
-      "../src/model/CategoricalColorMappingFunction.ts": {
-        "version": "9c85672adabbb80b1a9ab2deeaf71e21ea9c26e12a2dfa80ae46caebf0aeeb8b",
-        "signature": "1ddf8e60061ccdeb9c2026be338c8b71e3ddb605ee0d9370e85cca380eb1d8e8",
+        "version": "ac42eb524fec1865f779b576cb11390a7c2a2ae696e84249dc537a575513e2a9",
+        "signature": "2255c2e30f50d38dff1cd4637844fd3602f2c7c783ca227539517ebfdd76f116",
         "affectsGlobalScope": false
       },
       "../src/model/ColorMappingFunction.ts": {
-        "version": "911f576873af58944a2d610e2269313b3aefa25288c64551002fea437416f3c5",
-        "signature": "9e53a78d2f4b3184fb41eb2bb43dcd6cdb5caae49839cffad9cf0d7e72b5fc72",
+        "version": "e643464f7fb64116de6331ace8426c4818a3d7ff01281d2d3e1db0040327ae36",
+        "signature": "823d57d1c450dc52dfe1b9964d31e836c4491766454de177be97ab8ccf5fa256",
         "affectsGlobalScope": false
       },
       "../src/model/ActionColumn.ts": {
-        "version": "1a560c7b082654264c95cc5fed689388f4ee749fa1d8ecb7504c5b1918ffc382",
-        "signature": "037705a77298bfb9b2fd45f73b5d1bf7fc1f63c4be79a274a625991cecaa4284",
-        "affectsGlobalScope": false
-      },
-      "../src/model/AggregateGroupColumn.ts": {
-        "version": "fa5efe4b0f04df51aa5e8f8ba04aa6e26a54ba73cdb98c36147b473eccde6c77",
-        "signature": "78c852acf09919c266388c48bbe7cf4f7567984fa6e1ca21b49f0702401673fe",
+        "version": "5864ccbeb536982df595e94c1493a8a64a9911ba98f37a4912867a31060dccf8",
+        "signature": "9cbc5cda1d004631626ab49f80aebeef45a5b69c2cfe21611d48ad6ae4425aab",
         "affectsGlobalScope": false
       },
       "../src/model/StringColumn.ts": {
-        "version": "e0e188c3e7d78366ae3cfefd78079269d7a21f8619b9c0cdc1735797ada84df7",
-        "signature": "b0af75a5250bbce0220ddfea73f00cfe44fc8512f0528b5ee0c9e08eee2686fe",
+        "version": "2b125963ec5e9de691cdcd018892ec9440e504ad15591f1bb6d11aea3ede7f20",
+        "signature": "b353ab1e1c76b512ce2ac38a0b059a6a14891005a66526b553043dee264a50e7",
         "affectsGlobalScope": false
       },
       "../src/model/AnnotateColumn.ts": {
-        "version": "c74f1b9ba477a7c4a7e8ba3c175a2350ddc8669d7dd64811e96d828727a72520",
-        "signature": "66edfda48139538f6f176dc0239a566b1de8e8213d7b503fa92f1492c1982d0a",
+        "version": "62068d9d746959e5daa24dfe0a0c9cc848119974da36904a96bf72fb2679cbd4",
+        "signature": "be742fdc869fd764f3d7cf8993a7db21a7c34a3fe031d537791ca57cd4782c82",
         "affectsGlobalScope": false
       },
       "../src/model/ArrayColumn.ts": {
-        "version": "27c50fdcf1c9d45e809dcfca8878e2035b2ea36ddd11b9e22462450433d322c8",
-        "signature": "b98baad0b98b47f0a1c9f1bf96ba1a221cde6e230863e9d80dd18ae314a3505e",
-        "affectsGlobalScope": false
-      },
-      "../src/model/CategoricalColumn.ts": {
-        "version": "f1264490fc46be8ec5aefa83af599fe9acb9fb00d2a5dd4e3c5d7dffaffde09c",
-        "signature": "b2ba8f68fae654c59778f46a6e628a19cb6a9340c7f37ad287d301c1c53716ea",
+        "version": "81ae4bae5aec3715d2607e53c684d3ae1e32b27d995b3210f9ecbde23d767108",
+        "signature": "4d531cbd1fe87139d1e5addb7cfe4fea40a9c4966651fb59a0ee67ed3ad5702a",
         "affectsGlobalScope": false
       },
       "../src/model/BooleanColumn.ts": {
-        "version": "e60bc33f5ab6e541961654924799b620695b59ff4016cfe3698f8f72f4a27f0c",
-        "signature": "0e4168d246ba441baf39fddffdd90215492a587c31aca25667ad34522b29dc42",
+        "version": "60d5c7cc449533416fb3edc6c02ecc6f735641230372fe71ffbbab7e723aa71b",
+        "signature": "2d0e1c6d08e11eefc89e9a080990e8d2aa690094a8f4ee591a863aaea48a685b",
         "affectsGlobalScope": false
       },
       "../src/model/BooleansColumn.ts": {
-        "version": "e9e620dabe0ae18bdcc84203e970866bdbf5c8e783cc9e4b673cbfdbdca3d25b",
-        "signature": "d9ea8ced0c45b36c6cee271aebe5bd44bf7dd8b40eda1588d15fc0c9f90900d0",
+        "version": "670af4d33b1aae13c13fca6b95ba7359b116f2dc96975e167cd94423b6dc386e",
+        "signature": "7b99afa600293122f83e421c870aa7c0157a75104cc7ee8a355dc681a7c8c6a4",
         "affectsGlobalScope": false
       },
       "../.yarn/cache/@types-d3-format-npm-2.0.0-da536eb80d-956d7ab7c6.zip/node_modules/@types/d3-format/index.d.ts": {
@@ -677,38 +682,38 @@
         "affectsGlobalScope": false
       },
       "../src/model/internalNumber.ts": {
-        "version": "9dcd1e81f280b2d0cdea1262b0fd495c2bfe7c1d65691bf69645fb97650d7f6d",
-        "signature": "2e7e07e1cc845a418ef3e59f28198b221477afd3455727e1b6968ba9f4869915",
+        "version": "1620560d4e189e0887155558f035d4c92c1e7905d0f4d53413580f8064f8b6de",
+        "signature": "2e48ece641a729e9c18051f8c54bca3171e6edb819451abf5b40c63d3eeb6493",
         "affectsGlobalScope": false
       },
       "../src/model/NumberColumn.ts": {
-        "version": "04c5756e32b57ad8ca1d9b5e9b73d880df075481da94fee36f3ed122df2bf168",
-        "signature": "8a3ecacc05e0e5c287040977a8f80b86ea790d88c3f1686367c3de2d3d20ee27",
+        "version": "c6e62467f3620f0caa5b9cfd44a0772310fd7fbf48ebb6372b5ec3f6b3537f60",
+        "signature": "1d1eaa2a170d115e66757a1d6e1343568e188973b8b27d799eff685f7a2be9b6",
         "affectsGlobalScope": false
       },
       "../src/model/BoxPlotColumn.ts": {
-        "version": "79852c7a8232cb452812eecd31c857b6d3a5ab18622ab0068883c156b99f5d49",
-        "signature": "24f439b8e42610ed28f12e498a192f06719cd53bf6570e4f8abb9bb598273f28",
+        "version": "27e39be2b86d2d1329cb904b36eacd44c886e50d9e5af8a501cd22b992662c8a",
+        "signature": "03ac36df7b9ade068281beccd5e8464104c0f5732d9c09ff349fe9d6baaa4799",
         "affectsGlobalScope": false
       },
       "../src/model/MapColumn.ts": {
-        "version": "80d702e67390d3453032a6521a6db95e64c1b8f4e74c5903042d6def53ecc81e",
-        "signature": "967ad0f9d370340b81eb6cb9925908e088fb55655cb4098f70a49a6a6d63fc6a",
+        "version": "7b4c9188846c97b2372fc841de555e5a9071c63ba43343c78124d02c6f15d2b6",
+        "signature": "403f540840e0d7944c459c97e3d74ae632cef88adc5ce3d50cb904687c86edaa",
         "affectsGlobalScope": false
       },
       "../src/model/CategoricalMapColumn.ts": {
-        "version": "32ca63a4c7f4fbb19bc16cd14e86e28d04470ebbf1e70ff73a71736f5a87df25",
-        "signature": "d61dcdbd24356e50b5a1b32056fea9518263a59f02b88d221dde99a169874590",
+        "version": "c8eb4f01560ce4239332c9db3ff3bf75dd8c3f22f1b80cb161b06e5e51b32d5f",
+        "signature": "54a6814192fca3aab7e6d672b70fdf4ec6d30a57d78e3d996d31482b7522001e",
         "affectsGlobalScope": false
       },
       "../src/model/CategoricalsColumn.ts": {
-        "version": "3e56800a0237f65348dc876d0111638e621ef460505422f32ac83ff721254217",
-        "signature": "02b95259c997bbec0c0b7e90d58522ee8e95ca91d5b4c8002de13445c71f6488",
+        "version": "040de218e84b40f9fbda22e40a429abb66023f98bca1df7b15c26e9cd7265e38",
+        "signature": "e913b3a633d64ed467a3ef2a14d817b32bdb996bfd9fe42aa46cb8b9caad8bd0",
         "affectsGlobalScope": false
       },
       "../src/model/CompositeNumberColumn.ts": {
-        "version": "bc2ede6a07a713cea96c9c6833296d1c9a82c314a4fe504d73574cbea8c22b1d",
-        "signature": "d9e4105db14a1029c5bd989cc78cb54901ef7e1f4d26a8fc1880389ee4070c90",
+        "version": "e9c0b642b263192c3311cd770ecca7db6775bfcca93244ceb791dc02329c2912",
+        "signature": "91034604f1c3b62ad3cca7cee7fefa2e29e4d242c64eacdbd629958eb81a257c",
         "affectsGlobalScope": false
       },
       "../.yarn/cache/@types-d3-time-format-npm-3.0.0-d3e74150e3-2b700051e6.zip/node_modules/@types/d3-time-format/index.d.ts": {
@@ -717,133 +722,128 @@
         "affectsGlobalScope": false
       },
       "../src/model/internalDate.ts": {
-        "version": "7b6a42e48e5ddc155025b700f21d781eb0f5cdeb4c4a51617e562e1b347047cf",
+        "version": "4cf8d9ea137fa0afb4685dd3abd638ce6c153cfef88b84520291fdb13c748821",
         "signature": "dc3878778747ae58300e3f7ba2904952fdef89ff9354dba9d8919d1077dc54d9",
         "affectsGlobalScope": false
       },
       "../src/model/DateColumn.ts": {
-        "version": "4e4ae58979e5768f3aa527738b0c8e14330748f627025558d54b856c856e7ea9",
-        "signature": "d8c8269fc37ff259889e11fbfe942780ebdc1c169931798f214dadb278bad0d6",
+        "version": "306708612a88030022947caa721e56e006632caea19b6c93c95547ff812c97b7",
+        "signature": "97fd6824053b8ed074858de34deadaa3cd268be8f276f3b37c5095b2ee20437a",
         "affectsGlobalScope": false
       },
       "../src/model/DatesColumn.ts": {
-        "version": "b4d06ab72100e6197ed6fe59a308a3fc7dc5926397f31b0b9a8d74df12e56d3b",
-        "signature": "409faba0af3e8659fd7db026468d44ee16c15c8363066e2a6f8688bd288c7f2d",
+        "version": "193910871999f4d16427457e9df8f5c1d12e5ce961fc69b08e5220852ba8e8e7",
+        "signature": "ec58858e59f106415d757fff3fbccf873f09ff14466926568ad692f924563de6",
         "affectsGlobalScope": false
       },
       "../src/model/DatesMapColumn.ts": {
-        "version": "f54fa92a4623977a908688bd87c335c6f18fdecc4a971c93df80cf67c73d6621",
-        "signature": "86c4688086b20e52ef6e40fad9e45fab89f47c8c79c3a0985d67b4f54cbf295a",
+        "version": "22c867b9f99543001c030a21642b1e574ad46da2860a1b761b820b68a9c1a951",
+        "signature": "4148b70d9979f8b382814c956a3ab182ca7d98eb12d1fde25a8be66fa73093a5",
         "affectsGlobalScope": false
       },
       "../src/model/GroupColumn.ts": {
-        "version": "41bcb6351565e257bffcfe6a5fe951890b5b3b2ebf18cca378ce83c42221ba51",
-        "signature": "7e12176034f87c5a8bd8ede05a4d963be8a6ac128a84d79d1f63f7102cd2a3c4",
+        "version": "2ea0f0f9db608626e0afcfd3676b5a150f80fda79b06cab7021597fb85cd6f44",
+        "signature": "ccfda5315fd3b6a4678d05d340440fe4edb2aa5a7ec1103a42a86f28537801d6",
         "affectsGlobalScope": false
       },
       "../src/model/HierarchyColumn.ts": {
-        "version": "1c5fbe40366c780e9bfb528abd2d9da11cb7ced7a72f8f618e8b546d82487888",
-        "signature": "48d82c7df4f43bf9b92fb77cb3e83c354fd32df6e0c9e9abf3f0baaeb12d7428",
+        "version": "85ca9de6fd1e01c314c42b083ab399364f9f9696ea2e090b1506183bc5566a65",
+        "signature": "dce15107fd85d69f3bf074862a03c88fece9d44666f88037bb76c8d6d1af44cd",
         "affectsGlobalScope": false
       },
       "../src/model/NumbersColumn.ts": {
-        "version": "d0f3ff7c2b79b02467a51fcd12ef7d8cfa0bbe88c47a14869763d4ab98f26596",
-        "signature": "6f8b8110545a5cbba223500837f1fc8b19d419258fdad7dfc1761cd1ffe63e90",
+        "version": "190c894c55b498b85f68a135d0819fc7d62a4326b1b4a63cb2353d85df2e64c5",
+        "signature": "e7c1f033c24a621118820e256689fca02996dd7325334018bce4298d25fc1d5a",
         "affectsGlobalScope": false
       },
       "../src/model/ImpositionBoxPlotColumn.ts": {
-        "version": "511a7b867251ec9742a588b06cb86b8b379cfc6ef378f3166c0ea0418ceac55f",
-        "signature": "9f59e3bfffbf5ef98ff286cf1c54584156bf94f813577f733ea3327cb24260b5",
+        "version": "e5d31f33c8d440b96deded83c0c00d6b021a4b8d3c6358f66474dd6bc5315b7b",
+        "signature": "4eb64c0ba4ac6bfb389764835d22b8d74418b2d21f75bd478835a0664004ca30",
         "affectsGlobalScope": false
       },
       "../src/model/ImpositionCompositeColumn.ts": {
-        "version": "67a006a93cd4dc3c5220a62fb794405276df93311408d977224f0441be40e46e",
-        "signature": "71cb98476dc5b8e2b43ded3be8194cd8837be36f002ceb3e0eda296363f28d72",
+        "version": "33e4dd8f29581c73958197a80fe3bcb6aece6277d7d2ee78066c383ae0da244d",
+        "signature": "fa579933e38cef1627ab353be7214db6fcecd8d79ecab832d206f143bcb8c10e",
         "affectsGlobalScope": false
       },
       "../src/model/ImpositionCompositesColumn.ts": {
-        "version": "fdc9220e05e73fa45f1f79ce094f692a83c63f5b31508c0af35fcef049f82911",
-        "signature": "c6f1b8cdb00b4053bc1df82ea7eeb25fd08c92aa6542fdb0306353dcdecc67b7",
+        "version": "9b5341304d6244d2232dda3ed8edf0ef99c229c2e43a5a872223d6c33f8a39a4",
+        "signature": "6caa34ca7f78f2fbea7d8020dca39e976243801a8b1334acc70b0674997dcd48",
         "affectsGlobalScope": false
       },
       "../src/model/LinkColumn.ts": {
-        "version": "208695e2572b79ec4f7f5aeea3493233ddb2dba78f0e66bd2c78ce27728e9747",
-        "signature": "2e03860ab025f8927339178ff0bd8fba93f37d0326be3f6563e19137ff9a6f41",
+        "version": "24a917835aa34e980c0e8676359d46bf9314c0f5cf367b8b473cce3c4bc3ca8b",
+        "signature": "112efb43d4e1734805c8138fd6859c9d0108e8cec7f5f8e7d3b63ddf6183049e",
         "affectsGlobalScope": false
       },
       "../src/model/LinkMapColumn.ts": {
-        "version": "0e01958109e4ad26f69fe76299fba2f23310b068b397555039ca78a65e94595d",
-        "signature": "b1961c54894625f14aff52cf8d13dd13da8093ea8562e852255f428966f4b3da",
+        "version": "df24c93c3650cef424f85430dcbaabd375cd0e59abb8ce726987882a86d18dd9",
+        "signature": "c20ff0516fb837dc2adce9d8f552067ed495de56bdb3a4b0554f1000feaebb99",
         "affectsGlobalScope": false
       },
       "../src/model/LinksColumn.ts": {
-        "version": "c07f1c89aaedbc0845982f029a006611f8a7eb159c3bb5db68e5e1f526dc016d",
-        "signature": "d9e0b2f928b32ff01a477e8d641319eabaa235a34c6b3f6d58f93b41187aeb42",
+        "version": "d2ce24496fa145a93e05cca81df4b20193f7a20c40940a09f9c57dabd5310095",
+        "signature": "93b5be5219e0fa086baefc8881b65cf223233f66b82c651159fcaf8f7162a623",
         "affectsGlobalScope": false
       },
       "../src/model/StackColumn.ts": {
-        "version": "ebe9df97c594e8938fd5940eb6f674783b6ab664c0ccabd16c43afa48ce465b9",
-        "signature": "1d7a687e0930620107f8c7d9afdf7dfdd1c1d64c37f79e90c19cc8d0abfb0e5c",
+        "version": "7e79d991346d4012768a80e9f61c18b81788220c1a00e951ae2926df884e26b3",
+        "signature": "e2247292d2950c339612c7606e14f4cab793373d8be901ed971e75772cafc7ff",
         "affectsGlobalScope": false
       },
       "../src/model/MultiLevelCompositeColumn.ts": {
-        "version": "316c933a1604d424cc71405af2c2655f2d966bf4c2cdc5d79f808848f28b7419",
-        "signature": "12dfb05400c8de2322540e30bec4d2b701fd8e626a62bb927335237b037ddc89",
+        "version": "9a327740bb682d98ab749b82e5953122d9fc2a0e1561cec03ba388c4161c8df3",
+        "signature": "33615dfc7849cb67fb85873f4e9b0bc0aeef9d7741a96de10c702b762f2ec5d5",
         "affectsGlobalScope": false
       },
       "../src/model/NestedColumn.ts": {
-        "version": "1a021334f819cfbef3a3f1d06ad42261d1a33d5783caa9361087649c01625522",
-        "signature": "c11ab3f6c9ac3eea202825ac47b2c4bfa0994ab76013d7375ef323706dded856",
+        "version": "ab448ffaa7ea270ae44f0b280ad02a43cc9a1f8b3f66797ce1bd514017ba016a",
+        "signature": "d76d83ecdd2b16d18d32af95fc6e6512e3f71347e41546db25e0e2ac8de1ac75",
         "affectsGlobalScope": false
       },
       "../src/model/NumberMapColumn.ts": {
-        "version": "94c08dfa32f0e9b687a103ee630bfd0c26308f0c03ad86e44c5a098a1aff5190",
-        "signature": "adbb8ec7c6fdf7ec1a519f9d89af4ae126e6ed1a8e1a4cf316bcff37b6e44405",
+        "version": "299c9e517c95efabd705cfb6e4574ab6fd333fa07596ea22c1e43c68018b7a4e",
+        "signature": "30f5ea3cf3aec3b95954db1e8da7d7c114bf4a4e3f00ee68c8f611e81a4b682a",
         "affectsGlobalScope": false
       },
       "../src/model/OrdinalColumn.ts": {
-        "version": "eb0a46920056b1a1dc7ab83caabc423179ab891442186eaf93dbe2ad5e16fe06",
-        "signature": "250caa9d078d6ae619a44188cf08259098191a595f07ab509c310b2e9be0ff1d",
+        "version": "7f20ce0c7923793aa9ea14ad27047d1c6ff28e5568194758175b54f9eb3ca96d",
+        "signature": "4832f2b95ecd699192d6c940255263e9187c21d5395d226899a8c8c91602c190",
         "affectsGlobalScope": false
       },
       "../src/model/RankColumn.ts": {
-        "version": "4597e7006f425a3bc2b17125280d63e2c36a343166b179c0217e97ae7b0fe5e4",
-        "signature": "a78bb8e1a768120d418d8d5b38b2033ce87e867555c86245339d4d84657e8dd9",
+        "version": "dbb261e2da9f4ef9205136da5c66258e31b58315b0f2f31658fc3b4e55c31675",
+        "signature": "8660f206820c6033de7c0aafed622a579ffdd1c8ec1a12dc0b4d65dc4d6b1f7c",
         "affectsGlobalScope": false
       },
       "../src/model/ReduceColumn.ts": {
-        "version": "d68f9bbc3895ed9d9acbafdee05a9cdcddddddd1924a9dc447cccef686221cd0",
-        "signature": "6fdf3d730a3ccf193b9cbbd3c6c677f68547efe9c6e18db0dbe2bc8956319271",
+        "version": "8fc31dbea9e4de8c2acefb4ee449a286d3eecc29f34a6fcc8b30d1ee361b62ab",
+        "signature": "d1662c7f855210a41d415dea31f7a41a1ef6ed787423dd8d93b4cde3ca1011a8",
         "affectsGlobalScope": false
       },
       "../src/model/ScriptColumn.ts": {
-        "version": "1f09017b368237b71be23f394b2ef5238c4ed3408d1649a8299f5e8e58f7fc95",
-        "signature": "1dfdc9619acc495de23851a9b2e2c3652ddad8f9980a6c0ef76682e63cfceb03",
+        "version": "9e17dbe5ef3c5e0c70b4cdfa0ee6fd2418e545dcfa583eccb5f082705d3b3606",
+        "signature": "339d44a4b36d795a81de2d4350efc4a65f0eab8cef661ac7ee121db8fd80bfca",
         "affectsGlobalScope": false
       },
       "../src/model/SelectionColumn.ts": {
-        "version": "44807f4ad73eb37e38e022d2ef2ebcdf4955c528ff03c89414bab6f8d2c46a3a",
-        "signature": "0203e6157431e03d51275c9dabffeab72274efd6765ef018b471689b3f9dfb6b",
-        "affectsGlobalScope": false
-      },
-      "../src/model/SetColumn.ts": {
-        "version": "66e3faa189b3803a4a6ad3903ede5e798aeb2e296a07c05a86f1ce5aa48949ee",
-        "signature": "31c92479252a39cc28ded948aef9c57ed98baef5beca23f5f8bc4bedb8072465",
+        "version": "cd26cde2f34175f2ed74529dc2f7610f7c2233808948dab341bddc672eab0670",
+        "signature": "27273aec6368954bacf8135e610c683c09302743001bac09e7553d6f87de145a",
         "affectsGlobalScope": false
       },
       "../src/model/StringsColumn.ts": {
-        "version": "8969fe708efaa8ae4b33caf09a42296d18a3b4b6da1dcd317043c8b39e25922f",
-        "signature": "4686cc23585ca6bcb4288dbb2844702e01ff883d442a330512fb309d018bedff",
+        "version": "5d036995b6fcdef595392af68df1451095964cd31e4ebba5ce7ceb486b8e5be7",
+        "signature": "78fba9d1f72c1a919929eb641f63f82d740f65383467df1b4fd4e0080f1dcdb7",
         "affectsGlobalScope": false
       },
       "../src/model/StringMapColumn.ts": {
-        "version": "0bc8a77db5dcb78f7c69b1fc65a87d693f2870902cb6fa9f7dd997681ee85976",
-        "signature": "a2391471c882c52cb27d6668f2fb6ec90b6c86b45d897ac6bcaf4469961176d2",
+        "version": "451e2f055bbf17572db6c7fff662b31c9aaf5f2796a63eb36cb5e8ff7e89d5a1",
+        "signature": "a1788927c51d8275bab738ae7ff4b668d1859657ff9b1aa040258756835cf765",
         "affectsGlobalScope": false
       },
       "../src/model/index.ts": {
-        "version": "7c70fbf80ab187fe8eb72423bf82ce902a07ff309e582dcbfa3c66c7c823b9f7",
-        "signature": "235b139f97e4d3d9a297cec87864fe8b7fe37df064675d315cd608111b905fc8",
+        "version": "05fdac832e7b9e565aabc85ed24e88a4a94b87218ff61be2854c4c440be8097d",
+        "signature": "e1c91b2740747c801ad56d17eba56704a44a01c24ec13026e4496db9a94fe7aa",
         "affectsGlobalScope": false
       },
       "../src/model/models.ts": {
@@ -962,7 +962,7 @@
         "affectsGlobalScope": false
       },
       "../src/renderer/utils.ts": {
-        "version": "ea55cb31096bb40fad8e31d80700d5b314e42570405474299e5a96abdb3a7c99",
+        "version": "52a9542f4f13ff557294d057fc444dcd3e6d5bba262a8fa5cfcace823853405e",
         "signature": "2d4cda9fa4bc26ad33a1b01152af671b3d97e2d68c215913ef9ecff3bbfb3883",
         "affectsGlobalScope": false
       },
@@ -972,13 +972,13 @@
         "affectsGlobalScope": false
       },
       "../src/provider/internal.ts": {
-        "version": "436c0da5ab24e97aa875da5b1984f0b9670b58ad6239455eb3c6f27523202376",
-        "signature": "3c8ab162f338eb02e8d12ce925988de72e29ba40aeba1e5ce58e6b44bb461f60",
+        "version": "de01bcb8ce6d364fd42883c45c8797bb5c0a47b05e320420ca842e791bbbcd36",
+        "signature": "37550eca2e52a602f4db890c1b7da2ba07d10c3be59038357ac10bf1f81d6526",
         "affectsGlobalScope": false
       },
       "../src/renderer/AggregateGroupRenderer.ts": {
-        "version": "44c58d41dcdd9a0ec90b68d40b556528a8c308b5ee6a9577805b222e5aa8c98a",
-        "signature": "213dd504ed072b7fa7a8d49ee5eb1a26a67a6d6d3f6a8a4c37f4ec8b23cb2327",
+        "version": "ace041c5182958f7fec1998f43252d87f767ef6e0957ec9cb4b2d8429bec4201",
+        "signature": "b197af16fa91607a8bdd2d7d6b3a58d49825fd273c4f0aa4977bb8b802e2437d",
         "affectsGlobalScope": false
       },
       "../src/ui/missing.ts": {
@@ -992,18 +992,18 @@
         "affectsGlobalScope": false
       },
       "../src/renderer/StringCellRenderer.ts": {
-        "version": "bad71acae29b4fd05e7e4fa4914125dd46920d9a454fac8b5dd84fc131986c1a",
-        "signature": "739679feabc2f3128202ebf0156a61fe7c5d66c56f79234ce6e83b820200b5ce",
+        "version": "db02ae2e24e9a1d8e76fc355dfcad60072cec7e14ae1852735b3a8aefe9ba0fc",
+        "signature": "9b3e9fd709de10e9335765be73204271d7f3bdebfed88b0e68455871d6bd62df",
         "affectsGlobalScope": false
       },
       "../src/renderer/AnnotationRenderer.ts": {
-        "version": "17c7d5ebb03c32133e58c07a502bd82d287170fd9dba413e4c3fd9eab98eaee6",
-        "signature": "70c36ab2d80dc6f3eb0cc84a7e8d76d5ec34a109e8ce8d887cb895524578d2c2",
+        "version": "2dfbe69b69eedaba7b9fd0ebd2f2310ba65e46a25969619bb965e528ed026dd7",
+        "signature": "764c4cab3d01b7725fc6f0f70187ba67c919127a8ea7836d0f7f9e5f652c8a37",
         "affectsGlobalScope": false
       },
       "../src/renderer/impose.ts": {
-        "version": "e7b347a474ad1953791d81bcd64ad4320c05ee67f2864cd117a723ce0dbbde1b",
-        "signature": "0dcc885174050147a7c27c95683cd9b69da7b7ac349defb342d0c778f23a5a38",
+        "version": "5fbc11ea5c572710fb2709c9772a0b98efa1f4a6964b7ed121bd65faaf7490fb",
+        "signature": "21ea07e30ddeb8cee5e2671a942ce0c720b44334ecc789964a717d9d074f136d",
         "affectsGlobalScope": false
       },
       "../src/renderer/BarCellRenderer.ts": {
@@ -1012,8 +1012,8 @@
         "affectsGlobalScope": false
       },
       "../src/renderer/DefaultCellRenderer.ts": {
-        "version": "8917bec1738a9c3848d2c6079fa7aa4aec793bb4b08e655736204ca6a05169c5",
-        "signature": "6df76d0238e284f1b506609c3493e181cc182ff30b5d94f466a444bf2eb7e76e",
+        "version": "c87d735e67ace7f6289a1bab2f1bf67da8a9dc3dd935823157803b63f20b687d",
+        "signature": "6a9e982a029e6fbc30e5b17bd8e081997de2cec95cd1cf4484c86039e2bc6088",
         "affectsGlobalScope": false
       },
       "../src/renderer/BooleanCellRenderer.ts": {
@@ -1037,8 +1037,8 @@
         "affectsGlobalScope": false
       },
       "../src/renderer/CategoricalHeatmapCellRenderer.ts": {
-        "version": "ba4b32497dd2111eb7a1f760ded66a931ddf1600e10f7ffba8cb083f51da77e3",
-        "signature": "017388878cc37e682ba3604e8e7d45ac10798e0d48f08b77820b843616dededf",
+        "version": "689b8c9a2f38a70a4de566f55efc7a53692f1e37da7490c5d847e394d55842ae",
+        "signature": "cdeeb02391f3e96b34a803c85793fc53fc901d789e86c05deef2369994a2e582",
         "affectsGlobalScope": false
       },
       "../src/renderer/CategoricalStackedDistributionlCellRenderer.ts": {
@@ -1057,18 +1057,18 @@
         "affectsGlobalScope": false
       },
       "../src/renderer/GroupCellRenderer.ts": {
-        "version": "d2ff0e8333b6f88919f8f2d4431940064ba0aca97650ab38778b2ea1d9e9b054",
-        "signature": "3c4a374cbfcb1ff5a6b4f6442225848355eae2c799de57129e0ad82ef92ef042",
+        "version": "56a32f22134e0b4c42867dc38e31b0be1592e6d6e737b308f14f5dcdce47b979",
+        "signature": "f85c3778b1390f641d1a99d3c99c3c378b3a7b95cabf64674ecf6fcace90fad2",
         "affectsGlobalScope": false
       },
       "../src/renderer/ANumbersCellRenderer.ts": {
-        "version": "51dc6c0356f8944b2d63149368f4f05ce0493f3cb9f38d528a48fd8d9e531450",
-        "signature": "028e033bf2bf7db7df5c2d24b0002a5ed3edec73aa3709b82f8db138c3f2a9a4",
+        "version": "6f4dd55cbd91cb6e76eb9ea11a72fefd6eda25b8ceb346c4d13675586550fdd3",
+        "signature": "bfcbbcfc22745fc2e11b2eed322a7140d0955fc07fddb1be54f8e652e690cfb0",
         "affectsGlobalScope": false
       },
       "../src/renderer/HeatmapCellRenderer.ts": {
-        "version": "d6120902f43d0665fab4c1a89e5b5506734561b6baf2d6bf07c219576f7bc748",
-        "signature": "4057ca6b0d289f7b6e48b68d6ad050bd1295cfbdf670dc4aae5ae068246b880d",
+        "version": "e8bb491ffa4a26f41b56a0e09991d41c413e33f4857e3928d5145380a3b814e1",
+        "signature": "81283f259a33fc743a799600f15bf40be279c26535da36055c5da7a55f1ff338",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/APopup.ts": {
@@ -1077,7 +1077,7 @@
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/InputNumberDialog.ts": {
-        "version": "aa5111ee702d4283657c0122ff9213f6543e969b7008a06d418588f5e168fbb6",
+        "version": "3e3f275f1d990c88ccdfb663e22e6098a2c4d16833522fbea371136cbce2d892",
         "signature": "8e042153b25bd91c8fdb339a7dff7ee84f2a40a4792882b4e87f407236a5bf1e",
         "affectsGlobalScope": false
       },
@@ -1087,7 +1087,7 @@
         "affectsGlobalScope": false
       },
       "../src/renderer/HistogramCellRenderer.ts": {
-        "version": "a8293aeee08ae4556dd932b16fea62a2ab29d62d8d6b5ab50c3e7fd622ff0b1d",
+        "version": "c49774165c1858cf8d71deedafb19ca111343d6522b57aef558bf43af2d1f55d",
         "signature": "252a46ab2a9efe0dfd25f1fa4d5f231884e1c31ba756303ee5355d9e4f96581e",
         "affectsGlobalScope": false
       },
@@ -1102,18 +1102,18 @@
         "affectsGlobalScope": false
       },
       "../src/renderer/InterleavingCellRenderer.ts": {
-        "version": "9b765b8c8c57f63eeb83a41b4853f20211201252d9b50466b59ffe3e6866018c",
+        "version": "e60af95bebb919b73f07cb54a7aaf14c85f294f63fe125620dccf02bba80c170",
         "signature": "96ced372169dc0300d802de002b4f187cfb94ec911c33f346aa468717608f272",
         "affectsGlobalScope": false
       },
       "../src/renderer/LinkCellRenderer.ts": {
-        "version": "f3c2644d50caf29a1885fbc3abcda78c5cd29dc46b4e5f8a7b931e42ba566a8c",
+        "version": "c9144925a2632b799b18e9910f01c5a3083e39437e77fb737f49244977a927c2",
         "signature": "7c4df055e020419192f3af8d0d8766da0ea6d2eca36288a3ffbe39d8404fec1f",
         "affectsGlobalScope": false
       },
       "../src/renderer/TableCellRenderer.ts": {
-        "version": "111b7024467fea16469d71a5c8bd717c3b1cb36f37133d440b47e2f83901957a",
-        "signature": "e4ae1b93e641e2ba2b78744e1787393b165f4b238cbd0a15b8e4fa9403be10bb",
+        "version": "ec157bdd36208c0640788f42df2fd83b17f292a444f68ea12ae6334b06c959ce",
+        "signature": "0b6ce2da62b8d9d6e91cf0ff49a96699d1ee76d25764c07895158e016ccb2bfd",
         "affectsGlobalScope": false
       },
       "../src/renderer/LinkMapCellRenderer.ts": {
@@ -1122,8 +1122,8 @@
         "affectsGlobalScope": false
       },
       "../src/renderer/LoadingCellRenderer.ts": {
-        "version": "b929cb4c3e2ccd4ef4dbd7a633c18999efa44c847f5a3dc09cacdefa4c64d907",
-        "signature": "6d46cd50c87cc9d0c53a86aa81397a9e7efa0000d13559316eef5d2352d18091",
+        "version": "0e09e49f3560f1968a2fee312a5bf3fe9ff540d49a4ff1c40c175c7a6386d995",
+        "signature": "3aaa46745d3458a65589be9acea941ae60d6d65fbe89e39e4c8675fbd941c11f",
         "affectsGlobalScope": false
       },
       "../src/renderer/MapBarCellRenderer.ts": {
@@ -1132,33 +1132,33 @@
         "affectsGlobalScope": false
       },
       "../src/renderer/RankCellRenderer.ts": {
-        "version": "c2b22fa4ef66334391e0dce45a58c9943c37213279ad4461b2faba61b43c6e26",
-        "signature": "756205e93f179fdc704e7b64387303ab679b53b6fb3cecbabe26cd80067302e1",
+        "version": "af488680950ce09133509c23024a5a140cd540b7349c39d92e9cc48bab4c9dcc",
+        "signature": "8f4d6113c001b98acd2d4412d33b3aed2a88cb74adef6d3715e8be743f162c8f",
         "affectsGlobalScope": false
       },
       "../src/provider/utils.ts": {
-        "version": "b17d76497bf7b872593597b61f48ec771712c6b529d4f29977df51a3a3f39cc0",
-        "signature": "4c2a8bbe7cf5409e4219176649d5e18a569381d1cd647ab4889ff4b535948192",
+        "version": "9748a03595a22449f599fa4a059030ebd200a7b8620f399d0f937408562492af",
+        "signature": "395e7617978f693c1cd4a646237e735f70db38c0a6e3a396a6effa296c0b870e",
         "affectsGlobalScope": false
       },
       "../src/renderer/SelectionRenderer.ts": {
-        "version": "f8482e595bd159f4651d163b5d16295b4165f2f334c2265b9a9ccc2c3577eba6",
-        "signature": "4a25918e5956b284888e04ddfb1ae35cab15cb05355b1eb6bc4a0b8b7b62bfb1",
+        "version": "ca9d5b8670e46d8ea97e18d96af1e51ec549a744887ea50473152766325a8e90",
+        "signature": "51d33d8edca57dcc077e9993410bc2852181bc39e2bde88d06d6645e8e464d0f",
         "affectsGlobalScope": false
       },
       "../src/renderer/SetCellRenderer.ts": {
-        "version": "e68c097f748f56151dfd02cc39a94f8ed1f6e53797acaf3150be9784e03de9e1",
-        "signature": "1804bfeed9160d4bbeeebaa694954303990e4368f90e020f0fd451e888a583d6",
+        "version": "b0fec332ceead2e19cc5f54fb23200f868628e9d5fd8f88666074d0e1be14f28",
+        "signature": "61802b1cec342d71a70c07bf2fcfe672eea05607c638254e5e84bf597e3db71c",
         "affectsGlobalScope": false
       },
       "../src/renderer/SparklineCellRenderer.ts": {
-        "version": "94fdcdc4dd8c4af05807ff9f1a91c24a03ebb0cecc1d57c1ec2c9a22ba96e12a",
+        "version": "8653834e493bd90904d7b89caa38d0051816e8a09ba2ff110920f399b6bae150",
         "signature": "7a51dcdd62711008e5802ec8558d664b4f350c8466bafef32c6352586d8b197c",
         "affectsGlobalScope": false
       },
       "../src/renderer/UpSetCellRenderer.ts": {
-        "version": "952711f379025528b5c12280f1a5f3e72715a7ec0444818a0d4989dda97d9184",
-        "signature": "2da7833747853a1746c1cd3d82cd7413f691151f6c705a1198c9d00eeca6554d",
+        "version": "fe2db9884ee7ed74a006efe73c361e7717fde587e3fec1453a41b1616e606883",
+        "signature": "e5af8ed530628bcb71b0bdce0d642d94ea2c1a5119a9b09323e63391bd4861de",
         "affectsGlobalScope": false
       },
       "../src/renderer/VerticalBarCellRenderer.ts": {
@@ -1167,57 +1167,67 @@
         "affectsGlobalScope": false
       },
       "../src/renderer/DateCellRenderer.ts": {
-        "version": "a6d9a84c668b18301f649c7acea53c7f6cb40116972f6294a468bdd724c93887",
-        "signature": "b1a4488557cf051430eb55f213d18de2445d9ad2a34b8224d4ed751c4106dc83",
+        "version": "bf9e978020db7fae5f399d34d0092732b8efd186f1b95d469f3294c205cd4798",
+        "signature": "78dcf538afad52c6a6874279ca9e10c8ba325421e2f3a6b5c705ac598fe98f73",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/InputDateDialog.ts": {
-        "version": "de9202ea287f6a8d088f41017d9464c5a766bc1abce3f9da5bac0e2b979ae226",
+        "version": "597c2f94aa1afc97f886cd8a6dea53447191425f24ead5d2032375d169f3c8b3",
         "signature": "34dad554767d7f61b156387967f2c63af10d44efa2677f30a9b4cdaaf3f2bdbd",
         "affectsGlobalScope": false
       },
       "../src/renderer/DateHistogramCellRenderer.ts": {
-        "version": "4e955a914d8949fa9a7229a7d4d3431cab4a7d77ab57c801d8a830dfd16e3485",
+        "version": "0949ad90be188f6a6f68f2f54cb5fd135e5b0792a1cf8988dfec7e7b7dd8440e",
         "signature": "8bd86e105f6c09557dcd057039dcdc2da11fabb4659baa06c40d44d64af49886",
         "affectsGlobalScope": false
       },
       "../src/renderer/renderers.ts": {
-        "version": "cce5824c74eac1db48e156ca9273173a6f2141e482fd4bab012a715c32e4a8f6",
-        "signature": "2b424e3b16081bbdad22febe41eaa3dced2ffb383146ab89a29c7555e3e3aab7",
+        "version": "b09036d7c7f10b14e5f6e95012ca913f21ec4d9a64724e61a9f20dffdf2a466f",
+        "signature": "503e1f2bbea7c29249389ec30c4a0839185c120b4dc9967539e36ecf120ca742",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/utils.ts": {
-        "version": "acc0bd2f7ed1b1b9a07bb39b6a157b6661754d93bc410ab7c60862bd6b4688df",
+        "version": "99faa260f09c11073b8399c3e5cfddf51df102ce8919e72c263bd800a0353752",
         "signature": "b8743ec833db64a6b7b8ceecaf19ac98eaec12fd51f7b03abbe0a9e0778a7aa3",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/CategoricalColorMappingDialog.ts": {
-        "version": "cb1b8128246a68298234bceb90fdcd458e290af43d103f793bfaf153138755c4",
+        "version": "80a299b38f45568bbbee9d257e2b51752ecc450ff68f1c70dc56c870dcf4cbef",
         "signature": "3ff7a870f2d1e4345634308401356cb08165c615d1859b2d41b56d0120effe72",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/CategoricalFilterDialog.ts": {
-        "version": "28c218b21a74cd4cdb7d310c75f1d4b3ea1a777e8372b6f3db0ccafddebfead0",
+        "version": "55ca1b7b7068203205d04a5abdab09438640e52a293528fccdd7baafabff3eb8",
         "signature": "26ae05890a5d77ffd12eb3db588a3881cc3efe8d54de3fe56b3c639aa9f0505c",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/CategoricalMappingFilterDialog.ts": {
-        "version": "cb65b87a74a56c995707903ccbb8f97ef119a05626c3cae57d7e75da1212382b",
+        "version": "143330fe1f95399fbe5fb9e68883dc9197ebdc122f857fa8e176c459bc491b97",
         "signature": "9cba3b581278ae2f82ce86301520d15369e58ce52058271a607adf21a4776681",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/ChangeRendererDialog.ts": {
-        "version": "8f3cb46ad8b10068c9a71b2cc93cc369d90a38e7c0d302975c9457d88e386e98",
+        "version": "0ff7298cf82c7dade97a840848a020a4822e70876fe6c889dca0a74cfd333a80",
         "signature": "4f6071c91f971bbed3d07a978f9cf44359fca3133eec826ace644d5a7454d05f",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/ColorMappingDialog.ts": {
-        "version": "e0d7bc46122c882d1ee26c4a22f099962fcd8985f1cde3410c96af9902d187ea",
-        "signature": "76b6de61fca9ebaf672d46d0855a2103cfe3032d37f99169831f21c684387c91",
+        "version": "1b37a7abf3614c1409fb895ed688d1a97b1a5ca440d6ade8dedd3683ca86b7df",
+        "signature": "725bcb816e0bd63322f7d05fcfd71255ef98295ff348cf30b95fedd288ebf68c",
+        "affectsGlobalScope": false
+      },
+      "../src/ui/toolbarResolvers.ts": {
+        "version": "bc6442c8a9743592ecdb8cc53444e93241988992c13046cb259afb1dc20a84de",
+        "signature": "e8652e1b7415f8ab119ec3d7bb3a70b4e4c17668a28c990aacc2c84ef3cccd93",
+        "affectsGlobalScope": false
+      },
+      "../src/ui/headerTooltip.ts": {
+        "version": "8eb182f1b9c78c56e82ba0ea23590eb9776a31e7c83765f78c9ee8bf1863ce85",
+        "signature": "55942a044da09b3e1bdc42d17e830d3cc2f80ffc2258ef62bd70b8dc154c273a",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/MoreColumnOptionsDialog.ts": {
-        "version": "487c4627653be27ce11bf3306dcf12154f17c57201def22aef3a7f5329feb0c4",
+        "version": "1f894935a223440a22fbe2973259c97aa533e45e28790375484693ec941f7a0b",
         "signature": "ca0187601d761fa81be08cb61f95572ddcdc7ad0f4b7ecbe501f8ec92c1d6c06",
         "affectsGlobalScope": false
       },
@@ -1227,12 +1237,12 @@
         "affectsGlobalScope": false
       },
       "../src/ui/header.ts": {
-        "version": "401f2dead08f2cc15022cb0c6fa3e7dff51505d0b5adc9471ad25e2021d26fb7",
-        "signature": "7e74d958e14291c6b84573999815a29e9c0d0dd861b5d6f7e17453b6854d9087",
+        "version": "8b0c01b49e4e2c4f1c66e6dc8c7900fcd96e8f1d57dd2462e9242d816e0167c3",
+        "signature": "9a4211bda3ea89fc71d33ce13330e86e22804debf1b95ba9ae2b55eee9f0ec0f",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/CompositeChildrenDialog.ts": {
-        "version": "319a9529ef2fc40dd2239c3d3b133a93f2335cec0897f16ad336f0894f3fd236",
+        "version": "cca1b645c66138c275caf626c3abb675e6d40302d94f8a8d155d3d48edea1305",
         "signature": "2c351a844c2dc789e5dd4c6374a61d32b3352a6ee492dee01346d9166e81c490",
         "affectsGlobalScope": false
       },
@@ -1242,33 +1252,18 @@
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/DateFilterDialog.ts": {
-        "version": "be740859f6fd907a60f562774cbb9b2972171c06f14fb14d563a0dc73c1c2235",
+        "version": "9405b04ea73805bdbe943251631993e9e163f78fd683034f61436c76844e30bd",
         "signature": "3767c4b9a7033d486c6add671f7f038b31a2922b31ebfe38648caf13c2532268",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/EditPatternDialog.ts": {
-        "version": "88a5a6c22a39a2b0db935d42a7a431c8c08cee387349cd37aa02590e8d6460a7",
+        "version": "d87bef51e3323e4e29a4d9c80666433f37ce679f6897b0b6ac39af7188d0e85e",
         "signature": "6cb58549276e52e6cac484ab5cde52d8593466a67d607b9aadee9bed793fae0a",
         "affectsGlobalScope": false
       },
-      "../src/ui/dialogs/groupDate.ts": {
-        "version": "134370ce0c8d55798148e7389063ba04518412e9c37c74aea4e856d2086b8977",
-        "signature": "a682cb207a42fecc2bae64c52c32bf5b388ca3a82c70e38f3f3450f39b168deb",
-        "affectsGlobalScope": false
-      },
       "../src/ui/dialogs/GroupDialog.ts": {
-        "version": "6decbeb6595c0fcb2f283f75b87bdbf67ed8bdf1e3a54ec8fd71da4f0648ff1d",
+        "version": "9cfb80097b9aab4d490605888a8f7339af7274252e17f61c6371f18ae19a1684",
         "signature": "54b04159ff7603ac0c32a659ae53484102d9d0ea1dfdd1dc66239eef53a12eff",
-        "affectsGlobalScope": false
-      },
-      "../src/ui/dialogs/groupNumber.ts": {
-        "version": "c0e5aee3ede60363518724f99ebffefbe96c1e8284eb8dd380fb8174c4f52346",
-        "signature": "e379dc77d65b5535509d0afb06411ec26d518d536c2c3e22153150664cf7acc1",
-        "affectsGlobalScope": false
-      },
-      "../src/ui/dialogs/groupString.ts": {
-        "version": "f0a7d4ec0ee199c452b5ecb63e0989ef6605ccdc4e72b1061439479208c7853d",
-        "signature": "6896616717b4fdea5ab61c31c0aa2d99fb625314df89a69efc89346af0f9109d",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/MappingLineDialog.ts": {
@@ -1277,22 +1272,22 @@
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/MappingDialog.ts": {
-        "version": "dbeacb2e633c0e210820f9e67535136aa32c2ba5650c09f25e73a9a0d75eac62",
+        "version": "73aa39f37cb0578c1123b3a3290dc722418b405681e4a2e10e74042fd8a6648b",
         "signature": "f69f3e9dfe02666e97512417fd7b4b90c48bcc7ad032e2ba8e5656c76d312723",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/NumberFilterDialog.ts": {
-        "version": "d2fb365eb2d8e4214ef6a7d954a6d3ee3b5c47ebea152fec784e35d6c0f52a77",
+        "version": "4965f185d048ddbd6ee2732237bd1f76882c918c5a4192af1eb39221652a688e",
         "signature": "a5ccfc6b85ed2a10adcacb2b6f78d6a1cd6db08c0c034047fd4e6bdf8fae1f01",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/ReduceDialog.ts": {
-        "version": "8b25ef5c0c6d6cd481aad915656ed22eaf749a1db2f33115fd3eaf3f51f40452",
+        "version": "0181ae04edeb21692be91b47d4c2450a6ca66220cc0a1b8d7a2357f15baaaa40",
         "signature": "cdb68a33506984f08759db674385f98dd336e13650db27a82a9379036a151fe7",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/RenameDialog.ts": {
-        "version": "18d37508ccebb3bd0d39d51d2270ca75a7bf6e2d39edaaeaccc26bb83a732b5b",
+        "version": "94d71c5ba468621b1e9bebd9e01c4e107e0584786b69850a4e1ec321571668fe",
         "signature": "811df425420f584421d198711e47236e6ddf2af6e5b2a8ef701afd1f8e826d83",
         "affectsGlobalScope": false
       },
@@ -1302,33 +1297,48 @@
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/SearchDialog.ts": {
-        "version": "b8bcc9346e18712578300b25ae15f9769e6ca923ceadc2fd6fc62a606f368578",
+        "version": "15e1139913da0ac08fae8e0a1f49502b0d91a29fc5bb8fe10f41a7ad906b253a",
         "signature": "b0d2cfda7b599a9057cb402491411bafacc5e263fec829a0dafc3766f1507ff8",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/ShowTopNDialog.ts": {
-        "version": "0a8662496ec5a51cdc3df6ec52da7e94d656a6fdf88a52c8dd27263beb3f8f5f",
+        "version": "57c72460386f6fd25c396bd91b9f877294ac04817370a29d0eb43f49cb0d5bf2",
         "signature": "40294a46a0149eb4f272a91519871c394516ded605c49a437e868194075e346a",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/SortDialog.ts": {
-        "version": "1b5dae0394bd1da68fd87961dd8154a9b0b1f0b7e2939061f7ee359d7929f965",
+        "version": "109abfe9a6a7f497d6220023e2917b24d9540c7ab86f3f0f3d7c845299bbada3",
         "signature": "f8ae2bf0f7308d0b42b8574bef19c7624e96161542b509a892acd702890cfc3d",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/StringFilterDialog.ts": {
-        "version": "b6c2b6c0d02c39e5122de64d3d23d9c09b2819dd2163bf196f6b77b0e4d94c5c",
+        "version": "067d0f155aa35ae8933e2a403c0c79aee797d1124b351a3cd9ad60c972174a2f",
         "signature": "873439db63d6e200a79c8fec566ca061fc699b28d8fb5784be7e814063462049",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/WeightsEditDialog.ts": {
-        "version": "a40f9cd7d76f26b21516e47804e22285cee8e6d6cc2187f00373d16c129da305",
+        "version": "438e5d77b0a14c990a0d983d332d8390e9ed78d72664821cf8d60add921386fb",
         "signature": "bef3d27120e1bd85cb75da6f5de9f681f00ae374680c1d994af35b0786e64b28",
         "affectsGlobalScope": false
       },
+      "../src/ui/dialogs/groupDate.ts": {
+        "version": "65b8092f6ac956ae19e47331f01d33bd4ca90ec8b4afbc16ac108bf29f85093f",
+        "signature": "a682cb207a42fecc2bae64c52c32bf5b388ca3a82c70e38f3f3450f39b168deb",
+        "affectsGlobalScope": false
+      },
+      "../src/ui/dialogs/groupNumber.ts": {
+        "version": "3debca2b154cd1608a34bfaddbce812a1d8010b6c546eabffe61637ae75007fb",
+        "signature": "e379dc77d65b5535509d0afb06411ec26d518d536c2c3e22153150664cf7acc1",
+        "affectsGlobalScope": false
+      },
+      "../src/ui/dialogs/groupString.ts": {
+        "version": "c63d8ef64a196e80ac0786b89671f2bc2cfcc435f06c40e4ea36517516d8365f",
+        "signature": "6896616717b4fdea5ab61c31c0aa2d99fb625314df89a69efc89346af0f9109d",
+        "affectsGlobalScope": false
+      },
       "../src/ui/toolbar.ts": {
-        "version": "a6bceffd815e8ba24cead7b0e2ddd039f4fca965342d5ee2fcd8e903e0582ef7",
-        "signature": "fbe80c053fccfd99ad11dbb5beaa3a0015b46003777a429a5ecb23ead4f3a02f",
+        "version": "6b7d50c7201c7ed5ddb3a98b04625c5f2c77b2a858015c93f7626741752471df",
+        "signature": "a4d55f94e598903e5413d2e32c4cc0c35b02ce863d01a054ae90a2f6c758e16a",
         "affectsGlobalScope": false
       },
       "../src/ui/animation.ts": {
@@ -1337,23 +1347,23 @@
         "affectsGlobalScope": false
       },
       "../src/ui/RenderColumn.ts": {
-        "version": "6db5dad16d755d84a53dc5e81f2a3ae3d5ad3611a074b6505c2eb4882de68442",
-        "signature": "aa56def4f8d35c92d2fc3db569d526305daa1d5a3a0f0306b3255a5fb4c5546c",
+        "version": "6a1d8f35dcf272689523c4820b21346724ff0fce182c8b84a29c5f7ca4120ace",
+        "signature": "e87479bc36b5c15b12ac4546fad4f226399fb80fe05aa63cb7f92f0d24c2ba29",
         "affectsGlobalScope": false
       },
       "../src/ui/MultiLevelRenderColumn.ts": {
-        "version": "f6ec26e72041782a2e036e44f735748bee4b66f6f7b3a0bd02341190a7a50b7f",
+        "version": "6823de8f7fa0e5944bca739d286a28850756434df4226bd46b226a812c18d75c",
         "signature": "d8d58018403f47682acef3986a167a7b033d95c7077dbb0a19e728357d3191f7",
         "affectsGlobalScope": false
       },
       "../src/ui/SelectionManager.ts": {
-        "version": "6f89482056e700ecbf93e2bb0c5b3d971ef78ed259b52d26ecca83eb1cfede79",
+        "version": "c816a7c24f6205bf7c543e0d32762cd152e84b4d0b833d330a28f2fbd330be90",
         "signature": "0dbe2c8605f1720fc72cd79a7578ad058ff5738937a869eb8c56dac066d27536",
         "affectsGlobalScope": false
       },
       "../src/ui/EngineRanking.ts": {
-        "version": "2973c289b9441de38fd5ab5e28517ac967021f55605610003c6a0a47e5fecbf8",
-        "signature": "0eff17ebab9efaaab3043c9facd94a525fee8b2b0c7facf99ef68db1aa04b577",
+        "version": "37722c55749d8fddb07559eb2e4b26cb1d49a3c2224ddd0c9844634980e3e47b",
+        "signature": "3c5a174993b234522a97ee290898ce2854df0bbd8e34ca5841d030ce8cd1e329",
         "affectsGlobalScope": false
       },
       "../src/ui/domElementCache.ts": {
@@ -1367,17 +1377,17 @@
         "affectsGlobalScope": false
       },
       "../src/ui/EngineRenderer.ts": {
-        "version": "e59d357d7f8702cff26c5c10ebbb2f7588a6a7b12ad7c581698c96c5b6d779f2",
-        "signature": "c7644ff35b2a195de257f4ee69536df13ab4c7ebd1a6b8891fc5bd7913db8ab7",
+        "version": "64da34861ce43c8cb18608e9e50095235613014ed5bd3045a49ebaf227f7d4db",
+        "signature": "8a54e9ed29ed2fb3a536e210e87a2d934ace1f573c49b4b8eb34a8b425ccf735",
         "affectsGlobalScope": false
       },
       "../src/ui/ALineUp.ts": {
-        "version": "0fbee6fa0b17b3c85de77cf46d61d4e222194bf0652029ffae7d0edc7e9e8ff9",
-        "signature": "4bc4c9ddece46126df72f25b3c2a7708fd7f6e93b95856dce0b95c904a072022",
+        "version": "434fef47532b6e1e94246985ab069e4f134ff28b42aea3a41b6fb88606599a3f",
+        "signature": "881094400dd371b036c5c1c0224665e9b5f8fe0e6319b37d5e78d2d713d83511",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/ChooseRankingDialog.ts": {
-        "version": "dd24c7fe32c9af1e8ff03a6227aba1b65336d313ca760e7af7ac32f909104304",
+        "version": "dadd1ed303773e3cb37fd17c038372926fad6d345e28a3e005e2f3bfa6a250ff",
         "signature": "a5be804e02705f4a8f8fe112a40fc9bb2ca967dafa664481c2c775f25bc7a393",
         "affectsGlobalScope": false
       },
@@ -1387,43 +1397,43 @@
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/RenameRankingDialog.ts": {
-        "version": "5603ced82cd4630b1dac3171f3468f19c5ca4b898690d4ee975068e68e14d14f",
+        "version": "818ea3c3e0e198148e07c5246468559f48e2e24d3533e321fb9af8b8e92a24b4",
         "signature": "d42915272494a7cf7f745d30ed488f5da12cb2fde51d6ff1e26a6c4210da353a",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/MoreRankingOptionsDialog.ts": {
-        "version": "1fba795949f504ab7b6414f076ae94a5e6fa752901bd09e7a8018453da60b25d",
+        "version": "855a4c6228020efde5f233a4476a03339b08be0745588bbcfc99c6ab6edc8954",
         "signature": "b9b6b3f8c2f3f5b08cb2bdb67a7f30033c9771e3384e890bb011a3382187713a",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/AddonDialog.ts": {
-        "version": "0ef454a6cb35a6a488d80f23577c03f7243e59b5a93efc8516492614967b2a6a",
+        "version": "1f6d67cf7e1bc86ecfb2faf2a515ae767a264da1be6bffd89fce256c2c2082e0",
         "signature": "97fefaff526f6297128217f9e0c2375034326e6b128285b66ba8dbdaabcb733a",
         "affectsGlobalScope": false
       },
       "../src/ui/panel/Hierarchy.ts": {
-        "version": "2b2fd80a1b78738d827c1f260d18be0a2619e095fd8b1891aa7f790bd6c5ce67",
+        "version": "b59a44eacb3b554504ca8d391f7b6b9c17c50f7279b9e53f40051fd3c6ef0d3c",
         "signature": "4e691eeb0adbb7eaf394e93bbebdc447980b8f1491f8ecd802c15fce6c77f039",
         "affectsGlobalScope": false
       },
       "../src/ui/panel/SidePanelEntryVis.ts": {
-        "version": "4c0445c83ba8d2d359628811429bd54f953ac8f747df297c4283ac5d0ed3b2c6",
+        "version": "eeda9298f7e22dd77e4aa61a40f85d52450cda3b4b0c7f0c692cc3f7a3ed09ed",
         "signature": "fd392e3fb1ed0a8a4060009ad163d71e5bc62f58b0417a38af35f0bfe17c5a77",
         "affectsGlobalScope": false
       },
       "../src/ui/panel/SidePanelRanking.ts": {
-        "version": "29a634861d96f88d5c4dc905d6d5dded281732ba46f312e8af23e46e53e7bbef",
+        "version": "da569c0ac8e6eb7c94ae3aaf33683c479eb484ce4a608d29b65cc0e91ee3a4be",
         "signature": "daebc801140c0c03ed09c0f91e0b48d4b4ad4a7f88394dcae1386bd4071a3f0e",
         "affectsGlobalScope": false
       },
       "../src/ui/panel/SidePanel.ts": {
-        "version": "e19e6ecc2380a3f15825690e2c00c4bd26568d2676ccff156519256ff045073b",
-        "signature": "4e07bc0cb2eefdb667e209ab49b7dd53b7fe018ea7dca753f5d7e525db4627f2",
+        "version": "2ec2b43b988ff05172dc3c0a7f0be27609c604012402b51a310704a13a58a161",
+        "signature": "1d0556bd280f78eb60bd3dc7d571aae38d8ee2fa8234a4d45b8cd32beb58765c",
         "affectsGlobalScope": false
       },
       "../src/ui/LineUp.ts": {
-        "version": "193cc3ffb20b4828b6777039f5bb3d7c66ec22c554c531fe4abdfd48f36637ef",
-        "signature": "04f8e49cd623af7267bf66d64677700aff3f561585c25fb72d04c7c3a5f875a8",
+        "version": "004c7cdff109e1bdaf9242eec5f54e6d1f4554cec5fcf7cbdfe17f30575d988e",
+        "signature": "03c23c5b6eb867138778ed78cc3de0ef8fc28bdf33124a3e5d9c67f48f2610a1",
         "affectsGlobalScope": false
       },
       "../src/ui/panel/index.ts": {
@@ -1437,13 +1447,13 @@
         "affectsGlobalScope": false
       },
       "../src/ui/taggle/TaggleRenderer.ts": {
-        "version": "a7b07b1e3fd103424ee43524432cfe2273c131513b5307d7f9dc7d3bdd2ae428",
-        "signature": "28a48255a7a89427452f8d502a7bfbe27c4004e07f8ccb3f56b3027dea70715c",
+        "version": "375d1b8e8a46fe4e27b01b936b6a3da2b29a07f313fdd0e2a6f8d851fd177ef6",
+        "signature": "f72970e6e8fdbeadef593e755809b671d8f3e22bf4331f0246d8063171812505",
         "affectsGlobalScope": false
       },
       "../src/ui/taggle/Taggle.ts": {
-        "version": "817b7e20aad55c124c9103737ec68dda52730fb21b3fa96811bc18a44672d3dd",
-        "signature": "a34287072df89b34c58864b77e6d0a2c05be49f7a07030878234bb55899ee79d",
+        "version": "22d0de478b995f621ed7c97b3551b51a884b07303db1e6b19e32b1cae439acab",
+        "signature": "d820bcd6765083ef7eb303d3061b33c6d8b2bc99762b3f9ba3dba6f7e091bd71",
         "affectsGlobalScope": false
       },
       "../src/ui/taggle/index.ts": {
@@ -1457,33 +1467,33 @@
         "affectsGlobalScope": false
       },
       "../src/config.ts": {
-        "version": "231e4fc406f1d4a3b076c2a42d866befe3ebbe6ecabd65c8c9b37c800a1af417",
-        "signature": "6003505fc91edee717453213e3ae5cc6fe93d132918551843a1de943df57357c",
+        "version": "e18d8bfdcdd84fc0f7c65743358e60c5ab765b123510bed67ca2f8f3c431537e",
+        "signature": "22c92634cf8020d2bb699ddd2d6bb00463596449fc7381c384d502c057b3ed6a",
         "affectsGlobalScope": false
       },
       "../src/ui/interfaces.ts": {
-        "version": "6b0d73f3599e3c4a89de340e89851e95084ee903e6fddd8dd74888ac5b141258",
-        "signature": "81e8827c0a981a889202d105510998aae9135f460e5e3711bc34793e74304c98",
+        "version": "a2309af49c9c103c9cf5488c3acebccf0e1733addf725673b890913f1ebd27e5",
+        "signature": "4f28be15cb2b32957b0b749097ad738c5fd0eb1cfec7753457347b60ceeec1ef",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/ADialog.ts": {
-        "version": "0ebf11405d670c0836d0465196cf45984a9384f4ca4b8a36862e872b6ac35b00",
-        "signature": "ad6245b84672b342d717ff7a46bb6264adcab662a4fe4ff07aeaa6aae30daf3f",
+        "version": "b92f30927bbacd14b0846ea32890c43830118882a59f3179967c342d985a569f",
+        "signature": "2970ba87c04ab2f83c19f14b2f21e87f44f48c49ace2c0b780c824beb5bc2638",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/DialogManager.ts": {
-        "version": "2db1b1a23d494b1d632dde25cc67f156270657f4d685cbb715d14e8b03d696bb",
-        "signature": "41b61441c2711012373d5f8272d1532807682f373b29fde1dce82763e7f87137",
+        "version": "d7e5b4e256a4fa5e59ecb689014a1491ba31adaa13df525e914cf03aeac36271",
+        "signature": "ddde28322b4941b5314e11b7e32f28c45324d6e6d19730c6681d90c8d25d162b",
         "affectsGlobalScope": false
       },
       "../src/renderer/interfaces.ts": {
-        "version": "fb8e906a563d783e4498b7dde0d412f453d20222b7582b956959e377872866ff",
-        "signature": "3216c5e88465a7fb2abccb3d7e80ff644e2084299a70e3e0166e723422a6f5e2",
+        "version": "5aff86c8dc718677e893ba1b2d07b6ba679dbcb20da456f0f4df6d05f4f5ee88",
+        "signature": "2373cad8e5c25df7b6c28832175d066accbdbf48813aca434c72b4775cb467e2",
         "affectsGlobalScope": false
       },
       "../src/renderer/AAggregatedGroupRenderer.ts": {
-        "version": "aa77050fc4d0240d85025074826c38d7dd43b97ab7c4f2becf1a640b65c9c284",
-        "signature": "078af74d6f62045f1ede0e285061e7a093df0e2e621f14a14d4fb50c39736136",
+        "version": "235a763199cb4641634a80cdc0f3cd648153bad9e3227ac2223517fc0eb0053a",
+        "signature": "545d6d2cb3f1d3ec95f847b97f3ad87ed70234381540903f44671831612e68f1",
         "affectsGlobalScope": false
       },
       "../src/renderer/index.ts": {
@@ -1492,18 +1502,18 @@
         "affectsGlobalScope": false
       },
       "../src/provider/interfaces.ts": {
-        "version": "4482172145b240442ed51a73f5bef30f9fb66798176ce1f9042846ad329511f8",
-        "signature": "bd275eb144601c45cba9d2bdee2ac91848412ff19f543267e9219a9a1a1fead2",
+        "version": "de3e0f34811a5595d66819ebb29b53e5ecc73b57e89f72ac578f45375b3fcc0d",
+        "signature": "d2082dd2cfd7cd1d96592bc6d3b6355e6d046af0e51ace57a16edd8dde0e9712",
         "affectsGlobalScope": false
       },
       "../src/provider/ADataProvider.ts": {
-        "version": "bd7dde75c30490f85d72e8e274c45e808f9cf4f611b1a47f95a198e654b873a4",
-        "signature": "ad5ad631ec566a6335a67445e3736567d9fbf2d4a011f7bfede1f6350df32e15",
+        "version": "095fdc8caadb68d8334a549ca98fc5aa7ad91e7903d52c4387186c8f69e4aa8b",
+        "signature": "f17b8d3c595da6bae01732de77d7b3a95496f538a2d1a14452ab351a84161a29",
         "affectsGlobalScope": false
       },
       "../src/provider/ACommonDataProvider.ts": {
-        "version": "e4c1de2f3dfcd4bf7cfde286d65142cf7fb6c4479f3df2ebb25ee0260f5b4c40",
-        "signature": "cfafd84dfa8ba908903afe3646858f442c407699f69e714d0e7ed4a12b8dacae",
+        "version": "ff79602f1546647903407fba725bf64c6b4f343dadd4ad7ec9026a9ce3e7ca78",
+        "signature": "ad6f343b2cf314f42b403fe5c93cb9e0d5af394e51b8781261505df5929dada0",
         "affectsGlobalScope": false
       },
       "../src/provider/sort.ts": {
@@ -1517,28 +1527,28 @@
         "affectsGlobalScope": false
       },
       "../src/provider/tasks.ts": {
-        "version": "bf9b2a5d1d5d2f9e81888314f86cd93c6832a443f113f23dfbcbc4e0663be934",
-        "signature": "90f601d65b24a5dc8f9fd1925293103c5f28121d4ca1c1106a693e64a6279e39",
+        "version": "965cfbbc8b9ed6156f000fcc561ad6e6366d0847c59a2ec0c1cc650b726b7dd7",
+        "signature": "cb5125bf0c4908723c3af4dc301f63358726b407ba7a3d7345e0c24976ca5a87",
         "affectsGlobalScope": false
       },
       "../src/provider/DirectRenderTasks.ts": {
-        "version": "e65d1b6bf67ae8c08f86dea427050e0c6b2526db7d4f3e734afcd4143ba398ed",
+        "version": "f7acec8aa1694529b905c933a7fe960b0e30cfd16fd04eb9ac6275c827558193",
         "signature": "409e8050c199479ae0efd88b06290bfee46d8b566786cdd857bb574260cad2df",
         "affectsGlobalScope": false
       },
       "../src/provider/ScheduledTasks.ts": {
-        "version": "444b4a11bf502992a9cc02a73965d92534086bd27156953c53625ab8e83c5747",
-        "signature": "760ee7e99f6d9bf8804bf97e4c254a3bb1c8ac36c71c36c7895f04eeaf133af6",
+        "version": "66ac049eaadbe1cd05938b50c10e4f03d7f155eb3ff4e1e5b32b320a3f55e0b8",
+        "signature": "cdc4028886d38f09f5444e01dddee1e70fd0c7c0d8621d77b689ff7f1a8754ac",
         "affectsGlobalScope": false
       },
       "../src/provider/LocalDataProvider.ts": {
-        "version": "126065f11b25fe3d0adf78c7468424a60e687db9c38cc0d0bb0d2ac622d3b598",
-        "signature": "4e1e44b2a52da7053524eabf01f8b07ee4031acd72eec92ae941960d16a93cfb",
+        "version": "1c2fd30d3f67bf2de482b79f2a82f67b79f76c8881d426ffe5b5694513e064bc",
+        "signature": "9079243fa4aa123e63188aa2f3dd4a26a2d94b0d74f46045d7bbf9f7f4813dcd",
         "affectsGlobalScope": false
       },
       "../src/provider/RemoteDataProvider.ts": {
-        "version": "db4fb4cd70e91db94135b521d551bd7d5fa78e881111e021d5e1974fd3a9d8d1",
-        "signature": "a786c6e08f4df5e17623040584a698a886a091fa160694c92b7612043dc40b44",
+        "version": "12d60909bd5b318a42af9abe154661a4f0b4b2e68e93836b79a9be6c28c6b2c2",
+        "signature": "c391a4a4b867ef882ac4db3a98ba55bd23de7ad5cfa6057f35cfcd99bd89b247",
         "affectsGlobalScope": false
       },
       "../src/provider/index.ts": {
@@ -1547,53 +1557,53 @@
         "affectsGlobalScope": false
       },
       "../src/builder/column/ColumnBuilder.ts": {
-        "version": "b5f24ea4ee6b5bb1814d225192634d3f87f12d3b79cd0a5f5d26e343330b1aa0",
-        "signature": "4d17a5b625a48e59c79c397f44f4fa6d9929bd42796210dcd5ffe47d0657020d",
+        "version": "5d7a6fc1ffda445d51276a2b7bc80491faedb903520d7aa4423ae82019208b4c",
+        "signature": "f73559a68fa0088b2275eea63ba8cc6a23fa359cda13d2ed08dde4764ea93841",
         "affectsGlobalScope": false
       },
       "../src/builder/LineUpBuilder.ts": {
-        "version": "ebec5c97c92f9c5889649db1a9582096d37457d015c3d5f83b0af73664aa6091",
-        "signature": "a5f28a0ff86b292087637df3766c4fd8c33ca6c6807b30910ec1dbb0bb9f8458",
+        "version": "84cea9acb9fca344a408f275fabb811530e0b1e439e2850db3d00640a117c4ca",
+        "signature": "5157e6be36117368e8e0fe98adafab4a83f9dc3c0567381d4b6ff1b4fb5a6097",
         "affectsGlobalScope": false
       },
       "../src/builder/RankingBuilder.ts": {
-        "version": "d0fbabbfd5e2f91fe3a054adcfb9e3054e684279f3f07454794b21bbe645e484",
-        "signature": "ceec2cfc8d94af6e2495baefdf72b520026a88a9996ed529d6fb80f33c1c7ce0",
+        "version": "61c0fb808479d1b677d3906d93a200aecbac60713e6c113cd27216e37ffc18ec",
+        "signature": "488d5e4fdd20f3e4fa69f5d6c8ab167604e798e0299dce2224c8d5f1836e1a99",
         "affectsGlobalScope": false
       },
       "../src/builder/column/CategoricalColumnBuilder.ts": {
-        "version": "4f7da6c1caa50666b5f2333cd7b60c91e0fc439f690d58e8e1548dcb59d70f3f",
-        "signature": "5958bf6c43b1019d892c93fb5b80cf91ed4b6d31e090e406865dc337489f26d3",
+        "version": "8893e4908f02aeb8ada5fed6f91d084906a5a3a4ebfcee7f61ccb83920d74e75",
+        "signature": "9460b3868f5f7815f9c79ac80799456ec98e144575b85169615bf466dc2e2cb0",
         "affectsGlobalScope": false
       },
       "../src/builder/column/NumberColumnBuilder.ts": {
-        "version": "07921cf8b7b3dbccd40516d41fd2dec55e4bbcd83ebd470037f5d16545702472",
-        "signature": "a980e2b19a5b1a7ed0bea6fbe0dddeab25c7f4a64f67d5f01c5033718cb92650",
+        "version": "033c5145c420dda73e10913b9651849764922966736a51e507adfe5a450955ec",
+        "signature": "c90ada1e4074290236fcb8e70300c54103776931344fd572117f515dd1458f73",
         "affectsGlobalScope": false
       },
       "../src/builder/column/StringColumnBuilder.ts": {
-        "version": "e6774b809fd118270416c8d86840baa467e09dbedf24363cb89712f74c997bd3",
-        "signature": "d2f42d494f852bc4b709f19301b3e3b86d821663ba19426be2d3e4e1b50cd1c1",
+        "version": "28df1e21369f3b0faf8c5a3b2db4403dfee34e70aecbf67bf3901a611cf59c7d",
+        "signature": "ec48f5390beef030996eb048e25ed44094de77f2da1a56023d6bb26d462bcb21",
         "affectsGlobalScope": false
       },
       "../src/builder/column/DateColumnBuilder.ts": {
-        "version": "66854fcc44a254cf6eb84261ea4ad16ae81f6fe7668fc1b0de62aec5b9931e32",
-        "signature": "b72c6b7ad9fd72cd8835392b201668859a2b3b02a766041465685de34055d25b",
+        "version": "2f41aea53c8f6572a9de675e3e185a8c11622b09b041554989bfef4707df1cce",
+        "signature": "f5b97c23e234545480b044c934823803fc24a1a4a7cce90d2daf617c611f5f85",
         "affectsGlobalScope": false
       },
       "../src/builder/column/HierarchyColumnBuilder.ts": {
-        "version": "abadd765bcfc86693fb5d8243e3f26cbdbe3f79e19a1bbbf77359fb48537aafb",
-        "signature": "77328105ba6bd2a598b472d45bdc495c1d118210d0bbb64ed7bf48da0141cb50",
+        "version": "353ad7afc95c7229ccb69d75362bef741dad89e43581bfd7a9d4770440926a08",
+        "signature": "4f8e1e332a4d244be3744cd2986146da85e158d78277b70455ae34b6ba041b08",
         "affectsGlobalScope": false
       },
       "../src/builder/column/ActionsColumnBuilder.ts": {
-        "version": "fcdc3fbe4b455ce0e224d39f3cc7fb50f9984816cba5680e6fb929663e9f20c0",
-        "signature": "40bc6dda3031f23f0bd62a1f103899ddec5771787309e5b763da9934d60711f5",
+        "version": "4cacc8f1ea504322db34560018f2ecea77d62a6f645e0e0697e517ac9c05a494",
+        "signature": "f2875c896dad0bdb9e8c296e74e991045d9b08cfcb4f19cbcdebe44825cf0d6d",
         "affectsGlobalScope": false
       },
       "../src/builder/column/BooleanColumnBuilder.ts": {
-        "version": "6c59b7185859af5be2177ba26a8687e15bdf0b6b8f69826ea2ce492b03c003e2",
-        "signature": "f50778fca8a6cb7fc980fac93fbb2675c68ff26fe4790d26ae6114fcf1830b11",
+        "version": "d8cdac82c1d9b6c4361d53a4266d60b42c6c01b2b8ae922f90f962328677545e",
+        "signature": "4eace3fcc515abc0544be88141a7807692f45b5367c47fff17c7832b33602b75",
         "affectsGlobalScope": false
       },
       "../src/builder/column/index.ts": {
@@ -1602,18 +1612,23 @@
         "affectsGlobalScope": false
       },
       "../src/builder/DataBuilder.ts": {
-        "version": "cd1198e25bb43872f3aa141d2c589034c1e200d2ddfa1404486ef7813f7b3468",
-        "signature": "dbfad2b284c1b61491930ef3e84a4c5b1204d2de92cd46e780dfd2505fbf9d86",
+        "version": "4b037f7a3ccf4fdf3ec461f8a90d8fa1d5b8e8fe5c6d263c9db38f7a9551b36a",
+        "signature": "acacf6b89ca8c55078a3b7c2bc83e562e24dce8121fe74f4c3a7af308f342c83",
+        "affectsGlobalScope": false
+      },
+      "../src/builder/adapter/interfaces.ts": {
+        "version": "37518de5df8fe555c7fad47c24e53742fa9f30ccf75164c580f913d1a75d79d1",
+        "signature": "64885c3499cb11f03935dc6763a60f3962a7da1321413fde48d708ce8897f2fb",
         "affectsGlobalScope": false
       },
       "../src/builder/adapter/column.ts": {
-        "version": "701d868307650b182459e806db7408041663fab3ff99fe46cfe9f4a387932c6e",
-        "signature": "8c87f69eb9b1a93623c948357cb63ace51399e5b45f84d5ebd2e8aa6d6d8a1c5",
+        "version": "1bc37948792dc77810bb16af305291391242ac8007142bbcdd52ff5e2574b5f2",
+        "signature": "bd9b3b69f597fb96db40c0aa82281bfe183c6adece2cb5de053d1ac84426102b",
         "affectsGlobalScope": false
       },
       "../src/builder/adapter/ranking.ts": {
-        "version": "873906f5d298893c2de9e1d5d93b8113dc250e02ae3f8cc5805b439f3cc4d7f3",
-        "signature": "e7f68998c4dec9684bb3aa03c30f9496c0197782178b02274a94cafcdfaf71a3",
+        "version": "7dc05321adfd4111e2049c392f61fd9b4ef203e4abf07e67f2e9c8d4639e95c5",
+        "signature": "a525c44bf3f3e2bbfd720bb9d50ff9a71b5a936732da0baabc5a4aaabe41c792",
         "affectsGlobalScope": false
       },
       "../src/builder/adapter/utils.ts": {
@@ -1622,8 +1637,8 @@
         "affectsGlobalScope": false
       },
       "../src/builder/adapter/lineup.ts": {
-        "version": "0871014495da8256d5912a341a8c291b0083e3f1c379d13b696c235063abb016",
-        "signature": "35b00cc3c1ede99dda6c7b12c91192ac852d2cfb850242d246d6efd01f3e4e96",
+        "version": "159351245ea2262104dfea8f67df2efb695dccb46158228f98fadf60442ed188",
+        "signature": "60d99948534be17f8c929f3ff37036bb9cd435c60b2c5d36e1214f5f16a41550",
         "affectsGlobalScope": false
       },
       "../src/builder/adapter/builderAdapter.ts": {
@@ -1632,8 +1647,8 @@
         "affectsGlobalScope": false
       },
       "../src/builder/adapter/index.ts": {
-        "version": "b044a8d47f1aea9a1c44ae5c3ef04f1a0a47cda4885e10cace649c39c4aae229",
-        "signature": "f44d5ba47a90d0ab39bfde00c0cbbe43e6427fa401f8dfa4e118d8f8f3478eef",
+        "version": "bf1b423e3efe8e548ac6baeac9e6acef4564bec4bfca547e252fe8831e89a1da",
+        "signature": "4c875baa860498513d78a848b0016c7469b315b69a7876eeafe0c14e109ce2ec",
         "affectsGlobalScope": false
       },
       "../src/builder/index.ts": {
@@ -1642,8 +1657,8 @@
         "affectsGlobalScope": false
       },
       "../src/index.ts": {
-        "version": "b71fd35ef2128b85ab722233858e3716c42811bb5c1b7d4ca8590c73c75a0e74",
-        "signature": "06e5b571e59fe860923e0c3be6687f2e42bfa46253a50717dbfba59bf12f91d2",
+        "version": "2ba994e5c81b3907ece01c8a38b4e0d6248bc113002139cf0d902fc1d9bac4b5",
+        "signature": "199330026675b78ed0910931291c8e0025fcf1c8f87ecb20a3ae0028b2babe9b",
         "affectsGlobalScope": false
       },
       "../src/bundle.ts": {
@@ -1711,7 +1726,7 @@
       "composite": true,
       "declaration": true,
       "declarationMap": true,
-      "importsNotUsedAsValues": 0,
+      "importsNotUsedAsValues": 2,
       "experimentalDecorators": true,
       "forceConsistentCasingInFileNames": true,
       "strictBindCallApply": true,
@@ -2283,20 +2298,23 @@
         "../src/builder/adapter/utils.ts"
       ],
       "../src/builder/adapter/column.ts": [
-        "../src/builder/adapter/index.ts",
+        "../src/builder/adapter/interfaces.ts",
         "../src/internal/index.ts",
         "../src/model/index.ts"
       ],
       "../src/builder/adapter/index.ts": [
         "../src/builder/adapter/builderAdapter.ts",
-        "../src/builder/index.ts",
+        "../src/builder/adapter/interfaces.ts"
+      ],
+      "../src/builder/adapter/interfaces.ts": [
+        "../src/builder/RankingBuilder.ts",
         "../src/config.ts",
         "../src/model/index.ts",
         "../src/provider/index.ts",
         "../src/ui/index.ts"
       ],
       "../src/builder/adapter/lineup.ts": [
-        "../src/builder/adapter/index.ts",
+        "../src/builder/adapter/interfaces.ts",
         "../src/builder/adapter/ranking.ts",
         "../src/builder/adapter/utils.ts",
         "../src/model/index.ts",
@@ -2304,8 +2322,8 @@
         "../src/ui/index.ts"
       ],
       "../src/builder/adapter/ranking.ts": [
-        "../src/builder/adapter/index.ts",
-        "../src/builder/index.ts",
+        "../src/builder/RankingBuilder.ts",
+        "../src/builder/adapter/interfaces.ts",
         "../src/model/index.ts",
         "../src/provider/index.ts"
       ],
@@ -2415,11 +2433,11 @@
         "../src/internal/worker.ts",
         "../src/model/index.ts"
       ],
-      "../src/internal/mathInterfaces.ts": [
-        "../.yarn/cache/fast-deep-equal-npm-3.1.3-790edcfcf5-451526766b.zip/node_modules/fast-deep-equal/index.d.ts"
-      ],
       "../src/internal/scheduler.ts": [
         "../.yarn/cache/lineupengine-npm-2.3.0-8adb93e642-0a5c8f7a65.zip/node_modules/lineupengine/build/src/index.d.ts"
+      ],
+      "../src/internal/utils.ts": [
+        "../.yarn/cache/fast-deep-equal-npm-3.1.3-790edcfcf5-451526766b.zip/node_modules/fast-deep-equal/index.d.ts"
       ],
       "../src/internal/worker.ts": [
         "../src/internal/index.ts",
@@ -2492,7 +2510,8 @@
         "../src/model/internalNumber.ts"
       ],
       "../src/model/CategoricalColorMappingFunction.ts": [
-        "../src/model/index.ts",
+        "../src/model/Column.ts",
+        "../src/model/ICategoricalColumn.ts",
         "../src/model/interfaces.ts"
       ],
       "../src/model/CategoricalColumn.ts": [
@@ -2534,8 +2553,8 @@
         "../.yarn/cache/@types-d3-scale-chromatic-npm-2.0.0-193cb07a74-76d2fca336.zip/node_modules/@types/d3-scale-chromatic/index.d.ts",
         "../.yarn/cache/@types-d3-scale-npm-3.2.2-b50fa8001c-6bffb9dc2e.zip/node_modules/@types/d3-scale/index.d.ts",
         "../src/internal/index.ts",
+        "../src/model/Column.ts",
         "../src/model/INumberColumn.ts",
-        "../src/model/index.ts",
         "../src/model/interfaces.ts"
       ],
       "../src/model/Column.ts": [
@@ -2730,7 +2749,6 @@
         "../.yarn/cache/@types-d3-scale-npm-3.2.2-b50fa8001c-6bffb9dc2e.zip/node_modules/@types/d3-scale/index.d.ts",
         "../src/internal/index.ts",
         "../src/model/INumberColumn.ts",
-        "../src/model/index.ts",
         "../src/model/interfaces.ts"
       ],
       "../src/model/MultiLevelCompositeColumn.ts": [
@@ -2815,10 +2833,11 @@
       ],
       "../src/model/Ranking.ts": [
         "../src/internal/index.ts",
+        "../src/model/AggregateGroupColumn.ts",
         "../src/model/Column.ts",
         "../src/model/CompositeColumn.ts",
+        "../src/model/SetColumn.ts",
         "../src/model/annotations.ts",
-        "../src/model/index.ts",
         "../src/model/interfaces.ts",
         "../src/model/internal.ts",
         "../src/styles/index.ts"
@@ -2840,8 +2859,8 @@
         "../src/model/CompositeNumberColumn.ts",
         "../src/model/INumberColumn.ts",
         "../src/model/MappingFunction.ts",
+        "../src/model/NumberColumn.ts",
         "../src/model/annotations.ts",
-        "../src/model/index.ts",
         "../src/model/interfaces.ts",
         "../src/model/internal.ts",
         "../src/model/internalNumber.ts"
@@ -2980,27 +2999,32 @@
       "../src/model/internal.ts": [
         "../.yarn/cache/@types-d3-scale-chromatic-npm-2.0.0-193cb07a74-76d2fca336.zip/node_modules/@types/d3-scale-chromatic/index.d.ts",
         "../src/internal/index.ts",
-        "../src/model/index.ts",
+        "../src/model/Column.ts",
         "../src/model/interfaces.ts"
       ],
       "../src/model/internalCategorical.ts": [
         "../src/internal/index.ts",
+        "../src/model/Column.ts",
         "../src/model/ICategoricalColumn.ts",
-        "../src/model/index.ts",
         "../src/model/interfaces.ts",
-        "../src/model/internal.ts"
+        "../src/model/internal.ts",
+        "../src/model/missing.ts"
       ],
       "../src/model/internalDate.ts": [
         "../.yarn/cache/@types-d3-time-format-npm-3.0.0-d3e74150e3-2b700051e6.zip/node_modules/@types/d3-time-format/index.d.ts",
         "../.yarn/cache/@types-d3-time-npm-2.0.0-dfa4ae1dca-230ee3feb6.zip/node_modules/@types/d3-time/index.d.ts",
         "../src/internal/index.ts",
-        "../src/model/index.ts",
+        "../src/model/IDateColumn.ts",
+        "../src/model/INumberColumn.ts",
+        "../src/model/interfaces.ts",
         "../src/model/internalNumber.ts"
       ],
       "../src/model/internalNumber.ts": [
         "../.yarn/cache/@types-d3-format-npm-2.0.0-da536eb80d-956d7ab7c6.zip/node_modules/@types/d3-format/index.d.ts",
         "../src/internal/index.ts",
-        "../src/model/index.ts"
+        "../src/model/INumberColumn.ts",
+        "../src/model/interfaces.ts",
+        "../src/model/missing.ts"
       ],
       "../src/model/missing.ts": [
         "../src/model/interfaces.ts"
@@ -3028,11 +3052,11 @@
         "../src/renderer/index.ts"
       ],
       "../src/provider/DirectRenderTasks.ts": [
-        "../src/index.ts",
         "../src/internal/index.ts",
         "../src/model/index.ts",
         "../src/provider/sort.ts",
-        "../src/provider/tasks.ts"
+        "../src/provider/tasks.ts",
+        "../src/renderer/index.ts"
       ],
       "../src/provider/LocalDataProvider.ts": [
         "../src/internal/index.ts",
@@ -3493,7 +3517,7 @@
         "../src/constants.ts",
         "../src/internal/index.ts",
         "../src/model/index.ts",
-        "../src/renderer/index.ts",
+        "../src/renderer/interfaces.ts",
         "../src/styles/index.ts"
       ],
       "../src/ui/ALineUp.ts": [
@@ -3689,7 +3713,7 @@
         "../src/ui/dialogs/ADialog.ts",
         "../src/ui/dialogs/utils.ts",
         "../src/ui/interfaces.ts",
-        "../src/ui/toolbar.ts"
+        "../src/ui/toolbarResolvers.ts"
       ],
       "../src/ui/dialogs/InputDateDialog.ts": [
         "../.yarn/cache/@types-d3-time-format-npm-3.0.0-d3e74150e3-2b700051e6.zip/node_modules/@types/d3-time-format/index.d.ts",
@@ -3719,7 +3743,7 @@
         "../src/styles/index.ts",
         "../src/ui/dialogs/ADialog.ts",
         "../src/ui/dialogs/APopup.ts",
-        "../src/ui/header.ts",
+        "../src/ui/headerTooltip.ts",
         "../src/ui/interfaces.ts"
       ],
       "../src/ui/dialogs/MoreRankingOptionsDialog.ts": [
@@ -3777,7 +3801,7 @@
         "../src/ui/dialogs/ADialog.ts",
         "../src/ui/dialogs/utils.ts",
         "../src/ui/interfaces.ts",
-        "../src/ui/toolbar.ts"
+        "../src/ui/toolbarResolvers.ts"
       ],
       "../src/ui/dialogs/StringFilterDialog.ts": [
         "../src/internal/index.ts",
@@ -3829,8 +3853,15 @@
         "../src/styles/index.ts",
         "../src/ui/dialogs/MoreColumnOptionsDialog.ts",
         "../src/ui/dialogs/index.ts",
+        "../src/ui/headerTooltip.ts",
         "../src/ui/interfaces.ts",
-        "../src/ui/toolbar.ts"
+        "../src/ui/toolbarResolvers.ts"
+      ],
+      "../src/ui/headerTooltip.ts": [
+        "../src/model/index.ts",
+        "../src/styles/index.ts",
+        "../src/ui/interfaces.ts",
+        "../src/ui/toolbarResolvers.ts"
       ],
       "../src/ui/index.ts": [
         "../src/ui/EngineRanking.ts",
@@ -3862,7 +3893,7 @@
         "../src/ui/header.ts",
         "../src/ui/interfaces.ts",
         "../src/ui/panel/SearchBox.ts",
-        "../src/ui/toolbar.ts"
+        "../src/ui/toolbarResolvers.ts"
       ],
       "../src/ui/panel/SearchBox.ts": [
         "../src/internal/index.ts",
@@ -3940,7 +3971,6 @@
       ],
       "../src/ui/toolbar.ts": [
         "../src/model/index.ts",
-        "../src/model/internal.ts",
         "../src/styles/index.ts",
         "../src/ui/dialogs/ADialog.ts",
         "../src/ui/dialogs/CategoricalColorMappingDialog.ts",
@@ -3967,6 +3997,11 @@
         "../src/ui/dialogs/groupNumber.ts",
         "../src/ui/dialogs/groupString.ts",
         "../src/ui/dialogs/utils.ts",
+        "../src/ui/interfaces.ts"
+      ],
+      "../src/ui/toolbarResolvers.ts": [
+        "../src/model/index.ts",
+        "../src/model/internal.ts",
         "../src/ui/interfaces.ts"
       ]
     },
@@ -4511,23 +4546,26 @@
         "../src/builder/adapter/utils.ts"
       ],
       "../src/builder/adapter/column.ts": [
-        "../src/builder/adapter/index.ts",
+        "../src/builder/adapter/interfaces.ts",
         "../src/model/index.ts"
       ],
       "../src/builder/adapter/index.ts": [
         "../src/builder/adapter/builderAdapter.ts",
-        "../src/builder/index.ts",
+        "../src/builder/adapter/interfaces.ts"
+      ],
+      "../src/builder/adapter/interfaces.ts": [
+        "../src/builder/RankingBuilder.ts",
         "../src/config.ts",
         "../src/model/index.ts",
         "../src/provider/index.ts",
         "../src/ui/index.ts"
       ],
       "../src/builder/adapter/lineup.ts": [
-        "../src/builder/adapter/index.ts"
+        "../src/builder/adapter/interfaces.ts"
       ],
       "../src/builder/adapter/ranking.ts": [
-        "../src/builder/adapter/index.ts",
-        "../src/builder/index.ts",
+        "../src/builder/RankingBuilder.ts",
+        "../src/builder/adapter/interfaces.ts",
         "../src/model/index.ts",
         "../src/provider/index.ts"
       ],
@@ -4661,7 +4699,7 @@
         "../src/model/interfaces.ts"
       ],
       "../src/model/CategoricalColorMappingFunction.ts": [
-        "../src/model/index.ts"
+        "../src/model/ICategoricalColumn.ts"
       ],
       "../src/model/CategoricalColumn.ts": [
         "../src/internal/index.ts",
@@ -4687,7 +4725,7 @@
         "../src/model/interfaces.ts"
       ],
       "../src/model/ColorMappingFunction.ts": [
-        "../src/model/index.ts",
+        "../src/model/INumberColumn.ts",
         "../src/model/interfaces.ts"
       ],
       "../src/model/Column.ts": [
@@ -4820,7 +4858,7 @@
         "../src/model/interfaces.ts"
       ],
       "../src/model/MappingFunction.ts": [
-        "../src/model/index.ts",
+        "../src/model/INumberColumn.ts",
         "../src/model/interfaces.ts"
       ],
       "../src/model/MultiLevelCompositeColumn.ts": [
@@ -5005,13 +5043,16 @@
         "../src/model/Ranking.ts"
       ],
       "../src/model/internal.ts": [
-        "../src/model/index.ts"
+        "../src/model/Column.ts",
+        "../src/model/interfaces.ts"
       ],
       "../src/model/internalCategorical.ts": [
-        "../src/model/index.ts"
+        "../src/model/ICategoricalColumn.ts",
+        "../src/model/interfaces.ts"
       ],
       "../src/model/internalNumber.ts": [
-        "../src/model/index.ts"
+        "../src/model/INumberColumn.ts",
+        "../src/model/interfaces.ts"
       ],
       "../src/model/missing.ts": [
         "../src/model/interfaces.ts"
@@ -5360,6 +5401,13 @@
       "../src/ui/dialogs/index.ts": [
         "../src/ui/dialogs/ADialog.ts"
       ],
+      "../src/ui/header.ts": [
+        "../src/ui/headerTooltip.ts"
+      ],
+      "../src/ui/headerTooltip.ts": [
+        "../src/model/index.ts",
+        "../src/ui/interfaces.ts"
+      ],
       "../src/ui/index.ts": [
         "../src/ui/EngineRanking.ts",
         "../src/ui/EngineRenderer.ts",
@@ -5554,6 +5602,7 @@
       "../src/builder/adapter/builderAdapter.ts",
       "../src/builder/adapter/column.ts",
       "../src/builder/adapter/index.ts",
+      "../src/builder/adapter/interfaces.ts",
       "../src/builder/adapter/lineup.ts",
       "../src/builder/adapter/ranking.ts",
       "../src/builder/adapter/utils.ts",
@@ -5745,6 +5794,7 @@
       "../src/ui/dialogs/utils.ts",
       "../src/ui/domElementCache.ts",
       "../src/ui/header.ts",
+      "../src/ui/headerTooltip.ts",
       "../src/ui/index.ts",
       "../src/ui/interfaces.ts",
       "../src/ui/missing.ts",
@@ -5759,6 +5809,7 @@
       "../src/ui/taggle/index.ts",
       "../src/ui/taggle/rules.ts",
       "../src/ui/toolbar.ts",
+      "../src/ui/toolbarResolvers.ts",
       "../tsd.d.ts"
     ]
   },

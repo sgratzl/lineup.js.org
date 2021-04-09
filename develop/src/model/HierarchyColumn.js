@@ -21,8 +21,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { Category, toolbar } from './annotations';
 import CategoricalColumn from './CategoricalColumn';
-import Column from './Column';
-import { DEFAULT_COLOR } from './interfaces';
+import Column, { DEFAULT_COLOR, } from './Column';
 import { colorPool, integrateDefaults } from './internal';
 import { missingGroup } from './missing';
 import ValueColumn from './ValueColumn';

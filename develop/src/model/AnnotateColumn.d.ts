@@ -1,8 +1,9 @@
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
-import { IDataRow, ITypeFactory } from './interfaces';
+import type { IDataRow, ITypeFactory } from './interfaces';
 import StringColumn from './StringColumn';
-import { IEventListener } from '../internal';
-import ValueColumn, { dataLoaded } from './ValueColumn';
+import type { IEventListener } from '../internal';
+import type { dataLoaded } from './ValueColumn';
+import type ValueColumn from './ValueColumn';
 /**
  * emitted when the filter property changes
  * @asMemberOf AnnotateColumn

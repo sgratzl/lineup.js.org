@@ -1,4 +1,4 @@
-import { IDataRow, ECompareValueType } from './interfaces';
+import type { IDataRow, ECompareValueType } from './interfaces';
 import MultiLevelCompositeColumn from './MultiLevelCompositeColumn';
 /**
  * factory for creating a description creating a mean column

@@ -1,12 +1,12 @@
-import { GridStyleManager } from 'lineupengine';
-import { ILineUpOptions } from '../../config';
+import type { GridStyleManager } from 'lineupengine';
+import type { ILineUpOptions } from '../../config';
 import { AEventDispatcher, IEventListener } from '../../internal';
 import { DataProvider } from '../../provider';
-import { IRenderContext } from '../../renderer';
-import { IEngineRankingContext } from '../EngineRanking';
-import { IRankingHeaderContext, IRankingHeaderContextContainer } from '../interfaces';
-import { IRule } from './rules';
-import { ADialog } from '../dialogs';
+import type { IRenderContext } from '../../renderer';
+import type { IEngineRankingContext } from '../EngineRanking';
+import type { IRankingHeaderContext, IRankingHeaderContextContainer } from '../interfaces';
+import type { IRule } from './rules';
+import type { ADialog } from '../dialogs';
 /**
  * emitted when the highlight changes
  * @asMemberOf TaggleRenderer

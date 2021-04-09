@@ -1,5 +1,5 @@
 import ArrayColumn, { IArrayColumnDesc } from './ArrayColumn';
-import { IDataRow } from './interfaces';
+import type { IDataRow } from './interfaces';
 import { EAlignment, IStringDesc } from './StringColumn';
 export declare type IStringsColumnDesc = IStringDesc & IArrayColumnDesc<string>;
 /**

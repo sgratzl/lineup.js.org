@@ -1,8 +1,9 @@
-import { IBoxPlotData, IEventListener } from '../internal';
+import type { IBoxPlotData, IEventListener } from '../internal';
 import Column, { dirty, dirtyCaches, dirtyHeader, dirtyValues, groupRendererChanged, labelChanged, metaDataChanged, rendererTypeChanged, summaryRendererChanged, visibilityChanged, widthChanged } from './Column';
 import { IDataRow, ECompareValueType, IValueColumnDesc, ITypeFactory } from './interfaces';
 import { ESortMethod, IBoxPlotColumn, INumberDesc, INumberFilter, IColorMappingFunction, IMappingFunction } from './INumberColumn';
-import ValueColumn, { dataLoaded } from './ValueColumn';
+import type { dataLoaded } from './ValueColumn';
+import ValueColumn from './ValueColumn';
 export interface IBoxPlotDesc extends INumberDesc {
     sort?: ESortMethod;
 }

@@ -1,7 +1,7 @@
-import { Column, Ranking, IColumnConstructor, IColumnDesc, IGroup, IndicesArray, IDataRow, IRankingDump, EAggregationState, IColorMappingFunctionConstructor, IMappingFunctionConstructor, ITypeFactory } from '../model';
-import { AEventDispatcher, ISequence } from '../internal';
-import { IRenderTasks } from '../renderer';
-import { IAbortAblePromise as IAbortAblePromiseImpl } from 'lineupengine';
+import type { Column, Ranking, IColumnConstructor, IColumnDesc, IGroup, IndicesArray, IDataRow, IRankingDump, EAggregationState, IColorMappingFunctionConstructor, IMappingFunctionConstructor, ITypeFactory } from '../model';
+import type { AEventDispatcher, ISequence } from '../internal';
+import type { IRenderTasks } from '../renderer';
+import type { IAbortAblePromise as IAbortAblePromiseImpl } from 'lineupengine';
 export { ABORTED } from 'lineupengine';
 export declare type IAbortAblePromise<T> = IAbortAblePromiseImpl<T>;
 export declare type IAggregationStrategy = 'group' | 'item' | 'group+item' | 'group+top+item' | 'group+item+top';

@@ -129,8 +129,6 @@ var RankingBuilder = /** @class */ (function () {
                     column.columns[1],
                     column.weights[1]], mixed_1));
         }
-        console.error('invalid column type: ', column);
-        return this;
     };
     /**
      * add an imposed column (numerical column colored by categorical column) to this ranking

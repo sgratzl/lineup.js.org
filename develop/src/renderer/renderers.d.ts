@@ -1,4 +1,4 @@
-import { Column } from '../model';
+import type { Column } from '../model';
 import { ERenderMode, ICellRendererFactory } from './interfaces';
 /**
  * default render factories

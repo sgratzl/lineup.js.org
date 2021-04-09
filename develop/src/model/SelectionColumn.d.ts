@@ -1,7 +1,9 @@
 import { IndicesArray, IDataRow, IGroup, ECompareValueType, IValueColumnDesc } from './interfaces';
-import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
-import ValueColumn, { dataLoaded } from './ValueColumn';
-import { IEventListener } from '../internal';
+import type { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
+import type Column from './Column';
+import type { dataLoaded } from './ValueColumn';
+import ValueColumn from './ValueColumn';
+import type { IEventListener } from '../internal';
 /**
  * factory for creating a description creating a rank column
  * @param label

@@ -27,8 +27,8 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from) {
 import { suffix } from '../internal';
 import { toolbar, SortByDefault, dialogAddons } from './annotations';
 import BoxPlotColumn from './BoxPlotColumn';
+import { DEFAULT_COLOR, } from './Column';
 import CompositeColumn from './CompositeColumn';
-import { DEFAULT_COLOR } from './interfaces';
 import { ESortMethod, isBoxPlotColumn, isMapAbleColumn, } from './INumberColumn';
 import { ScaleMappingFunction } from './MappingFunction';
 import NumbersColumn from './NumbersColumn';

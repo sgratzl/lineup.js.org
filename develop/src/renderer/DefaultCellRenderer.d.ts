@@ -1,5 +1,5 @@
-import { Column } from '../model';
-import { ERenderMode, ICellRendererFactory, IGroupCellRenderer, ISummaryRenderer, ICellRenderer } from './interfaces';
+import type { Column } from '../model';
+import type { ERenderMode, ICellRendererFactory, IGroupCellRenderer, ISummaryRenderer, ICellRenderer } from './interfaces';
 /**
  * default renderer instance rendering the value as a text
  */

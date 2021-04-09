@@ -1,7 +1,6 @@
-import { ISequence } from '../internal';
-import { Column, IDataRow } from '../model';
-import { ERenderMode, ICellRenderer, ICellRendererFactory, IGroupCellRenderer, IImposer, IRenderContext } from './interfaces';
-import { ISummaryRenderer } from './interfaces';
+import type { ISequence } from '../internal';
+import type { Column, IDataRow } from '../model';
+import type { ERenderMode, ICellRenderer, ICellRendererFactory, IGroupCellRenderer, IImposer, IRenderContext, ISummaryRenderer } from './interfaces';
 /**
  * helper class that renders a group renderer as a selected (e.g. median) single item
  */

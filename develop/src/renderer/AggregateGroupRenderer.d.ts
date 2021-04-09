@@ -1,5 +1,5 @@
 import { Column, AggregateGroupColumn } from '../model';
-import { IRenderContext, ICellRendererFactory, ICellRenderer, IGroupCellRenderer, ISummaryRenderer } from './interfaces';
+import type { IRenderContext, ICellRendererFactory, ICellRenderer, IGroupCellRenderer, ISummaryRenderer } from './interfaces';
 export default class AggregateGroupRenderer implements ICellRendererFactory {
     readonly title: string;
     canRender(col: Column): boolean;

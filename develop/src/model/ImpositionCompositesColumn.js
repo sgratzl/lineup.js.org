@@ -26,8 +26,8 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from) {
 };
 import { suffix } from '../internal';
 import { toolbar, dialogAddons, SortByDefault } from './annotations';
+import { DEFAULT_COLOR, } from './Column';
 import CompositeColumn from './CompositeColumn';
-import { DEFAULT_COLOR } from './interfaces';
 import { EAdvancedSortMethod, isNumbersColumn, isMapAbleColumn, } from './INumberColumn';
 import { ScaleMappingFunction } from './MappingFunction';
 import NumbersColumn from './NumbersColumn';

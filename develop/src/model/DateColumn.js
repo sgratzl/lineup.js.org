@@ -22,8 +22,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { timeFormat, timeParse } from 'd3-time-format';
 import { equal } from '../internal';
 import { Category, dialogAddons, toolbar } from './annotations';
-import Column from './Column';
-import { defaultGroup, ECompareValueType, DEFAULT_COLOR, } from './interfaces';
+import Column, { DEFAULT_COLOR, } from './Column';
+import { defaultGroup, ECompareValueType } from './interfaces';
 import { isMissingValue, isUnknown, missingGroup } from './missing';
 import ValueColumn from './ValueColumn';
 import { noDateFilter, defaultDateGrouper, isDummyDateFilter, isDefaultDateGrouper, restoreDateFilter, isEqualDateFilter, isDateIncluded, toDateGroup, chooseAggregatedDate, } from './internalDate';

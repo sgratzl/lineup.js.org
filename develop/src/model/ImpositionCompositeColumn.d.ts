@@ -1,7 +1,7 @@
 import { IEventListener, ISequence } from '../internal';
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
 import CompositeColumn, { addColumn, filterChanged, moveColumn, removeColumn } from './CompositeColumn';
-import { IDataRow, IGroup, IColumnDesc } from './interfaces';
+import type { IDataRow, IGroup, IColumnDesc } from './interfaces';
 import { INumberColumn, IColorMappingFunction, IMappingFunction, IMapAbleColumn, INumberFilter } from './INumberColumn';
 /**
  *  factory for creating a description creating a max column

@@ -1,8 +1,8 @@
 import { ISequence } from '../internal';
 import { Column, EDirtyReason, Ranking, IColumnDesc, IDataRow, IGroup, IndicesArray, INumberColumn, IOrderedGroup } from '../model';
 import ACommonDataProvider from './ACommonDataProvider';
-import { IDataProviderOptions } from './interfaces';
-import { IRenderTaskExecutor } from './tasks';
+import type { IDataProviderOptions } from './interfaces';
+import type { IRenderTaskExecutor } from './tasks';
 export interface ILocalDataProviderOptions {
     /**
      * whether the filter should be applied to all rankings regardless where they are

@@ -1,7 +1,8 @@
 import { isSeqEmpty, empty } from '../internal';
-import { FIRST_IS_MISSING, ECompareValueType, } from '.';
 import { colorPool } from './internal';
-import { DEFAULT_COLOR } from './interfaces';
+import { DEFAULT_COLOR } from './Column';
+import { ECompareValueType } from './interfaces';
+import { FIRST_IS_MISSING } from './missing';
 /** @internal */
 export function toCategory(cat, value, nextColor) {
     if (nextColor === void 0) { nextColor = function () { return DEFAULT_COLOR; }; }

@@ -1,4 +1,4 @@
-import { DEFAULT_COLOR } from './interfaces';
+import { DEFAULT_COLOR } from './Column';
 export var DEFAULT_CATEGORICAL_COLOR_FUNCTION = {
     apply: function (v) { return (v ? v.color : DEFAULT_COLOR); },
     toJSON: function () { return null; },

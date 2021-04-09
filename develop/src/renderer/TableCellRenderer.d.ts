@@ -1,5 +1,5 @@
 import { IMapColumn, Column } from '../model';
-import { IRenderContext, ICellRendererFactory, ISummaryRenderer, IGroupCellRenderer, ICellRenderer } from './interfaces';
+import type { IRenderContext, ICellRendererFactory, ISummaryRenderer, IGroupCellRenderer, ICellRenderer } from './interfaces';
 export default class TableCellRenderer implements ICellRendererFactory {
     readonly title: string;
     canRender(col: Column): boolean;

@@ -15,9 +15,9 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from) {
     return to;
 };
 import { schemeCategory10, schemeSet3 } from 'd3-scale-chromatic';
-import { defaultGroup, ECompareValueType } from '.';
 import { OrderedSet } from '../internal';
-import { DEFAULT_COLOR } from './interfaces';
+import { DEFAULT_COLOR } from './Column';
+import { defaultGroup, ECompareValueType } from './interfaces';
 /** @internal */
 export function integrateDefaults(desc, defaults) {
     if (defaults === void 0) { defaults = {}; }

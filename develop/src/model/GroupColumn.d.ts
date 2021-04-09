@@ -1,6 +1,6 @@
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
 import { IDataRow, IGroup, ECompareValueType } from './interfaces';
-import { IEventListener, ISequence } from '../internal';
+import type { IEventListener, ISequence } from '../internal';
 export declare function createGroupDesc(label?: string): {
     type: string;
     label: string;

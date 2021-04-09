@@ -1,7 +1,7 @@
 import { AEventDispatcher, ISequence, IEventListener } from '../internal';
 import { Column, IColumnConstructor, Ranking, EDirtyReason, IColumnDesc, IDataRow, IGroup, IndicesArray, IOrderedGroup, EAggregationState, IColumnDump, IRankingDump, IColorMappingFunctionConstructor, IMappingFunctionConstructor, ITypeFactory } from '../model';
 import { IDataProvider, IDataProviderDump, IDataProviderOptions, IExportOptions } from './interfaces';
-import { IRenderTasks } from '../renderer';
+import type { IRenderTasks } from '../renderer';
 /**
  * emitted when a column has been added
  * @asMemberOf ADataProvider

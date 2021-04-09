@@ -24,7 +24,8 @@ import Column from './Column';
 import CompositeColumn from './CompositeColumn';
 import { defaultGroup, } from './interfaces';
 import { groupRoots, traverseGroupsDFS } from './internal';
-import { AggregateGroupColumn, SetColumn } from '.';
+import AggregateGroupColumn from './AggregateGroupColumn';
+import SetColumn from './SetColumn';
 import { AGGREGATION_LEVEL_WIDTH } from '../styles';
 export var EDirtyReason;
 (function (EDirtyReason) {

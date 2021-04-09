@@ -1,7 +1,3 @@
-/**
- * deep equal comparison
- */
-export declare const equal: (a: any, b: any) => boolean;
 export interface IBin<T> {
     /**
      * bin start

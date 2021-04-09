@@ -1,6 +1,6 @@
-import { EAdvancedSortMethod, ESortMethod, INumberColumnDesc, ITypedDump } from '../../model';
+import type { EAdvancedSortMethod, ESortMethod, INumberColumnDesc, ITypedDump } from '../../model';
 import ColumnBuilder from './ColumnBuilder';
-import { IScriptMappingFunctionType } from '../../model/MappingFunction';
+import type { IScriptMappingFunctionType } from '../../model/MappingFunction';
 export default class NumberColumnBuilder extends ColumnBuilder<INumberColumnDesc> {
     constructor(column: string);
     /**

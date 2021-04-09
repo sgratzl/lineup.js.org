@@ -1,6 +1,6 @@
 import ADialog, { IDialogContext } from './ADialog';
 import { IMapAbleColumn } from '../../model';
-import { IRankingHeaderContext } from '../interfaces';
+import type { IRankingHeaderContext } from '../interfaces';
 export default class ColorMappingDialog extends ADialog {
     private readonly column;
     private readonly ctx;

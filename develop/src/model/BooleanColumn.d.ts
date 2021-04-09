@@ -1,8 +1,9 @@
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
-import ValueColumn, { dataLoaded } from './ValueColumn';
-import { ICategoricalColumn, ICategory, ICategoricalColorMappingFunction, ICategoricalFilter } from './ICategoricalColumn';
+import type { dataLoaded } from './ValueColumn';
+import ValueColumn from './ValueColumn';
+import type { ICategoricalColumn, ICategory, ICategoricalColorMappingFunction, ICategoricalFilter } from './ICategoricalColumn';
 import { IDataRow, ECompareValueType, IValueColumnDesc, ITypeFactory } from './interfaces';
-import { IEventListener } from '../internal';
+import type { IEventListener } from '../internal';
 export interface IBooleanDesc {
     /**
      * string to show for true

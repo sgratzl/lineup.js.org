@@ -1,7 +1,7 @@
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
-import { IGroup, IColumnDesc } from './interfaces';
-import Ranking from './Ranking';
-import { IEventListener } from '../internal';
+import type { IGroup, IColumnDesc } from './interfaces';
+import type Ranking from './Ranking';
+import type { IEventListener } from '../internal';
 export declare enum EAggregationState {
     COLLAPSE = "collapse",
     EXPAND = "expand",

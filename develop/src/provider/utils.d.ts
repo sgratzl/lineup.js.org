@@ -1,5 +1,5 @@
 import { Ranking, IColumnDesc } from '../model';
-import { IDeriveOptions, IExportOptions } from './interfaces';
+import type { IDeriveOptions, IExportOptions } from './interfaces';
 export declare function deriveColumnDescriptions(data: any[], options?: Partial<IDeriveOptions>): IColumnDesc[];
 /**
  * assigns colors to columns if they are numbers and not yet defined

@@ -1,8 +1,3 @@
-/**
- * default color that should be used
- * @type {string}
- */
-export var DEFAULT_COLOR = '#C1C1C1';
 export var defaultGroup = {
     name: 'Default',
     color: 'gray',

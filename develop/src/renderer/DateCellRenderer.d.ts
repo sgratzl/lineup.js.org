@@ -1,5 +1,5 @@
 import { Column, DateColumn } from '../model';
-import { IRenderContext, ICellRendererFactory, IGroupCellRenderer, ISummaryRenderer, ICellRenderer } from './interfaces';
+import type { IRenderContext, ICellRendererFactory, IGroupCellRenderer, ISummaryRenderer, ICellRenderer } from './interfaces';
 export default class DateCellRenderer implements ICellRendererFactory {
     title: string;
     groupTitle: string;

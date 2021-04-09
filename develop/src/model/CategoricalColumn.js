@@ -21,8 +21,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { Category, toolbar } from './annotations';
 import { DEFAULT_CATEGORICAL_COLOR_FUNCTION } from './CategoricalColorMappingFunction';
-import Column from './Column';
-import { DEFAULT_COLOR } from './interfaces';
+import Column, { DEFAULT_COLOR, } from './Column';
 import { missingGroup } from './missing';
 import ValueColumn from './ValueColumn';
 import { toCategories, isCategoryIncluded, isEqualCategoricalFilter, toCompareCategoryValue, COMPARE_CATEGORY_VALUE_TYPES, toGroupCompareCategoryValue, COMPARE_GROUP_CATEGORY_VALUE_TYPES, } from './internalCategorical';

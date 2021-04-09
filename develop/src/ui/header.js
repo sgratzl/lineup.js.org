@@ -5,12 +5,14 @@ var __spreadArray = (this && this.__spreadArray) || function (to, from) {
 };
 import { MIN_LABEL_WIDTH } from '../constants';
 import { equalArrays, dragAble, dropAble, hasDnDType } from '../internal';
-import { categoryOf, getSortType } from '../model';
+import { categoryOf } from '../model';
 import { createNestedDesc, createReduceDesc, createStackDesc, isArrayColumn, isBoxPlotColumn, isCategoricalColumn, isMapColumn, isNumberColumn, isNumbersColumn, ImpositionCompositeColumn, ImpositionCompositesColumn, createImpositionDesc, createImpositionsDesc, ImpositionBoxPlotColumn, createImpositionBoxPlotDesc, CompositeColumn, isMultiLevelColumn, } from '../model';
 import { aria, cssClass, engineCssClass, RESIZE_ANIMATION_DURATION, RESIZE_SPACE } from '../styles';
 import MoreColumnOptionsDialog from './dialogs/MoreColumnOptionsDialog';
-import { getToolbar } from './toolbar';
+import { getToolbar } from './toolbarResolvers';
 import { dialogContext } from './dialogs';
+import { addIconDOM, actionCSSClass, isActionMode, updateIconState } from './headerTooltip';
+export { createToolbarMenuItems, actionCSSClass } from './headerTooltip';
 /** @internal */
 export function createHeader(col, ctx, options) {
     if (options === void 0) { options = {}; }
@@ -81,92 +83,6 @@ function updateMoreDialogIcons(node, col) {
     updateIconState(dialog, col);
 }
 /** @internal */
-export function updateIconState(node, col) {
-    var sort = node.getElementsByClassName(cssClass('action-sort'))[0];
-    if (sort) {
-        var _a = col.isSortedByMe(), asc = _a.asc, priority = _a.priority;
-        sort.dataset.sort = asc !== undefined ? asc : '';
-        sort.dataset.type = getSortType(col);
-        if (priority !== undefined) {
-            sort.dataset.priority = (priority + 1).toString();
-        }
-        else {
-            delete sort.dataset.priority;
-        }
-    }
-    var sortGroups = node.getElementsByClassName(cssClass('action-sort-groups'))[0];
-    if (sortGroups) {
-        var _b = col.isGroupSortedByMe(), asc = _b.asc, priority = _b.priority;
-        sortGroups.dataset.sort = asc !== undefined ? asc : '';
-        sortGroups.dataset.type = getSortType(col);
-        if (priority !== undefined) {
-            sortGroups.dataset.priority = (priority + 1).toString();
-        }
-        else {
-            delete sortGroups.dataset.priority;
-        }
-    }
-    var group = node.getElementsByClassName(cssClass('action-group'))[0];
-    if (group) {
-        var groupedBy = col.isGroupedBy();
-        group.dataset.group = groupedBy >= 0 ? 'true' : 'false';
-        if (groupedBy >= 0) {
-            group.dataset.priority = (groupedBy + 1).toString();
-        }
-        else {
-            delete group.dataset.priority;
-        }
-    }
-    var filter = node.getElementsByClassName(cssClass('action-filter'))[0];
-    if (!filter) {
-        return;
-    }
-    if (col.isFiltered()) {
-        filter.dataset.active = '';
-    }
-    else {
-        delete filter.dataset.active;
-    }
-}
-/** @internal */
-export function actionCSSClass(title) {
-    if (title.endsWith('&hellip;')) {
-        title = title.slice(0, -'&hellip;'.length - 1);
-    }
-    if (title.endsWith('By')) {
-        title = title.slice(0, -3);
-    }
-    var clean = title.toLowerCase().replace(/[ +-]/gm, '-');
-    return cssClass('action') + " " + cssClass("action-" + clean);
-}
-function addIconDOM(node, col, ctx, level, showLabel, mode) {
-    return function (action) {
-        var m = isActionMode(col, action, mode, 'shortcut')
-            ? 'o'
-            : isActionMode(col, action, mode, 'menu+shortcut')
-                ? 's'
-                : 'r';
-        node.insertAdjacentHTML('beforeend', "<i data-a=\"" + m + "\" title=\"" + action.title + "\" class=\"" + actionCSSClass(action.title.toString()) + " " + cssClass("feature-" + (action.options.featureLevel || 'basic')) + " " + cssClass("feature-" + (action.options.featureCategory || 'others')) + "\"><span" + (!showLabel ? " class=\"" + cssClass('aria') + "\" aria-hidden=\"true\"" : '') + ">" + action.title + "</span> </i>");
-        var i = node.lastElementChild;
-        i.onclick = function (evt) {
-            evt.stopPropagation();
-            ctx.dialogManager.setHighlightColumn(col);
-            action.onClick(col, evt, ctx, level, !showLabel);
-        };
-        return i;
-    };
-}
-function isActionMode(col, d, mode, value) {
-    var s = d.options.mode === undefined ? 'menu' : d.options.mode;
-    if (s === value) {
-        return true;
-    }
-    if (typeof s === 'function') {
-        return s(col, mode) === value;
-    }
-    return false;
-}
-/** @internal */
 export function createShortcutMenuItems(node, level, col, ctx, mode, willAutoHide) {
     if (willAutoHide === void 0) { willAutoHide = true; }
     var addIcon = addIconDOM(node, col, ctx, level, false, mode);
@@ -188,13 +104,6 @@ export function createShortcutMenuItems(node, level, col, ctx, mode, willAutoHid
         var dialog = new MoreColumnOptionsDialog(col, dialogContext(ctx, level, evt), mode, ctx);
         dialog.open();
     };
-}
-/** @internal */
-export function createToolbarMenuItems(node, level, col, ctx, mode) {
-    var addIcon = addIconDOM(node, col, ctx, level, true, mode);
-    getToolbar(col, ctx)
-        .filter(function (d) { return !isActionMode(col, d, mode, 'shortcut'); })
-        .forEach(addIcon);
 }
 /** @internal */
 function toggleRotatedHeader(node, col, defaultVisibleClientWidth) {

@@ -1,5 +1,5 @@
 import { renderers } from './renderer/renderers';
-import { toolbarActions, toolbarDialogAddons } from './ui/toolbar';
+import { toolbarDialogAddons, toolbarActions } from './ui/toolbar';
 function resolveToolbarActions(col, keys, lookup) {
     var actions = [];
     keys.forEach(function (key) {

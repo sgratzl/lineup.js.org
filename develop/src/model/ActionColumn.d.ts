@@ -1,4 +1,4 @@
-import { IDataRow, IColumnDesc, IGroup } from './interfaces';
+import type { IDataRow, IColumnDesc, IGroup } from './interfaces';
 import Column from './Column';
 export interface IAction {
     name: string;

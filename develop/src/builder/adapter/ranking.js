@@ -1,4 +1,4 @@
-import { buildRanking as buildRankingImpl, } from '..';
+import { buildRanking as buildRankingImpl, } from '../RankingBuilder';
 /*
  * build the column description
  */

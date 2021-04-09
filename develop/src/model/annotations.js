@@ -1,5 +1,4 @@
 import 'reflect-metadata';
-import Column from './Column';
 var supportType = Symbol.for('SupportType');
 var category = Symbol.for('Category');
 export function SupportType() {
@@ -67,7 +66,7 @@ export function isSupportType(col) {
 }
 export function categoryOf(col) {
     var _a, _b;
-    var cat = ((_a = Reflect.getMetadata(category, col instanceof Column ? Object.getPrototypeOf(col).constructor : col)) !== null && _a !== void 0 ? _a : 'other');
+    var cat = ((_a = Reflect.getMetadata(category, typeof col === 'function' ? col : Object.getPrototypeOf(col).constructor)) !== null && _a !== void 0 ? _a : 'other');
     return ((_b = categories[cat]) !== null && _b !== void 0 ? _b : categories.other);
 }
 export function categoryOfDesc(col, models) {

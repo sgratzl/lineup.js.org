@@ -19,10 +19,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
-import { DEFAULT_COLOR } from './interfaces';
 import MapColumn from './MapColumn';
 import { DEFAULT_CATEGORICAL_COLOR_FUNCTION } from './CategoricalColorMappingFunction';
 import CategoricalColumn from './CategoricalColumn';
+import { DEFAULT_COLOR, } from './Column';
 import { toolbar } from './annotations';
 import { toCategories } from './internalCategorical';
 var CategoricalMapColumn = /** @class */ (function (_super) {

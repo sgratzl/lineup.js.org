@@ -1,5 +1,5 @@
-import { IDataRow, INumbersColumn } from '../model';
-import { IRenderContext, IImposer, ICellRenderer, IGroupCellRenderer } from './interfaces';
+import type { IDataRow, INumbersColumn } from '../model';
+import type { IRenderContext, IImposer, ICellRenderer, IGroupCellRenderer } from './interfaces';
 import { ISequence } from '../internal';
 export declare abstract class ANumbersCellRenderer {
     abstract readonly title: string;

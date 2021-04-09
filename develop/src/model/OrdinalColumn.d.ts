@@ -1,9 +1,10 @@
 import { IEventListener } from '../internal';
 import Column, { dirty, dirtyCaches, dirtyHeader, dirtyValues, groupRendererChanged, labelChanged, metaDataChanged, rendererTypeChanged, summaryRendererChanged, visibilityChanged, widthChanged } from './Column';
-import { ICategoricalColumn, ICategoricalDesc, ICategoricalFilter, ICategory, ICategoricalColorMappingFunction } from './ICategoricalColumn';
-import { IDataRow, IValueColumnDesc, ITypeFactory } from './interfaces';
-import { INumberColumn } from './INumberColumn';
-import ValueColumn, { dataLoaded } from './ValueColumn';
+import type { ICategoricalColumn, ICategoricalDesc, ICategoricalFilter, ICategory, ICategoricalColorMappingFunction } from './ICategoricalColumn';
+import type { IDataRow, IValueColumnDesc, ITypeFactory } from './interfaces';
+import type { INumberColumn } from './INumberColumn';
+import type { dataLoaded } from './ValueColumn';
+import ValueColumn from './ValueColumn';
 export declare type IOrdinalColumnDesc = ICategoricalDesc & IValueColumnDesc<number>;
 /**
  * emitted when the mapping property changes

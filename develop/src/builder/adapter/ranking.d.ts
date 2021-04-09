@@ -1,7 +1,7 @@
-import { INestedBuilder, IReduceBuilder, IScriptedBuilder, IWeightedSumBuilder } from '..';
-import { Ranking } from '../../model';
-import { LocalDataProvider } from '../../provider';
-import { IBuilderAdapterImposeColumnProps, IBuilderAdapterNestedColumnProps, IBuilderAdapterRankingProps, IBuilderAdapterReduceColumnProps, IBuilderAdapterScriptColumnProps, IBuilderAdapterSupportColumnProps, IBuilderAdapterWeightedSumColumnProps } from '.';
+import type { Ranking } from '../../model';
+import type { LocalDataProvider } from '../../provider';
+import { INestedBuilder, IReduceBuilder, IScriptedBuilder, IWeightedSumBuilder } from '../RankingBuilder';
+import type { IBuilderAdapterImposeColumnProps, IBuilderAdapterNestedColumnProps, IBuilderAdapterRankingProps, IBuilderAdapterReduceColumnProps, IBuilderAdapterScriptColumnProps, IBuilderAdapterSupportColumnProps, IBuilderAdapterWeightedSumColumnProps } from './interfaces';
 export declare function buildRanking(props: IBuilderAdapterRankingProps, data: LocalDataProvider): Ranking;
 export declare function buildGeneric(props: {
     column: '*' | string;

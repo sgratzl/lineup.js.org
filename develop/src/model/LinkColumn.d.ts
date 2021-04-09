@@ -1,7 +1,8 @@
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
-import { IDataRow, IGroup, IValueColumnDesc, ITypeFactory } from './interfaces';
-import ValueColumn, { dataLoaded } from './ValueColumn';
-import { IEventListener, ISequence } from '../internal';
+import type { IDataRow, IGroup, IValueColumnDesc, ITypeFactory } from './interfaces';
+import type { dataLoaded } from './ValueColumn';
+import ValueColumn from './ValueColumn';
+import type { IEventListener, ISequence } from '../internal';
 import { IStringDesc, EAlignment, IStringGroupCriteria, IStringFilter } from './StringColumn';
 export interface ILinkDesc extends IStringDesc {
     /**

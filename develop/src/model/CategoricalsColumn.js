@@ -20,10 +20,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
 import ArrayColumn from './ArrayColumn';
-import { DEFAULT_COLOR } from './interfaces';
 import { toolbar } from './annotations';
 import CategoricalColumn from './CategoricalColumn';
 import { DEFAULT_CATEGORICAL_COLOR_FUNCTION } from './CategoricalColorMappingFunction';
+import { DEFAULT_COLOR, } from './Column';
 import { toCategories } from './internalCategorical';
 /**
  * a string column with optional alignment

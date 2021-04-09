@@ -1,5 +1,5 @@
 import { StringColumn, Column } from '../model';
-import { IRenderContext, ICellRendererFactory, ISummaryRenderer, IGroupCellRenderer, ICellRenderer } from './interfaces';
+import type { IRenderContext, ICellRendererFactory, ISummaryRenderer, IGroupCellRenderer, ICellRenderer } from './interfaces';
 /**
  * renders a string with additional alignment behavior
  * one instance factory shared among strings

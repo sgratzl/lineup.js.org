@@ -1,4 +1,4 @@
-import { IGroup } from './interfaces';
+import type { IGroup } from './interfaces';
 export declare function isMissingValue(v: any): boolean;
 export declare function isUnknown(v?: number | null): boolean;
 export declare const FIRST_IS_NAN = -1;

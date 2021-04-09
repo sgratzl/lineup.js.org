@@ -15,7 +15,7 @@ var __extends = (this && this.__extends) || (function () {
 })();
 import ADialog from './ADialog';
 import { uniqueId, forEach } from './utils';
-import { getToolbarDialogAddons } from '../toolbar';
+import { getToolbarDialogAddons } from '../toolbarResolvers';
 import { cssClass } from '../../styles';
 /** @internal */
 var SortDialog = /** @class */ (function (_super) {

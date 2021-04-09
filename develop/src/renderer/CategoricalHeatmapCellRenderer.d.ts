@@ -1,5 +1,5 @@
 import { Column, ICategoricalsColumn } from '../model';
-import { ICellRendererFactory, IRenderContext, ICellRenderer, IGroupCellRenderer, ISummaryRenderer } from './interfaces';
+import type { ICellRendererFactory, IRenderContext, ICellRenderer, IGroupCellRenderer, ISummaryRenderer } from './interfaces';
 export default class CategoricalHeatmapCellRenderer implements ICellRendererFactory {
     readonly title: string;
     canRender(col: Column): boolean;

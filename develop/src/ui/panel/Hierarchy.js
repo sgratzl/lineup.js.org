@@ -3,7 +3,7 @@ import { categoryOf, isSortingAscByDefault, isSupportType } from '../../model';
 import { aria, cssClass } from '../../styles';
 import AddonDialog from '../dialogs/AddonDialog';
 import { actionCSSClass, updateHeader } from '../header';
-import { getToolbarDialogAddons, isGroupAble, isGroupSortAble, isSortAble } from '../toolbar';
+import { getToolbarDialogAddons, isGroupAble, isGroupSortAble, isSortAble } from '../toolbarResolvers';
 import SearchBox from './SearchBox';
 import { dialogContext } from '../dialogs';
 /**

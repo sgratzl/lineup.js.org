@@ -1,5 +1,5 @@
 import { Column, SelectionColumn } from '../model';
-import { IRenderContext, ICellRendererFactory, ISummaryRenderer, IGroupCellRenderer, ICellRenderer } from './interfaces';
+import type { IRenderContext, ICellRendererFactory, ISummaryRenderer, IGroupCellRenderer, ICellRenderer } from './interfaces';
 export default class SelectionRenderer implements ICellRendererFactory {
     readonly title: string;
     canRender(col: Column): boolean;

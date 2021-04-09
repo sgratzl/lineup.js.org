@@ -21,8 +21,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { Category, toolbar } from './annotations';
 import CategoricalColumn from './CategoricalColumn';
-import Column from './Column';
-import { ECompareValueType, DEFAULT_COLOR } from './interfaces';
+import Column, { DEFAULT_COLOR, } from './Column';
+import { ECompareValueType } from './interfaces';
 import ValueColumn from './ValueColumn';
 import { DEFAULT_CATEGORICAL_COLOR_FUNCTION } from './CategoricalColorMappingFunction';
 import { toCategories, isCategoryIncluded, isEqualSetCategoricalFilter } from './internalCategorical';

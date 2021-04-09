@@ -1,9 +1,10 @@
 import Column, { labelChanged, metaDataChanged, dirty, widthChanged, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
-import { IArrayColumn } from './IArrayColumn';
-import { ICategoricalDesc, ISetCategoricalFilter, ICategory, ISetColumn, ICategoricalColorMappingFunction } from './ICategoricalColumn';
+import type { IArrayColumn } from './IArrayColumn';
+import type { ICategoricalDesc, ISetCategoricalFilter, ICategory, ISetColumn, ICategoricalColorMappingFunction } from './ICategoricalColumn';
 import { IDataRow, ECompareValueType, IValueColumnDesc, IGroup, ITypeFactory } from './interfaces';
-import ValueColumn, { dataLoaded } from './ValueColumn';
-import { IEventListener } from '../internal';
+import type { dataLoaded } from './ValueColumn';
+import ValueColumn from './ValueColumn';
+import type { IEventListener } from '../internal';
 export interface ISetDesc extends ICategoricalDesc {
     separator?: string;
 }

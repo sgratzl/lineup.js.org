@@ -1,6 +1,6 @@
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, dirtyCaches, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged } from './Column';
-import { IValueColumnDesc, IDataRow, ITypeFactory } from './interfaces';
-import { IEventListener } from '../internal';
+import type { IValueColumnDesc, IDataRow, ITypeFactory } from './interfaces';
+import type { IEventListener } from '../internal';
 /**
  * emitted when the data of this column has been loaded
  * @asMemberOf ValueColumn

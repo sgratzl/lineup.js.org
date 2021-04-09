@@ -1,5 +1,5 @@
 import { ILineUpOptions } from '../config';
-import { DataProvider } from '../provider';
+import type { DataProvider } from '../provider';
 import { ALineUp } from './ALineUp';
 export default class LineUp extends ALineUp {
     static readonly EVENT_SELECTION_CHANGED = "selectionChanged";

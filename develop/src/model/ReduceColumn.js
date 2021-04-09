@@ -21,9 +21,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 import { median, quantile } from '../internal';
 import { toolbar } from './annotations';
-import Column from './Column';
+import Column, { DEFAULT_COLOR, } from './Column';
 import CompositeNumberColumn from './CompositeNumberColumn';
-import { DEFAULT_COLOR } from './interfaces';
 import { EAdvancedSortMethod } from './INumberColumn';
 import { integrateDefaults } from './internal';
 /**

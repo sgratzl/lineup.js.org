@@ -1,4 +1,4 @@
-import { IBuilderAdapter, IChangeDetecter } from '.';
+import type { IBuilderAdapter, IChangeDetecter } from './interfaces';
 export declare class Adapter {
     private readonly adapter;
     private data;

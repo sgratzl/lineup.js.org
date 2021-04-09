@@ -1,11 +1,11 @@
 import { GridStyleManager } from 'lineupengine';
-import { ILineUpOptions } from '../config';
+import type { ILineUpOptions } from '../config';
 import { AEventDispatcher, IEventListener } from '../internal';
 import { DataProvider } from '../provider';
-import { IRenderContext } from '../renderer';
+import type { IRenderContext } from '../renderer';
 import EngineRanking, { IEngineRankingContext } from './EngineRanking';
 import { IRankingHeaderContext, IRankingHeaderContextContainer } from './interfaces';
-import { ADialog } from './dialogs';
+import type { ADialog } from './dialogs';
 /**
  * emitted when the highlight changes
  * @asMemberOf EngineRenderer

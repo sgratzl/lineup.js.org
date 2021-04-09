@@ -15,7 +15,12 @@ var __extends = (this && this.__extends) || (function () {
 })();
 import { AEventDispatcher, similar, fixCSS } from '../internal';
 import { isSortingAscByDefault } from './annotations';
-import { defaultGroup, ECompareValueType, DEFAULT_COLOR, } from './interfaces';
+import { defaultGroup, ECompareValueType, } from './interfaces';
+/**
+ * default color that should be used
+ * @type {string}
+ */
+export var DEFAULT_COLOR = '#C1C1C1';
 /**
  * a column in LineUp
  */

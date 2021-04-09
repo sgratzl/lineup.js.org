@@ -1,4 +1,4 @@
-import Column from './Column';
+import type Column from './Column';
 export * from './annotations';
 export { isMissingValue, isUnknown, FIRST_IS_NAN, FIRST_IS_MISSING, missingGroup } from './missing';
 export * from './interfaces';
@@ -30,7 +30,7 @@ export { default as CategoricalMapColumn } from './CategoricalMapColumn';
 export * from './CategoricalMapColumn';
 export { default as CategoricalsColumn } from './CategoricalsColumn';
 export * from './CategoricalsColumn';
-export { default, default as Column } from './Column';
+export { default, default as Column, DEFAULT_COLOR } from './Column';
 export { default as CompositeColumn } from './CompositeColumn';
 export { default as CompositeNumberColumn } from './CompositeNumberColumn';
 export * from './CompositeNumberColumn';

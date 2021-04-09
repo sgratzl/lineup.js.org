@@ -1,6 +1,6 @@
-import { GridStyleManager } from 'lineupengine';
-import { ITaggleOptions } from '../../config';
-import { DataProvider } from '../../provider';
+import type { GridStyleManager } from 'lineupengine';
+import type { ITaggleOptions } from '../../config';
+import type { DataProvider } from '../../provider';
 import { ALineUp } from '../ALineUp';
 export default class Taggle extends ALineUp {
     static readonly EVENT_SELECTION_CHANGED = "selectionChanged";

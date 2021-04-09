@@ -1,8 +1,7 @@
-import { IBoxPlotData } from '../internal';
-import { ISequence, IEventListener } from '../internal';
+import { IBoxPlotData, ISequence, IEventListener } from '../internal';
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
 import CompositeColumn, { addColumn, filterChanged, moveColumn, removeColumn } from './CompositeColumn';
-import { IDataRow, IGroup, IColumnDesc } from './interfaces';
+import type { IDataRow, IGroup, IColumnDesc } from './interfaces';
 import { ESortMethod, IBoxPlotColumn, INumberFilter, IMappingFunction, IColorMappingFunction } from './INumberColumn';
 /**
  *  factory for creating a description creating a max column

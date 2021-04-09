@@ -1,9 +1,11 @@
 import ArrayColumn, { IArrayColumnDesc } from './ArrayColumn';
-import { ISetColumn, ICategoricalColorMappingFunction } from './ICategoricalColumn';
-import { IDataRow, ITypeFactory, ECompareValueType } from './interfaces';
-import ValueColumn, { dataLoaded } from './ValueColumn';
-import Column, { labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, widthChanged, dirtyCaches } from './Column';
-import { IEventListener } from '../internal';
+import type { ISetColumn, ICategoricalColorMappingFunction } from './ICategoricalColumn';
+import type { IDataRow, ITypeFactory, ECompareValueType } from './interfaces';
+import type ValueColumn from './ValueColumn';
+import type { dataLoaded } from './ValueColumn';
+import { labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, widthChanged, dirtyCaches } from './Column';
+import type Column from './Column';
+import type { IEventListener } from '../internal';
 export declare type IBooleansColumnDesc = IArrayColumnDesc<boolean>;
 /**
  * emitted when the color mapping property changes

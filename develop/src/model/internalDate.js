@@ -181,10 +181,6 @@ export function toDateGroup(grouper, value) {
                 name: timeFormat('%x')(value),
             };
     }
-    return {
-        value: value.getTime(),
-        name: value.toString(),
-    };
 }
 /**
  * @internal

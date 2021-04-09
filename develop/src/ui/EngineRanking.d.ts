@@ -1,9 +1,9 @@
 import { ACellTableSection, GridStyleManager, ICellRenderContext, IExceptionContext, ITableSection, IAsyncUpdate } from 'lineupengine';
-import { ILineUpFlags } from '../config';
+import type { ILineUpFlags } from '../config';
 import { IEventHandler, IEventListener } from '../internal';
 import { Column, IGroupData, IGroupItem, IOrderedGroup, Ranking } from '../model';
-import { IImposer, IRenderContext } from '../renderer';
-import { IRankingHeaderContextContainer } from './interfaces';
+import type { IImposer, IRenderContext } from '../renderer';
+import type { IRankingHeaderContextContainer } from './interfaces';
 import RenderColumn, { IRenderers } from './RenderColumn';
 export interface IEngineRankingContext extends IRankingHeaderContextContainer, IRenderContext {
     createRenderer(c: Column, imposer?: IImposer): IRenderers;

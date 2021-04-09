@@ -1,5 +1,5 @@
 import { IColumnCategory, IColumnDesc } from '../../model';
-import { IRankingHeaderContext } from '../interfaces';
+import type { IRankingHeaderContext } from '../interfaces';
 import { ISearchBoxOptions } from './SearchBox';
 export interface IColumnWrapper {
     desc: IColumnDesc;

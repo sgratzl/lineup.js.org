@@ -1,8 +1,8 @@
 import { IAbortAblePromise } from 'lineupengine';
 import { IAdvancedBoxPlotData, ICategoricalStatistics, IDateStatistics, IStatistics, ISequence } from '../internal';
 import { Column, ICompareValue, ICategoricalLikeColumn, IDataRow, IDateColumn, IGroup, IndicesArray, INumberColumn, Ranking, UIntTypedArray, ICategory } from '../model';
-import { IRenderTask, IRenderTasks } from '../renderer';
-import { CompareLookup } from './sort';
+import type { IRenderTask, IRenderTasks } from '../renderer';
+import type { CompareLookup } from './sort';
 /**
  * a render task that is already resolved
  */

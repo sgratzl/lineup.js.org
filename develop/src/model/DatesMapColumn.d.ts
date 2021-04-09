@@ -1,11 +1,13 @@
-import { IDateColumn, IDateFilter } from './IDateColumn';
-import { IKeyValue } from './IArrayColumn';
-import { IDataRow, ITypeFactory } from './interfaces';
+import type { IDateColumn, IDateFilter } from './IDateColumn';
+import type { IKeyValue } from './IArrayColumn';
+import type { IDataRow, ITypeFactory } from './interfaces';
 import MapColumn, { IMapColumnDesc } from './MapColumn';
 import { EDateSort, IDatesDesc } from './DatesColumn';
-import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
-import ValueColumn, { dataLoaded } from './ValueColumn';
-import { IEventListener } from '../internal';
+import type { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
+import type Column from './Column';
+import type { dataLoaded } from './ValueColumn';
+import type ValueColumn from './ValueColumn';
+import type { IEventListener } from '../internal';
 export declare type IDateMapColumnDesc = IDatesDesc & IMapColumnDesc<Date | null>;
 /**
  * emitted when the sort method property changes

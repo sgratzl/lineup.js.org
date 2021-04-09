@@ -1,6 +1,6 @@
 import { IEventListener } from '../internal';
 import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
-import { IDataRow, IColumnParent, IFlatColumn, ITypeFactory } from './interfaces';
+import type { IDataRow, IColumnParent, IFlatColumn, ITypeFactory } from './interfaces';
 /**
  * emitted when the filter property changes
  * @asMemberOf CompositeColumn

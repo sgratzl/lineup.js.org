@@ -1,5 +1,5 @@
-import { IActionColumnDesc, IBooleanColumnDesc, ICategoricalColumnDesc, IColumnDesc, IDateColumnDesc, IHierarchyColumnDesc, ILinkColumnDesc, INumberColumnDesc } from '../../model';
-import { IBuilderAdapterActionsColumnDescProps, IBuilderAdapterBooleanColumnDescProps, IBuilderAdapterCategoricalColumnDescProps, IBuilderAdapterColumnDescProps, IBuilderAdapterDateColumnDescProps, IBuilderAdapterHierarchyColumnDescProps, IBuilderAdapterNumberColumnDescProps, IBuilderAdapterStringColumnDescProps } from '.';
+import type { IActionColumnDesc, IBooleanColumnDesc, ICategoricalColumnDesc, IColumnDesc, IDateColumnDesc, IHierarchyColumnDesc, ILinkColumnDesc, INumberColumnDesc } from '../../model';
+import type { IBuilderAdapterActionsColumnDescProps, IBuilderAdapterBooleanColumnDescProps, IBuilderAdapterCategoricalColumnDescProps, IBuilderAdapterColumnDescProps, IBuilderAdapterDateColumnDescProps, IBuilderAdapterHierarchyColumnDescProps, IBuilderAdapterNumberColumnDescProps, IBuilderAdapterStringColumnDescProps } from './interfaces';
 export declare function build<T extends IBuilderAdapterColumnDescProps>(props: T, _data?: any[]): IColumnDesc;
 export declare function buildCategorical(props: IBuilderAdapterCategoricalColumnDescProps, data: any[]): ICategoricalColumnDesc;
 export declare function buildDate(props: IBuilderAdapterDateColumnDescProps): IDateColumnDesc;

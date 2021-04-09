@@ -1,4 +1,5 @@
-import Column, { IGroupParent, IOrderedGroup } from '.';
+import Column from './Column';
+import { IGroupParent, IOrderedGroup } from './interfaces';
 export declare function duplicateGroup<T extends IOrderedGroup | IGroupParent>(group: T): T;
 /**
  * unify the parents of the given groups by reusing the same group parent if possible

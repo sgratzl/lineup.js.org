@@ -1,10 +1,11 @@
 import { IAdvancedBoxPlotData, IEventListener } from '../internal';
 import ArrayColumn, { IArrayColumnDesc } from './ArrayColumn';
 import Column, { dirty, dirtyCaches, dirtyHeader, dirtyValues, groupRendererChanged, labelChanged, metaDataChanged, rendererTypeChanged, summaryRendererChanged, visibilityChanged, widthChanged } from './Column';
-import { IArrayDesc } from './IArrayColumn';
+import type { IArrayDesc } from './IArrayColumn';
 import { IDataRow, ECompareValueType, ITypeFactory } from './interfaces';
 import { EAdvancedSortMethod, IColorMappingFunction, IMappingFunction, INumberDesc, INumberFilter, INumbersColumn } from './INumberColumn';
-import ValueColumn, { dataLoaded } from './ValueColumn';
+import type { dataLoaded } from './ValueColumn';
+import type ValueColumn from './ValueColumn';
 export interface INumbersDesc extends IArrayDesc, INumberDesc {
     readonly sort?: EAdvancedSortMethod;
 }

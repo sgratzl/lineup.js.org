@@ -1,8 +1,10 @@
 import { IEventListener } from '../internal';
 import ArrayColumn, { IArrayColumnDesc } from './ArrayColumn';
-import Column, { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
-import ValueColumn, { dataLoaded } from './ValueColumn';
-import { IDateDesc, IDatesColumn, IDateFilter } from './IDateColumn';
+import type { widthChanged, labelChanged, metaDataChanged, dirty, dirtyHeader, dirtyValues, rendererTypeChanged, groupRendererChanged, summaryRendererChanged, visibilityChanged, dirtyCaches } from './Column';
+import type Column from './Column';
+import type { dataLoaded } from './ValueColumn';
+import type ValueColumn from './ValueColumn';
+import type { IDateDesc, IDatesColumn, IDateFilter } from './IDateColumn';
 import { IDataRow, ECompareValueType, ITypeFactory } from './interfaces';
 export declare enum EDateSort {
     min = "min",

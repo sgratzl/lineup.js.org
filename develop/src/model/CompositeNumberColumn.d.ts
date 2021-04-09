@@ -1,7 +1,7 @@
 import CompositeColumn from './CompositeColumn';
-import { IDataRow, IGroup, IColumnDesc } from './interfaces';
-import { ISequence } from '../internal';
-import { INumberColumn } from './INumberColumn';
+import type { IDataRow, IGroup, IColumnDesc } from './interfaces';
+import type { ISequence } from '../internal';
+import type { INumberColumn } from './INumberColumn';
 export interface ICompositeNumberDesc extends IColumnDesc {
     /**
      * d3 format number Format

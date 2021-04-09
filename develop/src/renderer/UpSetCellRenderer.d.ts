@@ -1,5 +1,5 @@
 import { Column, ISetColumn } from '../model';
-import { ICellRendererFactory, IRenderContext, ISummaryRenderer, IGroupCellRenderer, ICellRenderer } from './interfaces';
+import type { ICellRendererFactory, IRenderContext, ISummaryRenderer, IGroupCellRenderer, ICellRenderer } from './interfaces';
 export default class UpSetCellRenderer implements ICellRendererFactory {
     readonly title: string;
     canRender(col: Column): boolean;
