@@ -7,6 +7,10 @@ export default class ColumnBuilder<T extends IColumnDesc = IColumnDesc> {
      */
     label(label: string): this;
     /**
+     * hide this column by default
+     */
+    hidden(): this;
+    /**
      * column summary text (subtitle)
      */
     summary(summary: string): this;

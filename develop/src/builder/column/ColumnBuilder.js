@@ -10,6 +10,13 @@ var ColumnBuilder = /** @class */ (function () {
         return this;
     };
     /**
+     * hide this column by default
+     */
+    ColumnBuilder.prototype.hidden = function () {
+        this.desc.visible = false;
+        return this;
+    };
+    /**
      * column summary text (subtitle)
      */
     ColumnBuilder.prototype.summary = function (summary) {

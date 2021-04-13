@@ -177,22 +177,30 @@ var EngineRanking = /** @class */ (function (_super) {
         _this.delayedUpdateAll = debounce(function () { return _this.updateAll(); }, 50);
         _this.delayedUpdateColumnWidths = debounce(function () { return _this.updateColumnWidths(); }, 50);
         ranking.on(Ranking.EVENT_ADD_COLUMN + ".hist", function (col, index) {
-            _this.columns.splice(index, 0, _this.createCol(col, index));
+            // index doesn't consider the hidden columns
+            var hiddenOffset = _this.ranking.children.slice(0, index).reduce(function (acc, c) { return acc + (!c.isVisible() ? 1 : 0); }, 0);
+            var shiftedIndex = index - hiddenOffset;
+            _this.columns.splice(shiftedIndex, 0, _this.createCol(col, shiftedIndex));
             _this.reindex();
             _this.delayedUpdateAll();
         });
         ranking.on(Ranking.EVENT_REMOVE_COLUMN + ".body", function (col, index) {
             EngineRanking.disableListener(col);
-            _this.columns.splice(index, 1);
+            // index doesn't consider the hidden columns
+            var hiddenOffset = _this.ranking.children.slice(0, index).reduce(function (acc, c) { return acc + (!c.isVisible() ? 1 : 0); }, 0);
+            var shiftedIndex = index - hiddenOffset;
+            _this.columns.splice(shiftedIndex, 1);
             _this.reindex();
             _this.delayedUpdateAll();
         });
-        ranking.on(Ranking.EVENT_MOVE_COLUMN + ".body", function (col, index, old) {
+        ranking.on(Ranking.EVENT_MOVE_COLUMN + ".body", function (col, index) {
             //delete first
-            var c = _this.columns.splice(old, 1)[0];
-            console.assert(c.c === col);
+            var shiftedOld = _this.columns.findIndex(function (d) { return d.c === col; });
+            var c = _this.columns.splice(shiftedOld, 1)[0];
             // adapt target index based on previous index, i.e shift by one
-            _this.columns.splice(old < index ? index - 1 : index, 0, c);
+            var hiddenOffset = _this.ranking.children.slice(0, index).reduce(function (acc, c) { return acc + (!c.isVisible() ? 1 : 0); }, 0);
+            var shiftedIndex = index - hiddenOffset;
+            _this.columns.splice(shiftedOld < shiftedIndex ? shiftedIndex - 1 : shiftedIndex, 0, c);
             _this.reindex();
             _this.delayedUpdateAll();
         });
@@ -200,7 +208,11 @@ var EngineRanking = /** @class */ (function (_super) {
             if (newValue) {
                 // become visible
                 var index = ranking.children.indexOf(col);
-                _this.columns.splice(index, 0, _this.createCol(col, index));
+                var hiddenOffset = _this.ranking.children
+                    .slice(0, index)
+                    .reduce(function (acc, c) { return acc + (!c.isVisible() ? 1 : 0); }, 0);
+                var shiftedIndex = index - hiddenOffset;
+                _this.columns.splice(shiftedIndex, 0, _this.createCol(col, shiftedIndex));
             }
             else {
                 // hide

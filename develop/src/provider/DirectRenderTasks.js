@@ -161,44 +161,48 @@ var DirectRenderTasks = /** @class */ (function (_super) {
     };
     DirectRenderTasks.prototype.summaryNumberStatsD = function (col, raw) {
         var _this = this;
+        var ranking = col.findMyRanker();
         return this.cached('summary', col, function () {
-            var ranking = col.findMyRanker().getOrder();
+            var order = ranking ? ranking.getOrder() : [];
             var data = _this.dataNumberStats(col, raw);
             return {
-                summary: _this.statsBuilder(ranking, col, data.hist.length, raw).next(Number.POSITIVE_INFINITY).value,
+                summary: _this.statsBuilder(order, col, data.hist.length, raw).next(Number.POSITIVE_INFINITY).value,
                 data: data,
             };
-        }, raw ? ':raw' : '', col.findMyRanker().getOrderLength() === 0);
+        }, raw ? ':raw' : '', ranking && ranking.getOrderLength() === 0);
     };
     DirectRenderTasks.prototype.summaryBoxPlotStatsD = function (col, raw) {
         var _this = this;
+        var ranking = col.findMyRanker();
         return this.cached('summary', col, function () {
-            var ranking = col.findMyRanker().getOrder();
+            var order = ranking ? ranking.getOrder() : [];
             var data = _this.dataBoxPlotStats(col, raw);
-            return { summary: _this.boxplotBuilder(ranking, col, raw).next(Number.POSITIVE_INFINITY).value, data: data };
-        }, raw ? ':braw' : ':b', col.findMyRanker().getOrderLength() === 0);
+            return { summary: _this.boxplotBuilder(order, col, raw).next(Number.POSITIVE_INFINITY).value, data: data };
+        }, raw ? ':braw' : ':b', ranking && ranking.getOrderLength() === 0);
     };
     DirectRenderTasks.prototype.summaryCategoricalStatsD = function (col) {
         var _this = this;
+        var ranking = col.findMyRanker();
         return this.cached('summary', col, function () {
-            var ranking = col.findMyRanker().getOrder();
+            var order = ranking ? ranking.getOrder() : [];
             var data = _this.dataCategoricalStats(col);
             return {
-                summary: _this.categoricalStatsBuilder(ranking, col).next(Number.POSITIVE_INFINITY).value,
+                summary: _this.categoricalStatsBuilder(order, col).next(Number.POSITIVE_INFINITY).value,
                 data: data,
             };
-        }, '', col.findMyRanker().getOrderLength() === 0);
+        }, '', ranking && ranking.getOrderLength() === 0);
     };
     DirectRenderTasks.prototype.summaryDateStatsD = function (col) {
         var _this = this;
+        var ranking = col.findMyRanker();
         return this.cached('summary', col, function () {
-            var ranking = col.findMyRanker().getOrder();
+            var order = ranking ? ranking.getOrder() : [];
             var data = _this.dataDateStats(col);
             return {
-                summary: _this.dateStatsBuilder(ranking, col, data).next(Number.POSITIVE_INFINITY).value,
+                summary: _this.dateStatsBuilder(order, col, data).next(Number.POSITIVE_INFINITY).value,
                 data: data,
             };
-        }, '', col.findMyRanker().getOrderLength() === 0);
+        }, '', ranking && ranking.getOrderLength() === 0);
     };
     DirectRenderTasks.prototype.cached = function (prefix, col, creator, suffix, dontCache) {
         if (suffix === void 0) { suffix = ''; }

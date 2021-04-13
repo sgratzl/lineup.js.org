@@ -112,7 +112,7 @@ var SidePanel = /** @class */ (function () {
         var _a;
         var _this = this;
         if (old) {
-            old.on(suffix('.panel', DataProvider.EVENT_ADD_RANKING, DataProvider.EVENT_REMOVE_RANKING, DataProvider.EVENT_ADD_DESC, DataProvider.EVENT_CLEAR_DESC, DataProvider.EVENT_ORDER_CHANGED, DataProvider.EVENT_SELECTION_CHANGED), null);
+            old.on(suffix('.panel', DataProvider.EVENT_ADD_RANKING, DataProvider.EVENT_REMOVE_RANKING, DataProvider.EVENT_ADD_DESC, DataProvider.EVENT_REMOVE_DESC, DataProvider.EVENT_CLEAR_DESC, DataProvider.EVENT_ORDER_CHANGED, DataProvider.EVENT_SELECTION_CHANGED), null);
         }
         this.data = data;
         var wrapDesc = function (desc) { return ({
@@ -121,14 +121,30 @@ var SidePanel = /** @class */ (function () {
             id: desc.type + "@" + desc.label,
             text: desc.label,
         }); };
-        (_a = this.descs).splice.apply(_a, __spreadArray([0, this.descs.length], data.getColumns().concat(this.options.additionalDescs).map(wrapDesc)));
+        (_a = this.descs).splice.apply(_a, __spreadArray([0,
+            this.descs.length], data
+            .getColumns()
+            .filter(function (d) { return d.visible !== false; })
+            .concat(this.options.additionalDescs)
+            .map(wrapDesc)));
         data.on(DataProvider.EVENT_ADD_DESC + ".panel", function (desc) {
-            _this.descs.push(wrapDesc(desc));
-            _this.updateChooser();
+            if (desc.visible !== false) {
+                _this.descs.push(wrapDesc(desc));
+                _this.updateChooser();
+            }
         });
         data.on(DataProvider.EVENT_CLEAR_DESC + ".panel", function () {
             _this.descs.splice(0, _this.descs.length);
             _this.updateChooser();
+        });
+        data.on(DataProvider.EVENT_REMOVE_DESC + ".panel", function (desc) {
+            if (desc.visible !== false) {
+                var index = _this.descs.findIndex(function (d) { return d.desc === desc; });
+                if (index >= 0) {
+                    _this.descs.splice(index, 1);
+                    _this.updateChooser();
+                }
+            }
         });
         data.on(suffix('.panel', DataProvider.EVENT_SELECTION_CHANGED, DataProvider.EVENT_ORDER_CHANGED), function () {
             _this.updateStats();
