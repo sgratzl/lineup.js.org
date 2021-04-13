@@ -1392,8 +1392,8 @@
         "affectsGlobalScope": false
       },
       "../src/ui/panel/SearchBox.ts": {
-        "version": "e2df19bb177db65ebf7c6d80e960c36f4b8e66494a697d7d157a6ee8025c4f53",
-        "signature": "9dd4d8023d3ba58f2b50cf436f80e7487c2ef6e99524abf83b156247382a7bb4",
+        "version": "5242764dea1e51e4fcef8e8b822e923838e7235bfe93722584576804552d4f97",
+        "signature": "a1447e0da5529abcd31defde133b4921468e4b9b99d82709541cf7e69d1625ce",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/RenameRankingDialog.ts": {

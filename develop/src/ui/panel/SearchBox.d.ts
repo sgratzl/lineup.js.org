@@ -19,6 +19,7 @@ export interface ISearchBoxOptions<T extends IItem> {
 export declare function select(item: any): void;
 export default class SearchBox<T extends IItem> extends AEventDispatcher {
     static readonly EVENT_SELECT = "select";
+    private static readonly SEARCH_ITEM_SELECTOR;
     private readonly options;
     readonly node: HTMLElement;
     private search;

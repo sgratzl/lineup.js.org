@@ -89,26 +89,23 @@ var SearchBox = /** @class */ (function (_super) {
         }
     };
     SearchBox.prototype.handleKey = function (evt) {
-        var KEYS = {
-            ESC: 27,
-            ENTER: 13,
-            UP: 38,
-            DOWN: 40,
-        };
-        switch (evt.which) {
-            case KEYS.ESC:
+        switch (evt.key) {
+            case 'Escape':
                 this.search.blur();
                 break;
-            case KEYS.ENTER:
+            case 'Enter':
                 var h = this.highlighted;
                 if (h) {
                     h.click();
                 }
+                else {
+                    evt.preventDefault();
+                }
                 break;
-            case KEYS.UP:
+            case 'ArrowUp':
                 this.highlightPrevious();
                 break;
-            case KEYS.DOWN:
+            case 'ArrowDown':
                 this.highlightNext();
                 break;
         }
@@ -119,9 +116,8 @@ var SearchBox = /** @class */ (function (_super) {
         this.fire(SearchBox.EVENT_SELECT, item);
     };
     SearchBox.prototype.focus = function () {
-        var _a;
         this.body.style.width = this.search.offsetWidth + "px";
-        this.highlighted = (_a = this.body.firstElementChild) !== null && _a !== void 0 ? _a : null;
+        this.highlighted = this.body.querySelector(SearchBox.SEARCH_ITEM_SELECTOR) || null;
         this.node.classList.add(cssClass('search-open'));
     };
     Object.defineProperty(SearchBox.prototype, "highlighted", {
@@ -147,17 +143,16 @@ var SearchBox = /** @class */ (function (_super) {
     SearchBox.prototype.highlightNext = function () {
         var h = this.highlighted;
         if (!h || h.classList.contains(cssClass('hidden'))) {
-            this.highlighted =
-                this.body.querySelector("." + cssClass('search-item') + ":not(." + cssClass('hidden') + ")") || null;
+            this.highlighted = this.body.querySelector(SearchBox.SEARCH_ITEM_SELECTOR) || null;
             return;
         }
-        var items = Array.from(this.body.querySelectorAll("." + cssClass('search-item') + ":not(." + cssClass('hidden') + ")"));
+        var items = Array.from(this.body.querySelectorAll(SearchBox.SEARCH_ITEM_SELECTOR));
         var index = items.indexOf(h);
         this.highlighted = items[index + 1] || null;
     };
     SearchBox.prototype.highlightPrevious = function () {
         var h = this.highlighted;
-        var items = Array.from(this.body.querySelectorAll("." + cssClass('search-item') + ":not(." + cssClass('hidden') + ")"));
+        var items = Array.from(this.body.querySelectorAll(SearchBox.SEARCH_ITEM_SELECTOR));
         if (!h || h.classList.contains(cssClass('hidden'))) {
             this.highlighted = items[items.length - 1] || null;
             return;
@@ -204,6 +199,7 @@ var SearchBox = /** @class */ (function (_super) {
         return _super.prototype.on.call(this, type, listener);
     };
     SearchBox.EVENT_SELECT = 'select';
+    SearchBox.SEARCH_ITEM_SELECTOR = "." + cssClass('search-item') + ":not(." + cssClass('hidden') + ")";
     return SearchBox;
 }(AEventDispatcher));
 export default SearchBox;
