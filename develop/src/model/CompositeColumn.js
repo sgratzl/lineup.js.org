@@ -97,7 +97,7 @@ var CompositeColumn = /** @class */ (function (_super) {
     };
     CompositeColumn.prototype.restore = function (dump, factory) {
         var _this = this;
-        dump.children.forEachb(function (child) {
+        dump.children.forEach(function (child) {
             var c = factory(child);
             if (c) {
                 _this.push(c);

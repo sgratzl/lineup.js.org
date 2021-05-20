@@ -552,7 +552,7 @@
         "affectsGlobalScope": false
       },
       "../src/model/CompositeColumn.ts": {
-        "version": "8336640d2ddfbc0009a4a584e3ccf328d8a94a5d5c19c607d0e3f3d3aa031179",
+        "version": "1a2e72cfb2bf557a88250f436315aafdbe3317f8d55905bcf77618b5f78186cd",
         "signature": "c5d421e37209d95a27f4f96da56540af3b57ad564d1d51e659d73c2c137dbf9d",
         "affectsGlobalScope": false
       },
