@@ -1,0 +1,408 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>src/provider/internal | LineUpJS - v4.2.1-alpha.0</title>
+	<meta name="description" content="Documentation for LineUpJS - v4.2.1-alpha.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="../assets/css/main.css">
+	<script async src="../assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.json" data-base="..">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="../index.html" class="title">LineUpJS - v4.2.1-alpha.0</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="../modules.html">LineUpJS - v4.2.1-alpha.0</a>
+				</li>
+				<li>
+					<a href="src_provider_internal.html">src/provider/internal</a>
+				</li>
+			</ul>
+			<h1>Module src/provider/internal</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Interfaces</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-interface tsd-parent-kind-module"><a href="../interfaces/src_provider_internal.itopngetter.html" class="tsd-kind-icon">ITopNGetter</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Type aliases</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-type-alias tsd-parent-kind-module"><a href="src_provider_internal.html#igroupmeta" class="tsd-kind-icon">IGroup<wbr>Meta</a></li>
+							</ul>
+						</section>
+						<section class="tsd-index-section ">
+							<h3>Functions</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="src_provider_internal.html#convertaggregationstate" class="tsd-kind-icon">convert<wbr>Aggregation<wbr>State</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="src_provider_internal.html#groupendlevel" class="tsd-kind-icon">group<wbr>End<wbr>Level</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="src_provider_internal.html#groupparents" class="tsd-kind-icon">group<wbr>Parents</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="src_provider_internal.html#hastopnstrategy" class="tsd-kind-icon">has<wbr>TopNStrategy</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="src_provider_internal.html#isalwaysshowinggroupstrategy" class="tsd-kind-icon">is<wbr>Always<wbr>Showing<wbr>Group<wbr>Strategy</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="src_provider_internal.html#issummarygroup" class="tsd-kind-icon">is<wbr>Summary<wbr>Group</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="src_provider_internal.html#toitemmeta" class="tsd-kind-icon">to<wbr>Item<wbr>Meta</a></li>
+								<li class="tsd-kind-function tsd-parent-kind-module"><a href="src_provider_internal.html#torowmeta" class="tsd-kind-icon">to<wbr>Row<wbr>Meta</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Type aliases</h2>
+				<section class="tsd-panel tsd-member tsd-kind-type-alias tsd-parent-kind-module">
+					<a name="igroupmeta" class="tsd-anchor"></a>
+					<h3>IGroup<wbr>Meta</h3>
+					<div class="tsd-signature tsd-kind-icon">IGroup<wbr>Meta<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">&quot;first&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;last&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">&quot;first last&quot;</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></div>
+					<aside class="tsd-sources">
+						<ul>
+							<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/9169b5d/src/provider/internal.ts#L28">src/provider/internal.ts:28</a></li>
+						</ul>
+					</aside>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Functions</h2>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="convertaggregationstate" class="tsd-anchor"></a>
+					<h3>convert<wbr>Aggregation<wbr>State</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">convert<wbr>Aggregation<wbr>State<span class="tsd-signature-symbol">(</span>state<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="../enums/src_model_aggregategroupcolumn.eaggregationstate.html" class="tsd-signature-type" data-tsd-kind="Enumeration">EAggregationState</a>, topN<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/9169b5d/src/provider/internal.ts#L12">src/provider/internal.ts:12</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>state: <span class="tsd-signature-type">boolean</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol"> | </span><a href="../enums/src_model_aggregategroupcolumn.eaggregationstate.html" class="tsd-signature-type" data-tsd-kind="Enumeration">EAggregationState</a></h5>
+								</li>
+								<li>
+									<h5>topN: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="groupendlevel" class="tsd-anchor"></a>
+					<h3>group<wbr>End<wbr>Level</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">group<wbr>End<wbr>Level<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="src_model_interfaces.html#igroupdata" class="tsd-signature-type" data-tsd-kind="Type alias">IGroupData</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/src_model_interfaces.igroupitem.html" class="tsd-signature-type" data-tsd-kind="Interface">IGroupItem</a>, topNGetter<span class="tsd-signature-symbol">: </span><a href="../interfaces/src_provider_internal.itopngetter.html" class="tsd-signature-type" data-tsd-kind="Interface">ITopNGetter</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/9169b5d/src/provider/internal.ts#L76">src/provider/internal.ts:76</a></li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>number of group levels this items ends</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>item: <a href="src_model_interfaces.html#igroupdata" class="tsd-signature-type" data-tsd-kind="Type alias">IGroupData</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/src_model_interfaces.igroupitem.html" class="tsd-signature-type" data-tsd-kind="Interface">IGroupItem</a></h5>
+								</li>
+								<li>
+									<h5>topNGetter: <a href="../interfaces/src_provider_internal.itopngetter.html" class="tsd-signature-type" data-tsd-kind="Interface">ITopNGetter</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">number</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="groupparents" class="tsd-anchor"></a>
+					<h3>group<wbr>Parents</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">group<wbr>Parents<span class="tsd-signature-symbol">(</span>group<span class="tsd-signature-symbol">: </span><a href="../interfaces/src_model_interfaces.igroup.html" class="tsd-signature-type" data-tsd-kind="Interface">IGroup</a>, meta<span class="tsd-signature-symbol">: </span><a href="src_provider_internal.html#igroupmeta" class="tsd-signature-type" data-tsd-kind="Type alias">IGroupMeta</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-symbol">{ </span>group<span class="tsd-signature-symbol">: </span><a href="../interfaces/src_model_interfaces.igroup.html" class="tsd-signature-type" data-tsd-kind="Interface">IGroup</a><span class="tsd-signature-symbol">; </span>meta<span class="tsd-signature-symbol">: </span><a href="src_provider_internal.html#igroupmeta" class="tsd-signature-type" data-tsd-kind="Type alias">IGroupMeta</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">[]</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/9169b5d/src/provider/internal.ts#L40">src/provider/internal.ts:40</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>group: <a href="../interfaces/src_model_interfaces.igroup.html" class="tsd-signature-type" data-tsd-kind="Interface">IGroup</a></h5>
+								</li>
+								<li>
+									<h5>meta: <a href="src_provider_internal.html#igroupmeta" class="tsd-signature-type" data-tsd-kind="Type alias">IGroupMeta</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-symbol">{ </span>group<span class="tsd-signature-symbol">: </span><a href="../interfaces/src_model_interfaces.igroup.html" class="tsd-signature-type" data-tsd-kind="Interface">IGroup</a><span class="tsd-signature-symbol">; </span>meta<span class="tsd-signature-symbol">: </span><a href="src_provider_internal.html#igroupmeta" class="tsd-signature-type" data-tsd-kind="Type alias">IGroupMeta</a><span class="tsd-signature-symbol"> }</span><span class="tsd-signature-symbol">[]</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="hastopnstrategy" class="tsd-anchor"></a>
+					<h3>has<wbr>TopNStrategy</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">has<wbr>TopNStrategy<span class="tsd-signature-symbol">(</span>strategy<span class="tsd-signature-symbol">: </span><a href="src_provider_interfaces.html#iaggregationstrategy" class="tsd-signature-type" data-tsd-kind="Type alias">IAggregationStrategy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/9169b5d/src/provider/internal.ts#L8">src/provider/internal.ts:8</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>strategy: <a href="src_provider_interfaces.html#iaggregationstrategy" class="tsd-signature-type" data-tsd-kind="Type alias">IAggregationStrategy</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="isalwaysshowinggroupstrategy" class="tsd-anchor"></a>
+					<h3>is<wbr>Always<wbr>Showing<wbr>Group<wbr>Strategy</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Always<wbr>Showing<wbr>Group<wbr>Strategy<span class="tsd-signature-symbol">(</span>strategy<span class="tsd-signature-symbol">: </span><a href="src_provider_interfaces.html#iaggregationstrategy" class="tsd-signature-type" data-tsd-kind="Type alias">IAggregationStrategy</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/9169b5d/src/provider/internal.ts#L4">src/provider/internal.ts:4</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>strategy: <a href="src_provider_interfaces.html#iaggregationstrategy" class="tsd-signature-type" data-tsd-kind="Type alias">IAggregationStrategy</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="issummarygroup" class="tsd-anchor"></a>
+					<h3>is<wbr>Summary<wbr>Group</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">is<wbr>Summary<wbr>Group<span class="tsd-signature-symbol">(</span>group<span class="tsd-signature-symbol">: </span><a href="../interfaces/src_model_interfaces.igroup.html" class="tsd-signature-type" data-tsd-kind="Interface">IGroup</a>, strategy<span class="tsd-signature-symbol">: </span><a href="src_provider_interfaces.html#iaggregationstrategy" class="tsd-signature-type" data-tsd-kind="Type alias">IAggregationStrategy</a>, topNGetter<span class="tsd-signature-symbol">: </span><a href="../interfaces/src_provider_internal.itopngetter.html" class="tsd-signature-type" data-tsd-kind="Interface">ITopNGetter</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">boolean</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/9169b5d/src/provider/internal.ts#L100">src/provider/internal.ts:100</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>group: <a href="../interfaces/src_model_interfaces.igroup.html" class="tsd-signature-type" data-tsd-kind="Interface">IGroup</a></h5>
+								</li>
+								<li>
+									<h5>strategy: <a href="src_provider_interfaces.html#iaggregationstrategy" class="tsd-signature-type" data-tsd-kind="Type alias">IAggregationStrategy</a></h5>
+								</li>
+								<li>
+									<h5>topNGetter: <a href="../interfaces/src_provider_internal.itopngetter.html" class="tsd-signature-type" data-tsd-kind="Interface">ITopNGetter</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">boolean</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="toitemmeta" class="tsd-anchor"></a>
+					<h3>to<wbr>Item<wbr>Meta</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Item<wbr>Meta<span class="tsd-signature-symbol">(</span>relativeIndex<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span>, group<span class="tsd-signature-symbol">: </span><a href="../interfaces/src_model_interfaces.iorderedgroup.html" class="tsd-signature-type" data-tsd-kind="Interface">IOrderedGroup</a>, topN<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">number</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="src_provider_internal.html#igroupmeta" class="tsd-signature-type" data-tsd-kind="Type alias">IGroupMeta</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/9169b5d/src/provider/internal.ts#L30">src/provider/internal.ts:30</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>relativeIndex: <span class="tsd-signature-type">number</span></h5>
+								</li>
+								<li>
+									<h5>group: <a href="../interfaces/src_model_interfaces.iorderedgroup.html" class="tsd-signature-type" data-tsd-kind="Interface">IOrderedGroup</a></h5>
+								</li>
+								<li>
+									<h5>topN: <span class="tsd-signature-type">number</span></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="src_provider_internal.html#igroupmeta" class="tsd-signature-type" data-tsd-kind="Type alias">IGroupMeta</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-function tsd-parent-kind-module">
+					<a name="torowmeta" class="tsd-anchor"></a>
+					<h3>to<wbr>Row<wbr>Meta</h3>
+					<ul class="tsd-signatures tsd-kind-function tsd-parent-kind-module">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>Row<wbr>Meta<span class="tsd-signature-symbol">(</span>item<span class="tsd-signature-symbol">: </span><a href="src_model_interfaces.html#igroupdata" class="tsd-signature-type" data-tsd-kind="Type alias">IGroupData</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/src_model_interfaces.igroupitem.html" class="tsd-signature-type" data-tsd-kind="Interface">IGroupItem</a>, strategy<span class="tsd-signature-symbol">: </span><a href="src_provider_interfaces.html#iaggregationstrategy" class="tsd-signature-type" data-tsd-kind="Type alias">IAggregationStrategy</a>, topNGetter<span class="tsd-signature-symbol">: </span><a href="../interfaces/src_provider_internal.itopngetter.html" class="tsd-signature-type" data-tsd-kind="Interface">ITopNGetter</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/lineupjs/lineupjs/blob/9169b5d/src/provider/internal.ts#L105">src/provider/internal.ts:105</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>item: <a href="src_model_interfaces.html#igroupdata" class="tsd-signature-type" data-tsd-kind="Type alias">IGroupData</a><span class="tsd-signature-symbol"> | </span><a href="../interfaces/src_model_interfaces.igroupitem.html" class="tsd-signature-type" data-tsd-kind="Interface">IGroupItem</a></h5>
+								</li>
+								<li>
+									<h5>strategy: <a href="src_provider_interfaces.html#iaggregationstrategy" class="tsd-signature-type" data-tsd-kind="Type alias">IAggregationStrategy</a></h5>
+								</li>
+								<li>
+									<h5>topNGetter: <a href="../interfaces/src_provider_internal.itopngetter.html" class="tsd-signature-type" data-tsd-kind="Interface">ITopNGetter</a></h5>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="../modules.html">Modules</a>
+					</li>
+					<li class="current tsd-kind-module">
+						<a href="src_provider_internal.html">src/provider/internal</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-module">
+						<a href="../interfaces/src_provider_internal.itopngetter.html" class="tsd-kind-icon">ITopNGetter</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-module">
+						<a href="src_provider_internal.html#igroupmeta" class="tsd-kind-icon">IGroup<wbr>Meta</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="src_provider_internal.html#convertaggregationstate" class="tsd-kind-icon">convert<wbr>Aggregation<wbr>State</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="src_provider_internal.html#groupendlevel" class="tsd-kind-icon">group<wbr>End<wbr>Level</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="src_provider_internal.html#groupparents" class="tsd-kind-icon">group<wbr>Parents</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="src_provider_internal.html#hastopnstrategy" class="tsd-kind-icon">has<wbr>TopNStrategy</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="src_provider_internal.html#isalwaysshowinggroupstrategy" class="tsd-kind-icon">is<wbr>Always<wbr>Showing<wbr>Group<wbr>Strategy</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="src_provider_internal.html#issummarygroup" class="tsd-kind-icon">is<wbr>Summary<wbr>Group</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="src_provider_internal.html#toitemmeta" class="tsd-kind-icon">to<wbr>Item<wbr>Meta</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-module">
+						<a href="src_provider_internal.html#torowmeta" class="tsd-kind-icon">to<wbr>Row<wbr>Meta</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="../assets/js/main.js"></script>
+</body>
+</html>

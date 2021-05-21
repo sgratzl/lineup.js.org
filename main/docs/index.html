@@ -1,0 +1,1336 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>LineUpJS - v4.2.1-alpha.0</title>
+	<meta name="description" content="Documentation for LineUpJS - v4.2.1-alpha.0">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+	<script async src="assets/js/search.js" id="search-script"></script>
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">LineUpJS - v4.2.1-alpha.0</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<h1>LineUpJS - v4.2.1-alpha.0</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<a href="#lineupjs-visual-analysis-of-multi-attribute-rankings" id="lineupjs-visual-analysis-of-multi-attribute-rankings" style="color: inherit; text-decoration: none;">
+					<h1>LineUp.js: Visual Analysis of Multi-Attribute Rankings</h1>
+				</a>
+				<p><a href="https://opensource.org/licenses/BSD-3-Clause"><img src="https://img.shields.io/badge/License-BSD%203--Clause-blue.svg" alt="License"></a> <a href="https://npmjs.org/package/lineupjs"><img src="https://badge.fury.io/js/lineupjs.svg" alt="NPM version"></a> <a href="https://github.com/lineupjs/lineupjs/actions"><img src="https://github.com/lineupjs/lineupjs/workflows/ci/badge.svg" alt="Github Actions"></a></p>
+				<p>LineUp is an interactive technique designed to create, visualize and explore rankings of items based on a set of heterogeneous attributes.</p>
+				<a href="#key-features" id="key-features" style="color: inherit; text-decoration: none;">
+					<h2>Key Features</h2>
+				</a>
+				<ul>
+					<li>scalable (~1M rows)</li>
+					<li>heterogenous attribute types (string, numerical, categorical, boolean, date)</li>
+					<li>composite column types (weighted sum, min, max, mean, median, impose, nested, ...)</li>
+					<li>array (multi value) and map column types (strings, stringMap, numbers, numberMap, ...)</li>
+					<li>filtering capabilities</li>
+					<li>hierarchical sorting (sort by more than one sorting criteria)</li>
+					<li>hierarchical grouping (split rows in multiple separate groups)</li>
+					<li>group aggregations (show a whole group as a single group row)</li>
+					<li>numerous visualizations for summaries, cells, and group aggregations</li>
+					<li>side panel for easy filtering and column management</li>
+					<li><a href="#react">React</a>, <a href="#angular">Angular</a>, <a href="#vue">Vue.js</a>, <a href="#polymer">Polymer</a>, <a href="#rshiny">RShiny</a>, <a href="#jupyter">Juypter</a>, <a href="#observablehq">ObservableHQ</a>, and <a href="#powerbi">Power BI</a> wrapper</li>
+					<li><a href="#demo">Demo Application</a> with CSV import and export capabilities</li>
+					<li><a href="#api">API Documentation</a> based on generated TypeDoc documenation</li>
+				</ul>
+				<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+					<h2>Usage</h2>
+				</a>
+				<p><strong>Installation</strong></p>
+				<pre><code class="language-bash"><span style="color: #000000">npm install lineupjs</span>
+</code></pre>
+				<pre><code class="language-html"><span style="color: #800000">&lt;link</span><span style="color: #000000"> </span><span style="color: #FF0000">href</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;https://unpkg.com/lineupjs/build/LineUpJS.css&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">rel</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;stylesheet&quot;</span><span style="color: #000000"> </span><span style="color: #800000">/&gt;</span>
+<span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/lineupjs/build/LineUpJS.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+</code></pre>
+				<p><strong>Minimal Usage Example</strong></p>
+				<pre><code class="language-javascript"><span style="color: #008000">// generate some data</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">arr</span><span style="color: #000000"> = [];</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">cats</span><span style="color: #000000"> = [</span><span style="color: #A31515">&#039;c1&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;c2&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;c3&#039;</span><span style="color: #000000">];</span>
+<span style="color: #AF00DB">for</span><span style="color: #000000"> (</span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">i</span><span style="color: #000000"> = </span><span style="color: #098658">0</span><span style="color: #000000">; </span><span style="color: #001080">i</span><span style="color: #000000"> &lt; </span><span style="color: #098658">100</span><span style="color: #000000">; ++</span><span style="color: #001080">i</span><span style="color: #000000">) {</span>
+<span style="color: #000000">  </span><span style="color: #001080">arr</span><span style="color: #000000">.</span><span style="color: #795E26">push</span><span style="color: #000000">({</span>
+<span style="color: #000000">    </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">random</span><span style="color: #000000">() * </span><span style="color: #098658">10</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">d:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Row &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">i</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">cat:</span><span style="color: #000000"> </span><span style="color: #001080">cats</span><span style="color: #000000">[</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">floor</span><span style="color: #000000">(</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">random</span><span style="color: #000000">() * </span><span style="color: #098658">3</span><span style="color: #000000">)],</span>
+<span style="color: #000000">    </span><span style="color: #001080">cat2:</span><span style="color: #000000"> </span><span style="color: #001080">cats</span><span style="color: #000000">[</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">floor</span><span style="color: #000000">(</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">random</span><span style="color: #000000">() * </span><span style="color: #098658">3</span><span style="color: #000000">)],</span>
+<span style="color: #000000">  });</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<pre><code class="language-javascript"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">lineup</span><span style="color: #000000"> = </span><span style="color: #001080">LineUpJS</span><span style="color: #000000">.</span><span style="color: #795E26">asLineUp</span><span style="color: #000000">(</span><span style="color: #001080">document</span><span style="color: #000000">.</span><span style="color: #001080">body</span><span style="color: #000000">, </span><span style="color: #001080">arr</span><span style="color: #000000">);</span>
+</code></pre>
+				<p><a href="https://codepen.io/sgratzl/pen/Ozzbqp">CodePen</a></p>
+				<p><a href="https://codepen.io/sgratzl/pen/Ozzbqp"><img src="https://user-images.githubusercontent.com/4129778/34654173-32180ff8-f3f8-11e7-8469-229fa34a65dc.png" alt="Minimal Result"></a></p>
+				<p><a id="advanced_usage_example"></a></p>
+				<p><strong>Advanced Usage Example</strong></p>
+				<pre><code class="language-javascript"><span style="color: #008000">// arr from before</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">builder</span><span style="color: #000000"> = </span><span style="color: #001080">LineUpJS</span><span style="color: #000000">.</span><span style="color: #795E26">builder</span><span style="color: #000000">(</span><span style="color: #001080">arr</span><span style="color: #000000">);</span>
+
+<span style="color: #008000">// manually define columns</span>
+<span style="color: #001080">builder</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">column</span><span style="color: #000000">(</span><span style="color: #001080">LineUpJS</span><span style="color: #000000">.</span><span style="color: #795E26">buildStringColumn</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;d&#039;</span><span style="color: #000000">).</span><span style="color: #795E26">label</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;Label&#039;</span><span style="color: #000000">).</span><span style="color: #795E26">width</span><span style="color: #000000">(</span><span style="color: #098658">100</span><span style="color: #000000">))</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">column</span><span style="color: #000000">(</span><span style="color: #001080">LineUpJS</span><span style="color: #000000">.</span><span style="color: #795E26">buildCategoricalColumn</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;cat&#039;</span><span style="color: #000000">, </span><span style="color: #001080">cats</span><span style="color: #000000">).</span><span style="color: #795E26">color</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;green&#039;</span><span style="color: #000000">))</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">column</span><span style="color: #000000">(</span><span style="color: #001080">LineUpJS</span><span style="color: #000000">.</span><span style="color: #795E26">buildCategoricalColumn</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;cat2&#039;</span><span style="color: #000000">, </span><span style="color: #001080">cats</span><span style="color: #000000">).</span><span style="color: #795E26">color</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;blue&#039;</span><span style="color: #000000">))</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">column</span><span style="color: #000000">(</span><span style="color: #001080">LineUpJS</span><span style="color: #000000">.</span><span style="color: #795E26">buildNumberColumn</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;a&#039;</span><span style="color: #000000">, [</span><span style="color: #098658">0</span><span style="color: #000000">, </span><span style="color: #098658">10</span><span style="color: #000000">]).</span><span style="color: #795E26">color</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;blue&#039;</span><span style="color: #000000">));</span>
+
+<span style="color: #008000">// and two rankings</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">ranking</span><span style="color: #000000"> = </span><span style="color: #001080">LineUpJS</span><span style="color: #000000">.</span><span style="color: #795E26">buildRanking</span><span style="color: #000000">()</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">supportTypes</span><span style="color: #000000">()</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">allColumns</span><span style="color: #000000">() </span><span style="color: #008000">// add all columns</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">impose</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;a+cat&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;a&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;cat2&#039;</span><span style="color: #000000">); </span><span style="color: #008000">// create composite column</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">groupBy</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;cat&#039;</span><span style="color: #000000">)</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">sortBy</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;a&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;desc&#039;</span><span style="color: #000000">)</span>
+
+
+<span style="color: #001080">builder</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">defaultRanking</span><span style="color: #000000">()</span>
+<span style="color: #000000">  .</span><span style="color: #795E26">ranking</span><span style="color: #000000">(</span><span style="color: #001080">ranking</span><span style="color: #000000">);</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">lineup</span><span style="color: #000000"> = </span><span style="color: #001080">builder</span><span style="color: #000000">.</span><span style="color: #795E26">build</span><span style="color: #000000">(</span><span style="color: #001080">document</span><span style="color: #000000">.</span><span style="color: #001080">body</span><span style="color: #000000">);</span>
+</code></pre>
+				<p><a href="https://codepen.io/sgratzl/pen/vppyML">CodePen</a></p>
+				<p><a href="https://codepen.io/sgratzl/pen/vppyML"><img src="https://user-images.githubusercontent.com/4129778/34654174-3235f784-f3f8-11e7-9361-44f5fa068bb9.png" alt="Advanced Result"></a></p>
+				<a href="#supported-browsers" id="supported-browsers" style="color: inherit; text-decoration: none;">
+					<h2>Supported Browsers</h2>
+				</a>
+				<ul>
+					<li>Chrome 64+ (best performance)</li>
+					<li>Firefox 57+</li>
+					<li>Edge 16+</li>
+				</ul>
+				<p><a id="demo"></a></p>
+				<a href="#demo-application" id="demo-application" style="color: inherit; text-decoration: none;">
+					<h2>Demo Application</h2>
+				</a>
+				<p>A demo application is located at <a href="https://github.com/lineupjs/lineup_app">lineup_app</a>. It support CSV Import, CSV Export, JSON Export, CodePen Export, nad local data management.</p>
+				<p>The application is deployed at <a href="https://lineup.js.org/app">https://lineup.js.org/app</a></p>
+				<p><a href="https://lineup.js.org/app"><img src="https://user-images.githubusercontent.com/4129778/36336600-8590a932-1389-11e8-8de0-269079efc37b.png" alt="Screenshot"></a></p>
+				<p><a id="api"></a></p>
+				<a href="#api-documentation" id="api-documentation" style="color: inherit; text-decoration: none;">
+					<h2>API Documentation</h2>
+				</a>
+				<p>LineUp is implemented in clean TypeScript in an object oriented manner. A fully generated API documentation based on <a href="http://typedoc.org">TypeDoc</a> is available at <a href="https://lineup.js.org/master/docs">https://lineup.js.org/master/docs</a></p>
+				<p>LineUp can be build manually or using via the builder design pattern (see <a href="#advanced_usage_example">Advanced Usage Example</a>). The builder design pattern in the more common way.</p>
+				<a href="#lineup-builder" id="lineup-builder" style="color: inherit; text-decoration: none;">
+					<h3>LineUp Builder</h3>
+				</a>
+				<p>The simplest methods to create a new instance are:</p>
+				<ul>
+					<li><a href="https://lineup.js.org/master/docs/modules/_builder_index_.html#aslineup">asLineUp</a> returning a ready to use <a href="https://lineup.js.org/master/docs/classes/_ui_lineup_.lineup.html">LineUp</a> instance<pre><code class="language-ts"><span style="color: #795E26">asLineUp</span><span style="color: #000000">(</span><span style="color: #001080">node</span><span style="color: #000000">: </span><span style="color: #001080">HTMLElement</span><span style="color: #000000">, </span><span style="color: #001080">data</span><span style="color: #000000">: </span><span style="color: #001080">any</span><span style="color: #000000">[], ...</span><span style="color: #001080">columns</span><span style="color: #000000">: </span><span style="color: #001080">string</span><span style="color: #000000">[]): </span><span style="color: #001080">LineUp</span>
+</code></pre>
+					</li>
+					<li><a href="https://lineup.js.org/master/docs/modules/_builder_index_.html#astaggle">asTaggle</a> returning a ready to use <a href="https://lineup.js.org/master/docs/classes/_ui_taggle_taggle_.taggle.html">Taggle</a> instance<pre><code class="language-ts"><span style="color: #795E26">asTaggle</span><span style="color: #000000">(</span><span style="color: #001080">node</span><span style="color: #000000">: </span><span style="color: #001080">HTMLElement</span><span style="color: #000000">, </span><span style="color: #001080">data</span><span style="color: #000000">: </span><span style="color: #001080">any</span><span style="color: #000000">[], ...</span><span style="color: #001080">columns</span><span style="color: #000000">: </span><span style="color: #001080">string</span><span style="color: #000000">[]): </span><span style="color: #001080">Taggle</span>
+</code></pre>
+					</li>
+					<li><a href="https://lineup.js.org/master/docs/modules/_builder_databuilder_.html#builder">builder</a> returning a new <a href="https://lineup.js.org/master/docs/classes/_builder_databuilder_.databuilder.html">DataBuilder</a><pre><code class="language-ts"><span style="color: #795E26">builder</span><span style="color: #000000">(</span><span style="color: #001080">arr</span><span style="color: #000000">: </span><span style="color: #001080">any</span><span style="color: #000000">[]): </span><span style="color: #795E26">DataBuilder</span><span style="color: #A31515">`</span>
+</code></pre>
+					</li>
+				</ul>
+				<p>The <code>DataBuilder</code> allows on the one hand to specify the individual columns more specificly and the creation of custom rankings.</p>
+				<p>Builder factory functions for creating column descriptions include:</p>
+				<ul>
+					<li><a href="https://lineup.js.org/master/docs/modules/_builder_column_stringcolumnbuilder_.html#buildstringcolumn">buildStringColumn</a> returning a new <a href="https://lineup.js.org/master/docs/classes/_builder_column_stringcolumnbuilder_.stringcolumnbuilder.html">StringColumnBuilder</a><pre><code class="language-ts"><span style="color: #795E26">buildStringColumn</span><span style="color: #000000">(</span><span style="color: #001080">column</span><span style="color: #000000">: </span><span style="color: #001080">string</span><span style="color: #000000">): </span><span style="color: #001080">StringColumnBuilder</span>
+</code></pre>
+					</li>
+					<li><a href="https://lineup.js.org/master/docs/modules/_builder_column_numbercolumnbuilder_.html#buildnumbercolumn">buildNumberColumn</a> returning a new <a href="https://lineup.js.org/master/docs/classes/_builder_column_numbercolumnbuilder_.numbercolumnbuilder.html">NumberColumnBuilder</a><pre><code class="language-ts"><span style="color: #795E26">buildNumberColumn</span><span style="color: #000000">(</span><span style="color: #001080">column</span><span style="color: #000000">: </span><span style="color: #001080">string</span><span style="color: #000000">, </span><span style="color: #001080">domain</span><span style="color: #000000">?: [</span><span style="color: #001080">number</span><span style="color: #000000">, </span><span style="color: #001080">number</span><span style="color: #000000">]): </span><span style="color: #001080">NumberColumnBuilder</span>
+</code></pre>
+					</li>
+					<li><a href="https://lineup.js.org/master/docs/modules/_builder_column_categoricalcolumnbuilder_.html#buildcategoricalcolumn">buildCategoricalColumn</a> returning a new <a href="https://lineup.js.org/master/docs/classes/_builder_column_categoricalcolumnbuilder_.categoricalcolumnbuilder.html">CategoricalColumnBuilder</a><pre><code class="language-ts"><span style="color: #795E26">buildCategoricalColumn</span><span style="color: #000000">(</span><span style="color: #001080">column</span><span style="color: #000000">: </span><span style="color: #001080">string</span><span style="color: #000000">, </span><span style="color: #001080">categories</span><span style="color: #000000">?: (</span><span style="color: #001080">string</span><span style="color: #000000"> | </span><span style="color: #001080">Partial</span><span style="color: #000000">&lt;</span><span style="color: #001080">ICategory</span><span style="color: #000000">&gt;)[]): </span><span style="color: #001080">CategoricalColumnBuilder</span>
+</code></pre>
+					</li>
+					<li><a href="https://lineup.js.org/master/docs/modules/_builder_column_hierarchycolumnbuilder_.html#buildhierarchicalcolumn">buildHierarchicalColumn</a> returning a new <a href="https://lineup.js.org/master/docs/classes/_builder_column_hierarchycolumnbuilder_.hierarchycolumnbuilder.html">HierarchyColumnBuilder</a><pre><code class="language-ts"><span style="color: #795E26">buildHierarchicalColumn</span><span style="color: #000000">(</span><span style="color: #001080">column</span><span style="color: #000000">: </span><span style="color: #001080">string</span><span style="color: #000000">, </span><span style="color: #001080">hierarchy</span><span style="color: #000000">?: </span><span style="color: #001080">IPartialCategoryNode</span><span style="color: #000000">): </span><span style="color: #001080">HierarchyColumnBuilder</span>
+</code></pre>
+					</li>
+					<li><a href="https://lineup.js.org/master/docs/modules/_builder_column_datecolumnbuilder_.html#builddatecolumn">buildDateColumn</a> returning a new <a href="https://lineup.js.org/master/docs/classes/_builder_column_datecolumnbuilder_.datecolumnbuilder.html">DateColumnBuilder</a><pre><code class="language-ts"><span style="color: #795E26">buildDateColumn</span><span style="color: #000000">(</span><span style="color: #001080">column</span><span style="color: #000000">: </span><span style="color: #001080">string</span><span style="color: #000000">): </span><span style="color: #001080">DateColumnBuilder</span>
+</code></pre>
+					</li>
+					<li><a href="https://lineup.js.org/master/docs/modules/_builder_column_actionscolumnbuilder_.html#buildactionscolumn">buildActionsColumn</a> returning a new <a href="https://lineup.js.org/master/docs/classes/_builder_column_actionscolumnbuilder_.actionscolumnbuilder.html">ActionsColumnBuilder</a><pre><code class="language-ts"><span style="color: #795E26">buildActionsColumn</span><span style="color: #000000">(): </span><span style="color: #001080">ActionsColumnBuilder</span>
+</code></pre>
+					</li>
+				</ul>
+				<p>In order to build custom rankings within the <code>DataBuilder</code> the <a href="https://lineup.js.org/master/docs/modules/_builder_rankingbuilder_.html#buildranking">buildRanking</a> returning a new <a href="https://lineup.js.org/master/docs/classes/_builder_rankingbuilder_.rankingbuilder.html">RankingBuilder</a> is used.</p>
+				<pre><code class="language-ts"><span style="color: #795E26">buildRanking</span><span style="color: #000000">(): </span><span style="color: #001080">RankingBuilder</span>
+</code></pre>
+				<a href="#lineup-classes-and-manual-creation" id="lineup-classes-and-manual-creation" style="color: inherit; text-decoration: none;">
+					<h3>LineUp classes and manual creation</h3>
+				</a>
+				<p>The relevant classes for creating a LineUp instance manually are <a href="https://lineup.js.org/master/docs/classes/_ui_lineup_.lineup.html">LineUp</a>, <a href="https://lineup.js.org/master/docs/classes/_ui_taggle_taggle_.taggle.html">Taggle</a>, and <a href="https://lineup.js.org/master/docs/classes/_provider_localdataprovider_.localdataprovider.html">LocalDataProvider</a>. A <code>LocalDataProvider</code> is an sub class of <code>ADataProvider</code> implementing the data model management based on a local JavaScript array. <code>LineUp</code> and <code>Taggle</code> are the visual interfaces to the <code>LocalDataProvider</code>.</p>
+				<p>The classes can be instantiated either using the factory pattern or via their regular class constructors:</p>
+				<pre><code class="language-ts"><span style="color: #795E26">createLineUp</span><span style="color: #000000">(</span><span style="color: #001080">container</span><span style="color: #000000">: </span><span style="color: #001080">HTMLElement</span><span style="color: #000000">, </span><span style="color: #001080">data</span><span style="color: #000000">: </span><span style="color: #001080">ADataProvider</span><span style="color: #000000">, </span><span style="color: #001080">config</span><span style="color: #000000">?: </span><span style="color: #001080">Partial</span><span style="color: #000000">&lt;</span><span style="color: #001080">ILineUpOptions</span><span style="color: #000000">&gt;): </span><span style="color: #001080">LineUp</span>
+
+<span style="color: #795E26">createTaggle</span><span style="color: #000000">(</span><span style="color: #001080">container</span><span style="color: #000000">: </span><span style="color: #001080">HTMLElement</span><span style="color: #000000">, </span><span style="color: #001080">data</span><span style="color: #000000">: </span><span style="color: #001080">ADataProvider</span><span style="color: #000000">, </span><span style="color: #001080">config</span><span style="color: #000000">?: </span><span style="color: #001080">Partial</span><span style="color: #000000">&lt;</span><span style="color: #001080">ITaggleOptions</span><span style="color: #000000">&gt;): </span><span style="color: #001080">Taggle</span>
+
+<span style="color: #795E26">createLocalDataProvider</span><span style="color: #000000">(</span><span style="color: #001080">data</span><span style="color: #000000">: </span><span style="color: #001080">any</span><span style="color: #000000">[], </span><span style="color: #001080">columns</span><span style="color: #000000">: </span><span style="color: #001080">IColumnDesc</span><span style="color: #000000">[], </span><span style="color: #001080">options</span><span style="color: #000000">?: </span><span style="color: #001080">Partial</span><span style="color: #000000">&lt;</span><span style="color: #001080">ILocalDataProviderOptions</span><span style="color: #000000">&gt;): </span><span style="color: #001080">LocalDataProvider</span>
+</code></pre>
+				<pre><code class="language-ts"><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">LineUp</span><span style="color: #000000">(</span><span style="color: #001080">node</span><span style="color: #000000">: </span><span style="color: #001080">HTMLElement</span><span style="color: #000000">, </span><span style="color: #001080">data</span><span style="color: #000000">: </span><span style="color: #001080">DataProvider</span><span style="color: #000000">, </span><span style="color: #001080">options</span><span style="color: #000000">?: </span><span style="color: #001080">Partial</span><span style="color: #000000">&lt;</span><span style="color: #001080">ILineUpOptions</span><span style="color: #000000">&gt;): </span><span style="color: #001080">LineUp</span>
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Taggle</span><span style="color: #000000">(</span><span style="color: #001080">node</span><span style="color: #000000">: </span><span style="color: #001080">HTMLElement</span><span style="color: #000000">, </span><span style="color: #001080">data</span><span style="color: #000000">: </span><span style="color: #001080">DataProvider</span><span style="color: #000000">, </span><span style="color: #001080">options</span><span style="color: #000000">?: </span><span style="color: #001080">Partial</span><span style="color: #000000">&lt;</span><span style="color: #001080">ITaggleOptions</span><span style="color: #000000">&gt;): </span><span style="color: #001080">Taggle</span>
+<span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">LocalDataProvider</span><span style="color: #000000">(</span><span style="color: #001080">data</span><span style="color: #000000">: </span><span style="color: #001080">any</span><span style="color: #000000">[], </span><span style="color: #001080">columns</span><span style="color: #000000">?: </span><span style="color: #001080">IColumnDesc</span><span style="color: #000000">[], </span><span style="color: #001080">options</span><span style="color: #000000">?: </span><span style="color: #001080">Partial</span><span style="color: #000000">&lt;</span><span style="color: #001080">ILocalDataProviderOptions</span><span style="color: #000000"> &amp; </span><span style="color: #001080">IDataProviderOptions</span><span style="color: #000000">&gt;): </span><span style="color: #001080">LocalDataProvider</span>
+</code></pre>
+				<p>Both <code>LineUp</code> and <code>Taggle</code> are sub classes of <a href="https://lineup.js.org/master/docs/classes/_ui_alineup_.alineup.html">ALineUp</a>. The most important functions of this class include:</p>
+				<ul>
+					<li><a href="https://lineup.js.org/master/docs/classes/_ui_alineup_.alineup.html#gethighlight"><code>getHighlight(): number</code></a> / <a href="https://lineup.js.org/master/docs/classes/_ui_alineup_.alineup.html#sethighlight"><code>setHighlight(dataIndex: number): void</code></a>
+					to get and set the highlighted row identified by its index in the data. If none is highlighted <code>-1</code> is returned.</li>
+					<li><a href="https://lineup.js.org/master/docs/classes/_ui_lineup_.lineup.html#getselection"><code>getSelection(): number[]</code></a> / <a href="https://lineup.js.org/master/docs/classes/_ui_alineup_.alineup.html#setselection"><code>setSelection(dataIndices: number[]): void</code></a>
+					to get and set the selected rows identified by their indices in the data</li>
+					<li><a href="https://lineup.js.org/master/docs/classes/_ui_alineup_.alineup.html#on"><code>on(type: string, listener: IEventListener | null): this</code></a> to listen to highlight and selection events. LineUp.js event mechanism is based on <a href="https://github.com/d3/d3-dispatch">d3 dispatch</a>, thus instead of and <code>off</code> method <code>null</code> is passed to disable listening to the event. The following events are sent out:<ul>
+							<li><a href="https://lineup.js.org/master/docs/classes/_ui_alineup_.alineup.html#highlightchanged"><code>highlightChanged(dataIndex: number): void</code></a></li>
+							<li><a href="https://lineup.js.org/master/docs/classes/_ui_alineup_.alineup.html#selectionchanged"><code>selectionChanged(dataIndices: number[]): void</code></a></li>
+						</ul>
+					</li>
+				</ul>
+				<p><a id="react"></a></p>
+				<a href="#react-support-lineupjsx" id="react-support-lineupjsx" style="color: inherit; text-decoration: none;">
+					<h2>React Support (LineUp.jsx)</h2>
+				</a>
+				<p>A <a href="https://reactjs.org/">React</a> wrapper is located at <a href="https://github.com/lineupjs/lineupjsx">lineupjsx</a>.</p>
+				<p><strong>Installation</strong></p>
+				<pre><code class="language-bash"><span style="color: #000000">npm install --save lineupjsx</span>
+</code></pre>
+				<pre><code class="language-html"><span style="color: #800000">&lt;link</span><span style="color: #000000"> </span><span style="color: #FF0000">href</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;https://unpkg.com/lineupjsx/build/LineUpJSx.css&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">rel</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;stylesheet&quot;</span><span style="color: #000000"> </span><span style="color: #800000">/&gt;</span>
+<span style="color: #800000">&lt;script</span><span style="color: #000000FF"> </span><span style="color: #FF0000">src</span><span style="color: #000000FF">=</span><span style="color: #0000FF">&quot;https://unpkg.com/lineupjsx/build/LineUpJSx.js&quot;</span><span style="color: #800000">&gt;&lt;/script&gt;</span>
+</code></pre>
+				<p><strong>Minimal Usage Example</strong></p>
+				<pre><code class="language-javascript"><span style="color: #008000">// generate some data</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">arr</span><span style="color: #000000"> = [];</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">cats</span><span style="color: #000000"> = [</span><span style="color: #A31515">&#039;c1&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;c2&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;c3&#039;</span><span style="color: #000000">];</span>
+<span style="color: #AF00DB">for</span><span style="color: #000000"> (</span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">i</span><span style="color: #000000"> = </span><span style="color: #098658">0</span><span style="color: #000000">; </span><span style="color: #001080">i</span><span style="color: #000000"> &lt; </span><span style="color: #098658">100</span><span style="color: #000000">; ++</span><span style="color: #001080">i</span><span style="color: #000000">) {</span>
+<span style="color: #000000">  </span><span style="color: #001080">arr</span><span style="color: #000000">.</span><span style="color: #795E26">push</span><span style="color: #000000">({</span>
+<span style="color: #000000">    </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">random</span><span style="color: #000000">() * </span><span style="color: #098658">10</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">d:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Row &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">i</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">cat:</span><span style="color: #000000"> </span><span style="color: #001080">cats</span><span style="color: #000000">[</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">floor</span><span style="color: #000000">(</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">random</span><span style="color: #000000">() * </span><span style="color: #098658">3</span><span style="color: #000000">)],</span>
+<span style="color: #000000">    </span><span style="color: #001080">cat2:</span><span style="color: #000000"> </span><span style="color: #001080">cats</span><span style="color: #000000">[</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">floor</span><span style="color: #000000">(</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">random</span><span style="color: #000000">() * </span><span style="color: #098658">3</span><span style="color: #000000">)],</span>
+<span style="color: #000000">  });</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<pre><code class="language-jsx"><span style="color: #000000">&lt;LineUp data={arr} /&gt;</span>
+</code></pre>
+				<p><a href="https://codepen.io/sgratzl/pen/mXEpMP">CodePen</a></p>
+				<p>Result is same as the builder minimal example</p>
+				<p><strong>Advanced Usage Example</strong></p>
+				<pre><code class="language-jsx"><span style="color: #000000">// arr from before</span>
+<span style="color: #000000">&lt;LineUp data={arr} defaultRanking&gt;</span>
+<span style="color: #000000">  &lt;LineUpStringColumnDesc column=&quot;d&quot; label=&quot;Label&quot; width={100} /&gt;</span>
+<span style="color: #000000">  &lt;LineUpCategoricalColumnDesc column=&quot;cat&quot; categories={cats} color=&quot;green&quot; /&gt;</span>
+<span style="color: #000000">  &lt;LineUpCategoricalColumnDesc column=&quot;cat2&quot; categories={cats} color=&quot;blue&quot; /&gt;</span>
+<span style="color: #000000">  &lt;LineUpNumberColumnDesc column=&quot;a&quot; domain={[0, 10]} color=&quot;blue&quot; /&gt;</span>
+
+<span style="color: #000000">  &lt;LineUpRanking groupBy=&quot;cat&quot; sortBy=&quot;a:desc&quot;&gt;</span>
+<span style="color: #000000">    &lt;LineUpSupportColumn type=&quot;*&quot; /&gt;</span>
+<span style="color: #000000">    &lt;LineUpColumn column=&quot;*&quot; /&gt;</span>
+<span style="color: #000000">    &lt;LineUpImposeColumn label=&quot;a+cat&quot; column=&quot;a&quot; categeoricalColumn=&quot;cat2&quot; /&gt;</span>
+<span style="color: #000000">  &lt;/LineUpRanking&gt;</span>
+<span style="color: #000000">&lt;/LineUp&gt;</span>
+</code></pre>
+				<p><a href="https://codepen.io/sgratzl/pen/yvJpWQ">CodePen</a></p>
+				<p>Result is same as the builder advanced example</p>
+				<p><a id="angular"></a></p>
+				<a href="#angular-6-support-nglineup" id="angular-6-support-nglineup" style="color: inherit; text-decoration: none;">
+					<h2>Angular 6 Support (nglineup)</h2>
+				</a>
+				<p>An <a href="https://angular.io/">Angular</a> wrapper is located at <a href="https://github.com/lineupjs/nglineup">nglineup</a>.</p>
+				<p><strong>Installation</strong></p>
+				<pre><code class="language-bash"><span style="color: #000000">npm install --save nglineup</span>
+</code></pre>
+				<p><strong>Minimal Usage Example</strong></p>
+				<p><code>app.module.ts</code>:</p>
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">BrowserModule</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@angular/platform-browser&#039;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">NgModule</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@angular/core&#039;</span><span style="color: #000000">;</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">LineUpModule</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;../lib/lineup.module&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">AppComponent</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./app.component.1&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #000000">@</span><span style="color: #795E26">NgModule</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">declarations:</span><span style="color: #000000"> [</span><span style="color: #001080">AppComponent</span><span style="color: #000000">],</span>
+<span style="color: #000000">  </span><span style="color: #001080">imports:</span><span style="color: #000000"> [</span><span style="color: #001080">BrowserModule</span><span style="color: #000000">, </span><span style="color: #001080">LineUpModule</span><span style="color: #000000">],</span>
+<span style="color: #000000">  </span><span style="color: #001080">providers:</span><span style="color: #000000"> [],</span>
+<span style="color: #000000">  </span><span style="color: #001080">bootstrap:</span><span style="color: #000000"> [</span><span style="color: #001080">AppComponent</span><span style="color: #000000">],</span>
+<span style="color: #000000">})</span>
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">class</span><span style="color: #000000"> </span><span style="color: #267F99">AppModule</span><span style="color: #000000"> {}</span>
+</code></pre>
+				<p><code>app.component.ts</code>:</p>
+				<pre><code class="language-ts"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">Component</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@angular/core&#039;</span><span style="color: #000000">;</span>
+
+<span style="color: #000000">@</span><span style="color: #795E26">Component</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">selector:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;app-root&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">templateUrl:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;./app.component.html&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">})</span>
+<span style="color: #AF00DB">export</span><span style="color: #000000"> </span><span style="color: #0000FF">class</span><span style="color: #000000"> </span><span style="color: #267F99">AppComponent</span><span style="color: #000000"> {</span>
+<span style="color: #000000">  </span><span style="color: #0000FF">readonly</span><span style="color: #000000"> </span><span style="color: #001080">data</span><span style="color: #000000"> = &lt;</span><span style="color: #267F99">any</span><span style="color: #000000">[]&gt;[];</span>
+
+<span style="color: #000000">  </span><span style="color: #0000FF">readonly</span><span style="color: #000000"> </span><span style="color: #001080">cats</span><span style="color: #000000"> = [</span><span style="color: #A31515">&#039;c1&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;c2&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;c3&#039;</span><span style="color: #000000">];</span>
+
+<span style="color: #000000">  </span><span style="color: #0000FF">constructor</span><span style="color: #000000">() {</span>
+<span style="color: #000000">    </span><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">cats</span><span style="color: #000000"> = </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">cats</span><span style="color: #000000">;</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">for</span><span style="color: #000000"> (</span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">i</span><span style="color: #000000"> = </span><span style="color: #098658">0</span><span style="color: #000000">; </span><span style="color: #001080">i</span><span style="color: #000000"> &lt; </span><span style="color: #098658">100</span><span style="color: #000000">; ++</span><span style="color: #001080">i</span><span style="color: #000000">) {</span>
+<span style="color: #000000">      </span><span style="color: #0000FF">this</span><span style="color: #000000">.</span><span style="color: #001080">data</span><span style="color: #000000">.</span><span style="color: #795E26">push</span><span style="color: #000000">({</span>
+<span style="color: #000000">        </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">random</span><span style="color: #000000">() * </span><span style="color: #098658">10</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">d:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Row &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">i</span><span style="color: #000000">,</span>
+<span style="color: #000000">        </span><span style="color: #001080">cat:</span><span style="color: #000000"> </span><span style="color: #001080">cats</span><span style="color: #000000">[</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">floor</span><span style="color: #000000">(</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">random</span><span style="color: #000000">() * </span><span style="color: #098658">3</span><span style="color: #000000">)],</span>
+<span style="color: #000000">        </span><span style="color: #001080">cat2:</span><span style="color: #000000"> </span><span style="color: #001080">cats</span><span style="color: #000000">[</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">floor</span><span style="color: #000000">(</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">random</span><span style="color: #000000">() * </span><span style="color: #098658">3</span><span style="color: #000000">)],</span>
+<span style="color: #000000">      });</span>
+<span style="color: #000000">    }</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<p><code>app.component.html</code>:</p>
+				<pre><code class="language-html"><span style="color: #800000">&lt;lineup-lineup</span><span style="color: #000000"> </span><span style="color: #FF0000">[data]</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;data&quot;</span><span style="color: #800000">&gt;&lt;/lineup-lineup&gt;</span>
+</code></pre>
+				<p><a href="https://codepen.io/sgratzl/pen/QxYgzN">CodePen</a></p>
+				<p>Result is same as the builder minimal example</p>
+				<p><strong>Advanced Usage Example</strong></p>
+				<p><code>app.component.html</code>:</p>
+				<pre><code class="language-html"><span style="color: #800000">&lt;lineup-lineup</span><span style="color: #000000"> </span><span style="color: #FF0000">[data]</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;data&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">[defaultRanking]</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;true&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">style</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;height: 800px;&quot;</span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">  </span><span style="color: #800000">&lt;lineup-string-column-desc</span><span style="color: #000000"> </span><span style="color: #FF0000">column</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;d&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">label</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;Label&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">[width]</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;100&quot;</span><span style="color: #800000">&gt;&lt;/lineup-string-column-desc&gt;</span>
+<span style="color: #000000">  </span><span style="color: #800000">&lt;lineup-categorical-column-desc</span><span style="color: #000000"> </span><span style="color: #FF0000">column</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;cat&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">[categories]</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;cats&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">color</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;green&quot;</span><span style="color: #800000">&gt;&lt;/lineup-categorical-column-desc&gt;</span>
+<span style="color: #000000">  </span><span style="color: #800000">&lt;lineup-categorical-column-desc</span><span style="color: #000000"> </span><span style="color: #FF0000">column</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;cat2&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">[categories]</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;cats&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">color</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;blue&quot;</span><span style="color: #800000">&gt;&lt;/lineup-categorical-column-desc&gt;</span>
+<span style="color: #000000">  </span><span style="color: #800000">&lt;lineup-number-column-desc</span><span style="color: #000000"> </span><span style="color: #FF0000">column</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;a&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">[domain]</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;[0, 10]&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">color</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;blue&quot;</span><span style="color: #800000">&gt;&lt;/lineup-number-column-desc&gt;</span>
+
+<span style="color: #000000">  </span><span style="color: #800000">&lt;lineup-ranking</span><span style="color: #000000"> </span><span style="color: #FF0000">groupBy</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;cat&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">sortBy</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;a:desc&quot;</span><span style="color: #800000">&gt;</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;lineup-support-column</span><span style="color: #000000"> </span><span style="color: #FF0000">type</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;*&quot;</span><span style="color: #800000">&gt;&lt;/lineup-support-column&gt;</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;lineup-column</span><span style="color: #000000"> </span><span style="color: #FF0000">column</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;*&quot;</span><span style="color: #800000">&gt;&lt;/lineup-column&gt;</span>
+<span style="color: #000000">    </span><span style="color: #800000">&lt;lineup-impose-column</span><span style="color: #000000"> </span><span style="color: #FF0000">label</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;a+cat&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">column</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;a&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">categoricalColumn</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;cat2&quot;</span><span style="color: #800000">&gt;&lt;/lineup-impose-column&gt;</span>
+<span style="color: #000000">  </span><span style="color: #800000">&lt;/lineup-ranking&gt;</span>
+<span style="color: #800000">&lt;/lineup-lineup&gt;</span>
+</code></pre>
+				<p><a href="https://codepen.io/sgratzl/pen/BVMdZL">CodePen</a></p>
+				<p>Result is same as the builder advanced example</p>
+				<p><a id="vue"></a></p>
+				<a href="#vuejs-support-vue-lineup" id="vuejs-support-vue-lineup" style="color: inherit; text-decoration: none;">
+					<h2>Vue.js Support (vue-lineup)</h2>
+				</a>
+				<p>A <a href="https://vuejs.org">Vue.js</a> wrapper is located at <a href="https://github.com/lineupjs/vue-lineup">vue-lineup</a>.</p>
+				<p><strong>Installation</strong></p>
+				<pre><code class="language-bash"><span style="color: #000000">npm install --save vue-lineup</span>
+</code></pre>
+				<p><strong>Minimal Usage Example</strong></p>
+				<pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">cats</span><span style="color: #000000"> = [</span><span style="color: #A31515">&#039;c1&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;c2&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;c3&#039;</span><span style="color: #000000">];</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">data</span><span style="color: #000000"> = [];</span>
+<span style="color: #AF00DB">for</span><span style="color: #000000"> (</span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">i</span><span style="color: #000000"> = </span><span style="color: #098658">0</span><span style="color: #000000">; </span><span style="color: #001080">i</span><span style="color: #000000"> &lt; </span><span style="color: #098658">100</span><span style="color: #000000">; ++</span><span style="color: #001080">i</span><span style="color: #000000">) {</span>
+<span style="color: #000000">  </span><span style="color: #001080">data</span><span style="color: #000000">.</span><span style="color: #795E26">push</span><span style="color: #000000">({</span>
+<span style="color: #000000">    </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">random</span><span style="color: #000000">() * </span><span style="color: #098658">10</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">d:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Row &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">i</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">cat:</span><span style="color: #000000"> </span><span style="color: #001080">cats</span><span style="color: #000000">[</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">floor</span><span style="color: #000000">(</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">random</span><span style="color: #000000">() * </span><span style="color: #098658">3</span><span style="color: #000000">)],</span>
+<span style="color: #000000">    </span><span style="color: #001080">cat2:</span><span style="color: #000000"> </span><span style="color: #001080">cats</span><span style="color: #000000">[</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">floor</span><span style="color: #000000">(</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">random</span><span style="color: #000000">() * </span><span style="color: #098658">3</span><span style="color: #000000">)],</span>
+<span style="color: #000000">  });</span>
+<span style="color: #000000">}</span>
+
+<span style="color: #008000">// enable plugin to register components</span>
+<span style="color: #001080">Vue</span><span style="color: #000000">.</span><span style="color: #795E26">use</span><span style="color: #000000">(</span><span style="color: #001080">VueLineUp</span><span style="color: #000000">);</span>
+
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">app</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Vue</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">el:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;#app&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">template:</span><span style="color: #000000"> </span><span style="color: #A31515">`&lt;LineUp v-bind:data=&quot;data&quot; /&gt;`</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">data:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">cats</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">data</span><span style="color: #000000">,</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">});</span>
+</code></pre>
+				<p><a href="https://codepen.io/sgratzl/pen/pKGmvK">CodePen</a></p>
+				<p>Result is same as the builder minimal example</p>
+				<p><strong>Advanced Usage Example</strong></p>
+				<pre><code class="language-ts"><span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">app</span><span style="color: #000000"> = </span><span style="color: #0000FF">new</span><span style="color: #000000"> </span><span style="color: #795E26">Vue</span><span style="color: #000000">({</span>
+<span style="color: #000000">  </span><span style="color: #001080">el:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;#app&#039;</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">template:</span><span style="color: #000000"> </span><span style="color: #A31515">`&lt;LineUp v-bind:data=&quot;data&quot; defaultRanking=&quot;true&quot; style=&quot;height: 800px&quot;&gt;</span>
+<span style="color: #A31515">    &lt;LineUpStringColumnDesc column=&quot;d&quot; label=&quot;Label&quot; v-bind:width=&quot;100&quot; /&gt;</span>
+<span style="color: #A31515">    &lt;LineUpCategoricalColumnDesc column=&quot;cat&quot; v-bind:categories=&quot;cats&quot; color=&quot;green&quot; /&gt;</span>
+<span style="color: #A31515">    &lt;LineUpCategoricalColumnDesc column=&quot;cat2&quot; v-bind:categories=&quot;cats&quot; color=&quot;blue&quot; /&gt;</span>
+<span style="color: #A31515">    &lt;LineUpNumberColumnDesc column=&quot;a&quot; v-bind:domain=&quot;[0, 10]&quot; color=&quot;blue&quot; /&gt;</span>
+<span style="color: #A31515">    &lt;LineUpRanking groupBy=&quot;cat&quot; sortBy=&quot;a:desc&quot;&gt;</span>
+<span style="color: #A31515">      &lt;LineUpSupportColumn type=&quot;*&quot; /&gt;</span>
+<span style="color: #A31515">      &lt;LineUpColumn column=&quot;*&quot; /&gt;</span>
+<span style="color: #A31515">    &lt;/LineUpRanking&gt;</span>
+<span style="color: #A31515">  &lt;/LineUp&gt;`</span><span style="color: #000000">,</span>
+<span style="color: #000000">  </span><span style="color: #001080">data:</span><span style="color: #000000"> {</span>
+<span style="color: #000000">    </span><span style="color: #001080">cats</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">data</span><span style="color: #000000">,</span>
+<span style="color: #000000">  },</span>
+<span style="color: #000000">});</span>
+</code></pre>
+				<p><a href="https://codepen.io/sgratzl/pen/vrboWB">CodePen</a></p>
+				<p>Result is same as the builder advanced example</p>
+				<p><a id="polymer"></a></p>
+				<a href="#polymer-support-lineup-element" id="polymer-support-lineup-element" style="color: inherit; text-decoration: none;">
+					<h2>Polymer Support (LineUp-Element)</h2>
+				</a>
+				<p>A <a href="https://www.polymer-project.org/">Polymer 2.0</a> web component wrapper is located at <a href="https://github.com/lineupjs/lineup-element">lineup-element</a>.</p>
+				<p><strong>Installation</strong></p>
+				<pre><code class="language-bash"><span style="color: #000000">bower install https://github.com/lineupjs/lineup-element</span>
+</code></pre>
+				<pre><code class="language-html"><span style="color: #800000">&lt;link</span><span style="color: #000000"> </span><span style="color: #FF0000">rel</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;import&quot;</span><span style="color: #000000"> </span><span style="color: #FF0000">href</span><span style="color: #000000">=</span><span style="color: #0000FF">&quot;bower_components/lineup-element/lineup-element.html&quot;</span><span style="color: #000000"> </span><span style="color: #800000">/&gt;</span>
+</code></pre>
+				<p><strong>Minimal Usage Example</strong></p>
+				<pre><code class="language-javascript"><span style="color: #008000">// generate some data</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">arr</span><span style="color: #000000"> = [];</span>
+<span style="color: #0000FF">const</span><span style="color: #000000"> </span><span style="color: #0070C1">cats</span><span style="color: #000000"> = [</span><span style="color: #A31515">&#039;c1&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;c2&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;c3&#039;</span><span style="color: #000000">];</span>
+<span style="color: #AF00DB">for</span><span style="color: #000000"> (</span><span style="color: #0000FF">let</span><span style="color: #000000"> </span><span style="color: #001080">i</span><span style="color: #000000"> = </span><span style="color: #098658">0</span><span style="color: #000000">; </span><span style="color: #001080">i</span><span style="color: #000000"> &lt; </span><span style="color: #098658">100</span><span style="color: #000000">; ++</span><span style="color: #001080">i</span><span style="color: #000000">) {</span>
+<span style="color: #000000">  </span><span style="color: #001080">arr</span><span style="color: #000000">.</span><span style="color: #795E26">push</span><span style="color: #000000">({</span>
+<span style="color: #000000">    </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">random</span><span style="color: #000000">() * </span><span style="color: #098658">10</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">d:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Row &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">i</span><span style="color: #000000">,</span>
+<span style="color: #000000">    </span><span style="color: #001080">cat:</span><span style="color: #000000"> </span><span style="color: #001080">cats</span><span style="color: #000000">[</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">floor</span><span style="color: #000000">(</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">random</span><span style="color: #000000">() * </span><span style="color: #098658">3</span><span style="color: #000000">)],</span>
+<span style="color: #000000">    </span><span style="color: #001080">cat2:</span><span style="color: #000000"> </span><span style="color: #001080">cats</span><span style="color: #000000">[</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">floor</span><span style="color: #000000">(</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">random</span><span style="color: #000000">() * </span><span style="color: #098658">3</span><span style="color: #000000">)]</span>
+<span style="color: #000000">  })</span>
+<span style="color: #000000">}</span>
+<span style="color: #001080">conat</span><span style="color: #000000"> </span><span style="color: #001080">data</span><span style="color: #000000"> = { </span><span style="color: #001080">arr</span><span style="color: #000000">, </span><span style="color: #001080">cats</span><span style="color: #000000"> };</span>
+</code></pre>
+				<pre><code class="language-jsx"><span style="color: #000000">&lt;lineup-element data=&quot;[[data.arr]]&quot;&gt;&lt;/lineup-element&gt;</span>
+</code></pre>
+				<p>TODO
+				<a href="">CodePen</a></p>
+				<p>Result is same as the builder minimal example</p>
+				<p><strong>Advanced Usage Example</strong></p>
+				<pre><code class="language-jsx"><span style="color: #000000">// arr from before</span>
+<span style="color: #000000">&lt;lineup-element data=&quot;[[data.arr]]&quot; side-panel side-panel-collapsed default-ranking=&quot;true&quot;&gt;</span>
+<span style="color: #000000">  &lt;lineup-string-desc column=&quot;d&quot; label=&quot;Label&quot; width=&quot;100&quot;&gt;&lt;/lineup-string-desc&gt;</span>
+<span style="color: #000000">  &lt;lineup-categorical-desc column=&quot;cat&quot; categories=&quot;[[cats]]&quot; color=&quot;green&quot;&gt;&lt;/lineup-categorical-desc&gt;</span>
+<span style="color: #000000">  &lt;lineup-categorical-desc column=&quot;cat2&quot; categories=&quot;[[cats]]&quot; color=&quot;blue&quot;&gt;&lt;/lineup-categorical-desc&gt;</span>
+<span style="color: #000000">  &lt;lineup-number-desc column=&quot;a&quot; domain=&quot;[0, 10]&quot; color=&quot;blue&quot;&gt;&lt;/lineup-number-desc&gt;</span>
+<span style="color: #000000">  &lt;lineup-ranking group-by=&quot;cat&quot; sort-by=&quot;a:desc&quot;&gt;</span>
+<span style="color: #000000">    &lt;lineup-support-column type=&quot;*&quot;&gt;&lt;/lineup-support-column&gt;</span>
+<span style="color: #000000">    &lt;lineup-column column=&quot;*&quot;&gt;&lt;/lineup-column&gt;</span>
+<span style="color: #000000">  &lt;/lineup-ranking&gt;</span>
+<span style="color: #000000">&lt;/lineup-element&gt;</span>
+</code></pre>
+				<p>TODO
+				<a href="">CodePen</a></p>
+				<p>Result is same as the builder advanced example</p>
+				<p><a id="rshiny"></a></p>
+				<a href="#r-rshiny-and-r-markdown-support" id="r-rshiny-and-r-markdown-support" style="color: inherit; text-decoration: none;">
+					<h2>R, RShiny, and R Markdown Support</h2>
+				</a>
+				<p>A <a href="http://www.htmlwidgets.org/">HTMLWidget</a> wrapper for R is located at <a href="https://github.com/lineupjs/lineup_htmlwidget">lineup_htmlwidget</a>.
+					It can be used within standalone <a href="https://shiny.rstudio.com/">R Shiny</a> apps or <a href="http://rmarkdown.rstudio.com/">R Markdown</a> files. Integrated plotting does not work due to an outdated integrated Webkit version in RStudio.
+				<a href="https://rstudio.github.io/crosstalk/">Crosstalk</a> is supported for synching selections and filtering among widgets.</p>
+				<p><strong>Installation</strong></p>
+				<pre><code class="language-R"><span style="color: #000000">devtools</span><span style="color: #0000FF">::</span><span style="color: #001080">install_github</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;rstudio/crosstalk&quot;</span><span style="color: #000000">)</span>
+<span style="color: #000000">devtools</span><span style="color: #0000FF">::</span><span style="color: #001080">install_github</span><span style="color: #000000">(</span><span style="color: #A31515">&quot;lineupjs/lineup_htmlwidget&quot;</span><span style="color: #000000">)</span>
+<span style="color: #795E26">library</span><span style="color: #000000">(</span><span style="color: #001080">lineupjs</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><strong>Examples</strong></p>
+				<pre><code class="language-R"><span style="color: #001080">lineup</span><span style="color: #000000">(</span><span style="color: #001080">iris</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><img src="https://user-images.githubusercontent.com/4129778/34919941-fec50232-f96a-11e7-95be-9eefb213e3d6.png" alt="iris output"></p>
+				<p><a id="jupyter"></a></p>
+				<a href="#jupyter-widget-to-be-released" id="jupyter-widget-to-be-released" style="color: inherit; text-decoration: none;">
+					<h2>Jupyter Widget (to be released)</h2>
+				</a>
+				<p>A <a href="https://jupyter.org/widgets.html">Jupyter Widget</a> wrapper for Python is located at <a href="https://github.com/lineupjs/lineup_widget">lineup_widget</a>.</p>
+				<p><strong>Installation</strong></p>
+				<pre><code class="language-bash"><span style="color: #000000">pip install -e git+https://github.com/lineupjs/lineup_widget.git#egg=lineup_widget</span>
+<span style="color: #000000">jupyter nbextension </span><span style="color: #795E26">enable</span><span style="color: #000000"> --py [--sys-prefix|--user|--system] lineup_widget</span>
+</code></pre>
+				<p>Or, if you use jupyterlab:</p>
+				<pre><code class="language-bash"><span style="color: #000000">pip install -e git+https://github.com/lineupjs/lineup_widget.git#egg=lineup_widget</span>
+<span style="color: #000000">jupyter labextension install @jupyter-widgets/jupyterlab-manager</span>
+</code></pre>
+				<p><strong>Examples</strong></p>
+				<p><a href="http://mybinder.org/repo/lineupjs/lineup_widget/examples"><img src="https://camo.githubusercontent.com/70c5b4d050d4019f4f20b170d75679a9316ac5e5/687474703a2f2f6d7962696e6465722e6f72672f62616467652e737667" alt="Launch Binder"></a></p>
+				<pre><code class="language-python"><span style="color: #AF00DB">import</span><span style="color: #000000"> lineup_widget</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> pandas </span><span style="color: #AF00DB">as</span><span style="color: #000000"> pd</span>
+<span style="color: #AF00DB">import</span><span style="color: #000000"> numpy </span><span style="color: #AF00DB">as</span><span style="color: #000000"> np</span>
+
+<span style="color: #000000">df = pd.DataFrame(np.random.randint(</span><span style="color: #098658">0</span><span style="color: #000000">,</span><span style="color: #098658">100</span><span style="color: #000000">,</span><span style="color: #001080">size</span><span style="color: #000000">=(</span><span style="color: #098658">100</span><span style="color: #000000">, </span><span style="color: #098658">4</span><span style="color: #000000">)), </span><span style="color: #001080">columns</span><span style="color: #000000">=</span><span style="color: #267F99">list</span><span style="color: #000000">(</span><span style="color: #A31515">&#039;ABCD&#039;</span><span style="color: #000000">))</span>
+
+<span style="color: #000000">w = lineup_widget.LineUpWidget(df)</span>
+<span style="color: #000000">w.on_selection_changed(</span><span style="color: #0000FF">lambda</span><span style="color: #000000"> </span><span style="color: #001080">selection</span><span style="color: #000000">: </span><span style="color: #795E26">print</span><span style="color: #000000">(selection))</span>
+<span style="color: #000000">w</span>
+</code></pre>
+				<p><img src="https://user-images.githubusercontent.com/4129778/35321859-7925d3a6-00e8-11e8-9884-bcbc76ae51c9.png" alt="simple usage"></p>
+				<pre><code class="language-python"><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #001080">__future__</span><span style="color: #000000"> </span><span style="color: #AF00DB">import</span><span style="color: #000000"> print_function</span>
+<span style="color: #AF00DB">from</span><span style="color: #000000"> ipywidgets </span><span style="color: #AF00DB">import</span><span style="color: #000000"> interact, interactive, interact_manual</span>
+
+<span style="color: #0000FF">def</span><span style="color: #000000"> </span><span style="color: #795E26">selection_changed</span><span style="color: #000000">(</span><span style="color: #001080">selection</span><span style="color: #000000">):</span>
+<span style="color: #000000">    </span><span style="color: #AF00DB">return</span><span style="color: #000000"> df.iloc[selection]</span>
+
+<span style="color: #000000">interact(selection_changed, </span><span style="color: #001080">selection</span><span style="color: #000000">=lineup_widget.LineUpWidget(df))</span><span style="color: #CD3131">;</span>
+</code></pre>
+				<p><img src="https://user-images.githubusercontent.com/4129778/35321846-6c5b07cc-00e8-11e8-9388-0acb65cbb509.png" alt="interact example"></p>
+				<p><a id="observablehq"></a></p>
+				<a href="#observable-hq" id="observable-hq" style="color: inherit; text-decoration: none;">
+					<h2>Observable HQ</h2>
+				</a>
+				<p>A <a href="https://observablehq.com/">ObservableHQ</a> wrapper is located at <a href="https://observablehq.com/@sgratzl/lineup-js-observable-library">lineup-js-observable</a>.</p>
+				<pre><code class="language-js"><span style="color: #001080">data</span><span style="color: #000000"> = {</span>
+<span style="color: #000000">  const </span><span style="color: #001080">arr</span><span style="color: #000000"> = [];</span>
+<span style="color: #000000">  const </span><span style="color: #001080">cats</span><span style="color: #000000"> = [</span><span style="color: #A31515">&#039;c1&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;c2&#039;</span><span style="color: #000000">, </span><span style="color: #A31515">&#039;c3&#039;</span><span style="color: #000000">];</span>
+<span style="color: #000000">  </span><span style="color: #795E26">for</span><span style="color: #000000"> (</span><span style="color: #001080">let</span><span style="color: #000000"> </span><span style="color: #001080">i</span><span style="color: #000000"> = </span><span style="color: #098658">0</span><span style="color: #000000">; </span><span style="color: #001080">i</span><span style="color: #000000"> &lt; 100; ++</span><span style="color: #001080">i</span><span style="color: #000000">) {</span>
+<span style="color: #000000">    </span><span style="color: #001080">arr</span><span style="color: #000000">.</span><span style="color: #795E26">push</span><span style="color: #000000">({</span>
+<span style="color: #000000">      </span><span style="color: #001080">a:</span><span style="color: #000000"> </span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">random</span><span style="color: #000000">() * </span><span style="color: #098658">10</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #001080">d:</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;Row &#039;</span><span style="color: #000000"> + </span><span style="color: #001080">i</span><span style="color: #000000">,</span>
+<span style="color: #000000">      </span><span style="color: #001080">cat:</span><span style="color: #000000"> </span><span style="color: #001080">cats</span><span style="color: #000000">[</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">floor</span><span style="color: #000000">(</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">random</span><span style="color: #000000">() * </span><span style="color: #098658">3</span><span style="color: #000000">)],</span>
+<span style="color: #000000">      </span><span style="color: #001080">cat2:</span><span style="color: #000000"> </span><span style="color: #001080">cats</span><span style="color: #000000">[</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">floor</span><span style="color: #000000">(</span><span style="color: #267F99">Math</span><span style="color: #000000">.</span><span style="color: #795E26">random</span><span style="color: #000000">() * </span><span style="color: #098658">3</span><span style="color: #000000">)]</span>
+<span style="color: #000000">    })</span>
+<span style="color: #000000">  }</span>
+<span style="color: #000000">  return arr;</span>
+<span style="color: #000000">}</span>
+</code></pre>
+				<pre><code class="language-js"><span style="color: #AF00DB">import</span><span style="color: #000000"> { </span><span style="color: #001080">asLineUp</span><span style="color: #000000"> } </span><span style="color: #AF00DB">from</span><span style="color: #000000"> </span><span style="color: #A31515">&#039;@sgratzl/lineup-js-observable-library&#039;</span><span style="color: #000000">;</span>
+</code></pre>
+				<pre><code class="language-js"><span style="color: #001080">viewof</span><span style="color: #000000"> </span><span style="color: #001080">selection</span><span style="color: #000000"> = </span><span style="color: #795E26">asLineUp</span><span style="color: #000000">(</span><span style="color: #001080">arr</span><span style="color: #000000">)</span>
+</code></pre>
+				<p><a href="https://observablehq.com/@sgratzl/lineup-simple-example-with-observable-base">ObservableHQ</a></p>
+				<p><a href="https://observablehq.com/@sgratzl/lineup-simple-example-with-observable-base"><img src="https://user-images.githubusercontent.com/4129778/75078130-cd276d80-54d2-11ea-9496-0cc685e826ee.png" alt="Minimal Result"></a></p>
+				<a href="#advanced-usage-example" id="advanced-usage-example" style="color: inherit; text-decoration: none;">
+					<h3>Advanced Usage Example</h3>
+				</a>
+				<pre><code class="language-js"><span style="color: #008000">// arr from before</span>
+<span style="color: #001080">viewof</span><span style="color: #000000"> </span><span style="color: #001080">selection</span><span style="color: #000000"> = {</span>
+<span style="color: #000000">  const </span><span style="color: #001080">b</span><span style="color: #000000"> = </span><span style="color: #795E26">builder</span><span style="color: #000000">(</span><span style="color: #001080">data</span><span style="color: #000000">);</span>
+<span style="color: #000000">  b.column(</span>
+<span style="color: #000000">    LineUpJS.buildStringColumn(</span><span style="color: #A31515">&#039;d&#039;</span><span style="color: #001080">)</span>
+<span style="color: #001080">      .label(</span><span style="color: #A31515">&#039;Label&#039;</span><span style="color: #001080">)</span>
+<span style="color: #001080">      .width(100)</span>
+<span style="color: #001080">  )</span>
+<span style="color: #001080">    .column(LineUpJS.buildCategoricalColumn(</span><span style="color: #A31515">&#039;cat&#039;</span><span style="color: #000000">, cats).color(</span><span style="color: #A31515">&#039;green&#039;</span><span style="color: #001080">))</span>
+<span style="color: #001080">    .column(LineUpJS.buildCategoricalColumn(</span><span style="color: #A31515">&#039;cat2&#039;</span><span style="color: #000000">, cats).color(</span><span style="color: #A31515">&#039;blue&#039;</span><span style="color: #001080">))</span>
+<span style="color: #001080">    .column(LineUpJS.buildNumberColumn(</span><span style="color: #A31515">&#039;a&#039;</span><span style="color: #000000">, </span><span style="color: #001080">[</span><span style="color: #098658">0</span><span style="color: #001080">, </span><span style="color: #098658">10</span><span style="color: #001080">]).color(&#039;blue&#039;));</span>
+
+<span style="color: #001080">  </span><span style="color: #008000">// and two rankings</span>
+<span style="color: #001080">  const ranking = LineUpJS.buildRanking()</span>
+<span style="color: #001080">    .supportTypes()</span>
+<span style="color: #001080">    .allColumns() </span><span style="color: #008000">// add all columns</span>
+<span style="color: #001080">    .impose(&#039;a+cat&#039;, &#039;a&#039;, &#039;cat2&#039;) </span><span style="color: #008000">// create composite column</span>
+<span style="color: #001080">    .groupBy(&#039;cat&#039;)</span>
+<span style="color: #001080">    .sortBy(&#039;a&#039;, &#039;desc&#039;);</span>
+
+<span style="color: #001080">  b.defaultRanking().ranking(ranking);</span>
+<span style="color: #001080">  return b.build();</span>
+<span style="color: #001080">}</span>
+</code></pre>
+				<p><a href="https://observablehq.com/@sgratzl/lineup-advanced-example">ObservableHQ</a></p>
+				<p><a href="https://observablehq.com/@sgratzl/lineup-advanced-example"><img src="https://user-images.githubusercontent.com/4129778/75078499-bfbeb300-54d3-11ea-92aa-b9ab0d2af043.png" alt="Advanced Result"></a></p>
+				<p><a id="powerbi"></a></p>
+				<a href="#powerbi-custom-visual-under-development" id="powerbi-custom-visual-under-development" style="color: inherit; text-decoration: none;">
+					<h2>PowerBI Custom Visual (under development)</h2>
+				</a>
+				<p>A <a href="https://github.com/Microsoft/PowerBI-Visuals">PowerBI Visual</a> wrapper is located at <a href="https://github.com/lineupjs/lineup_powerbi">lineup_powerbi</a>.</p>
+				<p><strong>Installation</strong></p>
+				<p>TODO</p>
+				<p><strong>Examples</strong></p>
+				<p>TODO</p>
+				<a href="#api-documentation-1" id="api-documentation-1" style="color: inherit; text-decoration: none;">
+					<h2>API Documentation</h2>
+				</a>
+				<p>See <a href="https://lineup.js.org/master/docs">API documentation</a> and <a href="https://lineup.js.org/develop/docs">Develop API documentation</a></p>
+				<a href="#demos" id="demos" style="color: inherit; text-decoration: none;">
+					<h2>Demos</h2>
+				</a>
+				<p>See <a href="https://lineup.js.org/master">Demos</a>, <a href="https://lineup.js.org/develop">Develop Demos</a>, and <a href="https://lineup.js.org/R">R Demos</a></p>
+				<a href="#related-publications" id="related-publications" style="color: inherit; text-decoration: none;">
+					<h2>Related Publications</h2>
+				</a>
+				<p><strong>LineUp: Visual Analysis of Multi-Attribute Rankings</strong> <a href="http://data.caleydo.org/papers/2013_infovis_lineup.pdf">Paper</a> <a href="http://caleydo.org/publications/2013_infovis_lineup/">Paper Website</a></p>
+				<p>Samuel Gratzl, Alexander Lex, Nils Gehlenborg, Hanspeter Pfister, and Marc Streit <br>
+				IEEE Transactions on Visualization and Computer Graphics (InfoVis &#39;13), 19(12), pp. 2277–2286, <a href="https://dx.doi.org/10.1109/TVCG.2013.173">doi:10.1109/TVCG.2013.173</a>, 2013.</p>
+				<p>:trophy: <a href="http://ieeevis.org">IEEE VIS</a> InfoVis 2013 Best Paper Award</p>
+				<p><strong>Taggle: Scalable Visualization of Tabular Data through Aggregation</strong> <a href="http://data.caleydo.org/papers/2019_sage_infovis_taggle.pdf">Paper Preprint</a> <a href="http://caleydo.org/publications/2019_sage_infovis_taggle/">Paper Website</a></p>
+				<p>Katarina Furmanova, Samuel Gratzl, Holger Stitz, Thomas Zichner, Miroslava Jaresova, Martin Ennemoser, Alexander Lex, and Marc Streit <br>
+				Information Visualization, 19(2): 114-136, <a href="https://dx.doi.org/10.1177/1473871619878085">doi:10.1177/1473871619878085</a>, 2019.</p>
+				<a href="#dependencies" id="dependencies" style="color: inherit; text-decoration: none;">
+					<h2>Dependencies</h2>
+				</a>
+				<p>LineUp.js depends on</p>
+				<ul>
+					<li><a href="https://github.com/lineupjs/lineupengine">LineUpEngine</a> table rendering engine</li>
+					<li><a href="http://d3js.org">D3</a> utilities: scales, format, dragging</li>
+					<li><a href="https://popper.js.org">Popper.js</a> dialogs</li>
+				</ul>
+				<p><strong>Development Dependencies</strong></p>
+				<p><a href="https://webpack.github.io">Webpack</a> is used as build tool. LineUp itself is written in <a href="https://www.typescriptlang.org">TypeScript</a> and <a href="https://sass-lang.com">SASS</a>.</p>
+				<a href="#development-environment" id="development-environment" style="color: inherit; text-decoration: none;">
+					<h2>Development Environment</h2>
+				</a>
+				<p>Try the Gitpod online IDE and start coding instantly in your browser.</p>
+				<p><a href="https://gitpod.io/#https://github.com/lineupjs/lineupjs"><img src="https://img.shields.io/badge/Gitpod-Ready--to--Code-blue?logo=gitpod" alt="Gitpod Ready-to-Code"></a></p>
+				<p>Otherwise follow the steps to setup a local development environment.</p>
+				<p><strong>Installation</strong></p>
+				<pre><code class="language-bash"><span style="color: #000000">git clone https://github.com/lineupjs/lineupjs.git -b develop</span>
+<span style="color: #795E26">cd</span><span style="color: #000000"> lineupjs</span>
+<span style="color: #000000">npm i -g yarn</span>
+<span style="color: #000000">yarn </span><span style="color: #795E26">set</span><span style="color: #000000"> version berry</span>
+<span style="color: #000000">yarn </span><span style="color: #795E26">set</span><span style="color: #000000"> version latest</span>
+<span style="color: #000000">cat .yarnrc_patch.yml &gt;&gt; .yarnrc.yml</span>
+<span style="color: #000000">yarn install</span>
+<span style="color: #000000">yarn pnpify --sdk vscode</span>
+</code></pre>
+				<a href="#common-commands" id="common-commands" style="color: inherit; text-decoration: none;">
+					<h3>Common commands</h3>
+				</a>
+				<pre><code class="language-sh"><span style="color: #000000">yarn start</span>
+<span style="color: #000000">yarn run clean</span>
+<span style="color: #000000">yarn run compile</span>
+<span style="color: #000000">yarn </span><span style="color: #795E26">test</span>
+<span style="color: #000000">yarn run lint</span>
+<span style="color: #000000">yarn run fix</span>
+<span style="color: #000000">yarn run build</span>
+<span style="color: #000000">yarn run docs</span>
+<span style="color: #000000">yarn run release</span>
+<span style="color: #000000">yarn run release:pre</span>
+</code></pre>
+				<p><strong>Run E2E Tests</strong></p>
+				<p>via cypress.io</p>
+				<p>Variant 1: with prebuilt LineUp</p>
+				<pre><code class="language-sh"><span style="color: #000000">yarn run compile</span>
+<span style="color: #000000">yarn run build</span>
+<span style="color: #000000">yarn run cy:compile</span>
+<span style="color: #000000">yarn run cy:open</span>
+</code></pre>
+				<p>Variant 2: with webpack-dev-server</p>
+				<p>first shell:</p>
+				<pre><code class="language-sh"><span style="color: #000000">yarn start</span>
+</code></pre>
+				<p>second shell:</p>
+				<pre><code class="language-sh"><span style="color: #000000">yarn run cy:compile</span>
+<span style="color: #000000">yarn run cy:start</span>
+</code></pre>
+				<a href="#authors" id="authors" style="color: inherit; text-decoration: none;">
+					<h2>Authors</h2>
+				</a>
+				<ul>
+					<li>Samuel Gratzl (@sgratzl)</li>
+					<li>Holger Stitz (@thinkh)</li>
+					<li>The Caleydo Team (@caleydo)</li>
+					<li>datavisyn GmbH (@datavisyn)</li>
+				</ul>
+				<hr>
+				<p><a href="http://caleydo.org"><img src="https://user-images.githubusercontent.com/4129778/34663868-5455cb76-f459-11e7-95db-f80db24026dc.png" align="left" width="200px" hspace="10" vspace="6"></a>
+				This repository was created as part of the <strong><a href="http://caleydo.org/">The Caleydo Project</a></strong>.</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class=" ">
+						<a href="modules.html">Modules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src.html">src</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_browser.html">src/browser</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_builder.html">src/builder</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_builder_databuilder.html">src/builder/<wbr>Data<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_builder_lineupbuilder.html">src/builder/<wbr>Line<wbr>UpBuilder</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_builder_rankingbuilder.html">src/builder/<wbr>Ranking<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_builder_adapter.html">src/builder/adapter</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_builder_adapter_builderadapter.html">src/builder/adapter/builder<wbr>Adapter</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_builder_adapter_column.html">src/builder/adapter/column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_builder_adapter_interfaces.html">src/builder/adapter/interfaces</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_builder_adapter_lineup.html">src/builder/adapter/lineup</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_builder_adapter_ranking.html">src/builder/adapter/ranking</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_builder_adapter_utils.html">src/builder/adapter/utils</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_builder_column.html">src/builder/column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_builder_column_actionscolumnbuilder.html">src/builder/column/<wbr>Actions<wbr>Column<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_builder_column_booleancolumnbuilder.html">src/builder/column/<wbr>Boolean<wbr>Column<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_builder_column_categoricalcolumnbuilder.html">src/builder/column/<wbr>Categorical<wbr>Column<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_builder_column_columnbuilder.html">src/builder/column/<wbr>Column<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_builder_column_datecolumnbuilder.html">src/builder/column/<wbr>Date<wbr>Column<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_builder_column_hierarchycolumnbuilder.html">src/builder/column/<wbr>Hierarchy<wbr>Column<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_builder_column_numbercolumnbuilder.html">src/builder/column/<wbr>Number<wbr>Column<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_builder_column_stringcolumnbuilder.html">src/builder/column/<wbr>String<wbr>Column<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_bundle.html">src/bundle</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_config.html">src/config</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_constants.html">src/constants</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_internal.html">src/internal</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_internal_aeventdispatcher.html">src/internal/AEvent<wbr>Dispatcher</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_internal_orderedset.html">src/internal/<wbr>Ordered<wbr>Set</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_internal_accessor.html">src/internal/accessor</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_internal_debounce.html">src/internal/debounce</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_internal_dnd.html">src/internal/dnd</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_internal_drag.html">src/internal/drag</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_internal_interable.html">src/internal/interable</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_internal_math.html">src/internal/math</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_internal_mathinterfaces.html">src/internal/math<wbr>Interfaces</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_internal_merge.html">src/internal/merge</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_internal_scheduler.html">src/internal/scheduler</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_internal_utils.html">src/internal/utils</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_internal_worker.html">src/internal/worker</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model.html">src/model</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_actioncolumn.html">src/model/<wbr>Action<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_aggregategroupcolumn.html">src/model/<wbr>Aggregate<wbr>Group<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_annotatecolumn.html">src/model/<wbr>Annotate<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_arraycolumn.html">src/model/<wbr>Array<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_booleancolumn.html">src/model/<wbr>Boolean<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_booleanscolumn.html">src/model/<wbr>Booleans<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_boxplotcolumn.html">src/model/<wbr>Box<wbr>Plot<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_categoricalcolormappingfunction.html">src/model/<wbr>Categorical<wbr>Color<wbr>Mapping<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_categoricalcolumn.html">src/model/<wbr>Categorical<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_categoricalmapcolumn.html">src/model/<wbr>Categorical<wbr>Map<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_categoricalscolumn.html">src/model/<wbr>Categoricals<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_colormappingfunction.html">src/model/<wbr>Color<wbr>Mapping<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_column.html">src/model/<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_compositecolumn.html">src/model/<wbr>Composite<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_compositenumbercolumn.html">src/model/<wbr>Composite<wbr>Number<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_datecolumn.html">src/model/<wbr>Date<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_datescolumn.html">src/model/<wbr>Dates<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_datesmapcolumn.html">src/model/<wbr>Dates<wbr>Map<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_groupcolumn.html">src/model/<wbr>Group<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_hierarchycolumn.html">src/model/<wbr>Hierarchy<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_iarraycolumn.html">src/model/IArray<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_icategoricalcolumn.html">src/model/ICategorical<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_idatecolumn.html">src/model/IDate<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_inumbercolumn.html">src/model/INumber<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_impositionboxplotcolumn.html">src/model/<wbr>Imposition<wbr>Box<wbr>Plot<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_impositioncompositecolumn.html">src/model/<wbr>Imposition<wbr>Composite<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_impositioncompositescolumn.html">src/model/<wbr>Imposition<wbr>Composites<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_linkcolumn.html">src/model/<wbr>Link<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_linkmapcolumn.html">src/model/<wbr>Link<wbr>Map<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_linkscolumn.html">src/model/<wbr>Links<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_mapcolumn.html">src/model/<wbr>Map<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_mappingfunction.html">src/model/<wbr>Mapping<wbr>Function</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_multilevelcompositecolumn.html">src/model/<wbr>Multi<wbr>Level<wbr>Composite<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_nestedcolumn.html">src/model/<wbr>Nested<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_numbercolumn.html">src/model/<wbr>Number<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_numbermapcolumn.html">src/model/<wbr>Number<wbr>Map<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_numberscolumn.html">src/model/<wbr>Numbers<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_ordinalcolumn.html">src/model/<wbr>Ordinal<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_rankcolumn.html">src/model/<wbr>Rank<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_ranking.html">src/model/<wbr>Ranking</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_reducecolumn.html">src/model/<wbr>Reduce<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_scriptcolumn.html">src/model/<wbr>Script<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_selectioncolumn.html">src/model/<wbr>Selection<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_setcolumn.html">src/model/<wbr>Set<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_stackcolumn.html">src/model/<wbr>Stack<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_stringcolumn.html">src/model/<wbr>String<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_stringmapcolumn.html">src/model/<wbr>String<wbr>Map<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_stringscolumn.html">src/model/<wbr>Strings<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_valuecolumn.html">src/model/<wbr>Value<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_annotations.html">src/model/annotations</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_interfaces.html">src/model/interfaces</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_internal.html">src/model/internal</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_internalcategorical.html">src/model/internal<wbr>Categorical</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_internaldate.html">src/model/internal<wbr>Date</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_internalnumber.html">src/model/internal<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_missing.html">src/model/missing</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_model_models.html">src/model/models</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_provider.html">src/provider</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_provider_acommondataprovider.html">src/provider/ACommon<wbr>Data<wbr>Provider</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_provider_adataprovider.html">src/provider/AData<wbr>Provider</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_provider_directrendertasks.html">src/provider/<wbr>Direct<wbr>Render<wbr>Tasks</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_provider_localdataprovider.html">src/provider/<wbr>Local<wbr>Data<wbr>Provider</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_provider_remotedataprovider.html">src/provider/<wbr>Remote<wbr>Data<wbr>Provider</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_provider_scheduledtasks.html">src/provider/<wbr>Scheduled<wbr>Tasks</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_provider_interfaces.html">src/provider/interfaces</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_provider_internal.html">src/provider/internal</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_provider_sort.html">src/provider/sort</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_provider_tasks.html">src/provider/tasks</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_provider_utils.html">src/provider/utils</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer.html">src/renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_aaggregatedgrouprenderer.html">src/renderer/AAggregated<wbr>Group<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_anumberscellrenderer.html">src/renderer/ANumbers<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_actionrenderer.html">src/renderer/<wbr>Action<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_aggregategrouprenderer.html">src/renderer/<wbr>Aggregate<wbr>Group<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_annotationrenderer.html">src/renderer/<wbr>Annotation<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_barcellrenderer.html">src/renderer/<wbr>Bar<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_booleancellrenderer.html">src/renderer/<wbr>Boolean<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_boxplotcellrenderer.html">src/renderer/<wbr>Boxplot<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_brightnesscellrenderer.html">src/renderer/<wbr>Brightness<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_categoricalcellrenderer.html">src/renderer/<wbr>Categorical<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_categoricalheatmapcellrenderer.html">src/renderer/<wbr>Categorical<wbr>Heatmap<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_categoricalstackeddistributionlcellrenderer.html">src/renderer/<wbr>Categorical<wbr>Stacked<wbr>Distributionl<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_circlecellrenderer.html">src/renderer/<wbr>Circle<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_datecellrenderer.html">src/renderer/<wbr>Date<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_datehistogramcellrenderer.html">src/renderer/<wbr>Date<wbr>Histogram<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_defaultcellrenderer.html">src/renderer/<wbr>Default<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_dotcellrenderer.html">src/renderer/<wbr>Dot<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_groupcellrenderer.html">src/renderer/<wbr>Group<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_heatmapcellrenderer.html">src/renderer/<wbr>Heatmap<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_histogramcellrenderer.html">src/renderer/<wbr>Histogram<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_imagecellrenderer.html">src/renderer/<wbr>Image<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_interleavingcellrenderer.html">src/renderer/<wbr>Interleaving<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_linkcellrenderer.html">src/renderer/<wbr>Link<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_linkmapcellrenderer.html">src/renderer/<wbr>Link<wbr>Map<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_loadingcellrenderer.html">src/renderer/<wbr>Loading<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_mapbarcellrenderer.html">src/renderer/<wbr>Map<wbr>Bar<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_multilevelcellrenderer.html">src/renderer/<wbr>Multi<wbr>Level<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_rankcellrenderer.html">src/renderer/<wbr>Rank<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_selectionrenderer.html">src/renderer/<wbr>Selection<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_setcellrenderer.html">src/renderer/<wbr>Set<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_sparklinecellrenderer.html">src/renderer/<wbr>Sparkline<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_stringcellrenderer.html">src/renderer/<wbr>String<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_tablecellrenderer.html">src/renderer/<wbr>Table<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_upsetcellrenderer.html">src/renderer/<wbr>UpSet<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_verticalbarcellrenderer.html">src/renderer/<wbr>Vertical<wbr>Bar<wbr>Cell<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_histogram.html">src/renderer/histogram</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_impose.html">src/renderer/impose</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_interfaces.html">src/renderer/interfaces</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_missing.html">src/renderer/missing</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_renderers.html">src/renderer/renderers</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_renderer_utils.html">src/renderer/utils</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_styles.html">src/styles</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui.html">src/ui</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_alineup.html">src/ui/ALine<wbr>Up</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_engineranking.html">src/ui/<wbr>Engine<wbr>Ranking</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_enginerenderer.html">src/ui/<wbr>Engine<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_lineup.html">src/ui/<wbr>Line<wbr>Up</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_multilevelrendercolumn.html">src/ui/<wbr>Multi<wbr>Level<wbr>Render<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_rendercolumn.html">src/ui/<wbr>Render<wbr>Column</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_selectionmanager.html">src/ui/<wbr>Selection<wbr>Manager</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_slopegraph.html">src/ui/<wbr>Slope<wbr>Graph</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_animation.html">src/ui/animation</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs.html">src/ui/dialogs</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_adialog.html">src/ui/dialogs/ADialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_apopup.html">src/ui/dialogs/APopup</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_addondialog.html">src/ui/dialogs/<wbr>Addon<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_categoricalcolormappingdialog.html">src/ui/dialogs/<wbr>Categorical<wbr>Color<wbr>Mapping<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_categoricalfilterdialog.html">src/ui/dialogs/<wbr>Categorical<wbr>Filter<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_categoricalmappingfilterdialog.html">src/ui/dialogs/<wbr>Categorical<wbr>Mapping<wbr>Filter<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_changerendererdialog.html">src/ui/dialogs/<wbr>Change<wbr>Renderer<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_chooserankingdialog.html">src/ui/dialogs/<wbr>Choose<wbr>Ranking<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_colormappingdialog.html">src/ui/dialogs/<wbr>Color<wbr>Mapping<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_compositechildrendialog.html">src/ui/dialogs/<wbr>Composite<wbr>Children<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_cutoffhierarchydialog.html">src/ui/dialogs/<wbr>Cut<wbr>Off<wbr>Hierarchy<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_datefilterdialog.html">src/ui/dialogs/<wbr>Date<wbr>Filter<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_dialogmanager.html">src/ui/dialogs/<wbr>Dialog<wbr>Manager</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_editpatterndialog.html">src/ui/dialogs/<wbr>Edit<wbr>Pattern<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_groupdialog.html">src/ui/dialogs/<wbr>Group<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_inputdatedialog.html">src/ui/dialogs/<wbr>Input<wbr>Date<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_inputnumberdialog.html">src/ui/dialogs/<wbr>Input<wbr>Number<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_mappingdialog.html">src/ui/dialogs/<wbr>Mapping<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_mappinglinedialog.html">src/ui/dialogs/<wbr>Mapping<wbr>Line<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_morecolumnoptionsdialog.html">src/ui/dialogs/<wbr>More<wbr>Column<wbr>Options<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_morerankingoptionsdialog.html">src/ui/dialogs/<wbr>More<wbr>Ranking<wbr>Options<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_numberfilterdialog.html">src/ui/dialogs/<wbr>Number<wbr>Filter<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_reducedialog.html">src/ui/dialogs/<wbr>Reduce<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_renamedialog.html">src/ui/dialogs/<wbr>Rename<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_renamerankingdialog.html">src/ui/dialogs/<wbr>Rename<wbr>Ranking<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_scripteditdialog.html">src/ui/dialogs/<wbr>Script<wbr>Edit<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_searchdialog.html">src/ui/dialogs/<wbr>Search<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_showtopndialog.html">src/ui/dialogs/<wbr>Show<wbr>TopNDialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_sortdialog.html">src/ui/dialogs/<wbr>Sort<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_stringfilterdialog.html">src/ui/dialogs/<wbr>String<wbr>Filter<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_weightseditdialog.html">src/ui/dialogs/<wbr>Weights<wbr>Edit<wbr>Dialog</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_groupdate.html">src/ui/dialogs/group<wbr>Date</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_groupnumber.html">src/ui/dialogs/group<wbr>Number</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_groupstring.html">src/ui/dialogs/group<wbr>String</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_dialogs_utils.html">src/ui/dialogs/utils</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_domelementcache.html">src/ui/dom<wbr>Element<wbr>Cache</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_header.html">src/ui/header</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_headertooltip.html">src/ui/header<wbr>Tooltip</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_interfaces.html">src/ui/interfaces</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_missing.html">src/ui/missing</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_panel.html">src/ui/panel</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_panel_hierarchy.html">src/ui/panel/<wbr>Hierarchy</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_panel_searchbox.html">src/ui/panel/<wbr>Search<wbr>Box</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_panel_sidepanel.html">src/ui/panel/<wbr>Side<wbr>Panel</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_panel_sidepanelentryvis.html">src/ui/panel/<wbr>Side<wbr>Panel<wbr>Entry<wbr>Vis</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_panel_sidepanelranking.html">src/ui/panel/<wbr>Side<wbr>Panel<wbr>Ranking</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_taggle.html">src/ui/taggle</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_taggle_taggle.html">src/ui/taggle/<wbr>Taggle</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_taggle_tagglerenderer.html">src/ui/taggle/<wbr>Taggle<wbr>Renderer</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_taggle_rules.html">src/ui/taggle/rules</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_toolbar.html">src/ui/toolbar</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/src_ui_toolbarresolvers.html">src/ui/toolbar<wbr>Resolvers</a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/tsd.html">tsd</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer>
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-namespace"><span class="tsd-kind-icon">Namespace</span></li>
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-function tsd-has-type-parameter"><span class="tsd-kind-icon">Function with type parameter</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+				<li class="tsd-kind-type-alias tsd-has-type-parameter"><span class="tsd-kind-icon">Type alias with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+				<li class="tsd-kind-interface tsd-has-type-parameter"><span class="tsd-kind-icon">Interface with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class"><span class="tsd-kind-icon">Class</span></li>
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-enum"><span class="tsd-kind-icon">Enumeration</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
