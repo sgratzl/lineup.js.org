@@ -1,7 +1,6 @@
 import { isSeqEmpty, empty } from '../internal';
 import { colorPool } from './internal';
 import { DEFAULT_COLOR } from './Column';
-import { ECompareValueType } from './interfaces';
 import { FIRST_IS_MISSING } from './missing';
 /** @internal */
 export function toCategory(cat, value, nextColor) {
@@ -25,7 +24,6 @@ export function toCompareCategoryValue(v) {
     }
     return v.value;
 }
-export var COMPARE_CATEGORY_VALUE_TYPES = ECompareValueType.FLOAT_ASC;
 function findMostFrequent(rows, valueCache) {
     var hist = new Map();
     if (valueCache) {
@@ -100,7 +98,6 @@ export function toGroupCompareCategoryValue(rows, col, valueCache) {
     }
     return [mostFrequent.cat.value, mostFrequent.cat.name.toLowerCase()];
 }
-export var COMPARE_GROUP_CATEGORY_VALUE_TYPES = [ECompareValueType.FLOAT, ECompareValueType.STRING];
 /** @internal */
 function compareCategory(a, b) {
     var aNull = a == null || Number.isNaN(a.value);

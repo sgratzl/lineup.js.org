@@ -3,7 +3,10 @@ import * as equalImpl from 'fast-deep-equal';
 /**
  * deep equal comparison
  */
-export var equal = typeof equalImpl === 'function' ? equalImpl : equalImpl.default;
+export function equal(a, b) {
+    var f = typeof equalImpl === 'function' ? equalImpl : equalImpl.default;
+    return f(a, b);
+}
 /** @internal */
 export function equalArrays(a, b) {
     if (a.length !== b.length) {

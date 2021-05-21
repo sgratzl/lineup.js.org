@@ -447,8 +447,8 @@
         "affectsGlobalScope": false
       },
       "../src/internal/utils.ts": {
-        "version": "64c174b48ebe8a832422c42a7d482b21eb7fc34705b8436d261a4137e429afd3",
-        "signature": "37b8345f81502db283529b38a48d620b7efb7024c5354e84d2ce20f6c44154aa",
+        "version": "30ac76e30f4f134708ee2eaa84960babf4cbb386878f2215cd6f602c70db186b",
+        "signature": "2b5be88227aa951760bc5f89fe60809f43a96882f9d915353409a48597e0c263",
         "affectsGlobalScope": false
       },
       "../.yarn/cache/@types-lodash-npm-4.14.168-2d65abe211-9a4e25f89f.zip/node_modules/@types/lodash/common/common.d.ts": {
@@ -587,13 +587,13 @@
         "affectsGlobalScope": false
       },
       "../src/model/internalCategorical.ts": {
-        "version": "09e1a5105ca44b187d97e501811cfa72489b07b8758a2624aa71f33def38e21c",
-        "signature": "91e741b720094d06d05d5eeb67a0f7a332310b264dae35d974ef6c610dff625c",
+        "version": "e5cd184ea07bbe92f5f27c014df6a58b3a1e2e779e5fb3fa5ebe58c54f1737c9",
+        "signature": "82448e1360b7e9091ff150a7ca270c53966b499febe6702a2c9362037419aef8",
         "affectsGlobalScope": false
       },
       "../src/model/CategoricalColumn.ts": {
-        "version": "67b6ffa0c819b944856b6120203420fc69fbde90d0c5d6b6975d4606969d9586",
-        "signature": "579616972f3c76905b97b874ccfaa779cd12f7968e168ceb492602f6fa3cbe8a",
+        "version": "f51cb995d73e5cbb32b45877af3ff3229a2da4b65819708a1f3c11e8958040fe",
+        "signature": "36a8712d7cb1198294d988bd00e62821c289d7080bd024066bbc91b01b1d58c5",
         "affectsGlobalScope": false
       },
       "../src/model/SetColumn.ts": {
@@ -5048,8 +5048,7 @@
         "../src/model/interfaces.ts"
       ],
       "../src/model/internalCategorical.ts": [
-        "../src/model/ICategoricalColumn.ts",
-        "../src/model/interfaces.ts"
+        "../src/model/ICategoricalColumn.ts"
       ],
       "../src/model/internalNumber.ts": [
         "../src/model/INumberColumn.ts",

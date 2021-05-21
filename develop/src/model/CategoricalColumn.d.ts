@@ -1,7 +1,7 @@
 import type { IEventListener, ISequence } from '../internal';
 import Column, { dirty, dirtyCaches, dirtyHeader, dirtyValues, groupRendererChanged, labelChanged, metaDataChanged, rendererTypeChanged, summaryRendererChanged, visibilityChanged, widthChanged } from './Column';
 import type { ICategoricalColumn, ICategoricalColumnDesc, ICategoricalFilter, ICategory, ICategoricalColorMappingFunction } from './ICategoricalColumn';
-import type { IDataRow, IGroup, ICompareValue, ITypeFactory, ECompareValueType } from './interfaces';
+import { IDataRow, IGroup, ICompareValue, ITypeFactory, ECompareValueType } from './interfaces';
 import type { dataLoaded } from './ValueColumn';
 import ValueColumn from './ValueColumn';
 /**

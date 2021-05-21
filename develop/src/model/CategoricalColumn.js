@@ -22,9 +22,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 import { Category, toolbar } from './annotations';
 import { DEFAULT_CATEGORICAL_COLOR_FUNCTION } from './CategoricalColorMappingFunction';
 import Column, { DEFAULT_COLOR, } from './Column';
+import { ECompareValueType } from './interfaces';
 import { missingGroup } from './missing';
 import ValueColumn from './ValueColumn';
-import { toCategories, isCategoryIncluded, isEqualCategoricalFilter, toCompareCategoryValue, COMPARE_CATEGORY_VALUE_TYPES, toGroupCompareCategoryValue, COMPARE_GROUP_CATEGORY_VALUE_TYPES, } from './internalCategorical';
+import { toCategories, isCategoryIncluded, isEqualCategoricalFilter, toCompareCategoryValue, toGroupCompareCategoryValue, } from './internalCategorical';
 /**
  * column for categorical values
  */
@@ -176,7 +177,7 @@ var CategoricalColumn = /** @class */ (function (_super) {
         return toCompareCategoryValue(valueCache !== undefined ? valueCache : this.getCategory(row));
     };
     CategoricalColumn.prototype.toCompareValueType = function () {
-        return COMPARE_CATEGORY_VALUE_TYPES;
+        return ECompareValueType.FLOAT_ASC;
     };
     CategoricalColumn.prototype.group = function (row, valueCache) {
         var cat = valueCache !== undefined ? valueCache : this.getCategory(row);
@@ -189,7 +190,7 @@ var CategoricalColumn = /** @class */ (function (_super) {
         return toGroupCompareCategoryValue(rows, this, valueCache);
     };
     CategoricalColumn.prototype.toCompareGroupValueType = function () {
-        return COMPARE_GROUP_CATEGORY_VALUE_TYPES;
+        return [ECompareValueType.FLOAT, ECompareValueType.STRING];
     };
     CategoricalColumn.prototype.getGroupRenderer = function () {
         var current = _super.prototype.getGroupRenderer.call(this);
