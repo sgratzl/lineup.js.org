@@ -112,9 +112,7 @@ var EngineRanking = /** @class */ (function (_super) {
             leave: function (evt) {
                 // on row to survive canvas removal
                 var c = _this.canvasMouseHandler;
-                var row = (typeof evt.currentTarget !== 'undefined'
-                    ? evt.currentTarget
-                    : evt);
+                var row = (typeof evt.currentTarget !== 'undefined' ? evt.currentTarget : evt);
                 c.unhover(row);
                 c.cleanUp();
             },

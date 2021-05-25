@@ -20,13 +20,13 @@ var SidePanelRanking = /** @class */ (function () {
         this.header.classList.add(cssClass('side-panel-ranking-header'), cssClass('side-panel-ranking-label'));
         this.dropdown.classList.add(cssClass('side-panel-ranking-label'));
         this.dropdown.innerHTML = this.header.innerHTML = "<span>" + ranking.getLabel() + "</span><i class=\"" + actionCSSClass('more') + "\" title=\"More &hellip;\">" + aria('More &hellip;') + "</i>";
-        this.header.lastElementChild.onclick = this.dropdown
-            .lastElementChild.onclick = function (evt) {
-            evt.stopPropagation();
-            evt.preventDefault();
-            var dialog = new MoreRankingOptionsDialog(ranking, dialogContext(ctx, 1, evt), ctx);
-            dialog.open();
-        };
+        this.header.lastElementChild.onclick = this.dropdown.lastElementChild.onclick =
+            function (evt) {
+                evt.stopPropagation();
+                evt.preventDefault();
+                var dialog = new MoreRankingOptionsDialog(ranking, dialogContext(ctx, 1, evt), ctx);
+                dialog.open();
+            };
         this.hierarchy = this.options.hierarchy ? new Hierarchy(ctx, document) : null;
         this.init();
     }
@@ -46,7 +46,8 @@ var SidePanelRanking = /** @class */ (function () {
             _this.updateHierarchy();
         });
         this.ranking.on(suffix('.panel', Ranking.EVENT_LABEL_CHANGED), function () {
-            _this.dropdown.firstElementChild.textContent = _this.header.firstElementChild.textContent = _this.ranking.getLabel();
+            _this.dropdown.firstElementChild.textContent = _this.header.firstElementChild.textContent =
+                _this.ranking.getLabel();
         });
     };
     Object.defineProperty(SidePanelRanking.prototype, "active", {

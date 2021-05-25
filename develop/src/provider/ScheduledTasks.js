@@ -64,9 +64,7 @@ var ScheduleRenderTasks = /** @class */ (function (_super) {
                 checker = cols.map(function (col) { return function (key) { return key.startsWith(col.id + ":a:group"); }; });
                 break;
             case 'summary':
-                checker = cols.map(function (col) { return function (key) {
-                    return key.startsWith(col.id + ":b:summary") || key.startsWith(col.id + ":a:group");
-                }; });
+                checker = cols.map(function (col) { return function (key) { return key.startsWith(col.id + ":b:summary") || key.startsWith(col.id + ":a:group"); }; });
                 break;
             case 'data':
             default:
