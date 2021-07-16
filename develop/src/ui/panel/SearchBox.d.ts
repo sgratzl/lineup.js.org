@@ -9,7 +9,7 @@ export interface IGroupSearchItem<T extends IItem> {
 }
 export interface ISearchBoxOptions<T extends IItem> {
     doc: Document;
-    formatItem(item: T | IGroupSearchItem<T>, node: HTMLElement): string;
+    formatItem(item: T | IGroupSearchItem<T>, node: HTMLElement): string | void;
     placeholder: string;
 }
 /**

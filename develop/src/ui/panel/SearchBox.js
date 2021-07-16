@@ -80,7 +80,10 @@ var SearchBox = /** @class */ (function (_super) {
                 node.appendChild(li);
             }
             var item = li.firstElementChild;
-            item.innerHTML = this_1.options.formatItem(v, item);
+            var r = this_1.options.formatItem(v, item);
+            if (typeof r === 'string') {
+                item.innerHTML = r;
+            }
         };
         var this_1 = this;
         for (var _i = 0, values_1 = values; _i < values_1.length; _i++) {

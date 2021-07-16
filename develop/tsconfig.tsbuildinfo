@@ -1422,8 +1422,8 @@
         "affectsGlobalScope": false
       },
       "../src/ui/panel/SearchBox.ts": {
-        "version": "5242764dea1e51e4fcef8e8b822e923838e7235bfe93722584576804552d4f97",
-        "signature": "a1447e0da5529abcd31defde133b4921468e4b9b99d82709541cf7e69d1625ce",
+        "version": "76f7bd9d051f1f06a0fa5ee6a1813f40bf9a4f60fc031e96869d6e6e332f9060",
+        "signature": "7875ce40c952ce0b52da669fbd6944fa9aa8c051bec9f9f18675da92d41be3e1",
         "affectsGlobalScope": false
       },
       "../src/ui/dialogs/RenameRankingDialog.ts": {
@@ -1442,7 +1442,7 @@
         "affectsGlobalScope": false
       },
       "../src/ui/panel/Hierarchy.ts": {
-        "version": "b59a44eacb3b554504ca8d391f7b6b9c17c50f7279b9e53f40051fd3c6ef0d3c",
+        "version": "901595b910455a1c9f0dabb1b3aa4ef07230b60bb5402d843c857898bbfc5aed",
         "signature": "4e691eeb0adbb7eaf394e93bbebdc447980b8f1491f8ecd802c15fce6c77f039",
         "affectsGlobalScope": false
       },
@@ -1457,7 +1457,7 @@
         "affectsGlobalScope": false
       },
       "../src/ui/panel/SidePanel.ts": {
-        "version": "c2c24fbc0cfee68ad05433edad0dc48d2987aee28242c5299016620ca9f65b6d",
+        "version": "62063e3201e3975517bf85a1d1f6012634e342549e71b5f883e79bfbad00d9b8",
         "signature": "1d0556bd280f78eb60bd3dc7d571aae38d8ee2fa8234a4d45b8cd32beb58765c",
         "affectsGlobalScope": false
       },

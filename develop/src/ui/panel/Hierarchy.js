@@ -22,6 +22,17 @@ var Hierarchy = /** @class */ (function () {
                 node.classList.add(cssClass('typed-icon'));
                 node.dataset.typeCat = categoryOf(item.col).name;
                 node.dataset.type = item.col.desc.type;
+                var summary = item.col.getMetaData().summary || item.col.description;
+                node.classList.toggle(cssClass('searchbox-summary-entry'), Boolean(summary));
+                if (summary) {
+                    var label = node.ownerDocument.createElement('span');
+                    label.textContent = summary;
+                    node.appendChild(label);
+                    var desc = node.ownerDocument.createElement('span');
+                    desc.textContent = summary;
+                    node.appendChild(desc);
+                    return undefined;
+                }
                 return item.text;
             },
         };

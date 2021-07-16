@@ -45,6 +45,19 @@ var SidePanel = /** @class */ (function () {
                     node.parentElement.classList.add(cssClass('feature-model'));
                     node.parentElement.classList.toggle(cssClass('feature-advanced'), w.category.featureLevel === 'advanced');
                     node.parentElement.classList.toggle(cssClass('feature-basic'), w.category.featureLevel === 'basic');
+                    if (isWrapper(item)) {
+                        var summary = w.desc.summary || w.desc.description;
+                        node.classList.toggle(cssClass('searchbox-summary-entry'), Boolean(summary));
+                        if (summary) {
+                            var label = node.ownerDocument.createElement('span');
+                            label.textContent = w.desc.label;
+                            node.appendChild(label);
+                            var desc = node.ownerDocument.createElement('span');
+                            desc.textContent = summary;
+                            node.appendChild(desc);
+                            return undefined;
+                        }
+                    }
                 }
                 return item.text;
             },
